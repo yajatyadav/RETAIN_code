@@ -1,6 +1,6 @@
 # Robust Finetuning of Vision-Language-Action Robot Policies via Parameter Merging
 
-![RETAIN Teaser](https://retain.yajatyadav.com/images/retain_teaser.png)
+![RETAIN Teaser](https://github.com/yajatyadav/retain/blob/main/images/retain_teaser.png)
 
 This is the official code release for the paper:
 
