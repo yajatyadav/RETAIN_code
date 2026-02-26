@@ -1,9 +1,13 @@
 # Robust Finetuning of Vision-Language-Action Robot Policies via Parameter Merging
 
+![RETAIN Teaser](https://retain.yajatyadav.com/images/retain_teaser.png)
+
 This is the official code release for the paper:
 
 **[Robust Finetuning of Vision-Language-Action Robot Policies via Parameter Merging](https://arxiv.org/abs/2512.08333)**
-Yajat Yadav, Zhiyuan Zhou, Andrew Wagenmaker, Karl Pertsch, Sergey Levine
+by Yajat Yadav, Zhiyuan Zhou, Andrew Wagenmaker, Karl Pertsch, Sergey Levine
+
+See the [project page](https://retain.yajatyadav.com) also.
 
 This codebase is built on top of [openpi](https://github.com/Physical-Intelligence/openpi). The openpi README and setup instructions are preserved below.
 
@@ -13,8 +17,8 @@ This codebase is built on top of [openpi](https://github.com/Physical-Intelligen
 
 We provide code for:
 
-2. **Model merging** via weight interpolation
-1. **Finetuning** VLA policies (pi0, pi0-FAST) on new tasks (LIBERO, DROID)
+1. **Model merging** via weight interpolation
+2. **Finetuning** VLA policies (pi0, pi0-FAST) on new tasks (LIBERO, DROID)
 3. **OOD Evaluation**: generating out-of-distribution (OOD) task variations in LIBERO and evaluating on them.
 
 ## Model Merging
