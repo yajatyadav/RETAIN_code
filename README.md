@@ -1,0 +1,332 @@
+# Robust Finetuning of Vision-Language-Action Robot Policies via Parameter Merging
+
+This is the official code release for the paper:
+
+**[Robust Finetuning of Vision-Language-Action Robot Policies via Parameter Merging](https://arxiv.org/abs/2512.08333)**
+Yajat Yadav, Zhiyuan Zhou, Andrew Wagenmaker, Karl Pertsch, Sergey Levine
+
+This codebase is built on top of [openpi](https://github.com/Physical-Intelligence/openpi). The openpi README and setup instructions are preserved below.
+
+---
+
+## Overview
+
+We provide code for:
+
+2. **Model merging** via weight interpolation
+1. **Finetuning** VLA policies (pi0, pi0-FAST) on new tasks (LIBERO, DROID)
+3. **OOD Evaluation**: generating out-of-distribution (OOD) task variations in LIBERO and evaluating on them.
+
+## Model Merging
+
+Model merging is implemented in [`src/openpi/policies/model_merging.py`](src/openpi/policies/model_merging.py). The key function is `linear_interpolation`, which takes two or more checkpoints and produces a single merged model:
+
+```python
+# Core merging logic (from src/openpi/policies/model_merging.py)
+params_list = [restore_params(ckpt / "params") for ckpt in checkpoint_dirs]
+trees = [jax.tree.map(lambda x: x * w, p) for w, p in zip(mixing_coefficients, params_list)]
+merged_params = jax.tree.map(lambda *x: jnp.sum(jnp.stack(x), axis=0), *trees)
+model = config.model.load(merged_params)
+```
+
+The `model_mixing_coefficients` control the weight given to each checkpoint (must sum to 1).
+
+## Setup
+
+Follow the [openpi installation instructions](#installation) below to install dependencies via `uv`. For running LIBERO evaluations, you will additionally need the LIBERO environment -- see the [LIBERO README](examples/libero/README.md) for Docker-based setup (recommended) or manual installation steps.
+
+## LIBERO Experiments
+
+### Training
+
+Finetune a base model on LIBERO data (see training configs in [`src/openpi/training/config.py`](src/openpi/training/config.py)):
+
+```bash
+# Compute normalization statistics
+uv run scripts/compute_norm_stats.py --config-name pi0_libero
+
+# Launch finetuning
+XLA_PYTHON_CLIENT_MEM_FRACTION=0.9 uv run scripts/train.py pi0_libero \
+    --exp-name=my_experiment --overwrite
+```
+
+### In-Distribution Evaluation
+
+Start a policy server (either a single checkpoint or a merged model), then run evaluation:
+
+```bash
+# Serve a single finetuned checkpoint
+uv run scripts/serve_policy.py policy:checkpoint \
+    --policy.config=pi0_libero \
+    --policy.dir=checkpoints/pi0_libero/my_experiment/20000
+
+# OR serve a merged model
+uv run scripts/merging_experiments.py \
+    --port 8000 --config pi0_libero \
+    --merging_fn linear_interpolation \
+    --merging_fn_kwargs '{"model_mixing_coefficients": [0.5, 0.5]}' \
+    --checkpoint_dirs /path/to/finetuned/checkpoint gs://openpi-assets/checkpoints/pi0_base
+```
+
+Then run the standard LIBERO evaluation (from inside the LIBERO Docker environment):
+
+```bash
+python examples/libero/test_on_libero_task.py \
+    --host <server_host> --port 8000 \
+    --task_suite_name libero_90 \
+    --task_name "close the microwave" \
+    --num_trials_per_task 20 \
+    --exp_name my_eval
+```
+
+### Out-of-Distribution (OOD) Evaluation
+
+OOD evaluation tests policy robustness by perturbing the LIBERO environment. The implementation lives in [`examples/libero/`](examples/libero/):
+
+- **[`OOD_eval_helper.py`](examples/libero/OOD_eval_helper.py)** -- Core logic for generating OOD perturbations:
+  - **Translation**: shift object spawn regions
+  - **Expansion**: enlarge spawn regions so objects appear in novel positions
+  - **Distractors**: add randomly chosen unseen objects to the scene
+- **[`test_on_OOD_libero_task.py`](examples/libero/test_on_OOD_libero_task.py)** -- Evaluation script that applies perturbations and rolls out the policy
+- **[`generate_all_arg_combinations.py`](examples/libero/generate_all_arg_combinations.py)** -- Generates shell commands for all OOD evaluation variants
+
+Run a single OOD evaluation:
+
+```bash
+python examples/libero/test_on_OOD_libero_task.py \
+    --host <server_host> --port 8000 \
+    --task_suite_name libero_90 \
+    --task_name "close the microwave" \
+    --num_trials_per_task 20 \
+    --exp_name my_ood_eval \
+    --do_expand --expansion_option range_expand_double
+```
+
+Or generate all evaluation commands at once:
+
+```bash
+python examples/libero/generate_all_arg_combinations.py \
+    --host <server_host> --port 8000 \
+    --checkpoint_name my_merged_model \
+    --task_name "close the microwave" \
+    --do_id --do_ood_easy --do_ood_hard
+```
+
+## DROID Experiments
+
+For DROID experiments, finetune on DROID data using the RLDS data loader, then merge and serve:
+
+```bash
+# Finetune
+XLA_PYTHON_CLIENT_MEM_FRACTION=0.9 uv run scripts/train.py full_FT_whiteboard_RLDS \
+    --exp-name=my_droid_experiment --overwrite
+
+# Serve merged model for evaluation
+XLA_PYTHON_CLIENT_MEM_FRACTION=0.9 uv run scripts/merging_experiments.py \
+    --port 8100 \
+    --config pi0_fast_droid \
+    --merging_fn linear_interpolation \
+    --merging_fn_kwargs '{"model_mixing_coefficients": [0.5, 0.5]}' \
+    --checkpoint_dirs /path/to/finetuned/checkpoint gs://openpi-assets/checkpoints/pi0_fast_droid
+```
+
+---
+
+# openpi
+
+openpi holds open-source models and packages for robotics, published by the [Physical Intelligence team](https://www.physicalintelligence.company/).
+
+Currently, this repo contains two types of models:
+- the [π₀ model](https://www.physicalintelligence.company/blog/pi0), a flow-based diffusion vision-language-action model (VLA).
+- the [π₀-FAST model](https://www.physicalintelligence.company/research/fast), an autoregressive VLA, based on the FAST action tokenizer.
+- the [π₀.₅ model](https://www.physicalintelligence.company/blog/pi05), an upgraded version of π₀ with better open-world generalization.
+
+For all models, we provide _base model_ checkpoints, pre-trained on 10k+ hours of robot data, and examples for using them out of the box or fine-tuning them to your own datasets.
+
+This is an experiment: $\pi_0$ was developed for our own robots, which differ from the widely used platforms such as [ALOHA](https://tonyzhaozh.github.io/aloha/) and [DROID](https://droid-dataset.github.io/), and though we are optimistic that researchers and practitioners will be able to run creative new experiments adapting $\pi_0$ to their own platforms, we do not expect every such attempt to be successful. All this is to say: $\pi_0$ may or may not work for you, but you are welcome to try it and see!
+
+## Updates
+
+- [Jun 2025]: We have added [instructions](examples/droid/README_train.md) for using `openpi` to train VLAs on the full [DROID dataset](https://droid-dataset.github.io/). This is an approximate open-source implementation of the training pipeline used to train pi0-FAST-DROID. 
+
+
+## Requirements
+
+To run the models in this repository, you will need an NVIDIA GPU with at least the following specifications. These estimations assume a single GPU, but you can also use multiple GPUs with model parallelism to reduce per-GPU memory requirements by configuring `fsdp_devices` in the training config. Please also note that the current training script does not yet support multi-node training.
+
+| Mode               | Memory Required | Example GPU        |
+| ------------------ | --------------- | ------------------ |
+| Inference          | > 8 GB          | RTX 4090           |
+| Fine-Tuning (LoRA) | > 22.5 GB       | RTX 4090           |
+| Fine-Tuning (Full) | > 70 GB         | A100 (80GB) / H100 |
+
+The repo has been tested with Ubuntu 22.04, we do not currently support other operating systems.
+
+## Installation
+
+When cloning this repo, make sure to update submodules:
+
+```bash
+git clone --recurse-submodules git@github.com:Physical-Intelligence/openpi.git
+
+# Or if you already cloned the repo:
+git submodule update --init --recursive
+```
+
+We use [uv](https://docs.astral.sh/uv/) to manage Python dependencies. See the [uv installation instructions](https://docs.astral.sh/uv/getting-started/installation/) to set it up. Once uv is installed, run the following to set up the environment:
+
+```bash
+GIT_LFS_SKIP_SMUDGE=1 uv sync
+GIT_LFS_SKIP_SMUDGE=1 uv pip install -e .
+```
+
+NOTE: `GIT_LFS_SKIP_SMUDGE=1` is needed to pull LeRobot as a dependency.
+
+**Docker**: As an alternative to uv installation, we provide instructions for installing openpi using Docker. If you encounter issues with your system setup, consider using Docker to simplify installation. See [Docker Setup](docs/docker.md) for more details.
+
+
+
+
+## Model Checkpoints
+
+### Base Models
+We provide multiple base VLA model checkpoints. These checkpoints have been pre-trained on 10k+ hours of robot data, and can be used for fine-tuning.
+
+| Model        | Use Case    | Description                                                                                                 | Checkpoint Path                                |
+| ------------ | ----------- | ----------------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
+| $\pi_0$      | Fine-Tuning | Base diffusion [π₀ model](https://www.physicalintelligence.company/blog/pi0) for fine-tuning                | `gs://openpi-assets/checkpoints/pi0_base`      |
+| $\pi_0$-FAST | Fine-Tuning | Base autoregressive [π₀-FAST model](https://www.physicalintelligence.company/research/fast) for fine-tuning | `gs://openpi-assets/checkpoints/pi0_fast_base` |
+
+### Fine-Tuned Models
+We also provide "expert" checkpoints for various robot platforms and tasks. These models are fine-tuned from the base models above and intended to run directly on the target robot. These may or may not work on your particular robot. Since these checkpoints were fine-tuned on relatively small datasets collected with more widely available robots, such as ALOHA and the DROID Franka setup, they might not generalize to your particular setup, though we found some of these, especially the DROID checkpoint, to generalize quite broadly in practice.
+
+| Model                    | Use Case    | Description                                                                                                                                                                                              | Checkpoint Path                                       |
+| ------------------------ | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------- |
+| $\pi_0$-FAST-DROID       | Inference   | $\pi_0$-FAST model fine-tuned on the [DROID dataset](https://droid-dataset.github.io/), can perform a wide range of simple table-top manipulation tasks 0-shot in new scenes on the DROID robot platform | `gs://openpi-assets/checkpoints/pi0_fast_droid`       |
+| $\pi_0$-DROID            | Fine-Tuning | $\pi_0$ model fine-tuned on the [DROID dataset](https://droid-dataset.github.io/), faster inference than $\pi_0$-FAST-DROID, but may not follow language commands as well                                | `gs://openpi-assets/checkpoints/pi0_droid`            |
+| $\pi_0$-ALOHA-towel      | Inference   | $\pi_0$ model fine-tuned on internal ALOHA data, can fold diverse towels 0-shot on [ALOHA](https://tonyzhaozh.github.io/aloha/) robot platforms                                                          | `gs://openpi-assets/checkpoints/pi0_aloha_towel`      |
+| $\pi_0$-ALOHA-tupperware | Inference   | $\pi_0$ model fine-tuned on internal ALOHA data, can unpack food from a tupperware container                                                                                                             | `gs://openpi-assets/checkpoints/pi0_aloha_tupperware` |
+| $\pi_0$-ALOHA-pen-uncap  | Inference   | $\pi_0$ model fine-tuned on [public ALOHA data](https://dit-policy.github.io/), can uncap a pen                                                                                                          | `gs://openpi-assets/checkpoints/pi0_aloha_pen_uncap`  |
+
+
+By default, checkpoints are automatically downloaded from `gs://openpi-assets` and are cached in `~/.cache/openpi` when needed. You can overwrite the download path by setting the `OPENPI_DATA_HOME` environment variable.
+
+
+
+
+## Running Inference for a Pre-Trained Model
+
+Our pre-trained model checkpoints can be run with a few lines of code (here our $\pi_0$-FAST-DROID model):
+```python
+from openpi.training import config
+from openpi.policies import policy_config
+from openpi.shared import download
+
+config = config.get_config("pi0_fast_droid")
+checkpoint_dir = download.maybe_download("gs://openpi-assets/checkpoints/pi0_fast_droid")
+
+# Create a trained policy.
+policy = policy_config.create_trained_policy(config, checkpoint_dir)
+
+# Run inference on a dummy example.
+example = {
+    "observation/exterior_image_1_left": ...,
+    "observation/wrist_image_left": ...,
+    ...
+    "prompt": "pick up the fork"
+}
+action_chunk = policy.infer(example)["actions"]
+```
+You can also test this out in the [example notebook](examples/inference.ipynb).
+
+We provide detailed step-by-step examples for running inference of our pre-trained checkpoints on [DROID](examples/droid/README.md) and [ALOHA](examples/aloha_real/README.md) robots.
+
+**Remote Inference**: We provide [examples and code](docs/remote_inference.md) for running inference of our models **remotely**: the model can run on a different server and stream actions to the robot via a websocket connection. This makes it easy to use more powerful GPUs off-robot and keep robot and policy environments separate.
+
+**Test inference without a robot**: We provide a [script](examples/simple_client/README.md) for testing inference without a robot. This script will generate a random observation and run inference with the model. See [here](examples/simple_client/README.md) for more details.
+
+
+
+
+
+## Fine-Tuning Base Models on Your Own Data
+
+We will fine-tune the $\pi_{0.5}$ model on the [LIBERO dataset](https://libero-project.github.io/datasets) as a running example for how to fine-tune a base model on your own data. We will explain three steps:
+1. Convert your data to a LeRobot dataset (which we use for training)
+2. Defining training configs and running training
+3. Spinning up a policy server and running inference
+
+### 1. Convert your data to a LeRobot dataset
+
+We provide a minimal example script for converting LIBERO data to a LeRobot dataset in [`examples/libero/convert_libero_data_to_lerobot.py`](examples/libero/convert_libero_data_to_lerobot.py). You can easily modify it to convert your own data! You can download the raw LIBERO dataset from [here](https://huggingface.co/datasets/openvla/modified_libero_rlds), and run the script with:
+
+```bash
+uv run examples/libero/convert_libero_data_to_lerobot.py --data_dir /path/to/your/libero/data
+```
+
+**Note:** If you just want to fine-tune on LIBERO, you can skip this step, because our LIBERO fine-tuning configs point to a pre-converted LIBERO dataset. This step is merely an example that you can adapt to your own data.
+
+### 2. Defining training configs and running training
+
+To fine-tune a base model on your own data, you need to define configs for data processing and training. We provide example configs with detailed comments for LIBERO below, which you can modify for your own dataset:
+
+- [`LiberoInputs` and `LiberoOutputs`](src/openpi/policies/libero_policy.py): Defines the data mapping from the LIBERO environment to the model and vice versa. Will be used for both, training and inference.
+- [`LeRobotLiberoDataConfig`](src/openpi/training/config.py): Defines how to process raw LIBERO data from LeRobot dataset for training.
+- [`TrainConfig`](src/openpi/training/config.py): Defines fine-tuning hyperparameters, data config, and weight loader.
+
+We provide example fine-tuning configs for [π₀](src/openpi/training/config.py), [π₀-FAST](src/openpi/training/config.py), and [π₀.₅](src/openpi/training/config.py) on LIBERO data.
+
+Before we can run training, we need to compute the normalization statistics for the training data. Run the script below with the name of your training config:
+
+```bash
+uv run scripts/compute_norm_stats.py --config-name pi05_libero
+```
+
+Now we can kick off training with the following command (the `--overwrite` flag is used to overwrite existing checkpoints if you rerun fine-tuning with the same config):
+
+```bash
+XLA_PYTHON_CLIENT_MEM_FRACTION=0.9 uv run scripts/train.py pi05_libero --exp-name=my_experiment --overwrite
+```
+
+The command will log training progress to the console and save checkpoints to the `checkpoints` directory. You can also monitor training progress on the Weights & Biases dashboard. For maximally using the GPU memory, set `XLA_PYTHON_CLIENT_MEM_FRACTION=0.9` before running training -- this enables JAX to use up to 90% of the GPU memory (vs. the default of 75%).
+
+**Note:** We provide functionality for *reloading* normalization statistics for state / action normalization from pre-training. This can be beneficial if you are fine-tuning to a new task on a robot that was part of our pre-training mixture. For more details on how to reload normalization statistics, see the [norm_stats.md](docs/norm_stats.md) file.
+
+### 3. Spinning up a policy server and running inference
+
+Once training is complete, we can run inference by spinning up a policy server and then querying it from a LIBERO evaluation script. Launching a model server is easy (we use the checkpoint for iteration 20,000 for this example, modify as needed):
+
+```bash
+uv run scripts/serve_policy.py policy:checkpoint --policy.config=pi05_libero --policy.dir=checkpoints/pi05_libero/my_experiment/20000
+```
+
+This will spin up a server that listens on port 8000 and waits for observations to be sent to it. We can then run the LIBERO evaluation script to query the server. For instructions how to install LIBERO and run the evaluation script, see the [LIBERO README](examples/libero/README.md).
+
+If you want to embed a policy server call in your own robot runtime, we have a minimal example of how to do so in the [remote inference docs](docs/remote_inference.md).
+
+
+
+### More Examples
+
+We provide more examples for how to fine-tune and run inference with our models on the ALOHA platform in the following READMEs:
+- [ALOHA Simulator](examples/aloha_sim)
+- [ALOHA Real](examples/aloha_real)
+- [UR5](examples/ur5)
+
+
+
+## Troubleshooting
+
+We will collect common issues and their solutions here. If you encounter an issue, please check here first. If you can't find a solution, please file an issue on the repo (see [here](CONTRIBUTING.md) for guidelines).
+
+| Issue                                     | Resolution                                                                                                                                                                                   |
+| ----------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `uv sync` fails with dependency conflicts | Try removing the virtual environment directory (`rm -rf .venv`) and running `uv sync` again. If issues persist, check that you have the latest version of `uv` installed (`uv self update`). |
+| Training runs out of GPU memory           | Make sure you set `XLA_PYTHON_CLIENT_MEM_FRACTION=0.9` before running training to allow JAX to use more GPU memory. You can also use `--fsdp-devices <n>` where `<n>` is your number of GPUs, to enable [fully-sharded data parallelism](https://engineering.fb.com/2021/07/15/open-source/fsdp/), which reduces memory usage in exchange for slower training (the amount of slowdown depends on your particular setup).        |
+| Policy server connection errors           | Check that the server is running and listening on the expected port. Verify network connectivity and firewall settings between client and server.                                            |
+| Missing norm stats error when training    | Run `scripts/compute_norm_stats.py` with your config name before starting training.                                                                                                          |
+| Dataset download fails                    | Check your internet connection. For HuggingFace datasets, ensure you're logged in (`huggingface-cli login`).                                                                                 |
+| CUDA/GPU errors                           | Verify NVIDIA drivers are installed correctly. For Docker, ensure nvidia-container-toolkit is installed. Check GPU compatibility. You do NOT need CUDA libraries installed at a system level --- they will be installed via uv. You may even want to try *uninstalling* system CUDA libraries if you run into CUDA issues, since system libraries can sometimes cause conflicts. |
+| Import errors when running examples       | Make sure you've installed all dependencies with `uv sync`. Some examples may have additional requirements listed in their READMEs.                    |
+| Action dimensions mismatch                | Verify your data processing transforms match the expected input/output dimensions of your robot. Check the action space definitions in your policy classes.                                  |
+| Diverging training loss                            | Check the `q01`, `q99`, and `std` values in `norm_stats.json` for your dataset. Certain dimensions that are rarely used can end up with very small `q01`, `q99`, or `std` values, leading to huge states and actions after normalization. You can manually adjust the norm stats as a workaround. |
