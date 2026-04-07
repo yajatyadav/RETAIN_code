@@ -1,5 +1,7 @@
 # Data directories.
 # assets/
+my_eval/
+vide
 checkpoints/
 data/
 wandb/
