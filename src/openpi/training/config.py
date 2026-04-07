@@ -598,6 +598,151 @@ LIBERO_LM_FRACTION_OF_TOTAL = LIBERO_LM_NUM_TRANSITIONS / TOT_NUM_TRANSITIONS
 
 
 LIBERO_CONFIGS = [
+
+    TrainConfig(
+        name="pi0_libero_pretrain",
+        model=pi0.Pi0Config(),
+        is_RLDS=True,
+        data_root_dir="/raid/users/yajatyadav/tensorflow_datasets",
+        data_list=[
+            # pretraining datasets, data_mix_weights will be prop to each's size
+            # goal_no_noops: 52042 transitions
+            RLDSLiberoDataConfig(
+                repo_id="libero_goal_reduced",
+                # NOTE: this will error if compute_norm_stats wasn't run before using this config and the norm-stats need to be in this location
+                assets=AssetsConfig(
+                    assets_dir="assets",
+                    asset_id="pi0_libero_pretrain",
+                ),
+            ),
+            # object_no_noops: 66984 transitions
+            RLDSLiberoDataConfig(
+                repo_id="libero_object_reduced",
+                assets=AssetsConfig(
+                    assets_dir="assets",
+                    asset_id="pi0_libero_pretrain",
+                ),
+            ),
+            # spatial_no_noops: 52970 transitions
+            RLDSLiberoDataConfig(
+                repo_id="libero_spatial_reduced",
+                assets=AssetsConfig(
+                    assets_dir="assets",
+                    asset_id="pi0_libero_pretrain",
+                ),
+            ),
+            # lm_90: 567,494 transitions
+            RLDSLiberoDataConfig(
+                repo_id="libero_90_flipped",
+                assets=AssetsConfig(
+                    assets_dir="assets",
+                    asset_id="pi0_libero_pretrain",
+                ),
+            ),
+        ],
+        # need to divide by 1 as the dataloader requries one dataset to be the "primary" one with weight 1
+        data_mix_weights=[
+            LIBERO_GOAL_FRACTION_OF_TOTAL / LIBERO_LM_FRACTION_OF_TOTAL,
+            LIBERO_OBJECT_FRACTION_OF_TOTAL / LIBERO_LM_FRACTION_OF_TOTAL,
+            LIBERO_SPATIAL_FRACTION_OF_TOTAL / LIBERO_LM_FRACTION_OF_TOTAL,
+            LIBERO_LM_FRACTION_OF_TOTAL / LIBERO_LM_FRACTION_OF_TOTAL,
+        ],
+        weight_loader=weight_loaders.CheckpointWeightLoader("gs://openpi-assets/checkpoints/pi0_base/params"),
+        num_train_steps=200_000,
+        save_interval=20_000,
+        batch_size=128,
+        lr_schedule=_optimizer.ConstantSchedule(
+            lr=2e-5,
+        ),
+    ),
+
+    TrainConfig(
+        name="pi0_libero_finetune_stove_moka",
+        model=pi0.Pi0Config(),
+        weight_loader=weight_loaders.CheckpointWeightLoader("/home/yajatyadav/RETAIN_code/checkpoints/pi0_libero_pretrain/pi0_libero_pretrain_100_steps/99/params"),
+        is_RLDS=True,
+        data_root_dir = '/raid/users/yajatyadav/tensorflow_datasets',
+        data_list=[
+            # FT dataset- 10866 transitions
+            RLDSLiberoDataConfig(
+                repo_id="libero_10_turn_on_the_stove_and_put_the_moka_pot_on_it",
+                assets=AssetsConfig(
+                    assets_dir="assets",  ## YY: use the norm-stats of what we pretrained on
+                    asset_id="pi0_libero_pretrain",
+                ),
+            ),
+        ],
+        ## set mix here!
+        data_mix_weights=[1],
+        batch_size=64,
+        num_train_steps=2_000,
+        save_interval=500,
+        log_interval=25,
+    ),
+    TrainConfig(
+        name="pi0_libero_cofinetune_stove_moka",
+        model=pi0.Pi0Config(),
+        weight_loader=weight_loaders.CheckpointWeightLoader(
+            "/PRETRAINED/CKPT/PATH/HERE"
+        ),
+        is_RLDS=True,
+        data_root_dir="/raid/users/yajatyadav/tensorflow_datasets",
+        data_list=[
+            # FT dataset- 10866 transitions
+            RLDSLiberoDataConfig(
+                repo_id="libero_10_turn_on_the_stove_and_put_the_moka_pot_on_it",
+                assets=AssetsConfig(
+                    assets_dir="assets",
+                    asset_id="pi0_libero_pretrain",
+                ),
+            ),
+            # pretraining datasets, data_mix_weights will be prop to each's size
+            # goal_reduced: X transitions
+            RLDSLiberoDataConfig(
+                repo_id="libero_goal_reduced",
+                assets=AssetsConfig(
+                    assets_dir="/PRETRAINED/CKPT/PATH/HERE",
+                    asset_id="yajatyadav/pi0_libero_pretrain",
+                ),
+            ),
+            # object_reduced: X transitions
+            RLDSLiberoDataConfig(
+                repo_id="libero_object_reduced",
+                assets=AssetsConfig(
+                    assets_dir="/PRETRAINED/CKPT/PATH/HERE", 
+                    asset_id="yajatyadav/pi0_libero_pretrain",
+                ),
+            ),
+            # spatial_reduced: X transitions
+            RLDSLiberoDataConfig(
+                repo_id="libero_spatial_reduced",
+                assets=AssetsConfig(
+                    assets_dir="/PRETRAINED/CKPT/PATH/HERE",
+                    asset_id="yajatyadav/pi0_libero_pretrain",
+                ),
+            ),
+            # libero_90_flipped: 567,494 transitions
+            RLDSLiberoDataConfig(
+                repo_id="libero_90_flipped",
+                assets=AssetsConfig(
+                    assets_dir="/PRETRAINED/CKPT/PATH/HERE",
+                    asset_id="yajatyadav/pi0_libero_pretrain",
+                ),
+            ),
+        ],
+        ## set mix here!
+        data_mix_weights=[
+            1,
+            0.25 * LIBERO_GOAL_FRACTION_OF_TOTAL,
+            0.25 * LIBERO_OBJECT_FRACTION_OF_TOTAL,
+            0.25 * LIBERO_SPATIAL_FRACTION_OF_TOTAL,
+            0.25 * LIBERO_LM_FRACTION_OF_TOTAL,
+        ],
+        batch_size=64,
+        num_train_steps=2_000,
+        save_interval=5_000,
+        log_interval=25,
+    ),
     
     # for inference only, "libero" is the dataset pi0 was finetuned on; hence when evaling pi0_libero, we compute norm_stats on "libero" and use that during inference
     # all pi0 + libero models should use this for inference!

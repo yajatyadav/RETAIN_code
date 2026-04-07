@@ -45,7 +45,7 @@ OXE_DATASET_CONFIGS = {
         # }
     },
 
-    "libero_goal_no_noops": {
+    "libero_goal_reduced": {
         "image_obs_keys": {
             "primary": "image",
             "secondary": None,
@@ -60,7 +60,7 @@ OXE_DATASET_CONFIGS = {
         # }
     },
 
-    "libero_object_no_noops": {
+    "libero_object_reduced": {
         "image_obs_keys": {
             "primary": "image",
             "secondary": None,
@@ -75,7 +75,7 @@ OXE_DATASET_CONFIGS = {
         # }
     },
 
-    "libero_spatial_no_noops": {
+    "libero_spatial_reduced": {
         "image_obs_keys": {
             "primary": "image",
             "secondary": None,
@@ -90,7 +90,7 @@ OXE_DATASET_CONFIGS = {
         # }
     },
 
-    "libero_lm_90": {
+    "libero_90_flipped": {
         "image_obs_keys": {
             "primary": "image",
             "secondary": None,

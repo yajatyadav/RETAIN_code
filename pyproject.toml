@@ -41,6 +41,7 @@ dependencies = [
     "torchvision>=0.21.0",
     "tensorflow",
     "tensorflow-datasets",
+    "dlimp"
 ]
 
 
@@ -65,7 +66,7 @@ required-envrionments = [
 
 [tool.uv.sources]
 openpi-client = { workspace = true }
-# dlimp = { git = "https://github.com/yajatyadav/dlimp/blob/main/setup.py", rev="e1138e3e0b9e8b46ad45a014edce65b590b04bba" }
+dlimp = { git = "https://github.com/yajatyadav/dlimp", rev="e1138e3e0b9e8b46ad45a014edce65b590b04bba" }
 lerobot = { git = "https://github.com/huggingface/lerobot", rev = "0cf864870cf29f4738d3ade893e6fd13fbd7cdb5" }
 
 [tool.uv.workspace]
