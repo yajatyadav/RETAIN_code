@@ -60,7 +60,7 @@ dev = [
 ]
 
 [tool.uv]
-required-envrionments = [
+required-environments = [
     
 ]
 
