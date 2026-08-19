@@ -1,0 +1,336 @@
+{
+  "repo_id": "yajatyadav/RETAIN_datasets",
+  "revision": "d15edfa89167e6e7230be3e85eb7391be2fa3134",
+  "file_count": 82,
+  "total_bytes": 6363471173,
+  "files": [
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00198-of-00256",
+      "bytes": 64436925
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00204-of-00256",
+      "bytes": 84818977
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00212-of-00256",
+      "bytes": 77610441
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00214-of-00256",
+      "bytes": 69026402
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00221-of-00256",
+      "bytes": 68261882
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00223-of-00256",
+      "bytes": 76471705
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00224-of-00256",
+      "bytes": 80801878
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00225-of-00256",
+      "bytes": 70724512
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00227-of-00256",
+      "bytes": 76610182
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00228-of-00256",
+      "bytes": 62952595
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00232-of-00256",
+      "bytes": 69007876
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00233-of-00256",
+      "bytes": 61879585
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00234-of-00256",
+      "bytes": 74581370
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00237-of-00256",
+      "bytes": 69895168
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00243-of-00256",
+      "bytes": 61149050
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00244-of-00256",
+      "bytes": 76434308
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00245-of-00256",
+      "bytes": 68192828
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00246-of-00256",
+      "bytes": 76850015
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00247-of-00256",
+      "bytes": 68433774
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00248-of-00256",
+      "bytes": 72274729
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00249-of-00256",
+      "bytes": 75971308
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00250-of-00256",
+      "bytes": 66902022
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00251-of-00256",
+      "bytes": 75678054
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00252-of-00256",
+      "bytes": 68887772
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00253-of-00256",
+      "bytes": 66886057
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00254-of-00256",
+      "bytes": 75539824
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00255-of-00256",
+      "bytes": 70387124
+    },
+    {
+      "path": "libero_goal_reduced/1.0.0/libero_goal_reduced-train.tfrecord-00004-of-00016",
+      "bytes": 83138958
+    },
+    {
+      "path": "libero_goal_reduced/1.0.0/libero_goal_reduced-train.tfrecord-00005-of-00016",
+      "bytes": 86901914
+    },
+    {
+      "path": "libero_goal_reduced/1.0.0/libero_goal_reduced-train.tfrecord-00006-of-00016",
+      "bytes": 88199006
+    },
+    {
+      "path": "libero_goal_reduced/1.0.0/libero_goal_reduced-train.tfrecord-00007-of-00016",
+      "bytes": 77668064
+    },
+    {
+      "path": "libero_goal_reduced/1.0.0/libero_goal_reduced-train.tfrecord-00008-of-00016",
+      "bytes": 92805871
+    },
+    {
+      "path": "libero_goal_reduced/1.0.0/libero_goal_reduced-train.tfrecord-00009-of-00016",
+      "bytes": 89941918
+    },
+    {
+      "path": "libero_goal_reduced/1.0.0/libero_goal_reduced-train.tfrecord-00010-of-00016",
+      "bytes": 97900613
+    },
+    {
+      "path": "libero_goal_reduced/1.0.0/libero_goal_reduced-train.tfrecord-00011-of-00016",
+      "bytes": 83370872
+    },
+    {
+      "path": "libero_goal_reduced/1.0.0/libero_goal_reduced-train.tfrecord-00012-of-00016",
+      "bytes": 82635948
+    },
+    {
+      "path": "libero_goal_reduced/1.0.0/libero_goal_reduced-train.tfrecord-00013-of-00016",
+      "bytes": 78142372
+    },
+    {
+      "path": "libero_goal_reduced/1.0.0/libero_goal_reduced-train.tfrecord-00014-of-00016",
+      "bytes": 92741120
+    },
+    {
+      "path": "libero_goal_reduced/1.0.0/libero_goal_reduced-train.tfrecord-00015-of-00016",
+      "bytes": 104760554
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00000-of-00032",
+      "bytes": 66660789
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00001-of-00032",
+      "bytes": 71365359
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00002-of-00032",
+      "bytes": 68789995
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00003-of-00032",
+      "bytes": 75723347
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00004-of-00032",
+      "bytes": 64798594
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00005-of-00032",
+      "bytes": 69261968
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00006-of-00032",
+      "bytes": 75348778
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00007-of-00032",
+      "bytes": 66212295
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00008-of-00032",
+      "bytes": 75282730
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00009-of-00032",
+      "bytes": 65947152
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00010-of-00032",
+      "bytes": 71645297
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00011-of-00032",
+      "bytes": 76304121
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00012-of-00032",
+      "bytes": 68124435
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00013-of-00032",
+      "bytes": 71118591
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00014-of-00032",
+      "bytes": 66406744
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00015-of-00032",
+      "bytes": 73453424
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00016-of-00032",
+      "bytes": 74893274
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00017-of-00032",
+      "bytes": 67703948
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00018-of-00032",
+      "bytes": 78235911
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00019-of-00032",
+      "bytes": 67999852
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00020-of-00032",
+      "bytes": 75505761
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00021-of-00032",
+      "bytes": 75089960
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00022-of-00032",
+      "bytes": 64903460
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00023-of-00032",
+      "bytes": 71007475
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00025-of-00032",
+      "bytes": 71533277
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00026-of-00032",
+      "bytes": 68013896
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00027-of-00032",
+      "bytes": 70704226
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00028-of-00032",
+      "bytes": 73408974
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00029-of-00032",
+      "bytes": 73181302
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00030-of-00032",
+      "bytes": 77362143
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00031-of-00032",
+      "bytes": 68809367
+    },
+    {
+      "path": "libero_spatial_reduced/1.0.0/libero_spatial_reduced-train.tfrecord-00003-of-00016",
+      "bytes": 99272922
+    },
+    {
+      "path": "libero_spatial_reduced/1.0.0/libero_spatial_reduced-train.tfrecord-00004-of-00016",
+      "bytes": 88956375
+    },
+    {
+      "path": "libero_spatial_reduced/1.0.0/libero_spatial_reduced-train.tfrecord-00005-of-00016",
+      "bytes": 101377782
+    },
+    {
+      "path": "libero_spatial_reduced/1.0.0/libero_spatial_reduced-train.tfrecord-00006-of-00016",
+      "bytes": 93988158
+    },
+    {
+      "path": "libero_spatial_reduced/1.0.0/libero_spatial_reduced-train.tfrecord-00007-of-00016",
+      "bytes": 101434520
+    },
+    {
+      "path": "libero_spatial_reduced/1.0.0/libero_spatial_reduced-train.tfrecord-00009-of-00016",
+      "bytes": 94053279
+    },
+    {
+      "path": "libero_spatial_reduced/1.0.0/libero_spatial_reduced-train.tfrecord-00010-of-00016",
+      "bytes": 106051386
+    },
+    {
+      "path": "libero_spatial_reduced/1.0.0/libero_spatial_reduced-train.tfrecord-00011-of-00016",
+      "bytes": 96056220
+    },
+    {
+      "path": "libero_spatial_reduced/1.0.0/libero_spatial_reduced-train.tfrecord-00012-of-00016",
+      "bytes": 97788755
+    },
+    {
+      "path": "libero_spatial_reduced/1.0.0/libero_spatial_reduced-train.tfrecord-00013-of-00016",
+      "bytes": 92807261
+    },
+    {
+      "path": "libero_spatial_reduced/1.0.0/libero_spatial_reduced-train.tfrecord-00014-of-00016",
+      "bytes": 98646412
+    },
+    {
+      "path": "libero_spatial_reduced/1.0.0/libero_spatial_reduced-train.tfrecord-00015-of-00016",
+      "bytes": 99368085
+    }
+  ]
+}

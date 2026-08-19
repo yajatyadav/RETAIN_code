@@ -15,6 +15,7 @@
 9. 公开代码的 RLDS registry 遗漏 mugs 和 basket 两个 target dataset，导致原始代码无法读取这两项公开数据。补齐与 stove 一致的 schema registry 后，三个 target config 的真实单批 transform 均通过 shape、dtype 与有限值检查。
 10. 官方 PaliGemma tokenizer 已在服务器按 GCS 对象元数据校验：4,264,023 bytes，MD5 `1420adc9856720a559e8a87284b195e2`。
 11. 作者 loader 在未提供 `absolute_action_mask` 时把所有动作维视为 relative action；本复现遵循该可执行行为，并保留 warning 作为审计证据。
+12. 服务器首轮传输精确完成 271/353 个文件后，aria2 被不可达的 Hugging Face JSON 元数据 URL 占据并降为 0 B/s；独立尺寸审计确认 21 个 JSON 元数据与三个 target datasets 均已完整，82 个未完成项全部是 TFRecord。基于该清单刷新 CDN 签名 URL 后，续传恢复到约 3–4 MiB/s，既有 partial 未被删除。
 
 ## 待验证
 

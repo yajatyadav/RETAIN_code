@@ -1,0 +1,681 @@
+{
+  "generated_at": "2026-08-19T16:05:04.573022+00:00",
+  "root": "/shared/.cache/retain/libero/datasets",
+  "reference": "/root/RETAIN_code/reproduction/data/retain_dataset_manifest_sha.json",
+  "expected_files": 353,
+  "expected_bytes": 24235684869,
+  "exact_files": 271,
+  "exact_bytes": 17872213696,
+  "incomplete_count": 82,
+  "incomplete_files": [
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00198-of-00256",
+      "status": "size_mismatch",
+      "expected_bytes": 64436925,
+      "actual_bytes": 45202339
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00204-of-00256",
+      "status": "size_mismatch",
+      "expected_bytes": 84818977,
+      "actual_bytes": 74665045
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00212-of-00256",
+      "status": "size_mismatch",
+      "expected_bytes": 77610441,
+      "actual_bytes": 72531615
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00214-of-00256",
+      "status": "size_mismatch",
+      "expected_bytes": 69026402,
+      "actual_bytes": 52398424
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00221-of-00256",
+      "status": "size_mismatch",
+      "expected_bytes": 68261882,
+      "actual_bytes": 52542255
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00223-of-00256",
+      "status": "size_mismatch",
+      "expected_bytes": 76471705,
+      "actual_bytes": 47365720
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00224-of-00256",
+      "status": "size_mismatch",
+      "expected_bytes": 80801878,
+      "actual_bytes": 56034629
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00225-of-00256",
+      "status": "size_mismatch",
+      "expected_bytes": 70724512,
+      "actual_bytes": 68061827
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00227-of-00256",
+      "status": "size_mismatch",
+      "expected_bytes": 76610182,
+      "actual_bytes": 43702092
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00228-of-00256",
+      "status": "size_mismatch",
+      "expected_bytes": 62952595,
+      "actual_bytes": 40289505
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00232-of-00256",
+      "status": "size_mismatch",
+      "expected_bytes": 69007876,
+      "actual_bytes": 60482325
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00233-of-00256",
+      "status": "size_mismatch",
+      "expected_bytes": 61879585,
+      "actual_bytes": 41074367
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00234-of-00256",
+      "status": "size_mismatch",
+      "expected_bytes": 74581370,
+      "actual_bytes": 45860780
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00237-of-00256",
+      "status": "size_mismatch",
+      "expected_bytes": 69895168,
+      "actual_bytes": 48786678
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00243-of-00256",
+      "status": "missing",
+      "expected_bytes": 61149050,
+      "actual_bytes": null
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00244-of-00256",
+      "status": "missing",
+      "expected_bytes": 76434308,
+      "actual_bytes": null
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00245-of-00256",
+      "status": "missing",
+      "expected_bytes": 68192828,
+      "actual_bytes": null
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00246-of-00256",
+      "status": "missing",
+      "expected_bytes": 76850015,
+      "actual_bytes": null
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00247-of-00256",
+      "status": "missing",
+      "expected_bytes": 68433774,
+      "actual_bytes": null
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00248-of-00256",
+      "status": "missing",
+      "expected_bytes": 72274729,
+      "actual_bytes": null
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00249-of-00256",
+      "status": "missing",
+      "expected_bytes": 75971308,
+      "actual_bytes": null
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00250-of-00256",
+      "status": "missing",
+      "expected_bytes": 66902022,
+      "actual_bytes": null
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00251-of-00256",
+      "status": "missing",
+      "expected_bytes": 75678054,
+      "actual_bytes": null
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00252-of-00256",
+      "status": "missing",
+      "expected_bytes": 68887772,
+      "actual_bytes": null
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00253-of-00256",
+      "status": "missing",
+      "expected_bytes": 66886057,
+      "actual_bytes": null
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00254-of-00256",
+      "status": "missing",
+      "expected_bytes": 75539824,
+      "actual_bytes": null
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00255-of-00256",
+      "status": "missing",
+      "expected_bytes": 70387124,
+      "actual_bytes": null
+    },
+    {
+      "path": "libero_goal_reduced/1.0.0/libero_goal_reduced-train.tfrecord-00004-of-00016",
+      "status": "missing",
+      "expected_bytes": 83138958,
+      "actual_bytes": null
+    },
+    {
+      "path": "libero_goal_reduced/1.0.0/libero_goal_reduced-train.tfrecord-00005-of-00016",
+      "status": "missing",
+      "expected_bytes": 86901914,
+      "actual_bytes": null
+    },
+    {
+      "path": "libero_goal_reduced/1.0.0/libero_goal_reduced-train.tfrecord-00006-of-00016",
+      "status": "missing",
+      "expected_bytes": 88199006,
+      "actual_bytes": null
+    },
+    {
+      "path": "libero_goal_reduced/1.0.0/libero_goal_reduced-train.tfrecord-00007-of-00016",
+      "status": "missing",
+      "expected_bytes": 77668064,
+      "actual_bytes": null
+    },
+    {
+      "path": "libero_goal_reduced/1.0.0/libero_goal_reduced-train.tfrecord-00008-of-00016",
+      "status": "missing",
+      "expected_bytes": 92805871,
+      "actual_bytes": null
+    },
+    {
+      "path": "libero_goal_reduced/1.0.0/libero_goal_reduced-train.tfrecord-00009-of-00016",
+      "status": "missing",
+      "expected_bytes": 89941918,
+      "actual_bytes": null
+    },
+    {
+      "path": "libero_goal_reduced/1.0.0/libero_goal_reduced-train.tfrecord-00010-of-00016",
+      "status": "missing",
+      "expected_bytes": 97900613,
+      "actual_bytes": null
+    },
+    {
+      "path": "libero_goal_reduced/1.0.0/libero_goal_reduced-train.tfrecord-00011-of-00016",
+      "status": "missing",
+      "expected_bytes": 83370872,
+      "actual_bytes": null
+    },
+    {
+      "path": "libero_goal_reduced/1.0.0/libero_goal_reduced-train.tfrecord-00012-of-00016",
+      "status": "missing",
+      "expected_bytes": 82635948,
+      "actual_bytes": null
+    },
+    {
+      "path": "libero_goal_reduced/1.0.0/libero_goal_reduced-train.tfrecord-00013-of-00016",
+      "status": "missing",
+      "expected_bytes": 78142372,
+      "actual_bytes": null
+    },
+    {
+      "path": "libero_goal_reduced/1.0.0/libero_goal_reduced-train.tfrecord-00014-of-00016",
+      "status": "missing",
+      "expected_bytes": 92741120,
+      "actual_bytes": null
+    },
+    {
+      "path": "libero_goal_reduced/1.0.0/libero_goal_reduced-train.tfrecord-00015-of-00016",
+      "status": "missing",
+      "expected_bytes": 104760554,
+      "actual_bytes": null
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00000-of-00032",
+      "status": "missing",
+      "expected_bytes": 66660789,
+      "actual_bytes": null
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00001-of-00032",
+      "status": "missing",
+      "expected_bytes": 71365359,
+      "actual_bytes": null
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00002-of-00032",
+      "status": "missing",
+      "expected_bytes": 68789995,
+      "actual_bytes": null
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00003-of-00032",
+      "status": "missing",
+      "expected_bytes": 75723347,
+      "actual_bytes": null
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00004-of-00032",
+      "status": "missing",
+      "expected_bytes": 64798594,
+      "actual_bytes": null
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00005-of-00032",
+      "status": "missing",
+      "expected_bytes": 69261968,
+      "actual_bytes": null
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00006-of-00032",
+      "status": "missing",
+      "expected_bytes": 75348778,
+      "actual_bytes": null
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00007-of-00032",
+      "status": "missing",
+      "expected_bytes": 66212295,
+      "actual_bytes": null
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00008-of-00032",
+      "status": "missing",
+      "expected_bytes": 75282730,
+      "actual_bytes": null
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00009-of-00032",
+      "status": "missing",
+      "expected_bytes": 65947152,
+      "actual_bytes": null
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00010-of-00032",
+      "status": "missing",
+      "expected_bytes": 71645297,
+      "actual_bytes": null
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00011-of-00032",
+      "status": "missing",
+      "expected_bytes": 76304121,
+      "actual_bytes": null
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00012-of-00032",
+      "status": "missing",
+      "expected_bytes": 68124435,
+      "actual_bytes": null
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00013-of-00032",
+      "status": "missing",
+      "expected_bytes": 71118591,
+      "actual_bytes": null
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00014-of-00032",
+      "status": "missing",
+      "expected_bytes": 66406744,
+      "actual_bytes": null
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00015-of-00032",
+      "status": "missing",
+      "expected_bytes": 73453424,
+      "actual_bytes": null
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00016-of-00032",
+      "status": "missing",
+      "expected_bytes": 74893274,
+      "actual_bytes": null
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00017-of-00032",
+      "status": "missing",
+      "expected_bytes": 67703948,
+      "actual_bytes": null
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00018-of-00032",
+      "status": "missing",
+      "expected_bytes": 78235911,
+      "actual_bytes": null
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00019-of-00032",
+      "status": "missing",
+      "expected_bytes": 67999852,
+      "actual_bytes": null
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00020-of-00032",
+      "status": "missing",
+      "expected_bytes": 75505761,
+      "actual_bytes": null
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00021-of-00032",
+      "status": "missing",
+      "expected_bytes": 75089960,
+      "actual_bytes": null
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00022-of-00032",
+      "status": "missing",
+      "expected_bytes": 64903460,
+      "actual_bytes": null
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00023-of-00032",
+      "status": "missing",
+      "expected_bytes": 71007475,
+      "actual_bytes": null
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00025-of-00032",
+      "status": "missing",
+      "expected_bytes": 71533277,
+      "actual_bytes": null
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00026-of-00032",
+      "status": "missing",
+      "expected_bytes": 68013896,
+      "actual_bytes": null
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00027-of-00032",
+      "status": "missing",
+      "expected_bytes": 70704226,
+      "actual_bytes": null
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00028-of-00032",
+      "status": "missing",
+      "expected_bytes": 73408974,
+      "actual_bytes": null
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00029-of-00032",
+      "status": "missing",
+      "expected_bytes": 73181302,
+      "actual_bytes": null
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00030-of-00032",
+      "status": "missing",
+      "expected_bytes": 77362143,
+      "actual_bytes": null
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00031-of-00032",
+      "status": "missing",
+      "expected_bytes": 68809367,
+      "actual_bytes": null
+    },
+    {
+      "path": "libero_spatial_reduced/1.0.0/libero_spatial_reduced-train.tfrecord-00003-of-00016",
+      "status": "missing",
+      "expected_bytes": 99272922,
+      "actual_bytes": null
+    },
+    {
+      "path": "libero_spatial_reduced/1.0.0/libero_spatial_reduced-train.tfrecord-00004-of-00016",
+      "status": "missing",
+      "expected_bytes": 88956375,
+      "actual_bytes": null
+    },
+    {
+      "path": "libero_spatial_reduced/1.0.0/libero_spatial_reduced-train.tfrecord-00005-of-00016",
+      "status": "missing",
+      "expected_bytes": 101377782,
+      "actual_bytes": null
+    },
+    {
+      "path": "libero_spatial_reduced/1.0.0/libero_spatial_reduced-train.tfrecord-00006-of-00016",
+      "status": "missing",
+      "expected_bytes": 93988158,
+      "actual_bytes": null
+    },
+    {
+      "path": "libero_spatial_reduced/1.0.0/libero_spatial_reduced-train.tfrecord-00007-of-00016",
+      "status": "missing",
+      "expected_bytes": 101434520,
+      "actual_bytes": null
+    },
+    {
+      "path": "libero_spatial_reduced/1.0.0/libero_spatial_reduced-train.tfrecord-00009-of-00016",
+      "status": "missing",
+      "expected_bytes": 94053279,
+      "actual_bytes": null
+    },
+    {
+      "path": "libero_spatial_reduced/1.0.0/libero_spatial_reduced-train.tfrecord-00010-of-00016",
+      "status": "missing",
+      "expected_bytes": 106051386,
+      "actual_bytes": null
+    },
+    {
+      "path": "libero_spatial_reduced/1.0.0/libero_spatial_reduced-train.tfrecord-00011-of-00016",
+      "status": "missing",
+      "expected_bytes": 96056220,
+      "actual_bytes": null
+    },
+    {
+      "path": "libero_spatial_reduced/1.0.0/libero_spatial_reduced-train.tfrecord-00012-of-00016",
+      "status": "missing",
+      "expected_bytes": 97788755,
+      "actual_bytes": null
+    },
+    {
+      "path": "libero_spatial_reduced/1.0.0/libero_spatial_reduced-train.tfrecord-00013-of-00016",
+      "status": "missing",
+      "expected_bytes": 92807261,
+      "actual_bytes": null
+    },
+    {
+      "path": "libero_spatial_reduced/1.0.0/libero_spatial_reduced-train.tfrecord-00014-of-00016",
+      "status": "missing",
+      "expected_bytes": 98646412,
+      "actual_bytes": null
+    },
+    {
+      "path": "libero_spatial_reduced/1.0.0/libero_spatial_reduced-train.tfrecord-00015-of-00016",
+      "status": "missing",
+      "expected_bytes": 99368085,
+      "actual_bytes": null
+    }
+  ],
+  "aria2_sidecar_count": 26,
+  "aria2_sidecars": [
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00168-of-00256.aria2",
+      "bytes": 67,
+      "mtime": "2026-08-19T15:53:40.619478+00:00"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00186-of-00256.aria2",
+      "bytes": 67,
+      "mtime": "2026-08-19T15:53:32.446476+00:00"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00198-of-00256.aria2",
+      "bytes": 86,
+      "mtime": "2026-08-19T15:59:14.620946+00:00"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00204-of-00256.aria2",
+      "bytes": 89,
+      "mtime": "2026-08-19T15:58:00.008424+00:00"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00205-of-00256.aria2",
+      "bytes": 67,
+      "mtime": "2026-08-19T15:53:48.697482+00:00"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00209-of-00256.aria2",
+      "bytes": 67,
+      "mtime": "2026-08-19T15:55:20.424656+00:00"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00212-of-00256.aria2",
+      "bytes": 88,
+      "mtime": "2026-08-19T15:57:46.572339+00:00"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00214-of-00256.aria2",
+      "bytes": 87,
+      "mtime": "2026-08-19T15:53:50.827483+00:00"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00216-of-00256.aria2",
+      "bytes": 67,
+      "mtime": "2026-08-19T15:55:06.145614+00:00"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00220-of-00256.aria2",
+      "bytes": 67,
+      "mtime": "2026-08-19T15:55:06.647616+00:00"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00221-of-00256.aria2",
+      "bytes": 87,
+      "mtime": "2026-08-19T15:57:05.979105+00:00"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00223-of-00256.aria2",
+      "bytes": 88,
+      "mtime": "2026-08-19T15:53:48.426482+00:00"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00224-of-00256.aria2",
+      "bytes": 88,
+      "mtime": "2026-08-19T15:54:14.745508+00:00"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00225-of-00256.aria2",
+      "bytes": 87,
+      "mtime": "2026-08-19T15:54:22.568520+00:00"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00227-of-00256.aria2",
+      "bytes": 88,
+      "mtime": "2026-08-19T15:57:21.955194+00:00"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00228-of-00256.aria2",
+      "bytes": 86,
+      "mtime": "2026-08-19T15:55:38.208714+00:00"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00229-of-00256.aria2",
+      "bytes": 66,
+      "mtime": "2026-08-19T15:55:14.298637+00:00"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00230-of-00256.aria2",
+      "bytes": 67,
+      "mtime": "2026-08-19T15:57:42.508315+00:00"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00231-of-00256.aria2",
+      "bytes": 67,
+      "mtime": "2026-08-19T15:54:34.439541+00:00"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00232-of-00256.aria2",
+      "bytes": 87,
+      "mtime": "2026-08-19T15:55:14.686639+00:00"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00233-of-00256.aria2",
+      "bytes": 86,
+      "mtime": "2026-08-19T15:54:44.082561+00:00"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00234-of-00256.aria2",
+      "bytes": 87,
+      "mtime": "2026-08-19T15:55:45.794741+00:00"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00235-of-00256.aria2",
+      "bytes": 67,
+      "mtime": "2026-08-19T15:55:06.506615+00:00"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00236-of-00256.aria2",
+      "bytes": 66,
+      "mtime": "2026-08-19T15:57:37.139282+00:00"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00237-of-00256.aria2",
+      "bytes": 87,
+      "mtime": "2026-08-19T15:57:29.946240+00:00"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00241-of-00256.aria2",
+      "bytes": 68,
+      "mtime": "2026-08-19T15:56:08.187829+00:00"
+    }
+  ],
+  "by_dataset": {
+    "libero_10_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket": {
+      "expected_files": 7,
+      "exact_files": 7,
+      "expected_bytes": 418227280,
+      "exact_bytes": 418227280
+    },
+    "libero_10_put_the_white_mug_on_the_left_plate_and_put_the_yellow_and_white_mug_on_the_right_plate": {
+      "expected_files": 7,
+      "exact_files": 7,
+      "expected_bytes": 337439192,
+      "exact_bytes": 337439192
+    },
+    "libero_10_turn_on_the_stove_and_put_the_moka_pot_on_it": {
+      "expected_files": 7,
+      "exact_files": 7,
+      "expected_bytes": 419043353,
+      "exact_bytes": 419043353
+    },
+    "libero_90_flipped": {
+      "expected_files": 259,
+      "exact_files": 232,
+      "expected_bytes": 17816504746,
+      "exact_bytes": 15885838383
+    },
+    "libero_goal_reduced": {
+      "expected_files": 19,
+      "exact_files": 7,
+      "expected_bytes": 1424865867,
+      "exact_bytes": 366658657
+    },
+    "libero_object_reduced": {
+      "expected_files": 35,
+      "exact_files": 4,
+      "expected_bytes": 2275844316,
+      "exact_bytes": 71047871
+    },
+    "libero_spatial_reduced": {
+      "expected_files": 19,
+      "exact_files": 7,
+      "expected_bytes": 1543760115,
+      "exact_bytes": 373958960
+    }
+  }
+}

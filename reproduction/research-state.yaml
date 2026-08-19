@@ -1,8 +1,8 @@
 schema_version: 1
 project: RETAIN_LIBERO_reproduction
 protocol_id: RETAIN-GPU-20260819-001
-updated_at: "2026-08-19T23:43:03+08:00"
-status: supervisor_running_inputs_transferring
+updated_at: "2026-08-20T00:08:36+08:00"
+status: supervisor_running_inputs_retry
 objective: >-
   在单张服务器 GPU 上按论文最终实验方法复现 RETAIN 的 LIBERO 仿真实验，
   保存可审计的训练、参数合并、ID/OOD/generalist 评测结果和中文记录。
@@ -27,9 +27,13 @@ data:
   local_sha256_status: verified_353_of_353_files
   payload_file_count: 353
   payload_bytes: 24235684869
-  server_transfer_status: in_progress
-  server_size_verified_files: 216
-  server_size_verified_bytes: 14070463510
+  server_transfer_status: in_progress_retry_82_tfrecords
+  server_size_verified_files: 271
+  server_size_verified_bytes: 17872213696
+  retry_incomplete_files: 82
+  retry_incomplete_bytes: 6363471173
+  retry_audit: reproduction/data/transfer-audit-retry.json
+  retry_selection: reproduction/data/retry-selection-20260820.json
   target_batch_smoke_status: verified_3_of_3_configs
   published_total_objects: 354
   reduced_transition_counts:
@@ -56,6 +60,13 @@ orchestration:
   server_status: /root/RETAIN_code/reproduction/experiments/supervisor-status.json
   server_log: /root/RETAIN_code/reproduction/experiments/supervisor.log
   running_since: "2026-08-19T23:19:14+08:00"
-  latest_heartbeat: "2026-08-19T23:43:03+08:00"
+  latest_heartbeat: "2026-08-20T00:08:36+08:00"
+  restart_count: 1
+incidents:
+  - time: "2026-08-20T00:05:15+08:00"
+    stage: dataset_transfer
+    cause: 原始 aria2 队列被服务器不可达的 Hugging Face JSON 元数据 URL 占据，最终以 0 B/s 退出
+    impact: 82 个 TFRecord 未完成；已有 271 个文件保持原样
+    recovery: 按固定清单筛出 82 个 TFRecord，刷新 CDN 签名 URL 后续传并重启 supervisor
 runs: []
 limitations: []

@@ -72,3 +72,12 @@
 - 数据尺寸级校验由 `142 / 353` 推进至 `216 / 353`，完成字节由 `8,938,710,635` 增至 `14,070,463,510`。20 分钟增加 `5,131,752,875` bytes，传输持续前进；32 个 aria2 sidecars 是固定并发窗口滚动，不构成停滞证据。
 - `π0 base` 目录表观占用由约 6.3 GiB 增至 8.9 GiB；GCS aria2 与 10 个本地 rsync 流仍活跃。最终只以 24/24 对象 size/MD5 和 Orbax restore 为完成条件。
 - 共享盘剩余约 269 GiB，仍高于 supervisor 的 150 GB 安全线。全部 GPU 显存占用仍高于 51,080 MiB；即使部分卡瞬时利用率为 0%，也不满足空闲显存条件，因此继续等待且未启动训练。
+
+## 2026-08-20 00:08 CST｜数据传输停滞诊断与可恢复续传
+
+- 首轮数据传输推进到 `271 / 353`、`17,872,213,696 / 24,235,684,869` bytes 后连续数分钟没有新增完整文件。aria2 日志显示 `DL:0B`，活动项均为服务器无法解析的 Hugging Face JSON 元数据 URL；进程最终正常退出，supervisor 按设计写入 `failed` 并停止，没有在不完整输入上继续训练。
+- 使用固定 SHA-256 参考清单进行独立尺寸审计：271 个文件尺寸精确匹配，82 个未完成项全部是 TFRecord，未完成总量 `6,363,471,173` bytes；没有缺失或尺寸错误的 JSON。三个 target datasets 均为 `7/7` 文件完整。
+- 新增 `audit_transfer_progress.py` 输出逐路径、逐数据集的可审计缺失清单；`generate_hf_cdn_input.py` 增加按该清单选择文件和仅生成 TFRecord 的入口，并改用 Python 标准库以消除本机 `requests` 依赖。
+- 第一次切换控制文件时，`rsync --relative` 把远端目标创建成目录，导致重试进程短暂读取旧的过期 URL 并返回 HTTP 403。该进程立即被安全终止，错误控制目录移动到 `/tmp/retain_hf_aria2_retry.bad-relative-transfer`；没有删除或覆盖任何 RLDS 数据。
+- 随后正确传入 82 项、246 行的新 aria2 input。fresh URL 的 expiry 晚于生成时间约一小时；新进程只打开审计列出的 TFRecord，续传速率恢复到约 3–4 MiB/s。既有 `.aria2` control files 和 partial shards 保留用于断点续传。
+- supervisor 已重启并重新计算现有进度，状态恢复为 `waiting_dataset_transfer`；重启不会重做已完成文件。重启时共享盘剩余 `278,683,615,232` bytes，仍高于安全线。

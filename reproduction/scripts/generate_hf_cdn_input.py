@@ -15,8 +15,8 @@ import json
 import pathlib
 import time
 import urllib.parse
-
-import requests
+import urllib.error
+import urllib.request
 
 
 @dataclasses.dataclass(frozen=True)
@@ -36,6 +36,16 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--manifest", type=pathlib.Path)
     parser.add_argument("--workers", type=int, default=24)
     parser.add_argument("--expected-files", type=int)
+    parser.add_argument(
+        "--selection-manifest",
+        type=pathlib.Path,
+        help="仅解析 transfer audit 中 incomplete_files 列出的路径",
+    )
+    parser.add_argument(
+        "--tfrecords-only",
+        action="store_true",
+        help="只输出文件名含 .tfrecord- 的 RLDS shards",
+    )
     return parser.parse_args()
 
 
@@ -63,19 +73,11 @@ def resolve_one(
     last_error: Exception | None = None
     for attempt in range(6):
         try:
-            response = requests.head(source_url, allow_redirects=False, timeout=30)
-            response.raise_for_status()
-            location = response.headers.get("location")
-            if response.is_redirect and location:
-                resolved = urllib.parse.urljoin(source_url, location)
-            elif response.status_code == 200:
-                resolved = source_url
-            else:
-                raise RuntimeError(
-                    f"unexpected response {response.status_code} for {relative}"
-                )
+            request = urllib.request.Request(source_url, method="HEAD")
+            with urllib.request.urlopen(request, timeout=30) as response:
+                resolved = response.geturl()
             return ResolvedFile(relative, path.stat().st_size, resolved)
-        except (requests.RequestException, RuntimeError) as exc:
+        except (urllib.error.URLError, TimeoutError, RuntimeError) as exc:
             last_error = exc
             if attempt < 5:
                 time.sleep(2**attempt)
@@ -90,6 +92,21 @@ def main() -> None:
         raise SystemExit(
             f"expected {args.expected_files} payload files, found {len(files)}"
         )
+    if args.selection_manifest is not None:
+        selection = json.loads(args.selection_manifest.read_text(encoding="utf-8"))
+        selected_paths = {
+            item["path"] if isinstance(item, dict) else item
+            for item in selection["incomplete_files"]
+        }
+        files = [
+            path
+            for path in files
+            if path.relative_to(root).as_posix() in selected_paths
+        ]
+    if args.tfrecords_only:
+        files = [path for path in files if ".tfrecord-" in path.name]
+    if not files:
+        raise SystemExit("selection 后没有待解析文件")
 
     with concurrent.futures.ThreadPoolExecutor(max_workers=args.workers) as executor:
         futures = [
