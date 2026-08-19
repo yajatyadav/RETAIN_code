@@ -54,6 +54,8 @@
 - Normalization：固定使用 pretraining datasets 的 mean/std
 - 单卡执行；用 `CUDA_VISIBLE_DEVICES` 限定唯一 GPU
 
+运行层面的 checkpoint cadence 不属于优化超参数：10,000-step pretraining 每 1,000 steps 保存一次且始终只保留最新一份，以支持中断恢复。阶段完成后仅保留 inference params；optimizer state 的移除时间、字节数与保留路径逐 run 记录。
+
 ## 5. 评测协议
 
 - 推理：每次预测 50-step action chunk，但 open-loop 执行前 5 steps。

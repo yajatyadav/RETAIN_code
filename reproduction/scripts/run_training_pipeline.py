@@ -10,6 +10,8 @@ import fcntl
 import json
 import os
 from pathlib import Path
+import re
+import shutil
 import socket
 import subprocess
 import sys
@@ -94,6 +96,65 @@ def checkpoint_dir(config: str, exp_name: str, final_step: int) -> Path:
     return CHECKPOINT_ROOT / config / exp_name / str(final_step)
 
 
+def directory_bytes(path: Path) -> int:
+    return sum(item.stat().st_size for item in path.rglob("*") if item.is_file())
+
+
+def export_metrics(run_dir: Path) -> int:
+    """把人类可读训练日志转换为稳定的 JSONL 指标文件。"""
+    log_path = run_dir / "stdout.log"
+    if not log_path.is_file():
+        return 0
+    # tqdm 可能使用 carriage return，因此不能依赖逐行起始位置。
+    step_pattern = re.compile(r"Step (\d+): ([^\r\n]+)")
+    value_pattern = re.compile(r"([a-zA-Z_]+)=([-+0-9.eE]+)")
+    by_step: dict[int, dict[str, float | int]] = {}
+    for match in step_pattern.finditer(log_path.read_text(encoding="utf-8", errors="replace")):
+        step = int(match.group(1))
+        record: dict[str, float | int] = {"step": step}
+        for key, value in value_pattern.findall(match.group(2)):
+            record[key] = float(value)
+        if len(record) > 1:
+            by_step[step] = record
+    output = "".join(
+        json.dumps(by_step[step], ensure_ascii=False, sort_keys=True) + "\n"
+        for step in sorted(by_step)
+    )
+    temporary = run_dir / "metrics.jsonl.tmp"
+    temporary.write_text(output, encoding="utf-8")
+    temporary.replace(run_dir / "metrics.jsonl")
+    return len(by_step)
+
+
+def prune_completed_training_state(final_checkpoint: Path, run_dir: Path) -> dict:
+    """阶段完成后移除 optimizer state，保留 inference params 与审计记录。"""
+    resolved_checkpoint = final_checkpoint.resolve()
+    if not resolved_checkpoint.is_relative_to(CHECKPOINT_ROOT.resolve()):
+        raise RuntimeError(f"拒绝清理 checkpoint root 外的路径: {resolved_checkpoint}")
+    train_state = resolved_checkpoint / "train_state"
+    record_path = run_dir / "storage-pruning.json"
+    if not train_state.is_dir():
+        if record_path.is_file():
+            return json.loads(record_path.read_text(encoding="utf-8"))
+        return {
+            "status": "already_absent",
+            "path": str(train_state),
+            "checked_at": now(),
+        }
+    removed_bytes = directory_bytes(train_state)
+    shutil.rmtree(train_state)
+    record = {
+        "status": "removed_after_successful_stage",
+        "path": str(train_state),
+        "removed_bytes": removed_bytes,
+        "removed_at": now(),
+        "retained_params": str(resolved_checkpoint / "params"),
+        "reason": "控制共享盘占用；阶段已完成，后续训练和评测只读取 params",
+    }
+    atomic_json_dump(record_path, record)
+    return record
+
+
 def validate_inputs() -> None:
     missing = []
     if not DATA_ROOT.is_dir():
@@ -106,12 +167,18 @@ def validate_inputs() -> None:
 
 def run_stage(gpu: int, config: str, exp_name: str, final_step: int) -> None:
     final_checkpoint = checkpoint_dir(config, exp_name, final_step)
-    if (final_checkpoint / "params").is_dir():
-        print(f"{now()} 跳过已完成阶段 {config}: {final_checkpoint}", flush=True)
-        return
-
     run_dir = EXPERIMENT_ROOT / f"{config}__{exp_name}"
     run_dir.mkdir(parents=True, exist_ok=True)
+    if (final_checkpoint / "params").is_dir():
+        metrics_count = export_metrics(run_dir)
+        prune_record = prune_completed_training_state(final_checkpoint, run_dir)
+        print(f"{now()} 跳过已完成阶段 {config}: {final_checkpoint}", flush=True)
+        print(
+            f"{now()} 已归档 {metrics_count} 条指标；storage={prune_record['status']}",
+            flush=True,
+        )
+        return
+
     checkpoint_run_dir = CHECKPOINT_ROOT / config / exp_name
     command = [
         "/root/.local/bin/uv",
@@ -171,6 +238,11 @@ def run_stage(gpu: int, config: str, exp_name: str, final_step: int) -> None:
         raise RuntimeError(f"{config} 失败，退出码 {return_code}")
     if not (final_checkpoint / "params").is_dir():
         raise RuntimeError(f"{config} 正常退出但缺少最终 checkpoint: {final_checkpoint}")
+    metrics_count = export_metrics(run_dir)
+    prune_record = prune_completed_training_state(final_checkpoint, run_dir)
+    status["metrics_records"] = metrics_count
+    status["storage_pruning"] = prune_record
+    atomic_json_dump(run_dir / "status.json", status)
     print(f"{now()} 完成 {config}: {final_checkpoint}", flush=True)
 
 

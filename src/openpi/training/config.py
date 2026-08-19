@@ -732,7 +732,9 @@ RETAIN_REPRO_CONFIGS = [
         weight_loader=weight_loaders.CheckpointWeightLoader("gs://openpi-assets/checkpoints/pi0_base/params"),
         checkpoint_base_dir=RETAIN_REPRO_CHECKPOINT_ROOT,
         num_train_steps=10_000,
-        save_interval=10_000,
+        # Operational recovery checkpointing only; max_to_keep=1 means this does
+        # not alter the optimization protocol or retain multiple large states.
+        save_interval=1_000,
         keep_period=None,
         batch_size=64,
         log_interval=25,

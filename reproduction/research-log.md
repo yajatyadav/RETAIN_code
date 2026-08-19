@@ -51,3 +51,10 @@
 - 预检输出：每个 config 的 batch size 为 `64`；state `[64, 32]`、action `[64, 50, 32]`；base/wrist images 均为 `[64, 224, 224, 3]`；prompt tokens `[64, 48]`；state/action 均为 float32 且无 NaN/Inf。证据保存在 `experiments/input-smoke-targets.json`。
 - loader 提示未设置 `absolute_action_mask`，因此把全部 action dimensions 视为 relative action。这与作者当前可执行 loader 的实际行为一致，主实验保持不变并记录为实现 caveat。
 - TensorFlow 在 CPU-only 预检中打印重复注册 CUDA plugin 的 warning；预检仍明确运行于 `TFRT_CPU_0` 且各项断言通过，不影响数据验证结论。
+
+## 2026-08-19 23:20 CST｜磁盘预算与端到端总控
+
+- OpenPI 的训练 checkpoint 同时保存 EMA inference params、当前训练参数和 Adam optimizer state。若 7 个阶段都永久保留完整 train state，预计会超过共享盘预算。
+- 调整的是存储策略而非论文优化协议：pretraining 每 1,000 steps 保存一个恢复点且 `max_to_keep=1`；阶段成功后验证最终 `params` 存在，再删除该阶段不再使用的 `train_state`，保留 inference params、assets、loss/gradient metrics 和清理清单。Task-FT/coFT 只读取 pretraining `params`，评测也只读取各阶段 `params`。
+- 新增可恢复 supervisor，顺序执行：等待传输 → 数据 SHA-256 比对 → GCS size/MD5 与 Orbax restore → 全部 7 configs 真实 batch smoke test → 等待一张空闲 GPU → 7 个训练阶段 → 完整 alpha sweep 与 ID/OOD/generalist 评测 → 中文汇总。
+- supervisor 启动前要求共享盘至少剩余 150 GB；任一阶段异常都会写入 `experiments/supervisor-status.json` 并退出，避免把不完整输入当成成功结果继续运行。
