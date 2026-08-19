@@ -89,3 +89,11 @@
 - 修正 supervisor 的完成门禁：固定清单内 353 个 payload 尺寸全部齐备且传输进程结束后，直接进入逐文件 SHA-256；SHA 不一致时仍会失败并保留现场。`verify_dataset.py` 明确排除 `.aria2` control files，避免把传输元数据误计为数据集 payload。
 - 修正后的两份脚本通过 ruff 与 Python 编译检查；在服务器真实传输目录执行 `--skip-sha256` 预检，生成的 311 个当前可见 payload 记录中 `.aria2` 条目为 0。supervisor 已无损重启，aria2 下载进程没有停止或重启。
 - 8 张 GPU 当前显存均至少占用约 45.7 GiB，仍不满足单卡空闲阈值；训练尚未启动，也未抢占任何现有任务。
+
+## 2026-08-20 00:29 CST｜剩余数据监控与基础权重传输修复
+
+- 数据重试从 `288 / 353` 继续推进到 `349 / 353`，完整字节为 `23,861,368,544 / 24,235,684,869`；仅余 4 个尺寸尚未齐备的 shard。下载进程仍活跃，日志中的剩余项持续收到数据，未判定为失败。
+- 检查 `π0 base` 时发现 24 个可见对象的尺寸均已完整，但旧 aria2 仍运行且保留 5 个 control sidecars。进程文件描述符显示其目标为 `(deleted)`：并行 rsync 已原子替换路径，aria2 仍向不再可见的旧 inode 写入，因而其存活不能代表权重仍缺失。
+- 在不停止旧进程的情况下，先对可见目录执行独立官方 GCS 校验；24/24 对象的 size 与 MD5 全部一致，总计 `12,014,416,199` bytes。取得内容证据后才终止旧 aria2/父进程，并将 5 个 control sidecars 移入 `/shared/.cache/retain/transfer-control-archive/pi0-base-20260820T0029CST`。该操作未删除或覆盖任何 checkpoint payload，控制文件可恢复。
+- 下一门禁仍为 supervisor 的独立 GCS 复核与 Orbax restore；MD5 通过不替代实际反序列化检查。
+- 本轮检查时 8 张 GPU 仍各占用约 45.9–81.2 GiB 显存，训练继续等待；共享盘可用约 `272,815,869,952` bytes，高于 150 GB 安全线。
