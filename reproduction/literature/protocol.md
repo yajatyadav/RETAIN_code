@@ -23,7 +23,7 @@
 2. `put the white mug on the left plate and put the yellow and white mug on the right plate`
 3. `put both the alphabet soup and the cream cheese box in the basket`
 
-使用作者公开的过滤后 RLDS 数据：stove 41、mugs 38、basket 43 条成功 demonstrations。观测包含 base/wrist RGB，state/action 为 7D；action horizon 为 50，并由 `π0` 输入层 pad 到 32D。
+使用作者公开的过滤后 RLDS 数据：stove 41、mugs 38、basket 43 条成功 demonstrations。观测包含 base/wrist RGB；公开 RLDS schema 为 8D state（6D end-effector pose + 2D gripper qpos）和 7D action，action horizon 为 50，并由 `π0` 输入层 pad 到 32D。论文正文把 state 概括为 7D，但官方 evaluation code 同样构造 8D state，因此主实验以公开数据与可执行代码为准，并把文字差异记录为 caveat。
 
 ## 3. 方法
 
