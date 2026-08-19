@@ -8,6 +8,8 @@
 2. 仓库已有 pretraining normalization statistics，可供所有后续训练和推理统一复用。
 3. 服务器 JAX、PyTorch、TensorFlow、LIBERO 与 EGL headless rendering 的基础自检已通过。
 4. 论文最终超参数与仓库原有 `pi0_libero_pretrain` 开发 config 不一致；复现使用独立的 `retain_repro_*` configs。
+5. 作者公开的 filtered target datasets 实际包含 stove 41、mugs 38、basket 43 条成功 trajectories；对应 10,866、9,807、11,494 transitions。
+6. pretraining 的公开 reduced 数据计数与作者 config 中用于 mixture weight 的旧计数不一致。主实验选择保留作者 config 权重；该选择及两组计数已完整记录，避免把它隐藏为实现细节。
 
 ## 待验证
 

@@ -1,8 +1,8 @@
 schema_version: 1
 project: RETAIN_LIBERO_reproduction
 protocol_id: RETAIN-GPU-20260819-001
-updated_at: "2026-08-19T00:00:00+08:00"
-status: protocol_locked_pending_commit
+updated_at: "2026-08-19T22:42:41+08:00"
+status: inputs_transferring
 objective: >-
   在单张服务器 GPU 上按论文最终实验方法复现 RETAIN 的 LIBERO 仿真实验，
   保存可审计的训练、参数合并、ID/OOD/generalist 评测结果和中文记录。
@@ -23,17 +23,26 @@ data:
   repo: yajatyadav/RETAIN_datasets
   revision: d15edfa89167e6e7230be3e85eb7391be2fa3134
   server_root: /shared/.cache/retain/libero/datasets
-  status: downloading_pending
+  local_download_status: verified
+  server_transfer_status: in_progress
+  published_total_objects: 354
+  reduced_transition_counts:
+    libero_goal_reduced: 39799
+    libero_object_reduced: 53739
+    libero_spatial_reduced: 42391
+    libero_90_flipped: 567494
 checkpoints:
   root: /shared/.cache/retain/checkpoints
   base: gs://openpi-assets/checkpoints/pi0_base/params
-  status: downloading_pending
+  base_bytes: 12014416199
+  local_size_md5_status: verified_24_of_24_objects
+  server_transfer_status: in_progress
 compute:
   host: hgpu
   gpu_count_allowed: 1
   selected_gpu: null
   selection_rule: 启动时选择显存和利用率均足够空闲的一张 GPU，不抢占现有进程
 current_stage: environment_and_data
-next_action: 下载并校验官方数据与 pi0_base，随后进行 dataloader smoke test
+next_action: 完成服务器传输与 SHA/Orbax 校验，随后进行 dataloader smoke test
 runs: []
 limitations: []

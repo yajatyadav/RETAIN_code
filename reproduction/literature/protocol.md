@@ -10,12 +10,12 @@
 
 ### Generalist pretraining（117 tasks）
 
-- `libero_goal_reduced`：52,042 transitions
-- `libero_object_reduced`：66,984 transitions
-- `libero_spatial_reduced`：52,970 transitions
+- `libero_goal_reduced`：公开 filtered 文件为 39,799 transitions
+- `libero_object_reduced`：公开 filtered 文件为 53,739 transitions
+- `libero_spatial_reduced`：公开 filtered 文件为 42,391 transitions
 - `libero_90_flipped`：567,494 transitions
 
-四个数据集按 transition 数量成比例采样。
+主实验复现作者可执行 config 的 mixture weights。该 config 使用过滤前 `*_no_noops` 计数 `52,042 / 66,984 / 52,970 / 567,494` 计算权重，而作者公开的 `*_reduced` 文件已进一步移除 failure trajectories，产生上述较小计数。论文只规定 117-task mixture，没有给出更细的 suite 采样公式，因此将这项差异作为协议 caveat 明示；不在主实验中静默改写作者权重。
 
 ### Target-task finetuning（LIBERO-10）
 
@@ -23,7 +23,7 @@
 2. `put the white mug on the left plate and put the yellow and white mug on the right plate`
 3. `put both the alphabet soup and the cream cheese box in the basket`
 
-使用作者公开的过滤后 RLDS 数据，每个任务约 45 demonstrations。观测包含 base/wrist RGB，state/action 为 7D；action horizon 为 50，并由 `π0` 输入层 pad 到 32D。
+使用作者公开的过滤后 RLDS 数据：stove 41、mugs 38、basket 43 条成功 demonstrations。观测包含 base/wrist RGB，state/action 为 7D；action horizon 为 50，并由 `π0` 输入层 pad 到 32D。
 
 ## 3. 方法
 

@@ -1,4 +1,5 @@
 import logging
+import os
 import pathlib
 from typing import Any, Callable
 
@@ -57,7 +58,7 @@ def create_merged_policy(
     suffix = ""
     for k, v in merging_fn_kwargs.items():
         suffix += f"_{k}_{v}"
-    debug_dir = f"/home/yajatyadav/RETAIN_code/debug_inference_outputs/{suffix}"
+    debug_dir = str(pathlib.Path(os.getenv("OPENPI_DEBUG_DIR", "debug_inference_outputs")) / suffix.lstrip("_"))
     # debug_dir = f"/home/yajatyadav/generalist_FT_reversions/libero_eval_data/DEBUG_{merging_fn}___{suffix}"
     # debug_dir = "/global/scratch/users/yajatyadav/research/debug_inference_outputs"
     
@@ -130,7 +131,7 @@ def create_trained_policy(
 
     exp_name, ckpt_number = checkpoint_dir_str.split("/")[-2:]
     dir_name = f"{exp_name}__ckpt_{ckpt_number}"
-    debug_dir = f"/home/yajatyadav/RETAIN_code/debug_inference_outputs/{dir_name}"
+    debug_dir = str(pathlib.Path(os.getenv("OPENPI_DEBUG_DIR", "debug_inference_outputs")) / dir_name)
     # debug_dir = "/global/scratch/users/yajatyadav/research/debug_inference_outputs"
     
     return _policy.Policy(
