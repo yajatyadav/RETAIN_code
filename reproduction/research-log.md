@@ -81,3 +81,11 @@
 - 第一次切换控制文件时，`rsync --relative` 把远端目标创建成目录，导致重试进程短暂读取旧的过期 URL 并返回 HTTP 403。该进程立即被安全终止，错误控制目录移动到 `/tmp/retain_hf_aria2_retry.bad-relative-transfer`；没有删除或覆盖任何 RLDS 数据。
 - 随后正确传入 82 项、246 行的新 aria2 input。fresh URL 的 expiry 晚于生成时间约一小时；新进程只打开审计列出的 TFRecord，续传速率恢复到约 3–4 MiB/s。既有 `.aria2` control files 和 partial shards 保留用于断点续传。
 - supervisor 已重启并重新计算现有进度，状态恢复为 `waiting_dataset_transfer`；重启不会重做已完成文件。重启时共享盘剩余 `278,683,615,232` bytes，仍高于安全线。
+
+## 2026-08-20 00:13 CST｜续传监控与完成门禁修正
+
+- fresh CDN 队列保持活跃；重试启动后完整文件由 `271 / 353` 推进到 `284 / 353`，完整字节增至 `18,853,258,741 / 24,235,684,869`。最新下载日志约 `2.3 MiB/s`，没有再次出现 `0 B/s` 停滞。
+- 现场检查发现首轮中断遗留 44 个 `.aria2` control sidecars，其中 20 个对应文件的表观尺寸已经等于参考尺寸。control sidecar 可能是已完成文件的遗留状态，也可能描述同尺寸文件中的未完成 byte ranges，不能单独承担最终正确性判断。
+- 修正 supervisor 的完成门禁：固定清单内 353 个 payload 尺寸全部齐备且传输进程结束后，直接进入逐文件 SHA-256；SHA 不一致时仍会失败并保留现场。`verify_dataset.py` 明确排除 `.aria2` control files，避免把传输元数据误计为数据集 payload。
+- 修正后的两份脚本通过 ruff 与 Python 编译检查；在服务器真实传输目录执行 `--skip-sha256` 预检，生成的 311 个当前可见 payload 记录中 `.aria2` 条目为 0。supervisor 已无损重启，aria2 下载进程没有停止或重启。
+- 8 张 GPU 当前显存均至少占用约 45.7 GiB，仍不满足单卡空闲阈值；训练尚未启动，也未抢占任何现有任务。

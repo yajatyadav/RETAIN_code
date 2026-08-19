@@ -58,7 +58,13 @@ def main() -> None:
             raise FileNotFoundError(f"{name} 缺少 dataset_info.json 或 features.json")
 
         info = json.loads(info_path.read_text(encoding="utf-8"))
-        files = sorted(path for path in version_dir.rglob("*") if path.is_file())
+        # Interrupted aria2 runs can leave control sidecars next to fully written
+        # payloads.  They are transfer metadata, not part of the fixed HF revision.
+        files = sorted(
+            path
+            for path in version_dir.rglob("*")
+            if path.is_file() and path.suffix != ".aria2"
+        )
         tfrecords = [path for path in files if ".tfrecord-" in path.name]
         if not tfrecords:
             raise RuntimeError(f"{name} 没有 TFRecord shard")

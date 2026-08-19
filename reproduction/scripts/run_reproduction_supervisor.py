@@ -118,7 +118,11 @@ def wait_for_dataset(poll_seconds: int) -> None:
             aria2_sidecars=sidecars,
             transfer_active=active,
         )
-        if complete == len(expected) and sidecars == 0 and not active:
+        # aria2 may leave stale control sidecars after an interrupted transfer even
+        # when the corresponding payload already has the exact expected size.  The
+        # fixed payload manifest and the following SHA-256 pass are authoritative;
+        # sidecars remain in status only as transfer diagnostics.
+        if complete == len(expected) and not active:
             return
         if not active:
             raise RuntimeError(
