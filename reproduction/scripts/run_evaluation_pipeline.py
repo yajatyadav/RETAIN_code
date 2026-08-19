@@ -26,6 +26,13 @@ UV = Path("/root/.local/bin/uv")
 CHECKPOINT_ROOT = Path("/shared/.cache/retain/checkpoints")
 RESULTS_ROOT = Path("/shared/.cache/retain/results/RETAIN-GPU-20260819-001")
 EXPERIMENT_ROOT = PROJECT_ROOT / "reproduction" / "experiments" / "evaluation-pipeline"
+JAX_OVERLAY = Path(
+    os.environ.get(
+        "RETAIN_JAX_OVERLAY",
+        "/shared/.cache/retain/jax-overlays/0.6.2",
+    )
+)
+XLA_COMPATIBILITY_FLAG = "--xla_gpu_enable_triton_gemm=false"
 PRETRAIN = CHECKPOINT_ROOT / "retain_repro_pretrain" / "paper_final_hparams" / "9999"
 
 TASKS = {
@@ -163,6 +170,19 @@ def wait_for_selected_gpu(gpu_index: int, poll_seconds: int = 30) -> None:
 
 def server_env(gpu: int, policy_name: str) -> dict[str, str]:
     env = os.environ.copy()
+    if not (JAX_OVERLAY / ".lock").is_file():
+        raise FileNotFoundError(f"缺少已验证的 JAX compatibility overlay: {JAX_OVERLAY}")
+    current_pythonpath = env.get("PYTHONPATH")
+    env["PYTHONPATH"] = (
+        f"{JAX_OVERLAY}{os.pathsep}{current_pythonpath}"
+        if current_pythonpath
+        else str(JAX_OVERLAY)
+    )
+    current_xla_flags = env.get("XLA_FLAGS", "").split()
+    if XLA_COMPATIBILITY_FLAG not in current_xla_flags:
+        current_xla_flags.append(XLA_COMPATIBILITY_FLAG)
+    env["XLA_FLAGS"] = " ".join(current_xla_flags)
+    env.pop("JAX_PLATFORMS", None)
     env.update(
         {
             "CUDA_DEVICE_ORDER": "PCI_BUS_ID",

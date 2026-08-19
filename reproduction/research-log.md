@@ -107,3 +107,20 @@
 - supervisor 独立复跑官方 GCS 校验后，`π0 base` 再次通过 24/24 size/MD5；随后实际 Orbax restore 成功：50 个 leaves、`3,238,048,528` 个 float32 参数、展开内存 `12,952,194,112` bytes，结构哈希为 `b061101d775178ee7709d97c4e8a1d5b68a63073febcd545fe6e6d1f05609dda`。
 - 7 个训练 config（pretrain、三个 Task-FT、三个 coFT）均在 CPU 上读取真实 `batch=64` 并通过：state `[64, 32]`、action `[64, 50, 32]`、数值有限；机器可读证据为 `experiments/input-smoke-all.json`。
 - 训练 pipeline 已启动但尚未产生训练进程。00:49 CST 的空闲检查中，各卡显存仍占用约 `43,573–81,200 MiB`，没有一张满足 `≤2,048 MiB` 且 utilization `≤10%` 的双阈值，因此继续等待且不抢占其他任务。
+
+## 2026-08-20 01:18 CST｜首次 GPU 编译失败与 sm_120 runtime 隔离修复
+
+- 00:52:52 CST，GPU 2 短暂达到 `582 MiB / 0%`，training pipeline 按双阈值选中该卡并启动 `retain_repro_pretrain`。进程成功创建 dataloader、读取真实 `batch=64`，并打印论文配置的 cosine LR 与 AdamW 参数；随后在任何训练 step 或数值 checkpoint 产生之前，以 exit code `134` 停止。
+- 原始错误为 `Unsupported conversion from bf16 to f16` 和 `LLVM ERROR: Unsupported rounding mode for conversion.`。本机为 RTX 6000D、compute capability `12.0 (sm_120)`，项目环境固定 JAX/JAXlib `0.5.0`。结合 [JAX 官方 changelog](https://docs.jax.dev/en/latest/changelog.html) 中后续 CUDA 12.8 构建更新，以及公开的同类错误升级至 JAX 0.6.2 后消失的报告，判断为旧 XLA GPU compiler 对新架构支持不足，而不是 OOM、数据损坏或论文超参数错误。
+- 失败现场完整保存在 `experiments/incidents/pretrain-jax050-sm120-20260820T0053/`：包含命令、状态、supervisor 状态和原始 stdout。checkpoint 根目录只有 Orbax root metadata、没有数字 step，故下一次启动会从 base params 重新开始，不会把半成品误当作可恢复训练。
+- 为降低对已验证环境的影响，没有原位修改 `.venv`。按照 [JAX 官方安装说明](https://docs.jax.dev/en/latest/installation.html)，在 `/shared/.cache/retain/jax-overlays/0.6.2` 建立隔离 overlay，固定 `jax/jaxlib/jax-cuda12-plugin/jax-cuda12-pjrt=0.6.2`、`ml-dtypes=0.5.1`、`nvidia-cudnn-cu12=9.8.0.87`；磁盘占用约 1.7 GiB。可复建版本清单位于 `environment/requirements-jax-sm120-overlay.txt`。
+- 训练与 policy server 仅通过 `PYTHONPATH` 注入该 overlay，并记录 `XLA_FLAGS=--xla_gpu_enable_triton_gemm=false` 作为 sm_120 conservative compatibility 设置；模型、checkpoint、batch、optimizer 和训练步数不变。主 `.venv` 仍是作者依赖，可随时回退。
+- CPU 侧兼容验证全部通过：7/7 configs 的真实 batch smoke、`π0 base` 的 50-leaf/3,238,048,528-parameter Orbax restore（结构 SHA 与原环境一致），以及 pretrain 完整 train-state `eval_shape`。训练 pipeline 还新增实际 GPU 门禁：下次获得空闲卡时，先用同一 runtime JIT 编译 BF16→FP16 和 BF16 GEMM；门禁成功后才启动完整 pretraining，失败则写独立 JSON 并停止。
+- 01:18 CST 的 8 张 GPU 均仍被其他任务占用（显存约 39–81 GiB），当前不进行 GPU 测试，也不抢占或终止他人进程。
+
+## 2026-08-20 01:24 CST｜修复后全量门禁重跑通过，等待 GPU runtime preflight
+
+- 修复后的 supervisor 于 01:20:59 CST 重启，没有复用单一“成功”标记直接进入训练。它重新扫描固定 revision：353/353 参考 payload、`24,235,684,869` bytes 的 SHA-256 比较通过。
+- 全 config smoke tests 已在四个 pretraining datasets 另外生成 normalization statistics cache，因而服务器目录现在共有 360 个文件：353 个固定 payload 加 7 个 `dataset_statistics_*.json`。校验器逐路径确认固定 payload 不变，仅忽略这 7 个已知 loader cache；其他未知额外文件仍会失败。
+- `π0 base` 再次通过 24/24 GCS size/MD5，并重新实际 restore 为 50 leaves、3,238,048,528 float32 参数；随后原项目环境的 7/7 真实 batch smoke 再次全部通过。至此数据、权重和训练输入门禁均已在 runtime 修复后复核。
+- 01:24:12 CST 训练 pipeline 进入单卡等待；当时 8 卡显存占用分别约为 `81.2/80.1/41.5/80.1/62.8/61.6/61.3/61.0 GiB`，没有卡满足 `≤2,048 MiB 且 utilization≤10%`。总控与训练等待进程持续运行，下一张真正空闲的卡将先执行 BF16 runtime preflight。

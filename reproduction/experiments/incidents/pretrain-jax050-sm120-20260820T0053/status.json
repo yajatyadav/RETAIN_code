@@ -1,0 +1,19 @@
+{
+  "config": "retain_repro_pretrain",
+  "exp_name": "paper_final_hparams",
+  "host": "lhy-1",
+  "gpu_physical_index": 2,
+  "started_at": "2026-08-19T16:52:52.866489+00:00",
+  "command": [
+    "/root/.local/bin/uv",
+    "run",
+    "--no-sync",
+    "scripts/train.py",
+    "retain_repro_pretrain",
+    "--exp-name=paper_final_hparams"
+  ],
+  "final_checkpoint": "/shared/.cache/retain/checkpoints/retain_repro_pretrain/paper_final_hparams/9999",
+  "status": "failed",
+  "finished_at": "2026-08-19T16:53:19.853762+00:00",
+  "return_code": 134
+}

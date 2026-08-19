@@ -1,8 +1,8 @@
 schema_version: 1
 project: RETAIN_LIBERO_reproduction
 protocol_id: RETAIN-GPU-20260819-001
-updated_at: "2026-08-20T00:49:52+08:00"
-status: waiting_for_single_idle_gpu
+updated_at: "2026-08-20T01:24:13+08:00"
+status: waiting_for_single_idle_gpu_runtime_preflight
 objective: >-
   在单张服务器 GPU 上按论文最终实验方法复现 RETAIN 的 LIBERO 仿真实验，
   保存可审计的训练、参数合并、ID/OOD/generalist 评测结果和中文记录。
@@ -32,8 +32,8 @@ data:
   server_size_verified_bytes: 24235684869
   server_sha256_status: verified_353_of_353_reference_files
   server_manifest: reproduction/data/dataset_manifest_server.json
-  server_actual_files_including_generated_cache: 356
-  ignored_generated_statistics_files: 3
+  server_actual_files_including_generated_cache: 360
+  ignored_generated_statistics_files: 7
   retry_incomplete_files: 82
   retry_incomplete_bytes: 6363471173
   retry_audit: reproduction/data/transfer-audit-retry.json
@@ -65,15 +65,49 @@ compute:
   gpu_count_allowed: 1
   selected_gpu: null
   selection_rule: 启动时选择显存和利用率均足够空闲的一张 GPU，不抢占现有进程
-current_stage: waiting_for_training_gpu
-next_action: training pipeline 按显存与利用率双阈值等待一张空闲 GPU，获得后启动 10000-step 117-task pretraining
+  accelerator: NVIDIA RTX 6000D
+  compute_capability: "12.0 (sm_120)"
+  project_jax_version: "0.5.0"
+  compatibility_overlay:
+    root: /shared/.cache/retain/jax-overlays/0.6.2
+    requirements: reproduction/environment/requirements-jax-sm120-overlay.txt
+    jax: "0.6.2"
+    jaxlib: "0.6.2"
+    jax_cuda12_plugin: "0.6.2"
+    jax_cuda12_pjrt: "0.6.2"
+    ml_dtypes: "0.5.1"
+    nvidia_cudnn_cu12: "9.8.0.87"
+    xla_flags: --xla_gpu_enable_triton_gemm=false
+    base_virtualenv_modified: false
+    cpu_input_smoke_status: verified_7_of_7_configs
+    cpu_input_smoke_report: reproduction/experiments/input-smoke-all-jax062.json
+    cpu_orbax_restore_status: verified
+    cpu_orbax_restore_report: reproduction/data/pi0_base_restore_jax062.json
+    cpu_train_state_shape_status: verified
+    cpu_compatibility_report: reproduction/experiments/jax062-cpu-compatibility.json
+    environment_report: reproduction/experiments/environment-jax062-retry.json
+    gpu_bf16_preflight_status: pending_idle_gpu
+current_stage: waiting_for_gpu_runtime_preflight_and_training_retry
+next_action: >-
+  training pipeline 按显存与利用率双阈值等待一张空闲 GPU；获得后先编译最小
+  BF16→FP16 与 BF16 GEMM preflight，验证 sm_120 runtime 后再重试 10000-step
+  117-task pretraining
 orchestration:
   supervisor: reproduction/scripts/run_reproduction_supervisor.py
   server_status: /root/RETAIN_code/reproduction/experiments/supervisor-status.json
   server_log: /root/RETAIN_code/reproduction/experiments/supervisor.log
-  running_since: "2026-08-19T23:19:14+08:00"
-  latest_heartbeat: "2026-08-20T00:49:52+08:00"
-  restart_count: 3
+  running_since: "2026-08-20T01:20:59+08:00"
+  latest_heartbeat: "2026-08-20T01:24:13+08:00"
+  restart_count: 4
+  supervisor_pid: 237893
+  training_pipeline_pid: 242839
+latest_monitor:
+  checked_at: "2026-08-20T01:24:13+08:00"
+  supervisor_stage: training_pipeline
+  idle_gpu_count: 0
+  gpu_memory_used_mib: [81200, 80057, 41512, 80133, 62799, 61561, 61321, 60975]
+  gpu_utilization_percent: [54, 40, 79, 77, 89, 93, 88, 100]
+  shared_free_bytes_at_restart: 272298766336
 incidents:
   - time: "2026-08-20T00:05:15+08:00"
     stage: dataset_transfer
@@ -97,5 +131,27 @@ incidents:
       使用本地固定 revision 对 12 个文件执行 rsync checksum 差分修复并逐文件复核 SHA；
       同时允许 3 个 loader 生成的 dataset_statistics cache 不参与固定 payload 集合比较，
       再次运行全量校验后 353/353 参考文件全部一致
-runs: []
+  - time: "2026-08-20T00:53:19+08:00"
+    stage: pretraining_initialization
+    cause: >-
+      项目固定的 JAX/JAXlib 0.5.0 早于 RTX 6000D 的 sm_120 支持；首个 GPU
+      train-state 编译在 BF16 转 FP16 时触发 LLVM Unsupported rounding mode
+    impact: >-
+      retain_repro_pretrain 在 step 0 前以 exit 134 停止；未产生数值 checkpoint，
+      数据、优化器配置和真实 batch 均已在退出前成功初始化
+    recovery: >-
+      不修改主 .venv，在共享盘建立 JAX 0.6.2/CUDA 12 隔离 overlay，并加入
+      conservative Triton GEMM compatibility flag；7/7 真实输入、Orbax restore 和
+      train-state shape 的 CPU 兼容测试通过；修复后 supervisor 已重跑数据、权重与
+      7-config 输入门禁，待空闲 GPU 上执行最小 BF16 编译门禁
+runs:
+  - id: retain_repro_pretrain__paper_final_hparams__attempt_1
+    status: failed_before_step_0
+    started_at: "2026-08-20T00:52:52+08:00"
+    finished_at: "2026-08-20T00:53:19+08:00"
+    gpu_physical_index: 2
+    return_code: 134
+    checkpoint_created: false
+    cause: JAX 0.5.0 在 sm_120 上编译 BF16 转换失败
+    evidence: reproduction/experiments/incidents/pretrain-jax050-sm120-20260820T0053
 limitations: []

@@ -1,0 +1,34 @@
+{
+  "generated_at": "2026-08-19T17:20:59.669111+00:00",
+  "host": "lhy-1",
+  "platform": "Linux-6.8.0-41-generic-x86_64-with-glibc2.35",
+  "python": "3.11.15 (main, Aug  7 2026, 02:25:55) [Clang 22.1.3 ]",
+  "executable": "/root/RETAIN_code/.venv/bin/python",
+  "packages": {
+    "jax": "0.5.0",
+    "jaxlib": "0.5.0",
+    "tensorflow": "2.18.1",
+    "torch": "2.7.1+cu128",
+    "orbax-checkpoint": "0.11.1"
+  },
+  "gpu_jax_runtime": {
+    "mode": "isolated_pythonpath_overlay",
+    "root": "/shared/.cache/retain/jax-overlays/0.6.2",
+    "requirements": "/root/RETAIN_code/reproduction/environment/requirements-jax-sm120-overlay.txt",
+    "xla_flags": "--xla_gpu_enable_triton_gemm=false",
+    "reason": "JAX 0.5.0 无法在 RTX 6000D sm_120 上编译 BF16 转换"
+  },
+  "gpu_inventory": [
+    "0, NVIDIA RTX 6000D, 85651, 595.71.05",
+    "1, NVIDIA RTX 6000D, 85651, 595.71.05",
+    "2, NVIDIA RTX 6000D, 85651, 595.71.05",
+    "3, NVIDIA RTX 6000D, 85651, 595.71.05",
+    "4, NVIDIA RTX 6000D, 85651, 595.71.05",
+    "5, NVIDIA RTX 6000D, 85651, 595.71.05",
+    "6, NVIDIA RTX 6000D, 85651, 595.71.05",
+    "7, NVIDIA RTX 6000D, 85651, 595.71.05"
+  ],
+  "gpu_limit": 1,
+  "protocol_id": "RETAIN-GPU-20260819-001",
+  "paper_code_base_commit": "0bbc6cf"
+}

@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-19T16:45:56.854559+00:00",
+  "generated_at": "2026-08-19T17:21:30.921970+00:00",
   "root": "/shared/.cache/retain/libero/datasets",
   "dataset_repo": "yajatyadav/RETAIN_datasets",
   "dataset_revision": "d15edfa89167e6e7230be3e85eb7391be2fa3134",
   "dataset_count": 7,
-  "file_count": 356,
-  "total_bytes": 24235690780,
+  "file_count": 360,
+  "total_bytes": 24235698326,
   "sha256_included": true,
   "datasets": [
     {
@@ -37,9 +37,9 @@
           ]
         }
       ],
-      "file_count": 19,
+      "file_count": 20,
       "tfrecord_shards": 16,
-      "bytes": 1424865867
+      "bytes": 1424867725
     },
     {
       "name": "libero_object_reduced",
@@ -85,9 +85,9 @@
           ]
         }
       ],
-      "file_count": 35,
+      "file_count": 36,
       "tfrecord_shards": 32,
-      "bytes": 2275844316
+      "bytes": 2275846256
     },
     {
       "name": "libero_spatial_reduced",
@@ -117,9 +117,9 @@
           ]
         }
       ],
-      "file_count": 19,
+      "file_count": 20,
       "tfrecord_shards": 16,
-      "bytes": 1543760115
+      "bytes": 1543762022
     },
     {
       "name": "libero_90_flipped",
@@ -389,9 +389,9 @@
           ]
         }
       ],
-      "file_count": 259,
+      "file_count": 260,
       "tfrecord_shards": 256,
-      "bytes": 17816504746
+      "bytes": 17816506587
     },
     {
       "name": "libero_10_turn_on_the_stove_and_put_the_moka_pot_on_it",
@@ -584,6 +584,11 @@
       "path": "libero_90_flipped/1.0.0/dataset_statistics_2a1b8d9700831ce1ad6b09c6491772262029ead48e0147223dc0adf4041e5fcb.json",
       "bytes": 1843,
       "sha256": "f9ed172c6ba1da18a2328a22d4915747e4fc80ebcb7bf461d9670e880a663ede"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/dataset_statistics_c1140fa7742b7ba3790f7e2c9fd3764eed00ce303bc4c3909034f6bfb433512d.json",
+      "bytes": 1841,
+      "sha256": "682d7c8a48e0334f78e77c1d5eeebb67e28bd4d995b602995e99e41170bf6754"
     },
     {
       "path": "libero_90_flipped/1.0.0/features.json",
@@ -1881,6 +1886,11 @@
       "sha256": "d4a39ff07d14b2bccb53390d7bb5e49022e842e8fb8760a21fdba10f986c381c"
     },
     {
+      "path": "libero_goal_reduced/1.0.0/dataset_statistics_b400d3eac28b886b3e010c808230eea431b48c221868392d1da2cc299a04b7f3.json",
+      "bytes": 1858,
+      "sha256": "241bd825bccd8bd818b34d65206e26d62028a16d7389cd64fd9488871b8baa61"
+    },
+    {
       "path": "libero_goal_reduced/1.0.0/features.json",
       "bytes": 9195,
       "sha256": "452562c48948bdbc81f8e939575a230c0395a20daf138268a0cf3bdaa03a956a"
@@ -1974,6 +1984,11 @@
       "path": "libero_object_reduced/1.0.0/dataset_statistics_031eacde3e007862f480fc5dfc7497b4be812562b92fc8acf521b56a7d8be92a.json",
       "bytes": 1932,
       "sha256": "b06e23328c1a6850ffc77b2a7ebdca7365c5cde3b77906d29fe661a2ae937b2f"
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/dataset_statistics_abed590ccc1d8f52abfbd3eba3d6635d7c4da1d165042663ef544f5781680bfc.json",
+      "bytes": 1940,
+      "sha256": "34c7214124d0f8c7d370990c4f8c1291d1fca215d5e4bc910fa87598fa666ca7"
     },
     {
       "path": "libero_object_reduced/1.0.0/features.json",
@@ -2144,6 +2159,11 @@
       "path": "libero_spatial_reduced/1.0.0/dataset_info.json",
       "bytes": 826,
       "sha256": "83558e63e972ce02e503e5ca07af4c41e3173709360071127b7b0928f343763d"
+    },
+    {
+      "path": "libero_spatial_reduced/1.0.0/dataset_statistics_458f47f663fddb014789c3df3ac3781d272946caf89cb44cd1957acd80d1c219.json",
+      "bytes": 1907,
+      "sha256": "cd35e5919756a2b9d3b79e9efd3e5f1aae57b923cafeb0fe9b9fb6bd036adca1"
     },
     {
       "path": "libero_spatial_reduced/1.0.0/dataset_statistics_698e03dd5db93219bdfffe3409e2c022447cd9de965a3e272a4b903feccb110f.json",

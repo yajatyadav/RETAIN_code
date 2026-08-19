@@ -270,6 +270,19 @@ def collect_environment() -> None:
         "python": sys.version,
         "executable": sys.executable,
         "packages": packages,
+        "gpu_jax_runtime": {
+            "mode": "isolated_pythonpath_overlay",
+            "root": os.environ.get(
+                "RETAIN_JAX_OVERLAY",
+                "/shared/.cache/retain/jax-overlays/0.6.2",
+            ),
+            "requirements": str(
+                PROJECT_ROOT
+                / "reproduction/environment/requirements-jax-sm120-overlay.txt"
+            ),
+            "xla_flags": "--xla_gpu_enable_triton_gemm=false",
+            "reason": "JAX 0.5.0 无法在 RTX 6000D sm_120 上编译 BF16 转换",
+        },
         "gpu_inventory": gpu_query,
         "gpu_limit": 1,
         "protocol_id": "RETAIN-GPU-20260819-001",

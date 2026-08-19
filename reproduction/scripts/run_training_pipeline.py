@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# ruff: noqa: RUF001, RUF002, UP017
+# ruff: noqa: RUF001, RUF002, RUF003, UP017
 """等待一张空闲 GPU，并顺序执行 RETAIN 论文训练阶段。"""
 
 from __future__ import annotations
@@ -21,6 +21,22 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 EXPERIMENT_ROOT = PROJECT_ROOT / "reproduction" / "experiments"
 CHECKPOINT_ROOT = Path("/shared/.cache/retain/checkpoints")
 DATA_ROOT = Path("/shared/.cache/retain/libero/datasets")
+JAX_OVERLAY = Path(
+    os.environ.get(
+        "RETAIN_JAX_OVERLAY",
+        "/shared/.cache/retain/jax-overlays/0.6.2",
+    )
+)
+JAX_RUNTIME_VERSIONS = {
+    "jax": "0.6.2",
+    "jaxlib": "0.6.2",
+    "jax-cuda12-plugin": "0.6.2",
+    "jax-cuda12-pjrt": "0.6.2",
+    "ml-dtypes": "0.5.1",
+    "nvidia-cudnn-cu12": "9.8.0.87",
+}
+XLA_COMPATIBILITY_FLAG = "--xla_gpu_enable_triton_gemm=false"
+GPU_PREFLIGHT_REPORT = EXPERIMENT_ROOT / "jax-gpu-preflight.json"
 BASE_PARAMS = Path(
     "/shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params"
 )
@@ -161,8 +177,104 @@ def validate_inputs() -> None:
         missing.append(str(DATA_ROOT))
     if not BASE_PARAMS.is_dir():
         missing.append(str(BASE_PARAMS))
+    overlay_files = (
+        Path(".lock"),
+        Path("jax/__init__.py"),
+        Path("jaxlib/__init__.py"),
+        Path("jax_plugins/xla_cuda12/__init__.py"),
+        Path("nvidia/cudnn/lib/libcudnn.so.9"),
+    )
+    missing.extend(
+        str(JAX_OVERLAY / relative_path)
+        for relative_path in overlay_files
+        if not (JAX_OVERLAY / relative_path).exists()
+    )
     if missing:
         raise FileNotFoundError(f"训练输入尚未就绪: {missing}")
+
+
+def configure_jax_runtime(env: dict[str, str]) -> dict[str, str]:
+    """为 sm_120 GPU 注入隔离的 JAX runtime，不修改项目主虚拟环境。"""
+    current_pythonpath = env.get("PYTHONPATH")
+    env["PYTHONPATH"] = (
+        f"{JAX_OVERLAY}{os.pathsep}{current_pythonpath}"
+        if current_pythonpath
+        else str(JAX_OVERLAY)
+    )
+    current_xla_flags = env.get("XLA_FLAGS", "").split()
+    if XLA_COMPATIBILITY_FLAG not in current_xla_flags:
+        current_xla_flags.append(XLA_COMPATIBILITY_FLAG)
+    env["XLA_FLAGS"] = " ".join(current_xla_flags)
+    # CPU 预检可能显式设置该变量；GPU 子进程必须允许自动选择 CUDA backend。
+    env.pop("JAX_PLATFORMS", None)
+    return env
+
+
+def verify_gpu_runtime(gpu: int) -> dict:
+    """在已选空闲 GPU 上编译最小 BF16 kernel，先于完整模型发现 runtime 问题。"""
+    env = configure_jax_runtime(os.environ.copy())
+    env.update(
+        {
+            "CUDA_DEVICE_ORDER": "PCI_BUS_ID",
+            "CUDA_VISIBLE_DEVICES": str(gpu),
+            "XLA_PYTHON_CLIENT_PREALLOCATE": "false",
+        }
+    )
+    code = """
+import importlib.metadata as metadata
+import json
+
+import jax
+import jax.numpy as jnp
+
+source = jnp.arange(4096, dtype=jnp.bfloat16).reshape(64, 64)
+converted = jax.jit(lambda value: value.astype(jnp.float16))(source)
+product = jax.jit(lambda value: value @ value.T)(source)
+jax.block_until_ready((converted, product))
+device = jax.devices()[0]
+print(json.dumps({
+    "status": "verified",
+    "jax": metadata.version("jax"),
+    "jaxlib": metadata.version("jaxlib"),
+    "jax_cuda12_plugin": metadata.version("jax-cuda12-plugin"),
+    "platform": device.platform,
+    "device": str(device),
+    "device_kind": device.device_kind,
+    "bf16_to_f16_shape": list(converted.shape),
+    "bf16_matmul_shape": list(product.shape),
+}, ensure_ascii=False))
+"""
+    completed = subprocess.run(
+        [sys.executable, "-c", code],
+        cwd=PROJECT_ROOT,
+        env=env,
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+    record = {
+        "checked_at": now(),
+        "gpu_physical_index": gpu,
+        "overlay": str(JAX_OVERLAY),
+        "xla_flags": env["XLA_FLAGS"],
+        "return_code": completed.returncode,
+        "stdout": completed.stdout,
+        "stderr": completed.stderr,
+        "status": "failed",
+    }
+    if completed.returncode == 0:
+        try:
+            details = json.loads(completed.stdout.strip().splitlines()[-1])
+        except (IndexError, json.JSONDecodeError) as error:
+            record["parse_error"] = str(error)
+        else:
+            record["runtime"] = details
+            record["status"] = "verified"
+    atomic_json_dump(GPU_PREFLIGHT_REPORT, record)
+    if record["status"] != "verified":
+        raise RuntimeError(f"JAX GPU runtime 预检失败，记录: {GPU_PREFLIGHT_REPORT}")
+    print(f"{now()} JAX GPU runtime 预检通过: {record['runtime']}", flush=True)
+    return record
 
 
 def run_stage(gpu: int, config: str, exp_name: str, final_step: int) -> None:
@@ -191,9 +303,10 @@ def run_stage(gpu: int, config: str, exp_name: str, final_step: int) -> None:
     if checkpoint_run_dir.exists():
         command.append("--resume")
 
-    env = os.environ.copy()
+    env = configure_jax_runtime(os.environ.copy())
     env.update(
         {
+            "CUDA_DEVICE_ORDER": "PCI_BUS_ID",
             "CUDA_VISIBLE_DEVICES": str(gpu),
             "XLA_PYTHON_CLIENT_MEM_FRACTION": "0.90",
             "XLA_PYTHON_CLIENT_PREALLOCATE": "true",
@@ -213,6 +326,13 @@ def run_stage(gpu: int, config: str, exp_name: str, final_step: int) -> None:
         "started_at": now(),
         "command": command,
         "final_checkpoint": str(final_checkpoint),
+        "jax_runtime": {
+            "overlay": str(JAX_OVERLAY),
+            "versions": JAX_RUNTIME_VERSIONS,
+            "xla_flags": env["XLA_FLAGS"],
+            "reason": "RTX 6000D (sm_120) 编译兼容；项目主虚拟环境保持不变",
+            "gpu_preflight_report": str(GPU_PREFLIGHT_REPORT),
+        },
         "status": "running",
     }
     atomic_json_dump(run_dir / "status.json", status)
@@ -263,6 +383,7 @@ def main() -> None:
 
     validate_inputs()
     gpu = wait_for_idle_gpu(args.poll_seconds)
+    verify_gpu_runtime(gpu)
     stages = STAGES + (COFT_STAGES if args.include_coft else ())
     for config, exp_name, final_step in stages:
         run_stage(gpu, config, exp_name, final_step)

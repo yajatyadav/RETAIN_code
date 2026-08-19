@@ -1,0 +1,34 @@
+{
+  "protocol_id": "RETAIN-GPU-20260819-001",
+  "generated_at": "2026-08-19T17:24:13+00:00",
+  "status": "waiting_for_single_idle_gpu_runtime_preflight",
+  "processes": {
+    "supervisor_pid": 237893,
+    "training_pipeline_pid": 242839
+  },
+  "gates": {
+    "dataset_sha256": "verified_353_of_353_reference_files",
+    "server_files_including_generated_cache": 360,
+    "ignored_generated_statistics_files": 7,
+    "base_gcs_size_md5": "verified_24_of_24_objects",
+    "base_orbax_restore": "verified",
+    "base_parameter_count": 3238048528,
+    "base_structure_sha256": "b061101d775178ee7709d97c4e8a1d5b68a63073febcd545fe6e6d1f05609dda",
+    "base_environment_real_batch_smoke": "verified_7_of_7_configs",
+    "jax062_overlay_real_batch_smoke": "verified_7_of_7_configs",
+    "jax062_overlay_train_state_eval_shape": "verified",
+    "sm120_gpu_bf16_compile": "pending_idle_gpu"
+  },
+  "gpu_snapshot": [
+    {"index": 0, "memory_used_mib": 81200, "utilization_percent": 54},
+    {"index": 1, "memory_used_mib": 80057, "utilization_percent": 40},
+    {"index": 2, "memory_used_mib": 41512, "utilization_percent": 79},
+    {"index": 3, "memory_used_mib": 80133, "utilization_percent": 77},
+    {"index": 4, "memory_used_mib": 62799, "utilization_percent": 89},
+    {"index": 5, "memory_used_mib": 61561, "utilization_percent": 93},
+    {"index": 6, "memory_used_mib": 61321, "utilization_percent": 88},
+    {"index": 7, "memory_used_mib": 60975, "utilization_percent": 100}
+  ],
+  "idle_selection_rule": "memory_used_mib <= 2048 and utilization_percent <= 10",
+  "idle_gpu_count": 0
+}
