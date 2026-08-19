@@ -1,0 +1,2239 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-08-19T16:32:48.691291+00:00",
+  "root": "/shared/.cache/retain/libero/datasets",
+  "dataset_repo": "yajatyadav/RETAIN_datasets",
+  "dataset_revision": "d15edfa89167e6e7230be3e85eb7391be2fa3134",
+  "dataset_count": 7,
+  "file_count": 356,
+  "total_bytes": 24235690780,
+  "sha256_included": true,
+  "datasets": [
+    {
+      "name": "libero_goal_reduced",
+      "version": "1.0.0",
+      "splits": [
+        {
+          "filepathTemplate": "{DATASET}-{SPLIT}.{FILEFORMAT}-{SHARD_X_OF_Y}",
+          "name": "train",
+          "numBytes": "1424848411",
+          "shardLengths": [
+            "22",
+            "22",
+            "21",
+            "22",
+            "22",
+            "22",
+            "22",
+            "21",
+            "22",
+            "22",
+            "22",
+            "22",
+            "22",
+            "21",
+            "22",
+            "22"
+          ]
+        }
+      ],
+      "file_count": 19,
+      "tfrecord_shards": 16,
+      "bytes": 1424865867
+    },
+    {
+      "name": "libero_object_reduced",
+      "version": "1.0.0",
+      "splits": [
+        {
+          "filepathTemplate": "{DATASET}-{SPLIT}.{FILEFORMAT}-{SHARD_X_OF_Y}",
+          "name": "train",
+          "numBytes": "2275826300",
+          "shardLengths": [
+            "11",
+            "12",
+            "11",
+            "12",
+            "11",
+            "11",
+            "12",
+            "11",
+            "12",
+            "11",
+            "11",
+            "12",
+            "11",
+            "12",
+            "11",
+            "11",
+            "12",
+            "11",
+            "12",
+            "11",
+            "12",
+            "11",
+            "11",
+            "12",
+            "11",
+            "12",
+            "11",
+            "11",
+            "12",
+            "11",
+            "12",
+            "11"
+          ]
+        }
+      ],
+      "file_count": 35,
+      "tfrecord_shards": 32,
+      "bytes": 2275844316
+    },
+    {
+      "name": "libero_spatial_reduced",
+      "version": "1.0.0",
+      "splits": [
+        {
+          "filepathTemplate": "{DATASET}-{SPLIT}.{FILEFORMAT}-{SHARD_X_OF_Y}",
+          "name": "train",
+          "numBytes": "1543742703",
+          "shardLengths": [
+            "21",
+            "22",
+            "21",
+            "22",
+            "21",
+            "22",
+            "21",
+            "22",
+            "21",
+            "21",
+            "22",
+            "21",
+            "22",
+            "21",
+            "22",
+            "21"
+          ]
+        }
+      ],
+      "file_count": 19,
+      "tfrecord_shards": 16,
+      "bytes": 1543760115
+    },
+    {
+      "name": "libero_90_flipped",
+      "version": "1.0.0",
+      "splits": [
+        {
+          "filepathTemplate": "{DATASET}-{SPLIT}.{FILEFORMAT}-{SHARD_X_OF_Y}",
+          "name": "train",
+          "numBytes": "17816424383",
+          "shardLengths": [
+            "15",
+            "16",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "15",
+            "16",
+            "15",
+            "15",
+            "16",
+            "15"
+          ]
+        }
+      ],
+      "file_count": 259,
+      "tfrecord_shards": 256,
+      "bytes": 17816504746
+    },
+    {
+      "name": "libero_10_turn_on_the_stove_and_put_the_moka_pot_on_it",
+      "version": "1.0.0",
+      "splits": [
+        {
+          "filepathTemplate": "{DATASET}-{SPLIT}.{FILEFORMAT}-{SHARD_X_OF_Y}",
+          "name": "train",
+          "numBytes": "419030861",
+          "shardLengths": [
+            "10",
+            "10",
+            "11",
+            "10"
+          ]
+        }
+      ],
+      "file_count": 8,
+      "tfrecord_shards": 4,
+      "bytes": 419045307
+    },
+    {
+      "name": "libero_10_put_the_white_mug_on_the_left_plate_and_put_the_yellow_and_white_mug_on_the_right_plate",
+      "version": "1.0.0",
+      "splits": [
+        {
+          "filepathTemplate": "{DATASET}-{SPLIT}.{FILEFORMAT}-{SHARD_X_OF_Y}",
+          "name": "train",
+          "numBytes": "337426644",
+          "shardLengths": [
+            "10",
+            "9",
+            "9",
+            "10"
+          ]
+        }
+      ],
+      "file_count": 8,
+      "tfrecord_shards": 4,
+      "bytes": 337441209
+    },
+    {
+      "name": "libero_10_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket",
+      "version": "1.0.0",
+      "splits": [
+        {
+          "filepathTemplate": "{DATASET}-{SPLIT}.{FILEFORMAT}-{SHARD_X_OF_Y}",
+          "name": "train",
+          "numBytes": "418214739",
+          "shardLengths": [
+            "11",
+            "11",
+            "10",
+            "11"
+          ]
+        }
+      ],
+      "file_count": 8,
+      "tfrecord_shards": 4,
+      "bytes": 418229220
+    }
+  ],
+  "files": [
+    {
+      "path": "libero_10_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket/1.0.0/dataset_info.json",
+      "bytes": 710,
+      "sha256": "b684507307fb4eddcc93c34348e250ba241d56b0fdb80fc34184c99289244581"
+    },
+    {
+      "path": "libero_10_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket/1.0.0/dataset_statistics_62aa238f5f7a628fca0ce8fedc1636a4311427a2d137f5112edc2f8e1f335ace.json",
+      "bytes": 1940,
+      "sha256": "689c669053969ada04971c9f396e06004e27be00ee60407e32e953a07d602ff4"
+    },
+    {
+      "path": "libero_10_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket/1.0.0/dataset_statistics_ce67277d00e8913d9209b290c7624ecdac30fe4f04dadadfe8bcbc7d9d0d4b3b.json",
+      "bytes": 1948,
+      "sha256": "d6dd5ee9400f4744ca231aa5f04997d221a55a8df1073ea5452bd73219510cb7"
+    },
+    {
+      "path": "libero_10_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket/1.0.0/features.json",
+      "bytes": 9195,
+      "sha256": "452562c48948bdbc81f8e939575a230c0395a20daf138268a0cf3bdaa03a956a"
+    },
+    {
+      "path": "libero_10_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket/1.0.0/libero_10_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket-train.tfrecord-00000-of-00004",
+      "bytes": 106631238,
+      "sha256": "d8dc632c387fb4203190ac4492a8d2ccbce4b72a535c16d893448c579b48b0e7"
+    },
+    {
+      "path": "libero_10_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket/1.0.0/libero_10_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket-train.tfrecord-00001-of-00004",
+      "bytes": 104854352,
+      "sha256": "53701744206c2e247c92c01ecf6801fe0b3a39c4cb8b254c7a23e9f5a19c7c02"
+    },
+    {
+      "path": "libero_10_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket/1.0.0/libero_10_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket-train.tfrecord-00002-of-00004",
+      "bytes": 98041587,
+      "sha256": "3166d3cc53ca25633881d299a5dc00a4a71c71c705c18a2c23b2b1dd323af105"
+    },
+    {
+      "path": "libero_10_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket/1.0.0/libero_10_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket-train.tfrecord-00003-of-00004",
+      "bytes": 108688250,
+      "sha256": "dd3cbc6543c773f865dfb48d741aa468c5656b0eb502af4e2f61e9d366a3d162"
+    },
+    {
+      "path": "libero_10_put_the_white_mug_on_the_left_plate_and_put_the_yellow_and_white_mug_on_the_right_plate/1.0.0/dataset_info.json",
+      "bytes": 730,
+      "sha256": "abdba9c182b7542f7eded3151a0ef0d872bbdce7196780931c86cd3b79808761"
+    },
+    {
+      "path": "libero_10_put_the_white_mug_on_the_left_plate_and_put_the_yellow_and_white_mug_on_the_right_plate/1.0.0/dataset_statistics_1f58c265e60cf48f7ef3b5dff913be3f94b90b7cba0b8826e2671ce60a13d60b.json",
+      "bytes": 2017,
+      "sha256": "957237696643e1045bfdb850b106bfd1b448a653647e6c66b4b37fc990d4a772"
+    },
+    {
+      "path": "libero_10_put_the_white_mug_on_the_left_plate_and_put_the_yellow_and_white_mug_on_the_right_plate/1.0.0/dataset_statistics_75a580edb43fece6ec1d34c43a8de248db76c5bab18d360345a7e120c13908d9.json",
+      "bytes": 2015,
+      "sha256": "6350f66403ac3e812d87f3dc9aed7e4613f3796f133f4307979da735834ab965"
+    },
+    {
+      "path": "libero_10_put_the_white_mug_on_the_left_plate_and_put_the_yellow_and_white_mug_on_the_right_plate/1.0.0/features.json",
+      "bytes": 9195,
+      "sha256": "452562c48948bdbc81f8e939575a230c0395a20daf138268a0cf3bdaa03a956a"
+    },
+    {
+      "path": "libero_10_put_the_white_mug_on_the_left_plate_and_put_the_yellow_and_white_mug_on_the_right_plate/1.0.0/libero_10_put_the_white_mug_on_the_left_plate_and_put_the_yellow_and_white_mug_on_the_right_plate-train.tfrecord-00000-of-00004",
+      "bytes": 86707703,
+      "sha256": "42a952996d88a3183b4f62f8b4811136dbaa7bf632074b7e61bb9d1a84966924"
+    },
+    {
+      "path": "libero_10_put_the_white_mug_on_the_left_plate_and_put_the_yellow_and_white_mug_on_the_right_plate/1.0.0/libero_10_put_the_white_mug_on_the_left_plate_and_put_the_yellow_and_white_mug_on_the_right_plate-train.tfrecord-00001-of-00004",
+      "bytes": 81054663,
+      "sha256": "f4b0da3de9894a87ca4f5aa17a2aac3669a5b2719da8b3f8a19370af96adecca"
+    },
+    {
+      "path": "libero_10_put_the_white_mug_on_the_left_plate_and_put_the_yellow_and_white_mug_on_the_right_plate/1.0.0/libero_10_put_the_white_mug_on_the_left_plate_and_put_the_yellow_and_white_mug_on_the_right_plate-train.tfrecord-00002-of-00004",
+      "bytes": 83342224,
+      "sha256": "1040e768550de796d0e8ffa5bfd9c556917682680b7730875ce3bbeb106c955e"
+    },
+    {
+      "path": "libero_10_put_the_white_mug_on_the_left_plate_and_put_the_yellow_and_white_mug_on_the_right_plate/1.0.0/libero_10_put_the_white_mug_on_the_left_plate_and_put_the_yellow_and_white_mug_on_the_right_plate-train.tfrecord-00003-of-00004",
+      "bytes": 86322662,
+      "sha256": "2ca128838a398b3278e34bb15d7eaa957c95c61cf9cce6de802c7034f5c56792"
+    },
+    {
+      "path": "libero_10_turn_on_the_stove_and_put_the_moka_pot_on_it/1.0.0/dataset_info.json",
+      "bytes": 689,
+      "sha256": "5e1410f108b6990ce8f5981395b695e028702dd2eede8e93d4e6602caa781af3"
+    },
+    {
+      "path": "libero_10_turn_on_the_stove_and_put_the_moka_pot_on_it/1.0.0/dataset_statistics_a6ff7a738fa93d391923535a6d2dcd07cb1dedde534c19b282b8b2258bb8f5f8.json",
+      "bytes": 1952,
+      "sha256": "9f7b849b3f53ce62f34dcd52eeabc09a551cdc08e09b81b4e234290dc625c5ee"
+    },
+    {
+      "path": "libero_10_turn_on_the_stove_and_put_the_moka_pot_on_it/1.0.0/dataset_statistics_fb28b1cff603a73588957db9d81177e0e224ae4b69afc320c33a5415beb6b437.json",
+      "bytes": 1954,
+      "sha256": "07243cde4f1868e0c2d36ee51c4a924398c11775c80717b3dc1250d88304aa9a"
+    },
+    {
+      "path": "libero_10_turn_on_the_stove_and_put_the_moka_pot_on_it/1.0.0/features.json",
+      "bytes": 9195,
+      "sha256": "452562c48948bdbc81f8e939575a230c0395a20daf138268a0cf3bdaa03a956a"
+    },
+    {
+      "path": "libero_10_turn_on_the_stove_and_put_the_moka_pot_on_it/1.0.0/libero_10_turn_on_the_stove_and_put_the_moka_pot_on_it-train.tfrecord-00000-of-00004",
+      "bytes": 103456784,
+      "sha256": "8113c4d7f2b9905e81814ec4a43cd08c1584c2610be197f580453f39247ae5f5"
+    },
+    {
+      "path": "libero_10_turn_on_the_stove_and_put_the_moka_pot_on_it/1.0.0/libero_10_turn_on_the_stove_and_put_the_moka_pot_on_it-train.tfrecord-00001-of-00004",
+      "bytes": 100842061,
+      "sha256": "7ab63d06ccb0cebd5469fea0f78ae9f6378ef40b1d81f5581de7ee6c06f92b34"
+    },
+    {
+      "path": "libero_10_turn_on_the_stove_and_put_the_moka_pot_on_it/1.0.0/libero_10_turn_on_the_stove_and_put_the_moka_pot_on_it-train.tfrecord-00002-of-00004",
+      "bytes": 112707494,
+      "sha256": "bbd3b3aa1f36251bed965353d9f6d223c5384b9f04b510331aeae12d5b3d07ab"
+    },
+    {
+      "path": "libero_10_turn_on_the_stove_and_put_the_moka_pot_on_it/1.0.0/libero_10_turn_on_the_stove_and_put_the_moka_pot_on_it-train.tfrecord-00003-of-00004",
+      "bytes": 102025178,
+      "sha256": "75a375e6a50496bc518715c3b2482ae8c7062b51defc37346e84753f76b96aa0"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/dataset_info.json",
+      "bytes": 4182,
+      "sha256": "db522cb04b30f750943716dedf9d7aa64f2c6b754230cfdbc6d968ade35f9c85"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/dataset_statistics_2a1b8d9700831ce1ad6b09c6491772262029ead48e0147223dc0adf4041e5fcb.json",
+      "bytes": 1843,
+      "sha256": "f9ed172c6ba1da18a2328a22d4915747e4fc80ebcb7bf461d9670e880a663ede"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/features.json",
+      "bytes": 11666,
+      "sha256": "9d8a6a4754c9b205f3beab0c5a3e6d233c2902f6928f507bda0b17827e9e6c0e"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00000-of-00256",
+      "bytes": 59351012,
+      "sha256": "829f1e23a23069424c4912dd769d8d80135fdaf0299ac0c0585f4737b12dc602"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00001-of-00256",
+      "bytes": 74630721,
+      "sha256": "8b7a2430c9492caa2cbe3a0efb0e5e1fe306888db94d6fa673ea294dbfbf3c05"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00002-of-00256",
+      "bytes": 66219816,
+      "sha256": "14af9d8cd5c30a2a154495d76cd4a7352758c7c5b953c965753c3a10a1ae9f51"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00003-of-00256",
+      "bytes": 70181587,
+      "sha256": "b4d83444bd6c84c9865b7bfe06f5f51965f35726727c92b85f5e8204f25e8983"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00004-of-00256",
+      "bytes": 79721843,
+      "sha256": "f0cc3cc24d8eccc0de401c677462995e5b3b9b160bdb7615ca09e40a649b347e"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00005-of-00256",
+      "bytes": 68409678,
+      "sha256": "1e1494099aeb04fc84118599ea0802cc30606c37fb37ecca698153316cc39cda"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00006-of-00256",
+      "bytes": 63144864,
+      "sha256": "b6c3e9ec1e5fee0ca1eacb3be2b3c936b3c8d3b3c6bd625ba85353a09f782f38"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00007-of-00256",
+      "bytes": 67337931,
+      "sha256": "0aebe2cc5b0ba711833b123066b2c400cf0b82e2e27c319a6da70b242173cead"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00008-of-00256",
+      "bytes": 64383774,
+      "sha256": "ceab341c260b0cdd835e3980965b7c78ae31c7310d085c3b0ff7a23a94751457"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00009-of-00256",
+      "bytes": 76176700,
+      "sha256": "ef17496cc26387f6b79e9bf54061afd5c2a7e03ce3bfab68e1ea572d126022bd"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00010-of-00256",
+      "bytes": 75076500,
+      "sha256": "df629d6a2afd71dc44fcd98190f258ddfc4e57e7748a5a56aed759c2e4509aa3"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00011-of-00256",
+      "bytes": 69567256,
+      "sha256": "bb5b38904149439c9c3c7f97216c5ed3daab01a8346120ced82f0477ad1cde91"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00012-of-00256",
+      "bytes": 67044934,
+      "sha256": "173fbc20442eb91a9387ac19fd4488538e61ffae83e558b32e14302229f8690f"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00013-of-00256",
+      "bytes": 75212780,
+      "sha256": "83e665b43a0e7080c6918076eb9b5d57f484a1db3946e21a2590886987bf5b2a"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00014-of-00256",
+      "bytes": 75881446,
+      "sha256": "a44524544d3c930d9a683330473c6d6bb945ebb1532819e6bba9a5c0b1a84eb4"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00015-of-00256",
+      "bytes": 70890809,
+      "sha256": "1a50f4da7272b2f46be203a246bd14e5f5df877f802addfe798704731b58b8b0"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00016-of-00256",
+      "bytes": 72321760,
+      "sha256": "3137290bed7e586602e148bbea51e526d2c875c4a71fef5db314eadc616defa2"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00017-of-00256",
+      "bytes": 64602417,
+      "sha256": "264b3bab474c0d948c523a01bfa009293036c40440fc987dfb82288b7bccad9c"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00018-of-00256",
+      "bytes": 65921886,
+      "sha256": "2e9438ffbc2f6567e3415a5da9624639d63a9f202808cc2e5a57910669ba1e2c"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00019-of-00256",
+      "bytes": 77972765,
+      "sha256": "48f7bedcd387a6cfc84aeffd19a1fe14465e589aa0312c32073fb0f1f3a72cad"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00020-of-00256",
+      "bytes": 81688636,
+      "sha256": "6141976f018fa837c460aca9699af65f8b7d4f6ecbbe1a46ac7335e4aa6c7fd8"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00021-of-00256",
+      "bytes": 62903965,
+      "sha256": "352a19483949acd0c167607437354514738b2c94458c250ca0ed41f42978dd4f"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00022-of-00256",
+      "bytes": 79219793,
+      "sha256": "d619efab6a24208b7f1e9d43e2300bb03b672011975ef2d68ad2128b10e8f519"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00023-of-00256",
+      "bytes": 76428822,
+      "sha256": "440b924b7c8f7f62034d84a0d3525ca79f8a5dd560b76ff79764db01a104ba8c"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00024-of-00256",
+      "bytes": 71870089,
+      "sha256": "ca2eb03e05dbd0186758d75cdd4561e229cf15dcb86977de86beb936985e29b5"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00025-of-00256",
+      "bytes": 61098209,
+      "sha256": "3faacb38c4350ad7c1b6bb418cdf360680f48ae0821eb1349444c5183c6479cc"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00026-of-00256",
+      "bytes": 63094184,
+      "sha256": "75234a062774840ab1db9553ee6bb8716be9b29325d4ec07156fe9e00691acc8"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00027-of-00256",
+      "bytes": 69730084,
+      "sha256": "4582e09c96d34639fce68a6981cdbb7a9e0e2aeb7344aeb49e83869499620361"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00028-of-00256",
+      "bytes": 70921882,
+      "sha256": "832b0ef0d1751446a73c06dae304e53ac5cb14b7f7d37892f66663f9bcff441b"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00029-of-00256",
+      "bytes": 80630209,
+      "sha256": "40384a6a549930db7e5e481d3421182ce7ecdaece6491d1889721a6415821054"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00030-of-00256",
+      "bytes": 59243644,
+      "sha256": "fcbeb7552fdb5eb2a234684efce498788f7b9001a616fde1de58e6100aed1d77"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00031-of-00256",
+      "bytes": 69175431,
+      "sha256": "6720bba0d97a8676f43fc08ac843a45dc3e7c8ea83099b220cd2826090d807f5"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00032-of-00256",
+      "bytes": 62598189,
+      "sha256": "44722112bb033b7273fd090295e9cb6522f35218b173ede7aecac898604214a3"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00033-of-00256",
+      "bytes": 67150431,
+      "sha256": "91e170fe4ac91deb5ffa42298db3df08a1853f2a856bd0c9996f9ca1bea1c0f4"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00034-of-00256",
+      "bytes": 64666694,
+      "sha256": "3036711bb3f7a5f407d0cb71f38334f9a450f3454cb04971666ce9c4c6354240"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00035-of-00256",
+      "bytes": 74789729,
+      "sha256": "f08b3dfb84f3c78c26241cc169b202f9a344947392af2b468fc3f5f40695add9"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00036-of-00256",
+      "bytes": 75507914,
+      "sha256": "f00a697c3e23b48161e1d18ef8116a821975e81241c86c097a5a2bf3621c086c"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00037-of-00256",
+      "bytes": 72582669,
+      "sha256": "e425edd8d8ecc0b2c45f37d9723dc8993db786eb5ddf269c74a42d2bf4f47f65"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00038-of-00256",
+      "bytes": 75523812,
+      "sha256": "df5f8a19471e2eec048b6e9513599a0e7eb5154e2c51448325955708207dbfb0"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00039-of-00256",
+      "bytes": 70332409,
+      "sha256": "420f83b25526a24e6e3d8074862ae64e8fd67348bcb82461d87f194f8a92c27f"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00040-of-00256",
+      "bytes": 65325971,
+      "sha256": "3451be2c6f02462ab425f1b112f56df188076a5de48c860d51ff5fafcbd835e4"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00041-of-00256",
+      "bytes": 70281800,
+      "sha256": "ecfcd4b822c308c175ee7072054596e1259a425b4e959d3d7d09ce6e7099fc5c"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00042-of-00256",
+      "bytes": 68334704,
+      "sha256": "27d5f0c1e233719a6dcc5932ea134efc480cb2133207aa2716a98a7b369429f8"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00043-of-00256",
+      "bytes": 73341809,
+      "sha256": "c934941913885de7cad4254d463e25700a6bd78080b55e31e2b14238c9c29659"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00044-of-00256",
+      "bytes": 74227564,
+      "sha256": "e03eb471a06b3bb17538b594d99c66699a81b85257cf828000a13db2264e5c06"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00045-of-00256",
+      "bytes": 59565976,
+      "sha256": "f04cf4c2beb6893e75e6d28f762102ab07788426ec3356dd4d3f78695269f3fd"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00046-of-00256",
+      "bytes": 73796996,
+      "sha256": "493079f61991ade7b295f90e8962b170a84b71114659ae84b17865af2506c5e3"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00047-of-00256",
+      "bytes": 63038370,
+      "sha256": "0a0db789c839fa689b534c71daeed448a295264886b255e7778db7abf6495b08"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00048-of-00256",
+      "bytes": 71474030,
+      "sha256": "ec845a99fad4626b30fd55035218b2da69157c714a817dd4af063622da09a643"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00049-of-00256",
+      "bytes": 62012870,
+      "sha256": "e532e5022a3782cc58b8b87d0fbac40ef49c7b4f6092c7b53b3102c8f45f178a"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00050-of-00256",
+      "bytes": 60679603,
+      "sha256": "bf4d153c733d39863488e99149aa6fcd7324aaf04670a72eaae5e728b337e791"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00051-of-00256",
+      "bytes": 75626846,
+      "sha256": "1b584569d78d4b84d7fdb1388b2d04d37f7a42e0e9a9bf90fe5289746eb5c884"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00052-of-00256",
+      "bytes": 60530105,
+      "sha256": "159c81a23c4ffd25da8851e4904766935f957f808067d04e74d28863ec90c035"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00053-of-00256",
+      "bytes": 60100207,
+      "sha256": "b3719925399eaf8b202f8ed1b2c079b37ff96e35dab9ac0f09649849f027c747"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00054-of-00256",
+      "bytes": 69408385,
+      "sha256": "88af1fa38de7141ed218e189c237fe5ebb8ee93423b28d72137022aba0cfb4bf"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00055-of-00256",
+      "bytes": 66270797,
+      "sha256": "65b8026cefe2685cf5ebfa9eddae952d4055b1278c0681a35c9f9faf8f7a3d05"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00056-of-00256",
+      "bytes": 60952855,
+      "sha256": "2317e8441df75c898848e0365e67b2f2e2670d4bdb5044bf988ac34ec44504b8"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00057-of-00256",
+      "bytes": 65765688,
+      "sha256": "af02884998b1e54f746e36183b063eb66b0bd919bceb8f91357e22b2619acfdc"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00058-of-00256",
+      "bytes": 76117983,
+      "sha256": "8cc2674f4b736503ec2e4c989aa70e154353409614667dbf8070c75d9c7f5a45"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00059-of-00256",
+      "bytes": 61335064,
+      "sha256": "94bd169a0b1f881e8cd276223688ad473f8329f2f4de2bc3c80754d809aef7d9"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00060-of-00256",
+      "bytes": 72471444,
+      "sha256": "5ca839f8a72dbf4a39558a600db2a9b68e877a3b929f0ae084e3482b00691d07"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00061-of-00256",
+      "bytes": 71865997,
+      "sha256": "15964c3dbd799b8d771013e0e731cfedfe47bc05d4285df5982ae140d94838b7"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00062-of-00256",
+      "bytes": 65429744,
+      "sha256": "25895f5112578b21515973ec522eefabebfa5482554b1406810a6a28c57267e9"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00063-of-00256",
+      "bytes": 63800768,
+      "sha256": "95c270701f1a42f2c55dda579d6dda351b0b6e311f8dfdaed16d4796396d03ec"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00064-of-00256",
+      "bytes": 86505357,
+      "sha256": "93c8de62e49ba2f7d27441666d4b593c802f666b9a7edbbd67434f0fcb6ade4f"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00065-of-00256",
+      "bytes": 69631931,
+      "sha256": "88bbcb20616e4d6e8bcdbf4fcf35568973f0edd932f8b7873fe7d2926b3705f1"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00066-of-00256",
+      "bytes": 69924958,
+      "sha256": "7c06835280918838fed26fa1ff9dd2fa4d50e80646b666f078338502962572bb"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00067-of-00256",
+      "bytes": 64753087,
+      "sha256": "f39cd5bb31fefcb38d29e36fed9e8ffa6340e27cb79be908ca7a3ee99b66b228"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00068-of-00256",
+      "bytes": 71284605,
+      "sha256": "1624d0382246ddbeb32bd37881c895bae7336d14a554dfd9f416ed3628f2392e"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00069-of-00256",
+      "bytes": 76198982,
+      "sha256": "b23fe8296932cf13c4242adc521e41ac0aa9cbbb116023a5aa708a23c651a201"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00070-of-00256",
+      "bytes": 64999058,
+      "sha256": "e53da3e08b3e7db7bc8f1cc8dd292ff9036d424c1881db8c46f0bceed8b83c4e"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00071-of-00256",
+      "bytes": 75240637,
+      "sha256": "407923c304905eb2196c6712b02fc0a2bff4ddc7344dae98f5b2420af5c4db9a"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00072-of-00256",
+      "bytes": 52719502,
+      "sha256": "f7a33365a05aa6ddb4fcf49f285895269c8b2d5372cc9007fc58149acfcd2aa6"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00073-of-00256",
+      "bytes": 68008417,
+      "sha256": "4159b35a7d511a91ec4f5caeffe5de7f69bd26822ec6d2c6f7b7d535f17ffba7"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00074-of-00256",
+      "bytes": 89396220,
+      "sha256": "4eacc6b9442fd602d979a8a2b7175acaf12c1a48bb356977916bbbc756b9afa1"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00075-of-00256",
+      "bytes": 70256301,
+      "sha256": "5735216afa2e57c0634fd2b8849fd459e1e318e95203a54f82e08db230a740e9"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00076-of-00256",
+      "bytes": 62474737,
+      "sha256": "e7eaeb2de4e92f4448bdbb1841d86a58105165b71b012ef2ad6547ef2af14af9"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00077-of-00256",
+      "bytes": 76215677,
+      "sha256": "f73c9566c4b27f169e9cf980ffacc6ec5e34ff9701919d00902a94254e632600"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00078-of-00256",
+      "bytes": 66006698,
+      "sha256": "df4078e3083be2b9d78e33af2043b9697afa0527c427489a90ded0d2df85b31c"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00079-of-00256",
+      "bytes": 65866329,
+      "sha256": "d600c090767e582dbc8ba09fd7f5dfc142d9bcd383cb23d796f32488290c8e9d"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00080-of-00256",
+      "bytes": 71553362,
+      "sha256": "49b4ca81cb0dda2641700a084865f556dc6fdafc25672af07ab5eefb96471091"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00081-of-00256",
+      "bytes": 77696551,
+      "sha256": "8265ac40b0192ae26bfe1f050238641b65c922e2b195165a5760acf2b0778276"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00082-of-00256",
+      "bytes": 73421385,
+      "sha256": "ab823fc1feefb6a06002968098ba3682beb0f154420646a85ce6896b9fae4593"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00083-of-00256",
+      "bytes": 61761587,
+      "sha256": "687b659d92819cc5a00200c01dd5a0609371dc74bb7afa977708cfcab714a1a2"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00084-of-00256",
+      "bytes": 66494027,
+      "sha256": "cd9dba9f1bf3ec556f60e549302809e48b99d278a349fc4b59fdd9693d7d7909"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00085-of-00256",
+      "bytes": 73368655,
+      "sha256": "a3256f21b6e804be1237a6b2327587ff89d7a30df74bc68b16cbf569c4b73e5e"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00086-of-00256",
+      "bytes": 59305065,
+      "sha256": "2acd0d83baa631d34dcb0f2ff6b0ef8ba27b3032e4995033774258ceaa929236"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00087-of-00256",
+      "bytes": 78846504,
+      "sha256": "9b92b72eccc39a5caa562d2638c059e947f8d7f92a2bf64d745e4373b5f8acee"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00088-of-00256",
+      "bytes": 77943336,
+      "sha256": "b92b3a55b014f0d9cc079124149db0040b4fd432d6498dc5facc0e40bf9939d1"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00089-of-00256",
+      "bytes": 69252080,
+      "sha256": "30975049e50e3a7e04e6d839fc704164f2fe14963fe4c903c420653dee579f73"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00090-of-00256",
+      "bytes": 66235007,
+      "sha256": "f693b917d66d8fd8808ab71d6c15a218f4347d7f1467f9297b49bf9173681837"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00091-of-00256",
+      "bytes": 81803910,
+      "sha256": "53973ffb12858547d7aaf7a5f9cb50c579ed2858faefc9d8d82b7e122dfb125a"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00092-of-00256",
+      "bytes": 67238920,
+      "sha256": "74c8801af458f4be79eda5e3128a0288218c1a317d113bf68f95fe36e34e39e8"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00093-of-00256",
+      "bytes": 67426818,
+      "sha256": "c973f721ef5125ed79bb4e64398c31f97cc59e7b49b08e31f4f4bd30934eaf2d"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00094-of-00256",
+      "bytes": 72507237,
+      "sha256": "55153e8bfff9250e64c6d30e6d94bba8afc8ca22947b2f25b15e7b98c0190164"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00095-of-00256",
+      "bytes": 79352732,
+      "sha256": "bed0772013936e874340592aca100167cd37f42f1e126d946c5b09e18d5e7162"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00096-of-00256",
+      "bytes": 63217727,
+      "sha256": "20969214ae7755355f92274d8e6201925d2f5fbb9787ba0ee0e651b133ae4d67"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00097-of-00256",
+      "bytes": 82326849,
+      "sha256": "c3135586b6521fcc83bc11e69a3c20268b9f20545959f8778bdc1b3431ff8100"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00098-of-00256",
+      "bytes": 73291903,
+      "sha256": "42fb1ebc11c3e382177ea18e94b724be54ef306b7abd43d2f83fcecec8fa7de9"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00099-of-00256",
+      "bytes": 71019840,
+      "sha256": "432c2e7a0343587416d3ffff2156ad6808e5680600cbc744f987b78f83a8f44f"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00100-of-00256",
+      "bytes": 57618505,
+      "sha256": "37e59025bf9acb52154330fcee1b78d006f5c0c593546ab2e5e1aa6131b0695c"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00101-of-00256",
+      "bytes": 65523211,
+      "sha256": "261a7f419e8c34cf6d9337a6535e5829927e31d4a62fdefc6d95117c2c48c2af"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00102-of-00256",
+      "bytes": 63838209,
+      "sha256": "c41648dd5d448a9d84bb10c5da8af4d7a515897f7295a63029e89d880b52076e"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00103-of-00256",
+      "bytes": 74954650,
+      "sha256": "1d1c653424fa853e5a19dd0665d9478dd3d48df51bec265131a45d7cefc139fc"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00104-of-00256",
+      "bytes": 73722628,
+      "sha256": "c2574d054b29fd58c639bf65f11574c8cb0bbd789c2c58c95d61a3cae9823962"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00105-of-00256",
+      "bytes": 76572339,
+      "sha256": "6e23d9ae42e7464f1640e330415636a8675ed9aec539d5477a8a2c89fea9b3c8"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00106-of-00256",
+      "bytes": 65849392,
+      "sha256": "33df26be0c0541f4006b395a3781c303efe2c145456955858e11c181d8df7573"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00107-of-00256",
+      "bytes": 71705242,
+      "sha256": "d499954abe21efb0dfcd361c05eb62c8854d5880c8d4a772d9c535b493197023"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00108-of-00256",
+      "bytes": 71437683,
+      "sha256": "ef77f7cac5fd183714416ae640a617ccae707ad3910e10c63500f3d14d4b8c0b"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00109-of-00256",
+      "bytes": 60494560,
+      "sha256": "28bedba18c27584608725a6ad107aafd0303b6e5a550874d5c43318e51971973"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00110-of-00256",
+      "bytes": 73196549,
+      "sha256": "cd7d5749a174eefa43f5e357d56bad7fa5105b0ec6d4c4e784ef41a0e69b0ad3"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00111-of-00256",
+      "bytes": 78953207,
+      "sha256": "25368db43a82d62570aaff2b9df2b99fff3c09a2cf1b93f1de75c768c5b0957c"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00112-of-00256",
+      "bytes": 63696744,
+      "sha256": "746cf09f42c6c0043802ff778d8822d6b95b34e7115d87e648e7d651c8c9aeb4"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00113-of-00256",
+      "bytes": 67692429,
+      "sha256": "28b183da843c02ed90f3742755f5726fe98646b1cfb90215925def378afc532d"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00114-of-00256",
+      "bytes": 71879652,
+      "sha256": "d0c5889d3ce741ddac911e711dbd60f41e4aada93ca610f74bc4d9e1ecee6632"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00115-of-00256",
+      "bytes": 73933374,
+      "sha256": "ae9aa4874069c737b47fcdfd0e4ebbdcb208e69535b453821d6494d749e082d1"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00116-of-00256",
+      "bytes": 74393439,
+      "sha256": "74a3b3598ed723e582f4539180d1dc3a7c892e60d168cf0c4b1131c34b3ee9c2"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00117-of-00256",
+      "bytes": 73282001,
+      "sha256": "45acea9f0268d1398124a48b156dffa8ec16ed456015d2eb34a4d1195d480c3d"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00118-of-00256",
+      "bytes": 67926099,
+      "sha256": "0db87b93d00dea716206ce7405b3d4841fe5c04379cbdb369fb9f695719c3f5a"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00119-of-00256",
+      "bytes": 68790476,
+      "sha256": "353a2885b2ff8432f4c2276e35f42150385815f2a5c32d0249e27e09196ccc5e"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00120-of-00256",
+      "bytes": 80630963,
+      "sha256": "c136b831ed48fc09bf5f9bf5cbf2920b05c915484568486a7765be58dd0d0ded"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00121-of-00256",
+      "bytes": 67387921,
+      "sha256": "67f9c7c4874882ddf51919f87871886bbd1defa5e7d7c1191346f75bb23475e0"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00122-of-00256",
+      "bytes": 63573386,
+      "sha256": "f1c5f8e619844b8b720ebfa7bc76ad402cf09cddddb7e763d023043fc6d4e25c"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00123-of-00256",
+      "bytes": 67179739,
+      "sha256": "27c08007cd4be24e3af8ad7bc52d839dc3f6bd390dc0d1bf9c594ed924001c7c"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00124-of-00256",
+      "bytes": 70521704,
+      "sha256": "ace400fc21c1f2b0608abe039990ba76d7a2b74af97c1d9ebfbf5c8bf6edeaa3"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00125-of-00256",
+      "bytes": 62877733,
+      "sha256": "91aeb213df8900068405e9ef3b3d6a269644b0dff37c400f3baba142d9b26cb3"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00126-of-00256",
+      "bytes": 67369686,
+      "sha256": "8b20cd8dc7a796c67fb253d6b2c5551d2597b740d696830719ce0d09e8a8c225"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00127-of-00256",
+      "bytes": 70741797,
+      "sha256": "d20a2942d569f6eb10ad58a62dc136491d52cd8e5814c10840d294deed3adb8f"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00128-of-00256",
+      "bytes": 69773160,
+      "sha256": "6ca96a9cd2ffdb24fc762f55aef2da0e9ac2c4fc96958f07d28609690c7158a4"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00129-of-00256",
+      "bytes": 64071004,
+      "sha256": "5064abfa658a974a28be3b638b0fa61a1481a66cc8faf3222e8ae8018717585f"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00130-of-00256",
+      "bytes": 65788135,
+      "sha256": "2e702e17b6bf51a559d3f675c4fbcd1a0d56ad978eb0bfb02acd7cbc67b0506f"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00131-of-00256",
+      "bytes": 71528231,
+      "sha256": "bf0beed82b1797ce24c82b9f41ce37824c9a84eafaced9b78fcaddf1e90f92f6"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00132-of-00256",
+      "bytes": 57065816,
+      "sha256": "9c061d2a168993eb8d1aa1585c824120f359a1a1ec7cb7c68141cf84457f0fb7"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00133-of-00256",
+      "bytes": 55799140,
+      "sha256": "34b639c811ec30dd53e324514e4b8046b1e41b0e606d551517989ea5e9dd7ef4"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00134-of-00256",
+      "bytes": 70041748,
+      "sha256": "fa55ba6643954669854de4432fc8f5d5d76695be26a2d918b2a7bb62ec4f081c"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00135-of-00256",
+      "bytes": 61347976,
+      "sha256": "63fb8a0e0112890c11e00f9c40571a708f5b4fd99640aae06fdff7af06b2e929"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00136-of-00256",
+      "bytes": 71989504,
+      "sha256": "842982b31d0d7c674b1b0141c1a5be00298da7ffe3d5f98ea77f3fd786b37585"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00137-of-00256",
+      "bytes": 66557117,
+      "sha256": "328849869145ee6da03a809cf27ff8f8e4b1205ebfa12993652e5c5e78362e2a"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00138-of-00256",
+      "bytes": 66120752,
+      "sha256": "7b9c881d231237a2ab6853e741f65ca4726f2180d18a55157cdd36c8dbad8b75"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00139-of-00256",
+      "bytes": 68038377,
+      "sha256": "b5bfebbd7a56ffa1da0bfc260fc9bd35042da8ed72377ff646fb21a795812fb3"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00140-of-00256",
+      "bytes": 72436460,
+      "sha256": "c24281986af0ae55507734ab1a9c1069598ea6b5e98abcf416e1877153d56a44"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00141-of-00256",
+      "bytes": 66186539,
+      "sha256": "b60027efff31ead4d3bdfb043f52d7c9e202dbee700e9d93f9154b5d82a9464b"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00142-of-00256",
+      "bytes": 68679115,
+      "sha256": "1c1d9d8ffcdb30ba13bf5695b504bad84e254275059996e49f520f4addefdf8c"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00143-of-00256",
+      "bytes": 70746563,
+      "sha256": "1756925b2194dc10609580d6b612a9ac698f51828e75526f137863f56875789c"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00144-of-00256",
+      "bytes": 83320613,
+      "sha256": "943f30bebf3604019e3b752f938993f0bb5e7ebaaf012b4b777294ca5588433d"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00145-of-00256",
+      "bytes": 65868833,
+      "sha256": "eb61934ad96cec289435ff3bb38505f69e470e4e5d99903314ff4ac53dc69551"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00146-of-00256",
+      "bytes": 68747161,
+      "sha256": "4bf483c31837a53848ae7ccb1ded0acc2ed731d3f06152bc2b3a0577fb718170"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00147-of-00256",
+      "bytes": 78043531,
+      "sha256": "804720c541aff3af8596404a46cdbf222d1afc394a80ea455b3666e6ed7d5219"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00148-of-00256",
+      "bytes": 63204422,
+      "sha256": "03ff2b1a7941dd71b6cc03d771dfed2ed24d2fceb9a4c79c9ce7614792d9fa94"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00149-of-00256",
+      "bytes": 79163606,
+      "sha256": "63c4ccbf091d9be722686bbb11a9a0803a2018bdf026d9f0831b2458b4b99425"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00150-of-00256",
+      "bytes": 68935924,
+      "sha256": "b3e216caaaed87ebfd8dded7096b6e5f724901455689dc4c7b6640b03692af46"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00151-of-00256",
+      "bytes": 68660397,
+      "sha256": "555a1f2e991b97414f950c42bbcca1e6db7b9f4c9b5d46f7bb8d3b874d64e3ff"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00152-of-00256",
+      "bytes": 66155459,
+      "sha256": "27fb4c4b5d14e8fbd152a135d81d8c759175bc35b4bd40dee2e23294ae1acc9c"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00153-of-00256",
+      "bytes": 63681736,
+      "sha256": "d4a212b5a8b2c8db2600b0647f54b1c08910713bf162876921605dbf420e2c82"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00154-of-00256",
+      "bytes": 77957240,
+      "sha256": "cef680433f53052a28383984e88c0222bde992deffb630b471ce55a8b17698de"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00155-of-00256",
+      "bytes": 67431629,
+      "sha256": "d281a817e9c113c1878292d4a0de2b83de752caf341dc624833ca9a7d6209d82"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00156-of-00256",
+      "bytes": 71077736,
+      "sha256": "8c47b833bf6c6c546d104d19b86eb0d04748d7f30d797a183374bb8b63a62976"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00157-of-00256",
+      "bytes": 66917075,
+      "sha256": "9ab80dc8c7d7588c24770b4f61eaaf7fdeaacfe9b16faa915c7a5c8294ca7446"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00158-of-00256",
+      "bytes": 69215447,
+      "sha256": "0678e5edb3044d2be56de072627c072ec9b3ee26cb50f1c83f99bbba3a388e12"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00159-of-00256",
+      "bytes": 63607982,
+      "sha256": "41b6179f612dede823e45aafbaec8f59155be6af311128c8e04cfaf58f194936"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00160-of-00256",
+      "bytes": 64757458,
+      "sha256": "649d0ccd44c3eed18dbba447d5064b4b4e26c09a735aa068de52b4cfe6e3c5f7"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00161-of-00256",
+      "bytes": 68120522,
+      "sha256": "d5319a11a061fdb03ded57448077c770f3f6cd789debcf130bbeb15a9c47ed7e"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00162-of-00256",
+      "bytes": 66139308,
+      "sha256": "239f7adebe6889c0c0b7432a32f1fb7b9b04b93c6b628ffee842d112ba0aea64"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00163-of-00256",
+      "bytes": 67370543,
+      "sha256": "3ea34d1ed5cc7aed3e191ac5d45c1fbf74f03b37486819c031c30f957e13e717"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00164-of-00256",
+      "bytes": 74450554,
+      "sha256": "ec05db09af227b01e799075b56c9aaffb169af46b7f9f7f8c0d4d0b321da56e5"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00165-of-00256",
+      "bytes": 68580589,
+      "sha256": "a7e8432bde897004bc4eef3682ce3b8544bbd781a3ad1a2e1ea517c841d5f145"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00166-of-00256",
+      "bytes": 67357915,
+      "sha256": "323b41656b626632608c7b595718ec25259247a8e8489aa131b7b4e969357c70"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00167-of-00256",
+      "bytes": 71280964,
+      "sha256": "bfc750356e0c0d1fe3b4d1bdeadb33efdc06b42236a22d9c42461802e27d01e8"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00168-of-00256",
+      "bytes": 69815271,
+      "sha256": "957f1a9818b6b92c16f3a3984a31b0ad0c11fd63f8746a3a5a7d8703d796c20b"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00169-of-00256",
+      "bytes": 73104867,
+      "sha256": "8b3675c16a31cdc0c79f1f1876db38c34941f244d9f91c92189ea18c5a8fe467"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00170-of-00256",
+      "bytes": 68140882,
+      "sha256": "5f727c8656ec451d08c603a00d81f35ae03a333fdbc97ea4ea231bbd2249f2ac"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00171-of-00256",
+      "bytes": 66328657,
+      "sha256": "aa81b87609098993bdf3cc58f623ed95faadbe4d21e4c16242054baf07d8b3db"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00172-of-00256",
+      "bytes": 65142120,
+      "sha256": "8eafbc00c4403bff12e0e4c9114a9fcfc63addab5247735d1cbd15f177d5acdd"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00173-of-00256",
+      "bytes": 77124749,
+      "sha256": "ef61f2a9e80343cad72bc14f3a8f371bd37026de59b4a692218e8333264be286"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00174-of-00256",
+      "bytes": 72635288,
+      "sha256": "c59f29544def0090026baf04bc8c96409d4aae7d6ac80f5913b41d730e98a17a"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00175-of-00256",
+      "bytes": 74680925,
+      "sha256": "60c4c160334d5c524dc792a7e0fc059ddd515fe9a78df043ab011d3a2b450c73"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00176-of-00256",
+      "bytes": 57991170,
+      "sha256": "0c5e4628e93467876bb0c4efdafbf92b7a27260ed03de7210da6c0fb1317674d"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00177-of-00256",
+      "bytes": 78243485,
+      "sha256": "e0cc8f805ba6e689ae6270f060cf5cedda369b6eeeaa0b558a191bde4afe57bb"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00178-of-00256",
+      "bytes": 76916401,
+      "sha256": "0475d0a986159cca9590f71ece88b51248d0a8beda441da9ad4ebf36b124c82e"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00179-of-00256",
+      "bytes": 59824915,
+      "sha256": "b97235d49d7324a4e9da7d184386941ec5e59dddaa6b06a6fa28a680a9a4a882"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00180-of-00256",
+      "bytes": 71678862,
+      "sha256": "8de2aa69aaeee430ada1f912e1b2addf57f9a7a70887e1e3881c1ccdc2f7ef6e"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00181-of-00256",
+      "bytes": 71044923,
+      "sha256": "ea841f0b1221a89040bbe33e6b1778b4ec1adb4fb8cc1393ad1125ff006e8b00"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00182-of-00256",
+      "bytes": 65269206,
+      "sha256": "5472211e3e6a7253ff211d55e6b4be4485bb4e7ca49b4408c5be91b732b6bfe5"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00183-of-00256",
+      "bytes": 63348737,
+      "sha256": "78f9a31fdce465d7d9ffd5b3bb93872ee37de1e9090f0db832ad4bd77fa6eb8b"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00184-of-00256",
+      "bytes": 67338903,
+      "sha256": "7d05443473eb68615e77e490a6e7088ff0c2966620335e3dbc4cf44341aff44a"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00185-of-00256",
+      "bytes": 68408520,
+      "sha256": "6f8d5d254aaae5e8682fc3e84a692a92e5bf5c825eae929f7ed8222dd7535e6a"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00186-of-00256",
+      "bytes": 69331541,
+      "sha256": "dad46c3dac11947e9b420789334b2da2aa9d48d33aa11d389cbac5b99cb5d738"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00187-of-00256",
+      "bytes": 75668223,
+      "sha256": "ddb2df03c56fc098b081be2ecde1cc57072e54061c7adc17014139c480cb777e"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00188-of-00256",
+      "bytes": 74826968,
+      "sha256": "29a780845e3797414da338cf8e3c220aadd276a72a01047cc717b81f7c4866b2"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00189-of-00256",
+      "bytes": 73394798,
+      "sha256": "012a22d4c68fe2ebb96cbc42dcb87daddfc2375dc3442f16783d7670b63c6668"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00190-of-00256",
+      "bytes": 60947378,
+      "sha256": "d45fa297dd36930020717dac711343f1ee8e9a3b7f0386a33e1536f7063d93b0"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00191-of-00256",
+      "bytes": 71409735,
+      "sha256": "de1e3620f7342905823d201e1d1b3a9845087f503aec7ad2e5cd84fcaa4087f7"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00192-of-00256",
+      "bytes": 62422337,
+      "sha256": "0bb4092a2d69c3c09ad085ed4b7ca6c94f96addd2b8901883d39228b76c9283c"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00193-of-00256",
+      "bytes": 65548582,
+      "sha256": "69ce2bb3aa0691f47863289f6f03450915455dc2923c5ccd0dc48b427b6cfee6"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00194-of-00256",
+      "bytes": 67496980,
+      "sha256": "75058a1245d46db826befb9de32fd5593446425db13482df8388bdb904543d1d"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00195-of-00256",
+      "bytes": 70751160,
+      "sha256": "4329185448c07bc282c58b76b0b5c01688235e2c6104e80f24cf48892175b93d"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00196-of-00256",
+      "bytes": 65789636,
+      "sha256": "3f0faa978fd04721e30d1c72774ccd0432875b36445f6c4d4518678e5bf188ac"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00197-of-00256",
+      "bytes": 67519663,
+      "sha256": "b49c701763990f6735e9ab0956c57fe420285b75cbda026dbbc2f7f140984643"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00198-of-00256",
+      "bytes": 64436925,
+      "sha256": "e2bb2b122cf3d54b1d3dd7d3e09d12629b43a69acf895eb6da927abc1dc25a29"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00199-of-00256",
+      "bytes": 64736897,
+      "sha256": "945d49affd7d44e9620cca43c5579719d4fce014ce6acc1117758505b3a3045b"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00200-of-00256",
+      "bytes": 72087859,
+      "sha256": "444cf32976770f8020360e94dde85d829b30361f7e0f7009065214969d9ee318"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00201-of-00256",
+      "bytes": 67895302,
+      "sha256": "668c58772b9b08cdaeacd090c9aa859cda79b6e1f91e86105b97d19072e7441c"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00202-of-00256",
+      "bytes": 59276846,
+      "sha256": "34e7321791d795c9936bdd63f800a6300781ef4e80bb775a931cd486225644c3"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00203-of-00256",
+      "bytes": 57274555,
+      "sha256": "af6b12cca36037408ab60d9820636d97dadab54c2823414a2e9c81b68f328759"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00204-of-00256",
+      "bytes": 84818977,
+      "sha256": "1acc1c77f7b21e229e25f156879d81f5e9c3fd94fdc60d267ef1052afb73b46c"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00205-of-00256",
+      "bytes": 70322895,
+      "sha256": "9ae79350539d13e823cf525a41e93814ffd1b4bb92b72e1862220b5eb113ae7c"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00206-of-00256",
+      "bytes": 61104802,
+      "sha256": "e84d847fb5a5ef40ebb3a83141eb74e8ccadba08160741eebfa051a58beb6ade"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00207-of-00256",
+      "bytes": 77382130,
+      "sha256": "1444efb44a56d5fcd789c256ebae889d55e92d48007b8531a24d36ef93d3cec3"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00208-of-00256",
+      "bytes": 73958612,
+      "sha256": "d21ad99f1e077977c51ff88628f5b199ba3098bfd1bd43d7341536e357b9f335"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00209-of-00256",
+      "bytes": 72068977,
+      "sha256": "dae6201542144412ab4e69153d34bf105cfc5ee9360af7f506aaaaa687ae945d"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00210-of-00256",
+      "bytes": 76721285,
+      "sha256": "68211b311028604867666c6c4446a5a9f7634b7ffd7ccf030e7d392da5816f70"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00211-of-00256",
+      "bytes": 73676029,
+      "sha256": "751c41af7704716cb72d2ebe2bf5c14abad00ca008fd6b812593bce02bc16b6b"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00212-of-00256",
+      "bytes": 77610441,
+      "sha256": "a7e562b368187541d5d47926104264cb5b6445433971c244857f78d60cb3b9ea"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00213-of-00256",
+      "bytes": 65235009,
+      "sha256": "4b03e9a3fa65625e8fa611654a95a2fdc49197ebbfad2be8b2ce371b60bca47b"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00214-of-00256",
+      "bytes": 69026402,
+      "sha256": "1ddefaf0fc03c3f370a9e9eaac576e0aed650421f71139ca72d2c6222791b193"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00215-of-00256",
+      "bytes": 69349609,
+      "sha256": "02527c4e929b245a1f58bc54d42708ae777e9b531c78d30a3a827280f9a5cd88"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00216-of-00256",
+      "bytes": 73282610,
+      "sha256": "aa8f6591d1823dda64145538150ea21f2b39c4ac78471e260d7ff3b62c361177"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00217-of-00256",
+      "bytes": 70231180,
+      "sha256": "d4ad27926bf64f0f5795869d1374e227cd3c0d187c1d0f366cbcdf3b25512353"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00218-of-00256",
+      "bytes": 65484295,
+      "sha256": "22b14c23dc26a1a0f207f6d1ae1ef3ca2b574ac0f8e351d0cea154a3978de5ab"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00219-of-00256",
+      "bytes": 72238409,
+      "sha256": "3045a8adb1e4e03775b9e57e2fc35567555499a1db275528701f7ee8c901c787"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00220-of-00256",
+      "bytes": 69963663,
+      "sha256": "5f7a1214d7f8d8b42d65f7d9946733937e57b6ad5151269dd750083d58d99cf7"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00221-of-00256",
+      "bytes": 68261882,
+      "sha256": "f521cb9f30508afe774c2a21f1baad978a944fb2834ab6041b490f8084a74ef5"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00222-of-00256",
+      "bytes": 67323450,
+      "sha256": "2f5eb2ca8ef08e8e091b09f35204e7836bbf1befc811363adeca7f87ed058cb2"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00223-of-00256",
+      "bytes": 76471705,
+      "sha256": "cd373f43acd6e11a273b74561f8db8b49fee615b8b9c93731504c1a5d29af493"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00224-of-00256",
+      "bytes": 80801878,
+      "sha256": "13e6a62138c5a1e21f8e3216733d13ef4cbc775a8ad912c289d1204a62b4d8e5"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00225-of-00256",
+      "bytes": 70724512,
+      "sha256": "a4a0962e69fb1e2c18c1031e4b39bb4a2518fe81e72f2f4d4dbe33eb9636e3db"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00226-of-00256",
+      "bytes": 64578975,
+      "sha256": "42384de54c541d4203b18d886622344ec2b3fb15fa500ac307326b4316690b05"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00227-of-00256",
+      "bytes": 76610182,
+      "sha256": "026cfb46b3f8d3022846118fdb17edd9479de9f2e213c9b62284c12bcc7827bd"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00228-of-00256",
+      "bytes": 62952595,
+      "sha256": "82796efa38e34fa14d4a11e12d31b42427ca049139456052d00fb41234227583"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00229-of-00256",
+      "bytes": 63569204,
+      "sha256": "fb56852144cca7cd5dcffc8f78d0cdc2062959d4c07e02fcc3be761586f6b437"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00230-of-00256",
+      "bytes": 68147313,
+      "sha256": "f0595578614c71ed919a8c5d6051450717afc99aa05775619121613b932b653f"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00231-of-00256",
+      "bytes": 73409601,
+      "sha256": "f1376ea64d78b850281774246c246cc94009f6191e7401c76e0a67c2d048eaa4"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00232-of-00256",
+      "bytes": 69007876,
+      "sha256": "0f9ec31fe8946a7ad5fa1eb18df626829066f6c4609cec90dd598cbd084b22fe"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00233-of-00256",
+      "bytes": 61879585,
+      "sha256": "40e2ed47fc4ff4c0d69b25ce51664ff4b89ee7f26fc87b21496c23dba0583f04"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00234-of-00256",
+      "bytes": 74581370,
+      "sha256": "5e15c6b241101b76fc797c5697c54e17076c7185990a3986b5cc172a8bb0010a"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00235-of-00256",
+      "bytes": 70671550,
+      "sha256": "d434c9d0833f91e5bdd73602576bfc2fd4fec2a47cbe6c58e94572118321fdae"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00236-of-00256",
+      "bytes": 60551668,
+      "sha256": "2050ccfeb3a81033025694900cc96bb0ac2e261c9dd8d8e7445d1d902d0691d5"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00237-of-00256",
+      "bytes": 69895168,
+      "sha256": "626d4e23959420f01ba0db337f83411afbe489c6a5b3ff81429b7c7e8f9c1719"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00238-of-00256",
+      "bytes": 70684725,
+      "sha256": "b08e3234a63bb6c7dddd8347cf48b7cafa95bc3fec3612d8a3b0ef112fe06ab7"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00239-of-00256",
+      "bytes": 71460735,
+      "sha256": "06481e6b88ddd46fe27cd3fddc8b5cfd67bb1b8910809fcb68241a16782f7eae"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00240-of-00256",
+      "bytes": 66754963,
+      "sha256": "9c9b1a966863ba9f671d49d8fce6d111d8937374fe9520f815e8e9dad010532d"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00241-of-00256",
+      "bytes": 77523132,
+      "sha256": "6d7441ca70744d401ed7af7762a429fad0a15b1031c00c69578d2dd711d2dd34"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00242-of-00256",
+      "bytes": 76241090,
+      "sha256": "e11543f73657a1572df9081cf2c0b8ea184c08ed4365ac1f28eb4ae46b59fd87"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00243-of-00256",
+      "bytes": 61149050,
+      "sha256": "de815b7b95ecce12c85308d0f8ebc2cc90b887ab3cbc6621ca729d06621e8dea"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00244-of-00256",
+      "bytes": 76434308,
+      "sha256": "e2aaadac1b99aa5eb79ada7307d3990a07e3d8dd0ae78bbdaa1c21f189e52428"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00245-of-00256",
+      "bytes": 68192828,
+      "sha256": "0a98ad2470b7c94bbf08562b71e142dcade44e206a83cb193ed8e0073c326080"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00246-of-00256",
+      "bytes": 76850015,
+      "sha256": "f9c8fc6cbab8705208fcad26b7cffeb1586575445443db7eef74b7f8fa7d6926"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00247-of-00256",
+      "bytes": 68433774,
+      "sha256": "cacba6db50ccd1a5b378f7016faab1a212dbc9de2e20ca49498f10629745ea52"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00248-of-00256",
+      "bytes": 72274729,
+      "sha256": "691798428f7faca8603f237ac367aff7330bd6114fbbfb7f1bcd990df4d1ff2c"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00249-of-00256",
+      "bytes": 75971308,
+      "sha256": "9aca20cb6532ec34a18634e62c2a3b6422b5db8f488cc6a89d081f266b686d20"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00250-of-00256",
+      "bytes": 66902022,
+      "sha256": "76b3e9896098ece4c68679e935a228f9b8b2740779a77f0d15a91a6bbf06f7f3"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00251-of-00256",
+      "bytes": 75678054,
+      "sha256": "fefa8b8a204c90245311bbd9a2f98144b808b64fa0ad463ee5b89bdb4ff7ff50"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00252-of-00256",
+      "bytes": 68887772,
+      "sha256": "f40d34b7b376f1d6d3ee445b4d470df8c96a2dfab43b7d21100f3cd252544683"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00253-of-00256",
+      "bytes": 66886057,
+      "sha256": "a307d548272fec2550817141cc8977ca1373179c2cf2462123e9556b9a3129e3"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00254-of-00256",
+      "bytes": 75539824,
+      "sha256": "6afcd40b1fd87ad767af15285d1ed1756d6c234871cf851f93dd543a12ac40d7"
+    },
+    {
+      "path": "libero_90_flipped/1.0.0/libero_90_flipped-train.tfrecord-00255-of-00256",
+      "bytes": 70387124,
+      "sha256": "4098c8ceecbfa6a648fd6c11288f5686ccb9017711922668c581de55145bf47a"
+    },
+    {
+      "path": "libero_goal_reduced/1.0.0/dataset_info.json",
+      "bytes": 823,
+      "sha256": "7e425db427cc1fe6209fe304289501cb9898c2df0f1c4b612fb22cfbc6aca337"
+    },
+    {
+      "path": "libero_goal_reduced/1.0.0/dataset_statistics_52c16127546338821a0c94cda5885549868db70123b717d958a4a8c866d2aa13.json",
+      "bytes": 1854,
+      "sha256": "d4a39ff07d14b2bccb53390d7bb5e49022e842e8fb8760a21fdba10f986c381c"
+    },
+    {
+      "path": "libero_goal_reduced/1.0.0/features.json",
+      "bytes": 9195,
+      "sha256": "452562c48948bdbc81f8e939575a230c0395a20daf138268a0cf3bdaa03a956a"
+    },
+    {
+      "path": "libero_goal_reduced/1.0.0/libero_goal_reduced-train.tfrecord-00000-of-00016",
+      "bytes": 92110191,
+      "sha256": "d27844b0b5225699052d5040f0f75a209b7fde9d74a47fbc4f5b28ec35204f05"
+    },
+    {
+      "path": "libero_goal_reduced/1.0.0/libero_goal_reduced-train.tfrecord-00001-of-00016",
+      "bytes": 103856598,
+      "sha256": "208455f255aa84c8b2c09b5f27a3a375bd877e9365064b45f02dcdaed24b72eb"
+    },
+    {
+      "path": "libero_goal_reduced/1.0.0/libero_goal_reduced-train.tfrecord-00002-of-00016",
+      "bytes": 81288859,
+      "sha256": "01c699246622ae3726f14be1f6cd8af7931e932092cd37af63e8d1baf4156780"
+    },
+    {
+      "path": "libero_goal_reduced/1.0.0/libero_goal_reduced-train.tfrecord-00003-of-00016",
+      "bytes": 89391137,
+      "sha256": "c07d411fb026b4f09d00423f88fe57d6a095655787dc840ace848bda1e5ce1ef"
+    },
+    {
+      "path": "libero_goal_reduced/1.0.0/libero_goal_reduced-train.tfrecord-00004-of-00016",
+      "bytes": 83138958,
+      "sha256": "d90f810615d3213911cd3a915ee789ac461f693136502869b9bdd3caaf126a51"
+    },
+    {
+      "path": "libero_goal_reduced/1.0.0/libero_goal_reduced-train.tfrecord-00005-of-00016",
+      "bytes": 86901914,
+      "sha256": "93b0674c1b9eb21355d8315f04bfbb3b30f45645297cc739cb75fbae89e954c3"
+    },
+    {
+      "path": "libero_goal_reduced/1.0.0/libero_goal_reduced-train.tfrecord-00006-of-00016",
+      "bytes": 88199006,
+      "sha256": "5f28a08e5153d46f59081aa23da270ddd33d31c34d1f0b45e622683a30474e3d"
+    },
+    {
+      "path": "libero_goal_reduced/1.0.0/libero_goal_reduced-train.tfrecord-00007-of-00016",
+      "bytes": 77668064,
+      "sha256": "220bd98d73cf73bc619f416cde8a580e7a29d4e4254f27da1e408670578d73b8"
+    },
+    {
+      "path": "libero_goal_reduced/1.0.0/libero_goal_reduced-train.tfrecord-00008-of-00016",
+      "bytes": 92805871,
+      "sha256": "6e70d1ffc6fdef471d9acd7b2bf6e4f5aed5d051367bb68b54f756fe3a68d8ca"
+    },
+    {
+      "path": "libero_goal_reduced/1.0.0/libero_goal_reduced-train.tfrecord-00009-of-00016",
+      "bytes": 89941918,
+      "sha256": "c673df2818ea922bef0057eec690977d07b12cf5f91bccd67aa74dc086624d34"
+    },
+    {
+      "path": "libero_goal_reduced/1.0.0/libero_goal_reduced-train.tfrecord-00010-of-00016",
+      "bytes": 97900613,
+      "sha256": "d1956bf025c4299735eaa06f6e49d8d09aefad914887c4be77bf4132f30b9dab"
+    },
+    {
+      "path": "libero_goal_reduced/1.0.0/libero_goal_reduced-train.tfrecord-00011-of-00016",
+      "bytes": 83370872,
+      "sha256": "5450025320664f3281e5e99f8253ba2c4c95df4333f51e71995e794f896ffbd9"
+    },
+    {
+      "path": "libero_goal_reduced/1.0.0/libero_goal_reduced-train.tfrecord-00012-of-00016",
+      "bytes": 82635948,
+      "sha256": "cd3f4e1cc1b941283078d33a7ea5073067f574147aefa7273c1ff5350e5dbcd1"
+    },
+    {
+      "path": "libero_goal_reduced/1.0.0/libero_goal_reduced-train.tfrecord-00013-of-00016",
+      "bytes": 78142372,
+      "sha256": "923752f2745674f2dfadbab0114e6bb326a4773df5604154b632f0c3a7f523f7"
+    },
+    {
+      "path": "libero_goal_reduced/1.0.0/libero_goal_reduced-train.tfrecord-00014-of-00016",
+      "bytes": 92741120,
+      "sha256": "0d9a2cfb9ea419fb6f3e17415a5fa4f55ab28f6c8e98a039de5beff3caeddbed"
+    },
+    {
+      "path": "libero_goal_reduced/1.0.0/libero_goal_reduced-train.tfrecord-00015-of-00016",
+      "bytes": 104760554,
+      "sha256": "adb44ec68acd9900a8ebf3af70a4f3bba6b336684ed2398edcc9e812a645f47c"
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/dataset_info.json",
+      "bytes": 1049,
+      "sha256": "0cad5e877a750215ca21cc7d693d25d146489e8c1fb8d2bf1ff2ff273f6b499a"
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/dataset_statistics_031eacde3e007862f480fc5dfc7497b4be812562b92fc8acf521b56a7d8be92a.json",
+      "bytes": 1932,
+      "sha256": "b06e23328c1a6850ffc77b2a7ebdca7365c5cde3b77906d29fe661a2ae937b2f"
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/features.json",
+      "bytes": 9195,
+      "sha256": "452562c48948bdbc81f8e939575a230c0395a20daf138268a0cf3bdaa03a956a"
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00000-of-00032",
+      "bytes": 66660789,
+      "sha256": "9555efa9ad8ca2b98df1460e9264a6dc1b65b134b635821b0006757f735a6198"
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00001-of-00032",
+      "bytes": 71365359,
+      "sha256": "bc0e31211fe5e7bb0dda00b142cf3c5d02e055982f0f2c94d0208af610d6d9d7"
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00002-of-00032",
+      "bytes": 68789995,
+      "sha256": "5eab78cbba8b85a5c5e716b8451d7535684bf4853a285f9717e04df9921e3ced"
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00003-of-00032",
+      "bytes": 75723347,
+      "sha256": "f7ce763c7d1fc744d0ed85c346e21a8bae988a527dc2811e81fe068a23cb5d5c"
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00004-of-00032",
+      "bytes": 64798594,
+      "sha256": "08c40b53579184ec760d4301086c62f95656cf481fc02b2e6031ad26e585323d"
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00005-of-00032",
+      "bytes": 69261968,
+      "sha256": "b77763b304e2cbc67377a8a9b9a7c4a1ffbce1ac5d3d9cc7bbac6b59cf4e5d3b"
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00006-of-00032",
+      "bytes": 75348778,
+      "sha256": "d486f0a0cf271bc6ae7104b29caf3f853820a1c90769945751083c2b8f08df0e"
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00007-of-00032",
+      "bytes": 66212295,
+      "sha256": "91428aba5d05cc181d80c9c2067bda12fe98ae658e360b8aa1c11d37328a310e"
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00008-of-00032",
+      "bytes": 75282730,
+      "sha256": "4f1b1a07219557a18a7d595f15638b1496e16382ea7c8b89cc2bfe9fa1cdbe35"
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00009-of-00032",
+      "bytes": 65947152,
+      "sha256": "d9a8f983789edbec39da6d5f89881cdc1f4c287f5fcc9846509394e0b5976638"
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00010-of-00032",
+      "bytes": 71645297,
+      "sha256": "0d88852f81c85e6d6c92b9c2f9344da2262e9dd7268396a0aebfb0463567096e"
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00011-of-00032",
+      "bytes": 76304121,
+      "sha256": "f97eefe37baae62e23c042d72f2f5536da61438e24d2b0954cf1c8b2264ef401"
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00012-of-00032",
+      "bytes": 68124435,
+      "sha256": "b509ed7c68755c72c76c8d60d9588cc192cf855126b8e6231eab9384a5f05645"
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00013-of-00032",
+      "bytes": 71118591,
+      "sha256": "b3fd2bda5b143a50311a17bad7161b80480841a624f1975bcdeb6223a0593a08"
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00014-of-00032",
+      "bytes": 66406744,
+      "sha256": "4e8cd44b4367722446653bb21b8ce35950af7c6cc10a6b7d5c0167b9f12006a6"
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00015-of-00032",
+      "bytes": 73453424,
+      "sha256": "ac0461f487537fbe66fa6f16b096e151ba70c194513fe0560c2d2b197ced64a2"
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00016-of-00032",
+      "bytes": 74893274,
+      "sha256": "afa2f252bc78c048e2f9bdac5747b7066c76e3ddac38017132feec3ba9a5af5b"
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00017-of-00032",
+      "bytes": 67703948,
+      "sha256": "6e50495e4637563447a6d154192af02452cfaf35c2adbf14f430efbcbf3dec91"
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00018-of-00032",
+      "bytes": 78235911,
+      "sha256": "88496769e25354c9962cf6661da60087c06eadd5ceeeedf8372f49e0d21e3fb3"
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00019-of-00032",
+      "bytes": 67999852,
+      "sha256": "53247d6d7a353b7b39dd9d9ac5428a09d43407b70f16f502532e578528480f71"
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00020-of-00032",
+      "bytes": 75505761,
+      "sha256": "eecdf00a84fcd97b5b0227104f18cfb13249df8e19cc0085fbdeb5cc9ac79b0f"
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00021-of-00032",
+      "bytes": 75089960,
+      "sha256": "f93cc326349d8d164dae040aecb56b48411bf41c50336f87f5757935e9fc7d22"
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00022-of-00032",
+      "bytes": 64903460,
+      "sha256": "faeedd211a729ff0f68857405f3cc0a175f917a5ba61bdb0c754bac68f757373"
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00023-of-00032",
+      "bytes": 71007475,
+      "sha256": "4dcc05158bb95b845bdebfcaf3cbd39097542a383ba54f022b484761f06d7336"
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00024-of-00032",
+      "bytes": 71035695,
+      "sha256": "cb91c4c31d6209fc626df5f0c956590badc3775b396af803cdce17309166f308"
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00025-of-00032",
+      "bytes": 71533277,
+      "sha256": "007f3c12613956e5e5cef59208dce98cd889e333c1941809e754d6c0718babf3"
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00026-of-00032",
+      "bytes": 68013896,
+      "sha256": "859f40817bb4f06069ea2b78bcb29c841226b17cd8d4ee8ce7a91f75770cbc17"
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00027-of-00032",
+      "bytes": 70704226,
+      "sha256": "73d76662f388ba3c8a29d9e3e41172e1257a97a47ad9b0819dbb8f0d2eceaaed"
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00028-of-00032",
+      "bytes": 73408974,
+      "sha256": "e30d6b700ce6c8edacbce535547cd09ebacda0847ddba7b54b5d03ad11fc95e9"
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00029-of-00032",
+      "bytes": 73181302,
+      "sha256": "d21283cb0d84449e9f8e64b23e0da9c8966390b89adddc0c610dd5f2996ebfe5"
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00030-of-00032",
+      "bytes": 77362143,
+      "sha256": "47382fc0710e3995132c51d05ccb55bb435560ce9dd101ddea32db41bd5b236f"
+    },
+    {
+      "path": "libero_object_reduced/1.0.0/libero_object_reduced-train.tfrecord-00031-of-00032",
+      "bytes": 68809367,
+      "sha256": "6a4a790d34e58fb6b3a39d52c3164a689cbb4cb8c87e91d5cc1294929317d92b"
+    },
+    {
+      "path": "libero_spatial_reduced/1.0.0/dataset_info.json",
+      "bytes": 826,
+      "sha256": "83558e63e972ce02e503e5ca07af4c41e3173709360071127b7b0928f343763d"
+    },
+    {
+      "path": "libero_spatial_reduced/1.0.0/dataset_statistics_698e03dd5db93219bdfffe3409e2c022447cd9de965a3e272a4b903feccb110f.json",
+      "bytes": 1903,
+      "sha256": "612b50a9bbae8b200737bd1addae7baa5282c5723f74b4779c7bbc9c737f1cfb"
+    },
+    {
+      "path": "libero_spatial_reduced/1.0.0/features.json",
+      "bytes": 9195,
+      "sha256": "452562c48948bdbc81f8e939575a230c0395a20daf138268a0cf3bdaa03a956a"
+    },
+    {
+      "path": "libero_spatial_reduced/1.0.0/libero_spatial_reduced-train.tfrecord-00000-of-00016",
+      "bytes": 94483712,
+      "sha256": "6658fe434ebbcce297dca4ac0cf0d5770f48120103f9a882769f38383ce684ab"
+    },
+    {
+      "path": "libero_spatial_reduced/1.0.0/libero_spatial_reduced-train.tfrecord-00001-of-00016",
+      "bytes": 96297205,
+      "sha256": "68d240f53cb7c80863fb189c937dfd455edc7501791a69092cdd713b1675a386"
+    },
+    {
+      "path": "libero_spatial_reduced/1.0.0/libero_spatial_reduced-train.tfrecord-00002-of-00016",
+      "bytes": 92748693,
+      "sha256": "669d71d7e464d7e27ff05aa44ec0c63ba8920d9643da229b9726db56f9f5e024"
+    },
+    {
+      "path": "libero_spatial_reduced/1.0.0/libero_spatial_reduced-train.tfrecord-00003-of-00016",
+      "bytes": 99272922,
+      "sha256": "4902ce53d4c21c938415ebf6fadc28d9e6bbf1b5e1f5c51ace5d62489f892d2a"
+    },
+    {
+      "path": "libero_spatial_reduced/1.0.0/libero_spatial_reduced-train.tfrecord-00004-of-00016",
+      "bytes": 88956375,
+      "sha256": "d2ef5e27ae405800de8f7836f62fda6a9d287f5c5312643bb2eff0c873661f8e"
+    },
+    {
+      "path": "libero_spatial_reduced/1.0.0/libero_spatial_reduced-train.tfrecord-00005-of-00016",
+      "bytes": 101377782,
+      "sha256": "cfddd60781ce894c49fdd543b913e0d666f9cc4f61531a20b20c9a5e77ade84d"
+    },
+    {
+      "path": "libero_spatial_reduced/1.0.0/libero_spatial_reduced-train.tfrecord-00006-of-00016",
+      "bytes": 93988158,
+      "sha256": "59185f1edb21f5faaa8c61806d92aa7daea09e76ebd47356a66b176fde781209"
+    },
+    {
+      "path": "libero_spatial_reduced/1.0.0/libero_spatial_reduced-train.tfrecord-00007-of-00016",
+      "bytes": 101434520,
+      "sha256": "05140a2f29ba4e1dee8b19384eadad875edc3a2eaed9f59b9489ba0953add9d7"
+    },
+    {
+      "path": "libero_spatial_reduced/1.0.0/libero_spatial_reduced-train.tfrecord-00008-of-00016",
+      "bytes": 90417426,
+      "sha256": "d3cc912de11dba4e8ed205a262a8ebcc03c8bad65db96e7afb4d27f5b94f301a"
+    },
+    {
+      "path": "libero_spatial_reduced/1.0.0/libero_spatial_reduced-train.tfrecord-00009-of-00016",
+      "bytes": 94053279,
+      "sha256": "8402a0ea6e4a26ca79e5bc8d15d94e0e6aa5afb7424ec8fb97045d291615dc80"
+    },
+    {
+      "path": "libero_spatial_reduced/1.0.0/libero_spatial_reduced-train.tfrecord-00010-of-00016",
+      "bytes": 106051386,
+      "sha256": "efe8ee838266c42c1919f12bd74aef4581ac3345b1617e64f8ef560c29da9d80"
+    },
+    {
+      "path": "libero_spatial_reduced/1.0.0/libero_spatial_reduced-train.tfrecord-00011-of-00016",
+      "bytes": 96056220,
+      "sha256": "0bce691eb5cd7f43ee5b82d01d735dc265265998f291063e04e7a85e79023ae1"
+    },
+    {
+      "path": "libero_spatial_reduced/1.0.0/libero_spatial_reduced-train.tfrecord-00012-of-00016",
+      "bytes": 97788755,
+      "sha256": "d65c543cad7a703a05e4430dc34dd4dc28e43af39c8f349c0c480d67eaca361e"
+    },
+    {
+      "path": "libero_spatial_reduced/1.0.0/libero_spatial_reduced-train.tfrecord-00013-of-00016",
+      "bytes": 92807261,
+      "sha256": "a759c641016f5b54915123aab9d7363db621513811c12c3f03ccb220b312c23e"
+    },
+    {
+      "path": "libero_spatial_reduced/1.0.0/libero_spatial_reduced-train.tfrecord-00014-of-00016",
+      "bytes": 98646412,
+      "sha256": "bc34067c62931dffa2a42f4d6b8247d1d28c70104a1471dc24e046ab619609fa"
+    },
+    {
+      "path": "libero_spatial_reduced/1.0.0/libero_spatial_reduced-train.tfrecord-00015-of-00016",
+      "bytes": 99368085,
+      "sha256": "d831eb15740cb3dbe7f9d4273ccf38c686280e6e0ae8175fa925dfda97841f5b"
+    }
+  ]
+}

@@ -152,22 +152,30 @@ def verify_dataset() -> None:
         item["path"]: (int(item["bytes"]), item["sha256"])
         for item in actual["files"]
     }
-    if actual_files != expected_files:
-        missing = sorted(set(expected_files) - set(actual_files))
-        extra = sorted(set(actual_files) - set(expected_files))
-        changed = sorted(
-            path
-            for path in set(expected_files) & set(actual_files)
-            if expected_files[path] != actual_files[path]
-        )
+    missing = sorted(set(expected_files) - set(actual_files))
+    all_extra = sorted(set(actual_files) - set(expected_files))
+    ignored_generated_statistics = [
+        path
+        for path in all_extra
+        if Path(path).name.startswith("dataset_statistics_")
+        and Path(path).suffix == ".json"
+    ]
+    extra = sorted(set(all_extra) - set(ignored_generated_statistics))
+    changed = sorted(
+        path
+        for path in set(expected_files) & set(actual_files)
+        if expected_files[path] != actual_files[path]
+    )
+    if missing or extra or changed:
         raise RuntimeError(
             f"服务器数据清单不一致: missing={missing}, extra={extra}, changed={changed}"
         )
     update_status(
         "dataset_verified",
-        file_count=actual["file_count"],
-        total_bytes=actual["total_bytes"],
+        file_count=len(expected_files),
+        total_bytes=sum(size for size, _ in expected_files.values()),
         manifest=str(SERVER_MANIFEST),
+        ignored_generated_statistics=ignored_generated_statistics,
     )
 
 

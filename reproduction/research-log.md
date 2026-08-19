@@ -97,3 +97,13 @@
 - 在不停止旧进程的情况下，先对可见目录执行独立官方 GCS 校验；24/24 对象的 size 与 MD5 全部一致，总计 `12,014,416,199` bytes。取得内容证据后才终止旧 aria2/父进程，并将 5 个 control sidecars 移入 `/shared/.cache/retain/transfer-control-archive/pi0-base-20260820T0029CST`。该操作未删除或覆盖任何 checkpoint payload，控制文件可恢复。
 - 下一门禁仍为 supervisor 的独立 GCS 复核与 Orbax restore；MD5 通过不替代实际反序列化检查。
 - 本轮检查时 8 张 GPU 仍各占用约 45.9–81.2 GiB 显存，训练继续等待；共享盘可用约 `272,815,869,952` bytes，高于 150 GB 安全线。
+
+## 2026-08-20 00:50 CST｜全量输入门禁通过，进入单卡等待
+
+- 数据续传在 00:32 CST 达到参考清单的 `353 / 353` 文件和 `24,235,684,869` bytes，随后立即进入逐文件 SHA-256；没有仅凭尺寸宣布输入完成。
+- 首次全量 SHA 正确检出 12 个 LIBERO-90 shards 内容不一致。它们均来自首轮中断后遗留的同尺寸 partial 文件，说明 aria2 control bitmap 中尚有空缺 ranges，而表观文件长度已经等于目标长度。监督器按设计以 `failed` 停止，训练没有启动；失败现场保存在 `data/dataset_manifest_server_failed_20260820T0032.json` 和 `experiments/supervisor-status-failed-data-sha-20260820T0032.json`。
+- 从本地已验证的固定 revision 对这 12 个文件执行 `rsync --checksum` 差分修复：逻辑文件总量 `838,657,425` bytes，其中实际 unmatched data 为 `169,681,824` bytes，发送约 `142,876,538` bytes。修复后先逐文件完成 12/12 定向 SHA，再由重启后的 supervisor 重跑全部 353 文件；全量 SHA 于 00:45 CST 通过。
+- 首次 server manifest 还出现 3 个额外 `dataset_statistics_*.json`。检查键、时间和来源后确认它们是此前三个 target dataloader smoke tests 生成的 normalization cache，不属于固定 Hugging Face revision。校验器保留这些运行所需缓存，但只把参考清单中的 353 个路径作为 payload；未知额外文件仍会导致失败。
+- supervisor 独立复跑官方 GCS 校验后，`π0 base` 再次通过 24/24 size/MD5；随后实际 Orbax restore 成功：50 个 leaves、`3,238,048,528` 个 float32 参数、展开内存 `12,952,194,112` bytes，结构哈希为 `b061101d775178ee7709d97c4e8a1d5b68a63073febcd545fe6e6d1f05609dda`。
+- 7 个训练 config（pretrain、三个 Task-FT、三个 coFT）均在 CPU 上读取真实 `batch=64` 并通过：state `[64, 32]`、action `[64, 50, 32]`、数值有限；机器可读证据为 `experiments/input-smoke-all.json`。
+- 训练 pipeline 已启动但尚未产生训练进程。00:49 CST 的空闲检查中，各卡显存仍占用约 `43,573–81,200 MiB`，没有一张满足 `≤2,048 MiB` 且 utilization `≤10%` 的双阈值，因此继续等待且不抢占其他任务。

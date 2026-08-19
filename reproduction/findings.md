@@ -18,11 +18,12 @@
 12. 服务器首轮传输精确完成 271/353 个文件后，aria2 被不可达的 Hugging Face JSON 元数据 URL 占据并降为 0 B/s；独立尺寸审计确认 21 个 JSON 元数据与三个 target datasets 均已完整，82 个未完成项全部是 TFRecord。基于该清单刷新 CDN 签名 URL 后，续传恢复到约 3–4 MiB/s，既有 partial 未被删除。
 13. aria2 中断后会遗留 control sidecars，其中部分对应 payload 已达到参考尺寸；因此 sidecar 数量不能作为数据正确性的最终判据。监督器现以固定 payload 清单的尺寸齐备和传输进程结束作为进入 SHA-256 的条件，SHA-256 仍是内容完整性的最终门禁；sidecars 仅作诊断记录且不进入数据清单。
 14. `π0 base` 的服务器可见目录已按官方 GCS metadata 通过 24/24 对象的 size 与 MD5 校验，总计 12,014,416,199 bytes。并行 aria2/rsync 曾使旧 aria2 的 5 个文件句柄指向 deleted inodes；校验可见 payload 后已结束该无效进程，并把控制文件移入可恢复归档，权重内容未改动。
+15. 服务器首次全量 SHA-256 正确检出 12 个表观尺寸完整但内容不一致的 LIBERO-90 shards，证明尺寸门禁不能替代内容校验。按固定 revision 做 rsync checksum 差分修复并定向复核后，353/353 个参考 payload、24,235,684,869 bytes 全部通过 SHA-256。
+16. 三个 target smoke tests 各生成一个新的 `dataset_statistics_*.json` 缓存；它们不是固定 Hugging Face revision 的 payload。监督器保留这些训练缓存，但只以参考清单的 353 个路径作为数据内容门禁。
+17. `π0 base` 已成功完成真实 Orbax restore：50 个 leaves、3,238,048,528 个 float32 参数、内存展开 12,952,194,112 bytes，结构 SHA-256 为 `b061101d775178ee7709d97c4e8a1d5b68a63073febcd545fe6e6d1f05609dda`。全部 7 个 `retain_repro_*` configs 也已在 CPU 上读取真实 batch 并通过 shape、dtype 与有限值检查。
 
 ## 待验证
 
-- 服务器端数据 SHA-256 与本地清单的一致性。
-- 117-task / coFT mixture 的完整单批 dataloader，以及 `π0 base` Orbax 权重加载。
 - 10,000-step pretraining 的 loss 曲线与最终 checkpoint。
 - 三任务 Task-FT、RETAIN、coFT 的 ID/OOD/generalist 成功率。
 

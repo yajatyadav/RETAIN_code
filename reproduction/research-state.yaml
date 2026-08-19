@@ -1,8 +1,8 @@
 schema_version: 1
 project: RETAIN_LIBERO_reproduction
 protocol_id: RETAIN-GPU-20260819-001
-updated_at: "2026-08-20T00:30:12+08:00"
-status: supervisor_running_inputs_retry
+updated_at: "2026-08-20T00:49:52+08:00"
+status: waiting_for_single_idle_gpu
 objective: >-
   在单张服务器 GPU 上按论文最终实验方法复现 RETAIN 的 LIBERO 仿真实验，
   保存可审计的训练、参数合并、ID/OOD/generalist 评测结果和中文记录。
@@ -27,14 +27,20 @@ data:
   local_sha256_status: verified_353_of_353_files
   payload_file_count: 353
   payload_bytes: 24235684869
-  server_transfer_status: in_progress_retry_82_tfrecords
-  server_size_verified_files: 349
-  server_size_verified_bytes: 23861368544
+  server_transfer_status: complete
+  server_size_verified_files: 353
+  server_size_verified_bytes: 24235684869
+  server_sha256_status: verified_353_of_353_reference_files
+  server_manifest: reproduction/data/dataset_manifest_server.json
+  server_actual_files_including_generated_cache: 356
+  ignored_generated_statistics_files: 3
   retry_incomplete_files: 82
   retry_incomplete_bytes: 6363471173
   retry_audit: reproduction/data/transfer-audit-retry.json
   retry_selection: reproduction/data/retry-selection-20260820.json
   target_batch_smoke_status: verified_3_of_3_configs
+  all_training_input_smoke_status: verified_7_of_7_configs
+  all_training_input_smoke_report: reproduction/experiments/input-smoke-all.json
   published_total_objects: 354
   reduced_transition_counts:
     libero_goal_reduced: 39799
@@ -48,7 +54,10 @@ checkpoints:
   local_size_md5_status: verified_24_of_24_objects
   server_transfer_status: size_md5_verified_24_of_24_objects
   server_size_md5_status: verified
-  server_orbax_restore_status: pending_supervisor
+  server_orbax_restore_status: verified
+  server_orbax_restore_report: reproduction/data/pi0_base_restore.json
+  server_parameter_count: 3238048528
+  server_structure_sha256: b061101d775178ee7709d97c4e8a1d5b68a63073febcd545fe6e6d1f05609dda
   archived_transfer_controls: /shared/.cache/retain/transfer-control-archive/pi0-base-20260820T0029CST
   tokenizer_size_md5_status: verified
 compute:
@@ -56,15 +65,15 @@ compute:
   gpu_count_allowed: 1
   selected_gpu: null
   selection_rule: 启动时选择显存和利用率均足够空闲的一张 GPU，不抢占现有进程
-current_stage: environment_and_data
-next_action: supervisor 等待剩余 4 个尺寸未齐的数据 shard，随后自动完成服务器 SHA/Orbax 校验与全部 7 个 config smoke test，再等待一张空闲 GPU
+current_stage: waiting_for_training_gpu
+next_action: training pipeline 按显存与利用率双阈值等待一张空闲 GPU，获得后启动 10000-step 117-task pretraining
 orchestration:
   supervisor: reproduction/scripts/run_reproduction_supervisor.py
   server_status: /root/RETAIN_code/reproduction/experiments/supervisor-status.json
   server_log: /root/RETAIN_code/reproduction/experiments/supervisor.log
   running_since: "2026-08-19T23:19:14+08:00"
-  latest_heartbeat: "2026-08-20T00:30:12+08:00"
-  restart_count: 2
+  latest_heartbeat: "2026-08-20T00:49:52+08:00"
+  restart_count: 3
 incidents:
   - time: "2026-08-20T00:05:15+08:00"
     stage: dataset_transfer
@@ -80,5 +89,13 @@ incidents:
     recovery: >-
       对可见 payload 执行官方 GCS size/MD5 校验并确认 24/24 一致后，终止旧下载器；
       将 5 个 aria2 control sidecars 移入可恢复归档目录，未删除或覆盖权重
+  - time: "2026-08-20T00:32:48+08:00"
+    stage: dataset_sha256
+    cause: 首轮中断遗留的 12 个同尺寸 TFRecord 仍有未完成 byte ranges，尺寸门禁无法识别
+    impact: 全量 SHA-256 正确拦截差异并停止 supervisor，训练未启动
+    recovery: >-
+      使用本地固定 revision 对 12 个文件执行 rsync checksum 差分修复并逐文件复核 SHA；
+      同时允许 3 个 loader 生成的 dataset_statistics cache 不参与固定 payload 集合比较，
+      再次运行全量校验后 353/353 参考文件全部一致
 runs: []
 limitations: []

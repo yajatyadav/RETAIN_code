@@ -1,0 +1,13 @@
+{
+  "generated_at": "2026-08-19T16:46:55.293887+00:00",
+  "params_path": "/shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params",
+  "restore_type": "numpy.ndarray",
+  "leaf_count": 50,
+  "parameter_count": 3238048528,
+  "in_memory_bytes": 12952194112,
+  "dtype_element_counts": {
+    "float32": 3238048528
+  },
+  "structure_sha256": "b061101d775178ee7709d97c4e8a1d5b68a63073febcd545fe6e6d1f05609dda",
+  "status": "verified"
+}

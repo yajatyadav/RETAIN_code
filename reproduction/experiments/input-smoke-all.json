@@ -1,0 +1,349 @@
+{
+  "generated_at": "2026-08-19T16:47:08.279604+00:00",
+  "configs": [
+    {
+      "config": "retain_repro_pretrain",
+      "batch_size": 64,
+      "data_mix_weights": [
+        0.09170493432529685,
+        0.11803472812047353,
+        0.0933401939051338,
+        1.0
+      ],
+      "jax_devices": [
+        "TFRT_CPU_0"
+      ],
+      "state_shape": [
+        64,
+        32
+      ],
+      "state_dtype": "float32",
+      "state_finite": true,
+      "action_shape": [
+        64,
+        50,
+        32
+      ],
+      "action_dtype": "float32",
+      "action_finite": true,
+      "image_shapes": {
+        "base_0_rgb": [
+          64,
+          224,
+          224,
+          3
+        ],
+        "left_wrist_0_rgb": [
+          64,
+          224,
+          224,
+          3
+        ],
+        "right_wrist_0_rgb": [
+          64,
+          224,
+          224,
+          3
+        ]
+      },
+      "prompt_tokens_shape": [
+        64,
+        48
+      ]
+    },
+    {
+      "config": "retain_repro_task_ft_stove",
+      "batch_size": 64,
+      "data_mix_weights": [
+        1.0
+      ],
+      "jax_devices": [
+        "TFRT_CPU_0"
+      ],
+      "state_shape": [
+        64,
+        32
+      ],
+      "state_dtype": "float32",
+      "state_finite": true,
+      "action_shape": [
+        64,
+        50,
+        32
+      ],
+      "action_dtype": "float32",
+      "action_finite": true,
+      "image_shapes": {
+        "base_0_rgb": [
+          64,
+          224,
+          224,
+          3
+        ],
+        "left_wrist_0_rgb": [
+          64,
+          224,
+          224,
+          3
+        ],
+        "right_wrist_0_rgb": [
+          64,
+          224,
+          224,
+          3
+        ]
+      },
+      "prompt_tokens_shape": [
+        64,
+        48
+      ]
+    },
+    {
+      "config": "retain_repro_task_ft_mugs",
+      "batch_size": 64,
+      "data_mix_weights": [
+        1.0
+      ],
+      "jax_devices": [
+        "TFRT_CPU_0"
+      ],
+      "state_shape": [
+        64,
+        32
+      ],
+      "state_dtype": "float32",
+      "state_finite": true,
+      "action_shape": [
+        64,
+        50,
+        32
+      ],
+      "action_dtype": "float32",
+      "action_finite": true,
+      "image_shapes": {
+        "base_0_rgb": [
+          64,
+          224,
+          224,
+          3
+        ],
+        "left_wrist_0_rgb": [
+          64,
+          224,
+          224,
+          3
+        ],
+        "right_wrist_0_rgb": [
+          64,
+          224,
+          224,
+          3
+        ]
+      },
+      "prompt_tokens_shape": [
+        64,
+        48
+      ]
+    },
+    {
+      "config": "retain_repro_task_ft_basket",
+      "batch_size": 64,
+      "data_mix_weights": [
+        1.0
+      ],
+      "jax_devices": [
+        "TFRT_CPU_0"
+      ],
+      "state_shape": [
+        64,
+        32
+      ],
+      "state_dtype": "float32",
+      "state_finite": true,
+      "action_shape": [
+        64,
+        50,
+        32
+      ],
+      "action_dtype": "float32",
+      "action_finite": true,
+      "image_shapes": {
+        "base_0_rgb": [
+          64,
+          224,
+          224,
+          3
+        ],
+        "left_wrist_0_rgb": [
+          64,
+          224,
+          224,
+          3
+        ],
+        "right_wrist_0_rgb": [
+          64,
+          224,
+          224,
+          3
+        ]
+      },
+      "prompt_tokens_shape": [
+        64,
+        48
+      ]
+    },
+    {
+      "config": "retain_repro_coft_stove",
+      "batch_size": 64,
+      "data_mix_weights": [
+        1.0,
+        0.07037552908085302,
+        0.09058134660374041,
+        0.07163044801146737,
+        0.7674126763039392
+      ],
+      "jax_devices": [
+        "TFRT_CPU_0"
+      ],
+      "state_shape": [
+        64,
+        32
+      ],
+      "state_dtype": "float32",
+      "state_finite": true,
+      "action_shape": [
+        64,
+        50,
+        32
+      ],
+      "action_dtype": "float32",
+      "action_finite": true,
+      "image_shapes": {
+        "base_0_rgb": [
+          64,
+          224,
+          224,
+          3
+        ],
+        "left_wrist_0_rgb": [
+          64,
+          224,
+          224,
+          3
+        ],
+        "right_wrist_0_rgb": [
+          64,
+          224,
+          224,
+          3
+        ]
+      },
+      "prompt_tokens_shape": [
+        64,
+        48
+      ]
+    },
+    {
+      "config": "retain_repro_coft_mugs",
+      "batch_size": 64,
+      "data_mix_weights": [
+        1.0,
+        0.07037552908085302,
+        0.09058134660374041,
+        0.07163044801146737,
+        0.7674126763039392
+      ],
+      "jax_devices": [
+        "TFRT_CPU_0"
+      ],
+      "state_shape": [
+        64,
+        32
+      ],
+      "state_dtype": "float32",
+      "state_finite": true,
+      "action_shape": [
+        64,
+        50,
+        32
+      ],
+      "action_dtype": "float32",
+      "action_finite": true,
+      "image_shapes": {
+        "base_0_rgb": [
+          64,
+          224,
+          224,
+          3
+        ],
+        "left_wrist_0_rgb": [
+          64,
+          224,
+          224,
+          3
+        ],
+        "right_wrist_0_rgb": [
+          64,
+          224,
+          224,
+          3
+        ]
+      },
+      "prompt_tokens_shape": [
+        64,
+        48
+      ]
+    },
+    {
+      "config": "retain_repro_coft_basket",
+      "batch_size": 64,
+      "data_mix_weights": [
+        1.0,
+        0.07037552908085302,
+        0.09058134660374041,
+        0.07163044801146737,
+        0.7674126763039392
+      ],
+      "jax_devices": [
+        "TFRT_CPU_0"
+      ],
+      "state_shape": [
+        64,
+        32
+      ],
+      "state_dtype": "float32",
+      "state_finite": true,
+      "action_shape": [
+        64,
+        50,
+        32
+      ],
+      "action_dtype": "float32",
+      "action_finite": true,
+      "image_shapes": {
+        "base_0_rgb": [
+          64,
+          224,
+          224,
+          3
+        ],
+        "left_wrist_0_rgb": [
+          64,
+          224,
+          224,
+          3
+        ],
+        "right_wrist_0_rgb": [
+          64,
+          224,
+          224,
+          3
+        ]
+      },
+      "prompt_tokens_shape": [
+        64,
+        48
+      ]
+    }
+  ]
+}
