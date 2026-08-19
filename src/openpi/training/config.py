@@ -597,7 +597,167 @@ LIBERO_SPATIAL_FRACTION_OF_TOTAL = LIBERO_SPATIAL_NUM_TRANSITIONS / TOT_NUM_TRAN
 LIBERO_LM_FRACTION_OF_TOTAL = LIBERO_LM_NUM_TRANSITIONS / TOT_NUM_TRANSITIONS
 
 
+# Reproduction configs for the final RETAIN paper protocol (arXiv:2512.08333v3).
+# The original configs below reflect earlier development runs and contain author-local
+# paths / superseded hyperparameters.  Keep these dedicated configs separate so that
+# the exact paper settings remain auditable.
+RETAIN_REPRO_DATA_ROOT = "/shared/.cache/retain/libero/datasets"
+RETAIN_REPRO_CHECKPOINT_ROOT = "/shared/.cache/retain/checkpoints"
+RETAIN_REPRO_PRETRAIN_EXP = "paper_final_hparams"
+RETAIN_REPRO_PRETRAIN_PARAMS = (
+    f"{RETAIN_REPRO_CHECKPOINT_ROOT}/retain_repro_pretrain/"
+    f"{RETAIN_REPRO_PRETRAIN_EXP}/9999/params"
+)
+
+
+def _retain_repro_libero_data(repo_id: str) -> RLDSLiberoDataConfig:
+    """Create an RLDS LIBERO config using the paper's pretraining statistics."""
+    return RLDSLiberoDataConfig(
+        repo_id=repo_id,
+        assets=AssetsConfig(
+            assets_dir="assets",
+            asset_id="pi0_libero_pretrain",
+        ),
+    )
+
+
+RETAIN_REPRO_PRETRAIN_DATA = [
+    _retain_repro_libero_data("libero_goal_reduced"),
+    _retain_repro_libero_data("libero_object_reduced"),
+    _retain_repro_libero_data("libero_spatial_reduced"),
+    _retain_repro_libero_data("libero_90_flipped"),
+]
+
+# The loader requires at least one primary dataset with an unnormalised weight
+# of exactly 1.  Dividing by the largest fraction preserves proportional sampling.
+RETAIN_REPRO_PRETRAIN_WEIGHTS = [
+    LIBERO_GOAL_FRACTION_OF_TOTAL / LIBERO_LM_FRACTION_OF_TOTAL,
+    LIBERO_OBJECT_FRACTION_OF_TOTAL / LIBERO_LM_FRACTION_OF_TOTAL,
+    LIBERO_SPATIAL_FRACTION_OF_TOTAL / LIBERO_LM_FRACTION_OF_TOTAL,
+    1.0,
+]
+
+RETAIN_REPRO_TARGET_DATASETS = {
+    "stove": "libero_10_turn_on_the_stove_and_put_the_moka_pot_on_it",
+    "mugs": "libero_10_put_the_white_mug_on_the_left_plate_and_put_the_yellow_and_white_mug_on_the_right_plate",
+    "basket": "libero_10_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket",
+}
+
+
+def _retain_repro_schedule() -> _optimizer.CosineDecaySchedule:
+    return _optimizer.CosineDecaySchedule(
+        warmup_steps=1_000,
+        peak_lr=2.5e-5,
+        decay_steps=30_000,
+        decay_lr=2.5e-6,
+    )
+
+
+def _retain_repro_task_ft_config(task: str, num_train_steps: int) -> TrainConfig:
+    return TrainConfig(
+        name=f"retain_repro_task_ft_{task}",
+        project_name="retain_libero_reproduction",
+        model=pi0.Pi0Config(),
+        weight_loader=weight_loaders.CheckpointWeightLoader(RETAIN_REPRO_PRETRAIN_PARAMS),
+        is_RLDS=True,
+        data_root_dir=RETAIN_REPRO_DATA_ROOT,
+        data_list=[_retain_repro_libero_data(RETAIN_REPRO_TARGET_DATASETS[task])],
+        data_mix_weights=[1.0],
+        checkpoint_base_dir=RETAIN_REPRO_CHECKPOINT_ROOT,
+        batch_size=64,
+        num_train_steps=num_train_steps,
+        save_interval=num_train_steps,
+        keep_period=None,
+        log_interval=25,
+        lr_schedule=_retain_repro_schedule(),
+        optimizer=_optimizer.AdamW(
+            b1=0.9,
+            b2=0.95,
+            eps=1e-8,
+            weight_decay=1e-10,
+            clip_gradient_norm=1.0,
+        ),
+        wandb_enabled=False,
+    )
+
+
+def _retain_repro_coft_config(task: str) -> TrainConfig:
+    # One unit of target-task weight plus pretraining fractions that sum to one
+    # implements the paper's 50% target / 50% pretraining co-finetuning mixture.
+    return TrainConfig(
+        name=f"retain_repro_coft_{task}",
+        project_name="retain_libero_reproduction",
+        model=pi0.Pi0Config(),
+        weight_loader=weight_loaders.CheckpointWeightLoader(RETAIN_REPRO_PRETRAIN_PARAMS),
+        is_RLDS=True,
+        data_root_dir=RETAIN_REPRO_DATA_ROOT,
+        data_list=[
+            _retain_repro_libero_data(RETAIN_REPRO_TARGET_DATASETS[task]),
+            *RETAIN_REPRO_PRETRAIN_DATA,
+        ],
+        data_mix_weights=[
+            1.0,
+            LIBERO_GOAL_FRACTION_OF_TOTAL,
+            LIBERO_OBJECT_FRACTION_OF_TOTAL,
+            LIBERO_SPATIAL_FRACTION_OF_TOTAL,
+            LIBERO_LM_FRACTION_OF_TOTAL,
+        ],
+        checkpoint_base_dir=RETAIN_REPRO_CHECKPOINT_ROOT,
+        batch_size=64,
+        num_train_steps=1_000,
+        save_interval=1_000,
+        keep_period=None,
+        log_interval=25,
+        lr_schedule=_retain_repro_schedule(),
+        optimizer=_optimizer.AdamW(
+            b1=0.9,
+            b2=0.95,
+            eps=1e-8,
+            weight_decay=1e-10,
+            clip_gradient_norm=1.0,
+        ),
+        wandb_enabled=False,
+    )
+
+
+RETAIN_REPRO_CONFIGS = [
+    TrainConfig(
+        name="retain_repro_pretrain",
+        project_name="retain_libero_reproduction",
+        model=pi0.Pi0Config(),
+        is_RLDS=True,
+        data_root_dir=RETAIN_REPRO_DATA_ROOT,
+        data_list=RETAIN_REPRO_PRETRAIN_DATA,
+        data_mix_weights=RETAIN_REPRO_PRETRAIN_WEIGHTS,
+        weight_loader=weight_loaders.CheckpointWeightLoader("gs://openpi-assets/checkpoints/pi0_base/params"),
+        checkpoint_base_dir=RETAIN_REPRO_CHECKPOINT_ROOT,
+        num_train_steps=10_000,
+        save_interval=10_000,
+        keep_period=None,
+        batch_size=64,
+        log_interval=25,
+        lr_schedule=_retain_repro_schedule(),
+        optimizer=_optimizer.AdamW(
+            b1=0.9,
+            b2=0.95,
+            eps=1e-8,
+            weight_decay=1e-10,
+            clip_gradient_norm=1.0,
+        ),
+        wandb_enabled=False,
+    ),
+    _retain_repro_task_ft_config("stove", 500),
+    _retain_repro_task_ft_config("mugs", 1_000),
+    _retain_repro_task_ft_config("basket", 500),
+    _retain_repro_coft_config("stove"),
+    _retain_repro_coft_config("mugs"),
+    _retain_repro_coft_config("basket"),
+]
+
+
 LIBERO_CONFIGS = [
+
+    *RETAIN_REPRO_CONFIGS,
 
     TrainConfig(
         name="pi0_libero_pretrain",

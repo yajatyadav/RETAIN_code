@@ -1,0 +1,39 @@
+schema_version: 1
+project: RETAIN_LIBERO_reproduction
+protocol_id: RETAIN-GPU-20260819-001
+updated_at: "2026-08-19T00:00:00+08:00"
+status: protocol_locked_pending_commit
+objective: >-
+  在单张服务器 GPU 上按论文最终实验方法复现 RETAIN 的 LIBERO 仿真实验，
+  保存可审计的训练、参数合并、ID/OOD/generalist 评测结果和中文记录。
+scope:
+  included:
+    - pi0_base 到 117-task LIBERO generalist 的 10000-step pretraining
+    - 三个 LIBERO-10 目标任务的 Task-FT
+    - RETAIN 线性参数合并与论文 alpha
+    - coFT 基线
+    - ID、OOD 和 generalist retention 评测
+  excluded:
+    - 需要实体 Franka 机械臂的 DROID 真机实验
+paper:
+  title: Robust Finetuning of Vision-Language-Action Robot Policies via Parameter Merging
+  arxiv: "2512.08333v3"
+  code_commit: 0bbc6cf
+data:
+  repo: yajatyadav/RETAIN_datasets
+  revision: d15edfa89167e6e7230be3e85eb7391be2fa3134
+  server_root: /shared/.cache/retain/libero/datasets
+  status: downloading_pending
+checkpoints:
+  root: /shared/.cache/retain/checkpoints
+  base: gs://openpi-assets/checkpoints/pi0_base/params
+  status: downloading_pending
+compute:
+  host: hgpu
+  gpu_count_allowed: 1
+  selected_gpu: null
+  selection_rule: 启动时选择显存和利用率均足够空闲的一张 GPU，不抢占现有进程
+current_stage: environment_and_data
+next_action: 下载并校验官方数据与 pi0_base，随后进行 dataloader smoke test
+runs: []
+limitations: []
