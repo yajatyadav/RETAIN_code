@@ -1,7 +1,7 @@
 schema_version: 1
 project: RETAIN_LIBERO_reproduction
 protocol_id: RETAIN-GPU-20260819-001
-updated_at: "2026-08-20T02:08:49+08:00"
+updated_at: "2026-08-20T02:28:49+08:00"
 status: waiting_for_single_idle_gpu_runtime_preflight
 objective: >-
   在单张服务器 GPU 上按论文最终实验方法复现 RETAIN 的 LIBERO 仿真实验，
@@ -97,17 +97,17 @@ orchestration:
   server_status: /root/RETAIN_code/reproduction/experiments/supervisor-status.json
   server_log: /root/RETAIN_code/reproduction/experiments/supervisor.log
   running_since: "2026-08-20T01:20:59+08:00"
-  latest_heartbeat: "2026-08-20T02:08:49+08:00"
+  latest_heartbeat: "2026-08-20T02:28:49+08:00"
   restart_count: 4
   supervisor_pid: 237893
   training_pipeline_pid: 242839
 latest_monitor:
-  checked_at: "2026-08-20T02:08:49+08:00"
+  checked_at: "2026-08-20T02:28:49+08:00"
   supervisor_stage: training_pipeline
   idle_gpu_count: 0
-  gpu_memory_used_mib: [81200, 80057, 49978, 80133, 63219, 61369, 61277, 61005]
-  gpu_utilization_percent: [100, 100, 55, 100, 100, 97, 87, 88]
-  shared_free_bytes: 268260474880
+  gpu_memory_used_mib: [81200, 80057, 49608, 80133, 50629, 53441, 47725, 52883]
+  gpu_utilization_percent: [33, 33, 62, 26, 81, 83, 87, 75]
+  shared_free_bytes: 267285663744
   shared_free_bytes_at_restart: 272298766336
 incidents:
   - time: "2026-08-20T00:05:15+08:00"
