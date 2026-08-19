@@ -182,6 +182,20 @@ def server_env(gpu: int, policy_name: str) -> dict[str, str]:
     if XLA_COMPATIBILITY_FLAG not in current_xla_flags:
         current_xla_flags.append(XLA_COMPATIBILITY_FLAG)
     env["XLA_FLAGS"] = " ".join(current_xla_flags)
+    library_dirs = sorted(
+        path for path in (JAX_OVERLAY / "nvidia").glob("*/lib") if path.is_dir()
+    )
+    if not library_dirs:
+        raise FileNotFoundError(f"JAX overlay 缺少 CUDA 动态库目录: {JAX_OVERLAY}")
+    existing_library_path = [
+        path for path in env.get("LD_LIBRARY_PATH", "").split(os.pathsep) if path
+    ]
+    env["LD_LIBRARY_PATH"] = os.pathsep.join(
+        [*(str(path) for path in library_dirs), *existing_library_path]
+    )
+    cuda_bin = JAX_OVERLAY / "nvidia" / "cuda_nvcc" / "bin"
+    if cuda_bin.is_dir():
+        env["PATH"] = f"{cuda_bin}{os.pathsep}{env.get('PATH', '')}"
     env.pop("JAX_PLATFORMS", None)
     env.update(
         {

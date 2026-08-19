@@ -1,0 +1,27 @@
+{
+  "checked_at": "2026-08-19T19:49:48.941940+00:00",
+  "gpu_physical_index": 2,
+  "overlay": "/shared/.cache/retain/jax-overlays/0.6.2",
+  "xla_flags": "--xla_gpu_enable_triton_gemm=false",
+  "return_code": 0,
+  "stdout": "{\"status\": \"verified\", \"jax\": \"0.6.2\", \"jaxlib\": \"0.6.2\", \"jax_cuda12_plugin\": \"0.6.2\", \"platform\": \"cpu\", \"device\": \"TFRT_CPU_0\", \"device_kind\": \"cpu\", \"bf16_to_f16_shape\": [64, 64], \"bf16_matmul_shape\": [64, 64]}\n",
+  "stderr": "ERROR:2026-08-19 19:49:48,623:jax._src.xla_bridge:444: Jax plugin configuration error: Exception when calling jax_plugins.xla_cuda12.initialize()\nTraceback (most recent call last):\n  File \"/shared/.cache/retain/jax-overlays/0.6.2/jax_plugins/xla_cuda12/__init__.py\", line 197, in _version_check\n    version = get_version()\n              ^^^^^^^^^^^^^\nRuntimeError: jaxlib/cuda/versions_helpers.cc:34: operation cudaRuntimeGetVersion(&version) failed: Error loading CUDA libraries. GPU will not be used.\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"/shared/.cache/retain/jax-overlays/0.6.2/jax/_src/xla_bridge.py\", line 442, in discover_pjrt_plugins\n    plugin_module.initialize()\n  File \"/shared/.cache/retain/jax-overlays/0.6.2/jax_plugins/xla_cuda12/__init__.py\", line 324, in initialize\n    _check_cuda_versions(raise_on_first_error=True)\n  File \"/shared/.cache/retain/jax-overlays/0.6.2/jax_plugins/xla_cuda12/__init__.py\", line 229, in _check_cuda_versions\n    _version_check(\"CUDA\", cuda_versions.cuda_runtime_get_version,\n  File \"/shared/.cache/retain/jax-overlays/0.6.2/jax_plugins/xla_cuda12/__init__.py\", line 201, in _version_check\n    raise RuntimeError(err_msg) from e\nRuntimeError: Unable to load CUDA. Is it installed?\nWARNING:2026-08-19 19:49:48,656:jax._src.xla_bridge:794: An NVIDIA GPU may be present on this machine, but a CUDA-enabled jaxlib is not installed. Falling back to cpu.\n",
+  "status": "verified",
+  "runtime": {
+    "status": "verified",
+    "jax": "0.6.2",
+    "jaxlib": "0.6.2",
+    "jax_cuda12_plugin": "0.6.2",
+    "platform": "cpu",
+    "device": "TFRT_CPU_0",
+    "device_kind": "cpu",
+    "bf16_to_f16_shape": [
+      64,
+      64
+    ],
+    "bf16_matmul_shape": [
+      64,
+      64
+    ]
+  }
+}

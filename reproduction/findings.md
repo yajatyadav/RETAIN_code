@@ -23,12 +23,13 @@
 17. `π0 base` 已成功完成真实 Orbax restore：50 个 leaves、3,238,048,528 个 float32 参数、内存展开 12,952,194,112 bytes，结构 SHA-256 为 `b061101d775178ee7709d97c4e8a1d5b68a63073febcd545fe6e6d1f05609dda`。全部 7 个 `retain_repro_*` configs 也已在 CPU 上读取真实 batch 并通过 shape、dtype 与有限值检查。
 18. 首次获得空闲 GPU 2 后，pretraining 在 step 0 前完成了数据、LR 和 optimizer 初始化，但 JAX/XLA 编译报 `Unsupported conversion from bf16 to f16` 与 `Unsupported rounding mode for conversion`，exit code 为 134，未生成数值 checkpoint。服务器 GPU 是 compute capability 12.0（sm_120），而项目固定 JAX/JAXlib 0.5.0；故障发生于编译器/runtime 层，不支持据此判断训练配置或数据有误。
 19. 为保持项目主环境可回退，JAX 兼容修复采用 `/shared/.cache/retain/jax-overlays/0.6.2` 隔离 overlay，而没有原位升级 `.venv`。overlay 固定 JAX/JAXlib/CUDA plugin 0.6.2、ml-dtypes 0.5.1 与 cuDNN 9.8.0.87；在 CPU backend 下，7/7 真实 batch、同一 `π0 base` Orbax restore（参数数目与结构哈希不变）及完整 pretrain train-state `eval_shape` 均已通过。实际 sm_120 BF16 编译仍需等空闲 GPU 门禁通过后才能宣告修复有效。
+20. 第二次获得空闲 GPU 2 时，初版 preflight 因 CUDA libraries 不可见而回退到 CPU，但旧门禁只检查退出码，错误标为通过；完整训练随后加载主环境 cuDNN 9.7.1，与 JAX plugin build 的 9.8.0 不兼容并在 step 0 前退出。修复后 JAX plugin 所需的 CUDA wheels 已全部固定到 overlay，训练和评测均显式优先 overlay 动态库；12/12 关键库加载与 CPU BF16 smoke 已通过，门禁也已强化为必须只有一个可见设备且 `platform=gpu`。实际 GPU 编译仍待空闲卡验证。
 
 ## 待验证
 
 - 10,000-step pretraining 的 loss 曲线与最终 checkpoint。
 - 三任务 Task-FT、RETAIN、coFT 的 ID/OOD/generalist 成功率。
-- JAX 0.6.2 compatibility overlay 在 sm_120 上的最小 BF16→FP16、BF16 GEMM 编译门禁，以及随后完整模型首步训练。
+- 完整 CUDA 隔离修复后的 JAX 0.6.2 overlay 在 sm_120 上的严格 GPU BF16→FP16、BF16 GEMM 编译门禁，以及随后完整模型首步训练。
 
 ## 已知限制
 

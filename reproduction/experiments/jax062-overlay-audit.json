@@ -1,0 +1,134 @@
+{
+  "checked_at": "2026-08-19T20:22:29.431454+00:00",
+  "overlay": "/shared/.cache/retain/jax-overlays/0.6.2",
+  "cuda_visible_devices": "",
+  "jax_platforms": "cpu",
+  "packages": {
+    "jax": "0.6.2",
+    "jax-cuda12-pjrt": "0.6.2",
+    "jax-cuda12-plugin": "0.6.2",
+    "jaxlib": "0.6.2",
+    "ml_dtypes": "0.5.1",
+    "nvidia-cublas-cu12": "12.8.3.14",
+    "nvidia-cuda-cupti-cu12": "12.8.57",
+    "nvidia-cuda-nvcc-cu12": "12.9.86",
+    "nvidia-cuda-nvrtc-cu12": "12.8.61",
+    "nvidia-cuda-runtime-cu12": "12.8.57",
+    "nvidia-cudnn-cu12": "9.8.0.87",
+    "nvidia-cufft-cu12": "11.3.3.41",
+    "nvidia-cusolver-cu12": "11.7.2.55",
+    "nvidia-cusparse-cu12": "12.5.7.53",
+    "nvidia-nccl-cu12": "2.26.2",
+    "nvidia-nvjitlink-cu12": "12.8.61",
+    "nvidia-nvshmem-cu12": "3.2.5"
+  },
+  "libraries": [
+    {
+      "module": "nvidia.cuda_runtime",
+      "library": "libcudart.so.12",
+      "path": "/shared/.cache/retain/jax-overlays/0.6.2/nvidia/cuda_runtime/lib/libcudart.so.12",
+      "exists": true,
+      "loaded": true,
+      "module_path": "/shared/.cache/retain/jax-overlays/0.6.2/nvidia/cuda_runtime"
+    },
+    {
+      "module": "nvidia.cuda_nvrtc",
+      "library": "libnvrtc.so.12",
+      "path": "/shared/.cache/retain/jax-overlays/0.6.2/nvidia/cuda_nvrtc/lib/libnvrtc.so.12",
+      "exists": true,
+      "loaded": true,
+      "module_path": "/shared/.cache/retain/jax-overlays/0.6.2/nvidia/cuda_nvrtc"
+    },
+    {
+      "module": "nvidia.nvjitlink",
+      "library": "libnvJitLink.so.12",
+      "path": "/shared/.cache/retain/jax-overlays/0.6.2/nvidia/nvjitlink/lib/libnvJitLink.so.12",
+      "exists": true,
+      "loaded": true,
+      "module_path": "/shared/.cache/retain/jax-overlays/0.6.2/nvidia/nvjitlink"
+    },
+    {
+      "module": "nvidia.cublas",
+      "library": "libcublas.so.12",
+      "path": "/shared/.cache/retain/jax-overlays/0.6.2/nvidia/cublas/lib/libcublas.so.12",
+      "exists": true,
+      "loaded": true,
+      "module_path": "/shared/.cache/retain/jax-overlays/0.6.2/nvidia/cublas"
+    },
+    {
+      "module": "nvidia.cublas",
+      "library": "libcublasLt.so.12",
+      "path": "/shared/.cache/retain/jax-overlays/0.6.2/nvidia/cublas/lib/libcublasLt.so.12",
+      "exists": true,
+      "loaded": true,
+      "module_path": "/shared/.cache/retain/jax-overlays/0.6.2/nvidia/cublas"
+    },
+    {
+      "module": "nvidia.nccl",
+      "library": "libnccl.so.2",
+      "path": "/shared/.cache/retain/jax-overlays/0.6.2/nvidia/nccl/lib/libnccl.so.2",
+      "exists": true,
+      "loaded": true,
+      "module_path": "/shared/.cache/retain/jax-overlays/0.6.2/nvidia/nccl"
+    },
+    {
+      "module": "nvidia.cuda_cupti",
+      "library": "libcupti.so.12",
+      "path": "/shared/.cache/retain/jax-overlays/0.6.2/nvidia/cuda_cupti/lib/libcupti.so.12",
+      "exists": true,
+      "loaded": true,
+      "module_path": "/shared/.cache/retain/jax-overlays/0.6.2/nvidia/cuda_cupti"
+    },
+    {
+      "module": "nvidia.cusparse",
+      "library": "libcusparse.so.12",
+      "path": "/shared/.cache/retain/jax-overlays/0.6.2/nvidia/cusparse/lib/libcusparse.so.12",
+      "exists": true,
+      "loaded": true,
+      "module_path": "/shared/.cache/retain/jax-overlays/0.6.2/nvidia/cusparse"
+    },
+    {
+      "module": "nvidia.cusolver",
+      "library": "libcusolver.so.11",
+      "path": "/shared/.cache/retain/jax-overlays/0.6.2/nvidia/cusolver/lib/libcusolver.so.11",
+      "exists": true,
+      "loaded": true,
+      "module_path": "/shared/.cache/retain/jax-overlays/0.6.2/nvidia/cusolver"
+    },
+    {
+      "module": "nvidia.cufft",
+      "library": "libcufft.so.11",
+      "path": "/shared/.cache/retain/jax-overlays/0.6.2/nvidia/cufft/lib/libcufft.so.11",
+      "exists": true,
+      "loaded": true,
+      "module_path": "/shared/.cache/retain/jax-overlays/0.6.2/nvidia/cufft"
+    },
+    {
+      "module": "nvidia.nvshmem",
+      "library": "libnvshmem_host.so.3",
+      "path": "/shared/.cache/retain/jax-overlays/0.6.2/nvidia/nvshmem/lib/libnvshmem_host.so.3",
+      "exists": true,
+      "loaded": true,
+      "module_path": "/shared/.cache/retain/jax-overlays/0.6.2/nvidia/nvshmem"
+    },
+    {
+      "module": "nvidia.cudnn",
+      "library": "libcudnn.so.9",
+      "path": "/shared/.cache/retain/jax-overlays/0.6.2/nvidia/cudnn/lib/libcudnn.so.9",
+      "exists": true,
+      "loaded": true,
+      "module_path": "/shared/.cache/retain/jax-overlays/0.6.2/nvidia/cudnn"
+    }
+  ],
+  "status": "verified",
+  "cpu_smoke": {
+    "jax": "0.6.2",
+    "backend": "cpu",
+    "device": "TFRT_CPU_0",
+    "bf16_to_f16_shape": [
+      8,
+      8
+    ]
+  },
+  "errors": []
+}

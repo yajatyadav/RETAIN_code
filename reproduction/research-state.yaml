@@ -1,8 +1,8 @@
 schema_version: 1
 project: RETAIN_LIBERO_reproduction
 protocol_id: RETAIN-GPU-20260819-001
-updated_at: "2026-08-20T03:49:07+08:00"
-status: waiting_for_single_idle_gpu_runtime_preflight
+updated_at: "2026-08-20T04:26:53+08:00"
+status: waiting_for_single_idle_gpu_runtime_preflight_after_cuda_library_repair
 objective: >-
   在单张服务器 GPU 上按论文最终实验方法复现 RETAIN 的 LIBERO 仿真实验，
   保存可审计的训练、参数合并、ID/OOD/generalist 评测结果和中文记录。
@@ -77,6 +77,15 @@ compute:
     jax_cuda12_pjrt: "0.6.2"
     ml_dtypes: "0.5.1"
     nvidia_cudnn_cu12: "9.8.0.87"
+    nvidia_cuda_runtime_cu12: "12.8.57"
+    nvidia_cublas_cu12: "12.8.3.14"
+    nvidia_cufft_cu12: "11.3.3.41"
+    nvidia_cusolver_cu12: "11.7.2.55"
+    nvidia_cusparse_cu12: "12.5.7.53"
+    nvidia_nccl_cu12: "2.26.2"
+    nvidia_nvshmem_cu12: "3.2.5"
+    cuda_dependency_scope: fully_isolated_for_jax_plugin
+    overlay_bytes: 4653588089
     xla_flags: --xla_gpu_enable_triton_gemm=false
     base_virtualenv_modified: false
     cpu_input_smoke_status: verified_7_of_7_configs
@@ -85,30 +94,34 @@ compute:
     cpu_orbax_restore_report: reproduction/data/pi0_base_restore_jax062.json
     cpu_train_state_shape_status: verified
     cpu_compatibility_report: reproduction/experiments/jax062-cpu-compatibility.json
+    cuda_dynamic_library_audit_status: verified_12_of_12_libraries
+    cuda_dynamic_library_audit_report: reproduction/experiments/jax062-overlay-audit.json
     environment_report: reproduction/experiments/environment-jax062-retry.json
-    gpu_bf16_preflight_status: pending_idle_gpu
-current_stage: waiting_for_gpu_runtime_preflight_and_training_retry
+    invalid_cpu_fallback_preflight: reproduction/experiments/jax-gpu-preflight.invalid-cpu-fallback-20260820T0350.json
+    gpu_bf16_preflight_status: pending_idle_gpu_after_cuda_library_repair
+current_stage: waiting_for_strict_gpu_runtime_preflight_and_training_retry
 next_action: >-
-  training pipeline 按显存与利用率双阈值等待一张空闲 GPU；获得后先编译最小
-  BF16→FP16 与 BF16 GEMM preflight，验证 sm_120 runtime 后再重试 10000-step
-  117-task pretraining
+  修复后的 training pipeline 按显存与利用率双阈值等待一张空闲 GPU；获得后
+  必须在唯一 GPU backend 上编译最小 BF16→FP16 与 BF16 GEMM，严格门禁通过后
+  再重试 10000-step 117-task pretraining
 orchestration:
   supervisor: reproduction/scripts/run_reproduction_supervisor.py
   server_status: /root/RETAIN_code/reproduction/experiments/supervisor-status.json
-  server_log: /root/RETAIN_code/reproduction/experiments/supervisor.log
-  running_since: "2026-08-20T01:20:59+08:00"
-  latest_heartbeat: "2026-08-20T03:49:07+08:00"
-  restart_count: 4
-  supervisor_pid: 237893
-  training_pipeline_pid: 242839
+  server_log: /root/RETAIN_code/reproduction/experiments/supervisor.nohup.log
+  previous_server_log: /root/RETAIN_code/reproduction/experiments/supervisor.log
+  running_since: "2026-08-20T04:23:06+08:00"
+  latest_heartbeat: "2026-08-20T04:26:53+08:00"
+  restart_count: 5
+  supervisor_pid: 247374
+  training_pipeline_pid: 251712
 latest_monitor:
-  checked_at: "2026-08-20T03:49:07+08:00"
+  checked_at: "2026-08-20T04:26:53+08:00"
   supervisor_stage: training_pipeline
   idle_gpu_count: 0
-  gpu_memory_used_mib: [81200, 80057, 46408, 80133, 63003, 61465, 61373, 61081]
-  gpu_utilization_percent: [100, 99, 69, 99, 97, 100, 93, 100]
-  shared_free_bytes: 261595672576
-  shared_free_bytes_at_restart: 272298766336
+  gpu_memory_used_mib: [81200, 80057, 43508, 80133, 55579, 48391, 53903, 48739]
+  gpu_utilization_percent: [95, 100, 75, 100, 88, 65, 60, 88]
+  shared_free_bytes: 258645110784
+  shared_free_bytes_at_restart: 258662318080
 incidents:
   - time: "2026-08-20T00:05:15+08:00"
     stage: dataset_transfer
@@ -145,6 +158,19 @@ incidents:
       conservative Triton GEMM compatibility flag；7/7 真实输入、Orbax restore 和
       train-state shape 的 CPU 兼容测试通过；修复后 supervisor 已重跑数据、权重与
       7-config 输入门禁，待空闲 GPU 上执行最小 BF16 编译门禁
+  - time: "2026-08-20T03:50:02+08:00"
+    stage: gpu_runtime_preflight_and_pretraining_initialization
+    cause: >-
+      初版 JAX 0.6.2 overlay 只隔离 cuDNN，其他 CUDA wheels 仍复用主环境；纯 JAX
+      preflight 因 CUDA libraries 不可见回退 CPU，且旧门禁未校验 device platform；
+      训练进程随后加载主环境 cuDNN 9.7.1，与 plugin build 所需 9.8.0 不兼容
+    impact: >-
+      attempt 2 在 step 0 前以 exit 1 停止，未产生数字 checkpoint；错误的 CPU
+      preflight 已明确标记为 invalid，不能作为 GPU runtime 成功证据
+    recovery: >-
+      将 JAX plugin 所需 CUDA wheels 全部固定到隔离 overlay，显式优先其动态库路径，
+      并把唯一可见设备且 platform=gpu 设为硬门禁；12/12 动态库与 CPU smoke 通过后，
+      supervisor 已重跑数据、权重和 7-config 输入门禁并进入新一轮安全等待
 runs:
   - id: retain_repro_pretrain__paper_final_hparams__attempt_1
     status: failed_before_step_0
@@ -155,4 +181,13 @@ runs:
     checkpoint_created: false
     cause: JAX 0.5.0 在 sm_120 上编译 BF16 转换失败
     evidence: reproduction/experiments/incidents/pretrain-jax050-sm120-20260820T0053
+  - id: retain_repro_pretrain__paper_final_hparams__attempt_2
+    status: failed_before_step_0
+    started_at: "2026-08-20T03:49:48+08:00"
+    finished_at: "2026-08-20T03:50:02+08:00"
+    gpu_physical_index: 2
+    return_code: 1
+    checkpoint_created: false
+    cause: CUDA wheels 未完整隔离导致 CPU preflight false positive 与 cuDNN 9.7/9.8 mismatch
+    evidence: reproduction/experiments/incidents/pretrain-jax062-cuda-library-path-20260820T0350
 limitations: []

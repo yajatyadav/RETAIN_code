@@ -2,10 +2,23 @@
 #
 # RTX 6000D (compute capability 12.0 / sm_120) 的隔离 JAX compatibility
 # overlay。安装到 /shared/.cache/retain/jax-overlays/0.6.2，且不修改项目主
-# .venv。主环境中的 Flax、Orbax、Optax、TensorFlow 与其余 CUDA wheels 继续复用。
+# .venv。Flax、Orbax、Optax 与 TensorFlow 继续复用主环境；JAX 直接依赖的
+# CUDA wheels 全部固定在 overlay，避免主环境 cuDNN 被提前加载。
+# 安装命令需带 `--no-deps`，使 NumPy/SciPy 等非 CUDA 依赖继续来自主环境。
 jax==0.6.2
 jaxlib==0.6.2
-jax-cuda12-plugin==0.6.2
+jax-cuda12-plugin[with-cuda]==0.6.2
 jax-cuda12-pjrt==0.6.2
 ml-dtypes==0.5.1
+nvidia-cublas-cu12==12.8.3.14
+nvidia-cuda-cupti-cu12==12.8.57
+nvidia-cuda-nvcc-cu12==12.9.86
+nvidia-cuda-nvrtc-cu12==12.8.61
+nvidia-cuda-runtime-cu12==12.8.57
 nvidia-cudnn-cu12==9.8.0.87
+nvidia-cufft-cu12==11.3.3.41
+nvidia-cusolver-cu12==11.7.2.55
+nvidia-cusparse-cu12==12.5.7.53
+nvidia-nccl-cu12==2.26.2
+nvidia-nvjitlink-cu12==12.8.61
+nvidia-nvshmem-cu12==3.2.5

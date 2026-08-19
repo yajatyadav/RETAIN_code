@@ -171,3 +171,13 @@
 - supervisor 与 training pipeline 已分别连续运行约 148 和 145 分钟；状态、PID 和逐分钟日志均正常，GPU preflight、训练重试、metrics、数字 checkpoint 仍无新增，旧 attempt 1 status 的修改时间保持不变。
 - 03:33 CST 曾出现 GPU 4–7 同时 `0%` utilization，但各自仍占用约 `46.8–50.1 GiB` 显存，下一分钟便恢复计算，继续证明只按利用率选卡会误占他人任务。本轮独立快照为显存 `81.2/80.1/46.4/80.1/63.0/61.5/61.4/61.1 GiB`、利用率 `100/99/69/99/97/100/93/100%`，空闲卡计数仍为 0。
 - 共享盘可用 `261,595,672,576` bytes，20 分钟仅减少约 0.10 GB，余量基本稳定且高于 150 GB 安全线。实验继续由双阈值门禁等待。
+
+## 2026-08-20 04:27 CST｜CPU preflight false positive、cuDNN 冲突与完整 CUDA 隔离修复
+
+- 03:49:48 CST，GPU 2 达到 `508 MiB / 0%` 并被正确选中。初版最小 BF16 preflight 的 stderr 实际报告 CUDA libraries 无法加载、JAX 回退 `TFRT_CPU_0`，但脚本只检查 return code 与 JSON，错误地写成 `verified`。该报告已改名为 `jax-gpu-preflight.invalid-cpu-fallback-20260820T0350.json`，不再代表当前门禁成功。
+- 完整训练随即在 03:50:02 CST 以 exit `1` 停止。TensorFlow 先加载了主 `.venv` 的 cuDNN `9.7.1`，JAX CUDA plugin 0.6.2 则按 build 要求 cuDNN `9.8.0`，最终报 `DNN library initialization failed`。故障位于随机数 key / runtime 初始化阶段，仍早于 train state、step 0 和数字 checkpoint；没有损失数据或半成品恢复点。
+- 根因是初版 overlay 只放入了 JAX 与 cuDNN 9.8，其他 CUDA wheels 继续复用主环境；overlay 的 `nvidia` package 同时遮蔽主环境的同名模块，使纯 JAX 与 TensorFlow-first 两条导入路径产生不同失败。现场已归档到 `experiments/incidents/pretrain-jax062-cuda-library-path-20260820T0350/`。
+- 修复保持主 `.venv` 不变，在同一 overlay 中补齐并固定 JAX plugin 所需的 CUDA runtime、cuBLAS、cuPTI、NVRTC、cuFFT、cuSOLVER、cuSPARSE、NCCL、nvJitLink 与 NVSHMEM；版本与 JAX 0.6.2 的 CUDA 12.8 build versions 对齐。训练和 policy server 显式把 overlay 的动态库与 `cuda_nvcc/bin` 放在搜索路径最前。
+- 新门禁要求 `len(jax.devices()) == 1` 且 `device.platform == "gpu"`，再编译 BF16→FP16 和 BF16 GEMM；CPU fallback 无论是否 exit 0 都会失败。无 GPU 审计已验证 17 个固定 packages、12/12 关键动态库从 overlay 加载，以及 CPU BF16 smoke；机器可读报告为 `experiments/jax062-overlay-audit.json`。
+- 04:23 CST supervisor 第 5 次启动，再次通过 353/353 数据 SHA-256、24/24 基础权重 size/MD5、Orbax restore（3,238,048,528 参数、结构哈希不变）和 7/7 真实输入 smoke。04:26 CST 新 training pipeline（PID 251712）已进入等待；当前 8 卡显存为 `81.2/80.1/43.5/80.1/55.6/48.4/53.9/48.7 GiB`，利用率为 `95/100/75/100/88/65/60/88%`，空闲卡计数 0。
+- 完整 overlay 占用 `4,653,588,089` bytes；安装后共享盘可用 `258,645,110,784` bytes，仍高于 150 GB 安全线。下一张真正空闲的卡才会执行严格 GPU preflight。

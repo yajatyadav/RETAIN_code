@@ -1,0 +1,151 @@
+2026-08-19 16:52:57.402957: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1787158377.417820  226597 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1787158377.422389  226597 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1787158379.529290  226597 gpu_device.cc:2433] TensorFlow was not built with CUDA kernel binaries compatible with compute capability 12.0. CUDA kernels will be jit-compiled from PTX, which could take 30 minutes or longer.
+16:53:00.462 [I] Running on: lhy-1                                                                (226597:train.py:301)
+INFO:2026-08-19 16:53:00,712:jax._src.xla_bridge:945: Unable to initialize backend 'rocm': module 'jaxlib.xla_extension' has no attribute 'GpuAllocatorConfig'
+16:53:00.712 [I] Unable to initialize backend 'rocm': module 'jaxlib.xla_extension' has no attribute 'GpuAllocatorConfig' (226597:xla_bridge.py:945)
+INFO:2026-08-19 16:53:00,713:jax._src.xla_bridge:945: Unable to initialize backend 'tpu': INTERNAL: Failed to open libtpu.so: libtpu.so: cannot open shared object file: No such file or directory
+16:53:00.713 [I] Unable to initialize backend 'tpu': INTERNAL: Failed to open libtpu.so: libtpu.so: cannot open shared object file: No such file or directory (226597:xla_bridge.py:945)
+16:53:02.608 [I] Created BasePyTreeCheckpointHandler: pytree_metadata_options=PyTreeMetadataOptions(support_rich_types=False), array_metadata_store=None (226597:base_pytree_checkpoint_handler.py:332)
+16:53:02.608 [I] Created BasePyTreeCheckpointHandler: pytree_metadata_options=PyTreeMetadataOptions(support_rich_types=False), array_metadata_store=None (226597:base_pytree_checkpoint_handler.py:332)
+16:53:02.608 [I] [thread=MainThread] Failed to get flag value for EXPERIMENTAL_ORBAX_USE_DISTRIBUTED_PROCESS_ID. (226597:multihost.py:375)
+16:53:02.608 [I] [process=0][thread=MainThread] CheckpointManager init: checkpointers=None, item_names=None, item_handlers={'assets': <openpi.training.checkpoints.CallbackHandler object at 0x7c4f601ae650>, 'train_state': <orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler object at 0x7c4f5abda6d0>, 'params': <orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler object at 0x7c5148bea610>}, handler_registry=None (226597:checkpoint_manager.py:622)
+16:53:02.609 [I] Deferred registration for item: "assets". Adding handler `<openpi.training.checkpoints.CallbackHandler object at 0x7c4f601ae650>` for item "assets" and save args `<class 'openpi.training.checkpoints.CallbackSave'>` and restore args `<class 'openpi.training.checkpoints.CallbackRestore'>` to `_handler_registry`. (226597:composite_checkpoint_handler.py:239)
+16:53:02.609 [I] Deferred registration for item: "train_state". Adding handler `<orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler object at 0x7c4f5abda6d0>` for item "train_state" and save args `<class 'orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeSaveArgs'>` and restore args `<class 'orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeRestoreArgs'>` to `_handler_registry`. (226597:composite_checkpoint_handler.py:239)
+16:53:02.609 [I] Deferred registration for item: "params". Adding handler `<orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler object at 0x7c5148bea610>` for item "params" and save args `<class 'orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeSaveArgs'>` and restore args `<class 'orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeRestoreArgs'>` to `_handler_registry`. (226597:composite_checkpoint_handler.py:239)
+16:53:02.609 [I] Deferred registration for item: "metrics". Adding handler `<orbax.checkpoint._src.handlers.json_checkpoint_handler.JsonCheckpointHandler object at 0x7c4f5a9e6d50>` for item "metrics" and save args `<class 'orbax.checkpoint._src.handlers.json_checkpoint_handler.JsonSaveArgs'>` and restore args `<class 'orbax.checkpoint._src.handlers.json_checkpoint_handler.JsonRestoreArgs'>` to `_handler_registry`. (226597:composite_checkpoint_handler.py:239)
+16:53:02.609 [I] Initialized registry DefaultCheckpointHandlerRegistry({('assets', <class 'openpi.training.checkpoints.CallbackSave'>): <openpi.training.checkpoints.CallbackHandler object at 0x7c4f601ae650>, ('assets', <class 'openpi.training.checkpoints.CallbackRestore'>): <openpi.training.checkpoints.CallbackHandler object at 0x7c4f601ae650>, ('train_state', <class 'orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeSaveArgs'>): <orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler object at 0x7c4f5abda6d0>, ('train_state', <class 'orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeRestoreArgs'>): <orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler object at 0x7c4f5abda6d0>, ('params', <class 'orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeSaveArgs'>): <orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler object at 0x7c5148bea610>, ('params', <class 'orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeRestoreArgs'>): <orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler object at 0x7c5148bea610>, ('metrics', <class 'orbax.checkpoint._src.handlers.json_checkpoint_handler.JsonSaveArgs'>): <orbax.checkpoint._src.handlers.json_checkpoint_handler.JsonCheckpointHandler object at 0x7c4f5a9e6d50>, ('metrics', <class 'orbax.checkpoint._src.handlers.json_checkpoint_handler.JsonRestoreArgs'>): <orbax.checkpoint._src.handlers.json_checkpoint_handler.JsonCheckpointHandler object at 0x7c4f5a9e6d50>}). (226597:composite_checkpoint_handler.py:508)
+16:53:02.609 [I] orbax-checkpoint version: 0.11.1                                                 (226597:abstract_checkpointer.py:35)
+16:53:02.609 [I] [process=0][thread=MainThread] Using barrier_sync_fn: <function get_barrier_sync_fn.<locals>.<lambda> at 0x7c4f5a7551c0> timeout: 7200 secs and primary_host=0 for async checkpoint writes (226597:async_checkpointer.py:80)
+16:53:02.611 [I] Found 0 checkpoint steps in /shared/.cache/retain/checkpoints/retain_repro_pretrain/paper_final_hparams (226597:checkpoint_manager.py:1528)
+16:53:02.611 [I] Saving root metadata                                                             (226597:checkpoint_manager.py:1569)
+16:53:02.611 [I] [process=0][thread=MainThread] Skipping global process sync, barrier name: CheckpointManager:save_metadata (226597:multihost.py:293)
+16:53:02.611 [I] [process=0][thread=MainThread] CheckpointManager created,  primary_host=0, CheckpointManagerOptions=CheckpointManagerOptions(save_interval_steps=1, max_to_keep=1, keep_time_interval=None, keep_period=None, should_keep_fn=None, best_fn=None, best_mode='max', keep_checkpoints_without_metrics=True, step_prefix=None, step_format_fixed_length=None, step_name_format=None, create=False, cleanup_tmp_directories=False, save_on_steps=frozenset(), single_host_load_and_broadcast=False, todelete_subdir=None, enable_background_delete=False, read_only=False, enable_async_checkpointing=True, async_options=AsyncOptions(timeout_secs=7200, barrier_sync_fn=None, post_finalization_callback=None, create_directories_asynchronously=False), multiprocessing_options=MultiprocessingOptions(primary_host=0, active_processes=None, barrier_sync_key_prefix=None), should_save_fn=None, file_options=FileOptions(path_permission_mode=None), save_root_metadata=True, temporary_path_class=None, save_decision_policy=None), root_directory=/shared/.cache/retain/checkpoints/retain_repro_pretrain/paper_final_hparams: <orbax.checkpoint.checkpoint_manager.CheckpointManager object at 0x7c4f60217f50> (226597:checkpoint_manager.py:797)
+16:53:02.710 [I] Loaded norm stats from assets/pi0_libero_pretrain                                (226597:config.py:197)
+16:53:02.790 [I] Loaded norm stats from assets/pi0_libero_pretrain                                (226597:config.py:197)
+16:53:02.874 [I] Loaded norm stats from assets/pi0_libero_pretrain                                (226597:config.py:197)
+16:53:02.944 [I] Loaded norm stats from assets/pi0_libero_pretrain                                (226597:config.py:197)
+16:53:03.017 [I] Loaded norm stats from assets/pi0_libero_pretrain                                (226597:config.py:197)
+16:53:03.119 [I] Load dataset info from /shared/.cache/retain/libero/datasets/libero_goal_reduced/1.0.0 (226597:dataset_info.py:707)
+16:53:03.127 [I] Creating a tf.data.Dataset reading 16 files located in folders: /shared/.cache/retain/libero/datasets/libero_goal_reduced/1.0.0. (226597:reader.py:262)
+16:53:03.324 [I] Constructing tf.data.Dataset libero_goal_reduced for split all, from /shared/.cache/retain/libero/datasets/libero_goal_reduced/1.0.0 (226597:logging_logger.py:49)
+16:53:03.673 [I] Creating a tf.data.Dataset reading 16 files located in folders: /shared/.cache/retain/libero/datasets/libero_goal_reduced/1.0.0. (226597:reader.py:262)
+16:53:03.704 [I] Constructing tf.data.Dataset libero_goal_reduced for split train, from /shared/.cache/retain/libero/datasets/libero_goal_reduced/1.0.0 (226597:logging_logger.py:49)
+16:53:03.766 [I] Load dataset info from /shared/.cache/retain/libero/datasets/libero_object_reduced/1.0.0 (226597:dataset_info.py:707)
+16:53:03.773 [I] Creating a tf.data.Dataset reading 32 files located in folders: /shared/.cache/retain/libero/datasets/libero_object_reduced/1.0.0. (226597:reader.py:262)
+16:53:03.798 [I] Constructing tf.data.Dataset libero_object_reduced for split all, from /shared/.cache/retain/libero/datasets/libero_object_reduced/1.0.0 (226597:logging_logger.py:49)
+16:53:03.859 [I] Creating a tf.data.Dataset reading 32 files located in folders: /shared/.cache/retain/libero/datasets/libero_object_reduced/1.0.0. (226597:reader.py:262)
+16:53:03.884 [I] Constructing tf.data.Dataset libero_object_reduced for split train, from /shared/.cache/retain/libero/datasets/libero_object_reduced/1.0.0 (226597:logging_logger.py:49)
+16:53:03.950 [I] Load dataset info from /shared/.cache/retain/libero/datasets/libero_spatial_reduced/1.0.0 (226597:dataset_info.py:707)
+16:53:03.955 [I] Creating a tf.data.Dataset reading 16 files located in folders: /shared/.cache/retain/libero/datasets/libero_spatial_reduced/1.0.0. (226597:reader.py:262)
+16:53:03.982 [I] Constructing tf.data.Dataset libero_spatial_reduced for split all, from /shared/.cache/retain/libero/datasets/libero_spatial_reduced/1.0.0 (226597:logging_logger.py:49)
+16:53:04.044 [I] Creating a tf.data.Dataset reading 16 files located in folders: /shared/.cache/retain/libero/datasets/libero_spatial_reduced/1.0.0. (226597:reader.py:262)
+16:53:04.069 [I] Constructing tf.data.Dataset libero_spatial_reduced for split train, from /shared/.cache/retain/libero/datasets/libero_spatial_reduced/1.0.0 (226597:logging_logger.py:49)
+16:53:04.132 [I] Load dataset info from /shared/.cache/retain/libero/datasets/libero_90_flipped/1.0.0 (226597:dataset_info.py:707)
+16:53:04.149 [I] Creating a tf.data.Dataset reading 256 files located in folders: /shared/.cache/retain/libero/datasets/libero_90_flipped/1.0.0. (226597:reader.py:262)
+16:53:04.181 [I] Constructing tf.data.Dataset libero_90_flipped for split all, from /shared/.cache/retain/libero/datasets/libero_90_flipped/1.0.0 (226597:logging_logger.py:49)
+16:53:04.263 [I] Creating a tf.data.Dataset reading 256 files located in folders: /shared/.cache/retain/libero/datasets/libero_90_flipped/1.0.0. (226597:reader.py:262)
+16:53:04.294 [I] Constructing tf.data.Dataset libero_90_flipped for split train, from /shared/.cache/retain/libero/datasets/libero_90_flipped/1.0.0 (226597:logging_logger.py:49)
+16:53:04.373 [I] Load dataset info from /shared/.cache/retain/libero/datasets/libero_goal_reduced/1.0.0 (226597:dataset_info.py:707)
+16:53:04.383 [I] Creating a tf.data.Dataset reading 16 files located in folders: /shared/.cache/retain/libero/datasets/libero_goal_reduced/1.0.0. (226597:reader.py:262)
+16:53:04.409 [I] Constructing tf.data.Dataset libero_goal_reduced for split train, from /shared/.cache/retain/libero/datasets/libero_goal_reduced/1.0.0 (226597:logging_logger.py:49)
+16:53:05.055 [W] future_action_window_size > 0 but no absolute_action_mask was provided. Assuming all actions are relative for the purpose of making neutral actions. (226597:function_wrappers.py:112)
+16:53:06.255 [W] No resize_size was provided for image_wrist. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (226597:api.py:460)
+16:53:06.260 [W] No resize_size was provided for image_secondary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (226597:api.py:460)
+16:53:06.264 [W] No resize_size was provided for image_primary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (226597:api.py:460)
+16:53:06.280 [I] Load dataset info from /shared/.cache/retain/libero/datasets/libero_object_reduced/1.0.0 (226597:dataset_info.py:707)
+16:53:06.286 [I] Creating a tf.data.Dataset reading 32 files located in folders: /shared/.cache/retain/libero/datasets/libero_object_reduced/1.0.0. (226597:reader.py:262)
+16:53:06.312 [I] Constructing tf.data.Dataset libero_object_reduced for split train, from /shared/.cache/retain/libero/datasets/libero_object_reduced/1.0.0 (226597:logging_logger.py:49)
+16:53:06.401 [W] future_action_window_size > 0 but no absolute_action_mask was provided. Assuming all actions are relative for the purpose of making neutral actions. (226597:function_wrappers.py:112)
+16:53:06.433 [W] No resize_size was provided for image_wrist. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (226597:api.py:460)
+16:53:06.437 [W] No resize_size was provided for image_secondary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (226597:api.py:460)
+16:53:06.441 [W] No resize_size was provided for image_primary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (226597:api.py:460)
+16:53:06.458 [I] Load dataset info from /shared/.cache/retain/libero/datasets/libero_spatial_reduced/1.0.0 (226597:dataset_info.py:707)
+16:53:06.463 [I] Creating a tf.data.Dataset reading 16 files located in folders: /shared/.cache/retain/libero/datasets/libero_spatial_reduced/1.0.0. (226597:reader.py:262)
+16:53:06.489 [I] Constructing tf.data.Dataset libero_spatial_reduced for split train, from /shared/.cache/retain/libero/datasets/libero_spatial_reduced/1.0.0 (226597:logging_logger.py:49)
+16:53:06.581 [W] future_action_window_size > 0 but no absolute_action_mask was provided. Assuming all actions are relative for the purpose of making neutral actions. (226597:function_wrappers.py:112)
+16:53:06.614 [W] No resize_size was provided for image_wrist. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (226597:api.py:460)
+16:53:06.618 [W] No resize_size was provided for image_secondary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (226597:api.py:460)
+16:53:06.621 [W] No resize_size was provided for image_primary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (226597:api.py:460)
+16:53:06.637 [I] Load dataset info from /shared/.cache/retain/libero/datasets/libero_90_flipped/1.0.0 (226597:dataset_info.py:707)
+16:53:06.651 [I] Creating a tf.data.Dataset reading 256 files located in folders: /shared/.cache/retain/libero/datasets/libero_90_flipped/1.0.0. (226597:reader.py:262)
+16:53:06.681 [I] Constructing tf.data.Dataset libero_90_flipped for split train, from /shared/.cache/retain/libero/datasets/libero_90_flipped/1.0.0 (226597:logging_logger.py:49)
+16:53:06.793 [W] future_action_window_size > 0 but no absolute_action_mask was provided. Assuming all actions are relative for the purpose of making neutral actions. (226597:function_wrappers.py:112)
+16:53:06.827 [W] No resize_size was provided for image_wrist. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (226597:api.py:460)
+16:53:06.831 [W] No resize_size was provided for image_secondary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (226597:api.py:460)
+16:53:06.835 [W] No resize_size was provided for image_primary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (226597:api.py:460)
+16:53:13.219 [I] Initialized data loader:
+[0].images['base_0_rgb']: (64, 224, 224, 3)@float32
+[0].images['left_wrist_0_rgb']: (64, 224, 224, 3)@float32
+[0].images['right_wrist_0_rgb']: (64, 224, 224, 3)@float32
+[0].image_masks['base_0_rgb']: (64,)@bool
+[0].image_masks['left_wrist_0_rgb']: (64,)@bool
+[0].image_masks['right_wrist_0_rgb']: (64,)@bool
+[0].state: (64, 32)@float32
+[0].tokenized_prompt: (64, 48)@int32
+[0].tokenized_prompt_mask: (64, 48)@bool
+[1]: (64, 50, 32)@float32 (226597:train.py:341)
+wandb: WARNING Data passed to `wandb.Image` should consist of values in the range [0, 255], image data will be normalized to this range, but behavior will be removed in a future version of wandb.
+16:53:13.537 [I] LR Schedule Config: CosineDecaySchedule(warmup_steps=1000, peak_lr=2.5e-05, decay_steps=30000, decay_lr=2.5e-06) (226597:train.py:90)
+16:53:13.537 [I] Optimizer Config: AdamW(b1=0.9, b2=0.95, eps=1e-08, weight_decay=1e-10, clip_gradient_norm=1.0) (226597:train.py:91)
+Unsupported conversion from bf16 to f16
+LLVM ERROR: Unsupported rounding mode for conversion.
+2026-08-19 19:49:54.748116: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1787168994.763199  244533 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1787168994.768005  244533 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1787168997.380790  244533 gpu_device.cc:2433] TensorFlow was not built with CUDA kernel binaries compatible with compute capability 12.0. CUDA kernels will be jit-compiled from PTX, which could take 30 minutes or longer.
+19:49:58.351 [I] Running on: lhy-1                                                                (244533:train.py:301)
+INFO:2026-08-19 19:49:58,512:jax._src.xla_bridge:752: Unable to initialize backend 'tpu': INTERNAL: Failed to open libtpu.so: libtpu.so: cannot open shared object file: No such file or directory
+19:49:58.512 [I] Unable to initialize backend 'tpu': INTERNAL: Failed to open libtpu.so: libtpu.so: cannot open shared object file: No such file or directory (244533:xla_bridge.py:752)
+E0819 19:49:59.736737  244533 cuda_dnn.cc:523] Loaded runtime CuDNN library: 9.7.1 but source was compiled with: 9.8.0.  CuDNN library needs to have matching major version and equal or higher minor version. If using a binary install, upgrade your CuDNN library.  If building from sources, make sure the library loaded at runtime is compatible with the version specified during compile configuration.
+E0819 19:49:59.748700  244533 cuda_dnn.cc:523] Loaded runtime CuDNN library: 9.7.1 but source was compiled with: 9.8.0.  CuDNN library needs to have matching major version and equal or higher minor version. If using a binary install, upgrade your CuDNN library.  If building from sources, make sure the library loaded at runtime is compatible with the version specified during compile configuration.
+E0819 19:49:59.835685  244533 cuda_dnn.cc:523] Loaded runtime CuDNN library: 9.7.1 but source was compiled with: 9.8.0.  CuDNN library needs to have matching major version and equal or higher minor version. If using a binary install, upgrade your CuDNN library.  If building from sources, make sure the library loaded at runtime is compatible with the version specified during compile configuration.
+E0819 19:49:59.876807  244533 cuda_dnn.cc:523] Loaded runtime CuDNN library: 9.7.1 but source was compiled with: 9.8.0.  CuDNN library needs to have matching major version and equal or higher minor version. If using a binary install, upgrade your CuDNN library.  If building from sources, make sure the library loaded at runtime is compatible with the version specified during compile configuration.
+Traceback (most recent call last):
+  File "/root/RETAIN_code/scripts/train.py", line 399, in <module>
+    main(_config.cli())
+  File "/root/RETAIN_code/scripts/train.py", line 310, in main
+    rng = jax.random.key(config.seed)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/shared/.cache/retain/jax-overlays/0.6.2/jax/_src/random.py", line 221, in key
+    return _key('key', seed, impl)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/shared/.cache/retain/jax-overlays/0.6.2/jax/_src/random.py", line 201, in _key
+    return prng.random_seed(seed, impl=impl)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/shared/.cache/retain/jax-overlays/0.6.2/jax/_src/prng.py", line 551, in random_seed
+    seeds_arr = jnp.asarray(np.int64(seeds))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/shared/.cache/retain/jax-overlays/0.6.2/jax/_src/numpy/array.py", line 383, in asarray
+    return array(a, dtype=dtype, copy=bool(copy), order=order, device=device)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/shared/.cache/retain/jax-overlays/0.6.2/jax/_src/numpy/array.py", line 268, in array
+    out_array: Array = lax._convert_element_type(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/shared/.cache/retain/jax-overlays/0.6.2/jax/_src/lax/lax.py", line 1726, in _convert_element_type
+    return convert_element_type_p.bind(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/shared/.cache/retain/jax-overlays/0.6.2/jax/_src/core.py", line 536, in bind
+    return self._true_bind(*args, **params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/shared/.cache/retain/jax-overlays/0.6.2/jax/_src/core.py", line 552, in _true_bind
+    return self.bind_with_trace(prev_trace, args, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/shared/.cache/retain/jax-overlays/0.6.2/jax/_src/lax/lax.py", line 4902, in _convert_element_type_bind_with_trace
+    operand = core.Primitive.bind_with_trace(convert_element_type_p, trace, args, params)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/shared/.cache/retain/jax-overlays/0.6.2/jax/_src/core.py", line 562, in bind_with_trace
+    return trace.process_primitive(self, args, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/shared/.cache/retain/jax-overlays/0.6.2/jax/_src/core.py", line 1066, in process_primitive
+    return primitive.impl(*args, **params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/shared/.cache/retain/jax-overlays/0.6.2/jax/_src/dispatch.py", line 91, in apply_primitive
+    outs = fun(*args)
+           ^^^^^^^^^^
+jaxlib._jax.XlaRuntimeError: FAILED_PRECONDITION: DNN library initialization failed. Look at the errors above for more details.
+--------------------
+For simplicity, JAX has removed its internal frames from the traceback of the following exception. Set JAX_TRACEBACK_FILTERING=off to include these.
