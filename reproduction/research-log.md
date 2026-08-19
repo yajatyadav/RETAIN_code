@@ -58,3 +58,10 @@
 - 调整的是存储策略而非论文优化协议：pretraining 每 1,000 steps 保存一个恢复点且 `max_to_keep=1`；阶段成功后验证最终 `params` 存在，再删除该阶段不再使用的 `train_state`，保留 inference params、assets、loss/gradient metrics 和清理清单。Task-FT/coFT 只读取 pretraining `params`，评测也只读取各阶段 `params`。
 - 新增可恢复 supervisor，顺序执行：等待传输 → 数据 SHA-256 比对 → GCS size/MD5 与 Orbax restore → 全部 7 configs 真实 batch smoke test → 等待一张空闲 GPU → 7 个训练阶段 → 完整 alpha sweep 与 ID/OOD/generalist 评测 → 中文汇总。
 - supervisor 启动前要求共享盘至少剩余 150 GB；任一阶段异常都会写入 `experiments/supervisor-status.json` 并退出，避免把不完整输入当成成功结果继续运行。
+
+## 2026-08-19 23:23 CST｜运行中监控
+
+- supervisor 进程持续运行，数据尺寸级校验推进到 `142 / 353` 文件、`8,938,710,635 / 24,235,684,869` bytes；仍有 32 个 aria2 sidecars，说明传输尚未完成，尚未启动 SHA-256 扫描。
+- 共享盘剩余约 277 GiB。`π0 base` 目标目录表观占用约 6.3 GiB，GCS 与本地续传仍在并行进行；完成后由同一 supervisor 统一执行 24 个对象的 size/MD5 校验，当前表观目录大小不作为完成证据。
+- 8 张 GPU 仍均超过空闲阈值。GPU 4–7 虽瞬时利用率约 1%，但显存仍占用约 43–50 GiB；依据“显存 ≤2,048 MiB 且利用率 ≤10%”的双条件继续等待，没有启动任何 GPU 训练进程。
+- 服务器 supervisor 日志使用显式 UTC offset；本中文研究日志统一换算为 Asia/Shanghai（CST）。

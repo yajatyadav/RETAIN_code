@@ -1,7 +1,7 @@
 schema_version: 1
 project: RETAIN_LIBERO_reproduction
 protocol_id: RETAIN-GPU-20260819-001
-updated_at: "2026-08-19T23:20:00+08:00"
+updated_at: "2026-08-19T23:23:05+08:00"
 status: supervisor_running_inputs_transferring
 objective: >-
   在单张服务器 GPU 上按论文最终实验方法复现 RETAIN 的 LIBERO 仿真实验，
@@ -28,6 +28,8 @@ data:
   payload_file_count: 353
   payload_bytes: 24235684869
   server_transfer_status: in_progress
+  server_size_verified_files: 142
+  server_size_verified_bytes: 8938710635
   target_batch_smoke_status: verified_3_of_3_configs
   published_total_objects: 354
   reduced_transition_counts:
@@ -54,5 +56,6 @@ orchestration:
   server_status: /root/RETAIN_code/reproduction/experiments/supervisor-status.json
   server_log: /root/RETAIN_code/reproduction/experiments/supervisor.log
   running_since: "2026-08-19T23:19:14+08:00"
+  latest_heartbeat: "2026-08-19T23:23:05+08:00"
 runs: []
 limitations: []
