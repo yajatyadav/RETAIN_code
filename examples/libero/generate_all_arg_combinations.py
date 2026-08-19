@@ -7,9 +7,12 @@ across GPUs for parallel evaluation.
 import argparse
 import logging
 import os
+import pathlib
+import shlex
 
-ID_GENERALIST_RUN_FILE = "test_on_libero_task.py"
-OOD_RUN_FILE = "test_on_OOD_libero_task.py"
+SCRIPT_DIR = pathlib.Path(__file__).resolve().parent
+ID_GENERALIST_RUN_FILE = SCRIPT_DIR / "test_on_libero_task.py"
+OOD_RUN_FILE = SCRIPT_DIR / "test_on_OOD_libero_task.py"
 
 RESULTS_ROOT_DIR = "./"
 
@@ -148,16 +151,19 @@ OOD_MULTIMODAL_OPTIONS = {
 def generate_all_param_combinations(
     HOST, PORT, CHECKPOINT_NAME, TASK_NAME,
     DO_ID, DO_GENERALIST, DO_OOD_EASY, DO_OOD_MEDIUM, DO_OOD_HARD, DO_OOD_MULTIMODAL,
+    RESULTS_ROOT_DIR_ARG=RESULTS_ROOT_DIR,
 ):
     """Return a list of shell command strings for all requested eval types."""
     TASK_NAME = TASK_NAME.replace(" ", "_")
     default_args = {
         "host": HOST,
         "port": PORT,
-        "results_root_dir": os.path.join(RESULTS_ROOT_DIR, CHECKPOINT_NAME),
+        "results_root_dir": os.path.join(RESULTS_ROOT_DIR_ARG, CHECKPOINT_NAME),
     }
     os.makedirs(default_args["results_root_dir"], exist_ok=True)
-    params_prefix = " ".join([f"--{k} {v}" for k, v in default_args.items()])
+    params_prefix = " ".join(
+        f"--{key} {shlex.quote(str(value))}" for key, value in default_args.items()
+    )
 
     all_param_strs = []
 
@@ -166,7 +172,7 @@ def generate_all_param_combinations(
         logging.info("Generating ID evals")
         exp_name = f"ID_{CHECKPOINT_NAME}"
         cmd = (
-            f"python {ID_GENERALIST_RUN_FILE} {params_prefix}"
+            f"python {shlex.quote(str(ID_GENERALIST_RUN_FILE))} {params_prefix}"
             f" --task_suite_name {EVAL_TASK_SUITE}"
             f" --task_name '{TASK_NAME}'"
             f" --num_trials_per_task {ID_EVAL_NUM_TRIALS_PER_TASK}"
@@ -189,10 +195,10 @@ def generate_all_param_combinations(
                 task_set.add((suite_name, task.language))
 
         logging.info(f"Number of unique generalist tasks: {len(task_set)}")
-        for suite_name, tname in task_set:
+        for suite_name, tname in sorted(task_set):
             tname = tname.replace(" ", "_")
             cmd = (
-                f"python {ID_GENERALIST_RUN_FILE} {params_prefix}"
+                f"python {shlex.quote(str(ID_GENERALIST_RUN_FILE))} {params_prefix}"
                 f" --task_suite_name {suite_name}"
                 f" --task_name '{tname}'"
                 f" --num_trials_per_task {GENERALIST_NUM_TRIALS_PER_TASK}"
@@ -206,7 +212,7 @@ def generate_all_param_combinations(
         exp_name = f"OOD_EASY_{CHECKPOINT_NAME}"
         for i in range(OOD_NUM_ENVS):
             cmd = (
-                f"python {OOD_RUN_FILE} {params_prefix}"
+                f"python {shlex.quote(str(OOD_RUN_FILE))} {params_prefix}"
                 f" --task_suite_name {EVAL_TASK_SUITE}"
                 f" --task_name '{TASK_NAME}'"
                 f" --num_trials_per_task {OOD_NUM_TRIALS_PER_TASK}"
@@ -223,7 +229,7 @@ def generate_all_param_combinations(
         exp_name = f"OOD_MEDIUM_{CHECKPOINT_NAME}"
         for i in range(OOD_NUM_ENVS):
             cmd = (
-                f"python {OOD_RUN_FILE} {params_prefix}"
+                f"python {shlex.quote(str(OOD_RUN_FILE))} {params_prefix}"
                 f" --task_suite_name {EVAL_TASK_SUITE}"
                 f" --task_name '{TASK_NAME}'"
                 f" --num_trials_per_task {OOD_NUM_TRIALS_PER_TASK}"
@@ -241,7 +247,7 @@ def generate_all_param_combinations(
             for j, option in enumerate(ood_hard_options):
                 exp_name = f"OOD_HARD-set-{j}_{CHECKPOINT_NAME}"
                 cmd = (
-                    f"python {OOD_RUN_FILE} {params_prefix}"
+                    f"python {shlex.quote(str(OOD_RUN_FILE))} {params_prefix}"
                     f" --task_suite_name {EVAL_TASK_SUITE}"
                     f" --task_name '{TASK_NAME}'"
                     f" --num_trials_per_task {OOD_NUM_TRIALS_PER_TASK}"
@@ -259,7 +265,7 @@ def generate_all_param_combinations(
             for j, option in enumerate(ood_multimodal_options):
                 exp_name = f"OOD_MULTIMODAL-set-{j}_{CHECKPOINT_NAME}"
                 cmd = (
-                    f"python {OOD_RUN_FILE} {params_prefix}"
+                    f"python {shlex.quote(str(OOD_RUN_FILE))} {params_prefix}"
                     f" --task_suite_name {EVAL_TASK_SUITE}"
                     f" --task_name '{TASK_NAME}'"
                     f" --num_trials_per_task {OOD_NUM_TRIALS_PER_TASK}"
@@ -281,6 +287,8 @@ def main():
     parser.add_argument("--port", type=int, required=True, help="Policy server port")
     parser.add_argument("--checkpoint_name", type=str, required=True,
                         help="Checkpoint identifier (used in exp names and results dir)")
+    parser.add_argument("--results_root_dir", type=str, default=RESULTS_ROOT_DIR,
+                        help="Root directory where evaluation results are written")
     parser.add_argument("--task_name", type=str, required=True,
                         help="LIBERO task name (spaces will be replaced with underscores)")
     parser.add_argument("--do_id", action="store_true", help="Generate in-distribution eval jobs")
@@ -303,6 +311,7 @@ def main():
         DO_OOD_MEDIUM=args.do_ood_medium,
         DO_OOD_HARD=args.do_ood_hard,
         DO_OOD_MULTIMODAL=args.do_ood_multimodal,
+        RESULTS_ROOT_DIR_ARG=args.results_root_dir,
     )
 
     logging.info(f"Generated {len(jobs)} job(s)")

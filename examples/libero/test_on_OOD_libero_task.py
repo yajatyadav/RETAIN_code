@@ -3,6 +3,7 @@
 import argparse
 import ast
 import collections
+import json
 import logging
 import math
 import pathlib
@@ -27,6 +28,15 @@ MAX_STEPS_PER_SUITE = {
     "libero_10": 520,
     "libero_90": 400,
 }
+
+
+def _atomic_json_dump(path: pathlib.Path, payload) -> None:
+    temporary = path.with_suffix(path.suffix + ".tmp")
+    temporary.write_text(
+        json.dumps(payload, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    temporary.replace(path)
 
 
 def parse_args():
@@ -158,12 +168,15 @@ def eval_libero_OOD(args):
         )
 
     total_episodes, total_successes = 0, 0
+    episode_records = []
     for episode_idx in tqdm.tqdm(range(args.num_trials_per_task)):
         logging.info(f"Task: {task_description}")
         env.reset()
         action_plan = collections.deque()
 
         t = 0
+        done = False
+        episode_error = None
         replay_images = []
         logging.info(f"Starting episode {episode_idx + 1}...")
         while t < max_steps + args.num_steps_wait:
@@ -212,6 +225,7 @@ def eval_libero_OOD(args):
                 t += 1
             except Exception as e:
                 logging.error(f"Caught exception: {e}")
+                episode_error = repr(e)
                 break
 
         total_episodes += 1
@@ -226,6 +240,17 @@ def eval_libero_OOD(args):
             [np.asarray(x) for x in replay_images],
             fps=25,
         )
+        episode_records.append(
+            {
+                "episode_idx": episode_idx,
+                "seed": args.seed,
+                "success": bool(done),
+                "episode_length": t,
+                "error": episode_error,
+                "video": str(video_file),
+            }
+        )
+        _atomic_json_dump(pathlib.Path(results_dir) / "episodes.json", episode_records)
         wandb.log(
             {
                 "episode_idx": episode_idx,
@@ -246,6 +271,33 @@ def eval_libero_OOD(args):
     logging.info(
         f"Total success rate: {float(total_successes) / float(total_episodes)}"
     )
+
+    summary = {
+        "exp_name": args.exp_name,
+        "eval_type": eval_type,
+        "checkpoint_name": checkpoint_name,
+        "task_suite": args.task_suite_name,
+        "task_name": task_name,
+        "seed": args.seed,
+        "resize_size": args.resize_size,
+        "replan_steps": args.replan_steps,
+        "num_steps_wait": args.num_steps_wait,
+        "max_steps": max_steps,
+        "total_episodes": total_episodes,
+        "total_successes": total_successes,
+        "success_rate": float(total_successes) / float(total_episodes),
+        "perturbation": {
+            "remove_train_distractors": args.remove_train_distractors,
+            "permute_objs_of_interest": args.permute_objs_of_interest,
+            "expansion_half_len_factor": args.expansion_half_len_factor,
+            "min_distractors": args.min_distractors,
+            "max_distractors": args.max_distractors,
+            "do_translation": args.do_translation,
+            "translation_scales_dict": args.translation_scales_dict,
+            "swap_dict": args.swap_dict,
+        },
+    }
+    _atomic_json_dump(pathlib.Path(results_dir) / "summary.json", summary)
 
     with open(f"{results_dir}/results.txt", "a") as f:
         f.write(f"Exp: {args.exp_name}\n")

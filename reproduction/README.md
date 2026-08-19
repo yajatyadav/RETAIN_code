@@ -7,8 +7,9 @@
 - 使用官方 `π0 base` 权重，在 117 个 LIBERO 任务上进行 10,000 steps 的 generalist pretraining。
 - 在 LIBERO-10 的 3 个目标任务上进行 Task-FT。
 - 通过线性参数合并得到 RETAIN：`θ_RETAIN = (1-α) θ_pre + α θ_ft`。
-- 复现论文中的 co-finetuning（coFT）基线。
-- 评测 in-distribution（ID）、OOD-easy / medium / hard，以及 20 个旧任务上的 generalist retention。
+- 复现论文中的 co-finetuning（coFT）基线，并分别构造 RETAIN-task-FT 与 RETAIN-coFT。
+- 在 small-translation OOD validation scene 上扫描 `α=0.1...0.9`；用另外两个 OOD scenes 作为 test。
+- 评测 in-distribution（ID）、OOD validation/test，以及 20 个旧任务上的 generalist retention。
 - DROID 真机实验需要 Franka 机械臂、相机与现场布置，不属于当前纯服务器环境的可执行范围。
 
 ## 文件布局
@@ -24,9 +25,10 @@
 
 ## 服务器路径
 
-- 项目内记录与结果：`/root/RETAIN_code/reproduction`
+- 项目内记录与结果索引：`/root/RETAIN_code/reproduction`
 - 官方 RLDS 数据：`/shared/.cache/retain/libero/datasets`
 - 模型 checkpoint：`/shared/.cache/retain/checkpoints`
+- 大型 rollout 视频与逐 episode 结果：`/shared/.cache/retain/results/RETAIN-GPU-20260819-001`
 - OpenPI / Hugging Face 缓存：`/shared/.cache/retain/openpi`、`/shared/.cache/retain/huggingface`
 
-大体积 checkpoint 放在共享盘，项目目录保存清单、相对关系、日志、指标和视频，避免根分区写满。
+大体积 checkpoint 和视频放在共享盘，项目目录保存清单、相对关系、日志、指标和链接，避免根分区写满。
