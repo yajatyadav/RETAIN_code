@@ -42,3 +42,12 @@
 - 已把论文的三类 OOD scene 与发布代码对齐：`OOD_MEDIUM` 的 small translation 用于 alpha validation；两个 `OOD_HARD` sets 用于无调参 test。代码中的 `OOD_EASY`、`OOD_MULTIMODAL` 是额外入口，不纳入论文主表。
 - 评测将覆盖 pretrained、Task-FT、coFT、RETAIN-task-FT 与 RETAIN-coFT。两类 RETAIN 均扫描 `α=0.1...0.9`；若本次 validation 最优值和论文报告值不同，两者都会在 test 上评测并分开汇报。
 - 新增单卡、顺序、可恢复的 evaluation pipeline。每个生成命令有稳定 hash；已完成命令重启后跳过。rollout 逐 episode 写入 `episodes.json`，聚合写入 `summary.json`，扰动参数、seed、成功标记、episode length 与视频路径均可审计。
+
+## 2026-08-19 23:11 CST｜真实训练输入预检与公开代码兼容性修复
+
+- 从官方 GCS 获取并校验 PaliGemma tokenizer：`4,264,023` bytes，MD5 `1420adc9856720a559e8a87284b195e2`；服务器最终文件校验一致。
+- 首次读取 basket 真实 RLDS batch 时触发 `KeyError`。根因是公开仓库的 `OXE_DATASET_CONFIGS` 只登记了 stove target，遗漏论文另外两个公开 target dataset 的完整名称。
+- 在不改变数据变换语义的前提下，为 mugs 与 basket 补入与 stove 相同的 image/state schema 映射。修复后依次读取三个 target config 的真实单批数据，全部通过。
+- 预检输出：每个 config 的 batch size 为 `64`；state `[64, 32]`、action `[64, 50, 32]`；base/wrist images 均为 `[64, 224, 224, 3]`；prompt tokens `[64, 48]`；state/action 均为 float32 且无 NaN/Inf。证据保存在 `experiments/input-smoke-targets.json`。
+- loader 提示未设置 `absolute_action_mask`，因此把全部 action dimensions 视为 relative action。这与作者当前可执行 loader 的实际行为一致，主实验保持不变并记录为实现 caveat。
+- TensorFlow 在 CPU-only 预检中打印重复注册 CUDA plugin 的 warning；预检仍明确运行于 `TFRT_CPU_0` 且各项断言通过，不影响数据验证结论。

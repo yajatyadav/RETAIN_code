@@ -24,3 +24,9 @@
 - 总字节数和文件数；
 - 7 个 RLDS dataset directory 的 `dataset_info.json` 摘要；
 - dataloader 抽样后的 tensor shape / dtype / prompt 检查。
+
+## 已完成的输入预检
+
+三个 target config 已实际读取一个 `batch=64` 的 RLDS batch，并通过完整 transform chain：state `[64, 32]`、action `[64, 50, 32]`、三路图像 `[64, 224, 224, 3]`、prompt tokens `[64, 48]`，数值均为有限 float32。机器可读记录见 `../experiments/input-smoke-targets.json`。
+
+预检时发现公开 registry 遗漏 mugs 与 basket 的 dataset name；本复现只补齐与 stove 相同的 schema mapping，不改变样本、采样权重或 transform 算法。

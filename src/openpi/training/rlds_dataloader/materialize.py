@@ -45,6 +45,26 @@ OXE_DATASET_CONFIGS = {
         # }
     },
 
+    "libero_10_put_the_white_mug_on_the_left_plate_and_put_the_yellow_and_white_mug_on_the_right_plate": {
+        "image_obs_keys": {
+            "primary": "image",
+            "secondary": None,
+            "wrist": "wrist_image",
+        },
+        "depth_obs_keys": {"primary": None, "secondary": None, "wrist": None},
+        "state_obs_keys": ["state"],
+    },
+
+    "libero_10_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket": {
+        "image_obs_keys": {
+            "primary": "image",
+            "secondary": None,
+            "wrist": "wrist_image",
+        },
+        "depth_obs_keys": {"primary": None, "secondary": None, "wrist": None},
+        "state_obs_keys": ["state"],
+    },
+
     "libero_goal_reduced": {
         "image_obs_keys": {
             "primary": "image",

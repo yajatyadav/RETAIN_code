@@ -1,0 +1,146 @@
+{
+  "generated_at": "2026-08-19T15:11:29.273462+00:00",
+  "configs": [
+    {
+      "config": "retain_repro_task_ft_stove",
+      "batch_size": 64,
+      "data_mix_weights": [
+        1.0
+      ],
+      "jax_devices": [
+        "TFRT_CPU_0"
+      ],
+      "state_shape": [
+        64,
+        32
+      ],
+      "state_dtype": "float32",
+      "state_finite": true,
+      "action_shape": [
+        64,
+        50,
+        32
+      ],
+      "action_dtype": "float32",
+      "action_finite": true,
+      "image_shapes": {
+        "base_0_rgb": [
+          64,
+          224,
+          224,
+          3
+        ],
+        "left_wrist_0_rgb": [
+          64,
+          224,
+          224,
+          3
+        ],
+        "right_wrist_0_rgb": [
+          64,
+          224,
+          224,
+          3
+        ]
+      },
+      "prompt_tokens_shape": [
+        64,
+        48
+      ]
+    },
+    {
+      "config": "retain_repro_task_ft_mugs",
+      "batch_size": 64,
+      "data_mix_weights": [
+        1.0
+      ],
+      "jax_devices": [
+        "TFRT_CPU_0"
+      ],
+      "state_shape": [
+        64,
+        32
+      ],
+      "state_dtype": "float32",
+      "state_finite": true,
+      "action_shape": [
+        64,
+        50,
+        32
+      ],
+      "action_dtype": "float32",
+      "action_finite": true,
+      "image_shapes": {
+        "base_0_rgb": [
+          64,
+          224,
+          224,
+          3
+        ],
+        "left_wrist_0_rgb": [
+          64,
+          224,
+          224,
+          3
+        ],
+        "right_wrist_0_rgb": [
+          64,
+          224,
+          224,
+          3
+        ]
+      },
+      "prompt_tokens_shape": [
+        64,
+        48
+      ]
+    },
+    {
+      "config": "retain_repro_task_ft_basket",
+      "batch_size": 64,
+      "data_mix_weights": [
+        1.0
+      ],
+      "jax_devices": [
+        "TFRT_CPU_0"
+      ],
+      "state_shape": [
+        64,
+        32
+      ],
+      "state_dtype": "float32",
+      "state_finite": true,
+      "action_shape": [
+        64,
+        50,
+        32
+      ],
+      "action_dtype": "float32",
+      "action_finite": true,
+      "image_shapes": {
+        "base_0_rgb": [
+          64,
+          224,
+          224,
+          3
+        ],
+        "left_wrist_0_rgb": [
+          64,
+          224,
+          224,
+          3
+        ],
+        "right_wrist_0_rgb": [
+          64,
+          224,
+          224,
+          3
+        ]
+      },
+      "prompt_tokens_shape": [
+        64,
+        48
+      ]
+    }
+  ]
+}
