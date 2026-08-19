@@ -124,3 +124,8 @@
 - 全 config smoke tests 已在四个 pretraining datasets 另外生成 normalization statistics cache，因而服务器目录现在共有 360 个文件：353 个固定 payload 加 7 个 `dataset_statistics_*.json`。校验器逐路径确认固定 payload 不变，仅忽略这 7 个已知 loader cache；其他未知额外文件仍会失败。
 - `π0 base` 再次通过 24/24 GCS size/MD5，并重新实际 restore 为 50 leaves、3,238,048,528 float32 参数；随后原项目环境的 7/7 真实 batch smoke 再次全部通过。至此数据、权重和训练输入门禁均已在 runtime 修复后复核。
 - 01:24:12 CST 训练 pipeline 进入单卡等待；当时 8 卡显存占用分别约为 `81.2/80.1/41.5/80.1/62.8/61.6/61.3/61.0 GiB`，没有卡满足 `≤2,048 MiB 且 utilization≤10%`。总控与训练等待进程持续运行，下一张真正空闲的卡将先执行 BF16 runtime preflight。
+
+## 2026-08-20 01:29 CST｜空闲 GPU 等待监控
+
+- supervisor（PID 237893）和 training pipeline（PID 242839）均持续运行，无新异常；`jax-gpu-preflight.json` 尚未生成，说明兼容层没有在忙卡上提前执行 GPU 测试。
+- 最新 8 卡显存占用为 `81.2/80.1/41.5/80.1/48.2/48.3/53.6/46.3 GiB`，利用率为 `98/98/68/96/81/54/71/88%`，空闲卡计数仍为 0。共享盘可用 `271,928,930,304` bytes，继续高于 150 GB 安全线。
