@@ -63,6 +63,8 @@ def save_state(
     state: training_utils.TrainState,
     data_loader: _data_loader.DataLoader,
     step: int,
+    *,
+    params_only: bool = False,
 ):
     def save_assets(directory: epath.Path):
         # Save the normalization stats.
@@ -74,6 +76,18 @@ def save_state(
     # Split params that can be used for inference into a separate item.
     with at.disable_typechecking():
         train_state, params = _split_params(state)
+        if params_only:
+            # A terminal checkpoint is consumed through its standalone EMA/
+            # inference params. Dropping raw params and optimizer state avoids
+            # a large host-memory spike while retaining the item structure that
+            # CheckpointManager expects. Such a checkpoint is intentionally not
+            # resumable and is pruned by the reproduction pipeline after save.
+            train_state = dataclasses.replace(
+                train_state,
+                params={},
+                opt_state={},
+                ema_params=None,
+            )
     items = {
         "assets": save_assets,
         "train_state": train_state,

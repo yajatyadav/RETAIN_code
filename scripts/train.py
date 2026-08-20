@@ -2,6 +2,7 @@ import dataclasses
 import functools
 import logging
 import platform
+import sys
 from typing import Any
 
 import etils.epath as epath
@@ -383,13 +384,24 @@ def main(config: _config.TrainConfig):
             reduced_info = jax.device_get(jax.tree.map(jnp.mean, stacked_infos))
             info_str = ", ".join(f"{k}={float(v):.4f}" for k, v in reduced_info.items())
             pbar.write(f"Step {step}: {info_str}")
+            # stdout is redirected to an experiment log on the server. Flush
+            # each metrics record so long-running runs remain auditable while
+            # they are still in progress.
+            sys.stdout.flush()
             wandb.log(reduced_info, step=step)
             infos = []
         batch = next(data_iter)
 
         early_checkpoint = config.save_early_checkpoints and step in [50, 250, 500, 750, 1500]
-        if early_checkpoint or (step % config.save_interval == 0 and step > start_step) or step == config.num_train_steps - 1:
-            _checkpoints.save_state(checkpoint_manager, train_state, data_loader, step)
+        final_step = step == config.num_train_steps - 1
+        if early_checkpoint or (step % config.save_interval == 0 and step > start_step) or final_step:
+            _checkpoints.save_state(
+                checkpoint_manager,
+                train_state,
+                data_loader,
+                step,
+                params_only=final_step and config.save_final_params_only,
+            )
 
     logging.info("Waiting for checkpoint manager to finish")
     checkpoint_manager.wait_until_finished()

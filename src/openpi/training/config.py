@@ -542,6 +542,10 @@ class TrainConfig:
     log_interval: int = 100
     # How often (in steps) to save checkpoints.
     save_interval: int = 2_500
+    # If true, the final checkpoint keeps inference parameters but discards the
+    # optimizer/raw training state. This is useful for terminal stages whose
+    # outputs are consumed only as weight-loader inputs or for evaluation.
+    save_final_params_only: bool = False
     # If set, any existing checkpoints matching step % keep_period == 0 will not be deleted.
     keep_period: int | None = 1
 
@@ -604,6 +608,11 @@ LIBERO_LM_FRACTION_OF_TOTAL = LIBERO_LM_NUM_TRANSITIONS / TOT_NUM_TRANSITIONS
 RETAIN_REPRO_DATA_ROOT = "/shared/.cache/retain/libero/datasets"
 RETAIN_REPRO_CHECKPOINT_ROOT = "/shared/.cache/retain/checkpoints"
 RETAIN_REPRO_PRETRAIN_EXP = "paper_final_hparams"
+# The paper uses batch 64.  On the available single RTX 6000D, the full
+# optimizer step needs substantially more temporary memory than one card can
+# provide (verified by attempts 3--5), so the executable single-GPU protocol
+# uses batch 16 and records this deviation in every run status.
+RETAIN_REPRO_SINGLE_GPU_BATCH_SIZE = 16
 RETAIN_REPRO_PRETRAIN_PARAMS = (
     f"{RETAIN_REPRO_CHECKPOINT_ROOT}/retain_repro_pretrain/"
     f"{RETAIN_REPRO_PRETRAIN_EXP}/9999/params"
@@ -664,9 +673,10 @@ def _retain_repro_task_ft_config(task: str, num_train_steps: int) -> TrainConfig
         data_list=[_retain_repro_libero_data(RETAIN_REPRO_TARGET_DATASETS[task])],
         data_mix_weights=[1.0],
         checkpoint_base_dir=RETAIN_REPRO_CHECKPOINT_ROOT,
-        batch_size=64,
+        batch_size=RETAIN_REPRO_SINGLE_GPU_BATCH_SIZE,
         num_train_steps=num_train_steps,
         save_interval=num_train_steps,
+        save_final_params_only=True,
         keep_period=None,
         log_interval=25,
         lr_schedule=_retain_repro_schedule(),
@@ -703,9 +713,10 @@ def _retain_repro_coft_config(task: str) -> TrainConfig:
             LIBERO_LM_FRACTION_OF_TOTAL,
         ],
         checkpoint_base_dir=RETAIN_REPRO_CHECKPOINT_ROOT,
-        batch_size=64,
+        batch_size=RETAIN_REPRO_SINGLE_GPU_BATCH_SIZE,
         num_train_steps=1_000,
         save_interval=1_000,
+        save_final_params_only=True,
         keep_period=None,
         log_interval=25,
         lr_schedule=_retain_repro_schedule(),
@@ -732,11 +743,13 @@ RETAIN_REPRO_CONFIGS = [
         weight_loader=weight_loaders.CheckpointWeightLoader("gs://openpi-assets/checkpoints/pi0_base/params"),
         checkpoint_base_dir=RETAIN_REPRO_CHECKPOINT_ROOT,
         num_train_steps=10_000,
-        # Operational recovery checkpointing only; max_to_keep=1 means this does
-        # not alter the optimization protocol or retain multiple large states.
-        save_interval=1_000,
+        # Step 8000 is the retained recovery point after the step-9000 host OOM.
+        # The explicit final-step condition still saves step 9999, while this
+        # interval prevents another full optimizer-state save at step 9000.
+        save_interval=10_000,
+        save_final_params_only=True,
         keep_period=None,
-        batch_size=64,
+        batch_size=RETAIN_REPRO_SINGLE_GPU_BATCH_SIZE,
         log_interval=25,
         lr_schedule=_retain_repro_schedule(),
         optimizer=_optimizer.AdamW(

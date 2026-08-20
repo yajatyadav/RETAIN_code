@@ -47,6 +47,7 @@ JAX_RUNTIME_VERSIONS = {
     "nvidia-nvshmem-cu12": "3.2.5",
 }
 XLA_COMPATIBILITY_FLAG = "--xla_gpu_enable_triton_gemm=false"
+TRAINING_XLA_MEM_FRACTION = "0.95"
 GPU_PREFLIGHT_REPORT = EXPERIMENT_ROOT / "jax-gpu-preflight.json"
 BASE_PARAMS = Path(
     "/shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params"
@@ -346,12 +347,22 @@ def run_stage(gpu: int, config: str, exp_name: str, final_step: int) -> None:
         command.append("--resume")
 
     env = configure_jax_runtime(os.environ.copy())
+    # Attempt 5 showed that cudaMallocAsync is not selected by this JAX 0.6.2
+    # runtime.  Remove any inherited allocator override and use a large fixed
+    # BFC arena with the single-GPU batch-16 adaptation.
+    for variable in (
+        "XLA_PYTHON_CLIENT_ALLOCATOR",
+        "TF_GPU_ALLOCATOR",
+        "TF_CUDA_MALLOC_ASYNC_SUPPORTED_PREALLOC",
+    ):
+        env.pop(variable, None)
     env.update(
         {
             "CUDA_DEVICE_ORDER": "PCI_BUS_ID",
             "CUDA_VISIBLE_DEVICES": str(gpu),
-            "XLA_PYTHON_CLIENT_MEM_FRACTION": "0.90",
+            "XLA_PYTHON_CLIENT_MEM_FRACTION": TRAINING_XLA_MEM_FRACTION,
             "XLA_PYTHON_CLIENT_PREALLOCATE": "true",
+            "TF_FORCE_GPU_ALLOW_GROWTH": "true",
             "UV_CACHE_DIR": "/shared/.cache/retain/uv",
             "HF_HOME": "/shared/.cache/retain/huggingface",
             "OPENPI_DATA_HOME": "/shared/.cache/retain/openpi",
@@ -374,8 +385,34 @@ def run_stage(gpu: int, config: str, exp_name: str, final_step: int) -> None:
             "xla_flags": env["XLA_FLAGS"],
             "reason": "RTX 6000D (sm_120) 编译兼容；项目主虚拟环境保持不变",
             "gpu_preflight_report": str(GPU_PREFLIGHT_REPORT),
+            "memory_policy": {
+                "allocator": "bfc",
+                "xla_python_client_mem_fraction": TRAINING_XLA_MEM_FRACTION,
+                "xla_python_client_preallocate": True,
+                "tf_force_gpu_allow_growth": True,
+                "reason": (
+                    "batch-64 首步临时内存超过单卡预算；batch-16 下保留 95% BFC pool"
+                ),
+            },
+            "single_gpu_adaptation": {
+                "paper_batch_size": 64,
+                "actual_batch_size": 16,
+                "gradient_accumulation": False,
+                "reason": (
+                    "attempts 3--5 均在 batch-64 首个 optimizer step 因 27.79 GiB "
+                    "buffer 分配失败；单 RTX 6000D 约束下缩小物理 batch"
+                ),
+            },
         },
         "status": "running",
+        "checkpoint_storage_policy": {
+            "final_params_only": True,
+            "pretraining_intermediate_step_9000_skipped": config == "retain_repro_pretrain",
+            "reason": (
+                "step-9000 full train-state save triggered host OOM; terminal stages only "
+                "need inference/EMA params downstream"
+            ),
+        },
     }
     atomic_json_dump(run_dir / "status.json", status)
     (run_dir / "command.txt").write_text(" ".join(command) + "\n", encoding="utf-8")
