@@ -1,8 +1,8 @@
 schema_version: 1
 project: RETAIN_LIBERO_reproduction
 protocol_id: RETAIN-GPU-20260819-001
-updated_at: "2026-08-20T04:26:53+08:00"
-status: waiting_for_single_idle_gpu_runtime_preflight_after_cuda_library_repair
+updated_at: "2026-08-20T16:06:00+08:00"
+status: pretraining_attempt_7_waiting_for_one_idle_gpu_after_all_input_gates_passed
 objective: >-
   在单张服务器 GPU 上按论文最终实验方法复现 RETAIN 的 LIBERO 仿真实验，
   保存可审计的训练、参数合并、ID/OOD/generalist 评测结果和中文记录。
@@ -60,10 +60,257 @@ checkpoints:
   server_structure_sha256: b061101d775178ee7709d97c4e8a1d5b68a63073febcd545fe6e6d1f05609dda
   archived_transfer_controls: /shared/.cache/retain/transfer-control-archive/pi0-base-20260820T0029CST
   tokenizer_size_md5_status: verified
+  pretraining_attempt_6_step_1000:
+    path: /shared/.cache/retain/checkpoints/retain_repro_pretrain/paper_final_hparams/1000
+    step: 1000
+    status: verified_committed_and_discoverable
+    save_started_at: "2026-08-20T09:08:15+08:00"
+    committed_at: "2026-08-20T09:12:37+08:00"
+    commit_timestamp_nsecs: 1787188357405169568
+    item_handlers: [assets, params, train_state]
+    item_file_counts:
+      assets: 1
+      params: 18
+      train_state: 25
+    item_file_payload_bytes:
+      assets: 4496
+      params: 12014099668
+      train_state: 30962142820
+    total_file_count: 45
+    total_file_payload_bytes: 42976247401
+    apparent_directory_bytes_at_validation: 42976292457
+    temporary_directory_count_after_commit: 0
+    metadata_sha256: a92393cadef1bac156f83bae1cbf29b50fe0f24ac54ff005187b0fe80164a856
+    orbax_checkpoint_manager_all_steps: [1000]
+    orbax_checkpoint_manager_latest_step: 1000
+    validation_report: reproduction/experiments/pretrain-checkpoint-1000-validation.json
+  pretraining_attempt_6_step_2000:
+    path: /shared/.cache/retain/checkpoints/retain_repro_pretrain/paper_final_hparams/2000
+    step: 2000
+    status: verified_committed_and_discoverable
+    save_started_at: "2026-08-20T09:49:02+08:00"
+    blocking_duration_seconds: 90.45242810249329
+    committed_at: "2026-08-20T09:51:33+08:00"
+    previous_step_deleted_at: "2026-08-20T09:51:40+08:00"
+    commit_timestamp_nsecs: 1787190693054874932
+    item_handlers: [assets, params, train_state]
+    item_file_counts:
+      assets: 1
+      params: 19
+      train_state: 24
+    item_file_payload_bytes:
+      assets: 4496
+      params: 12014086733
+      train_state: 30918480708
+    total_file_count: 45
+    total_file_payload_bytes: 42932572354
+    apparent_directory_bytes_at_validation: 42932617410
+    temporary_directory_count_after_commit: 0
+    metadata_sha256: 1745385b70a1292cf0fa2315d4aa1b42e968478146a5be0e53447ec0fb06f802
+    orbax_checkpoint_manager_all_steps: [2000]
+    orbax_checkpoint_manager_latest_step: 2000
+    max_to_keep_observed: 1
+    observed_overlap_shared_free_bytes: 169767882752
+    post_cleanup_shared_free_bytes: 212744130560
+    validation_report: reproduction/experiments/pretrain-checkpoint-2000-validation.json
+  pretraining_attempt_6_step_3000:
+    path: /shared/.cache/retain/checkpoints/retain_repro_pretrain/paper_final_hparams/3000
+    step: 3000
+    status: verified_committed_and_discoverable
+    save_started_at: "2026-08-20T10:27:41+08:00"
+    blocking_duration_seconds: 251.21457505226135
+    committed_at: "2026-08-20T10:32:45+08:00"
+    previous_step_deleted_at: "2026-08-20T10:32:47+08:00"
+    commit_timestamp_nsecs: 1787193165738162814
+    item_handlers: [assets, params, train_state]
+    item_file_counts:
+      assets: 1
+      params: 18
+      train_state: 25
+    item_file_payload_bytes:
+      assets: 4496
+      params: 12014088103
+      train_state: 30922075151
+    total_file_count: 45
+    total_file_payload_bytes: 42936168167
+    apparent_directory_bytes_at_validation: 42936213223
+    temporary_directory_count_after_commit: 0
+    metadata_sha256: e5592c97cf9421d74040a5fb9cc90385723db17380490661e1c65661064c5f7c
+    orbax_checkpoint_manager_all_steps: [3000]
+    orbax_checkpoint_manager_latest_step: 3000
+    max_to_keep_observed: 1
+    observed_overlap_shared_free_bytes: 173295751168
+    post_cleanup_shared_free_bytes: 212724129792
+    validation_report: reproduction/experiments/pretrain-checkpoint-3000-validation.json
+  pretraining_attempt_6_step_4000:
+    path: /shared/.cache/retain/checkpoints/retain_repro_pretrain/paper_final_hparams/4000
+    step: 4000
+    status: verified_committed_and_discoverable
+    save_started_at: "2026-08-20T11:09:02+08:00"
+    blocking_duration_seconds: 211.33249521255493
+    committed_at: "2026-08-20T11:13:37+08:00"
+    previous_step_deleted_at: "2026-08-20T11:13:39+08:00"
+    commit_timestamp_nsecs: 1787195617491671123
+    item_handlers: [assets, params, train_state]
+    item_file_counts:
+      assets: 1
+      params: 18
+      train_state: 31
+    item_file_payload_bytes:
+      assets: 4496
+      params: 12014110303
+      train_state: 30925046937
+    total_file_count: 51
+    total_file_payload_bytes: 42939162153
+    apparent_directory_bytes_at_validation: 42939207209
+    temporary_directory_count_after_commit: 0
+    metadata_sha256: 99287857156e12abeb9565c442a63ec8c31fb3d95a09899dcb75f62aaa013dbf
+    orbax_checkpoint_manager_all_steps: [4000]
+    orbax_checkpoint_manager_latest_step: 4000
+    max_to_keep_observed: 1
+    observed_overlap_sample_shared_free_bytes: 200727379968
+    post_cleanup_shared_free_bytes: 212735385600
+    validation_report: reproduction/experiments/pretrain-checkpoint-4000-validation.json
+  pretraining_attempt_6_step_5000:
+    path: /shared/.cache/retain/checkpoints/retain_repro_pretrain/paper_final_hparams/5000
+    step: 5000
+    status: verified_committed_and_discoverable
+    save_started_at: "2026-08-20T11:49:43+08:00"
+    blocking_duration_seconds: 241.34009289741516
+    committed_at: "2026-08-20T11:54:35+08:00"
+    previous_step_deleted_at: "2026-08-20T11:54:37+08:00"
+    commit_timestamp_nsecs: 1787198075760678304
+    item_handlers: [assets, params, train_state]
+    item_file_counts:
+      assets: 1
+      params: 21
+      train_state: 26
+    item_file_payload_bytes:
+      assets: 4496
+      params: 12014121745
+      train_state: 30934444005
+    total_file_count: 49
+    total_file_payload_bytes: 42948570663
+    apparent_directory_bytes_at_validation: 42948615719
+    temporary_directory_count_after_commit: 0
+    metadata_sha256: 3c7ba68e55fe3f47261bddf199365ae3ccb90928d06921777de604cce2f194ff
+    orbax_checkpoint_manager_all_steps: [5000]
+    orbax_checkpoint_manager_latest_step: 5000
+    max_to_keep_observed: 1
+    observed_overlap_sample_shared_free_bytes: 169653215232
+    post_cleanup_shared_free_bytes: 212592365568
+    validation_report: reproduction/experiments/pretrain-checkpoint-5000-validation.json
+  pretraining_attempt_6_step_6000:
+    path: /shared/.cache/retain/checkpoints/retain_repro_pretrain/paper_final_hparams/6000
+    step: 6000
+    status: verified_committed_and_discoverable
+    save_started_at: "2026-08-20T12:30:54+08:00"
+    blocking_duration_seconds: 320.2873134613037
+    committed_at: "2026-08-20T12:37:08+08:00"
+    previous_step_deleted_at: "2026-08-20T12:37:11+08:00"
+    commit_timestamp_nsecs: 1787200628702839216
+    item_handlers: [assets, params, train_state]
+    item_file_counts:
+      assets: 1
+      params: 17
+      train_state: 24
+    item_file_payload_bytes:
+      assets: 4496
+      params: 12014087912
+      train_state: 30933266289
+    total_file_count: 43
+    total_file_payload_bytes: 42947359114
+    apparent_directory_bytes_at_validation: 42947404170
+    temporary_directory_count_after_commit: 0
+    metadata_sha256: c4ff1a9a52c4620958fb45e6b7bd8a15290276ebc6422df0ac2a56014b9b9ddf
+    orbax_checkpoint_manager_all_steps: [6000]
+    orbax_checkpoint_manager_latest_step: 6000
+    max_to_keep_observed: 1
+    observed_overlap_sample_shared_free_bytes: 169865744384
+    post_cleanup_shared_free_bytes: 210566885376
+    validation_report: reproduction/experiments/pretrain-checkpoint-6000-validation.json
+  pretraining_attempt_6_step_7000:
+    path: /shared/.cache/retain/checkpoints/retain_repro_pretrain/paper_final_hparams/7000
+    step: 7000
+    status: verified_committed_and_discoverable
+    save_started_at: "2026-08-20T13:13:26+08:00"
+    blocking_duration_seconds: 239.0422399044037
+    committed_at: "2026-08-20T13:18:05+08:00"
+    previous_step_deleted_at: "2026-08-20T13:18:06+08:00"
+    commit_timestamp_nsecs: 1787203085302154892
+    item_handlers: [assets, params, train_state]
+    item_file_counts:
+      assets: 1
+      params: 18
+      train_state: 26
+    item_file_payload_bytes:
+      assets: 4496
+      params: 12014108876
+      train_state: 30938909760
+    total_file_count: 46
+    total_file_payload_bytes: 42953023549
+    apparent_directory_bytes_at_validation: 42953068605
+    temporary_directory_count_after_commit: 0
+    metadata_sha256: b21d5f8cfe32edb8a6f5986fae9f640c74b9aaa12fa90c36e9bcd6f2d5c03cf8
+    orbax_checkpoint_manager_all_steps: [7000]
+    orbax_checkpoint_manager_latest_step: 7000
+    max_to_keep_observed: 1
+    overlap_sample_status: not_observed_heartbeat_arrived_after_commit
+    post_cleanup_shared_free_bytes: 205881110528
+    validation_report: reproduction/experiments/pretrain-checkpoint-7000-validation.json
+  pretraining_attempt_6_step_8000:
+    path: /shared/.cache/retain/checkpoints/retain_repro_pretrain/paper_final_hparams/8000
+    step: 8000
+    status: verified_committed_and_discoverable
+    save_started_at: "2026-08-20T13:54:33+08:00"
+    blocking_duration_seconds: 377.80554819107056
+    committed_at: "2026-08-20T14:02:09+08:00"
+    previous_step_deleted_at: "2026-08-20T14:02:10+08:00"
+    commit_timestamp_nsecs: 1787205729051690605
+    item_handlers: [assets, params, train_state]
+    item_file_counts:
+      assets: 1
+      params: 18
+      train_state: 25
+    item_file_payload_bytes:
+      assets: 4496
+      params: 12014103419
+      train_state: 30959027680
+    total_file_count: 45
+    total_file_payload_bytes: 42973136012
+    apparent_directory_bytes_at_validation: 42973181068
+    temporary_directory_count_after_commit: 0
+    metadata_sha256: 13df2491302c6d8d636241c6e0fe40440f05430e8b2348dec9d693cc7c079762
+    orbax_checkpoint_manager_all_steps: [8000]
+    orbax_checkpoint_manager_latest_step: 8000
+    max_to_keep_observed: 1
+    overlap_sample_status: not_observed_heartbeat_arrived_after_commit
+    post_cleanup_shared_free_bytes: 205847683072
+    validation_report: reproduction/experiments/pretrain-checkpoint-8000-validation.json
+  pretraining_attempt_6_step_9000_interrupted:
+    path: /shared/.cache/retain/checkpoints/retain_repro_pretrain/paper_final_hparams/9000.orbax-checkpoint-tmp-32
+    step: 9000
+    status: incomplete_host_oom_not_a_checkpoint_then_evidence_archived_and_removed
+    save_started_at: "2026-08-20T14:38:47+08:00"
+    last_payload_mtime: "2026-08-20T14:39:08+08:00"
+    process_killed_at: "2026-08-20T15:14:37+08:00"
+    training_exit_at: "2026-08-20T15:14:51+08:00"
+    return_code: 137
+    systemd_evidence: session-389188_scope_process_killed_by_oom_killer
+    total_file_count: 18
+    total_file_payload_bytes: 12014142618
+    completed_item_payloads: [assets, partial_params]
+    missing_commit_requirements: [complete_train_state, item_finalize, root_atomic_rename]
+    valid_for_restore: false
+    evidence: reproduction/experiments/pretrain-step9000-host-oom-recovery-20260820
+    removed_at: "2026-08-20T16:01:00+08:00"
+    removed_payload_recoverable: false
+    post_cleanup_shared_free_bytes: 194953646080
 compute:
   host: hgpu
   gpu_count_allowed: 1
   selected_gpu: null
+  previous_selected_gpu: 1
   selection_rule: 启动时选择显存和利用率均足够空闲的一张 GPU，不抢占现有进程
   accelerator: NVIDIA RTX 6000D
   compute_capability: "12.0 (sm_120)"
@@ -98,30 +345,96 @@ compute:
     cuda_dynamic_library_audit_report: reproduction/experiments/jax062-overlay-audit.json
     environment_report: reproduction/experiments/environment-jax062-retry.json
     invalid_cpu_fallback_preflight: reproduction/experiments/jax-gpu-preflight.invalid-cpu-fallback-20260820T0350.json
-    gpu_bf16_preflight_status: pending_idle_gpu_after_cuda_library_repair
-current_stage: waiting_for_strict_gpu_runtime_preflight_and_training_retry
+    verified_gpu_preflight_attempt_3: reproduction/experiments/jax-gpu-preflight.verified-attempt3-20260820T0647.json
+    verified_gpu_preflight_attempt_4: reproduction/experiments/jax-gpu-preflight.verified-attempt4-20260820T0757.json
+    verified_gpu_preflight_attempt_5: reproduction/experiments/jax-gpu-preflight.verified-attempt5-20260820T0819.json
+    verified_gpu_preflight_attempt_6: reproduction/experiments/jax-gpu-preflight.verified-attempt6-20260820T0829.json
+    gpu_bf16_preflight_status: verified_on_attempts_3_4_5_6
+    training_allocator: bfc
+    training_xla_memory_fraction: "0.95"
+    tf_force_gpu_allow_growth: true
+    paper_batch_size: 64
+    single_gpu_actual_batch_size: 16
+    gradient_accumulation: false
+    attempt_3_original_rematerialized_graph_gib: 77.10
+    attempt_3_reduced_rematerialized_graph_gib: 75.44
+    attempt_3_rematerialization_target_gib: 25.07
+    previous_90_percent_pool_gib: 75.28
+    attempt_4_5_failed_allocation_gib: 27.79
+    attempt_6_original_rematerialized_graph_gib: 62.62
+    attempt_6_reduced_rematerialized_graph_gib: 62.52
+    attempt_6_rematerialization_target_gib: 29.09
+  checkpoint_recovery:
+    protocol_id: RETAIN-GPU-20260819-001-R1
+    resume_step: 8000
+    intermediate_save_interval: 10000
+    skipped_intermediate_checkpoint: 9000
+    final_step: 9999
+    final_params_only: true
+    implementation_test_status: compile_ruff_config_assertions_and_pytest_1_of_1_passed
+current_stage: waiting_for_idle_gpu_before_pretraining_attempt_7
 next_action: >-
-  修复后的 training pipeline 按显存与利用率双阈值等待一张空闲 GPU；获得后
-  必须在唯一 GPU backend 上编译最小 BF16→FP16 与 BF16 GEMM，严格门禁通过后
-  再重试 10000-step 117-task pretraining
+  attempt 7 总控已重跑并通过 353-file SHA-256、24-object base checkpoint、Orbax restore
+  与 7/7 真实输入门禁；当前所有 GPU 均不满足空闲阈值。保持等待，不抢占现有进程；取得一张
+  空闲 GPU 后先运行严格 JAX GPU preflight，再从已验证 step 8000 恢复到 step 9999，核验
+  params-only 最终 checkpoint 与完整 metrics，随后由同一 pipeline 推进 Task-FT、coFT 和评测
 orchestration:
   supervisor: reproduction/scripts/run_reproduction_supervisor.py
   server_status: /root/RETAIN_code/reproduction/experiments/supervisor-status.json
   server_log: /root/RETAIN_code/reproduction/experiments/supervisor.nohup.log
   previous_server_log: /root/RETAIN_code/reproduction/experiments/supervisor.log
-  running_since: "2026-08-20T04:23:06+08:00"
-  latest_heartbeat: "2026-08-20T04:26:53+08:00"
-  restart_count: 5
-  supervisor_pid: 247374
-  training_pipeline_pid: 251712
+  execution_mode: systemd_transient_service_independent_of_ssh_session
+  systemd_service: retain-reproduction.service
+  running_since: "2026-08-20T16:02:20+08:00"
+  latest_heartbeat: "2026-08-20T16:06:00+08:00"
+  restart_count: 9
+  supervisor_pid: 296996
+  training_pipeline_pid: 302251
+  training_pid: null
 latest_monitor:
-  checked_at: "2026-08-20T04:26:53+08:00"
+  checked_at: "2026-08-20T16:06:00+08:00"
   supervisor_stage: training_pipeline
+  training_status: waiting_for_idle_gpu_before_attempt_7
+  server_connectivity_status: restored_and_verified
+  server_connectivity_last_success_at: "2026-08-20T16:06:00+08:00"
+  latest_observed_step: 8975
+  attempted_checkpoint_step: 9000
+  steady_step_seconds: 2.2
+  estimated_remaining: "等待 GPU；从 step 8000 重算到最终约 74 分钟，另加编译与保存"
+  step_metrics_status: verified_360_finite_records_steps_0_through_8975
+  current_attempt_error_scan: attempt_6_host_oom_at_step_9000_save_attempt_7_not_started
+  numeric_checkpoint_status: verified_committed_and_orbax_discoverable_step_8000_max_to_keep_one
   idle_gpu_count: 0
-  gpu_memory_used_mib: [81200, 80057, 43508, 80133, 55579, 48391, 53903, 48739]
-  gpu_utilization_percent: [95, 100, 75, 100, 88, 65, 60, 88]
-  shared_free_bytes: 258645110784
-  shared_free_bytes_at_restart: 258662318080
+  gpu_memory_used_mib: [17919, 15450, 49314, 18102, 48116, 48327, 48299, 48275]
+  gpu_utilization_percent: [100, 36, 78, 100, 56, 84, 86, 53]
+  host_available_bytes: 539791395840
+  shared_free_bytes: 194593636352
+  shared_free_bytes_at_restart: 194953056256
+training_metrics:
+  run: retain_repro_pretrain__paper_final_hparams
+  source: reproduction/experiments/retain_repro_pretrain__paper_final_hparams/metrics.jsonl
+  source_sha256_at_export: 945c11be0365a7c2bf349337539b0589aadcfcd26bb724428f4bc1b1bb911594
+  analysis_report: reproduction/experiments/pretrain-metrics-through-step-8975.json
+  exported_at: "2026-08-20T16:05:35+08:00"
+  record_count: 360
+  first_step: 0
+  last_step: 8975
+  interval_steps: 25
+  all_finite: true
+  loss_first: 0.1572
+  loss_last: 0.0286
+  loss_min: 0.0271
+  loss_max: 0.1572
+  loss_first_to_last_drop_percent: 81.8066
+  loss_first_10_mean: 0.09298
+  loss_last_10_mean: 0.02899
+  grad_norm_first_10_mean: 1.77271
+  grad_norm_last_10_mean: 0.31849
+  param_norm_first: 1377.8652
+  param_norm_last: 1381.1089
+  vision_param_norm_first: 1258.1694
+  vision_param_norm_last: 1258.583506
+  interpretation: finite_and_slowly_improving_through_89_75_percent_host_oom_not_numeric_failure
 incidents:
   - time: "2026-08-20T00:05:15+08:00"
     stage: dataset_transfer
@@ -171,6 +484,49 @@ incidents:
       将 JAX plugin 所需 CUDA wheels 全部固定到隔离 overlay，显式优先其动态库路径，
       并把唯一可见设备且 platform=gpu 设为硬门禁；12/12 动态库与 CPU smoke 通过后，
       supervisor 已重跑数据、权重和 7-config 输入门禁并进入新一轮安全等待
+  - time: "2026-08-20T06:49:20+08:00"
+    stage: pretraining_first_optimizer_step_memory
+    cause: >-
+      完整 batch-64 train step 的 XLA 图经 rematerialization 仍为 75.44 GiB，且无法降到
+      约 25.07 GiB 的目标；执行时还需申请 27.79 GiB 大块 buffer，超出单卡临时内存安排
+    impact: >-
+      attempt 3 在严格 GPU preflight 真实通过后进入完整训练，但首个 optimizer step
+      以 RESOURCE_EXHAUSTED 退出；未产生 Step 0 指标或数字 checkpoint
+    recovery: >-
+      先以 95% BFC pool 和 cudaMallocAsync 分别做排除性重试；两次均失败后确认不是简单的
+      0.16 GiB pool 缺口，最终在明确记录偏差的前提下把单卡物理 batch 缩小到 16
+  - time: "2026-08-20T07:59:32+08:00"
+    stage: pretraining_first_optimizer_step_memory
+    cause: >-
+      attempt 4 在 95% BFC pool 下仍无法满足 batch-64 的同一 27.79 GiB buffer 请求；
+      初步怀疑固定 arena 碎片化
+    impact: >-
+      严格 GPU preflight 通过，但仍早于 Step 0 指标和数字 checkpoint，以 exit 1 停止
+    recovery: >-
+      按 JAX 官方文档请求 cudaMallocAsync growing pool，保留模型、batch 和全部论文优化参数；
+      完整现场归档到 pretrain-jax062-batch64-bfc-fragmentation-20260820T0759
+  - time: "2026-08-20T08:21:04+08:00"
+    stage: pretraining_first_optimizer_step_memory
+    cause: >-
+      attempt 5 请求 cudaMallocAsync，但 runtime 日志仍显示 GPU_0_bfc，并在同一 27.79 GiB
+      buffer 处 OOM；attempts 3--5 共同证明 batch 64 不适合当前单张 85,651 MiB GPU
+    impact: >-
+      严格 GPU preflight 再次通过，但仍无 Step 0 指标或数字 checkpoint，exit code 为 1
+    recovery: >-
+      七个训练 config 的物理 batch 从论文 64 缩小到 16，不使用 gradient accumulation；
+      steps、LR、AdamW、clip、EMA、mixture、seed、模型和数据均保持不变，并将差异写入状态
+  - time: "2026-08-20T15:14:37+08:00"
+    stage: pretraining_step_9000_checkpoint_host_transfer
+    cause: >-
+      systemd 明确记录 attempt 6 所属 session scope 中的进程被主机 OOM killer 终止；
+      Orbax 临时目录只完成约 12.0 GB params，尚未写出可提交的 train_state
+    impact: >-
+      attempt 6 以 exit 137 停止；step 9000 临时目录不可恢复，但已验证 step 8000
+      checkpoint 保持完整；训练日志证明数值指标稳定到 step 8975
+    recovery: >-
+      锁定 R1 恢复协议，从 step 8000 恢复并跳过 step 9000 中间全量保存，最终 step 9999
+      只保存 EMA/inference params；归档 metadata/manifest/status/log 后删除 12.0 GB 无效临时分片，
+      总控改由独立 systemd transient service 运行并重跑全部输入门禁
 runs:
   - id: retain_repro_pretrain__paper_final_hparams__attempt_1
     status: failed_before_step_0
@@ -190,4 +546,82 @@ runs:
     checkpoint_created: false
     cause: CUDA wheels 未完整隔离导致 CPU preflight false positive 与 cuDNN 9.7/9.8 mismatch
     evidence: reproduction/experiments/incidents/pretrain-jax062-cuda-library-path-20260820T0350
-limitations: []
+  - id: retain_repro_pretrain__paper_final_hparams__attempt_3
+    status: failed_before_step_0_metric
+    started_at: "2026-08-20T06:47:00+08:00"
+    finished_at: "2026-08-20T06:49:20+08:00"
+    gpu_physical_index: 2
+    return_code: 1
+    checkpoint_created: false
+    strict_gpu_preflight: verified
+    cause: batch-64 完整 optimizer step 无法满足约 25.07 GiB 临时内存目标并申请 27.79 GiB buffer 失败
+    evidence: reproduction/experiments/incidents/pretrain-jax062-batch64-oom-20260820T0649
+  - id: retain_repro_pretrain__paper_final_hparams__attempt_4
+    status: failed_before_step_0_metric
+    started_at: "2026-08-20T07:57:50+08:00"
+    finished_at: "2026-08-20T07:59:32+08:00"
+    gpu_physical_index: 1
+    return_code: 1
+    paper_batch_size: 64
+    checkpoint_created: false
+    strict_gpu_preflight: verified
+    memory_policy: bfc_95_percent
+    cause: 95% BFC pool 下仍在同一 27.79 GiB buffer 请求处 OOM
+    evidence: reproduction/experiments/incidents/pretrain-jax062-batch64-bfc-fragmentation-20260820T0759
+  - id: retain_repro_pretrain__paper_final_hparams__attempt_5
+    status: failed_before_step_0_metric
+    started_at: "2026-08-20T08:19:25+08:00"
+    finished_at: "2026-08-20T08:21:04+08:00"
+    gpu_physical_index: 1
+    return_code: 1
+    paper_batch_size: 64
+    checkpoint_created: false
+    strict_gpu_preflight: verified
+    requested_memory_policy: cuda_malloc_async
+    observed_allocator: GPU_0_bfc
+    cause: async allocator 未被 runtime 采用，batch-64 在同一 27.79 GiB buffer 处 OOM
+    evidence: reproduction/experiments/incidents/pretrain-jax062-cuda-malloc-async-ineffective-20260820T0821
+  - id: retain_repro_pretrain__paper_final_hparams__attempt_6
+    status: failed_during_incomplete_step_9000_checkpoint_host_oom
+    started_at: "2026-08-20T08:29:19+08:00"
+    finished_at: "2026-08-20T15:14:51+08:00"
+    gpu_physical_index: 1
+    paper_batch_size: 64
+    actual_batch_size: 16
+    gradient_accumulation: false
+    strict_gpu_preflight: verified
+    return_code: 137
+    latest_observed_metric_step: 8975
+    reached_checkpoint_save_step: 9000
+    checkpoint_created: true
+    verified_checkpoint_steps: [1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000]
+    latest_verified_checkpoint_step: 8000
+    checkpoint_validation: atomic_finalize_no_errors_orbax_read_only_discovery_and_max_to_keep_one
+    checkpoint_expected_at_step: 1000
+    metrics_verified_through_step: 8975
+    metrics_record_count: 360
+    metrics_all_finite: true
+    failure_cause: host_oom_killer_during_full_train_state_checkpoint_save
+    incomplete_checkpoint_valid_for_restore: false
+    evidence: reproduction/experiments/pretrain-step9000-host-oom-recovery-20260820
+  - id: retain_repro_pretrain__paper_final_hparams__attempt_7
+    status: waiting_for_idle_gpu_after_all_input_gates_passed
+    supervisor_started_at: "2026-08-20T16:02:20+08:00"
+    training_pipeline_started_at: "2026-08-20T16:05:40+08:00"
+    resume_from_step: 8000
+    paper_batch_size: 64
+    actual_batch_size: 16
+    gradient_accumulation: false
+    gpu_physical_index: null
+    strict_gpu_preflight: pending_until_idle_gpu_selected
+    skip_intermediate_step_9000_save: true
+    final_step: 9999
+    final_params_only: true
+    input_gates: verified_353_sha256_24_gcs_md5_orbax_restore_and_7_of_7_real_batches
+    evidence: reproduction/experiments/pretrain-step9000-host-oom-recovery-20260820
+limitations:
+  - 服务器没有 Franka 机械臂与现场相机，只执行 LIBERO 仿真实验
+  - 项目固定 JAX 0.5.0 不支持 sm_120，使用隔离 JAX/CUDA 0.6.2 overlay
+  - >-
+    论文训练 batch 为 64；当前单 GPU 复现采用物理 batch 16 且无 gradient accumulation，
+    因而优化轨迹不与论文数值等价，最终结果必须按缩小版单卡复现解释

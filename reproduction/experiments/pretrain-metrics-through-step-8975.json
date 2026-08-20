@@ -1,0 +1,276 @@
+{
+  "protocol_id": "RETAIN-GPU-20260819-001",
+  "config": "retain_repro_pretrain",
+  "experiment_name": "paper_final_hparams",
+  "attempt": 6,
+  "analyzed_at": "2026-08-20T08:05:35.206001+00:00",
+  "source": {
+    "path": "reproduction/experiments/retain_repro_pretrain__paper_final_hparams/metrics.jsonl",
+    "line_count": 360,
+    "bytes": 39038,
+    "sha256": "945c11be0365a7c2bf349337539b0589aadcfcd26bb724428f4bc1b1bb911594"
+  },
+  "coverage": {
+    "first_step": 0,
+    "last_step": 8975,
+    "record_count": 360,
+    "expected_interval_steps": 25,
+    "interval_consistent": true,
+    "training_fraction_through_last_record": 0.8975
+  },
+  "finite_value_audit": {
+    "fields": [
+      "loss",
+      "grad_norm",
+      "param_norm",
+      "vision_param_norm"
+    ],
+    "all_finite": true
+  },
+  "overall": {
+    "loss": {
+      "first": 0.1572,
+      "last": 0.0286,
+      "min": 0.0271,
+      "max": 0.1572,
+      "mean": 0.03707722222222222,
+      "first_to_last_drop_fraction": 0.8180661577608141
+    },
+    "grad_norm": {
+      "first": 3.4955,
+      "last": 0.3019,
+      "min": 0.2878,
+      "max": 3.9338,
+      "mean": 0.4430219444444444
+    },
+    "param_norm": {
+      "first": 1377.8652,
+      "last": 1381.1089,
+      "min": 1377.865,
+      "max": 1381.1089,
+      "mean": 1379.4523627777778
+    },
+    "vision_param_norm": {
+      "first": 1258.1694,
+      "last": 1258.583506,
+      "min": 1258.1694,
+      "max": 1258.583506,
+      "mean": 1258.3717675416667
+    }
+  },
+  "window_means": {
+    "first_10_records": {
+      "loss": 0.09298,
+      "grad_norm": 1.77271,
+      "param_norm": 1377.8653900000002,
+      "vision_param_norm": 1258.16965
+    },
+    "last_10_records": {
+      "loss": 0.02899,
+      "grad_norm": 0.31849,
+      "param_norm": 1381.07618,
+      "vision_param_norm": 1258.5795106
+    }
+  },
+  "step_bins": [
+    {
+      "steps": [
+        0,
+        475
+      ],
+      "count": 20,
+      "loss_mean": 0.07106,
+      "grad_norm_mean": 1.197835,
+      "param_norm_mean": 1377.868335,
+      "vision_param_norm_mean": 1258.169795
+    },
+    {
+      "steps": [
+        500,
+        975
+      ],
+      "count": 20,
+      "loss_mean": 0.04671,
+      "grad_norm_mean": 0.590935,
+      "param_norm_mean": 1377.924555,
+      "vision_param_norm_mean": 1258.17678
+    },
+    {
+      "steps": [
+        1000,
+        1475
+      ],
+      "count": 20,
+      "loss_mean": 0.04514,
+      "grad_norm_mean": 0.536205,
+      "param_norm_mean": 1378.1051750000001,
+      "vision_param_norm_mean": 1258.20065
+    },
+    {
+      "steps": [
+        1500,
+        1975
+      ],
+      "count": 20,
+      "loss_mean": 0.040905000000000004,
+      "grad_norm_mean": 0.47334499999999996,
+      "param_norm_mean": 1378.321605,
+      "vision_param_norm_mean": 1258.22848
+    },
+    {
+      "steps": [
+        2000,
+        2475
+      ],
+      "count": 20,
+      "loss_mean": 0.038900000000000004,
+      "grad_norm_mean": 0.44451999999999997,
+      "param_norm_mean": 1378.541025,
+      "vision_param_norm_mean": 1258.25508505
+    },
+    {
+      "steps": [
+        2500,
+        2975
+      ],
+      "count": 20,
+      "loss_mean": 0.037335,
+      "grad_norm_mean": 0.43366499999999997,
+      "param_norm_mean": 1378.758145,
+      "vision_param_norm_mean": 1258.2818750000001
+    },
+    {
+      "steps": [
+        3000,
+        3475
+      ],
+      "count": 20,
+      "loss_mean": 0.035554999999999996,
+      "grad_norm_mean": 0.39944999999999997,
+      "param_norm_mean": 1378.971215,
+      "vision_param_norm_mean": 1258.309
+    },
+    {
+      "steps": [
+        3500,
+        3975
+      ],
+      "count": 20,
+      "loss_mean": 0.03472,
+      "grad_norm_mean": 0.40073499999999995,
+      "param_norm_mean": 1379.182155,
+      "vision_param_norm_mean": 1258.3372100000001
+    },
+    {
+      "steps": [
+        4000,
+        4475
+      ],
+      "count": 20,
+      "loss_mean": 0.034185,
+      "grad_norm_mean": 0.38060499999999997,
+      "param_norm_mean": 1379.3901799999999,
+      "vision_param_norm_mean": 1258.36390515
+    },
+    {
+      "steps": [
+        4500,
+        4975
+      ],
+      "count": 20,
+      "loss_mean": 0.03316,
+      "grad_norm_mean": 0.358625,
+      "param_norm_mean": 1379.5924300000001,
+      "vision_param_norm_mean": 1258.38967
+    },
+    {
+      "steps": [
+        5000,
+        5475
+      ],
+      "count": 20,
+      "loss_mean": 0.03308,
+      "grad_norm_mean": 0.36518,
+      "param_norm_mean": 1379.791395,
+      "vision_param_norm_mean": 1258.41516
+    },
+    {
+      "steps": [
+        5500,
+        5975
+      ],
+      "count": 20,
+      "loss_mean": 0.03261,
+      "grad_norm_mean": 0.36023499999999997,
+      "param_norm_mean": 1379.98872,
+      "vision_param_norm_mean": 1258.43997
+    },
+    {
+      "steps": [
+        6000,
+        6475
+      ],
+      "count": 20,
+      "loss_mean": 0.03157,
+      "grad_norm_mean": 0.35131999999999997,
+      "param_norm_mean": 1380.177975,
+      "vision_param_norm_mean": 1258.46366
+    },
+    {
+      "steps": [
+        6500,
+        6975
+      ],
+      "count": 20,
+      "loss_mean": 0.031035,
+      "grad_norm_mean": 0.34153,
+      "param_norm_mean": 1380.3619,
+      "vision_param_norm_mean": 1258.48718525
+    },
+    {
+      "steps": [
+        7000,
+        7475
+      ],
+      "count": 20,
+      "loss_mean": 0.03114,
+      "grad_norm_mean": 0.34291,
+      "param_norm_mean": 1380.54044,
+      "vision_param_norm_mean": 1258.5110650000001
+    },
+    {
+      "steps": [
+        7500,
+        7975
+      ],
+      "count": 20,
+      "loss_mean": 0.030585,
+      "grad_norm_mean": 0.33719,
+      "param_norm_mean": 1380.7125,
+      "vision_param_norm_mean": 1258.533265
+    },
+    {
+      "steps": [
+        8000,
+        8475
+      ],
+      "count": 20,
+      "loss_mean": 0.030059999999999996,
+      "grad_norm_mean": 0.33099500000000004,
+      "param_norm_mean": 1380.8776599999999,
+      "vision_param_norm_mean": 1258.554455
+    },
+    {
+      "steps": [
+        8500,
+        8975
+      ],
+      "count": 20,
+      "loss_mean": 0.02964,
+      "grad_norm_mean": 0.329115,
+      "param_norm_mean": 1381.03712,
+      "vision_param_norm_mean": 1258.5746052999998
+    }
+  ],
+  "interpretation_zh": "step 0--8975 的四项指标全部有限；loss 在早期快速下降后继续缓慢改善，故障前最后 10 条均值与 500-step 分段趋势用于判断恢复连续性。该报告覆盖 89.75%，不能替代最终 10,000-step 审计。"
+}
