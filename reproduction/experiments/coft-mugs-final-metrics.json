@@ -1,0 +1,100 @@
+{
+  "protocol_id": "RETAIN-GPU-20260819-001-R1",
+  "config": "retain_repro_coft_mugs",
+  "experiment_name": "paper_coft_mugs",
+  "attempt": 1,
+  "analyzed_at": "2026-08-20T12:14:27.694885+00:00",
+  "source": {
+    "path": "reproduction/experiments/retain_repro_coft_mugs__paper_coft_mugs/metrics.jsonl",
+    "line_count": 40,
+    "bytes": 4303,
+    "sha256": "25eb3f16a10e699c0aebb2d85cd311dc6bcf601789768b30b3ef9595fae5b689"
+  },
+  "coverage": {
+    "first_step": 0,
+    "last_step": 975,
+    "record_count": 40,
+    "expected_interval_steps": 25,
+    "interval_consistent": true,
+    "training_fraction_through_last_record": 0.975
+  },
+  "finite_value_audit": {
+    "fields": [
+      "loss",
+      "grad_norm",
+      "param_norm",
+      "vision_param_norm"
+    ],
+    "all_finite": true
+  },
+  "overall": {
+    "loss": {
+      "first": 0.0353,
+      "last": 0.0296,
+      "min": 0.0244,
+      "max": 0.0429,
+      "mean": 0.028050000000000002,
+      "first_to_last_drop_fraction": 0.1614730878186968
+    },
+    "grad_norm": {
+      "first": 0.2532,
+      "last": 0.3356,
+      "min": 0.2024,
+      "max": 0.355,
+      "mean": 0.27469
+    },
+    "param_norm": {
+      "first": 1381.3778,
+      "last": 1381.502,
+      "min": 1381.3774,
+      "max": 1381.502,
+      "mean": 1381.4101425000001
+    },
+    "vision_param_norm": {
+      "first": 1258.6182,
+      "last": 1258.6357,
+      "min": 1258.6178,
+      "max": 1258.6357,
+      "mean": 1258.6227574999998
+    }
+  },
+  "window_means": {
+    "first_10_records": {
+      "loss": 0.0313,
+      "grad_norm": 0.26339,
+      "param_norm": 1381.37845,
+      "vision_param_norm": 1258.61832
+    },
+    "last_10_records": {
+      "loss": 0.027489999999999997,
+      "grad_norm": 0.30867,
+      "param_norm": 1381.4662,
+      "vision_param_norm": 1258.63051
+    }
+  },
+  "step_bins": [
+    {
+      "steps": [
+        0,
+        475
+      ],
+      "count": 20,
+      "loss_mean": 0.028794999999999998,
+      "grad_norm_mean": 0.254585,
+      "param_norm_mean": 1381.381885,
+      "vision_param_norm_mean": 1258.6188699999998
+    },
+    {
+      "steps": [
+        500,
+        975
+      ],
+      "count": 20,
+      "loss_mean": 0.027305000000000003,
+      "grad_norm_mean": 0.29479500000000003,
+      "param_norm_mean": 1381.4384,
+      "vision_param_norm_mean": 1258.6266449999998
+    }
+  ],
+  "interpretation_zh": "mugs coFT 单卡 batch-16 完成；40 条指标覆盖 step 0--975 且全部有限，最终参数供 coFT 基线评测使用。"
+}

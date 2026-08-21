@@ -1,0 +1,71 @@
+{
+  "config": "retain_repro_task_ft_basket",
+  "exp_name": "paper_task_ft_basket",
+  "host": "lhy-1",
+  "gpu_physical_index": 3,
+  "started_at": "2026-08-20T10:31:13.713945+00:00",
+  "command": [
+    "/root/.local/bin/uv",
+    "run",
+    "--no-sync",
+    "scripts/train.py",
+    "retain_repro_task_ft_basket",
+    "--exp-name=paper_task_ft_basket"
+  ],
+  "final_checkpoint": "/shared/.cache/retain/checkpoints/retain_repro_task_ft_basket/paper_task_ft_basket/499",
+  "jax_runtime": {
+    "overlay": "/shared/.cache/retain/jax-overlays/0.6.2",
+    "versions": {
+      "jax": "0.6.2",
+      "jaxlib": "0.6.2",
+      "jax-cuda12-plugin": "0.6.2",
+      "jax-cuda12-pjrt": "0.6.2",
+      "ml-dtypes": "0.5.1",
+      "nvidia-cublas-cu12": "12.8.3.14",
+      "nvidia-cuda-cupti-cu12": "12.8.57",
+      "nvidia-cuda-nvcc-cu12": "12.9.86",
+      "nvidia-cuda-nvrtc-cu12": "12.8.61",
+      "nvidia-cuda-runtime-cu12": "12.8.57",
+      "nvidia-cudnn-cu12": "9.8.0.87",
+      "nvidia-cufft-cu12": "11.3.3.41",
+      "nvidia-cusolver-cu12": "11.7.2.55",
+      "nvidia-cusparse-cu12": "12.5.7.53",
+      "nvidia-nccl-cu12": "2.26.2",
+      "nvidia-nvjitlink-cu12": "12.8.61",
+      "nvidia-nvshmem-cu12": "3.2.5"
+    },
+    "xla_flags": "--xla_gpu_enable_triton_gemm=false",
+    "reason": "RTX 6000D (sm_120) 编译兼容；项目主虚拟环境保持不变",
+    "gpu_preflight_report": "/root/RETAIN_code/reproduction/experiments/jax-gpu-preflight.json",
+    "memory_policy": {
+      "allocator": "bfc",
+      "xla_python_client_mem_fraction": "0.95",
+      "xla_python_client_preallocate": true,
+      "tf_force_gpu_allow_growth": true,
+      "reason": "batch-64 首步临时内存超过单卡预算；batch-16 下保留 95% BFC pool"
+    },
+    "single_gpu_adaptation": {
+      "paper_batch_size": 64,
+      "actual_batch_size": 16,
+      "gradient_accumulation": false,
+      "reason": "attempts 3--5 均在 batch-64 首个 optimizer step 因 27.79 GiB buffer 分配失败；单 RTX 6000D 约束下缩小物理 batch"
+    }
+  },
+  "status": "completed",
+  "checkpoint_storage_policy": {
+    "final_params_only": true,
+    "pretraining_intermediate_step_9000_skipped": false,
+    "reason": "step-9000 full train-state save triggered host OOM; terminal stages only need inference/EMA params downstream"
+  },
+  "finished_at": "2026-08-20T10:53:07.741893+00:00",
+  "return_code": 0,
+  "metrics_records": 20,
+  "storage_pruning": {
+    "status": "removed_after_successful_stage",
+    "path": "/shared/.cache/retain/checkpoints/retain_repro_task_ft_basket/paper_task_ft_basket/499/train_state",
+    "removed_bytes": 1840,
+    "removed_at": "2026-08-20T10:53:07.745970+00:00",
+    "retained_params": "/shared/.cache/retain/checkpoints/retain_repro_task_ft_basket/paper_task_ft_basket/499/params",
+    "reason": "控制共享盘占用；阶段已完成，后续训练和评测只读取 params"
+  }
+}

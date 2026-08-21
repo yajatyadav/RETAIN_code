@@ -1,0 +1,103 @@
+{
+  "protocol_id": "RETAIN-GPU-20260819-001",
+  "captured_at": "2026-08-21T18:36:54+08:00",
+  "status": "taskft_mugs_libero_90_goal_object_complete_fourth_spatial_task_running",
+  "pipeline": {
+    "service": "retain-reproduction.service",
+    "active": true,
+    "pipeline_pid": 1886,
+    "current_policy": "taskft_mugs",
+    "policy_server_pid": 192302,
+    "evaluator_pid": 312780,
+    "physical_gpu_index": 0,
+    "completed_alpha_jobs": 270,
+    "completed_main_jobs": 200,
+    "completed_jobs_in_status": 470,
+    "failed_job": null
+  },
+  "current_policy": {
+    "policy": "taskft_mugs",
+    "completed_jobs": 34,
+    "ID": {"successes": 13, "episodes": 20, "success_rate": 0.65, "pretrain_success_rate": 0.0, "delta_vs_pretrain": 0.65, "status": "complete"},
+    "OOD_MEDIUM": {"successes_by_seed": [5, 4, 5, 7, 5], "successes": 26, "episodes": 50, "success_rate": 0.52, "pretrain_success_rate": 0.0, "delta_vs_pretrain": 0.52, "selected_alpha_policy": "retain_taskft_mugs_a070", "selected_alpha": 0.7, "selected_alpha_validation_successes": 21, "selected_alpha_validation_success_rate": 0.42, "paper_alpha_policy": "retain_taskft_mugs_a080", "paper_alpha": 0.8, "paper_alpha_validation_successes": 20, "paper_alpha_validation_success_rate": 0.4, "selected_alpha_is_independent_evidence": false, "status": "complete"},
+    "OOD_HARD": {"successes_by_condition": [4, 0, 2, 0, 3, 0, 4, 0, 2, 0], "successes": 15, "episodes": 100, "success_rate": 0.15, "pretrain_success_rate": 0.0, "delta_vs_pretrain": 0.15, "set_0_success_rate": 0.3, "set_1_success_rate": 0.0, "status": "complete"},
+    "generalist_retention": {
+      "completed_tasks": 18,
+      "planned_tasks": 20,
+      "task_successes": [10, 0, 0, 0, 9, 0, 2, 4, 0, 1, 0, 4, 4, 4, 0, 5, 0, 0],
+      "successes": 43,
+      "episodes": 180,
+      "success_rate": 0.2388888888888889,
+      "pretrain_matching_successes": 120,
+      "pretrain_matching_episodes": 180,
+      "pretrain_matching_success_rate": 0.6666666666666666,
+      "partial_delta_vs_pretrain": -0.4277777777777777,
+      "by_suite": {
+        "libero_90": {"task_successes": [10, 0, 0, 0, 9], "successes": 19, "episodes": 50, "success_rate": 0.38, "pretrain_successes": 41, "pretrain_success_rate": 0.82, "delta_vs_pretrain": -0.44, "status": "complete"},
+        "libero_goal": {"task_successes": [0, 2, 4, 0, 1], "successes": 7, "episodes": 50, "success_rate": 0.14, "pretrain_successes": 31, "pretrain_success_rate": 0.62, "delta_vs_pretrain": -0.48, "status": "complete"},
+        "libero_object": {"task_successes": [0, 4, 4, 4, 0], "successes": 12, "episodes": 50, "success_rate": 0.24, "pretrain_successes": 33, "pretrain_success_rate": 0.66, "delta_vs_pretrain": -0.42, "status": "complete"},
+        "libero_spatial": {"task_successes": [5, 0, 0], "successes": 5, "episodes": 30, "success_rate": 0.16666666666666666, "pretrain_successes": 15, "pretrain_success_rate": 0.5, "partial_delta_vs_pretrain": -0.33333333333333337, "status": "running_fourth_of_five_tasks"}
+      },
+      "episode_errors": 0,
+      "status": "running"
+    }
+  },
+  "new_complete_jobs_since_previous_snapshot": [
+    {"job_key": "a7f443f1949fa4fa", "suite": "libero_goal", "task": "put the bowl on the plate", "successes": 2, "episodes": 10, "episode_errors": 0, "video_bytes": 826532},
+    {"job_key": "dc4e9b4c56594e3b", "suite": "libero_goal", "task": "put the bowl on top of the cabinet", "successes": 4, "episodes": 10, "episode_errors": 0, "video_bytes": 706869},
+    {"job_key": "659c38718145e495", "suite": "libero_goal", "task": "put the cream cheese in the bowl", "successes": 0, "episodes": 10, "episode_errors": 0, "video_bytes": 856203},
+    {"job_key": "52151466f70dd9ba", "suite": "libero_goal", "task": "put the wine bottle on top of the cabinet", "successes": 1, "episodes": 10, "episode_errors": 0, "video_bytes": 847524},
+    {"job_key": "3cb5da0623030e41", "suite": "libero_object", "task": "pick up the alphabet soup and place it in the basket", "successes": 0, "episodes": 10, "episode_errors": 0, "video_bytes": 665257},
+    {"job_key": "d68fc02d08f2efd2", "suite": "libero_object", "task": "pick up the butter and place it in the basket", "successes": 4, "episodes": 10, "episode_errors": 0, "video_bytes": 611888},
+    {"job_key": "d925d843bbb8ba9b", "suite": "libero_object", "task": "pick up the chocolate pudding and place it in the basket", "successes": 4, "episodes": 10, "episode_errors": 0, "video_bytes": 595446},
+    {"job_key": "09fd54591811a53a", "suite": "libero_object", "task": "pick up the ketchup and place it in the basket", "successes": 4, "episodes": 10, "episode_errors": 0, "video_bytes": 581950},
+    {"job_key": "6db3f85483a829d5", "suite": "libero_object", "task": "pick up the salad dressing and place it in the basket", "successes": 0, "episodes": 10, "episode_errors": 0, "video_bytes": 739681},
+    {"job_key": "232812dc3fd9ff10", "suite": "libero_spatial", "task": "pick up the black bowl between the plate and the ramekin and place it on the plate", "successes": 5, "episodes": 10, "episode_errors": 0, "video_bytes": 474949},
+    {"job_key": "eee3ab301759b708", "suite": "libero_spatial", "task": "pick up the black bowl from table center and place it on the plate", "successes": 0, "episodes": 10, "episode_errors": 0, "video_bytes": 611198},
+    {"job_key": "b5344e2d87d1cc24", "suite": "libero_spatial", "task": "pick up the black bowl in the top drawer of the wooden cabinet and place it on the plate", "successes": 0, "episodes": 10, "episode_errors": 0, "video_bytes": 580216}
+  ],
+  "global_complete_main_aggregate": {
+    "jobs": 200,
+    "episodes": 2070,
+    "successes": 651,
+    "episode_errors": 0,
+    "video_count": 2070,
+    "video_bytes": 225765833
+  },
+  "current_job": {
+    "job_key": "2ddb67a6bacb6e38",
+    "eval_type": "GENERALIST",
+    "suite": "libero_spatial",
+    "task": "pick up the black bowl next to the cookie box and place it on the plate",
+    "seed": 7,
+    "planned_episodes": 10,
+    "observed_episodes_at_capture": 5,
+    "observed_successes_at_capture": 2,
+    "observed_errors_at_capture": 0,
+    "observed_video_bytes_at_capture": 322113,
+    "summary_committed_at_capture": false,
+    "eligible_for_formal_comparison": false
+  },
+  "single_gpu_audit": {
+    "only_reproduction_compute_process": {"physical_gpu_index": 0, "pid": 192302, "memory_mib": 77036},
+    "constraint_satisfied": true
+  },
+  "resources": {
+    "gpu_memory_used_mib": [77049, 1, 15157, 735, 79863, 79767, 79815, 79891],
+    "gpu_utilization_percent": [13, 0, 74, 0, 98, 100, 100, 100],
+    "host_available_bytes": 531627881472,
+    "root_free_bytes": 70550589440,
+    "shared_free_bytes": 101414060032
+  },
+  "monitoring_policy": {
+    "root_space": "monitor_and_record_only",
+    "root_space_is_a_stop_condition": false,
+    "all_known_evaluation_write_paths_on_shared": true
+  },
+  "validation": {
+    "service_active": true,
+    "single_physical_gpu_constraint": true,
+    "selection_set_reuse_labeled": true,
+    "fatal_error_matches": 0
+  }
+}

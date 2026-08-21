@@ -1,0 +1,79 @@
+{
+  "protocol_id": "RETAIN-GPU-20260819-001",
+  "captured_at": "2026-08-21T13:04:26+08:00",
+  "status": "main_evaluation_resumed_by_explicit_user_direction",
+  "user_direction": "continue evaluation; all evaluation data/state/log/tmp/cache are on shared; do not stop because root space is low",
+  "pipeline": {
+    "service": "retain-reproduction.service",
+    "active": true,
+    "active_since": "2026-08-21T13:03:28+08:00",
+    "pipeline_pid": 1436285,
+    "policy": "pretrain_117task",
+    "policy_server_pid": 1436419,
+    "evaluator_pid": 1437138,
+    "physical_gpu_index": 0,
+    "completed_alpha_jobs": 270,
+    "completed_main_jobs": 38,
+    "completed_jobs_in_status": 308,
+    "failed_job": null
+  },
+  "shared_write_paths": {
+    "results_root": "/shared/.cache/retain/results/RETAIN-GPU-20260819-001",
+    "state_root": "/shared/.cache/retain/evaluation-state/RETAIN-GPU-20260819-001/evaluation-pipeline",
+    "service_log": "/shared/.cache/retain/evaluation-state/RETAIN-GPU-20260819-001/evaluation-service.log",
+    "tmpdir": "/shared/.cache/retain/tmp/evaluation",
+    "xdg_cache_home": "/shared/.cache/retain/cache/evaluation",
+    "all_explicit_evaluation_write_paths_on_shared": true
+  },
+  "complete_aggregate_preserved": {
+    "jobs": 38,
+    "episodes": 410,
+    "successes": 3,
+    "episode_errors": 0,
+    "video_count": 410,
+    "video_bytes": 62146901
+  },
+  "current_rerun": {
+    "index": 39,
+    "job_key": "f2dea8b6639928c0",
+    "eval_type": "OOD_HARD-set-0",
+    "task": "basket",
+    "seed": 1,
+    "planned_episodes": 10,
+    "committed_before_restart": false,
+    "existing_partial_files_from_previous_attempt": true,
+    "current_episode_count_from_directory_is_not_interpretable_until_summary_commit": true,
+    "eligible_for_comparison": false,
+    "service_log_marker": "pretrain_117task 运行评测 1/30 (f2dea8b6639928c0)"
+  },
+  "single_gpu_audit": {
+    "policy_server_cuda_visible_devices": "0",
+    "evaluator_cuda_visible_devices": "",
+    "evaluator_egl_device_id": 0,
+    "only_reproduction_compute_process": {"physical_gpu_index": 0, "pid": 1436419, "memory_mib": 77036, "role": "policy_server"},
+    "constraint_satisfied": true
+  },
+  "resources": {
+    "gpu_memory_used_mib": [77049, 1, 1, 989, 267, 267, 79883, 269],
+    "gpu_utilization_percent": [15, 0, 0, 1, 0, 0, 0, 0],
+    "host_available_bytes": 531692941312,
+    "root_free_bytes": 3825750016,
+    "shared_free_bytes": 106244542464,
+    "root_df_use_percent": 100,
+    "shared_df_use_percent": 99
+  },
+  "monitoring_policy": {
+    "root_space": "monitor_and_record_only",
+    "root_space_is_a_stop_condition": false,
+    "reason": "explicit user direction and all known evaluation writes are on shared",
+    "actual_evaluation_failure": "diagnose and recover within the one-GPU constraint",
+    "shared_space_and_write_errors": "continue monitoring"
+  },
+  "recovery_validation": {
+    "transient_unit_was_recreated": true,
+    "completed_jobs_preserved": 308,
+    "job39_still_uncommitted_at_restart": true,
+    "state_status": "running",
+    "fatal_error_matches": 0
+  }
+}

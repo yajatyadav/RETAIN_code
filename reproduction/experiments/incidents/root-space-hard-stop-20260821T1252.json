@@ -1,0 +1,50 @@
+{
+  "incident_id": "root-space-hard-stop-20260821T1252",
+  "protocol_id": "RETAIN-GPU-20260819-001",
+  "severity": "protective_pause",
+  "detected_at": "2026-08-21T12:51:52+08:00",
+  "stopped_at": "2026-08-21T12:52:12+08:00",
+  "trigger": {
+    "root_free_bytes": 3846983680,
+    "hard_stop_trigger_bytes": 4294967296,
+    "trigger_crossed_by_bytes": 447983616,
+    "previous_root_free_bytes": 5478400000,
+    "elapsed_since_previous_snapshot_seconds": 814,
+    "decline_bytes": 1631416320
+  },
+  "action": {
+    "command_scope": "stop retain-reproduction.service",
+    "result": "success",
+    "service_active_after_stop": false,
+    "destructive_cleanup_performed": false,
+    "resume_gate_bytes": 8589934592
+  },
+  "preservation": {
+    "state_root": "/shared/.cache/retain/evaluation-state/RETAIN-GPU-20260819-001/evaluation-pipeline",
+    "completed_jobs": 308,
+    "completed_alpha_jobs": 270,
+    "completed_main_jobs": 38,
+    "failed_job": null,
+    "uncommitted_job_key": "f2dea8b6639928c0",
+    "uncommitted_observed_episodes": 8,
+    "uncommitted_job_eligible_for_results": false,
+    "resume_semantics": "all completed jobs are skipped; the uncommitted job is rerun"
+  },
+  "diagnosis": {
+    "root_filesystem_used_bytes": 890538852352,
+    "visible_root_directory_bytes": 22413758464,
+    "visible_project_bytes": 17703084032,
+    "journal_reported_bytes": 201326592,
+    "recent_visible_files_over_10mb_in_20_minutes": 1,
+    "deleted_open_files": 0,
+    "new_complete_rollout_bytes_since_previous_snapshot": 5736327,
+    "conclusion": "visible reproduction output does not explain the decline; pressure is external, hidden, or outside this process namespace"
+  },
+  "restart_condition": "superseded by explicit user direction; root space is monitor-only and evaluation was resumed immediately",
+  "resolution": {
+    "resolved_at": "2026-08-21T13:03:28+08:00",
+    "resume_gate_cancelled": true,
+    "service_resumed": true,
+    "resolution_record": "reproduction/experiments/incidents/root-space-stop-override-resume-20260821T1303.json"
+  }
+}

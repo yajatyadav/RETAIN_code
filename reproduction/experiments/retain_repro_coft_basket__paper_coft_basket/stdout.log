@@ -1,0 +1,572 @@
+2026-08-20 12:13:43.683241: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1787228023.764698  317936 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1787228023.800507  317936 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1787228026.773010  317936 gpu_device.cc:2433] TensorFlow was not built with CUDA kernel binaries compatible with compute capability 12.0. CUDA kernels will be jit-compiled from PTX, which could take 30 minutes or longer.
+12:13:47.702 [I] Running on: lhy-1                                                                (317936:train.py:302)
+INFO:2026-08-20 12:13:47,952:jax._src.xla_bridge:752: Unable to initialize backend 'tpu': INTERNAL: Failed to open libtpu.so: libtpu.so: cannot open shared object file: No such file or directory
+12:13:47.952 [I] Unable to initialize backend 'tpu': INTERNAL: Failed to open libtpu.so: libtpu.so: cannot open shared object file: No such file or directory (317936:xla_bridge.py:752)
+12:13:50.719 [I] Created BasePyTreeCheckpointHandler: pytree_metadata_options=PyTreeMetadataOptions(support_rich_types=False), array_metadata_store=None (317936:base_pytree_checkpoint_handler.py:332)
+12:13:50.719 [I] Created BasePyTreeCheckpointHandler: pytree_metadata_options=PyTreeMetadataOptions(support_rich_types=False), array_metadata_store=None (317936:base_pytree_checkpoint_handler.py:332)
+12:13:50.719 [I] [thread=MainThread] Failed to get flag value for EXPERIMENTAL_ORBAX_USE_DISTRIBUTED_PROCESS_ID. (317936:multihost.py:375)
+12:13:50.719 [I] [process=0][thread=MainThread] CheckpointManager init: checkpointers=None, item_names=None, item_handlers={'assets': <openpi.training.checkpoints.CallbackHandler object at 0x761f000ea490>, 'train_state': <orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler object at 0x761cf7d35b10>, 'params': <orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler object at 0x761f000adf10>}, handler_registry=None (317936:checkpoint_manager.py:622)
+12:13:50.720 [I] Deferred registration for item: "assets". Adding handler `<openpi.training.checkpoints.CallbackHandler object at 0x761f000ea490>` for item "assets" and save args `<class 'openpi.training.checkpoints.CallbackSave'>` and restore args `<class 'openpi.training.checkpoints.CallbackRestore'>` to `_handler_registry`. (317936:composite_checkpoint_handler.py:239)
+12:13:50.720 [I] Deferred registration for item: "train_state". Adding handler `<orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler object at 0x761cf7d35b10>` for item "train_state" and save args `<class 'orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeSaveArgs'>` and restore args `<class 'orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeRestoreArgs'>` to `_handler_registry`. (317936:composite_checkpoint_handler.py:239)
+12:13:50.720 [I] Deferred registration for item: "params". Adding handler `<orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler object at 0x761f000adf10>` for item "params" and save args `<class 'orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeSaveArgs'>` and restore args `<class 'orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeRestoreArgs'>` to `_handler_registry`. (317936:composite_checkpoint_handler.py:239)
+12:13:50.720 [I] Deferred registration for item: "metrics". Adding handler `<orbax.checkpoint._src.handlers.json_checkpoint_handler.JsonCheckpointHandler object at 0x761f000ddd90>` for item "metrics" and save args `<class 'orbax.checkpoint._src.handlers.json_checkpoint_handler.JsonSaveArgs'>` and restore args `<class 'orbax.checkpoint._src.handlers.json_checkpoint_handler.JsonRestoreArgs'>` to `_handler_registry`. (317936:composite_checkpoint_handler.py:239)
+12:13:50.720 [I] Initialized registry DefaultCheckpointHandlerRegistry({('assets', <class 'openpi.training.checkpoints.CallbackSave'>): <openpi.training.checkpoints.CallbackHandler object at 0x761f000ea490>, ('assets', <class 'openpi.training.checkpoints.CallbackRestore'>): <openpi.training.checkpoints.CallbackHandler object at 0x761f000ea490>, ('train_state', <class 'orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeSaveArgs'>): <orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler object at 0x761cf7d35b10>, ('train_state', <class 'orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeRestoreArgs'>): <orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler object at 0x761cf7d35b10>, ('params', <class 'orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeSaveArgs'>): <orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler object at 0x761f000adf10>, ('params', <class 'orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeRestoreArgs'>): <orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler object at 0x761f000adf10>, ('metrics', <class 'orbax.checkpoint._src.handlers.json_checkpoint_handler.JsonSaveArgs'>): <orbax.checkpoint._src.handlers.json_checkpoint_handler.JsonCheckpointHandler object at 0x761f000ddd90>, ('metrics', <class 'orbax.checkpoint._src.handlers.json_checkpoint_handler.JsonRestoreArgs'>): <orbax.checkpoint._src.handlers.json_checkpoint_handler.JsonCheckpointHandler object at 0x761f000ddd90>}). (317936:composite_checkpoint_handler.py:508)
+12:13:50.720 [I] orbax-checkpoint version: 0.11.1                                                 (317936:abstract_checkpointer.py:35)
+12:13:50.720 [I] [process=0][thread=MainThread] Using barrier_sync_fn: <function get_barrier_sync_fn.<locals>.<lambda> at 0x761ce21849a0> timeout: 7200 secs and primary_host=0 for async checkpoint writes (317936:async_checkpointer.py:80)
+12:13:50.721 [I] Found 0 checkpoint steps in /shared/.cache/retain/checkpoints/retain_repro_coft_basket/paper_coft_basket (317936:checkpoint_manager.py:1528)
+12:13:50.721 [I] Saving root metadata                                                             (317936:checkpoint_manager.py:1569)
+12:13:50.721 [I] [process=0][thread=MainThread] Skipping global process sync, barrier name: CheckpointManager:save_metadata (317936:multihost.py:293)
+12:13:50.721 [I] [process=0][thread=MainThread] CheckpointManager created,  primary_host=0, CheckpointManagerOptions=CheckpointManagerOptions(save_interval_steps=1, max_to_keep=1, keep_time_interval=None, keep_period=None, should_keep_fn=None, best_fn=None, best_mode='max', keep_checkpoints_without_metrics=True, step_prefix=None, step_format_fixed_length=None, step_name_format=None, create=False, cleanup_tmp_directories=False, save_on_steps=frozenset(), single_host_load_and_broadcast=False, todelete_subdir=None, enable_background_delete=False, read_only=False, enable_async_checkpointing=True, async_options=AsyncOptions(timeout_secs=7200, barrier_sync_fn=None, post_finalization_callback=None, create_directories_asynchronously=False), multiprocessing_options=MultiprocessingOptions(primary_host=0, active_processes=None, barrier_sync_key_prefix=None), should_save_fn=None, file_options=FileOptions(path_permission_mode=None), save_root_metadata=True, temporary_path_class=None, save_decision_policy=None), root_directory=/shared/.cache/retain/checkpoints/retain_repro_coft_basket/paper_coft_basket: <orbax.checkpoint.checkpoint_manager.CheckpointManager object at 0x761f01790050> (317936:checkpoint_manager.py:797)
+12:13:50.826 [I] Loaded norm stats from assets/pi0_libero_pretrain                                (317936:config.py:197)
+12:13:50.893 [I] Loaded norm stats from assets/pi0_libero_pretrain                                (317936:config.py:197)
+12:13:50.958 [I] Loaded norm stats from assets/pi0_libero_pretrain                                (317936:config.py:197)
+12:13:51.025 [I] Loaded norm stats from assets/pi0_libero_pretrain                                (317936:config.py:197)
+12:13:51.091 [I] Loaded norm stats from assets/pi0_libero_pretrain                                (317936:config.py:197)
+12:13:51.156 [I] Loaded norm stats from assets/pi0_libero_pretrain                                (317936:config.py:197)
+12:13:51.326 [I] Load dataset info from /shared/.cache/retain/libero/datasets/libero_10_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket/1.0.0 (317936:dataset_info.py:707)
+12:13:51.335 [I] Creating a tf.data.Dataset reading 4 files located in folders: /shared/.cache/retain/libero/datasets/libero_10_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket/1.0.0. (317936:reader.py:262)
+12:13:51.412 [I] Constructing tf.data.Dataset libero_10_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket for split all, from /shared/.cache/retain/libero/datasets/libero_10_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket/1.0.0 (317936:logging_logger.py:49)
+12:13:51.665 [I] Creating a tf.data.Dataset reading 4 files located in folders: /shared/.cache/retain/libero/datasets/libero_10_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket/1.0.0. (317936:reader.py:262)
+12:13:51.694 [I] Constructing tf.data.Dataset libero_10_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket for split train, from /shared/.cache/retain/libero/datasets/libero_10_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket/1.0.0 (317936:logging_logger.py:49)
+THIS DATASET HAS NUM_TRAJECTORIES 43  AND NUM_TRANSITIONS 11494
+12:13:51.757 [I] Load dataset info from /shared/.cache/retain/libero/datasets/libero_goal_reduced/1.0.0 (317936:dataset_info.py:707)
+12:13:51.762 [I] Creating a tf.data.Dataset reading 16 files located in folders: /shared/.cache/retain/libero/datasets/libero_goal_reduced/1.0.0. (317936:reader.py:262)
+12:13:51.789 [I] Constructing tf.data.Dataset libero_goal_reduced for split all, from /shared/.cache/retain/libero/datasets/libero_goal_reduced/1.0.0 (317936:logging_logger.py:49)
+12:13:51.848 [I] Creating a tf.data.Dataset reading 16 files located in folders: /shared/.cache/retain/libero/datasets/libero_goal_reduced/1.0.0. (317936:reader.py:262)
+12:13:51.873 [I] Constructing tf.data.Dataset libero_goal_reduced for split train, from /shared/.cache/retain/libero/datasets/libero_goal_reduced/1.0.0 (317936:logging_logger.py:49)
+THIS DATASET HAS NUM_TRAJECTORIES 349  AND NUM_TRANSITIONS 39799
+12:13:51.935 [I] Load dataset info from /shared/.cache/retain/libero/datasets/libero_object_reduced/1.0.0 (317936:dataset_info.py:707)
+12:13:51.940 [I] Creating a tf.data.Dataset reading 32 files located in folders: /shared/.cache/retain/libero/datasets/libero_object_reduced/1.0.0. (317936:reader.py:262)
+12:13:51.965 [I] Constructing tf.data.Dataset libero_object_reduced for split all, from /shared/.cache/retain/libero/datasets/libero_object_reduced/1.0.0 (317936:logging_logger.py:49)
+12:13:52.023 [I] Creating a tf.data.Dataset reading 32 files located in folders: /shared/.cache/retain/libero/datasets/libero_object_reduced/1.0.0. (317936:reader.py:262)
+12:13:52.049 [I] Constructing tf.data.Dataset libero_object_reduced for split train, from /shared/.cache/retain/libero/datasets/libero_object_reduced/1.0.0 (317936:logging_logger.py:49)
+THIS DATASET HAS NUM_TRAJECTORIES 365  AND NUM_TRANSITIONS 53739
+12:13:52.110 [I] Load dataset info from /shared/.cache/retain/libero/datasets/libero_spatial_reduced/1.0.0 (317936:dataset_info.py:707)
+12:13:52.116 [I] Creating a tf.data.Dataset reading 16 files located in folders: /shared/.cache/retain/libero/datasets/libero_spatial_reduced/1.0.0. (317936:reader.py:262)
+12:13:52.141 [I] Constructing tf.data.Dataset libero_spatial_reduced for split all, from /shared/.cache/retain/libero/datasets/libero_spatial_reduced/1.0.0 (317936:logging_logger.py:49)
+12:13:52.201 [I] Creating a tf.data.Dataset reading 16 files located in folders: /shared/.cache/retain/libero/datasets/libero_spatial_reduced/1.0.0. (317936:reader.py:262)
+12:13:52.226 [I] Constructing tf.data.Dataset libero_spatial_reduced for split train, from /shared/.cache/retain/libero/datasets/libero_spatial_reduced/1.0.0 (317936:logging_logger.py:49)
+THIS DATASET HAS NUM_TRAJECTORIES 343  AND NUM_TRANSITIONS 42391
+12:13:52.286 [I] Load dataset info from /shared/.cache/retain/libero/datasets/libero_90_flipped/1.0.0 (317936:dataset_info.py:707)
+12:13:52.300 [I] Creating a tf.data.Dataset reading 256 files located in folders: /shared/.cache/retain/libero/datasets/libero_90_flipped/1.0.0. (317936:reader.py:262)
+12:13:52.330 [I] Constructing tf.data.Dataset libero_90_flipped for split all, from /shared/.cache/retain/libero/datasets/libero_90_flipped/1.0.0 (317936:logging_logger.py:49)
+12:13:52.407 [I] Creating a tf.data.Dataset reading 256 files located in folders: /shared/.cache/retain/libero/datasets/libero_90_flipped/1.0.0. (317936:reader.py:262)
+12:13:52.437 [I] Constructing tf.data.Dataset libero_90_flipped for split train, from /shared/.cache/retain/libero/datasets/libero_90_flipped/1.0.0 (317936:logging_logger.py:49)
+THIS DATASET HAS NUM_TRAJECTORIES 3917  AND NUM_TRANSITIONS 567494
+
+######################################################################################
+# Loading the following 5 datasets (incl. sampling weight):                         #
+# libero_10_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket: 0.500000 #
+# libero_goal_reduced: =====================================================0.035188 #
+# libero_object_reduced: ===================================================0.045291 #
+# libero_spatial_reduced: ==================================================0.035815 #
+# libero_90_flipped: =======================================================0.383706 #
+######################################################################################
+
+12:13:52.516 [I] Load dataset info from /shared/.cache/retain/libero/datasets/libero_10_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket/1.0.0 (317936:dataset_info.py:707)
+12:13:52.521 [I] Creating a tf.data.Dataset reading 4 files located in folders: /shared/.cache/retain/libero/datasets/libero_10_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket/1.0.0. (317936:reader.py:262)
+12:13:52.547 [I] Constructing tf.data.Dataset libero_10_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket for split train, from /shared/.cache/retain/libero/datasets/libero_10_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket/1.0.0 (317936:logging_logger.py:49)
+12:13:53.145 [W] future_action_window_size > 0 but no absolute_action_mask was provided. Assuming all actions are relative for the purpose of making neutral actions. (317936:function_wrappers.py:112)
+12:13:54.305 [W] No resize_size was provided for image_primary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (317936:api.py:460)
+12:13:54.310 [W] No resize_size was provided for image_secondary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (317936:api.py:460)
+12:13:54.314 [W] No resize_size was provided for image_wrist. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (317936:api.py:460)
+12:13:54.331 [I] Load dataset info from /shared/.cache/retain/libero/datasets/libero_goal_reduced/1.0.0 (317936:dataset_info.py:707)
+12:13:54.337 [I] Creating a tf.data.Dataset reading 16 files located in folders: /shared/.cache/retain/libero/datasets/libero_goal_reduced/1.0.0. (317936:reader.py:262)
+12:13:54.362 [I] Constructing tf.data.Dataset libero_goal_reduced for split train, from /shared/.cache/retain/libero/datasets/libero_goal_reduced/1.0.0 (317936:logging_logger.py:49)
+12:13:54.454 [W] future_action_window_size > 0 but no absolute_action_mask was provided. Assuming all actions are relative for the purpose of making neutral actions. (317936:function_wrappers.py:112)
+12:13:54.486 [W] No resize_size was provided for image_primary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (317936:api.py:460)
+12:13:54.490 [W] No resize_size was provided for image_secondary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (317936:api.py:460)
+12:13:54.493 [W] No resize_size was provided for image_wrist. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (317936:api.py:460)
+12:13:54.509 [I] Load dataset info from /shared/.cache/retain/libero/datasets/libero_object_reduced/1.0.0 (317936:dataset_info.py:707)
+12:13:54.515 [I] Creating a tf.data.Dataset reading 32 files located in folders: /shared/.cache/retain/libero/datasets/libero_object_reduced/1.0.0. (317936:reader.py:262)
+12:13:54.540 [I] Constructing tf.data.Dataset libero_object_reduced for split train, from /shared/.cache/retain/libero/datasets/libero_object_reduced/1.0.0 (317936:logging_logger.py:49)
+12:13:54.629 [W] future_action_window_size > 0 but no absolute_action_mask was provided. Assuming all actions are relative for the purpose of making neutral actions. (317936:function_wrappers.py:112)
+12:13:54.662 [W] No resize_size was provided for image_primary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (317936:api.py:460)
+12:13:54.665 [W] No resize_size was provided for image_secondary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (317936:api.py:460)
+12:13:54.669 [W] No resize_size was provided for image_wrist. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (317936:api.py:460)
+12:13:54.686 [I] Load dataset info from /shared/.cache/retain/libero/datasets/libero_spatial_reduced/1.0.0 (317936:dataset_info.py:707)
+12:13:54.691 [I] Creating a tf.data.Dataset reading 16 files located in folders: /shared/.cache/retain/libero/datasets/libero_spatial_reduced/1.0.0. (317936:reader.py:262)
+12:13:54.717 [I] Constructing tf.data.Dataset libero_spatial_reduced for split train, from /shared/.cache/retain/libero/datasets/libero_spatial_reduced/1.0.0 (317936:logging_logger.py:49)
+12:13:54.807 [W] future_action_window_size > 0 but no absolute_action_mask was provided. Assuming all actions are relative for the purpose of making neutral actions. (317936:function_wrappers.py:112)
+12:13:54.840 [W] No resize_size was provided for image_primary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (317936:api.py:460)
+12:13:54.844 [W] No resize_size was provided for image_secondary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (317936:api.py:460)
+12:13:54.847 [W] No resize_size was provided for image_wrist. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (317936:api.py:460)
+12:13:54.863 [I] Load dataset info from /shared/.cache/retain/libero/datasets/libero_90_flipped/1.0.0 (317936:dataset_info.py:707)
+12:13:54.879 [I] Creating a tf.data.Dataset reading 256 files located in folders: /shared/.cache/retain/libero/datasets/libero_90_flipped/1.0.0. (317936:reader.py:262)
+12:13:54.910 [I] Constructing tf.data.Dataset libero_90_flipped for split train, from /shared/.cache/retain/libero/datasets/libero_90_flipped/1.0.0 (317936:logging_logger.py:49)
+12:13:55.015 [W] future_action_window_size > 0 but no absolute_action_mask was provided. Assuming all actions are relative for the purpose of making neutral actions. (317936:function_wrappers.py:112)
+12:13:55.049 [W] No resize_size was provided for image_primary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (317936:api.py:460)
+12:13:55.053 [W] No resize_size was provided for image_secondary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (317936:api.py:460)
+12:13:55.057 [W] No resize_size was provided for image_wrist. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (317936:api.py:460)
+norm_stats are  {'state': NormStats(mean=array([-0.07459474,  0.01886539,  0.89401907,  3.00154734, -0.11657909,
+       -0.09116436,  0.02634243, -0.02669393,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]), std=array([0.11267885, 0.14551789, 0.30485129, 0.38380396, 0.88596892,
+       0.30852371, 0.0146244 , 0.01449694, 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        ]), q01=array([-4.04978513e-01, -2.75643894e-01,  1.03451522e-01,  1.45384380e+00,
+       -2.69716187e+00, -1.19477866e+00,  1.64143040e-03, -4.00380769e-02,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00]), q99=array([ 1.25709046e-01,  3.27069047e-01,  1.25547892e+00,  3.66470913e+00,
+        2.30573786e+00,  5.80337930e-01,  4.02928781e-02, -1.70643236e-03,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00])), 'actions': NormStats(mean=array([ 0.13082495,  0.03510264, -0.99502772, -2.99781322,  0.11946776,
+        0.08388595, -0.0420391 ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]), std=array([0.34118709, 0.37048841, 0.53519309, 0.3816036 , 0.88830632,
+       0.3197473 , 0.99911594, 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        ]), q01=array([-0.62691881, -0.85612705, -1.98400122, -3.60055661, -2.32860803,
+       -0.6173897 , -1.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]), q99=array([ 1.01273111,  0.8795515 ,  0.40937937, -1.45586381,  2.69826558,
+        1.15884968,  0.9996    ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]))}
+ 🧟‍♂️🧟‍♂️🧟‍♂️🧟‍♂️ Dataloader Exhuasted/First Epoch: creating a new iterator over the dataloader. 🧟‍♂️🧟‍♂️🧟‍♂️🧟‍♂️
+12:14:01.986 [I] Initialized data loader:
+[0].images['base_0_rgb']: (16, 224, 224, 3)@float32
+[0].images['left_wrist_0_rgb']: (16, 224, 224, 3)@float32
+[0].images['right_wrist_0_rgb']: (16, 224, 224, 3)@float32
+[0].image_masks['base_0_rgb']: (16,)@bool
+[0].image_masks['left_wrist_0_rgb']: (16,)@bool
+[0].image_masks['right_wrist_0_rgb']: (16,)@bool
+[0].state: (16, 32)@float32
+[0].tokenized_prompt: (16, 48)@int32
+[0].tokenized_prompt_mask: (16, 48)@bool
+[1]: (16, 50, 32)@float32 (317936:train.py:342)
+wandb: WARNING Data passed to `wandb.Image` should consist of values in the range [0, 255], image data will be normalized to this range, but behavior will be removed in a future version of wandb.
+12:14:02.304 [I] LR Schedule Config: CosineDecaySchedule(warmup_steps=1000, peak_lr=2.5e-05, decay_steps=30000, decay_lr=2.5e-06) (317936:train.py:91)
+12:14:02.304 [I] Optimizer Config: AdamW(b1=0.9, b2=0.95, eps=1e-08, weight_decay=1e-10, clip_gradient_norm=1.0) (317936:train.py:92)
+12:14:09.277 [I] Loading weights into partial_params                                              (317936:train.py:128)
+12:14:09.277 [I] Created BasePyTreeCheckpointHandler: pytree_metadata_options=PyTreeMetadataOptions(support_rich_types=False), array_metadata_store=None (317936:base_pytree_checkpoint_handler.py:332)
+12:14:09.304 [I] Restoring checkpoint from /shared/.cache/retain/checkpoints/retain_repro_pretrain/paper_final_hparams/9999/params. (317936:checkpointer.py:256)
+12:14:25.355 [I] [process=0] /jax/checkpoint/read/bytes_per_sec: 769.6 MiB/s (total bytes: 12.1 GiB) (time elapsed: 16 seconds) (per-host) (317936:base_pytree_checkpoint_handler.py:113)
+12:14:25.356 [I] Finished restoring checkpoint from /shared/.cache/retain/checkpoints/retain_repro_pretrain/paper_final_hparams/9999/params. (317936:checkpointer.py:259)
+12:14:25.356 [I] [process=0][thread=MainThread] Skipping global process sync, barrier name: Checkpointer:restore (317936:multihost.py:293)
+12:15:28.369 [I] Finished loading weights                                                         (317936:train.py:131)
+2026-08-20 12:15:28.451810: W external/xla/xla/hlo/transforms/simplifiers/hlo_rematerialization.cc:3023] Can't reduce memory use below 29.11GiB (31260410775 bytes) by rematerialization; only reduced to 48.25GiB (51808779708 bytes), down from 48.25GiB (51808779708 bytes) originally
+12:15:32.584 [I] Initialized train state:
+['PaliGemma']['img']['Transformer']['encoder_norm']['bias'].value: (1152,)@float32
+['PaliGemma']['img']['Transformer']['encoder_norm']['scale'].value: (1152,)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['LayerNorm_0']['bias'].value: (27, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['LayerNorm_0']['scale'].value: (27, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['LayerNorm_1']['bias'].value: (27, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['LayerNorm_1']['scale'].value: (27, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MlpBlock_0']['Dense_0']['bias'].value: (27, 4304)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MlpBlock_0']['Dense_0']['kernel'].value: (27, 1152, 4304)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MlpBlock_0']['Dense_1']['bias'].value: (27, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MlpBlock_0']['Dense_1']['kernel'].value: (27, 4304, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['key']['bias'].value: (27, 16, 72)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['key']['kernel'].value: (27, 1152, 16, 72)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['out']['bias'].value: (27, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['out']['kernel'].value: (27, 16, 72, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['query']['bias'].value: (27, 16, 72)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['query']['kernel'].value: (27, 1152, 16, 72)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['value']['bias'].value: (27, 16, 72)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['value']['kernel'].value: (27, 1152, 16, 72)@float32
+['PaliGemma']['img']['embedding']['bias'].value: (1152,)@float32
+['PaliGemma']['img']['embedding']['kernel'].value: (14, 14, 3, 1152)@float32
+['PaliGemma']['img']['head']['bias'].value: (2048,)@float32
+['PaliGemma']['img']['head']['kernel'].value: (1152, 2048)@float32
+['PaliGemma']['img']['pos_embedding'].value: (1, 256, 1152)@float32
+['PaliGemma']['llm']['embedder']['input_embedding'].value: (257152, 2048)@float32
+['PaliGemma']['llm']['final_norm']['scale'].value: (2048,)@float32
+['PaliGemma']['llm']['final_norm_1']['scale'].value: (1024,)@float32
+['PaliGemma']['llm']['layers']['attn']['attn_vec_einsum']['w'].value: (18, 8, 256, 2048)@float32
+['PaliGemma']['llm']['layers']['attn']['attn_vec_einsum_1']['w'].value: (18, 8, 256, 1024)@float32
+['PaliGemma']['llm']['layers']['attn']['kv_einsum']['w'].value: (18, 2, 1, 2048, 256)@float32
+['PaliGemma']['llm']['layers']['attn']['kv_einsum_1']['w'].value: (18, 2, 1, 1024, 256)@float32
+['PaliGemma']['llm']['layers']['attn']['q_einsum']['w'].value: (18, 8, 2048, 256)@float32
+['PaliGemma']['llm']['layers']['attn']['q_einsum_1']['w'].value: (18, 8, 1024, 256)@float32
+['PaliGemma']['llm']['layers']['mlp']['gating_einsum'].value: (18, 2, 2048, 16384)@float32
+['PaliGemma']['llm']['layers']['mlp']['linear'].value: (18, 16384, 2048)@float32
+['PaliGemma']['llm']['layers']['mlp_1']['gating_einsum'].value: (18, 2, 1024, 4096)@float32
+['PaliGemma']['llm']['layers']['mlp_1']['linear'].value: (18, 4096, 1024)@float32
+['PaliGemma']['llm']['layers']['pre_attention_norm']['scale'].value: (18, 2048)@float32
+['PaliGemma']['llm']['layers']['pre_attention_norm_1']['scale'].value: (18, 1024)@float32
+['PaliGemma']['llm']['layers']['pre_ffw_norm']['scale'].value: (18, 2048)@float32
+['PaliGemma']['llm']['layers']['pre_ffw_norm_1']['scale'].value: (18, 1024)@float32
+['action_in_proj']['bias'].value: (1024,)@float32
+['action_in_proj']['kernel'].value: (32, 1024)@float32
+['action_out_proj']['bias'].value: (32,)@float32
+['action_out_proj']['kernel'].value: (1024, 32)@float32
+['action_time_mlp_in']['bias'].value: (1024,)@float32
+['action_time_mlp_in']['kernel'].value: (2048, 1024)@float32
+['action_time_mlp_out']['bias'].value: (1024,)@float32
+['action_time_mlp_out']['kernel'].value: (1024, 1024)@float32
+['state_proj']['bias'].value: (1024,)@float32
+['state_proj']['kernel'].value: (32, 1024)@float32 (317936:train.py:356)
+12:15:32.584 [I] Trainable params:
+['PaliGemma']['img']['Transformer']['encoder_norm']['bias'].value: (1152,)@float32
+['PaliGemma']['img']['Transformer']['encoder_norm']['scale'].value: (1152,)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['LayerNorm_0']['bias'].value: (27, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['LayerNorm_0']['scale'].value: (27, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['LayerNorm_1']['bias'].value: (27, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['LayerNorm_1']['scale'].value: (27, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MlpBlock_0']['Dense_0']['bias'].value: (27, 4304)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MlpBlock_0']['Dense_0']['kernel'].value: (27, 1152, 4304)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MlpBlock_0']['Dense_1']['bias'].value: (27, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MlpBlock_0']['Dense_1']['kernel'].value: (27, 4304, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['key']['bias'].value: (27, 16, 72)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['key']['kernel'].value: (27, 1152, 16, 72)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['out']['bias'].value: (27, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['out']['kernel'].value: (27, 16, 72, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['query']['bias'].value: (27, 16, 72)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['query']['kernel'].value: (27, 1152, 16, 72)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['value']['bias'].value: (27, 16, 72)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['value']['kernel'].value: (27, 1152, 16, 72)@float32
+['PaliGemma']['img']['embedding']['bias'].value: (1152,)@float32
+['PaliGemma']['img']['embedding']['kernel'].value: (14, 14, 3, 1152)@float32
+['PaliGemma']['img']['head']['bias'].value: (2048,)@float32
+['PaliGemma']['img']['head']['kernel'].value: (1152, 2048)@float32
+['PaliGemma']['img']['pos_embedding'].value: (1, 256, 1152)@float32
+['PaliGemma']['llm']['embedder']['input_embedding'].value: (257152, 2048)@float32
+['PaliGemma']['llm']['final_norm']['scale'].value: (2048,)@float32
+['PaliGemma']['llm']['final_norm_1']['scale'].value: (1024,)@float32
+['PaliGemma']['llm']['layers']['attn']['attn_vec_einsum']['w'].value: (18, 8, 256, 2048)@float32
+['PaliGemma']['llm']['layers']['attn']['attn_vec_einsum_1']['w'].value: (18, 8, 256, 1024)@float32
+['PaliGemma']['llm']['layers']['attn']['kv_einsum']['w'].value: (18, 2, 1, 2048, 256)@float32
+['PaliGemma']['llm']['layers']['attn']['kv_einsum_1']['w'].value: (18, 2, 1, 1024, 256)@float32
+['PaliGemma']['llm']['layers']['attn']['q_einsum']['w'].value: (18, 8, 2048, 256)@float32
+['PaliGemma']['llm']['layers']['attn']['q_einsum_1']['w'].value: (18, 8, 1024, 256)@float32
+['PaliGemma']['llm']['layers']['mlp']['gating_einsum'].value: (18, 2, 2048, 16384)@float32
+['PaliGemma']['llm']['layers']['mlp']['linear'].value: (18, 16384, 2048)@float32
+['PaliGemma']['llm']['layers']['mlp_1']['gating_einsum'].value: (18, 2, 1024, 4096)@float32
+['PaliGemma']['llm']['layers']['mlp_1']['linear'].value: (18, 4096, 1024)@float32
+['PaliGemma']['llm']['layers']['pre_attention_norm']['scale'].value: (18, 2048)@float32
+['PaliGemma']['llm']['layers']['pre_attention_norm_1']['scale'].value: (18, 1024)@float32
+['PaliGemma']['llm']['layers']['pre_ffw_norm']['scale'].value: (18, 2048)@float32
+['PaliGemma']['llm']['layers']['pre_ffw_norm_1']['scale'].value: (18, 1024)@float32
+['action_in_proj']['bias'].value: (1024,)@float32
+['action_in_proj']['kernel'].value: (32, 1024)@float32
+['action_out_proj']['bias'].value: (32,)@float32
+['action_out_proj']['kernel'].value: (1024, 32)@float32
+['action_time_mlp_in']['bias'].value: (1024,)@float32
+['action_time_mlp_in']['kernel'].value: (2048, 1024)@float32
+['action_time_mlp_out']['bias'].value: (1024,)@float32
+['action_time_mlp_out']['kernel'].value: (1024, 1024)@float32
+['state_proj']['bias'].value: (1024,)@float32
+['state_proj']['kernel'].value: (32, 1024)@float32 (317936:train.py:357)
+12:15:32.594 [I] Progress on: -/1000 rate:- remaining:? elapsed:00:00 postfix:-                   (317936:tqdm_logging.py:145)
+Step 0: grad_norm=0.3244, loss=0.0332, param_norm=1381.3778, vision_param_norm=1258.6182
+12:15:43.681 [I] Progress on: 3.00it/1.00kit rate:3.2s/it remaining:52:58 elapsed:00:11 postfix:- (317936:tqdm_logging.py:145)
+12:15:54.815 [I] Progress on: 8.00it/1.00kit rate:2.3s/it remaining:38:40 elapsed:00:22 postfix:- (317936:tqdm_logging.py:145)
+12:16:05.942 [I] Progress on: 13.0it/1.00kit rate:2.2s/it remaining:36:54 elapsed:00:33 postfix:- (317936:tqdm_logging.py:145)
+12:16:17.095 [I] Progress on: 18.0it/1.00kit rate:2.2s/it remaining:36:34 elapsed:00:44 postfix:- (317936:tqdm_logging.py:145)
+12:16:28.217 [I] Progress on: 23.0it/1.00kit rate:2.2s/it remaining:36:10 elapsed:00:55 postfix:- (317936:tqdm_logging.py:145)
+Step 25: grad_norm=0.2759, loss=0.0372, param_norm=1381.3783, vision_param_norm=1258.6178
+12:16:39.502 [I] Progress on: 28.0it/1.00kit rate:2.2s/it remaining:36:06 elapsed:01:06 postfix:- (317936:tqdm_logging.py:145)
+12:16:50.643 [I] Progress on: 33.0it/1.00kit rate:2.2s/it remaining:35:54 elapsed:01:18 postfix:- (317936:tqdm_logging.py:145)
+12:17:01.771 [I] Progress on: 38.0it/1.00kit rate:2.2s/it remaining:35:41 elapsed:01:29 postfix:- (317936:tqdm_logging.py:145)
+12:17:12.912 [I] Progress on: 43.0it/1.00kit rate:2.2s/it remaining:35:30 elapsed:01:40 postfix:- (317936:tqdm_logging.py:145)
+12:17:24.053 [I] Progress on: 48.0it/1.00kit rate:2.2s/it remaining:35:20 elapsed:01:51 postfix:- (317936:tqdm_logging.py:145)
+Step 50: grad_norm=0.2692, loss=0.0387, param_norm=1381.3783, vision_param_norm=1258.6178
+12:17:35.268 [I] Progress on: 53.0it/1.00kit rate:2.2s/it remaining:35:01 elapsed:02:02 postfix:- (317936:tqdm_logging.py:145)
+12:17:46.410 [I] Progress on: 58.0it/1.00kit rate:2.2s/it remaining:34:56 elapsed:02:13 postfix:- (317936:tqdm_logging.py:145)
+12:17:57.580 [I] Progress on: 63.0it/1.00kit rate:2.2s/it remaining:34:54 elapsed:02:24 postfix:- (317936:tqdm_logging.py:145)
+12:18:08.684 [I] Progress on: 68.0it/1.00kit rate:2.2s/it remaining:34:31 elapsed:02:36 postfix:- (317936:tqdm_logging.py:145)
+12:18:19.834 [I] Progress on: 73.0it/1.00kit rate:2.2s/it remaining:34:26 elapsed:02:47 postfix:- (317936:tqdm_logging.py:145)
+Step 75: grad_norm=0.2320, loss=0.0326, param_norm=1381.3774, vision_param_norm=1258.6178
+12:18:31.049 [I] Progress on: 78.0it/1.00kit rate:2.2s/it remaining:34:06 elapsed:02:58 postfix:- (317936:tqdm_logging.py:145)
+12:18:42.193 [I] Progress on: 83.0it/1.00kit rate:2.2s/it remaining:34:03 elapsed:03:09 postfix:- (317936:tqdm_logging.py:145)
+12:18:53.340 [I] Progress on: 88.0it/1.00kit rate:2.2s/it remaining:33:53 elapsed:03:20 postfix:- (317936:tqdm_logging.py:145)
+12:19:04.468 [I] Progress on: 93.0it/1.00kit rate:2.2s/it remaining:33:39 elapsed:03:31 postfix:- (317936:tqdm_logging.py:145)
+12:19:15.606 [I] Progress on: 98.0it/1.00kit rate:2.2s/it remaining:33:28 elapsed:03:43 postfix:- (317936:tqdm_logging.py:145)
+Step 100: grad_norm=0.2286, loss=0.0332, param_norm=1381.3783, vision_param_norm=1258.6185
+12:19:26.824 [I] Progress on: 103it/1.00kit rate:2.2s/it remaining:33:10 elapsed:03:54 postfix:-  (317936:tqdm_logging.py:145)
+12:19:37.982 [I] Progress on: 108it/1.00kit rate:2.2s/it remaining:33:08 elapsed:04:05 postfix:-  (317936:tqdm_logging.py:145)
+12:19:49.109 [I] Progress on: 113it/1.00kit rate:2.2s/it remaining:32:55 elapsed:04:16 postfix:-  (317936:tqdm_logging.py:145)
+12:20:00.247 [I] Progress on: 118it/1.00kit rate:2.2s/it remaining:32:44 elapsed:04:27 postfix:-  (317936:tqdm_logging.py:145)
+12:20:11.375 [I] Progress on: 123it/1.00kit rate:2.2s/it remaining:32:30 elapsed:04:38 postfix:-  (317936:tqdm_logging.py:145)
+Step 125: grad_norm=0.2381, loss=0.0328, param_norm=1381.3784, vision_param_norm=1258.6184
+12:20:22.614 [I] Progress on: 128it/1.00kit rate:2.2s/it remaining:32:17 elapsed:04:50 postfix:-  (317936:tqdm_logging.py:145)
+12:20:33.753 [I] Progress on: 133it/1.00kit rate:2.2s/it remaining:32:12 elapsed:05:01 postfix:-  (317936:tqdm_logging.py:145)
+12:20:44.882 [I] Progress on: 138it/1.00kit rate:2.2s/it remaining:31:59 elapsed:05:12 postfix:-  (317936:tqdm_logging.py:145)
+12:20:56.031 [I] Progress on: 143it/1.00kit rate:2.2s/it remaining:31:51 elapsed:05:23 postfix:-  (317936:tqdm_logging.py:145)
+12:21:07.157 [I] Progress on: 148it/1.00kit rate:2.2s/it remaining:31:36 elapsed:05:34 postfix:-  (317936:tqdm_logging.py:145)
+Step 150: grad_norm=0.2530, loss=0.0329, param_norm=1381.3787, vision_param_norm=1258.6185
+12:21:18.376 [I] Progress on: 153it/1.00kit rate:2.2s/it remaining:31:20 elapsed:05:45 postfix:-  (317936:tqdm_logging.py:145)
+12:21:29.514 [I] Progress on: 158it/1.00kit rate:2.2s/it remaining:31:14 elapsed:05:56 postfix:-  (317936:tqdm_logging.py:145)
+12:21:40.656 [I] Progress on: 163it/1.00kit rate:2.2s/it remaining:31:04 elapsed:06:08 postfix:-  (317936:tqdm_logging.py:145)
+12:21:51.791 [I] Progress on: 168it/1.00kit rate:2.2s/it remaining:30:53 elapsed:06:19 postfix:-  (317936:tqdm_logging.py:145)
+12:22:02.925 [I] Progress on: 173it/1.00kit rate:2.2s/it remaining:30:41 elapsed:06:30 postfix:-  (317936:tqdm_logging.py:145)
+Step 175: grad_norm=0.2241, loss=0.0305, param_norm=1381.3789, vision_param_norm=1258.6187
+12:22:14.159 [I] Progress on: 178it/1.00kit rate:2.2s/it remaining:30:25 elapsed:06:41 postfix:-  (317936:tqdm_logging.py:145)
+12:22:25.299 [I] Progress on: 183it/1.00kit rate:2.2s/it remaining:30:20 elapsed:06:52 postfix:-  (317936:tqdm_logging.py:145)
+12:22:36.429 [I] Progress on: 188it/1.00kit rate:2.2s/it remaining:30:07 elapsed:07:03 postfix:-  (317936:tqdm_logging.py:145)
+12:22:47.570 [I] Progress on: 193it/1.00kit rate:2.2s/it remaining:29:58 elapsed:07:14 postfix:-  (317936:tqdm_logging.py:145)
+12:22:58.707 [I] Progress on: 198it/1.00kit rate:2.2s/it remaining:29:47 elapsed:07:26 postfix:-  (317936:tqdm_logging.py:145)
+Step 200: grad_norm=0.2178, loss=0.0301, param_norm=1381.3794, vision_param_norm=1258.6188
+12:23:09.935 [I] Progress on: 203it/1.00kit rate:2.2s/it remaining:29:31 elapsed:07:37 postfix:-  (317936:tqdm_logging.py:145)
+12:23:21.065 [I] Progress on: 208it/1.00kit rate:2.2s/it remaining:29:21 elapsed:07:48 postfix:-  (317936:tqdm_logging.py:145)
+12:23:32.206 [I] Progress on: 213it/1.00kit rate:2.2s/it remaining:29:12 elapsed:07:59 postfix:-  (317936:tqdm_logging.py:145)
+12:23:43.354 [I] Progress on: 218it/1.00kit rate:2.2s/it remaining:29:02 elapsed:08:10 postfix:-  (317936:tqdm_logging.py:145)
+12:23:54.486 [I] Progress on: 223it/1.00kit rate:2.2s/it remaining:28:50 elapsed:08:21 postfix:-  (317936:tqdm_logging.py:145)
+Step 225: grad_norm=0.2441, loss=0.0303, param_norm=1381.3802, vision_param_norm=1258.6189
+12:24:05.697 [I] Progress on: 228it/1.00kit rate:2.2s/it remaining:28:32 elapsed:08:33 postfix:-  (317936:tqdm_logging.py:145)
+12:24:16.841 [I] Progress on: 233it/1.00kit rate:2.2s/it remaining:28:29 elapsed:08:44 postfix:-  (317936:tqdm_logging.py:145)
+12:24:27.975 [I] Progress on: 238it/1.00kit rate:2.2s/it remaining:28:17 elapsed:08:55 postfix:-  (317936:tqdm_logging.py:145)
+12:24:39.108 [I] Progress on: 243it/1.00kit rate:2.2s/it remaining:28:06 elapsed:09:06 postfix:-  (317936:tqdm_logging.py:145)
+12:24:50.244 [I] Progress on: 248it/1.00kit rate:2.2s/it remaining:27:54 elapsed:09:17 postfix:-  (317936:tqdm_logging.py:145)
+Step 250: grad_norm=0.2271, loss=0.0314, param_norm=1381.3809, vision_param_norm=1258.6189
+12:25:01.454 [I] Progress on: 253it/1.00kit rate:2.2s/it remaining:27:37 elapsed:09:28 postfix:-  (317936:tqdm_logging.py:145)
+12:25:12.593 [I] Progress on: 258it/1.00kit rate:2.2s/it remaining:27:30 elapsed:09:39 postfix:-  (317936:tqdm_logging.py:145)
+12:25:23.739 [I] Progress on: 263it/1.00kit rate:2.2s/it remaining:27:22 elapsed:09:51 postfix:-  (317936:tqdm_logging.py:145)
+12:25:34.862 [I] Progress on: 268it/1.00kit rate:2.2s/it remaining:27:08 elapsed:10:02 postfix:-  (317936:tqdm_logging.py:145)
+12:25:46.005 [I] Progress on: 273it/1.00kit rate:2.2s/it remaining:26:59 elapsed:10:13 postfix:-  (317936:tqdm_logging.py:145)
+Step 275: grad_norm=0.2275, loss=0.0301, param_norm=1381.3820, vision_param_norm=1258.6190
+12:25:57.211 [I] Progress on: 278it/1.00kit rate:2.2s/it remaining:26:41 elapsed:10:24 postfix:-  (317936:tqdm_logging.py:145)
+12:26:08.349 [I] Progress on: 283it/1.00kit rate:2.2s/it remaining:26:34 elapsed:10:35 postfix:-  (317936:tqdm_logging.py:145)
+12:26:19.490 [I] Progress on: 288it/1.00kit rate:2.2s/it remaining:26:25 elapsed:10:46 postfix:-  (317936:tqdm_logging.py:145)
+12:26:30.630 [I] Progress on: 293it/1.00kit rate:2.2s/it remaining:26:15 elapsed:10:58 postfix:-  (317936:tqdm_logging.py:145)
+12:26:41.766 [I] Progress on: 298it/1.00kit rate:2.2s/it remaining:26:03 elapsed:11:09 postfix:-  (317936:tqdm_logging.py:145)
+Step 300: grad_norm=0.2542, loss=0.0310, param_norm=1381.3826, vision_param_norm=1258.6190
+12:26:52.979 [I] Progress on: 303it/1.00kit rate:2.2s/it remaining:25:46 elapsed:11:20 postfix:-  (317936:tqdm_logging.py:145)
+12:27:04.114 [I] Progress on: 308it/1.00kit rate:2.2s/it remaining:25:40 elapsed:11:31 postfix:-  (317936:tqdm_logging.py:145)
+12:27:15.262 [I] Progress on: 313it/1.00kit rate:2.2s/it remaining:25:30 elapsed:11:42 postfix:-  (317936:tqdm_logging.py:145)
+12:27:26.381 [I] Progress on: 318it/1.00kit rate:2.2s/it remaining:25:16 elapsed:11:53 postfix:-  (317936:tqdm_logging.py:145)
+12:27:37.528 [I] Progress on: 323it/1.00kit rate:2.2s/it remaining:25:07 elapsed:12:04 postfix:-  (317936:tqdm_logging.py:145)
+Step 325: grad_norm=0.2607, loss=0.0323, param_norm=1381.3829, vision_param_norm=1258.6191
+12:27:48.752 [I] Progress on: 328it/1.00kit rate:2.2s/it remaining:24:51 elapsed:12:16 postfix:-  (317936:tqdm_logging.py:145)
+12:27:59.897 [I] Progress on: 333it/1.00kit rate:2.2s/it remaining:24:45 elapsed:12:27 postfix:-  (317936:tqdm_logging.py:145)
+12:28:11.042 [I] Progress on: 338it/1.00kit rate:2.2s/it remaining:24:36 elapsed:12:38 postfix:-  (317936:tqdm_logging.py:145)
+12:28:22.181 [I] Progress on: 343it/1.00kit rate:2.2s/it remaining:24:25 elapsed:12:49 postfix:-  (317936:tqdm_logging.py:145)
+12:28:33.310 [I] Progress on: 348it/1.00kit rate:2.2s/it remaining:24:12 elapsed:13:00 postfix:-  (317936:tqdm_logging.py:145)
+Step 350: grad_norm=0.2648, loss=0.0304, param_norm=1381.3844, vision_param_norm=1258.6191
+12:28:44.542 [I] Progress on: 353it/1.00kit rate:2.2s/it remaining:23:58 elapsed:13:11 postfix:-  (317936:tqdm_logging.py:145)
+12:28:55.682 [I] Progress on: 358it/1.00kit rate:2.2s/it remaining:23:50 elapsed:13:23 postfix:-  (317936:tqdm_logging.py:145)
+12:29:06.810 [I] Progress on: 363it/1.00kit rate:2.2s/it remaining:23:38 elapsed:13:34 postfix:-  (317936:tqdm_logging.py:145)
+12:29:17.959 [I] Progress on: 368it/1.00kit rate:2.2s/it remaining:23:29 elapsed:13:45 postfix:-  (317936:tqdm_logging.py:145)
+12:29:29.094 [I] Progress on: 373it/1.00kit rate:2.2s/it remaining:23:16 elapsed:13:56 postfix:-  (317936:tqdm_logging.py:145)
+Step 375: grad_norm=0.2459, loss=0.0287, param_norm=1381.3859, vision_param_norm=1258.6193
+12:29:40.302 [I] Progress on: 378it/1.00kit rate:2.2s/it remaining:23:00 elapsed:14:07 postfix:-  (317936:tqdm_logging.py:145)
+12:29:51.446 [I] Progress on: 383it/1.00kit rate:2.2s/it remaining:22:55 elapsed:14:18 postfix:-  (317936:tqdm_logging.py:145)
+12:30:02.572 [I] Progress on: 388it/1.00kit rate:2.2s/it remaining:22:42 elapsed:14:29 postfix:-  (317936:tqdm_logging.py:145)
+12:30:13.713 [I] Progress on: 393it/1.00kit rate:2.2s/it remaining:22:31 elapsed:14:41 postfix:-  (317936:tqdm_logging.py:145)
+12:30:24.849 [I] Progress on: 398it/1.00kit rate:2.2s/it remaining:22:19 elapsed:14:52 postfix:-  (317936:tqdm_logging.py:145)
+Step 400: grad_norm=0.2697, loss=0.0286, param_norm=1381.3875, vision_param_norm=1258.6196
+12:30:36.050 [I] Progress on: 403it/1.00kit rate:2.2s/it remaining:22:02 elapsed:15:03 postfix:-  (317936:tqdm_logging.py:145)
+12:30:47.195 [I] Progress on: 408it/1.00kit rate:2.2s/it remaining:21:58 elapsed:15:14 postfix:-  (317936:tqdm_logging.py:145)
+12:30:58.325 [I] Progress on: 413it/1.00kit rate:2.2s/it remaining:21:46 elapsed:15:25 postfix:-  (317936:tqdm_logging.py:145)
+12:31:09.482 [I] Progress on: 418it/1.00kit rate:2.2s/it remaining:21:37 elapsed:15:36 postfix:-  (317936:tqdm_logging.py:145)
+12:31:20.609 [I] Progress on: 423it/1.00kit rate:2.2s/it remaining:21:25 elapsed:15:48 postfix:-  (317936:tqdm_logging.py:145)
+Step 425: grad_norm=0.2594, loss=0.0296, param_norm=1381.3900, vision_param_norm=1258.6205
+12:31:31.813 [I] Progress on: 428it/1.00kit rate:2.2s/it remaining:21:08 elapsed:15:59 postfix:-  (317936:tqdm_logging.py:145)
+12:31:42.948 [I] Progress on: 433it/1.00kit rate:2.2s/it remaining:21:01 elapsed:16:10 postfix:-  (317936:tqdm_logging.py:145)
+12:31:54.090 [I] Progress on: 438it/1.00kit rate:2.2s/it remaining:20:52 elapsed:16:21 postfix:-  (317936:tqdm_logging.py:145)
+12:32:05.234 [I] Progress on: 443it/1.00kit rate:2.2s/it remaining:20:41 elapsed:16:32 postfix:-  (317936:tqdm_logging.py:145)
+12:32:16.363 [I] Progress on: 448it/1.00kit rate:2.2s/it remaining:20:28 elapsed:16:43 postfix:-  (317936:tqdm_logging.py:145)
+Step 450: grad_norm=0.2771, loss=0.0317, param_norm=1381.3920, vision_param_norm=1258.6205
+12:32:27.577 [I] Progress on: 453it/1.00kit rate:2.2s/it remaining:20:13 elapsed:16:54 postfix:-  (317936:tqdm_logging.py:145)
+12:32:38.719 [I] Progress on: 458it/1.00kit rate:2.2s/it remaining:20:06 elapsed:17:06 postfix:-  (317936:tqdm_logging.py:145)
+12:32:49.857 [I] Progress on: 463it/1.00kit rate:2.2s/it remaining:19:55 elapsed:17:17 postfix:-  (317936:tqdm_logging.py:145)
+12:33:00.996 [I] Progress on: 468it/1.00kit rate:2.2s/it remaining:19:45 elapsed:17:28 postfix:-  (317936:tqdm_logging.py:145)
+12:33:12.129 [I] Progress on: 473it/1.00kit rate:2.2s/it remaining:19:33 elapsed:17:39 postfix:-  (317936:tqdm_logging.py:145)
+Step 475: grad_norm=0.2725, loss=0.0289, param_norm=1381.3940, vision_param_norm=1258.6208
+12:33:23.357 [I] Progress on: 478it/1.00kit rate:2.2s/it remaining:19:19 elapsed:17:50 postfix:-  (317936:tqdm_logging.py:145)
+12:33:34.496 [I] Progress on: 483it/1.00kit rate:2.2s/it remaining:19:11 elapsed:18:01 postfix:-  (317936:tqdm_logging.py:145)
+12:33:45.633 [I] Progress on: 488it/1.00kit rate:2.2s/it remaining:19:00 elapsed:18:13 postfix:-  (317936:tqdm_logging.py:145)
+12:33:56.770 [I] Progress on: 493it/1.00kit rate:2.2s/it remaining:18:48 elapsed:18:24 postfix:-  (317936:tqdm_logging.py:145)
+12:34:08.140 [I] Progress on: 498it/1.00kit rate:2.2s/it remaining:18:48 elapsed:18:35 postfix:-  (317936:tqdm_logging.py:145)
+Step 500: grad_norm=0.2666, loss=0.0296, param_norm=1381.3961, vision_param_norm=1258.6211
+12:34:19.359 [I] Progress on: 503it/1.00kit rate:2.2s/it remaining:18:25 elapsed:18:46 postfix:-  (317936:tqdm_logging.py:145)
+12:34:30.492 [I] Progress on: 508it/1.00kit rate:2.2s/it remaining:18:14 elapsed:18:57 postfix:-  (317936:tqdm_logging.py:145)
+12:34:41.634 [I] Progress on: 513it/1.00kit rate:2.2s/it remaining:18:05 elapsed:19:09 postfix:-  (317936:tqdm_logging.py:145)
+12:34:52.768 [I] Progress on: 518it/1.00kit rate:2.2s/it remaining:17:53 elapsed:19:20 postfix:-  (317936:tqdm_logging.py:145)
+12:35:03.911 [I] Progress on: 523it/1.00kit rate:2.2s/it remaining:17:43 elapsed:19:31 postfix:-  (317936:tqdm_logging.py:145)
+Step 525: grad_norm=0.2761, loss=0.0302, param_norm=1381.3984, vision_param_norm=1258.6212
+12:35:15.100 [I] Progress on: 528it/1.00kit rate:2.2s/it remaining:17:25 elapsed:19:42 postfix:-  (317936:tqdm_logging.py:145)
+12:35:26.246 [I] Progress on: 533it/1.00kit rate:2.2s/it remaining:17:19 elapsed:19:53 postfix:-  (317936:tqdm_logging.py:145)
+12:35:37.373 [I] Progress on: 538it/1.00kit rate:2.2s/it remaining:17:07 elapsed:20:04 postfix:-  (317936:tqdm_logging.py:145)
+12:35:48.510 [I] Progress on: 543it/1.00kit rate:2.2s/it remaining:16:56 elapsed:20:15 postfix:-  (317936:tqdm_logging.py:145)
+12:35:59.651 [I] Progress on: 548it/1.00kit rate:2.2s/it remaining:16:46 elapsed:20:27 postfix:-  (317936:tqdm_logging.py:145)
+Step 550: grad_norm=0.2849, loss=0.0318, param_norm=1381.4014, vision_param_norm=1258.6221
+12:36:10.872 [I] Progress on: 553it/1.00kit rate:2.2s/it remaining:16:32 elapsed:20:38 postfix:-  (317936:tqdm_logging.py:145)
+12:36:22.002 [I] Progress on: 558it/1.00kit rate:2.2s/it remaining:16:23 elapsed:20:49 postfix:-  (317936:tqdm_logging.py:145)
+12:36:33.141 [I] Progress on: 563it/1.00kit rate:2.2s/it remaining:16:13 elapsed:21:00 postfix:-  (317936:tqdm_logging.py:145)
+12:36:44.268 [I] Progress on: 568it/1.00kit rate:2.2s/it remaining:16:01 elapsed:21:11 postfix:-  (317936:tqdm_logging.py:145)
+12:36:55.404 [I] Progress on: 573it/1.00kit rate:2.2s/it remaining:15:50 elapsed:21:22 postfix:-  (317936:tqdm_logging.py:145)
+Step 575: grad_norm=0.2893, loss=0.0307, param_norm=1381.4048, vision_param_norm=1258.6227
+12:37:06.624 [I] Progress on: 578it/1.00kit rate:2.2s/it remaining:15:36 elapsed:21:34 postfix:-  (317936:tqdm_logging.py:145)
+12:37:17.762 [I] Progress on: 583it/1.00kit rate:2.2s/it remaining:15:28 elapsed:21:45 postfix:-  (317936:tqdm_logging.py:145)
+12:37:28.890 [I] Progress on: 588it/1.00kit rate:2.2s/it remaining:15:17 elapsed:21:56 postfix:-  (317936:tqdm_logging.py:145)
+12:37:40.033 [I] Progress on: 593it/1.00kit rate:2.2s/it remaining:15:07 elapsed:22:07 postfix:-  (317936:tqdm_logging.py:145)
+12:37:51.166 [I] Progress on: 598it/1.00kit rate:2.2s/it remaining:14:55 elapsed:22:18 postfix:-  (317936:tqdm_logging.py:145)
+Step 600: grad_norm=0.3252, loss=0.0320, param_norm=1381.4087, vision_param_norm=1258.6230
+12:38:02.385 [I] Progress on: 603it/1.00kit rate:2.2s/it remaining:14:41 elapsed:22:29 postfix:-  (317936:tqdm_logging.py:145)
+12:38:13.515 [I] Progress on: 608it/1.00kit rate:2.2s/it remaining:14:32 elapsed:22:40 postfix:-  (317936:tqdm_logging.py:145)
+12:38:24.645 [I] Progress on: 613it/1.00kit rate:2.2s/it remaining:14:21 elapsed:22:52 postfix:-  (317936:tqdm_logging.py:145)
+12:38:35.783 [I] Progress on: 618it/1.00kit rate:2.2s/it remaining:14:10 elapsed:23:03 postfix:-  (317936:tqdm_logging.py:145)
+12:38:46.922 [I] Progress on: 623it/1.00kit rate:2.2s/it remaining:13:59 elapsed:23:14 postfix:-  (317936:tqdm_logging.py:145)
+Step 625: grad_norm=0.2743, loss=0.0317, param_norm=1381.4125, vision_param_norm=1258.6232
+12:38:58.142 [I] Progress on: 628it/1.00kit rate:2.2s/it remaining:13:46 elapsed:23:25 postfix:-  (317936:tqdm_logging.py:145)
+12:39:09.266 [I] Progress on: 633it/1.00kit rate:2.2s/it remaining:13:36 elapsed:23:36 postfix:-  (317936:tqdm_logging.py:145)
+12:39:20.415 [I] Progress on: 638it/1.00kit rate:2.2s/it remaining:13:26 elapsed:23:47 postfix:-  (317936:tqdm_logging.py:145)
+12:39:31.538 [I] Progress on: 643it/1.00kit rate:2.2s/it remaining:13:14 elapsed:23:58 postfix:-  (317936:tqdm_logging.py:145)
+12:39:42.667 [I] Progress on: 648it/1.00kit rate:2.2s/it remaining:13:02 elapsed:24:10 postfix:-  (317936:tqdm_logging.py:145)
+Step 650: grad_norm=0.2674, loss=0.0288, param_norm=1381.4171, vision_param_norm=1258.6244
+12:39:53.892 [I] Progress on: 653it/1.00kit rate:2.2s/it remaining:12:50 elapsed:24:21 postfix:-  (317936:tqdm_logging.py:145)
+12:40:05.020 [I] Progress on: 658it/1.00kit rate:2.2s/it remaining:12:40 elapsed:24:32 postfix:-  (317936:tqdm_logging.py:145)
+12:40:16.151 [I] Progress on: 663it/1.00kit rate:2.2s/it remaining:12:30 elapsed:24:43 postfix:-  (317936:tqdm_logging.py:145)
+12:40:27.299 [I] Progress on: 668it/1.00kit rate:2.2s/it remaining:12:19 elapsed:24:54 postfix:-  (317936:tqdm_logging.py:145)
+12:40:38.439 [I] Progress on: 673it/1.00kit rate:2.2s/it remaining:12:08 elapsed:25:05 postfix:-  (317936:tqdm_logging.py:145)
+Step 675: grad_norm=0.2798, loss=0.0289, param_norm=1381.4220, vision_param_norm=1258.6248
+12:40:49.639 [I] Progress on: 678it/1.00kit rate:2.2s/it remaining:11:54 elapsed:25:17 postfix:-  (317936:tqdm_logging.py:145)
+12:41:00.766 [I] Progress on: 683it/1.00kit rate:2.2s/it remaining:11:45 elapsed:25:28 postfix:-  (317936:tqdm_logging.py:145)
+12:41:11.905 [I] Progress on: 688it/1.00kit rate:2.2s/it remaining:11:35 elapsed:25:39 postfix:-  (317936:tqdm_logging.py:145)
+12:41:23.048 [I] Progress on: 693it/1.00kit rate:2.2s/it remaining:11:24 elapsed:25:50 postfix:-  (317936:tqdm_logging.py:145)
+12:41:34.161 [I] Progress on: 698it/1.00kit rate:2.2s/it remaining:11:11 elapsed:26:01 postfix:-  (317936:tqdm_logging.py:145)
+Step 700: grad_norm=0.2714, loss=0.0313, param_norm=1381.4263, vision_param_norm=1258.6250
+12:41:45.398 [I] Progress on: 703it/1.00kit rate:2.2s/it remaining:11:00 elapsed:26:12 postfix:-  (317936:tqdm_logging.py:145)
+12:41:56.529 [I] Progress on: 708it/1.00kit rate:2.2s/it remaining:10:50 elapsed:26:23 postfix:-  (317936:tqdm_logging.py:145)
+12:42:07.655 [I] Progress on: 713it/1.00kit rate:2.2s/it remaining:10:38 elapsed:26:35 postfix:-  (317936:tqdm_logging.py:145)
+12:42:18.795 [I] Progress on: 718it/1.00kit rate:2.2s/it remaining:10:27 elapsed:26:46 postfix:-  (317936:tqdm_logging.py:145)
+12:42:29.930 [I] Progress on: 723it/1.00kit rate:2.2s/it remaining:10:17 elapsed:26:57 postfix:-  (317936:tqdm_logging.py:145)
+Step 725: grad_norm=0.3119, loss=0.0304, param_norm=1381.4314, vision_param_norm=1258.6263
+12:42:41.139 [I] Progress on: 728it/1.00kit rate:2.2s/it remaining:10:03 elapsed:27:08 postfix:-  (317936:tqdm_logging.py:145)
+12:42:52.279 [I] Progress on: 733it/1.00kit rate:2.2s/it remaining:09:54 elapsed:27:19 postfix:-  (317936:tqdm_logging.py:145)
+12:43:03.405 [I] Progress on: 738it/1.00kit rate:2.2s/it remaining:09:43 elapsed:27:30 postfix:-  (317936:tqdm_logging.py:145)
+12:43:14.549 [I] Progress on: 743it/1.00kit rate:2.2s/it remaining:09:32 elapsed:27:41 postfix:-  (317936:tqdm_logging.py:145)
+12:43:25.684 [I] Progress on: 748it/1.00kit rate:2.2s/it remaining:09:21 elapsed:27:53 postfix:-  (317936:tqdm_logging.py:145)
+Step 750: grad_norm=0.3007, loss=0.0310, param_norm=1381.4373, vision_param_norm=1258.6267
+12:43:36.902 [I] Progress on: 753it/1.00kit rate:2.2s/it remaining:09:08 elapsed:28:04 postfix:-  (317936:tqdm_logging.py:145)
+12:43:48.041 [I] Progress on: 758it/1.00kit rate:2.2s/it remaining:08:58 elapsed:28:15 postfix:-  (317936:tqdm_logging.py:145)
+12:43:59.174 [I] Progress on: 763it/1.00kit rate:2.2s/it remaining:08:47 elapsed:28:26 postfix:-  (317936:tqdm_logging.py:145)
+12:44:10.317 [I] Progress on: 768it/1.00kit rate:2.2s/it remaining:08:37 elapsed:28:37 postfix:-  (317936:tqdm_logging.py:145)
+12:44:21.452 [I] Progress on: 773it/1.00kit rate:2.2s/it remaining:08:25 elapsed:28:48 postfix:-  (317936:tqdm_logging.py:145)
+Step 775: grad_norm=0.2815, loss=0.0306, param_norm=1381.4420, vision_param_norm=1258.6270
+12:44:32.623 [I] Progress on: 778it/1.00kit rate:2.2s/it remaining:08:11 elapsed:29:00 postfix:-  (317936:tqdm_logging.py:145)
+12:44:43.769 [I] Progress on: 783it/1.00kit rate:2.2s/it remaining:08:02 elapsed:29:11 postfix:-  (317936:tqdm_logging.py:145)
+12:44:54.904 [I] Progress on: 788it/1.00kit rate:2.2s/it remaining:07:51 elapsed:29:22 postfix:-  (317936:tqdm_logging.py:145)
+12:45:06.039 [I] Progress on: 793it/1.00kit rate:2.2s/it remaining:07:40 elapsed:29:33 postfix:-  (317936:tqdm_logging.py:145)
+12:45:17.178 [I] Progress on: 798it/1.00kit rate:2.2s/it remaining:07:29 elapsed:29:44 postfix:-  (317936:tqdm_logging.py:145)
+Step 800: grad_norm=0.3036, loss=0.0299, param_norm=1381.4486, vision_param_norm=1258.6283
+12:45:28.401 [I] Progress on: 803it/1.00kit rate:2.2s/it remaining:07:17 elapsed:29:55 postfix:-  (317936:tqdm_logging.py:145)
+12:45:39.542 [I] Progress on: 808it/1.00kit rate:2.2s/it remaining:07:07 elapsed:30:06 postfix:-  (317936:tqdm_logging.py:145)
+12:45:50.672 [I] Progress on: 813it/1.00kit rate:2.2s/it remaining:06:56 elapsed:30:18 postfix:-  (317936:tqdm_logging.py:145)
+12:46:01.811 [I] Progress on: 818it/1.00kit rate:2.2s/it remaining:06:45 elapsed:30:29 postfix:-  (317936:tqdm_logging.py:145)
+12:46:12.945 [I] Progress on: 823it/1.00kit rate:2.2s/it remaining:06:34 elapsed:30:40 postfix:-  (317936:tqdm_logging.py:145)
+Step 825: grad_norm=0.3246, loss=0.0311, param_norm=1381.4548, vision_param_norm=1258.6289
+12:46:24.170 [I] Progress on: 828it/1.00kit rate:2.2s/it remaining:06:21 elapsed:30:51 postfix:-  (317936:tqdm_logging.py:145)
+12:46:35.312 [I] Progress on: 833it/1.00kit rate:2.2s/it remaining:06:11 elapsed:31:02 postfix:-  (317936:tqdm_logging.py:145)
+12:46:46.463 [I] Progress on: 838it/1.00kit rate:2.2s/it remaining:06:01 elapsed:31:13 postfix:-  (317936:tqdm_logging.py:145)
+12:46:57.590 [I] Progress on: 843it/1.00kit rate:2.2s/it remaining:05:49 elapsed:31:24 postfix:-  (317936:tqdm_logging.py:145)
+12:47:08.737 [I] Progress on: 848it/1.00kit rate:2.2s/it remaining:05:38 elapsed:31:36 postfix:-  (317936:tqdm_logging.py:145)
+Step 850: grad_norm=0.2977, loss=0.0305, param_norm=1381.4623, vision_param_norm=1258.6305
+12:47:19.951 [I] Progress on: 853it/1.00kit rate:2.2s/it remaining:05:26 elapsed:31:47 postfix:-  (317936:tqdm_logging.py:145)
+12:47:31.099 [I] Progress on: 858it/1.00kit rate:2.2s/it remaining:05:16 elapsed:31:58 postfix:-  (317936:tqdm_logging.py:145)
+12:47:42.252 [I] Progress on: 863it/1.00kit rate:2.2s/it remaining:05:05 elapsed:32:09 postfix:-  (317936:tqdm_logging.py:145)
+12:47:53.383 [I] Progress on: 868it/1.00kit rate:2.2s/it remaining:04:53 elapsed:32:20 postfix:-  (317936:tqdm_logging.py:145)
+12:48:04.525 [I] Progress on: 873it/1.00kit rate:2.2s/it remaining:04:42 elapsed:32:31 postfix:-  (317936:tqdm_logging.py:145)
+Step 875: grad_norm=0.3272, loss=0.0327, param_norm=1381.4694, vision_param_norm=1258.6313
+12:48:15.745 [I] Progress on: 878it/1.00kit rate:2.2s/it remaining:04:30 elapsed:32:43 postfix:-  (317936:tqdm_logging.py:145)
+12:48:26.881 [I] Progress on: 883it/1.00kit rate:2.2s/it remaining:04:20 elapsed:32:54 postfix:-  (317936:tqdm_logging.py:145)
+12:48:38.026 [I] Progress on: 888it/1.00kit rate:2.2s/it remaining:04:09 elapsed:33:05 postfix:-  (317936:tqdm_logging.py:145)
+12:48:49.172 [I] Progress on: 893it/1.00kit rate:2.2s/it remaining:03:58 elapsed:33:16 postfix:-  (317936:tqdm_logging.py:145)
+12:49:00.303 [I] Progress on: 898it/1.00kit rate:2.2s/it remaining:03:47 elapsed:33:27 postfix:-  (317936:tqdm_logging.py:145)
+Step 900: grad_norm=0.3110, loss=0.0299, param_norm=1381.4773, vision_param_norm=1258.6323
+12:49:11.514 [I] Progress on: 903it/1.00kit rate:2.2s/it remaining:03:35 elapsed:33:38 postfix:-  (317936:tqdm_logging.py:145)
+12:49:22.659 [I] Progress on: 908it/1.00kit rate:2.2s/it remaining:03:24 elapsed:33:50 postfix:-  (317936:tqdm_logging.py:145)
+12:49:33.794 [I] Progress on: 913it/1.00kit rate:2.2s/it remaining:03:13 elapsed:34:01 postfix:-  (317936:tqdm_logging.py:145)
+12:49:44.930 [I] Progress on: 918it/1.00kit rate:2.2s/it remaining:03:02 elapsed:34:12 postfix:-  (317936:tqdm_logging.py:145)
+12:49:56.068 [I] Progress on: 923it/1.00kit rate:2.2s/it remaining:02:51 elapsed:34:23 postfix:-  (317936:tqdm_logging.py:145)
+Step 925: grad_norm=0.3327, loss=0.0330, param_norm=1381.4851, vision_param_norm=1258.6333
+12:50:07.288 [I] Progress on: 928it/1.00kit rate:2.2s/it remaining:02:39 elapsed:34:34 postfix:-  (317936:tqdm_logging.py:145)
+12:50:18.427 [I] Progress on: 933it/1.00kit rate:2.2s/it remaining:02:29 elapsed:34:45 postfix:-  (317936:tqdm_logging.py:145)
+12:50:29.564 [I] Progress on: 938it/1.00kit rate:2.2s/it remaining:02:18 elapsed:34:56 postfix:-  (317936:tqdm_logging.py:145)
+12:50:40.707 [I] Progress on: 943it/1.00kit rate:2.2s/it remaining:02:06 elapsed:35:08 postfix:-  (317936:tqdm_logging.py:145)
+12:50:51.856 [I] Progress on: 948it/1.00kit rate:2.2s/it remaining:01:55 elapsed:35:19 postfix:-  (317936:tqdm_logging.py:145)
+Step 950: grad_norm=0.3551, loss=0.0329, param_norm=1381.4940, vision_param_norm=1258.6345
+12:51:03.071 [I] Progress on: 953it/1.00kit rate:2.2s/it remaining:01:44 elapsed:35:30 postfix:-  (317936:tqdm_logging.py:145)
+12:51:14.206 [I] Progress on: 958it/1.00kit rate:2.2s/it remaining:01:33 elapsed:35:41 postfix:-  (317936:tqdm_logging.py:145)
+12:51:25.346 [I] Progress on: 963it/1.00kit rate:2.2s/it remaining:01:22 elapsed:35:52 postfix:-  (317936:tqdm_logging.py:145)
+12:51:36.498 [I] Progress on: 968it/1.00kit rate:2.2s/it remaining:01:11 elapsed:36:03 postfix:-  (317936:tqdm_logging.py:145)
+12:51:47.638 [I] Progress on: 973it/1.00kit rate:2.2s/it remaining:01:00 elapsed:36:15 postfix:-  (317936:tqdm_logging.py:145)
+Step 975: grad_norm=0.3466, loss=0.0321, param_norm=1381.5028, vision_param_norm=1258.6361
+12:51:58.855 [I] Progress on: 978it/1.00kit rate:2.2s/it remaining:00:48 elapsed:36:26 postfix:-  (317936:tqdm_logging.py:145)
+12:52:10.002 [I] Progress on: 983it/1.00kit rate:2.2s/it remaining:00:37 elapsed:36:37 postfix:-  (317936:tqdm_logging.py:145)
+12:52:21.144 [I] Progress on: 988it/1.00kit rate:2.2s/it remaining:00:26 elapsed:36:48 postfix:-  (317936:tqdm_logging.py:145)
+12:52:32.280 [I] Progress on: 993it/1.00kit rate:2.2s/it remaining:00:15 elapsed:36:59 postfix:-  (317936:tqdm_logging.py:145)
+12:52:43.418 [I] Progress on: 998it/1.00kit rate:2.2s/it remaining:00:04 elapsed:37:10 postfix:-  (317936:tqdm_logging.py:145)
+12:52:47.879 [I] [process=0][thread=MainThread][wait_until_finished] Initiating wait for Save Finalize thread. (317936:checkpoint_manager.py:1759)
+12:52:47.880 [I] [process=0][thread=MainThread][wait_until_finished] No Save Finalize thread to wait for. Returning. (317936:checkpoint_manager.py:1767)
+12:52:47.880 [I] [process=0] Saving checkpoint at step 999                                        (317936:checkpoint_manager.py:1286)
+12:52:47.881 [I] [process=0] Started async saving checkpoint to /shared/.cache/retain/checkpoints/retain_repro_coft_basket/paper_coft_basket/999. (317936:async_checkpointer.py:358)
+12:52:47.882 [I] [process=0][thread=MainThread] Skipping global process sync, barrier name: create_tmp_directory:pre (317936:multihost.py:293)
+12:52:47.883 [I] Creating tmp directory /shared/.cache/retain/checkpoints/retain_repro_coft_basket/paper_coft_basket/999.orbax-checkpoint-tmp-0 (317936:atomicity.py:144)
+12:52:47.884 [I] [process=0][thread=MainThread] Skipping global process sync, barrier name: create_tmp_directory:post (317936:multihost.py:293)
+12:52:47.884 [I] [process=0][thread=MainThread] Skipping global process sync, barrier name: create_tmp_directory:pre (317936:multihost.py:293)
+12:52:47.886 [I] Wrote Metadata={'item_handlers': None, 'metrics': {}, 'performance_metrics': {}, 'init_timestamp_nsecs': 1787230367883946390, 'commit_timestamp_nsecs': None, 'custom': {}}, json={"item_handlers": null, "metrics": {}, "performance_metrics": {}, "init_timestamp_nsecs": 1787230367883946390, "commit_timestamp_nsecs": null, "custom": {}} to /shared/.cache/retain/checkpoints/retain_repro_coft_basket/paper_coft_basket/999.orbax-checkpoint-tmp-0/_CHECKPOINT_METADATA (317936:checkpoint.py:185)
+12:52:47.886 [I] Creating tmp directory /shared/.cache/retain/checkpoints/retain_repro_coft_basket/paper_coft_basket/999.orbax-checkpoint-tmp-0/assets.orbax-checkpoint-tmp-1 (317936:atomicity.py:144)
+12:52:47.886 [I] Creating tmp directory /shared/.cache/retain/checkpoints/retain_repro_coft_basket/paper_coft_basket/999.orbax-checkpoint-tmp-0/train_state.orbax-checkpoint-tmp-3 (317936:atomicity.py:144)
+12:52:47.886 [I] Creating tmp directory /shared/.cache/retain/checkpoints/retain_repro_coft_basket/paper_coft_basket/999.orbax-checkpoint-tmp-0/params.orbax-checkpoint-tmp-2 (317936:atomicity.py:144)
+12:52:47.889 [I] [process=0][thread=MainThread] Skipping global process sync, barrier name: create_tmp_directory:post (317936:multihost.py:293)
+12:52:47.901 [I] Transferring arrays to host memory with options: use_replica_parallel=False, enable_pinned_host_transfer=False (317936:replica_slices.py:419)
+12:53:13.728 [I] Transferring arrays to host memory with options: use_replica_parallel=False, enable_pinned_host_transfer=False (317936:replica_slices.py:419)
+12:53:13.732 [I] Array name: 'params.PaliGemma.llm.layers.mlp.gating_einsum.value', global shape: (18, 2, 2048, 16384), write shape: (18, 2, 2048, 16384), chosen chunk shape: (18, 2, 2048, 4096) (317936:tensorstore_utils.py:371)
+12:53:13.732 [I] Array name: 'params.PaliGemma.llm.layers.mlp.linear.value', global shape: (18, 16384, 2048), write shape: (18, 16384, 2048), chosen chunk shape: (18, 8192, 2048) (317936:tensorstore_utils.py:371)
+12:53:13.751 [I] [process=0] /jax/checkpoint/write/blocking_bytes_per_sec: 477.6 MiB/s (total bytes: 12.1 GiB) (time elapsed: 25 seconds) (per-host) (317936:base_pytree_checkpoint_handler.py:113)
+12:53:13.759 [I] [process=0] /jax/checkpoint/write/blocking_bytes_per_sec: 0 Bytes/s (total bytes: 4 Bytes) (time elapsed: 25 seconds) (per-host) (317936:base_pytree_checkpoint_handler.py:113)
+12:53:13.762 [I] [process=0][thread=async_save] Background save thread started.                   (317936:async_checkpointer.py:121)
+12:53:13.775 [I] [process=0][thread=MainThread] Skipping global process sync, barrier name: CheckpointManager:old_steps_to_remove (317936:multihost.py:293)
+12:53:13.776 [I] [process=0][thread=MainThread][step=999] Starting CheckpointManager Save Finalize thread=save_finalize (317936:checkpoint_manager.py:1328)
+12:53:13.777 [I] [process=0][thread=save_finalize] Waiting for background save thread=async_save. (317936:async_checkpointer.py:231)
+12:53:13.778 [I] {'step': 999, 'event_type': 'save', 'directory': '/shared/.cache/retain/checkpoints/retain_repro_coft_basket/paper_coft_basket', 'reached_preemption': False, 'preemption_received_at': None, 'synchronous': False, 'wait_for_prev_start_time': 1787230367.879955, 'wait_for_prev_duration_secs': 0.00018739700317382812, 'checkpointer_blocking_start_time': 1787230367.88059, 'checkpointer_blocking_duration_secs': 25.894808292388916, 'get_old_steps_start_time': 1787230393.7754643, 'get_old_steps_duration_secs': 6.4373016357421875e-06, 'checkpoint_manager_blocking_start_time': 1787230367.8798158, 'checkpoint_manager_blocking_duration_secs': 25.898404359817505} (317936:standard_logger.py:34)
+12:53:13.779 [I] Progress on: 1.00kit/1.00kit rate:10.0s/it remaining:00:00 elapsed:37:41 postfix:- (317936:tqdm_logging.py:145)
+12:53:13.780 [I] Progress on: 1.00kit/1.00kit rate:10.0s/it remaining:00:00 elapsed:37:41 postfix:- (317936:tqdm_logging.py:145)
+12:53:13.780 [I] Waiting for checkpoint manager to finish                                         (317936:train.py:406)
+12:53:13.781 [I] [process=0][thread=MainThread][wait_until_finished] Initiating wait for Save Finalize thread. (317936:checkpoint_manager.py:1759)
+12:53:13.781 [I] [process=0][thread=MainThread][step=999][wait_until_finished] Waiting for Save Finalize thread (save_finalize) to complete. (317936:checkpoint_manager.py:1777)
+12:53:30.724 [I] ChainedFuture completed 1/1 futures in 16.96 seconds.                            (317936:future.py:137)
+12:53:30.725 [I] [process=0] /jax/checkpoint/write/bytes_per_sec: 288.4 MiB/s (total bytes: 12.1 GiB) (time elapsed: 42 seconds) (per-host) (317936:base_pytree_checkpoint_handler.py:113)
+12:53:30.725 [I] ChainedFuture completed 1/1 futures in 0.00 seconds.                             (317936:future.py:137)
+12:53:30.725 [I] [process=0] /jax/checkpoint/write/bytes_per_sec: 0 Bytes/s (total bytes: 4 Bytes) (time elapsed: 42 seconds) (per-host) (317936:base_pytree_checkpoint_handler.py:113)
+12:53:30.725 [I] [process=0][thread=async_save] 3 Handler Commit operations completed.            (317936:async_checkpointer.py:131)
+12:53:30.725 [I] Read Metadata={'item_handlers': None, 'metrics': {}, 'performance_metrics': {}, 'init_timestamp_nsecs': 1787230367883946390, 'commit_timestamp_nsecs': None, 'custom': {}} from /shared/.cache/retain/checkpoints/retain_repro_coft_basket/paper_coft_basket/999.orbax-checkpoint-tmp-0/_CHECKPOINT_METADATA (317936:checkpoint.py:225)
+12:53:30.727 [I] [process=0][thread=async_save] Async Save Callback [1/3]: Finalizing Handler: <orbax.checkpoint._src.handlers.composite_checkpoint_handler.CompositeCheckpointHandler object at 0x761f017f8190> on /shared/.cache/retain/checkpoints/retain_repro_coft_basket/paper_coft_basket/999.orbax-checkpoint-tmp-0 (317936:async_checkpointer.py:406)
+12:53:30.727 [I] Renaming /shared/.cache/retain/checkpoints/retain_repro_coft_basket/paper_coft_basket/999.orbax-checkpoint-tmp-0/assets.orbax-checkpoint-tmp-1 to /shared/.cache/retain/checkpoints/retain_repro_coft_basket/paper_coft_basket/999.orbax-checkpoint-tmp-0/assets (317936:atomicity.py:287)
+12:53:30.729 [I] Updated Metadata={'item_handlers': {'assets': 'openpi.training.checkpoints.CallbackHandler', 'params': 'orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler', 'train_state': 'orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler'}, 'metrics': {}, 'performance_metrics': {}, 'init_timestamp_nsecs': 1787230367883946390, 'commit_timestamp_nsecs': None, 'custom': {}} to /shared/.cache/retain/checkpoints/retain_repro_coft_basket/paper_coft_basket/999.orbax-checkpoint-tmp-0/_CHECKPOINT_METADATA (317936:checkpoint.py:244)
+12:53:30.737 [I] Renaming /shared/.cache/retain/checkpoints/retain_repro_coft_basket/paper_coft_basket/999.orbax-checkpoint-tmp-0/train_state.orbax-checkpoint-tmp-3 to /shared/.cache/retain/checkpoints/retain_repro_coft_basket/paper_coft_basket/999.orbax-checkpoint-tmp-0/train_state (317936:atomicity.py:287)
+12:53:30.747 [I] Renaming /shared/.cache/retain/checkpoints/retain_repro_coft_basket/paper_coft_basket/999.orbax-checkpoint-tmp-0/params.orbax-checkpoint-tmp-2 to /shared/.cache/retain/checkpoints/retain_repro_coft_basket/paper_coft_basket/999.orbax-checkpoint-tmp-0/params (317936:atomicity.py:287)
+12:53:30.747 [I] [process=0][thread=async_save] Async Save Callback [2/3]: Running post_finalization_callback: None on /shared/.cache/retain/checkpoints/retain_repro_coft_basket/paper_coft_basket/999 (317936:async_checkpointer.py:416)
+12:53:30.747 [I] [process=0][thread=async_save] Async Save Callback [3/3]: Finalizing checkpoint directory: /shared/.cache/retain/checkpoints/retain_repro_coft_basket/paper_coft_basket/999.orbax-checkpoint-tmp-0 (317936:async_checkpointer.py:426)
+12:53:30.747 [I] Renaming /shared/.cache/retain/checkpoints/retain_repro_coft_basket/paper_coft_basket/999.orbax-checkpoint-tmp-0 to /shared/.cache/retain/checkpoints/retain_repro_coft_basket/paper_coft_basket/999 (317936:atomicity.py:287)
+12:53:30.748 [I] [process=0][thread=async_save] Finished saving checkpoint (finalized tmp dir) to `/shared/.cache/retain/checkpoints/retain_repro_coft_basket/paper_coft_basket/999`. (317936:atomicity.py:548)
+12:53:30.748 [I] [process=0][thread=async_save] Background save thread done.                      (317936:async_checkpointer.py:183)
+12:53:30.748 [I] [process=0][thread=save_finalize] Done with waiting for background save thread=async_save. (317936:async_checkpointer.py:239)
+12:53:30.748 [I] [process=0][thread=save_finalize] No errors found in background save thread=async_save. (317936:async_checkpointer.py:249)
+12:53:30.748 [I] [process=0][thread=save_finalize][step=999] CheckpointManager Save Finalize is syncing with other hosts... (317936:checkpoint_manager.py:1890)
+12:53:30.749 [I] [process=0][thread=save_finalize][step=999] CheckpointManager Save Finalize is done on all hosts. (317936:checkpoint_manager.py:1905)
+12:53:30.749 [I] [process=0][thread=MainThread][step=999][wait_until_finished] Done waiting for Save Finalize thread (save_finalize) running at step=999. (317936:checkpoint_manager.py:1786)
+12:53:30.749 [I] [process=0][thread=MainThread][step=999][wait_until_finished] Resetting Save Finalize thread (save_finalize) running at step=999, also errors if any. (317936:checkpoint_manager.py:1817)

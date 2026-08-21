@@ -1,0 +1,1 @@
+/root/.local/bin/uv run --no-sync scripts/train.py retain_repro_coft_mugs --exp-name=paper_coft_mugs

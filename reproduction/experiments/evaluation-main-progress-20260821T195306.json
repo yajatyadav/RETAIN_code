@@ -1,0 +1,139 @@
+{
+  "protocol_id": "RETAIN-GPU-20260819-001",
+  "captured_at": "2026-08-21T19:53:06+08:00",
+  "status": "selected_retain_taskft_mugs_a070_complete_paper_alpha_a080_first_ood_hard_running",
+  "pipeline": {
+    "service": "retain-reproduction.service",
+    "active": true,
+    "pipeline_pid": 1886,
+    "current_policy": "retain_taskft_mugs_a080",
+    "policy_server_pid": 433317,
+    "evaluator_pid": 440739,
+    "physical_gpu_index": 0,
+    "completed_alpha_jobs": 270,
+    "completed_main_jobs": 234,
+    "completed_jobs_in_status": 504,
+    "failed_job": null
+  },
+  "new_complete_jobs_since_previous_snapshot": [
+    {"job_key": "b831ad66cdf6a3dc", "policy": "retain_taskft_mugs_a070", "policy_job_index": 20, "eval_type": "GENERALIST", "suite": "libero_goal", "task": "put the cream cheese in the bowl", "successes": 1, "episodes": 10, "episode_errors": 0, "video_bytes": 864497},
+    {"job_key": "96665b174b9f0d03", "policy": "retain_taskft_mugs_a070", "policy_job_index": 21, "eval_type": "GENERALIST", "suite": "libero_goal", "task": "put the wine bottle on top of the cabinet", "successes": 4, "episodes": 10, "episode_errors": 0, "video_bytes": 641259},
+    {"job_key": "de6d3bb1a693f96b", "policy": "retain_taskft_mugs_a070", "policy_job_index": 22, "eval_type": "GENERALIST", "suite": "libero_object", "task": "pick up the alphabet soup and place it in the basket", "successes": 0, "episodes": 10, "episode_errors": 0, "video_bytes": 694830},
+    {"job_key": "4cb2d2550de6051a", "policy": "retain_taskft_mugs_a070", "policy_job_index": 23, "eval_type": "GENERALIST", "suite": "libero_object", "task": "pick up the butter and place it in the basket", "successes": 8, "episodes": 10, "episode_errors": 0, "video_bytes": 502256},
+    {"job_key": "4b0019b3b9f2e088", "policy": "retain_taskft_mugs_a070", "policy_job_index": 24, "eval_type": "GENERALIST", "suite": "libero_object", "task": "pick up the chocolate pudding and place it in the basket", "successes": 8, "episodes": 10, "episode_errors": 0, "video_bytes": 543768},
+    {"job_key": "43b5b6535c23158d", "policy": "retain_taskft_mugs_a070", "policy_job_index": 25, "eval_type": "GENERALIST", "suite": "libero_object", "task": "pick up the ketchup and place it in the basket", "successes": 6, "episodes": 10, "episode_errors": 0, "video_bytes": 515439},
+    {"job_key": "d5b3b200d1daef44", "policy": "retain_taskft_mugs_a070", "policy_job_index": 26, "eval_type": "GENERALIST", "suite": "libero_object", "task": "pick up the salad dressing and place it in the basket", "successes": 1, "episodes": 10, "episode_errors": 0, "video_bytes": 734971},
+    {"job_key": "22e00b817357fa78", "policy": "retain_taskft_mugs_a070", "policy_job_index": 27, "eval_type": "GENERALIST", "suite": "libero_spatial", "task": "pick up the black bowl between the plate and the ramekin and place it on the plate", "successes": 9, "episodes": 10, "episode_errors": 0, "video_bytes": 339100},
+    {"job_key": "faa387aabe502654", "policy": "retain_taskft_mugs_a070", "policy_job_index": 28, "eval_type": "GENERALIST", "suite": "libero_spatial", "task": "pick up the black bowl from table center and place it on the plate", "successes": 2, "episodes": 10, "episode_errors": 0, "video_bytes": 587047},
+    {"job_key": "749414a1249e3981", "policy": "retain_taskft_mugs_a070", "policy_job_index": 29, "eval_type": "GENERALIST", "suite": "libero_spatial", "task": "pick up the black bowl in the top drawer of the wooden cabinet and place it on the plate", "successes": 2, "episodes": 10, "episode_errors": 0, "video_bytes": 603548},
+    {"job_key": "6a2d9a5ed1114364", "policy": "retain_taskft_mugs_a070", "policy_job_index": 30, "eval_type": "GENERALIST", "suite": "libero_spatial", "task": "pick up the black bowl next to the cookie box and place it on the plate", "successes": 8, "episodes": 10, "episode_errors": 0, "video_bytes": 582198},
+    {"job_key": "1129d61d2eab4039", "policy": "retain_taskft_mugs_a070", "policy_job_index": 31, "eval_type": "GENERALIST", "suite": "libero_spatial", "task": "pick up the black bowl next to the plate and place it on the plate", "successes": 6, "episodes": 10, "episode_errors": 0, "video_bytes": 465253},
+    {"job_key": "852da5b6d3d1a4fe", "policy": "retain_taskft_mugs_a080", "policy_job_index": 1, "eval_type": "ID", "suite": "libero_10", "task": "put the white mug on the left plate and put the yellow and white mug on the right plate", "successes": 11, "episodes": 20, "episode_errors": 0, "video_bytes": 1921024}
+  ],
+  "new_complete_aggregate": {
+    "jobs": 13,
+    "episodes": 140,
+    "successes": 66,
+    "episode_errors": 0,
+    "video_count": 140,
+    "video_bytes": 8995190
+  },
+  "global_complete_main_aggregate": {
+    "jobs": 234,
+    "episodes": 2430,
+    "successes": 794,
+    "episode_errors": 0,
+    "video_count": 2430,
+    "video_bytes": 256507605
+  },
+  "completed_policy": {
+    "policy": "retain_taskft_mugs_a070",
+    "alpha": 0.7,
+    "weights": [0.7, 0.3],
+    "completed_independent_main_jobs": 31,
+    "reused_selection_jobs": 5,
+    "independent_main_aggregate": {
+      "episodes": 320,
+      "successes": 125,
+      "success_rate": 0.390625,
+      "episode_errors": 0,
+      "video_count": 320,
+      "video_bytes": 27699016
+    },
+    "target_groups": {
+      "ID": {"successes": 12, "episodes": 20, "success_rate": 0.6, "raw_taskft_success_rate": 0.65, "delta_vs_raw_taskft": -0.05, "pretrain_success_rate": 0.0, "delta_vs_pretrain": 0.6, "status": "complete_independent_main_evidence"},
+      "OOD_MEDIUM": {"successes": 21, "episodes": 50, "success_rate": 0.42, "raw_taskft_success_rate": 0.52, "delta_vs_raw_taskft": -0.1, "pretrain_success_rate": 0.0, "delta_vs_pretrain": 0.42, "status": "complete_reused_selection_set_not_independent_main_evidence"},
+      "OOD_HARD": {"successes": 14, "episodes": 100, "success_rate": 0.14, "raw_taskft_success_rate": 0.15, "delta_vs_raw_taskft": -0.01, "pretrain_success_rate": 0.0, "delta_vs_pretrain": 0.14, "status": "complete_independent_main_evidence"}
+    },
+    "generalist_retention": {
+      "task_successes": [10, 4, 0, 6, 10, 0, 7, 7, 1, 4, 0, 8, 8, 6, 1, 9, 2, 2, 8, 6],
+      "successes": 99,
+      "episodes": 200,
+      "success_rate": 0.495,
+      "raw_taskft_task_successes": [10, 0, 0, 0, 9, 0, 2, 4, 0, 1, 0, 4, 4, 4, 0, 5, 0, 0, 2, 5],
+      "raw_taskft_successes": 50,
+      "raw_taskft_success_rate": 0.25,
+      "delta_vs_raw_taskft": 0.245,
+      "pretrain_task_successes": [10, 7, 9, 8, 7, 0, 6, 9, 6, 10, 3, 6, 10, 7, 7, 4, 7, 4, 8, 5],
+      "pretrain_successes": 133,
+      "pretrain_success_rate": 0.665,
+      "delta_vs_pretrain": -0.17,
+      "raw_taskft_forgetting_gap_recovered_fraction": 0.5903614457831325,
+      "by_suite": {
+        "libero_90": {"task_successes": [10, 4, 0, 6, 10], "successes": 30, "episodes": 50, "success_rate": 0.6, "raw_taskft_success_rate": 0.38, "delta_vs_raw_taskft": 0.22, "pretrain_success_rate": 0.82, "delta_vs_pretrain": -0.22, "raw_taskft_forgetting_gap_recovered_fraction": 0.5},
+        "libero_goal": {"task_successes": [0, 7, 7, 1, 4], "successes": 19, "episodes": 50, "success_rate": 0.38, "raw_taskft_success_rate": 0.14, "delta_vs_raw_taskft": 0.24, "pretrain_success_rate": 0.62, "delta_vs_pretrain": -0.24, "raw_taskft_forgetting_gap_recovered_fraction": 0.5},
+        "libero_object": {"task_successes": [0, 8, 8, 6, 1], "successes": 23, "episodes": 50, "success_rate": 0.46, "raw_taskft_success_rate": 0.24, "delta_vs_raw_taskft": 0.22, "pretrain_success_rate": 0.66, "delta_vs_pretrain": -0.2, "raw_taskft_forgetting_gap_recovered_fraction": 0.5238095238095238},
+        "libero_spatial": {"task_successes": [9, 2, 2, 8, 6], "successes": 27, "episodes": 50, "success_rate": 0.54, "raw_taskft_success_rate": 0.24, "delta_vs_raw_taskft": 0.3, "pretrain_success_rate": 0.56, "delta_vs_pretrain": -0.02, "raw_taskft_forgetting_gap_recovered_fraction": 0.9375}
+      },
+      "episode_errors": 0,
+      "status": "complete"
+    }
+  },
+  "current_policy": {
+    "policy": "retain_taskft_mugs_a080",
+    "alpha": 0.8,
+    "weights": [0.8, 0.19999999999999996],
+    "completed_independent_main_jobs": 1,
+    "reused_selection_jobs": 5,
+    "selection_set_ood_medium": {"successes": 20, "episodes": 50, "success_rate": 0.4, "status": "complete_reused_selection_set_not_independent_main_evidence"},
+    "id": {"successes": 11, "episodes": 20, "success_rate": 0.55, "raw_taskft_success_rate": 0.65, "delta_vs_raw_taskft": -0.1, "pretrain_success_rate": 0.0, "delta_vs_pretrain": 0.55, "status": "complete_independent_main_evidence"}
+  },
+  "current_job": {
+    "job_key": "68cb8de284a051b9",
+    "policy_job_index": 2,
+    "eval_type": "OOD_HARD-set-0",
+    "suite": "libero_10",
+    "task": "put the white mug on the left plate and put the yellow and white mug on the right plate",
+    "seed": 1,
+    "planned_episodes": 10,
+    "observed_episodes_at_capture": 5,
+    "observed_successes_at_capture": 3,
+    "observed_errors_at_capture": 0,
+    "observed_video_bytes_at_capture": 601654,
+    "summary_committed_at_capture": false,
+    "eligible_for_formal_comparison": false
+  },
+  "single_gpu_audit": {
+    "only_reproduction_compute_process": {"physical_gpu_index": 0, "pid": 433317, "memory_mib": 77036},
+    "constraint_satisfied": true
+  },
+  "resources": {
+    "captured_at": "2026-08-21T19:52:31+08:00",
+    "gpu_memory_used_mib": [77049, 1, 14177, 1189, 79863, 79767, 79815, 79891],
+    "gpu_utilization_percent": [63, 0, 0, 1, 100, 100, 94, 100],
+    "host_available_bytes": 527031486464,
+    "root_free_bytes": 70579871744,
+    "shared_free_bytes": 101362372608
+  },
+  "monitoring_policy": {
+    "root_space": "monitor_and_record_only",
+    "root_space_is_a_stop_condition": false,
+    "all_known_evaluation_write_paths_on_shared": true
+  },
+  "validation": {
+    "service_active": true,
+    "single_physical_gpu_constraint": true,
+    "selection_set_reuse_labeled": true,
+    "fatal_error_matches": 0
+  }
+}

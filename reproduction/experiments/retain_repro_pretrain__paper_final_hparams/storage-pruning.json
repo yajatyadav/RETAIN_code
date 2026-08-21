@@ -1,0 +1,8 @@
+{
+  "status": "removed_after_successful_stage",
+  "path": "/shared/.cache/retain/checkpoints/retain_repro_pretrain/paper_final_hparams/9999/train_state",
+  "removed_bytes": 1839,
+  "removed_at": "2026-08-20T09:31:32.578086+00:00",
+  "retained_params": "/shared/.cache/retain/checkpoints/retain_repro_pretrain/paper_final_hparams/9999/params",
+  "reason": "控制共享盘占用；阶段已完成，后续训练和评测只读取 params"
+}

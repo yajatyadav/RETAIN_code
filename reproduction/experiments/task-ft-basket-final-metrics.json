@@ -1,0 +1,89 @@
+{
+  "protocol_id": "RETAIN-GPU-20260819-001-R1",
+  "config": "retain_repro_task_ft_basket",
+  "experiment_name": "paper_task_ft_basket",
+  "attempt": 1,
+  "analyzed_at": "2026-08-20T10:53:30.667455+00:00",
+  "source": {
+    "path": "reproduction/experiments/retain_repro_task_ft_basket__paper_task_ft_basket/metrics.jsonl",
+    "line_count": 20,
+    "bytes": 2147,
+    "sha256": "d96e41df0fbc51b74becaf68dff6ce6b8e03083d5ac266eb37ccb0cf51f33fd7"
+  },
+  "coverage": {
+    "first_step": 0,
+    "last_step": 475,
+    "record_count": 20,
+    "expected_interval_steps": 25,
+    "interval_consistent": true,
+    "training_fraction_through_last_record": 0.95
+  },
+  "finite_value_audit": {
+    "fields": [
+      "loss",
+      "grad_norm",
+      "param_norm",
+      "vision_param_norm"
+    ],
+    "all_finite": true
+  },
+  "overall": {
+    "loss": {
+      "first": 0.0454,
+      "last": 0.0308,
+      "min": 0.0298,
+      "max": 0.0475,
+      "mean": 0.03528,
+      "first_to_last_drop_fraction": 0.32158590308370044
+    },
+    "grad_norm": {
+      "first": 0.3618,
+      "last": 0.2829,
+      "min": 0.2137,
+      "max": 0.3756,
+      "mean": 0.267935
+    },
+    "param_norm": {
+      "first": 1381.3778,
+      "last": 1381.3939,
+      "min": 1381.3774,
+      "max": 1381.3939,
+      "mean": 1381.38257
+    },
+    "vision_param_norm": {
+      "first": 1258.6182,
+      "last": 1258.6211,
+      "min": 1258.6178,
+      "max": 1258.6211,
+      "mean": 1258.619065
+    }
+  },
+  "window_means": {
+    "first_10_records": {
+      "loss": 0.0383,
+      "grad_norm": 0.27715,
+      "param_norm": 1381.37875,
+      "vision_param_norm": 1258.61849
+    },
+    "last_10_records": {
+      "loss": 0.03226,
+      "grad_norm": 0.25872,
+      "param_norm": 1381.3863900000001,
+      "vision_param_norm": 1258.61964
+    }
+  },
+  "step_bins": [
+    {
+      "steps": [
+        0,
+        475
+      ],
+      "count": 20,
+      "loss_mean": 0.03528,
+      "grad_norm_mean": 0.267935,
+      "param_norm_mean": 1381.38257,
+      "vision_param_norm_mean": 1258.619065
+    }
+  ],
+  "interpretation_zh": "basket Task-FT 单卡 batch-16 完成；20 条指标覆盖 step 0--475 且全部有限，最终参数供 RETAIN 合并与评测使用。"
+}

@@ -1,0 +1,89 @@
+{
+  "protocol_id": "RETAIN-GPU-20260819-001-R1",
+  "config": "retain_repro_task_ft_stove",
+  "experiment_name": "paper_task_ft_stove",
+  "attempt": 1,
+  "analyzed_at": "2026-08-20T09:52:47.339619+00:00",
+  "source": {
+    "path": "reproduction/experiments/retain_repro_task_ft_stove__paper_task_ft_stove/metrics.jsonl",
+    "line_count": 20,
+    "bytes": 2146,
+    "sha256": "69fcee4f995227c123bbc3f3622f43cab69c41fb94191a8e606e1604380fcd31"
+  },
+  "coverage": {
+    "first_step": 0,
+    "last_step": 475,
+    "record_count": 20,
+    "expected_interval_steps": 25,
+    "interval_consistent": true,
+    "training_fraction_through_last_record": 0.95
+  },
+  "finite_value_audit": {
+    "fields": [
+      "loss",
+      "grad_norm",
+      "param_norm",
+      "vision_param_norm"
+    ],
+    "all_finite": true
+  },
+  "overall": {
+    "loss": {
+      "first": 0.0383,
+      "last": 0.0264,
+      "min": 0.0248,
+      "max": 0.0386,
+      "mean": 0.028489999999999998,
+      "first_to_last_drop_fraction": 0.31070496083550914
+    },
+    "grad_norm": {
+      "first": 0.6916,
+      "last": 0.3047,
+      "min": 0.2231,
+      "max": 0.6916,
+      "mean": 0.29423
+    },
+    "param_norm": {
+      "first": 1381.3778,
+      "last": 1381.3918,
+      "min": 1381.3774,
+      "max": 1381.3918,
+      "mean": 1381.38183
+    },
+    "vision_param_norm": {
+      "first": 1258.6182,
+      "last": 1258.6208,
+      "min": 1258.6178,
+      "max": 1258.6208,
+      "mean": 1258.61913
+    }
+  },
+  "window_means": {
+    "first_10_records": {
+      "loss": 0.03054,
+      "grad_norm": 0.31179,
+      "param_norm": 1381.37855,
+      "vision_param_norm": 1258.61845
+    },
+    "last_10_records": {
+      "loss": 0.02644,
+      "grad_norm": 0.27667,
+      "param_norm": 1381.38511,
+      "vision_param_norm": 1258.61981
+    }
+  },
+  "step_bins": [
+    {
+      "steps": [
+        0,
+        475
+      ],
+      "count": 20,
+      "loss_mean": 0.028489999999999998,
+      "grad_norm_mean": 0.29423,
+      "param_norm_mean": 1381.38183,
+      "vision_param_norm_mean": 1258.61913
+    }
+  ],
+  "interpretation_zh": "stove Task-FT 单卡 batch-16 完成；20 条指标覆盖 step 0--475 且全部有限，loss 由 0.0383 降至 0.0264，最终参数供 RETAIN 合并与评测使用。"
+}

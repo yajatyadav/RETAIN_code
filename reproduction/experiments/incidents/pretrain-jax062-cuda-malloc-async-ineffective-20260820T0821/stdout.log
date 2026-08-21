@@ -1,0 +1,1001 @@
+2026-08-19 16:52:57.402957: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1787158377.417820  226597 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1787158377.422389  226597 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1787158379.529290  226597 gpu_device.cc:2433] TensorFlow was not built with CUDA kernel binaries compatible with compute capability 12.0. CUDA kernels will be jit-compiled from PTX, which could take 30 minutes or longer.
+16:53:00.462 [I] Running on: lhy-1                                                                (226597:train.py:301)
+INFO:2026-08-19 16:53:00,712:jax._src.xla_bridge:945: Unable to initialize backend 'rocm': module 'jaxlib.xla_extension' has no attribute 'GpuAllocatorConfig'
+16:53:00.712 [I] Unable to initialize backend 'rocm': module 'jaxlib.xla_extension' has no attribute 'GpuAllocatorConfig' (226597:xla_bridge.py:945)
+INFO:2026-08-19 16:53:00,713:jax._src.xla_bridge:945: Unable to initialize backend 'tpu': INTERNAL: Failed to open libtpu.so: libtpu.so: cannot open shared object file: No such file or directory
+16:53:00.713 [I] Unable to initialize backend 'tpu': INTERNAL: Failed to open libtpu.so: libtpu.so: cannot open shared object file: No such file or directory (226597:xla_bridge.py:945)
+16:53:02.608 [I] Created BasePyTreeCheckpointHandler: pytree_metadata_options=PyTreeMetadataOptions(support_rich_types=False), array_metadata_store=None (226597:base_pytree_checkpoint_handler.py:332)
+16:53:02.608 [I] Created BasePyTreeCheckpointHandler: pytree_metadata_options=PyTreeMetadataOptions(support_rich_types=False), array_metadata_store=None (226597:base_pytree_checkpoint_handler.py:332)
+16:53:02.608 [I] [thread=MainThread] Failed to get flag value for EXPERIMENTAL_ORBAX_USE_DISTRIBUTED_PROCESS_ID. (226597:multihost.py:375)
+16:53:02.608 [I] [process=0][thread=MainThread] CheckpointManager init: checkpointers=None, item_names=None, item_handlers={'assets': <openpi.training.checkpoints.CallbackHandler object at 0x7c4f601ae650>, 'train_state': <orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler object at 0x7c4f5abda6d0>, 'params': <orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler object at 0x7c5148bea610>}, handler_registry=None (226597:checkpoint_manager.py:622)
+16:53:02.609 [I] Deferred registration for item: "assets". Adding handler `<openpi.training.checkpoints.CallbackHandler object at 0x7c4f601ae650>` for item "assets" and save args `<class 'openpi.training.checkpoints.CallbackSave'>` and restore args `<class 'openpi.training.checkpoints.CallbackRestore'>` to `_handler_registry`. (226597:composite_checkpoint_handler.py:239)
+16:53:02.609 [I] Deferred registration for item: "train_state". Adding handler `<orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler object at 0x7c4f5abda6d0>` for item "train_state" and save args `<class 'orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeSaveArgs'>` and restore args `<class 'orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeRestoreArgs'>` to `_handler_registry`. (226597:composite_checkpoint_handler.py:239)
+16:53:02.609 [I] Deferred registration for item: "params". Adding handler `<orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler object at 0x7c5148bea610>` for item "params" and save args `<class 'orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeSaveArgs'>` and restore args `<class 'orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeRestoreArgs'>` to `_handler_registry`. (226597:composite_checkpoint_handler.py:239)
+16:53:02.609 [I] Deferred registration for item: "metrics". Adding handler `<orbax.checkpoint._src.handlers.json_checkpoint_handler.JsonCheckpointHandler object at 0x7c4f5a9e6d50>` for item "metrics" and save args `<class 'orbax.checkpoint._src.handlers.json_checkpoint_handler.JsonSaveArgs'>` and restore args `<class 'orbax.checkpoint._src.handlers.json_checkpoint_handler.JsonRestoreArgs'>` to `_handler_registry`. (226597:composite_checkpoint_handler.py:239)
+16:53:02.609 [I] Initialized registry DefaultCheckpointHandlerRegistry({('assets', <class 'openpi.training.checkpoints.CallbackSave'>): <openpi.training.checkpoints.CallbackHandler object at 0x7c4f601ae650>, ('assets', <class 'openpi.training.checkpoints.CallbackRestore'>): <openpi.training.checkpoints.CallbackHandler object at 0x7c4f601ae650>, ('train_state', <class 'orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeSaveArgs'>): <orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler object at 0x7c4f5abda6d0>, ('train_state', <class 'orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeRestoreArgs'>): <orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler object at 0x7c4f5abda6d0>, ('params', <class 'orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeSaveArgs'>): <orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler object at 0x7c5148bea610>, ('params', <class 'orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeRestoreArgs'>): <orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler object at 0x7c5148bea610>, ('metrics', <class 'orbax.checkpoint._src.handlers.json_checkpoint_handler.JsonSaveArgs'>): <orbax.checkpoint._src.handlers.json_checkpoint_handler.JsonCheckpointHandler object at 0x7c4f5a9e6d50>, ('metrics', <class 'orbax.checkpoint._src.handlers.json_checkpoint_handler.JsonRestoreArgs'>): <orbax.checkpoint._src.handlers.json_checkpoint_handler.JsonCheckpointHandler object at 0x7c4f5a9e6d50>}). (226597:composite_checkpoint_handler.py:508)
+16:53:02.609 [I] orbax-checkpoint version: 0.11.1                                                 (226597:abstract_checkpointer.py:35)
+16:53:02.609 [I] [process=0][thread=MainThread] Using barrier_sync_fn: <function get_barrier_sync_fn.<locals>.<lambda> at 0x7c4f5a7551c0> timeout: 7200 secs and primary_host=0 for async checkpoint writes (226597:async_checkpointer.py:80)
+16:53:02.611 [I] Found 0 checkpoint steps in /shared/.cache/retain/checkpoints/retain_repro_pretrain/paper_final_hparams (226597:checkpoint_manager.py:1528)
+16:53:02.611 [I] Saving root metadata                                                             (226597:checkpoint_manager.py:1569)
+16:53:02.611 [I] [process=0][thread=MainThread] Skipping global process sync, barrier name: CheckpointManager:save_metadata (226597:multihost.py:293)
+16:53:02.611 [I] [process=0][thread=MainThread] CheckpointManager created,  primary_host=0, CheckpointManagerOptions=CheckpointManagerOptions(save_interval_steps=1, max_to_keep=1, keep_time_interval=None, keep_period=None, should_keep_fn=None, best_fn=None, best_mode='max', keep_checkpoints_without_metrics=True, step_prefix=None, step_format_fixed_length=None, step_name_format=None, create=False, cleanup_tmp_directories=False, save_on_steps=frozenset(), single_host_load_and_broadcast=False, todelete_subdir=None, enable_background_delete=False, read_only=False, enable_async_checkpointing=True, async_options=AsyncOptions(timeout_secs=7200, barrier_sync_fn=None, post_finalization_callback=None, create_directories_asynchronously=False), multiprocessing_options=MultiprocessingOptions(primary_host=0, active_processes=None, barrier_sync_key_prefix=None), should_save_fn=None, file_options=FileOptions(path_permission_mode=None), save_root_metadata=True, temporary_path_class=None, save_decision_policy=None), root_directory=/shared/.cache/retain/checkpoints/retain_repro_pretrain/paper_final_hparams: <orbax.checkpoint.checkpoint_manager.CheckpointManager object at 0x7c4f60217f50> (226597:checkpoint_manager.py:797)
+16:53:02.710 [I] Loaded norm stats from assets/pi0_libero_pretrain                                (226597:config.py:197)
+16:53:02.790 [I] Loaded norm stats from assets/pi0_libero_pretrain                                (226597:config.py:197)
+16:53:02.874 [I] Loaded norm stats from assets/pi0_libero_pretrain                                (226597:config.py:197)
+16:53:02.944 [I] Loaded norm stats from assets/pi0_libero_pretrain                                (226597:config.py:197)
+16:53:03.017 [I] Loaded norm stats from assets/pi0_libero_pretrain                                (226597:config.py:197)
+16:53:03.119 [I] Load dataset info from /shared/.cache/retain/libero/datasets/libero_goal_reduced/1.0.0 (226597:dataset_info.py:707)
+16:53:03.127 [I] Creating a tf.data.Dataset reading 16 files located in folders: /shared/.cache/retain/libero/datasets/libero_goal_reduced/1.0.0. (226597:reader.py:262)
+16:53:03.324 [I] Constructing tf.data.Dataset libero_goal_reduced for split all, from /shared/.cache/retain/libero/datasets/libero_goal_reduced/1.0.0 (226597:logging_logger.py:49)
+16:53:03.673 [I] Creating a tf.data.Dataset reading 16 files located in folders: /shared/.cache/retain/libero/datasets/libero_goal_reduced/1.0.0. (226597:reader.py:262)
+16:53:03.704 [I] Constructing tf.data.Dataset libero_goal_reduced for split train, from /shared/.cache/retain/libero/datasets/libero_goal_reduced/1.0.0 (226597:logging_logger.py:49)
+16:53:03.766 [I] Load dataset info from /shared/.cache/retain/libero/datasets/libero_object_reduced/1.0.0 (226597:dataset_info.py:707)
+16:53:03.773 [I] Creating a tf.data.Dataset reading 32 files located in folders: /shared/.cache/retain/libero/datasets/libero_object_reduced/1.0.0. (226597:reader.py:262)
+16:53:03.798 [I] Constructing tf.data.Dataset libero_object_reduced for split all, from /shared/.cache/retain/libero/datasets/libero_object_reduced/1.0.0 (226597:logging_logger.py:49)
+16:53:03.859 [I] Creating a tf.data.Dataset reading 32 files located in folders: /shared/.cache/retain/libero/datasets/libero_object_reduced/1.0.0. (226597:reader.py:262)
+16:53:03.884 [I] Constructing tf.data.Dataset libero_object_reduced for split train, from /shared/.cache/retain/libero/datasets/libero_object_reduced/1.0.0 (226597:logging_logger.py:49)
+16:53:03.950 [I] Load dataset info from /shared/.cache/retain/libero/datasets/libero_spatial_reduced/1.0.0 (226597:dataset_info.py:707)
+16:53:03.955 [I] Creating a tf.data.Dataset reading 16 files located in folders: /shared/.cache/retain/libero/datasets/libero_spatial_reduced/1.0.0. (226597:reader.py:262)
+16:53:03.982 [I] Constructing tf.data.Dataset libero_spatial_reduced for split all, from /shared/.cache/retain/libero/datasets/libero_spatial_reduced/1.0.0 (226597:logging_logger.py:49)
+16:53:04.044 [I] Creating a tf.data.Dataset reading 16 files located in folders: /shared/.cache/retain/libero/datasets/libero_spatial_reduced/1.0.0. (226597:reader.py:262)
+16:53:04.069 [I] Constructing tf.data.Dataset libero_spatial_reduced for split train, from /shared/.cache/retain/libero/datasets/libero_spatial_reduced/1.0.0 (226597:logging_logger.py:49)
+16:53:04.132 [I] Load dataset info from /shared/.cache/retain/libero/datasets/libero_90_flipped/1.0.0 (226597:dataset_info.py:707)
+16:53:04.149 [I] Creating a tf.data.Dataset reading 256 files located in folders: /shared/.cache/retain/libero/datasets/libero_90_flipped/1.0.0. (226597:reader.py:262)
+16:53:04.181 [I] Constructing tf.data.Dataset libero_90_flipped for split all, from /shared/.cache/retain/libero/datasets/libero_90_flipped/1.0.0 (226597:logging_logger.py:49)
+16:53:04.263 [I] Creating a tf.data.Dataset reading 256 files located in folders: /shared/.cache/retain/libero/datasets/libero_90_flipped/1.0.0. (226597:reader.py:262)
+16:53:04.294 [I] Constructing tf.data.Dataset libero_90_flipped for split train, from /shared/.cache/retain/libero/datasets/libero_90_flipped/1.0.0 (226597:logging_logger.py:49)
+16:53:04.373 [I] Load dataset info from /shared/.cache/retain/libero/datasets/libero_goal_reduced/1.0.0 (226597:dataset_info.py:707)
+16:53:04.383 [I] Creating a tf.data.Dataset reading 16 files located in folders: /shared/.cache/retain/libero/datasets/libero_goal_reduced/1.0.0. (226597:reader.py:262)
+16:53:04.409 [I] Constructing tf.data.Dataset libero_goal_reduced for split train, from /shared/.cache/retain/libero/datasets/libero_goal_reduced/1.0.0 (226597:logging_logger.py:49)
+16:53:05.055 [W] future_action_window_size > 0 but no absolute_action_mask was provided. Assuming all actions are relative for the purpose of making neutral actions. (226597:function_wrappers.py:112)
+16:53:06.255 [W] No resize_size was provided for image_wrist. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (226597:api.py:460)
+16:53:06.260 [W] No resize_size was provided for image_secondary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (226597:api.py:460)
+16:53:06.264 [W] No resize_size was provided for image_primary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (226597:api.py:460)
+16:53:06.280 [I] Load dataset info from /shared/.cache/retain/libero/datasets/libero_object_reduced/1.0.0 (226597:dataset_info.py:707)
+16:53:06.286 [I] Creating a tf.data.Dataset reading 32 files located in folders: /shared/.cache/retain/libero/datasets/libero_object_reduced/1.0.0. (226597:reader.py:262)
+16:53:06.312 [I] Constructing tf.data.Dataset libero_object_reduced for split train, from /shared/.cache/retain/libero/datasets/libero_object_reduced/1.0.0 (226597:logging_logger.py:49)
+16:53:06.401 [W] future_action_window_size > 0 but no absolute_action_mask was provided. Assuming all actions are relative for the purpose of making neutral actions. (226597:function_wrappers.py:112)
+16:53:06.433 [W] No resize_size was provided for image_wrist. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (226597:api.py:460)
+16:53:06.437 [W] No resize_size was provided for image_secondary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (226597:api.py:460)
+16:53:06.441 [W] No resize_size was provided for image_primary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (226597:api.py:460)
+16:53:06.458 [I] Load dataset info from /shared/.cache/retain/libero/datasets/libero_spatial_reduced/1.0.0 (226597:dataset_info.py:707)
+16:53:06.463 [I] Creating a tf.data.Dataset reading 16 files located in folders: /shared/.cache/retain/libero/datasets/libero_spatial_reduced/1.0.0. (226597:reader.py:262)
+16:53:06.489 [I] Constructing tf.data.Dataset libero_spatial_reduced for split train, from /shared/.cache/retain/libero/datasets/libero_spatial_reduced/1.0.0 (226597:logging_logger.py:49)
+16:53:06.581 [W] future_action_window_size > 0 but no absolute_action_mask was provided. Assuming all actions are relative for the purpose of making neutral actions. (226597:function_wrappers.py:112)
+16:53:06.614 [W] No resize_size was provided for image_wrist. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (226597:api.py:460)
+16:53:06.618 [W] No resize_size was provided for image_secondary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (226597:api.py:460)
+16:53:06.621 [W] No resize_size was provided for image_primary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (226597:api.py:460)
+16:53:06.637 [I] Load dataset info from /shared/.cache/retain/libero/datasets/libero_90_flipped/1.0.0 (226597:dataset_info.py:707)
+16:53:06.651 [I] Creating a tf.data.Dataset reading 256 files located in folders: /shared/.cache/retain/libero/datasets/libero_90_flipped/1.0.0. (226597:reader.py:262)
+16:53:06.681 [I] Constructing tf.data.Dataset libero_90_flipped for split train, from /shared/.cache/retain/libero/datasets/libero_90_flipped/1.0.0 (226597:logging_logger.py:49)
+16:53:06.793 [W] future_action_window_size > 0 but no absolute_action_mask was provided. Assuming all actions are relative for the purpose of making neutral actions. (226597:function_wrappers.py:112)
+16:53:06.827 [W] No resize_size was provided for image_wrist. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (226597:api.py:460)
+16:53:06.831 [W] No resize_size was provided for image_secondary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (226597:api.py:460)
+16:53:06.835 [W] No resize_size was provided for image_primary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (226597:api.py:460)
+16:53:13.219 [I] Initialized data loader:
+[0].images['base_0_rgb']: (64, 224, 224, 3)@float32
+[0].images['left_wrist_0_rgb']: (64, 224, 224, 3)@float32
+[0].images['right_wrist_0_rgb']: (64, 224, 224, 3)@float32
+[0].image_masks['base_0_rgb']: (64,)@bool
+[0].image_masks['left_wrist_0_rgb']: (64,)@bool
+[0].image_masks['right_wrist_0_rgb']: (64,)@bool
+[0].state: (64, 32)@float32
+[0].tokenized_prompt: (64, 48)@int32
+[0].tokenized_prompt_mask: (64, 48)@bool
+[1]: (64, 50, 32)@float32 (226597:train.py:341)
+wandb: WARNING Data passed to `wandb.Image` should consist of values in the range [0, 255], image data will be normalized to this range, but behavior will be removed in a future version of wandb.
+16:53:13.537 [I] LR Schedule Config: CosineDecaySchedule(warmup_steps=1000, peak_lr=2.5e-05, decay_steps=30000, decay_lr=2.5e-06) (226597:train.py:90)
+16:53:13.537 [I] Optimizer Config: AdamW(b1=0.9, b2=0.95, eps=1e-08, weight_decay=1e-10, clip_gradient_norm=1.0) (226597:train.py:91)
+Unsupported conversion from bf16 to f16
+LLVM ERROR: Unsupported rounding mode for conversion.
+2026-08-19 19:49:54.748116: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1787168994.763199  244533 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1787168994.768005  244533 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1787168997.380790  244533 gpu_device.cc:2433] TensorFlow was not built with CUDA kernel binaries compatible with compute capability 12.0. CUDA kernels will be jit-compiled from PTX, which could take 30 minutes or longer.
+19:49:58.351 [I] Running on: lhy-1                                                                (244533:train.py:301)
+INFO:2026-08-19 19:49:58,512:jax._src.xla_bridge:752: Unable to initialize backend 'tpu': INTERNAL: Failed to open libtpu.so: libtpu.so: cannot open shared object file: No such file or directory
+19:49:58.512 [I] Unable to initialize backend 'tpu': INTERNAL: Failed to open libtpu.so: libtpu.so: cannot open shared object file: No such file or directory (244533:xla_bridge.py:752)
+E0819 19:49:59.736737  244533 cuda_dnn.cc:523] Loaded runtime CuDNN library: 9.7.1 but source was compiled with: 9.8.0.  CuDNN library needs to have matching major version and equal or higher minor version. If using a binary install, upgrade your CuDNN library.  If building from sources, make sure the library loaded at runtime is compatible with the version specified during compile configuration.
+E0819 19:49:59.748700  244533 cuda_dnn.cc:523] Loaded runtime CuDNN library: 9.7.1 but source was compiled with: 9.8.0.  CuDNN library needs to have matching major version and equal or higher minor version. If using a binary install, upgrade your CuDNN library.  If building from sources, make sure the library loaded at runtime is compatible with the version specified during compile configuration.
+E0819 19:49:59.835685  244533 cuda_dnn.cc:523] Loaded runtime CuDNN library: 9.7.1 but source was compiled with: 9.8.0.  CuDNN library needs to have matching major version and equal or higher minor version. If using a binary install, upgrade your CuDNN library.  If building from sources, make sure the library loaded at runtime is compatible with the version specified during compile configuration.
+E0819 19:49:59.876807  244533 cuda_dnn.cc:523] Loaded runtime CuDNN library: 9.7.1 but source was compiled with: 9.8.0.  CuDNN library needs to have matching major version and equal or higher minor version. If using a binary install, upgrade your CuDNN library.  If building from sources, make sure the library loaded at runtime is compatible with the version specified during compile configuration.
+Traceback (most recent call last):
+  File "/root/RETAIN_code/scripts/train.py", line 399, in <module>
+    main(_config.cli())
+  File "/root/RETAIN_code/scripts/train.py", line 310, in main
+    rng = jax.random.key(config.seed)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/shared/.cache/retain/jax-overlays/0.6.2/jax/_src/random.py", line 221, in key
+    return _key('key', seed, impl)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/shared/.cache/retain/jax-overlays/0.6.2/jax/_src/random.py", line 201, in _key
+    return prng.random_seed(seed, impl=impl)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/shared/.cache/retain/jax-overlays/0.6.2/jax/_src/prng.py", line 551, in random_seed
+    seeds_arr = jnp.asarray(np.int64(seeds))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/shared/.cache/retain/jax-overlays/0.6.2/jax/_src/numpy/array.py", line 383, in asarray
+    return array(a, dtype=dtype, copy=bool(copy), order=order, device=device)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/shared/.cache/retain/jax-overlays/0.6.2/jax/_src/numpy/array.py", line 268, in array
+    out_array: Array = lax._convert_element_type(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/shared/.cache/retain/jax-overlays/0.6.2/jax/_src/lax/lax.py", line 1726, in _convert_element_type
+    return convert_element_type_p.bind(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/shared/.cache/retain/jax-overlays/0.6.2/jax/_src/core.py", line 536, in bind
+    return self._true_bind(*args, **params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/shared/.cache/retain/jax-overlays/0.6.2/jax/_src/core.py", line 552, in _true_bind
+    return self.bind_with_trace(prev_trace, args, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/shared/.cache/retain/jax-overlays/0.6.2/jax/_src/lax/lax.py", line 4902, in _convert_element_type_bind_with_trace
+    operand = core.Primitive.bind_with_trace(convert_element_type_p, trace, args, params)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/shared/.cache/retain/jax-overlays/0.6.2/jax/_src/core.py", line 562, in bind_with_trace
+    return trace.process_primitive(self, args, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/shared/.cache/retain/jax-overlays/0.6.2/jax/_src/core.py", line 1066, in process_primitive
+    return primitive.impl(*args, **params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/shared/.cache/retain/jax-overlays/0.6.2/jax/_src/dispatch.py", line 91, in apply_primitive
+    outs = fun(*args)
+           ^^^^^^^^^^
+jaxlib._jax.XlaRuntimeError: FAILED_PRECONDITION: DNN library initialization failed. Look at the errors above for more details.
+--------------------
+For simplicity, JAX has removed its internal frames from the traceback of the following exception. Set JAX_TRACEBACK_FILTERING=off to include these.
+2026-08-19 22:47:08.089093: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1787179628.246374  253506 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1787179628.288314  253506 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1787179631.466665  253506 gpu_device.cc:2433] TensorFlow was not built with CUDA kernel binaries compatible with compute capability 12.0. CUDA kernels will be jit-compiled from PTX, which could take 30 minutes or longer.
+22:47:12.370 [I] Running on: lhy-1                                                                (253506:train.py:301)
+INFO:2026-08-19 22:47:12,492:jax._src.xla_bridge:752: Unable to initialize backend 'tpu': INTERNAL: Failed to open libtpu.so: libtpu.so: cannot open shared object file: No such file or directory
+22:47:12.492 [I] Unable to initialize backend 'tpu': INTERNAL: Failed to open libtpu.so: libtpu.so: cannot open shared object file: No such file or directory (253506:xla_bridge.py:752)
+22:47:15.087 [I] Created BasePyTreeCheckpointHandler: pytree_metadata_options=PyTreeMetadataOptions(support_rich_types=False), array_metadata_store=None (253506:base_pytree_checkpoint_handler.py:332)
+22:47:15.087 [I] Created BasePyTreeCheckpointHandler: pytree_metadata_options=PyTreeMetadataOptions(support_rich_types=False), array_metadata_store=None (253506:base_pytree_checkpoint_handler.py:332)
+22:47:15.087 [I] [thread=MainThread] Failed to get flag value for EXPERIMENTAL_ORBAX_USE_DISTRIBUTED_PROCESS_ID. (253506:multihost.py:375)
+22:47:15.088 [I] [process=0][thread=MainThread] CheckpointManager init: checkpointers=None, item_names=None, item_handlers={'assets': <openpi.training.checkpoints.CallbackHandler object at 0x7df1059f3ed0>, 'train_state': <orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler object at 0x7df107ac4290>, 'params': <orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler object at 0x7df1059e5190>}, handler_registry=None (253506:checkpoint_manager.py:622)
+22:47:15.088 [I] Deferred registration for item: "assets". Adding handler `<openpi.training.checkpoints.CallbackHandler object at 0x7df1059f3ed0>` for item "assets" and save args `<class 'openpi.training.checkpoints.CallbackSave'>` and restore args `<class 'openpi.training.checkpoints.CallbackRestore'>` to `_handler_registry`. (253506:composite_checkpoint_handler.py:239)
+22:47:15.088 [I] Deferred registration for item: "train_state". Adding handler `<orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler object at 0x7df107ac4290>` for item "train_state" and save args `<class 'orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeSaveArgs'>` and restore args `<class 'orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeRestoreArgs'>` to `_handler_registry`. (253506:composite_checkpoint_handler.py:239)
+22:47:15.088 [I] Deferred registration for item: "params". Adding handler `<orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler object at 0x7df1059e5190>` for item "params" and save args `<class 'orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeSaveArgs'>` and restore args `<class 'orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeRestoreArgs'>` to `_handler_registry`. (253506:composite_checkpoint_handler.py:239)
+22:47:15.088 [I] Deferred registration for item: "metrics". Adding handler `<orbax.checkpoint._src.handlers.json_checkpoint_handler.JsonCheckpointHandler object at 0x7df1054dc650>` for item "metrics" and save args `<class 'orbax.checkpoint._src.handlers.json_checkpoint_handler.JsonSaveArgs'>` and restore args `<class 'orbax.checkpoint._src.handlers.json_checkpoint_handler.JsonRestoreArgs'>` to `_handler_registry`. (253506:composite_checkpoint_handler.py:239)
+22:47:15.088 [I] Initialized registry DefaultCheckpointHandlerRegistry({('assets', <class 'openpi.training.checkpoints.CallbackSave'>): <openpi.training.checkpoints.CallbackHandler object at 0x7df1059f3ed0>, ('assets', <class 'openpi.training.checkpoints.CallbackRestore'>): <openpi.training.checkpoints.CallbackHandler object at 0x7df1059f3ed0>, ('train_state', <class 'orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeSaveArgs'>): <orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler object at 0x7df107ac4290>, ('train_state', <class 'orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeRestoreArgs'>): <orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler object at 0x7df107ac4290>, ('params', <class 'orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeSaveArgs'>): <orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler object at 0x7df1059e5190>, ('params', <class 'orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeRestoreArgs'>): <orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler object at 0x7df1059e5190>, ('metrics', <class 'orbax.checkpoint._src.handlers.json_checkpoint_handler.JsonSaveArgs'>): <orbax.checkpoint._src.handlers.json_checkpoint_handler.JsonCheckpointHandler object at 0x7df1054dc650>, ('metrics', <class 'orbax.checkpoint._src.handlers.json_checkpoint_handler.JsonRestoreArgs'>): <orbax.checkpoint._src.handlers.json_checkpoint_handler.JsonCheckpointHandler object at 0x7df1054dc650>}). (253506:composite_checkpoint_handler.py:508)
+22:47:15.088 [I] orbax-checkpoint version: 0.11.1                                                 (253506:abstract_checkpointer.py:35)
+22:47:15.088 [I] [process=0][thread=MainThread] Using barrier_sync_fn: <function get_barrier_sync_fn.<locals>.<lambda> at 0x7df1050627a0> timeout: 7200 secs and primary_host=0 for async checkpoint writes (253506:async_checkpointer.py:80)
+22:47:15.090 [I] Found 0 checkpoint steps in /shared/.cache/retain/checkpoints/retain_repro_pretrain/paper_final_hparams (253506:checkpoint_manager.py:1528)
+22:47:15.090 [I] Saving root metadata                                                             (253506:checkpoint_manager.py:1569)
+22:47:15.090 [I] [process=0][thread=MainThread] Skipping global process sync, barrier name: CheckpointManager:save_metadata (253506:multihost.py:293)
+22:47:15.090 [I] [process=0][thread=MainThread] CheckpointManager created,  primary_host=0, CheckpointManagerOptions=CheckpointManagerOptions(save_interval_steps=1, max_to_keep=1, keep_time_interval=None, keep_period=None, should_keep_fn=None, best_fn=None, best_mode='max', keep_checkpoints_without_metrics=True, step_prefix=None, step_format_fixed_length=None, step_name_format=None, create=False, cleanup_tmp_directories=False, save_on_steps=frozenset(), single_host_load_and_broadcast=False, todelete_subdir=None, enable_background_delete=False, read_only=False, enable_async_checkpointing=True, async_options=AsyncOptions(timeout_secs=7200, barrier_sync_fn=None, post_finalization_callback=None, create_directories_asynchronously=False), multiprocessing_options=MultiprocessingOptions(primary_host=0, active_processes=None, barrier_sync_key_prefix=None), should_save_fn=None, file_options=FileOptions(path_permission_mode=None), save_root_metadata=True, temporary_path_class=None, save_decision_policy=None), root_directory=/shared/.cache/retain/checkpoints/retain_repro_pretrain/paper_final_hparams: <orbax.checkpoint.checkpoint_manager.CheckpointManager object at 0x7df1054b6bd0> (253506:checkpoint_manager.py:797)
+22:47:15.090 [I] Checkpoint directory exists, but does not contain any checkpoints. Aborting resume. (253506:checkpoints.py:55)
+22:47:15.192 [I] Loaded norm stats from assets/pi0_libero_pretrain                                (253506:config.py:197)
+22:47:15.262 [I] Loaded norm stats from assets/pi0_libero_pretrain                                (253506:config.py:197)
+22:47:15.328 [I] Loaded norm stats from assets/pi0_libero_pretrain                                (253506:config.py:197)
+22:47:15.396 [I] Loaded norm stats from assets/pi0_libero_pretrain                                (253506:config.py:197)
+22:47:15.463 [I] Loaded norm stats from assets/pi0_libero_pretrain                                (253506:config.py:197)
+22:47:15.643 [I] Load dataset info from /shared/.cache/retain/libero/datasets/libero_goal_reduced/1.0.0 (253506:dataset_info.py:707)
+22:47:15.650 [I] Creating a tf.data.Dataset reading 16 files located in folders: /shared/.cache/retain/libero/datasets/libero_goal_reduced/1.0.0. (253506:reader.py:262)
+22:47:15.724 [I] Constructing tf.data.Dataset libero_goal_reduced for split all, from /shared/.cache/retain/libero/datasets/libero_goal_reduced/1.0.0 (253506:logging_logger.py:49)
+22:47:15.972 [I] Creating a tf.data.Dataset reading 16 files located in folders: /shared/.cache/retain/libero/datasets/libero_goal_reduced/1.0.0. (253506:reader.py:262)
+22:47:16.001 [I] Constructing tf.data.Dataset libero_goal_reduced for split train, from /shared/.cache/retain/libero/datasets/libero_goal_reduced/1.0.0 (253506:logging_logger.py:49)
+22:47:16.065 [I] Load dataset info from /shared/.cache/retain/libero/datasets/libero_object_reduced/1.0.0 (253506:dataset_info.py:707)
+22:47:16.072 [I] Creating a tf.data.Dataset reading 32 files located in folders: /shared/.cache/retain/libero/datasets/libero_object_reduced/1.0.0. (253506:reader.py:262)
+22:47:16.097 [I] Constructing tf.data.Dataset libero_object_reduced for split all, from /shared/.cache/retain/libero/datasets/libero_object_reduced/1.0.0 (253506:logging_logger.py:49)
+22:47:16.159 [I] Creating a tf.data.Dataset reading 32 files located in folders: /shared/.cache/retain/libero/datasets/libero_object_reduced/1.0.0. (253506:reader.py:262)
+22:47:16.184 [I] Constructing tf.data.Dataset libero_object_reduced for split train, from /shared/.cache/retain/libero/datasets/libero_object_reduced/1.0.0 (253506:logging_logger.py:49)
+22:47:16.249 [I] Load dataset info from /shared/.cache/retain/libero/datasets/libero_spatial_reduced/1.0.0 (253506:dataset_info.py:707)
+22:47:16.255 [I] Creating a tf.data.Dataset reading 16 files located in folders: /shared/.cache/retain/libero/datasets/libero_spatial_reduced/1.0.0. (253506:reader.py:262)
+22:47:16.280 [I] Constructing tf.data.Dataset libero_spatial_reduced for split all, from /shared/.cache/retain/libero/datasets/libero_spatial_reduced/1.0.0 (253506:logging_logger.py:49)
+22:47:16.338 [I] Creating a tf.data.Dataset reading 16 files located in folders: /shared/.cache/retain/libero/datasets/libero_spatial_reduced/1.0.0. (253506:reader.py:262)
+22:47:16.363 [I] Constructing tf.data.Dataset libero_spatial_reduced for split train, from /shared/.cache/retain/libero/datasets/libero_spatial_reduced/1.0.0 (253506:logging_logger.py:49)
+22:47:16.425 [I] Load dataset info from /shared/.cache/retain/libero/datasets/libero_90_flipped/1.0.0 (253506:dataset_info.py:707)
+22:47:16.437 [I] Creating a tf.data.Dataset reading 256 files located in folders: /shared/.cache/retain/libero/datasets/libero_90_flipped/1.0.0. (253506:reader.py:262)
+22:47:16.467 [I] Constructing tf.data.Dataset libero_90_flipped for split all, from /shared/.cache/retain/libero/datasets/libero_90_flipped/1.0.0 (253506:logging_logger.py:49)
+22:47:16.548 [I] Creating a tf.data.Dataset reading 256 files located in folders: /shared/.cache/retain/libero/datasets/libero_90_flipped/1.0.0. (253506:reader.py:262)
+22:47:16.579 [I] Constructing tf.data.Dataset libero_90_flipped for split train, from /shared/.cache/retain/libero/datasets/libero_90_flipped/1.0.0 (253506:logging_logger.py:49)
+22:47:16.657 [I] Load dataset info from /shared/.cache/retain/libero/datasets/libero_goal_reduced/1.0.0 (253506:dataset_info.py:707)
+22:47:16.662 [I] Creating a tf.data.Dataset reading 16 files located in folders: /shared/.cache/retain/libero/datasets/libero_goal_reduced/1.0.0. (253506:reader.py:262)
+22:47:16.689 [I] Constructing tf.data.Dataset libero_goal_reduced for split train, from /shared/.cache/retain/libero/datasets/libero_goal_reduced/1.0.0 (253506:logging_logger.py:49)
+22:47:17.312 [W] future_action_window_size > 0 but no absolute_action_mask was provided. Assuming all actions are relative for the purpose of making neutral actions. (253506:function_wrappers.py:112)
+22:47:18.496 [W] No resize_size was provided for image_wrist. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (253506:api.py:460)
+22:47:18.501 [W] No resize_size was provided for image_primary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (253506:api.py:460)
+22:47:18.505 [W] No resize_size was provided for image_secondary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (253506:api.py:460)
+22:47:18.522 [I] Load dataset info from /shared/.cache/retain/libero/datasets/libero_object_reduced/1.0.0 (253506:dataset_info.py:707)
+22:47:18.528 [I] Creating a tf.data.Dataset reading 32 files located in folders: /shared/.cache/retain/libero/datasets/libero_object_reduced/1.0.0. (253506:reader.py:262)
+22:47:18.554 [I] Constructing tf.data.Dataset libero_object_reduced for split train, from /shared/.cache/retain/libero/datasets/libero_object_reduced/1.0.0 (253506:logging_logger.py:49)
+22:47:18.643 [W] future_action_window_size > 0 but no absolute_action_mask was provided. Assuming all actions are relative for the purpose of making neutral actions. (253506:function_wrappers.py:112)
+22:47:18.682 [W] No resize_size was provided for image_wrist. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (253506:api.py:460)
+22:47:18.686 [W] No resize_size was provided for image_primary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (253506:api.py:460)
+22:47:18.690 [W] No resize_size was provided for image_secondary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (253506:api.py:460)
+22:47:18.707 [I] Load dataset info from /shared/.cache/retain/libero/datasets/libero_spatial_reduced/1.0.0 (253506:dataset_info.py:707)
+22:47:18.712 [I] Creating a tf.data.Dataset reading 16 files located in folders: /shared/.cache/retain/libero/datasets/libero_spatial_reduced/1.0.0. (253506:reader.py:262)
+22:47:18.738 [I] Constructing tf.data.Dataset libero_spatial_reduced for split train, from /shared/.cache/retain/libero/datasets/libero_spatial_reduced/1.0.0 (253506:logging_logger.py:49)
+22:47:18.832 [W] future_action_window_size > 0 but no absolute_action_mask was provided. Assuming all actions are relative for the purpose of making neutral actions. (253506:function_wrappers.py:112)
+22:47:18.870 [W] No resize_size was provided for image_wrist. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (253506:api.py:460)
+22:47:18.875 [W] No resize_size was provided for image_primary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (253506:api.py:460)
+22:47:18.879 [W] No resize_size was provided for image_secondary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (253506:api.py:460)
+22:47:18.903 [I] Load dataset info from /shared/.cache/retain/libero/datasets/libero_90_flipped/1.0.0 (253506:dataset_info.py:707)
+22:47:18.918 [I] Creating a tf.data.Dataset reading 256 files located in folders: /shared/.cache/retain/libero/datasets/libero_90_flipped/1.0.0. (253506:reader.py:262)
+22:47:18.961 [I] Constructing tf.data.Dataset libero_90_flipped for split train, from /shared/.cache/retain/libero/datasets/libero_90_flipped/1.0.0 (253506:logging_logger.py:49)
+22:47:19.078 [W] future_action_window_size > 0 but no absolute_action_mask was provided. Assuming all actions are relative for the purpose of making neutral actions. (253506:function_wrappers.py:112)
+22:47:19.112 [W] No resize_size was provided for image_wrist. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (253506:api.py:460)
+22:47:19.116 [W] No resize_size was provided for image_primary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (253506:api.py:460)
+22:47:19.120 [W] No resize_size was provided for image_secondary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (253506:api.py:460)
+22:47:26.471 [I] Initialized data loader:
+[0].images['base_0_rgb']: (64, 224, 224, 3)@float32
+[0].images['left_wrist_0_rgb']: (64, 224, 224, 3)@float32
+[0].images['right_wrist_0_rgb']: (64, 224, 224, 3)@float32
+[0].image_masks['base_0_rgb']: (64,)@bool
+[0].image_masks['left_wrist_0_rgb']: (64,)@bool
+[0].image_masks['right_wrist_0_rgb']: (64,)@bool
+[0].state: (64, 32)@float32
+[0].tokenized_prompt: (64, 48)@int32
+[0].tokenized_prompt_mask: (64, 48)@bool
+[1]: (64, 50, 32)@float32 (253506:train.py:341)
+wandb: WARNING Data passed to `wandb.Image` should consist of values in the range [0, 255], image data will be normalized to this range, but behavior will be removed in a future version of wandb.
+22:47:26.726 [I] LR Schedule Config: CosineDecaySchedule(warmup_steps=1000, peak_lr=2.5e-05, decay_steps=30000, decay_lr=2.5e-06) (253506:train.py:90)
+22:47:26.726 [I] Optimizer Config: AdamW(b1=0.9, b2=0.95, eps=1e-08, weight_decay=1e-10, clip_gradient_norm=1.0) (253506:train.py:91)
+22:47:39.989 [I] Loading weights into partial_params                                              (253506:train.py:127)
+22:47:39.991 [I] Created BasePyTreeCheckpointHandler: pytree_metadata_options=PyTreeMetadataOptions(support_rich_types=False), array_metadata_store=None (253506:base_pytree_checkpoint_handler.py:332)
+22:47:40.031 [I] Restoring checkpoint from /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params. (253506:checkpointer.py:256)
+22:48:06.730 [I] [process=0] /jax/checkpoint/read/bytes_per_sec: 462.7 MiB/s (total bytes: 12.1 GiB) (time elapsed: 26 seconds) (per-host) (253506:base_pytree_checkpoint_handler.py:113)
+22:48:06.731 [I] Finished restoring checkpoint from /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params. (253506:checkpointer.py:259)
+22:48:06.731 [I] [process=0][thread=MainThread] Skipping global process sync, barrier name: Checkpointer:restore (253506:multihost.py:293)
+22:48:31.781 [I] Finished loading weights                                                         (253506:train.py:130)
+2026-08-19 22:48:31.860286: W external/xla/xla/hlo/transforms/simplifiers/hlo_rematerialization.cc:3023] Can't reduce memory use below 25.17GiB (27024686030 bytes) by rematerialization; only reduced to 48.25GiB (51808779708 bytes), down from 48.25GiB (51808779708 bytes) originally
+22:48:34.523 [I] Initialized train state:
+['PaliGemma']['img']['Transformer']['encoder_norm']['bias'].value: (1152,)@float32
+['PaliGemma']['img']['Transformer']['encoder_norm']['scale'].value: (1152,)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['LayerNorm_0']['bias'].value: (27, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['LayerNorm_0']['scale'].value: (27, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['LayerNorm_1']['bias'].value: (27, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['LayerNorm_1']['scale'].value: (27, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MlpBlock_0']['Dense_0']['bias'].value: (27, 4304)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MlpBlock_0']['Dense_0']['kernel'].value: (27, 1152, 4304)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MlpBlock_0']['Dense_1']['bias'].value: (27, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MlpBlock_0']['Dense_1']['kernel'].value: (27, 4304, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['key']['bias'].value: (27, 16, 72)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['key']['kernel'].value: (27, 1152, 16, 72)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['out']['bias'].value: (27, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['out']['kernel'].value: (27, 16, 72, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['query']['bias'].value: (27, 16, 72)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['query']['kernel'].value: (27, 1152, 16, 72)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['value']['bias'].value: (27, 16, 72)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['value']['kernel'].value: (27, 1152, 16, 72)@float32
+['PaliGemma']['img']['embedding']['bias'].value: (1152,)@float32
+['PaliGemma']['img']['embedding']['kernel'].value: (14, 14, 3, 1152)@float32
+['PaliGemma']['img']['head']['bias'].value: (2048,)@float32
+['PaliGemma']['img']['head']['kernel'].value: (1152, 2048)@float32
+['PaliGemma']['img']['pos_embedding'].value: (1, 256, 1152)@float32
+['PaliGemma']['llm']['embedder']['input_embedding'].value: (257152, 2048)@float32
+['PaliGemma']['llm']['final_norm']['scale'].value: (2048,)@float32
+['PaliGemma']['llm']['final_norm_1']['scale'].value: (1024,)@float32
+['PaliGemma']['llm']['layers']['attn']['attn_vec_einsum']['w'].value: (18, 8, 256, 2048)@float32
+['PaliGemma']['llm']['layers']['attn']['attn_vec_einsum_1']['w'].value: (18, 8, 256, 1024)@float32
+['PaliGemma']['llm']['layers']['attn']['kv_einsum']['w'].value: (18, 2, 1, 2048, 256)@float32
+['PaliGemma']['llm']['layers']['attn']['kv_einsum_1']['w'].value: (18, 2, 1, 1024, 256)@float32
+['PaliGemma']['llm']['layers']['attn']['q_einsum']['w'].value: (18, 8, 2048, 256)@float32
+['PaliGemma']['llm']['layers']['attn']['q_einsum_1']['w'].value: (18, 8, 1024, 256)@float32
+['PaliGemma']['llm']['layers']['mlp']['gating_einsum'].value: (18, 2, 2048, 16384)@float32
+['PaliGemma']['llm']['layers']['mlp']['linear'].value: (18, 16384, 2048)@float32
+['PaliGemma']['llm']['layers']['mlp_1']['gating_einsum'].value: (18, 2, 1024, 4096)@float32
+['PaliGemma']['llm']['layers']['mlp_1']['linear'].value: (18, 4096, 1024)@float32
+['PaliGemma']['llm']['layers']['pre_attention_norm']['scale'].value: (18, 2048)@float32
+['PaliGemma']['llm']['layers']['pre_attention_norm_1']['scale'].value: (18, 1024)@float32
+['PaliGemma']['llm']['layers']['pre_ffw_norm']['scale'].value: (18, 2048)@float32
+['PaliGemma']['llm']['layers']['pre_ffw_norm_1']['scale'].value: (18, 1024)@float32
+['action_in_proj']['bias'].value: (1024,)@float32
+['action_in_proj']['kernel'].value: (32, 1024)@float32
+['action_out_proj']['bias'].value: (32,)@float32
+['action_out_proj']['kernel'].value: (1024, 32)@float32
+['action_time_mlp_in']['bias'].value: (1024,)@float32
+['action_time_mlp_in']['kernel'].value: (2048, 1024)@float32
+['action_time_mlp_out']['bias'].value: (1024,)@float32
+['action_time_mlp_out']['kernel'].value: (1024, 1024)@float32
+['state_proj']['bias'].value: (1024,)@float32
+['state_proj']['kernel'].value: (32, 1024)@float32 (253506:train.py:355)
+22:48:34.523 [I] Trainable params:
+['PaliGemma']['img']['Transformer']['encoder_norm']['bias'].value: (1152,)@float32
+['PaliGemma']['img']['Transformer']['encoder_norm']['scale'].value: (1152,)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['LayerNorm_0']['bias'].value: (27, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['LayerNorm_0']['scale'].value: (27, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['LayerNorm_1']['bias'].value: (27, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['LayerNorm_1']['scale'].value: (27, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MlpBlock_0']['Dense_0']['bias'].value: (27, 4304)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MlpBlock_0']['Dense_0']['kernel'].value: (27, 1152, 4304)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MlpBlock_0']['Dense_1']['bias'].value: (27, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MlpBlock_0']['Dense_1']['kernel'].value: (27, 4304, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['key']['bias'].value: (27, 16, 72)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['key']['kernel'].value: (27, 1152, 16, 72)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['out']['bias'].value: (27, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['out']['kernel'].value: (27, 16, 72, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['query']['bias'].value: (27, 16, 72)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['query']['kernel'].value: (27, 1152, 16, 72)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['value']['bias'].value: (27, 16, 72)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['value']['kernel'].value: (27, 1152, 16, 72)@float32
+['PaliGemma']['img']['embedding']['bias'].value: (1152,)@float32
+['PaliGemma']['img']['embedding']['kernel'].value: (14, 14, 3, 1152)@float32
+['PaliGemma']['img']['head']['bias'].value: (2048,)@float32
+['PaliGemma']['img']['head']['kernel'].value: (1152, 2048)@float32
+['PaliGemma']['img']['pos_embedding'].value: (1, 256, 1152)@float32
+['PaliGemma']['llm']['embedder']['input_embedding'].value: (257152, 2048)@float32
+['PaliGemma']['llm']['final_norm']['scale'].value: (2048,)@float32
+['PaliGemma']['llm']['final_norm_1']['scale'].value: (1024,)@float32
+['PaliGemma']['llm']['layers']['attn']['attn_vec_einsum']['w'].value: (18, 8, 256, 2048)@float32
+['PaliGemma']['llm']['layers']['attn']['attn_vec_einsum_1']['w'].value: (18, 8, 256, 1024)@float32
+['PaliGemma']['llm']['layers']['attn']['kv_einsum']['w'].value: (18, 2, 1, 2048, 256)@float32
+['PaliGemma']['llm']['layers']['attn']['kv_einsum_1']['w'].value: (18, 2, 1, 1024, 256)@float32
+['PaliGemma']['llm']['layers']['attn']['q_einsum']['w'].value: (18, 8, 2048, 256)@float32
+['PaliGemma']['llm']['layers']['attn']['q_einsum_1']['w'].value: (18, 8, 1024, 256)@float32
+['PaliGemma']['llm']['layers']['mlp']['gating_einsum'].value: (18, 2, 2048, 16384)@float32
+['PaliGemma']['llm']['layers']['mlp']['linear'].value: (18, 16384, 2048)@float32
+['PaliGemma']['llm']['layers']['mlp_1']['gating_einsum'].value: (18, 2, 1024, 4096)@float32
+['PaliGemma']['llm']['layers']['mlp_1']['linear'].value: (18, 4096, 1024)@float32
+['PaliGemma']['llm']['layers']['pre_attention_norm']['scale'].value: (18, 2048)@float32
+['PaliGemma']['llm']['layers']['pre_attention_norm_1']['scale'].value: (18, 1024)@float32
+['PaliGemma']['llm']['layers']['pre_ffw_norm']['scale'].value: (18, 2048)@float32
+['PaliGemma']['llm']['layers']['pre_ffw_norm_1']['scale'].value: (18, 1024)@float32
+['action_in_proj']['bias'].value: (1024,)@float32
+['action_in_proj']['kernel'].value: (32, 1024)@float32
+['action_out_proj']['bias'].value: (32,)@float32
+['action_out_proj']['kernel'].value: (1024, 32)@float32
+['action_time_mlp_in']['bias'].value: (1024,)@float32
+['action_time_mlp_in']['kernel'].value: (2048, 1024)@float32
+['action_time_mlp_out']['bias'].value: (1024,)@float32
+['action_time_mlp_out']['kernel'].value: (1024, 1024)@float32
+['state_proj']['bias'].value: (1024,)@float32
+['state_proj']['kernel'].value: (32, 1024)@float32 (253506:train.py:356)
+THIS DATASET HAS NUM_TRAJECTORIES 349  AND NUM_TRANSITIONS 39799
+THIS DATASET HAS NUM_TRAJECTORIES 365  AND NUM_TRANSITIONS 53739
+THIS DATASET HAS NUM_TRAJECTORIES 343  AND NUM_TRANSITIONS 42391
+THIS DATASET HAS NUM_TRAJECTORIES 3917  AND NUM_TRANSITIONS 567494
+
+######################################################################################
+# Loading the following 4 datasets (incl. sampling weight):                         #
+# libero_goal_reduced: =====================================================0.070376 #
+# libero_object_reduced: ===================================================0.090581 #
+# libero_spatial_reduced: ==================================================0.071630 #
+# libero_90_flipped: =======================================================0.767413 #
+######################################################################################
+
+norm_stats are  {'state': NormStats(mean=array([-0.07459474,  0.01886539,  0.89401907,  3.00154734, -0.11657909,
+       -0.09116436,  0.02634243, -0.02669393,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]), std=array([0.11267885, 0.14551789, 0.30485129, 0.38380396, 0.88596892,
+       0.30852371, 0.0146244 , 0.01449694, 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        ]), q01=array([-4.04978513e-01, -2.75643894e-01,  1.03451522e-01,  1.45384380e+00,
+       -2.69716187e+00, -1.19477866e+00,  1.64143040e-03, -4.00380769e-02,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00]), q99=array([ 1.25709046e-01,  3.27069047e-01,  1.25547892e+00,  3.66470913e+00,
+        2.30573786e+00,  5.80337930e-01,  4.02928781e-02, -1.70643236e-03,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00])), 'actions': NormStats(mean=array([ 0.13082495,  0.03510264, -0.99502772, -2.99781322,  0.11946776,
+        0.08388595, -0.0420391 ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]), std=array([0.34118709, 0.37048841, 0.53519309, 0.3816036 , 0.88830632,
+       0.3197473 , 0.99911594, 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        ]), q01=array([-0.62691881, -0.85612705, -1.98400122, -3.60055661, -2.32860803,
+       -0.6173897 , -1.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]), q99=array([ 1.01273111,  0.8795515 ,  0.40937937, -1.45586381,  2.69826558,
+        1.15884968,  0.9996    ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]))}
+ 🧟‍♂️🧟‍♂️🧟‍♂️🧟‍♂️ Dataloader Exhuasted/First Epoch: creating a new iterator over the dataloader. 🧟‍♂️🧟‍♂️🧟‍♂️🧟‍♂️
+22:48:34.534 [I] Progress on: -/10000 rate:- remaining:? elapsed:00:00 postfix:-                  (253506:tqdm_logging.py:145)
+2026-08-19 22:48:46.492937: W external/xla/xla/hlo/transforms/simplifiers/hlo_rematerialization.cc:3023] Can't reduce memory use below 25.07GiB (26914449071 bytes) by rematerialization; only reduced to 75.44GiB (81006559380 bytes), down from 77.10GiB (82786146384 bytes) originally
+2026-08-19 22:49:10.524818: W external/xla/xla/tsl/framework/bfc_allocator.cc:501] Allocator (GPU_0_bfc) ran out of memory trying to allocate 27.79GiB (rounded to 29834447616)requested by op 
+If the cause is memory fragmentation maybe the environment variable 'TF_GPU_ALLOCATOR=cuda_malloc_async' will improve the situation. 
+Current allocation summary follows.
+Current allocation summary follows.
+2026-08-19 22:49:10.525256: W external/xla/xla/tsl/framework/bfc_allocator.cc:512] *_______________*****************************************************************___________________
+E0819 22:49:10.525337  253506 pjrt_stream_executor_client.cc:2916] Execution of replica 0 failed: RESOURCE_EXHAUSTED: Out of memory while trying to allocate 29834447448 bytes. [tf-allocator-allocation-error='']
+22:49:10.532 [I] Progress on: -/10000 rate:- remaining:? elapsed:00:35 postfix:-                  (253506:tqdm_logging.py:145)
+Traceback (most recent call last):
+  File "/root/RETAIN_code/scripts/train.py", line 399, in <module>
+    main(_config.cli())
+  File "/root/RETAIN_code/scripts/train.py", line 379, in main
+    train_state, info = ptrain_step(train_rng, train_state, batch)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+jaxlib._jax.XlaRuntimeError: RESOURCE_EXHAUSTED: Out of memory while trying to allocate 29834447448 bytes.
+--------------------
+For simplicity, JAX has removed its internal frames from the traceback of the following exception. Set JAX_TRACEBACK_FILTERING=off to include these.
+2026-08-19 23:57:55.821828: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1787183875.837654  261590 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1787183875.843081  261590 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1787183878.365490  261590 gpu_device.cc:2433] TensorFlow was not built with CUDA kernel binaries compatible with compute capability 12.0. CUDA kernels will be jit-compiled from PTX, which could take 30 minutes or longer.
+23:57:59.278 [I] Running on: lhy-1                                                                (261590:train.py:301)
+INFO:2026-08-19 23:57:59,395:jax._src.xla_bridge:752: Unable to initialize backend 'tpu': INTERNAL: Failed to open libtpu.so: libtpu.so: cannot open shared object file: No such file or directory
+23:57:59.395 [I] Unable to initialize backend 'tpu': INTERNAL: Failed to open libtpu.so: libtpu.so: cannot open shared object file: No such file or directory (261590:xla_bridge.py:752)
+23:58:01.960 [I] Created BasePyTreeCheckpointHandler: pytree_metadata_options=PyTreeMetadataOptions(support_rich_types=False), array_metadata_store=None (261590:base_pytree_checkpoint_handler.py:332)
+23:58:01.960 [I] Created BasePyTreeCheckpointHandler: pytree_metadata_options=PyTreeMetadataOptions(support_rich_types=False), array_metadata_store=None (261590:base_pytree_checkpoint_handler.py:332)
+23:58:01.961 [I] [thread=MainThread] Failed to get flag value for EXPERIMENTAL_ORBAX_USE_DISTRIBUTED_PROCESS_ID. (261590:multihost.py:375)
+23:58:01.961 [I] [process=0][thread=MainThread] CheckpointManager init: checkpointers=None, item_names=None, item_handlers={'assets': <openpi.training.checkpoints.CallbackHandler object at 0x7d03644c1750>, 'train_state': <orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler object at 0x7d036443f7d0>, 'params': <orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler object at 0x7d036414abd0>}, handler_registry=None (261590:checkpoint_manager.py:622)
+23:58:01.961 [I] Deferred registration for item: "assets". Adding handler `<openpi.training.checkpoints.CallbackHandler object at 0x7d03644c1750>` for item "assets" and save args `<class 'openpi.training.checkpoints.CallbackSave'>` and restore args `<class 'openpi.training.checkpoints.CallbackRestore'>` to `_handler_registry`. (261590:composite_checkpoint_handler.py:239)
+23:58:01.961 [I] Deferred registration for item: "train_state". Adding handler `<orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler object at 0x7d036443f7d0>` for item "train_state" and save args `<class 'orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeSaveArgs'>` and restore args `<class 'orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeRestoreArgs'>` to `_handler_registry`. (261590:composite_checkpoint_handler.py:239)
+23:58:01.961 [I] Deferred registration for item: "params". Adding handler `<orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler object at 0x7d036414abd0>` for item "params" and save args `<class 'orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeSaveArgs'>` and restore args `<class 'orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeRestoreArgs'>` to `_handler_registry`. (261590:composite_checkpoint_handler.py:239)
+23:58:01.961 [I] Deferred registration for item: "metrics". Adding handler `<orbax.checkpoint._src.handlers.json_checkpoint_handler.JsonCheckpointHandler object at 0x7d03644de010>` for item "metrics" and save args `<class 'orbax.checkpoint._src.handlers.json_checkpoint_handler.JsonSaveArgs'>` and restore args `<class 'orbax.checkpoint._src.handlers.json_checkpoint_handler.JsonRestoreArgs'>` to `_handler_registry`. (261590:composite_checkpoint_handler.py:239)
+23:58:01.961 [I] Initialized registry DefaultCheckpointHandlerRegistry({('assets', <class 'openpi.training.checkpoints.CallbackSave'>): <openpi.training.checkpoints.CallbackHandler object at 0x7d03644c1750>, ('assets', <class 'openpi.training.checkpoints.CallbackRestore'>): <openpi.training.checkpoints.CallbackHandler object at 0x7d03644c1750>, ('train_state', <class 'orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeSaveArgs'>): <orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler object at 0x7d036443f7d0>, ('train_state', <class 'orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeRestoreArgs'>): <orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler object at 0x7d036443f7d0>, ('params', <class 'orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeSaveArgs'>): <orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler object at 0x7d036414abd0>, ('params', <class 'orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeRestoreArgs'>): <orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler object at 0x7d036414abd0>, ('metrics', <class 'orbax.checkpoint._src.handlers.json_checkpoint_handler.JsonSaveArgs'>): <orbax.checkpoint._src.handlers.json_checkpoint_handler.JsonCheckpointHandler object at 0x7d03644de010>, ('metrics', <class 'orbax.checkpoint._src.handlers.json_checkpoint_handler.JsonRestoreArgs'>): <orbax.checkpoint._src.handlers.json_checkpoint_handler.JsonCheckpointHandler object at 0x7d03644de010>}). (261590:composite_checkpoint_handler.py:508)
+23:58:01.962 [I] orbax-checkpoint version: 0.11.1                                                 (261590:abstract_checkpointer.py:35)
+23:58:01.962 [I] [process=0][thread=MainThread] Using barrier_sync_fn: <function get_barrier_sync_fn.<locals>.<lambda> at 0x7d01463567a0> timeout: 7200 secs and primary_host=0 for async checkpoint writes (261590:async_checkpointer.py:80)
+23:58:01.963 [I] Found 0 checkpoint steps in /shared/.cache/retain/checkpoints/retain_repro_pretrain/paper_final_hparams (261590:checkpoint_manager.py:1528)
+23:58:01.963 [I] Saving root metadata                                                             (261590:checkpoint_manager.py:1569)
+23:58:01.963 [I] [process=0][thread=MainThread] Skipping global process sync, barrier name: CheckpointManager:save_metadata (261590:multihost.py:293)
+23:58:01.963 [I] [process=0][thread=MainThread] CheckpointManager created,  primary_host=0, CheckpointManagerOptions=CheckpointManagerOptions(save_interval_steps=1, max_to_keep=1, keep_time_interval=None, keep_period=None, should_keep_fn=None, best_fn=None, best_mode='max', keep_checkpoints_without_metrics=True, step_prefix=None, step_format_fixed_length=None, step_name_format=None, create=False, cleanup_tmp_directories=False, save_on_steps=frozenset(), single_host_load_and_broadcast=False, todelete_subdir=None, enable_background_delete=False, read_only=False, enable_async_checkpointing=True, async_options=AsyncOptions(timeout_secs=7200, barrier_sync_fn=None, post_finalization_callback=None, create_directories_asynchronously=False), multiprocessing_options=MultiprocessingOptions(primary_host=0, active_processes=None, barrier_sync_key_prefix=None), should_save_fn=None, file_options=FileOptions(path_permission_mode=None), save_root_metadata=True, temporary_path_class=None, save_decision_policy=None), root_directory=/shared/.cache/retain/checkpoints/retain_repro_pretrain/paper_final_hparams: <orbax.checkpoint.checkpoint_manager.CheckpointManager object at 0x7d03663b4590> (261590:checkpoint_manager.py:797)
+23:58:01.963 [I] Checkpoint directory exists, but does not contain any checkpoints. Aborting resume. (261590:checkpoints.py:55)
+23:58:02.057 [I] Loaded norm stats from assets/pi0_libero_pretrain                                (261590:config.py:197)
+23:58:02.125 [I] Loaded norm stats from assets/pi0_libero_pretrain                                (261590:config.py:197)
+23:58:02.192 [I] Loaded norm stats from assets/pi0_libero_pretrain                                (261590:config.py:197)
+23:58:02.259 [I] Loaded norm stats from assets/pi0_libero_pretrain                                (261590:config.py:197)
+23:58:02.324 [I] Loaded norm stats from assets/pi0_libero_pretrain                                (261590:config.py:197)
+23:58:02.464 [I] Load dataset info from /shared/.cache/retain/libero/datasets/libero_goal_reduced/1.0.0 (261590:dataset_info.py:707)
+23:58:02.474 [I] Creating a tf.data.Dataset reading 16 files located in folders: /shared/.cache/retain/libero/datasets/libero_goal_reduced/1.0.0. (261590:reader.py:262)
+23:58:02.550 [I] Constructing tf.data.Dataset libero_goal_reduced for split all, from /shared/.cache/retain/libero/datasets/libero_goal_reduced/1.0.0 (261590:logging_logger.py:49)
+23:58:02.799 [I] Creating a tf.data.Dataset reading 16 files located in folders: /shared/.cache/retain/libero/datasets/libero_goal_reduced/1.0.0. (261590:reader.py:262)
+23:58:02.830 [I] Constructing tf.data.Dataset libero_goal_reduced for split train, from /shared/.cache/retain/libero/datasets/libero_goal_reduced/1.0.0 (261590:logging_logger.py:49)
+23:58:02.902 [I] Load dataset info from /shared/.cache/retain/libero/datasets/libero_object_reduced/1.0.0 (261590:dataset_info.py:707)
+23:58:02.909 [I] Creating a tf.data.Dataset reading 32 files located in folders: /shared/.cache/retain/libero/datasets/libero_object_reduced/1.0.0. (261590:reader.py:262)
+23:58:02.939 [I] Constructing tf.data.Dataset libero_object_reduced for split all, from /shared/.cache/retain/libero/datasets/libero_object_reduced/1.0.0 (261590:logging_logger.py:49)
+23:58:03.012 [I] Creating a tf.data.Dataset reading 32 files located in folders: /shared/.cache/retain/libero/datasets/libero_object_reduced/1.0.0. (261590:reader.py:262)
+23:58:03.044 [I] Constructing tf.data.Dataset libero_object_reduced for split train, from /shared/.cache/retain/libero/datasets/libero_object_reduced/1.0.0 (261590:logging_logger.py:49)
+23:58:03.124 [I] Load dataset info from /shared/.cache/retain/libero/datasets/libero_spatial_reduced/1.0.0 (261590:dataset_info.py:707)
+23:58:03.131 [I] Creating a tf.data.Dataset reading 16 files located in folders: /shared/.cache/retain/libero/datasets/libero_spatial_reduced/1.0.0. (261590:reader.py:262)
+23:58:03.163 [I] Constructing tf.data.Dataset libero_spatial_reduced for split all, from /shared/.cache/retain/libero/datasets/libero_spatial_reduced/1.0.0 (261590:logging_logger.py:49)
+23:58:03.228 [I] Creating a tf.data.Dataset reading 16 files located in folders: /shared/.cache/retain/libero/datasets/libero_spatial_reduced/1.0.0. (261590:reader.py:262)
+23:58:03.253 [I] Constructing tf.data.Dataset libero_spatial_reduced for split train, from /shared/.cache/retain/libero/datasets/libero_spatial_reduced/1.0.0 (261590:logging_logger.py:49)
+23:58:03.314 [I] Load dataset info from /shared/.cache/retain/libero/datasets/libero_90_flipped/1.0.0 (261590:dataset_info.py:707)
+23:58:03.330 [I] Creating a tf.data.Dataset reading 256 files located in folders: /shared/.cache/retain/libero/datasets/libero_90_flipped/1.0.0. (261590:reader.py:262)
+23:58:03.361 [I] Constructing tf.data.Dataset libero_90_flipped for split all, from /shared/.cache/retain/libero/datasets/libero_90_flipped/1.0.0 (261590:logging_logger.py:49)
+23:58:03.442 [I] Creating a tf.data.Dataset reading 256 files located in folders: /shared/.cache/retain/libero/datasets/libero_90_flipped/1.0.0. (261590:reader.py:262)
+23:58:03.479 [I] Constructing tf.data.Dataset libero_90_flipped for split train, from /shared/.cache/retain/libero/datasets/libero_90_flipped/1.0.0 (261590:logging_logger.py:49)
+23:58:03.559 [I] Load dataset info from /shared/.cache/retain/libero/datasets/libero_goal_reduced/1.0.0 (261590:dataset_info.py:707)
+23:58:03.565 [I] Creating a tf.data.Dataset reading 16 files located in folders: /shared/.cache/retain/libero/datasets/libero_goal_reduced/1.0.0. (261590:reader.py:262)
+23:58:03.592 [I] Constructing tf.data.Dataset libero_goal_reduced for split train, from /shared/.cache/retain/libero/datasets/libero_goal_reduced/1.0.0 (261590:logging_logger.py:49)
+23:58:04.242 [W] future_action_window_size > 0 but no absolute_action_mask was provided. Assuming all actions are relative for the purpose of making neutral actions. (261590:function_wrappers.py:112)
+23:58:05.427 [W] No resize_size was provided for image_primary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (261590:api.py:460)
+23:58:05.432 [W] No resize_size was provided for image_secondary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (261590:api.py:460)
+23:58:05.436 [W] No resize_size was provided for image_wrist. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (261590:api.py:460)
+23:58:05.452 [I] Load dataset info from /shared/.cache/retain/libero/datasets/libero_object_reduced/1.0.0 (261590:dataset_info.py:707)
+23:58:05.459 [I] Creating a tf.data.Dataset reading 32 files located in folders: /shared/.cache/retain/libero/datasets/libero_object_reduced/1.0.0. (261590:reader.py:262)
+23:58:05.485 [I] Constructing tf.data.Dataset libero_object_reduced for split train, from /shared/.cache/retain/libero/datasets/libero_object_reduced/1.0.0 (261590:logging_logger.py:49)
+23:58:05.575 [W] future_action_window_size > 0 but no absolute_action_mask was provided. Assuming all actions are relative for the purpose of making neutral actions. (261590:function_wrappers.py:112)
+23:58:05.608 [W] No resize_size was provided for image_primary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (261590:api.py:460)
+23:58:05.612 [W] No resize_size was provided for image_secondary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (261590:api.py:460)
+23:58:05.615 [W] No resize_size was provided for image_wrist. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (261590:api.py:460)
+23:58:05.632 [I] Load dataset info from /shared/.cache/retain/libero/datasets/libero_spatial_reduced/1.0.0 (261590:dataset_info.py:707)
+23:58:05.638 [I] Creating a tf.data.Dataset reading 16 files located in folders: /shared/.cache/retain/libero/datasets/libero_spatial_reduced/1.0.0. (261590:reader.py:262)
+23:58:05.663 [I] Constructing tf.data.Dataset libero_spatial_reduced for split train, from /shared/.cache/retain/libero/datasets/libero_spatial_reduced/1.0.0 (261590:logging_logger.py:49)
+23:58:05.755 [W] future_action_window_size > 0 but no absolute_action_mask was provided. Assuming all actions are relative for the purpose of making neutral actions. (261590:function_wrappers.py:112)
+23:58:05.787 [W] No resize_size was provided for image_primary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (261590:api.py:460)
+23:58:05.791 [W] No resize_size was provided for image_secondary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (261590:api.py:460)
+23:58:05.795 [W] No resize_size was provided for image_wrist. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (261590:api.py:460)
+23:58:05.811 [I] Load dataset info from /shared/.cache/retain/libero/datasets/libero_90_flipped/1.0.0 (261590:dataset_info.py:707)
+23:58:05.827 [I] Creating a tf.data.Dataset reading 256 files located in folders: /shared/.cache/retain/libero/datasets/libero_90_flipped/1.0.0. (261590:reader.py:262)
+23:58:05.859 [I] Constructing tf.data.Dataset libero_90_flipped for split train, from /shared/.cache/retain/libero/datasets/libero_90_flipped/1.0.0 (261590:logging_logger.py:49)
+23:58:05.965 [W] future_action_window_size > 0 but no absolute_action_mask was provided. Assuming all actions are relative for the purpose of making neutral actions. (261590:function_wrappers.py:112)
+23:58:05.998 [W] No resize_size was provided for image_primary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (261590:api.py:460)
+23:58:06.002 [W] No resize_size was provided for image_secondary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (261590:api.py:460)
+23:58:06.006 [W] No resize_size was provided for image_wrist. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (261590:api.py:460)
+23:58:12.509 [I] Initialized data loader:
+[0].images['base_0_rgb']: (64, 224, 224, 3)@float32
+[0].images['left_wrist_0_rgb']: (64, 224, 224, 3)@float32
+[0].images['right_wrist_0_rgb']: (64, 224, 224, 3)@float32
+[0].image_masks['base_0_rgb']: (64,)@bool
+[0].image_masks['left_wrist_0_rgb']: (64,)@bool
+[0].image_masks['right_wrist_0_rgb']: (64,)@bool
+[0].state: (64, 32)@float32
+[0].tokenized_prompt: (64, 48)@int32
+[0].tokenized_prompt_mask: (64, 48)@bool
+[1]: (64, 50, 32)@float32 (261590:train.py:341)
+wandb: WARNING Data passed to `wandb.Image` should consist of values in the range [0, 255], image data will be normalized to this range, but behavior will be removed in a future version of wandb.
+23:58:12.787 [I] LR Schedule Config: CosineDecaySchedule(warmup_steps=1000, peak_lr=2.5e-05, decay_steps=30000, decay_lr=2.5e-06) (261590:train.py:90)
+23:58:12.787 [I] Optimizer Config: AdamW(b1=0.9, b2=0.95, eps=1e-08, weight_decay=1e-10, clip_gradient_norm=1.0) (261590:train.py:91)
+23:58:19.523 [I] Loading weights into partial_params                                              (261590:train.py:127)
+23:58:19.523 [I] Created BasePyTreeCheckpointHandler: pytree_metadata_options=PyTreeMetadataOptions(support_rich_types=False), array_metadata_store=None (261590:base_pytree_checkpoint_handler.py:332)
+23:58:19.548 [I] Restoring checkpoint from /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params. (261590:checkpointer.py:256)
+23:58:43.416 [I] [process=0] /jax/checkpoint/read/bytes_per_sec: 517.5 MiB/s (total bytes: 12.1 GiB) (time elapsed: 23 seconds) (per-host) (261590:base_pytree_checkpoint_handler.py:113)
+23:58:43.417 [I] Finished restoring checkpoint from /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params. (261590:checkpointer.py:259)
+23:58:43.417 [I] [process=0][thread=MainThread] Skipping global process sync, barrier name: Checkpointer:restore (261590:multihost.py:293)
+23:59:06.137 [I] Finished loading weights                                                         (261590:train.py:130)
+2026-08-19 23:59:06.226646: W external/xla/xla/hlo/transforms/simplifiers/hlo_rematerialization.cc:3023] Can't reduce memory use below 29.11GiB (31260410775 bytes) by rematerialization; only reduced to 48.25GiB (51808779708 bytes), down from 48.25GiB (51808779708 bytes) originally
+23:59:08.855 [I] Initialized train state:
+['PaliGemma']['img']['Transformer']['encoder_norm']['bias'].value: (1152,)@float32
+['PaliGemma']['img']['Transformer']['encoder_norm']['scale'].value: (1152,)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['LayerNorm_0']['bias'].value: (27, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['LayerNorm_0']['scale'].value: (27, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['LayerNorm_1']['bias'].value: (27, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['LayerNorm_1']['scale'].value: (27, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MlpBlock_0']['Dense_0']['bias'].value: (27, 4304)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MlpBlock_0']['Dense_0']['kernel'].value: (27, 1152, 4304)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MlpBlock_0']['Dense_1']['bias'].value: (27, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MlpBlock_0']['Dense_1']['kernel'].value: (27, 4304, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['key']['bias'].value: (27, 16, 72)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['key']['kernel'].value: (27, 1152, 16, 72)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['out']['bias'].value: (27, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['out']['kernel'].value: (27, 16, 72, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['query']['bias'].value: (27, 16, 72)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['query']['kernel'].value: (27, 1152, 16, 72)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['value']['bias'].value: (27, 16, 72)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['value']['kernel'].value: (27, 1152, 16, 72)@float32
+['PaliGemma']['img']['embedding']['bias'].value: (1152,)@float32
+['PaliGemma']['img']['embedding']['kernel'].value: (14, 14, 3, 1152)@float32
+['PaliGemma']['img']['head']['bias'].value: (2048,)@float32
+['PaliGemma']['img']['head']['kernel'].value: (1152, 2048)@float32
+['PaliGemma']['img']['pos_embedding'].value: (1, 256, 1152)@float32
+['PaliGemma']['llm']['embedder']['input_embedding'].value: (257152, 2048)@float32
+['PaliGemma']['llm']['final_norm']['scale'].value: (2048,)@float32
+['PaliGemma']['llm']['final_norm_1']['scale'].value: (1024,)@float32
+['PaliGemma']['llm']['layers']['attn']['attn_vec_einsum']['w'].value: (18, 8, 256, 2048)@float32
+['PaliGemma']['llm']['layers']['attn']['attn_vec_einsum_1']['w'].value: (18, 8, 256, 1024)@float32
+['PaliGemma']['llm']['layers']['attn']['kv_einsum']['w'].value: (18, 2, 1, 2048, 256)@float32
+['PaliGemma']['llm']['layers']['attn']['kv_einsum_1']['w'].value: (18, 2, 1, 1024, 256)@float32
+['PaliGemma']['llm']['layers']['attn']['q_einsum']['w'].value: (18, 8, 2048, 256)@float32
+['PaliGemma']['llm']['layers']['attn']['q_einsum_1']['w'].value: (18, 8, 1024, 256)@float32
+['PaliGemma']['llm']['layers']['mlp']['gating_einsum'].value: (18, 2, 2048, 16384)@float32
+['PaliGemma']['llm']['layers']['mlp']['linear'].value: (18, 16384, 2048)@float32
+['PaliGemma']['llm']['layers']['mlp_1']['gating_einsum'].value: (18, 2, 1024, 4096)@float32
+['PaliGemma']['llm']['layers']['mlp_1']['linear'].value: (18, 4096, 1024)@float32
+['PaliGemma']['llm']['layers']['pre_attention_norm']['scale'].value: (18, 2048)@float32
+['PaliGemma']['llm']['layers']['pre_attention_norm_1']['scale'].value: (18, 1024)@float32
+['PaliGemma']['llm']['layers']['pre_ffw_norm']['scale'].value: (18, 2048)@float32
+['PaliGemma']['llm']['layers']['pre_ffw_norm_1']['scale'].value: (18, 1024)@float32
+['action_in_proj']['bias'].value: (1024,)@float32
+['action_in_proj']['kernel'].value: (32, 1024)@float32
+['action_out_proj']['bias'].value: (32,)@float32
+['action_out_proj']['kernel'].value: (1024, 32)@float32
+['action_time_mlp_in']['bias'].value: (1024,)@float32
+['action_time_mlp_in']['kernel'].value: (2048, 1024)@float32
+['action_time_mlp_out']['bias'].value: (1024,)@float32
+['action_time_mlp_out']['kernel'].value: (1024, 1024)@float32
+['state_proj']['bias'].value: (1024,)@float32
+['state_proj']['kernel'].value: (32, 1024)@float32 (261590:train.py:355)
+23:59:08.856 [I] Trainable params:
+['PaliGemma']['img']['Transformer']['encoder_norm']['bias'].value: (1152,)@float32
+['PaliGemma']['img']['Transformer']['encoder_norm']['scale'].value: (1152,)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['LayerNorm_0']['bias'].value: (27, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['LayerNorm_0']['scale'].value: (27, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['LayerNorm_1']['bias'].value: (27, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['LayerNorm_1']['scale'].value: (27, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MlpBlock_0']['Dense_0']['bias'].value: (27, 4304)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MlpBlock_0']['Dense_0']['kernel'].value: (27, 1152, 4304)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MlpBlock_0']['Dense_1']['bias'].value: (27, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MlpBlock_0']['Dense_1']['kernel'].value: (27, 4304, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['key']['bias'].value: (27, 16, 72)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['key']['kernel'].value: (27, 1152, 16, 72)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['out']['bias'].value: (27, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['out']['kernel'].value: (27, 16, 72, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['query']['bias'].value: (27, 16, 72)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['query']['kernel'].value: (27, 1152, 16, 72)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['value']['bias'].value: (27, 16, 72)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['value']['kernel'].value: (27, 1152, 16, 72)@float32
+['PaliGemma']['img']['embedding']['bias'].value: (1152,)@float32
+['PaliGemma']['img']['embedding']['kernel'].value: (14, 14, 3, 1152)@float32
+['PaliGemma']['img']['head']['bias'].value: (2048,)@float32
+['PaliGemma']['img']['head']['kernel'].value: (1152, 2048)@float32
+['PaliGemma']['img']['pos_embedding'].value: (1, 256, 1152)@float32
+['PaliGemma']['llm']['embedder']['input_embedding'].value: (257152, 2048)@float32
+['PaliGemma']['llm']['final_norm']['scale'].value: (2048,)@float32
+['PaliGemma']['llm']['final_norm_1']['scale'].value: (1024,)@float32
+['PaliGemma']['llm']['layers']['attn']['attn_vec_einsum']['w'].value: (18, 8, 256, 2048)@float32
+['PaliGemma']['llm']['layers']['attn']['attn_vec_einsum_1']['w'].value: (18, 8, 256, 1024)@float32
+['PaliGemma']['llm']['layers']['attn']['kv_einsum']['w'].value: (18, 2, 1, 2048, 256)@float32
+['PaliGemma']['llm']['layers']['attn']['kv_einsum_1']['w'].value: (18, 2, 1, 1024, 256)@float32
+['PaliGemma']['llm']['layers']['attn']['q_einsum']['w'].value: (18, 8, 2048, 256)@float32
+['PaliGemma']['llm']['layers']['attn']['q_einsum_1']['w'].value: (18, 8, 1024, 256)@float32
+['PaliGemma']['llm']['layers']['mlp']['gating_einsum'].value: (18, 2, 2048, 16384)@float32
+['PaliGemma']['llm']['layers']['mlp']['linear'].value: (18, 16384, 2048)@float32
+['PaliGemma']['llm']['layers']['mlp_1']['gating_einsum'].value: (18, 2, 1024, 4096)@float32
+['PaliGemma']['llm']['layers']['mlp_1']['linear'].value: (18, 4096, 1024)@float32
+['PaliGemma']['llm']['layers']['pre_attention_norm']['scale'].value: (18, 2048)@float32
+['PaliGemma']['llm']['layers']['pre_attention_norm_1']['scale'].value: (18, 1024)@float32
+['PaliGemma']['llm']['layers']['pre_ffw_norm']['scale'].value: (18, 2048)@float32
+['PaliGemma']['llm']['layers']['pre_ffw_norm_1']['scale'].value: (18, 1024)@float32
+['action_in_proj']['bias'].value: (1024,)@float32
+['action_in_proj']['kernel'].value: (32, 1024)@float32
+['action_out_proj']['bias'].value: (32,)@float32
+['action_out_proj']['kernel'].value: (1024, 32)@float32
+['action_time_mlp_in']['bias'].value: (1024,)@float32
+['action_time_mlp_in']['kernel'].value: (2048, 1024)@float32
+['action_time_mlp_out']['bias'].value: (1024,)@float32
+['action_time_mlp_out']['kernel'].value: (1024, 1024)@float32
+['state_proj']['bias'].value: (1024,)@float32
+['state_proj']['kernel'].value: (32, 1024)@float32 (261590:train.py:356)
+THIS DATASET HAS NUM_TRAJECTORIES 349  AND NUM_TRANSITIONS 39799
+THIS DATASET HAS NUM_TRAJECTORIES 365  AND NUM_TRANSITIONS 53739
+THIS DATASET HAS NUM_TRAJECTORIES 343  AND NUM_TRANSITIONS 42391
+THIS DATASET HAS NUM_TRAJECTORIES 3917  AND NUM_TRANSITIONS 567494
+
+######################################################################################
+# Loading the following 4 datasets (incl. sampling weight):                         #
+# libero_goal_reduced: =====================================================0.070376 #
+# libero_object_reduced: ===================================================0.090581 #
+# libero_spatial_reduced: ==================================================0.071630 #
+# libero_90_flipped: =======================================================0.767413 #
+######################################################################################
+
+norm_stats are  {'state': NormStats(mean=array([-0.07459474,  0.01886539,  0.89401907,  3.00154734, -0.11657909,
+       -0.09116436,  0.02634243, -0.02669393,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]), std=array([0.11267885, 0.14551789, 0.30485129, 0.38380396, 0.88596892,
+       0.30852371, 0.0146244 , 0.01449694, 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        ]), q01=array([-4.04978513e-01, -2.75643894e-01,  1.03451522e-01,  1.45384380e+00,
+       -2.69716187e+00, -1.19477866e+00,  1.64143040e-03, -4.00380769e-02,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00]), q99=array([ 1.25709046e-01,  3.27069047e-01,  1.25547892e+00,  3.66470913e+00,
+        2.30573786e+00,  5.80337930e-01,  4.02928781e-02, -1.70643236e-03,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00])), 'actions': NormStats(mean=array([ 0.13082495,  0.03510264, -0.99502772, -2.99781322,  0.11946776,
+        0.08388595, -0.0420391 ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]), std=array([0.34118709, 0.37048841, 0.53519309, 0.3816036 , 0.88830632,
+       0.3197473 , 0.99911594, 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        ]), q01=array([-0.62691881, -0.85612705, -1.98400122, -3.60055661, -2.32860803,
+       -0.6173897 , -1.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]), q99=array([ 1.01273111,  0.8795515 ,  0.40937937, -1.45586381,  2.69826558,
+        1.15884968,  0.9996    ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]))}
+ 🧟‍♂️🧟‍♂️🧟‍♂️🧟‍♂️ Dataloader Exhuasted/First Epoch: creating a new iterator over the dataloader. 🧟‍♂️🧟‍♂️🧟‍♂️🧟‍♂️
+23:59:08.865 [I] Progress on: -/10000 rate:- remaining:? elapsed:00:00 postfix:-                  (261590:tqdm_logging.py:145)
+2026-08-19 23:59:22.920849: W external/xla/xla/tsl/framework/bfc_allocator.cc:501] Allocator (GPU_0_bfc) ran out of memory trying to allocate 27.79GiB (rounded to 29834447616)requested by op 
+If the cause is memory fragmentation maybe the environment variable 'TF_GPU_ALLOCATOR=cuda_malloc_async' will improve the situation. 
+Current allocation summary follows.
+Current allocation summary follows.
+2026-08-19 23:59:22.921248: W external/xla/xla/tsl/framework/bfc_allocator.cc:512] *______________**************************************************************_______________________
+E0819 23:59:22.921325  261590 pjrt_stream_executor_client.cc:2916] Execution of replica 0 failed: RESOURCE_EXHAUSTED: Out of memory while trying to allocate 29834447448 bytes. [tf-allocator-allocation-error='']
+23:59:22.928 [I] Progress on: -/10000 rate:- remaining:? elapsed:00:14 postfix:-                  (261590:tqdm_logging.py:145)
+Traceback (most recent call last):
+  File "/root/RETAIN_code/scripts/train.py", line 399, in <module>
+    main(_config.cli())
+  File "/root/RETAIN_code/scripts/train.py", line 379, in main
+    train_state, info = ptrain_step(train_rng, train_state, batch)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+jaxlib._jax.XlaRuntimeError: RESOURCE_EXHAUSTED: Out of memory while trying to allocate 29834447448 bytes.
+--------------------
+For simplicity, JAX has removed its internal frames from the traceback of the following exception. Set JAX_TRACEBACK_FILTERING=off to include these.
+2026-08-20 00:19:30.488612: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1787185170.503755  268833 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1787185170.508518  268833 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1787185172.708271  268833 gpu_device.cc:2433] TensorFlow was not built with CUDA kernel binaries compatible with compute capability 12.0. CUDA kernels will be jit-compiled from PTX, which could take 30 minutes or longer.
+00:19:34.084 [I] Running on: lhy-1                                                                (268833:train.py:301)
+INFO:2026-08-20 00:19:34,222:jax._src.xla_bridge:752: Unable to initialize backend 'tpu': INTERNAL: Failed to open libtpu.so: libtpu.so: cannot open shared object file: No such file or directory
+00:19:34.222 [I] Unable to initialize backend 'tpu': INTERNAL: Failed to open libtpu.so: libtpu.so: cannot open shared object file: No such file or directory (268833:xla_bridge.py:752)
+00:19:36.563 [I] Created BasePyTreeCheckpointHandler: pytree_metadata_options=PyTreeMetadataOptions(support_rich_types=False), array_metadata_store=None (268833:base_pytree_checkpoint_handler.py:332)
+00:19:36.563 [I] Created BasePyTreeCheckpointHandler: pytree_metadata_options=PyTreeMetadataOptions(support_rich_types=False), array_metadata_store=None (268833:base_pytree_checkpoint_handler.py:332)
+00:19:36.564 [I] [thread=MainThread] Failed to get flag value for EXPERIMENTAL_ORBAX_USE_DISTRIBUTED_PROCESS_ID. (268833:multihost.py:375)
+00:19:36.564 [I] [process=0][thread=MainThread] CheckpointManager init: checkpointers=None, item_names=None, item_handlers={'assets': <openpi.training.checkpoints.CallbackHandler object at 0x794479073a10>, 'train_state': <orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler object at 0x794479320e50>, 'params': <orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler object at 0x79447901b050>}, handler_registry=None (268833:checkpoint_manager.py:622)
+00:19:36.564 [I] Deferred registration for item: "assets". Adding handler `<openpi.training.checkpoints.CallbackHandler object at 0x794479073a10>` for item "assets" and save args `<class 'openpi.training.checkpoints.CallbackSave'>` and restore args `<class 'openpi.training.checkpoints.CallbackRestore'>` to `_handler_registry`. (268833:composite_checkpoint_handler.py:239)
+00:19:36.564 [I] Deferred registration for item: "train_state". Adding handler `<orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler object at 0x794479320e50>` for item "train_state" and save args `<class 'orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeSaveArgs'>` and restore args `<class 'orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeRestoreArgs'>` to `_handler_registry`. (268833:composite_checkpoint_handler.py:239)
+00:19:36.564 [I] Deferred registration for item: "params". Adding handler `<orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler object at 0x79447901b050>` for item "params" and save args `<class 'orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeSaveArgs'>` and restore args `<class 'orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeRestoreArgs'>` to `_handler_registry`. (268833:composite_checkpoint_handler.py:239)
+00:19:36.564 [I] Deferred registration for item: "metrics". Adding handler `<orbax.checkpoint._src.handlers.json_checkpoint_handler.JsonCheckpointHandler object at 0x794479322550>` for item "metrics" and save args `<class 'orbax.checkpoint._src.handlers.json_checkpoint_handler.JsonSaveArgs'>` and restore args `<class 'orbax.checkpoint._src.handlers.json_checkpoint_handler.JsonRestoreArgs'>` to `_handler_registry`. (268833:composite_checkpoint_handler.py:239)
+00:19:36.564 [I] Initialized registry DefaultCheckpointHandlerRegistry({('assets', <class 'openpi.training.checkpoints.CallbackSave'>): <openpi.training.checkpoints.CallbackHandler object at 0x794479073a10>, ('assets', <class 'openpi.training.checkpoints.CallbackRestore'>): <openpi.training.checkpoints.CallbackHandler object at 0x794479073a10>, ('train_state', <class 'orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeSaveArgs'>): <orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler object at 0x794479320e50>, ('train_state', <class 'orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeRestoreArgs'>): <orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler object at 0x794479320e50>, ('params', <class 'orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeSaveArgs'>): <orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler object at 0x79447901b050>, ('params', <class 'orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeRestoreArgs'>): <orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler object at 0x79447901b050>, ('metrics', <class 'orbax.checkpoint._src.handlers.json_checkpoint_handler.JsonSaveArgs'>): <orbax.checkpoint._src.handlers.json_checkpoint_handler.JsonCheckpointHandler object at 0x794479322550>, ('metrics', <class 'orbax.checkpoint._src.handlers.json_checkpoint_handler.JsonRestoreArgs'>): <orbax.checkpoint._src.handlers.json_checkpoint_handler.JsonCheckpointHandler object at 0x794479322550>}). (268833:composite_checkpoint_handler.py:508)
+00:19:36.565 [I] orbax-checkpoint version: 0.11.1                                                 (268833:abstract_checkpointer.py:35)
+00:19:36.565 [I] [process=0][thread=MainThread] Using barrier_sync_fn: <function get_barrier_sync_fn.<locals>.<lambda> at 0x794478a66b60> timeout: 7200 secs and primary_host=0 for async checkpoint writes (268833:async_checkpointer.py:80)
+00:19:36.566 [I] Found 0 checkpoint steps in /shared/.cache/retain/checkpoints/retain_repro_pretrain/paper_final_hparams (268833:checkpoint_manager.py:1528)
+00:19:36.566 [I] Saving root metadata                                                             (268833:checkpoint_manager.py:1569)
+00:19:36.566 [I] [process=0][thread=MainThread] Skipping global process sync, barrier name: CheckpointManager:save_metadata (268833:multihost.py:293)
+00:19:36.566 [I] [process=0][thread=MainThread] CheckpointManager created,  primary_host=0, CheckpointManagerOptions=CheckpointManagerOptions(save_interval_steps=1, max_to_keep=1, keep_time_interval=None, keep_period=None, should_keep_fn=None, best_fn=None, best_mode='max', keep_checkpoints_without_metrics=True, step_prefix=None, step_format_fixed_length=None, step_name_format=None, create=False, cleanup_tmp_directories=False, save_on_steps=frozenset(), single_host_load_and_broadcast=False, todelete_subdir=None, enable_background_delete=False, read_only=False, enable_async_checkpointing=True, async_options=AsyncOptions(timeout_secs=7200, barrier_sync_fn=None, post_finalization_callback=None, create_directories_asynchronously=False), multiprocessing_options=MultiprocessingOptions(primary_host=0, active_processes=None, barrier_sync_key_prefix=None), should_save_fn=None, file_options=FileOptions(path_permission_mode=None), save_root_metadata=True, temporary_path_class=None, save_decision_policy=None), root_directory=/shared/.cache/retain/checkpoints/retain_repro_pretrain/paper_final_hparams: <orbax.checkpoint.checkpoint_manager.CheckpointManager object at 0x79447918da50> (268833:checkpoint_manager.py:797)
+00:19:36.566 [I] Checkpoint directory exists, but does not contain any checkpoints. Aborting resume. (268833:checkpoints.py:55)
+00:19:36.660 [I] Loaded norm stats from assets/pi0_libero_pretrain                                (268833:config.py:197)
+00:19:36.726 [I] Loaded norm stats from assets/pi0_libero_pretrain                                (268833:config.py:197)
+00:19:36.793 [I] Loaded norm stats from assets/pi0_libero_pretrain                                (268833:config.py:197)
+00:19:36.859 [I] Loaded norm stats from assets/pi0_libero_pretrain                                (268833:config.py:197)
+00:19:36.927 [I] Loaded norm stats from assets/pi0_libero_pretrain                                (268833:config.py:197)
+00:19:37.029 [I] Load dataset info from /shared/.cache/retain/libero/datasets/libero_goal_reduced/1.0.0 (268833:dataset_info.py:707)
+00:19:37.037 [I] Creating a tf.data.Dataset reading 16 files located in folders: /shared/.cache/retain/libero/datasets/libero_goal_reduced/1.0.0. (268833:reader.py:262)
+00:19:37.105 [I] Constructing tf.data.Dataset libero_goal_reduced for split all, from /shared/.cache/retain/libero/datasets/libero_goal_reduced/1.0.0 (268833:logging_logger.py:49)
+00:19:37.340 [I] Creating a tf.data.Dataset reading 16 files located in folders: /shared/.cache/retain/libero/datasets/libero_goal_reduced/1.0.0. (268833:reader.py:262)
+00:19:37.368 [I] Constructing tf.data.Dataset libero_goal_reduced for split train, from /shared/.cache/retain/libero/datasets/libero_goal_reduced/1.0.0 (268833:logging_logger.py:49)
+00:19:37.428 [I] Load dataset info from /shared/.cache/retain/libero/datasets/libero_object_reduced/1.0.0 (268833:dataset_info.py:707)
+00:19:37.435 [I] Creating a tf.data.Dataset reading 32 files located in folders: /shared/.cache/retain/libero/datasets/libero_object_reduced/1.0.0. (268833:reader.py:262)
+00:19:37.459 [I] Constructing tf.data.Dataset libero_object_reduced for split all, from /shared/.cache/retain/libero/datasets/libero_object_reduced/1.0.0 (268833:logging_logger.py:49)
+00:19:37.519 [I] Creating a tf.data.Dataset reading 32 files located in folders: /shared/.cache/retain/libero/datasets/libero_object_reduced/1.0.0. (268833:reader.py:262)
+00:19:37.543 [I] Constructing tf.data.Dataset libero_object_reduced for split train, from /shared/.cache/retain/libero/datasets/libero_object_reduced/1.0.0 (268833:logging_logger.py:49)
+00:19:37.606 [I] Load dataset info from /shared/.cache/retain/libero/datasets/libero_spatial_reduced/1.0.0 (268833:dataset_info.py:707)
+00:19:37.612 [I] Creating a tf.data.Dataset reading 16 files located in folders: /shared/.cache/retain/libero/datasets/libero_spatial_reduced/1.0.0. (268833:reader.py:262)
+00:19:37.636 [I] Constructing tf.data.Dataset libero_spatial_reduced for split all, from /shared/.cache/retain/libero/datasets/libero_spatial_reduced/1.0.0 (268833:logging_logger.py:49)
+00:19:37.695 [I] Creating a tf.data.Dataset reading 16 files located in folders: /shared/.cache/retain/libero/datasets/libero_spatial_reduced/1.0.0. (268833:reader.py:262)
+00:19:37.720 [I] Constructing tf.data.Dataset libero_spatial_reduced for split train, from /shared/.cache/retain/libero/datasets/libero_spatial_reduced/1.0.0 (268833:logging_logger.py:49)
+00:19:37.780 [I] Load dataset info from /shared/.cache/retain/libero/datasets/libero_90_flipped/1.0.0 (268833:dataset_info.py:707)
+00:19:37.796 [I] Creating a tf.data.Dataset reading 256 files located in folders: /shared/.cache/retain/libero/datasets/libero_90_flipped/1.0.0. (268833:reader.py:262)
+00:19:37.826 [I] Constructing tf.data.Dataset libero_90_flipped for split all, from /shared/.cache/retain/libero/datasets/libero_90_flipped/1.0.0 (268833:logging_logger.py:49)
+00:19:37.905 [I] Creating a tf.data.Dataset reading 256 files located in folders: /shared/.cache/retain/libero/datasets/libero_90_flipped/1.0.0. (268833:reader.py:262)
+00:19:37.935 [I] Constructing tf.data.Dataset libero_90_flipped for split train, from /shared/.cache/retain/libero/datasets/libero_90_flipped/1.0.0 (268833:logging_logger.py:49)
+00:19:38.012 [I] Load dataset info from /shared/.cache/retain/libero/datasets/libero_goal_reduced/1.0.0 (268833:dataset_info.py:707)
+00:19:38.018 [I] Creating a tf.data.Dataset reading 16 files located in folders: /shared/.cache/retain/libero/datasets/libero_goal_reduced/1.0.0. (268833:reader.py:262)
+00:19:38.044 [I] Constructing tf.data.Dataset libero_goal_reduced for split train, from /shared/.cache/retain/libero/datasets/libero_goal_reduced/1.0.0 (268833:logging_logger.py:49)
+00:19:38.649 [W] future_action_window_size > 0 but no absolute_action_mask was provided. Assuming all actions are relative for the purpose of making neutral actions. (268833:function_wrappers.py:112)
+00:19:39.824 [W] No resize_size was provided for image_primary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (268833:api.py:460)
+00:19:39.829 [W] No resize_size was provided for image_wrist. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (268833:api.py:460)
+00:19:39.833 [W] No resize_size was provided for image_secondary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (268833:api.py:460)
+00:19:39.850 [I] Load dataset info from /shared/.cache/retain/libero/datasets/libero_object_reduced/1.0.0 (268833:dataset_info.py:707)
+00:19:39.857 [I] Creating a tf.data.Dataset reading 32 files located in folders: /shared/.cache/retain/libero/datasets/libero_object_reduced/1.0.0. (268833:reader.py:262)
+00:19:39.882 [I] Constructing tf.data.Dataset libero_object_reduced for split train, from /shared/.cache/retain/libero/datasets/libero_object_reduced/1.0.0 (268833:logging_logger.py:49)
+00:19:39.971 [W] future_action_window_size > 0 but no absolute_action_mask was provided. Assuming all actions are relative for the purpose of making neutral actions. (268833:function_wrappers.py:112)
+00:19:40.003 [W] No resize_size was provided for image_primary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (268833:api.py:460)
+00:19:40.007 [W] No resize_size was provided for image_wrist. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (268833:api.py:460)
+00:19:40.010 [W] No resize_size was provided for image_secondary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (268833:api.py:460)
+00:19:40.028 [I] Load dataset info from /shared/.cache/retain/libero/datasets/libero_spatial_reduced/1.0.0 (268833:dataset_info.py:707)
+00:19:40.034 [I] Creating a tf.data.Dataset reading 16 files located in folders: /shared/.cache/retain/libero/datasets/libero_spatial_reduced/1.0.0. (268833:reader.py:262)
+00:19:40.059 [I] Constructing tf.data.Dataset libero_spatial_reduced for split train, from /shared/.cache/retain/libero/datasets/libero_spatial_reduced/1.0.0 (268833:logging_logger.py:49)
+00:19:40.153 [W] future_action_window_size > 0 but no absolute_action_mask was provided. Assuming all actions are relative for the purpose of making neutral actions. (268833:function_wrappers.py:112)
+00:19:40.186 [W] No resize_size was provided for image_primary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (268833:api.py:460)
+00:19:40.190 [W] No resize_size was provided for image_wrist. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (268833:api.py:460)
+00:19:40.193 [W] No resize_size was provided for image_secondary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (268833:api.py:460)
+00:19:40.209 [I] Load dataset info from /shared/.cache/retain/libero/datasets/libero_90_flipped/1.0.0 (268833:dataset_info.py:707)
+00:19:40.225 [I] Creating a tf.data.Dataset reading 256 files located in folders: /shared/.cache/retain/libero/datasets/libero_90_flipped/1.0.0. (268833:reader.py:262)
+00:19:40.257 [I] Constructing tf.data.Dataset libero_90_flipped for split train, from /shared/.cache/retain/libero/datasets/libero_90_flipped/1.0.0 (268833:logging_logger.py:49)
+00:19:40.365 [W] future_action_window_size > 0 but no absolute_action_mask was provided. Assuming all actions are relative for the purpose of making neutral actions. (268833:function_wrappers.py:112)
+00:19:40.398 [W] No resize_size was provided for image_primary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (268833:api.py:460)
+00:19:40.402 [W] No resize_size was provided for image_wrist. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (268833:api.py:460)
+00:19:40.406 [W] No resize_size was provided for image_secondary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images. (268833:api.py:460)
+00:19:46.325 [I] Initialized data loader:
+[0].images['base_0_rgb']: (64, 224, 224, 3)@float32
+[0].images['left_wrist_0_rgb']: (64, 224, 224, 3)@float32
+[0].images['right_wrist_0_rgb']: (64, 224, 224, 3)@float32
+[0].image_masks['base_0_rgb']: (64,)@bool
+[0].image_masks['left_wrist_0_rgb']: (64,)@bool
+[0].image_masks['right_wrist_0_rgb']: (64,)@bool
+[0].state: (64, 32)@float32
+[0].tokenized_prompt: (64, 48)@int32
+[0].tokenized_prompt_mask: (64, 48)@bool
+[1]: (64, 50, 32)@float32 (268833:train.py:341)
+wandb: WARNING Data passed to `wandb.Image` should consist of values in the range [0, 255], image data will be normalized to this range, but behavior will be removed in a future version of wandb.
+00:19:46.603 [I] LR Schedule Config: CosineDecaySchedule(warmup_steps=1000, peak_lr=2.5e-05, decay_steps=30000, decay_lr=2.5e-06) (268833:train.py:90)
+00:19:46.603 [I] Optimizer Config: AdamW(b1=0.9, b2=0.95, eps=1e-08, weight_decay=1e-10, clip_gradient_norm=1.0) (268833:train.py:91)
+00:19:53.651 [I] Loading weights into partial_params                                              (268833:train.py:127)
+00:19:53.652 [I] Created BasePyTreeCheckpointHandler: pytree_metadata_options=PyTreeMetadataOptions(support_rich_types=False), array_metadata_store=None (268833:base_pytree_checkpoint_handler.py:332)
+00:19:53.676 [I] Restoring checkpoint from /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params. (268833:checkpointer.py:256)
+00:20:15.754 [I] [process=0] /jax/checkpoint/read/bytes_per_sec: 559.5 MiB/s (total bytes: 12.1 GiB) (time elapsed: 22 seconds) (per-host) (268833:base_pytree_checkpoint_handler.py:113)
+00:20:15.755 [I] Finished restoring checkpoint from /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params. (268833:checkpointer.py:259)
+00:20:15.755 [I] [process=0][thread=MainThread] Skipping global process sync, barrier name: Checkpointer:restore (268833:multihost.py:293)
+00:20:38.873 [I] Finished loading weights                                                         (268833:train.py:130)
+2026-08-20 00:20:38.956257: W external/xla/xla/hlo/transforms/simplifiers/hlo_rematerialization.cc:3023] Can't reduce memory use below 13.33GiB (14317516845 bytes) by rematerialization; only reduced to 48.25GiB (51808779708 bytes), down from 48.25GiB (51808779708 bytes) originally
+00:20:41.563 [I] Initialized train state:
+['PaliGemma']['img']['Transformer']['encoder_norm']['bias'].value: (1152,)@float32
+['PaliGemma']['img']['Transformer']['encoder_norm']['scale'].value: (1152,)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['LayerNorm_0']['bias'].value: (27, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['LayerNorm_0']['scale'].value: (27, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['LayerNorm_1']['bias'].value: (27, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['LayerNorm_1']['scale'].value: (27, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MlpBlock_0']['Dense_0']['bias'].value: (27, 4304)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MlpBlock_0']['Dense_0']['kernel'].value: (27, 1152, 4304)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MlpBlock_0']['Dense_1']['bias'].value: (27, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MlpBlock_0']['Dense_1']['kernel'].value: (27, 4304, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['key']['bias'].value: (27, 16, 72)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['key']['kernel'].value: (27, 1152, 16, 72)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['out']['bias'].value: (27, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['out']['kernel'].value: (27, 16, 72, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['query']['bias'].value: (27, 16, 72)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['query']['kernel'].value: (27, 1152, 16, 72)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['value']['bias'].value: (27, 16, 72)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['value']['kernel'].value: (27, 1152, 16, 72)@float32
+['PaliGemma']['img']['embedding']['bias'].value: (1152,)@float32
+['PaliGemma']['img']['embedding']['kernel'].value: (14, 14, 3, 1152)@float32
+['PaliGemma']['img']['head']['bias'].value: (2048,)@float32
+['PaliGemma']['img']['head']['kernel'].value: (1152, 2048)@float32
+['PaliGemma']['img']['pos_embedding'].value: (1, 256, 1152)@float32
+['PaliGemma']['llm']['embedder']['input_embedding'].value: (257152, 2048)@float32
+['PaliGemma']['llm']['final_norm']['scale'].value: (2048,)@float32
+['PaliGemma']['llm']['final_norm_1']['scale'].value: (1024,)@float32
+['PaliGemma']['llm']['layers']['attn']['attn_vec_einsum']['w'].value: (18, 8, 256, 2048)@float32
+['PaliGemma']['llm']['layers']['attn']['attn_vec_einsum_1']['w'].value: (18, 8, 256, 1024)@float32
+['PaliGemma']['llm']['layers']['attn']['kv_einsum']['w'].value: (18, 2, 1, 2048, 256)@float32
+['PaliGemma']['llm']['layers']['attn']['kv_einsum_1']['w'].value: (18, 2, 1, 1024, 256)@float32
+['PaliGemma']['llm']['layers']['attn']['q_einsum']['w'].value: (18, 8, 2048, 256)@float32
+['PaliGemma']['llm']['layers']['attn']['q_einsum_1']['w'].value: (18, 8, 1024, 256)@float32
+['PaliGemma']['llm']['layers']['mlp']['gating_einsum'].value: (18, 2, 2048, 16384)@float32
+['PaliGemma']['llm']['layers']['mlp']['linear'].value: (18, 16384, 2048)@float32
+['PaliGemma']['llm']['layers']['mlp_1']['gating_einsum'].value: (18, 2, 1024, 4096)@float32
+['PaliGemma']['llm']['layers']['mlp_1']['linear'].value: (18, 4096, 1024)@float32
+['PaliGemma']['llm']['layers']['pre_attention_norm']['scale'].value: (18, 2048)@float32
+['PaliGemma']['llm']['layers']['pre_attention_norm_1']['scale'].value: (18, 1024)@float32
+['PaliGemma']['llm']['layers']['pre_ffw_norm']['scale'].value: (18, 2048)@float32
+['PaliGemma']['llm']['layers']['pre_ffw_norm_1']['scale'].value: (18, 1024)@float32
+['action_in_proj']['bias'].value: (1024,)@float32
+['action_in_proj']['kernel'].value: (32, 1024)@float32
+['action_out_proj']['bias'].value: (32,)@float32
+['action_out_proj']['kernel'].value: (1024, 32)@float32
+['action_time_mlp_in']['bias'].value: (1024,)@float32
+['action_time_mlp_in']['kernel'].value: (2048, 1024)@float32
+['action_time_mlp_out']['bias'].value: (1024,)@float32
+['action_time_mlp_out']['kernel'].value: (1024, 1024)@float32
+['state_proj']['bias'].value: (1024,)@float32
+['state_proj']['kernel'].value: (32, 1024)@float32 (268833:train.py:355)
+00:20:41.564 [I] Trainable params:
+['PaliGemma']['img']['Transformer']['encoder_norm']['bias'].value: (1152,)@float32
+['PaliGemma']['img']['Transformer']['encoder_norm']['scale'].value: (1152,)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['LayerNorm_0']['bias'].value: (27, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['LayerNorm_0']['scale'].value: (27, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['LayerNorm_1']['bias'].value: (27, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['LayerNorm_1']['scale'].value: (27, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MlpBlock_0']['Dense_0']['bias'].value: (27, 4304)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MlpBlock_0']['Dense_0']['kernel'].value: (27, 1152, 4304)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MlpBlock_0']['Dense_1']['bias'].value: (27, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MlpBlock_0']['Dense_1']['kernel'].value: (27, 4304, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['key']['bias'].value: (27, 16, 72)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['key']['kernel'].value: (27, 1152, 16, 72)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['out']['bias'].value: (27, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['out']['kernel'].value: (27, 16, 72, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['query']['bias'].value: (27, 16, 72)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['query']['kernel'].value: (27, 1152, 16, 72)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['value']['bias'].value: (27, 16, 72)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['value']['kernel'].value: (27, 1152, 16, 72)@float32
+['PaliGemma']['img']['embedding']['bias'].value: (1152,)@float32
+['PaliGemma']['img']['embedding']['kernel'].value: (14, 14, 3, 1152)@float32
+['PaliGemma']['img']['head']['bias'].value: (2048,)@float32
+['PaliGemma']['img']['head']['kernel'].value: (1152, 2048)@float32
+['PaliGemma']['img']['pos_embedding'].value: (1, 256, 1152)@float32
+['PaliGemma']['llm']['embedder']['input_embedding'].value: (257152, 2048)@float32
+['PaliGemma']['llm']['final_norm']['scale'].value: (2048,)@float32
+['PaliGemma']['llm']['final_norm_1']['scale'].value: (1024,)@float32
+['PaliGemma']['llm']['layers']['attn']['attn_vec_einsum']['w'].value: (18, 8, 256, 2048)@float32
+['PaliGemma']['llm']['layers']['attn']['attn_vec_einsum_1']['w'].value: (18, 8, 256, 1024)@float32
+['PaliGemma']['llm']['layers']['attn']['kv_einsum']['w'].value: (18, 2, 1, 2048, 256)@float32
+['PaliGemma']['llm']['layers']['attn']['kv_einsum_1']['w'].value: (18, 2, 1, 1024, 256)@float32
+['PaliGemma']['llm']['layers']['attn']['q_einsum']['w'].value: (18, 8, 2048, 256)@float32
+['PaliGemma']['llm']['layers']['attn']['q_einsum_1']['w'].value: (18, 8, 1024, 256)@float32
+['PaliGemma']['llm']['layers']['mlp']['gating_einsum'].value: (18, 2, 2048, 16384)@float32
+['PaliGemma']['llm']['layers']['mlp']['linear'].value: (18, 16384, 2048)@float32
+['PaliGemma']['llm']['layers']['mlp_1']['gating_einsum'].value: (18, 2, 1024, 4096)@float32
+['PaliGemma']['llm']['layers']['mlp_1']['linear'].value: (18, 4096, 1024)@float32
+['PaliGemma']['llm']['layers']['pre_attention_norm']['scale'].value: (18, 2048)@float32
+['PaliGemma']['llm']['layers']['pre_attention_norm_1']['scale'].value: (18, 1024)@float32
+['PaliGemma']['llm']['layers']['pre_ffw_norm']['scale'].value: (18, 2048)@float32
+['PaliGemma']['llm']['layers']['pre_ffw_norm_1']['scale'].value: (18, 1024)@float32
+['action_in_proj']['bias'].value: (1024,)@float32
+['action_in_proj']['kernel'].value: (32, 1024)@float32
+['action_out_proj']['bias'].value: (32,)@float32
+['action_out_proj']['kernel'].value: (1024, 32)@float32
+['action_time_mlp_in']['bias'].value: (1024,)@float32
+['action_time_mlp_in']['kernel'].value: (2048, 1024)@float32
+['action_time_mlp_out']['bias'].value: (1024,)@float32
+['action_time_mlp_out']['kernel'].value: (1024, 1024)@float32
+['state_proj']['bias'].value: (1024,)@float32
+['state_proj']['kernel'].value: (32, 1024)@float32 (268833:train.py:356)
+THIS DATASET HAS NUM_TRAJECTORIES 349  AND NUM_TRANSITIONS 39799
+THIS DATASET HAS NUM_TRAJECTORIES 365  AND NUM_TRANSITIONS 53739
+THIS DATASET HAS NUM_TRAJECTORIES 343  AND NUM_TRANSITIONS 42391
+THIS DATASET HAS NUM_TRAJECTORIES 3917  AND NUM_TRANSITIONS 567494
+
+######################################################################################
+# Loading the following 4 datasets (incl. sampling weight):                         #
+# libero_goal_reduced: =====================================================0.070376 #
+# libero_object_reduced: ===================================================0.090581 #
+# libero_spatial_reduced: ==================================================0.071630 #
+# libero_90_flipped: =======================================================0.767413 #
+######################################################################################
+
+norm_stats are  {'state': NormStats(mean=array([-0.07459474,  0.01886539,  0.89401907,  3.00154734, -0.11657909,
+       -0.09116436,  0.02634243, -0.02669393,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]), std=array([0.11267885, 0.14551789, 0.30485129, 0.38380396, 0.88596892,
+       0.30852371, 0.0146244 , 0.01449694, 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        ]), q01=array([-4.04978513e-01, -2.75643894e-01,  1.03451522e-01,  1.45384380e+00,
+       -2.69716187e+00, -1.19477866e+00,  1.64143040e-03, -4.00380769e-02,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00]), q99=array([ 1.25709046e-01,  3.27069047e-01,  1.25547892e+00,  3.66470913e+00,
+        2.30573786e+00,  5.80337930e-01,  4.02928781e-02, -1.70643236e-03,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00])), 'actions': NormStats(mean=array([ 0.13082495,  0.03510264, -0.99502772, -2.99781322,  0.11946776,
+        0.08388595, -0.0420391 ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]), std=array([0.34118709, 0.37048841, 0.53519309, 0.3816036 , 0.88830632,
+       0.3197473 , 0.99911594, 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        ]), q01=array([-0.62691881, -0.85612705, -1.98400122, -3.60055661, -2.32860803,
+       -0.6173897 , -1.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]), q99=array([ 1.01273111,  0.8795515 ,  0.40937937, -1.45586381,  2.69826558,
+        1.15884968,  0.9996    ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]))}
+ 🧟‍♂️🧟‍♂️🧟‍♂️🧟‍♂️ Dataloader Exhuasted/First Epoch: creating a new iterator over the dataloader. 🧟‍♂️🧟‍♂️🧟‍♂️🧟‍♂️
+00:20:41.574 [I] Progress on: -/10000 rate:- remaining:? elapsed:00:00 postfix:-                  (268833:tqdm_logging.py:145)
+2026-08-20 00:20:55.524529: W external/xla/xla/tsl/framework/bfc_allocator.cc:501] Allocator (GPU_0_bfc) ran out of memory trying to allocate 27.79GiB (rounded to 29834447616)requested by op 
+If the cause is memory fragmentation maybe the environment variable 'TF_GPU_ALLOCATOR=cuda_malloc_async' will improve the situation. 
+Current allocation summary follows.
+Current allocation summary follows.
+2026-08-20 00:20:55.524855: W external/xla/xla/tsl/framework/bfc_allocator.cc:512] *__________________*******************************************************************************__
+E0820 00:20:55.524922  268833 pjrt_stream_executor_client.cc:2916] Execution of replica 0 failed: RESOURCE_EXHAUSTED: Out of memory while trying to allocate 29834447448 bytes. [tf-allocator-allocation-error='']
+00:20:55.529 [I] Progress on: -/10000 rate:- remaining:? elapsed:00:13 postfix:-                  (268833:tqdm_logging.py:145)
+Traceback (most recent call last):
+  File "/root/RETAIN_code/scripts/train.py", line 399, in <module>
+    main(_config.cli())
+  File "/root/RETAIN_code/scripts/train.py", line 379, in main
+    train_state, info = ptrain_step(train_rng, train_state, batch)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+jaxlib._jax.XlaRuntimeError: RESOURCE_EXHAUSTED: Out of memory while trying to allocate 29834447448 bytes.
+--------------------
+For simplicity, JAX has removed its internal frames from the traceback of the following exception. Set JAX_TRACEBACK_FILTERING=off to include these.

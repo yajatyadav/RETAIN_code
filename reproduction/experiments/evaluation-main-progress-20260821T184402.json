@@ -1,0 +1,117 @@
+{
+  "protocol_id": "RETAIN-GPU-20260819-001",
+  "captured_at": "2026-08-21T18:44:02+08:00",
+  "status": "taskft_mugs_complete_selected_retain_taskft_mugs_a070_id_running",
+  "pipeline": {
+    "service": "retain-reproduction.service",
+    "active": true,
+    "pipeline_pid": 1886,
+    "current_policy": "retain_taskft_mugs_a070",
+    "policy_server_pid": 319859,
+    "evaluator_pid": 320641,
+    "physical_gpu_index": 0,
+    "completed_alpha_jobs": 270,
+    "completed_main_jobs": 202,
+    "completed_jobs_in_status": 472,
+    "failed_job": null
+  },
+  "completed_policy": {
+    "policy": "taskft_mugs",
+    "jobs": 36,
+    "episodes": 370,
+    "successes": 104,
+    "episode_errors": 0,
+    "video_count": 370,
+    "video_bytes": 34435718,
+    "target_task": {
+      "ID": {"successes": 13, "episodes": 20, "success_rate": 0.65, "pretrain_success_rate": 0.0, "delta_vs_pretrain": 0.65},
+      "OOD_MEDIUM": {"successes_by_seed": [5, 4, 5, 7, 5], "successes": 26, "episodes": 50, "success_rate": 0.52, "pretrain_success_rate": 0.0, "delta_vs_pretrain": 0.52},
+      "OOD_HARD": {"successes_by_condition": [4, 0, 2, 0, 3, 0, 4, 0, 2, 0], "successes": 15, "episodes": 100, "success_rate": 0.15, "pretrain_success_rate": 0.0, "delta_vs_pretrain": 0.15, "set_0_success_rate": 0.3, "set_1_success_rate": 0.0}
+    },
+    "generalist_retention": {
+      "task_successes": [10, 0, 0, 0, 9, 0, 2, 4, 0, 1, 0, 4, 4, 4, 0, 5, 0, 0, 2, 5],
+      "successes": 50,
+      "episodes": 200,
+      "success_rate": 0.25,
+      "pretrain_successes": 133,
+      "pretrain_episodes": 200,
+      "pretrain_success_rate": 0.665,
+      "delta_vs_pretrain": -0.415,
+      "by_suite": {
+        "libero_90": {"successes": 19, "episodes": 50, "success_rate": 0.38, "pretrain_success_rate": 0.82, "delta_vs_pretrain": -0.44},
+        "libero_goal": {"successes": 7, "episodes": 50, "success_rate": 0.14, "pretrain_success_rate": 0.62, "delta_vs_pretrain": -0.48},
+        "libero_object": {"successes": 12, "episodes": 50, "success_rate": 0.24, "pretrain_success_rate": 0.66, "delta_vs_pretrain": -0.42},
+        "libero_spatial": {"task_successes": [5, 0, 0, 2, 5], "successes": 12, "episodes": 50, "success_rate": 0.24, "pretrain_success_rate": 0.56, "delta_vs_pretrain": -0.32}
+      },
+      "status": "complete"
+    }
+  },
+  "alpha_selection": {
+    "selected_policy": "retain_taskft_mugs_a070",
+    "selected_alpha": 0.7,
+    "selected_weights": [0.7, 0.3],
+    "selection_successes": 21,
+    "selection_episodes": 50,
+    "selection_success_rate": 0.42,
+    "paper_alpha_policy": "retain_taskft_mugs_a080",
+    "paper_alpha": 0.8,
+    "paper_alpha_successes": 20,
+    "paper_alpha_episodes": 50,
+    "paper_alpha_success_rate": 0.4,
+    "selection_jobs_reused_for_main_pipeline": 5,
+    "selection_jobs_are_independent_main_evidence": false,
+    "correction_incident": "reproduction/experiments/incidents/mugs-alpha-selection-label-correction-20260821T1844.json"
+  },
+  "new_complete_jobs_since_previous_snapshot": [
+    {"job_key": "2ddb67a6bacb6e38", "policy": "taskft_mugs", "suite": "libero_spatial", "task": "pick up the black bowl next to the cookie box and place it on the plate", "successes": 2, "episodes": 10, "episode_errors": 0, "video_bytes": 651953},
+    {"job_key": "04b3dd54c9fbb01f", "policy": "taskft_mugs", "suite": "libero_spatial", "task": "pick up the black bowl next to the plate and place it on the plate", "successes": 5, "episodes": 10, "episode_errors": 0, "video_bytes": 469779}
+  ],
+  "global_complete_main_aggregate": {
+    "jobs": 202,
+    "episodes": 2090,
+    "successes": 658,
+    "episode_errors": 0,
+    "video_count": 2090,
+    "video_bytes": 226887565
+  },
+  "current_policy": {
+    "policy": "retain_taskft_mugs_a070",
+    "completed_independent_main_jobs": 0,
+    "reused_selection_jobs": 5
+  },
+  "current_job": {
+    "job_key": "f2939e45cd15edb2",
+    "eval_type": "ID",
+    "task": "mugs",
+    "seed": 7,
+    "planned_episodes": 20,
+    "observed_episodes_at_capture": 16,
+    "observed_successes_at_capture": 11,
+    "observed_errors_at_capture": 0,
+    "observed_video_bytes_at_capture": 1596827,
+    "summary_committed_at_capture": false,
+    "eligible_for_formal_comparison": false
+  },
+  "single_gpu_audit": {
+    "only_reproduction_compute_process": {"physical_gpu_index": 0, "pid": 319859, "memory_mib": 77036},
+    "constraint_satisfied": true
+  },
+  "resources": {
+    "gpu_memory_used_mib": [77049, 1, 18653, 1115, 79863, 79767, 79815, 79891],
+    "gpu_utilization_percent": [61, 0, 57, 1, 100, 100, 100, 100],
+    "host_available_bytes": 527444305920,
+    "root_free_bytes": 70547742720,
+    "shared_free_bytes": 101409562624
+  },
+  "monitoring_policy": {
+    "root_space": "monitor_and_record_only",
+    "root_space_is_a_stop_condition": false,
+    "all_known_evaluation_write_paths_on_shared": true
+  },
+  "validation": {
+    "service_active": true,
+    "single_physical_gpu_constraint": true,
+    "selection_set_reuse_labeled": true,
+    "fatal_error_matches": 0
+  }
+}

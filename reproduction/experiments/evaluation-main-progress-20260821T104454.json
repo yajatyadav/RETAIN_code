@@ -1,0 +1,69 @@
+{
+  "protocol_id": "RETAIN-GPU-20260819-001",
+  "captured_at": "2026-08-21T10:44:54+08:00",
+  "status": "main_evaluation_running",
+  "pipeline": {
+    "service": "retain-reproduction.service",
+    "active": true,
+    "pipeline_pid": 1292803,
+    "policy": "pretrain_117task",
+    "policy_server_pid": 1292933,
+    "physical_gpu_index": 0,
+    "completed_alpha_jobs": 270,
+    "completed_main_jobs": 1,
+    "completed_jobs_in_status": 271,
+    "failed_job": null
+  },
+  "completed_main_job": {
+    "index": 1,
+    "jobs_for_policy": 68,
+    "job_key": "9c6ca0ebb54e4e80",
+    "eval_type": "ID",
+    "task_suite": "libero_10",
+    "task_name": "turn on the stove and put the moka pot on it",
+    "seed": 7,
+    "episodes": 20,
+    "successes": 0,
+    "success_rate": 0.0,
+    "episode_errors": 0,
+    "video_count": 20,
+    "video_bytes": 3665683,
+    "finished_at": "2026-08-21T10:43:55.244377+08:00",
+    "interpretation_scope": "complete_single_job_observation_not_overall_policy_or_method_result"
+  },
+  "current_main_job": {
+    "index": 2,
+    "jobs_for_policy": 68,
+    "job_key": "9bb4dc20317b144b",
+    "eval_type": "OOD_MEDIUM",
+    "task_name": "turn on the stove and put the moka pot on it",
+    "seed": 1,
+    "planned_episodes": 10,
+    "observed_episodes": 3,
+    "observed_successes": 0,
+    "observed_errors": 0,
+    "evaluator_pid": 1300178,
+    "partial_observation_eligible_for_comparison": false
+  },
+  "single_gpu_audit": {
+    "policy_server_cuda_visible_devices": "0",
+    "evaluator_cuda_visible_devices": "",
+    "evaluator_egl_device_id": 0,
+    "compute_processes": [
+      {
+        "physical_gpu_index": 0,
+        "pid": 1292933,
+        "memory_mib": 77036,
+        "role": "policy_server"
+      }
+    ],
+    "constraint_satisfied": true
+  },
+  "resources": {
+    "gpu_memory_used_mib": [77050, 4, 3, 459, 48312, 48475, 47793, 47699],
+    "gpu_utilization_percent": [63, 0, 0, 2, 77, 73, 84, 65],
+    "host_available_bytes": 532133000000,
+    "shared_free_bytes": 132514447360,
+    "root_free_bytes": 10163593216
+  }
+}

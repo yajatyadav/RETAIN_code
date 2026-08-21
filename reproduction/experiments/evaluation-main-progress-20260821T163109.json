@@ -1,0 +1,78 @@
+{
+  "protocol_id": "RETAIN-GPU-20260819-001",
+  "captured_at": "2026-08-21T16:31:09+08:00",
+  "status": "retain_taskft_stove_a080_complete_retain_taskft_stove_a090_fourth_ood_hard_running",
+  "pipeline": {
+    "service": "retain-reproduction.service",
+    "active": true,
+    "pipeline_pid": 1886,
+    "current_policy": "retain_taskft_stove_a090",
+    "policy_server_pid": 82166,
+    "evaluator_pid": 99667,
+    "physical_gpu_index": 0,
+    "completed_alpha_jobs": 270,
+    "completed_main_jobs": 139,
+    "completed_jobs_in_status": 409,
+    "failed_job": null
+  },
+  "latest_completed_policy": {
+    "policy": "retain_taskft_stove_a080",
+    "status": "complete",
+    "independent_main_jobs": 31,
+    "ID": {"successes": 15, "episodes": 20, "success_rate": 0.75},
+    "OOD_HARD": {"successes": 50, "episodes": 100, "success_rate": 0.5},
+    "generalist_retention": {
+      "task_successes": [9, 7, 5, 3, 3, 0, 5, 10, 0, 6, 0, 0, 1, 1, 5, 6, 3, 1, 6, 5],
+      "successes": 76,
+      "episodes": 200,
+      "success_rate": 0.38,
+      "delta_vs_taskft": 0.065,
+      "delta_vs_pretrain": -0.285,
+      "forgetting_gap_recovery_fraction_vs_taskft": 0.18571428571428572
+    }
+  },
+  "current_policy": {
+    "policy": "retain_taskft_stove_a090",
+    "role": "paper_alpha_reference",
+    "completed_independent_jobs": 4,
+    "ID": {"successes": 14, "episodes": 20, "success_rate": 0.7, "delta_vs_selected_alpha": -0.05},
+    "OOD_MEDIUM_selection_set": {"successes": 28, "episodes": 50, "success_rate": 0.56, "independent_main_evidence": false},
+    "OOD_HARD": {
+      "completed_conditions": ["set_0_seed_1", "set_1_seed_1", "set_0_seed_21"],
+      "successes_by_condition": [5, 2, 9],
+      "successes": 16,
+      "episodes": 30,
+      "success_rate": 0.5333333333333333,
+      "status": "running_fourth_of_ten_conditions"
+    }
+  },
+  "global_complete_main_aggregate": {
+    "jobs": 139,
+    "episodes": 1450,
+    "successes": 451,
+    "episode_errors": 0,
+    "video_count": 1450,
+    "video_bytes": 167482326
+  },
+  "current_job": {
+    "job_key": "f7f2dcec26d24d98",
+    "eval_type": "OOD_HARD",
+    "condition": "set_1",
+    "seed": 21,
+    "planned_episodes": 10,
+    "observed_videos_at_capture": 1,
+    "observed_video_bytes_at_capture": 108593,
+    "summary_committed_at_capture": false
+  },
+  "monitoring_policy": {
+    "root_space": "monitor_and_record_only",
+    "root_space_is_a_stop_condition": false,
+    "all_known_evaluation_write_paths_on_shared": true
+  },
+  "validation": {
+    "service_active": true,
+    "single_physical_gpu_constraint": true,
+    "selection_set_reuse_labeled": true,
+    "fatal_error_matches": 0
+  }
+}

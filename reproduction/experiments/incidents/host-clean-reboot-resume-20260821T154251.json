@@ -1,0 +1,88 @@
+{
+  "incident_id": "host-clean-reboot-resume-20260821T154251",
+  "protocol_id": "RETAIN-GPU-20260819-001",
+  "stage": "main_evaluation_retain_taskft_stove_a080",
+  "classification": "external_clean_host_reboot_not_evaluation_failure",
+  "timeline": {
+    "last_completed_job_before_shutdown": {
+      "job_key": "c492b3b8bc41fd8b",
+      "description": "retain_taskft_stove_a080 OOD_HARD set-0 seed-61",
+      "finished_at": "2026-08-21T15:34:04.603327+08:00"
+    },
+    "clean_shutdown_started_at": "2026-08-21T15:34:26+08:00",
+    "previous_boot_journal_end_at": "2026-08-21T15:34:30+08:00",
+    "new_boot_at": "2026-08-21T15:38:53+08:00",
+    "ssh_restored_at": "2026-08-21T15:39:06+08:00",
+    "service_recreated_at": "2026-08-21T15:42:51+08:00",
+    "policy_loaded_at": "2026-08-21T15:42:56.823002+08:00",
+    "interrupted_job_rerun_started_at": "2026-08-21T15:43:44.835665+08:00"
+  },
+  "journal_evidence": {
+    "service_line": "retain-reproduction.service: Deactivated successfully",
+    "shutdown_sequence": [
+      "Stopped target Basic System",
+      "Unmounted /shared",
+      "Reached target System Shutdown",
+      "Starting System Halt"
+    ],
+    "interpretation": "orderly system halt; no crash, OOM, disk-full, or evaluation traceback identified"
+  },
+  "shared_state_preservation": {
+    "completed_jobs_before_restart": 382,
+    "completed_alpha_jobs": 270,
+    "completed_main_jobs": 112,
+    "failed_job": null,
+    "last_committed_policy_jobs": {
+      "pretrain_117task": 68,
+      "taskft_stove": 36,
+      "retain_taskft_stove_a080": 8
+    },
+    "interrupted_job_key": "5241a5c7920cc61d",
+    "interrupted_job_committed_before_shutdown": false,
+    "resume_behavior": "skip 382 completed jobs and rerun the uncommitted OOD_HARD set-1 seed-61 job"
+  },
+  "restart": {
+    "systemd_unit": "retain-reproduction.service",
+    "working_directory": "/root/RETAIN_code",
+    "command": "/root/RETAIN_code/.venv/bin/python reproduction/scripts/run_evaluation_pipeline.py --poll-seconds 60",
+    "evaluation_state_root": "/shared/.cache/retain/evaluation-state/RETAIN-GPU-20260819-001/evaluation-pipeline",
+    "service_log": "/shared/.cache/retain/evaluation-state/RETAIN-GPU-20260819-001/evaluation-service.log",
+    "tmpdir": "/shared/.cache/retain/tmp/evaluation",
+    "xdg_cache_home": "/shared/.cache/retain/cache/evaluation",
+    "pipeline_pid": 1886,
+    "policy_server_pid": 2148,
+    "evaluator_pid": 2940
+  },
+  "validation_at": "2026-08-21T15:45:10+08:00",
+  "validation": {
+    "service_state": "active_running",
+    "current_policy": "retain_taskft_stove_a080",
+    "policy_weights": [0.8, 0.2],
+    "physical_gpu_index": 0,
+    "only_reproduction_compute_pid": 2148,
+    "policy_memory_mib": 77036,
+    "interrupted_job_partial_videos_after_resume": 5,
+    "interrupted_job_partial_video_bytes": 798479,
+    "fatal_error_matches": 0,
+    "root_free_bytes": 84397969408,
+    "shared_free_bytes": 105771503616
+  },
+  "post_restart_continuity_validation": {
+    "validated_at": "2026-08-21T15:50:41+08:00",
+    "first_replayed_job_committed_at": "2026-08-21T15:46:16.017085+08:00",
+    "first_replayed_job_result": "OOD_HARD set-1 seed-61, 4/10 successes, 0 episode errors",
+    "subsequent_commits": [
+      "OOD_HARD set-0 seed-81, 7/10 successes, 0 episode errors",
+      "OOD_HARD set-1 seed-81, 5/10 successes, 0 episode errors"
+    ],
+    "completed_jobs_after_validation": 385,
+    "failed_job": null,
+    "ood_hard_group_complete": true,
+    "generalist_retention_started": true,
+    "outcome": "shared completed-job state survived the clean reboot and sequential evaluation resumed correctly"
+  },
+  "monitoring_policy": {
+    "root_space_is_a_stop_condition": false,
+    "root_space": "monitor_and_record_only"
+  }
+}

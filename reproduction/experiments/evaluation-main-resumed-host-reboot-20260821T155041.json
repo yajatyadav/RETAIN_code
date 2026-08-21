@@ -1,0 +1,156 @@
+{
+  "protocol_id": "RETAIN-GPU-20260819-001",
+  "captured_at": "2026-08-21T15:50:41+08:00",
+  "status": "retain_taskft_stove_a080_ood_hard_complete_generalist_running_after_clean_host_reboot",
+  "host_reboot": {
+    "classification": "external_clean_host_reboot_not_evaluation_failure",
+    "clean_shutdown_started_at": "2026-08-21T15:34:26+08:00",
+    "previous_boot_journal_end_at": "2026-08-21T15:34:30+08:00",
+    "new_boot_at": "2026-08-21T15:38:53+08:00",
+    "service_recreated_at": "2026-08-21T15:42:51+08:00",
+    "journal_evidence": "systemd deactivated service successfully, stopped targets, unmounted /shared, and reached System Halt",
+    "incident": "reproduction/experiments/incidents/host-clean-reboot-resume-20260821T154251.json"
+  },
+  "pipeline": {
+    "service": "retain-reproduction.service",
+    "active": true,
+    "pipeline_pid": 1886,
+    "current_policy": "retain_taskft_stove_a080",
+    "policy_server_pid": 2148,
+    "evaluator_pid": 14223,
+    "physical_gpu_index": 0,
+    "completed_alpha_jobs": 270,
+    "completed_main_jobs": 115,
+    "completed_jobs_in_status": 385,
+    "completed_jobs_preserved_at_reboot": 382,
+    "post_reboot_commits": 3,
+    "failed_job": null
+  },
+  "retain_taskft_stove_a080": {
+    "alpha": 0.8,
+    "weights": [0.8, 0.2],
+    "total_protocol_jobs": 36,
+    "selection_jobs_reused": 5,
+    "remaining_jobs_at_initial_start": 31,
+    "completed_independent_jobs": 11,
+    "ID": {
+      "successes": 15,
+      "episodes": 20,
+      "success_rate": 0.75,
+      "taskft_success_rate": 0.75,
+      "pretrain_success_rate": 0.0
+    },
+    "OOD_MEDIUM": {
+      "successes_by_seed": [7, 5, 7, 5, 6],
+      "successes": 30,
+      "episodes": 50,
+      "success_rate": 0.6,
+      "status": "complete_reused_alpha_selection_set",
+      "independent_main_evidence": false
+    },
+    "OOD_HARD": {
+      "conditions": [
+        "set_0_seed_1",
+        "set_1_seed_1",
+        "set_0_seed_21",
+        "set_1_seed_21",
+        "set_0_seed_41",
+        "set_1_seed_41",
+        "set_0_seed_61",
+        "set_1_seed_61",
+        "set_0_seed_81",
+        "set_1_seed_81"
+      ],
+      "successes_by_condition": [5, 4, 5, 2, 7, 4, 7, 4, 7, 5],
+      "successes": 50,
+      "episodes": 100,
+      "success_rate": 0.5,
+      "episode_errors": 0,
+      "video_bytes": 15665798,
+      "taskft_successes": 45,
+      "taskft_success_rate": 0.45,
+      "delta_vs_taskft": 0.05,
+      "pretrain_successes": 2,
+      "pretrain_success_rate": 0.02,
+      "delta_vs_pretrain": 0.48,
+      "status": "complete"
+    },
+    "generalist_retention": {
+      "completed_tasks": 0,
+      "planned_tasks": 20,
+      "status": "running_first_task"
+    }
+  },
+  "post_reboot_continuity": {
+    "interrupted_job_key": "5241a5c7920cc61d",
+    "interrupted_job_committed_before_reboot": false,
+    "interrupted_job_rerun_result": {
+      "eval_type": "OOD_HARD-set-1",
+      "seed": 61,
+      "successes": 4,
+      "episodes": 10,
+      "episode_errors": 0,
+      "finished_at": "2026-08-21T15:46:16.017085+08:00"
+    },
+    "following_jobs_committed": 2,
+    "completed_keys_increased_from": 382,
+    "completed_keys_increased_to": 385,
+    "validation": "passed"
+  },
+  "global_complete_main_aggregate": {
+    "jobs": 115,
+    "episodes": 1200,
+    "successes": 345,
+    "episode_errors": 0,
+    "video_count": 1200,
+    "video_bytes": 146566156,
+    "interpretation": "不含已计入 alpha sweep 的五个复用 validation jobs；跨策略总计只用于完整性审计"
+  },
+  "current_job": {
+    "policy": "retain_taskft_stove_a080",
+    "original_remaining_job_index": 12,
+    "original_remaining_jobs": 31,
+    "post_reboot_job_index": 4,
+    "post_reboot_jobs": 23,
+    "job_key": "1053b3adb264deeb",
+    "eval_type": "GENERALIST",
+    "suite": "libero_90",
+    "task": "close the top drawer of the cabinet",
+    "planned_episodes": 10,
+    "observed_videos_at_capture": 5,
+    "observed_video_bytes_at_capture": 240869,
+    "summary_committed_at_capture": false,
+    "eligible_for_comparison_at_capture": false
+  },
+  "single_gpu_audit": {
+    "only_reproduction_compute_process": {
+      "physical_gpu_index": 0,
+      "pid": 2148,
+      "memory_mib": 77036,
+      "role": "linear_merge_policy_server"
+    },
+    "constraint_satisfied": true
+  },
+  "resources": {
+    "gpu_memory_used_mib": [77049, 1, 1, 605, 1, 1, 1, 1],
+    "gpu_utilization_percent": [21, 0, 0, 0, 0, 0, 0, 0],
+    "host_available_bytes": 529289937920,
+    "root_free_bytes": 84394778624,
+    "shared_free_bytes": 105767645184,
+    "root_df_use_percent": 91,
+    "shared_df_use_percent": 99
+  },
+  "monitoring_policy": {
+    "root_space": "monitor_and_record_only",
+    "root_space_is_a_stop_condition": false,
+    "resume_gate_bytes": null,
+    "all_known_evaluation_write_paths_on_shared": true
+  },
+  "validation": {
+    "service_active": true,
+    "post_reboot_completed_job_continuity": true,
+    "ood_hard_group_complete": true,
+    "selection_set_reuse_labeled": true,
+    "fatal_error_matches": 0
+  }
+}

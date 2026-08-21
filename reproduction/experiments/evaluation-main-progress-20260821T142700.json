@@ -1,0 +1,123 @@
+{
+  "protocol_id": "RETAIN-GPU-20260819-001",
+  "captured_at": "2026-08-21T14:27:00+08:00",
+  "status": "pretrain_policy_complete_taskft_stove_evaluation_running",
+  "pipeline": {
+    "service": "retain-reproduction.service",
+    "active": true,
+    "pipeline_pid": 1436285,
+    "current_policy": "taskft_stove",
+    "policy_server_pid": 1539074,
+    "evaluator_pid": 1573267,
+    "physical_gpu_index": 0,
+    "completed_alpha_jobs": 270,
+    "completed_main_jobs": 77,
+    "completed_jobs_in_status": 347,
+    "failed_job": null
+  },
+  "pretrain_117task_final": {
+    "status": "complete",
+    "jobs": 68,
+    "episodes": 710,
+    "successes": 136,
+    "episode_errors": 0,
+    "generalist_retention": {
+      "successes": 133,
+      "episodes": 200,
+      "success_rate": 0.665
+    }
+  },
+  "taskft_stove_partial": {
+    "completed_jobs": 9,
+    "planned_jobs": 36,
+    "episodes": 100,
+    "successes": 47,
+    "episode_errors": 0,
+    "video_count": 100,
+    "video_bytes": 15386618,
+    "ID": {
+      "successes": 15,
+      "episodes": 20,
+      "success_rate": 0.75,
+      "status": "complete"
+    },
+    "OOD_MEDIUM": {
+      "seeds": [1, 21, 41, 61, 81],
+      "successes_by_seed": [3, 4, 3, 6, 5],
+      "successes": 21,
+      "episodes": 50,
+      "success_rate": 0.42,
+      "status": "complete"
+    },
+    "OOD_HARD": {
+      "completed_conditions": ["set_0_seed_1", "set_1_seed_1", "set_0_seed_21"],
+      "successes_by_condition": [5, 2, 4],
+      "successes": 11,
+      "episodes": 30,
+      "success_rate": 0.36666666666666664,
+      "status": "partial_3_of_10_conditions_complete"
+    },
+    "matched_pretrain_comparison": {
+      "conditions": ["set_0_seed_1", "set_1_seed_1", "set_0_seed_21"],
+      "taskft_successes": 11,
+      "pretrain_successes": 0,
+      "episodes_per_policy": 30,
+      "interpretation": "早期匹配条件支持 Task-FT 增益，但 OOD_HARD 与 generalist 尚未闭合"
+    }
+  },
+  "global_complete_main_aggregate": {
+    "jobs": 77,
+    "episodes": 810,
+    "successes": 183,
+    "episode_errors": 0,
+    "video_count": 810,
+    "video_bytes": 103307116,
+    "interpretation": "跨策略与协议的总计只用于完整性审计"
+  },
+  "current_job": {
+    "policy": "taskft_stove",
+    "policy_job_index": 10,
+    "policy_jobs": 36,
+    "job_key": "bbf16de0a5932b9f",
+    "eval_type": "OOD_HARD-set-1",
+    "task": "stove",
+    "seed": 21,
+    "planned_episodes": 10,
+    "observed_videos_at_capture": 6,
+    "observed_video_bytes_at_capture": 937115,
+    "summary_committed_at_capture": false,
+    "eligible_for_comparison_at_capture": false,
+    "service_log_marker_at": "2026-08-21T14:25:27.711664+08:00"
+  },
+  "single_gpu_audit": {
+    "only_reproduction_compute_process": {
+      "physical_gpu_index": 0,
+      "pid": 1539074,
+      "memory_mib": 77036,
+      "role": "policy_server"
+    },
+    "constraint_satisfied": true
+  },
+  "resources": {
+    "captured_at": "2026-08-21T14:27:00+08:00",
+    "gpu_0_memory_used_mib": 77049,
+    "gpu_0_utilization_percent": 63,
+    "host_available_bytes": 531580065792,
+    "root_free_bytes": 3736674304,
+    "shared_free_bytes": 106194968576,
+    "root_df_use_percent": 100,
+    "shared_df_use_percent": 99
+  },
+  "monitoring_policy": {
+    "root_space": "monitor_and_record_only",
+    "root_space_is_a_stop_condition": false,
+    "resume_gate_bytes": null,
+    "all_known_evaluation_write_paths_on_shared": true
+  },
+  "validation": {
+    "service_active": true,
+    "pretrain_policy_complete": true,
+    "taskft_stove_id_and_ood_medium_complete": true,
+    "fatal_error_matches_since_resume": 0
+  }
+}

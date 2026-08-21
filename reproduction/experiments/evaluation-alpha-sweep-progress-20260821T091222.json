@@ -1,0 +1,214 @@
+{
+  "protocol_id": "RETAIN-GPU-20260819-001",
+  "generated_at": "2026-08-21T09:12:22.047571+08:00",
+  "status": "alpha_sweep_running",
+  "supersedes": "reproduction/experiments/evaluation-alpha-sweep-progress-20260821T085233.json",
+  "interpretation_scope": "coft_basket_third_candidate_complete_and_a040_running",
+  "results_root": "/shared/.cache/retain/results/RETAIN-GPU-20260819-001",
+  "progress": {
+    "completed_policies": 48,
+    "total_policies": 54,
+    "completed_jobs": 243,
+    "total_jobs": 270,
+    "completed_episodes": 2430,
+    "current_policy": "retain_coft_basket_a040",
+    "current_job_seed": 61,
+    "current_job_observed_episodes": 1,
+    "current_job_observed_successes": 0
+  },
+  "cumulative_success_rates": {
+    "taskft": {
+      "stove": {
+        "0.1": 0.08,
+        "0.2": 0.08,
+        "0.3": 0.24,
+        "0.4": 0.46,
+        "0.5": 0.44,
+        "0.6": 0.42,
+        "0.7": 0.6,
+        "0.8": 0.6,
+        "0.9": 0.56
+      },
+      "mugs": {
+        "0.1": 0.0,
+        "0.2": 0.0,
+        "0.3": 0.0,
+        "0.4": 0.06,
+        "0.5": 0.14,
+        "0.6": 0.32,
+        "0.7": 0.42,
+        "0.8": 0.4,
+        "0.9": 0.36
+      },
+      "basket": {
+        "0.1": 0.0,
+        "0.2": 0.0,
+        "0.3": 0.0,
+        "0.4": 0.0,
+        "0.5": 0.02,
+        "0.6": 0.1,
+        "0.7": 0.24,
+        "0.8": 0.18,
+        "0.9": 0.24
+      }
+    },
+    "coft": {
+      "stove": {
+        "0.1": 0.06,
+        "0.2": 0.1,
+        "0.3": 0.16,
+        "0.4": 0.48,
+        "0.5": 0.52,
+        "0.6": 0.56,
+        "0.7": 0.6,
+        "0.8": 0.66,
+        "0.9": 0.58
+      },
+      "mugs": {
+        "0.1": 0.0,
+        "0.2": 0.0,
+        "0.3": 0.0,
+        "0.4": 0.14,
+        "0.5": 0.28,
+        "0.6": 0.34,
+        "0.7": 0.48,
+        "0.8": 0.52,
+        "0.9": 0.42
+      },
+      "basket": {
+        "0.1": 0.0,
+        "0.2": 0.0,
+        "0.3": 0.02
+      }
+    }
+  },
+  "newly_completed_policies": [
+    {
+      "policy": "retain_coft_basket_a030",
+      "family": "coft",
+      "task": "basket",
+      "alpha": 0.3,
+      "linear_interpolation_weights": [0.3, 0.7],
+      "seeds": [1, 21, 41, 61, 81],
+      "successes_by_seed": [0, 1, 0, 0, 0],
+      "total_successes": 1,
+      "total_episodes": 50,
+      "success_rate": 0.02,
+      "error_episodes": 0,
+      "final_job_finished_at": "2026-08-21T09:02:19.646460+08:00",
+      "summary_file_count": 5,
+      "video_count": 50,
+      "video_bytes": 7818984,
+      "selected_for_main_evaluation": false,
+      "validation_scope": "exploratory_interim"
+    }
+  ],
+  "selection_results": {
+    "taskft": {
+      "stove": {
+        "selected_alpha": 0.8,
+        "selected_success_rate": 0.6,
+        "tied_best_alphas": [0.7, 0.8],
+        "status": "complete"
+      },
+      "mugs": {
+        "selected_alpha": 0.7,
+        "selected_success_rate": 0.42,
+        "tied_best_alphas": [0.7],
+        "status": "complete"
+      },
+      "basket": {
+        "selected_alpha": 0.9,
+        "selected_success_rate": 0.24,
+        "tied_best_alphas": [0.7, 0.9],
+        "status": "complete"
+      }
+    },
+    "coft": {
+      "stove": {
+        "selected_alpha": 0.8,
+        "selected_successes": 33,
+        "selected_episodes": 50,
+        "selected_success_rate": 0.66,
+        "tied_best_alphas": [0.8],
+        "tie_break_applied": false,
+        "paper_alpha": 0.7,
+        "paper_alpha_successes": 30,
+        "paper_alpha_episodes": 50,
+        "paper_alpha_success_rate": 0.6,
+        "status": "complete"
+      },
+      "mugs": {
+        "selected_alpha": 0.8,
+        "selected_successes": 26,
+        "selected_episodes": 50,
+        "selected_success_rate": 0.52,
+        "tied_best_alphas": [0.8],
+        "tie_break_applied": false,
+        "paper_alpha": 0.9,
+        "paper_alpha_successes": 21,
+        "paper_alpha_episodes": 50,
+        "paper_alpha_success_rate": 0.42,
+        "status": "complete"
+      },
+      "basket": {
+        "status": "pending",
+        "completed_candidate_count": 3,
+        "remaining_candidate_count": 6,
+        "paper_alpha": 0.9,
+        "tie_break_applied": false,
+        "selection_eligible": false
+      }
+    }
+  },
+  "in_progress_policy": {
+    "policy": "retain_coft_basket_a040",
+    "alpha": 0.4,
+    "linear_interpolation_weights": [0.4, 0.6],
+    "completed_seeds": [1, 21, 41],
+    "completed_seed_successes": [1, 1, 2],
+    "completed_episodes": 30,
+    "completed_successes": 4,
+    "current_seed": 61,
+    "current_seed_observed_episodes": 1,
+    "current_seed_observed_successes": 0,
+    "partial_result_eligible_for_alpha_selection": false
+  },
+  "storage": {
+    "completed_policy_video_count": 2400,
+    "completed_policy_video_bytes": 339460901,
+    "mean_video_bytes": 141442.04208333333,
+    "projected_alpha_sweep_video_bytes_at_completed_policy_mean": 381893513.625,
+    "shared_free_bytes": 140441235456,
+    "root_free_bytes": 12495675392,
+    "projection_status": "ample_for_alpha_sweep"
+  },
+  "single_gpu_constraint": {
+    "physical_gpu_index": 3,
+    "current_policy_server_cuda_visible_devices": "3",
+    "current_policy_server_memory_used_mib": 77115,
+    "current_evaluator_cuda_visible_devices": "",
+    "current_evaluator_egl_device_id": "3",
+    "observed_gpu_compute_process_pids": [1184588]
+  },
+  "resources": {
+    "sampled_at": "2026-08-21T09:12:22.047571+08:00",
+    "host_available_bytes": 527806047232,
+    "gpu_memory_used_mib": [2, 4, 3, 77115, 58572, 59507, 58729, 62719],
+    "gpu_utilization_percent": [0, 0, 0, 0, 98, 92, 91, 96]
+  },
+  "processes": {
+    "evaluation_pipeline_pid": 320418,
+    "policy_server_pid": 1184588,
+    "evaluator_pid": 1195741
+  },
+  "error_scan": {
+    "scope": "coft_basket_a030_a040_non_video_results_logs_and_service_journal_since_a030_started",
+    "raw_traceback_line_hits": 6,
+    "classified_benign_readiness_probe_events": 2,
+    "fatal_error_count_after_classification": 0,
+    "service_status": "active",
+    "benign_readiness_probe_handshake_warning_observed": true
+  },
+  "caution_zh": "coFT basket alpha=0.3 的 1/50 只由 seed 21 的一个 episode 贡献；alpha=0.4 当前 partial 4/31 不参与候选比较。日志 Traceback 是裸 TCP readiness probe 触发的已知 WebSocket handshake 告警，不是策略服务失败。"
+}

@@ -1,0 +1,8 @@
+{
+  "status": "removed_after_successful_stage",
+  "path": "/shared/.cache/retain/checkpoints/retain_repro_coft_basket/paper_coft_basket/999/train_state",
+  "removed_bytes": 1840,
+  "removed_at": "2026-08-20T12:53:45.215070+00:00",
+  "retained_params": "/shared/.cache/retain/checkpoints/retain_repro_coft_basket/paper_coft_basket/999/params",
+  "reason": "控制共享盘占用；阶段已完成，后续训练和评测只读取 params"
+}

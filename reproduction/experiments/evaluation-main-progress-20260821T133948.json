@@ -1,0 +1,119 @@
+{
+  "protocol_id": "RETAIN-GPU-20260819-001",
+  "captured_at": "2026-08-21T13:39:48+08:00",
+  "status": "pretrain_target_task_groups_complete_generalist_evaluation_running",
+  "pipeline": {
+    "service": "retain-reproduction.service",
+    "active": true,
+    "pipeline_pid": 1436285,
+    "policy": "pretrain_117task",
+    "policy_server_pid": 1436419,
+    "evaluator_pid": 1478422,
+    "physical_gpu_index": 0,
+    "completed_alpha_jobs": 270,
+    "completed_main_jobs": 50,
+    "completed_jobs_in_status": 320,
+    "failed_job": null
+  },
+  "complete_main_aggregate": {
+    "jobs": 50,
+    "episodes": 530,
+    "successes": 20,
+    "episode_errors": 0,
+    "video_count": 530,
+    "video_bytes": 77665188,
+    "interpretation": "跨目标任务 ID/OOD 与 generalist 的总计只用于完整性审计，不作为论文主指标"
+  },
+  "pretrain_target_task_groups": {
+    "stove": {
+      "ID": {"successes": 0, "episodes": 20, "success_rate": 0.0},
+      "OOD_MEDIUM": {"successes": 1, "episodes": 50, "success_rate": 0.02},
+      "OOD_HARD": {"successes": 2, "episodes": 100, "success_rate": 0.02}
+    },
+    "mugs": {
+      "ID": {"successes": 0, "episodes": 20, "success_rate": 0.0},
+      "OOD_MEDIUM": {"successes": 0, "episodes": 50, "success_rate": 0.0},
+      "OOD_HARD": {"successes": 0, "episodes": 100, "success_rate": 0.0}
+    },
+    "basket": {
+      "ID": {"successes": 0, "episodes": 20, "success_rate": 0.0},
+      "OOD_MEDIUM": {"successes": 0, "episodes": 50, "success_rate": 0.0},
+      "OOD_HARD": {"successes": 0, "episodes": 100, "success_rate": 0.0}
+    },
+    "all_nine_groups_complete": true
+  },
+  "generalist_partial": {
+    "completed_tasks": 2,
+    "planned_tasks": 20,
+    "episodes": 20,
+    "successes": 17,
+    "success_rate": 0.85,
+    "tasks": [
+      {
+        "job_index": 49,
+        "job_key": "a2b049397ba0f2cf",
+        "task": "close the top drawer of the cabinet",
+        "successes": 10,
+        "episodes": 10,
+        "success_rate": 1.0,
+        "video_count": 10,
+        "video_bytes": 285050,
+        "finished_at": "2026-08-21T13:37:54.734999+08:00"
+      },
+      {
+        "job_index": 50,
+        "job_key": "991a5434c92d651f",
+        "task": "pick up the tomato sauce and put it in the basket",
+        "successes": 7,
+        "episodes": 10,
+        "success_rate": 0.7,
+        "video_count": 10,
+        "video_bytes": 742109,
+        "finished_at": "2026-08-21T13:39:23.539947+08:00"
+      }
+    ],
+    "interpretation": "仅 2/20 个任务；正结果证明策略服务与评测链路并非恒为失败，但不能外推总体 retention"
+  },
+  "current_job": {
+    "index": 51,
+    "total_jobs_for_policy": 68,
+    "job_key": "8910ae0ad9f2e68f",
+    "eval_type": "GENERALIST",
+    "task": "put the frying pan on the stove",
+    "planned_episodes": 10,
+    "summary_committed_at_capture": false,
+    "eligible_for_comparison_at_capture": false,
+    "service_log_marker_at": "2026-08-21T13:39:23.551336+08:00"
+  },
+  "single_gpu_audit": {
+    "only_reproduction_compute_process": {
+      "physical_gpu_index": 0,
+      "pid": 1436419,
+      "memory_mib": 77036,
+      "role": "policy_server"
+    },
+    "constraint_satisfied": true
+  },
+  "resources": {
+    "captured_near": "2026-08-21T13:39:33+08:00",
+    "gpu_memory_used_mib": [77049, 1, 1, 393, 1, 1, 1, 1],
+    "gpu_utilization_percent": [0, 0, 0, 3, 0, 0, 0, 0],
+    "host_available_bytes": 532351104000,
+    "root_free_bytes": 3797164032,
+    "shared_free_bytes": 106227777536,
+    "root_df_use_percent": 100,
+    "shared_df_use_percent": 99
+  },
+  "monitoring_policy": {
+    "root_space": "monitor_and_record_only",
+    "root_space_is_a_stop_condition": false,
+    "resume_gate_bytes": null,
+    "all_known_evaluation_write_paths_on_shared": true
+  },
+  "validation": {
+    "service_active": true,
+    "target_task_group_count_complete": 9,
+    "generalist_positive_result_observed": true,
+    "fatal_error_matches_since_resume": 0
+  }
+}

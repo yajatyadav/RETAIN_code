@@ -1,0 +1,51 @@
+{
+  "config": "retain_repro_pretrain",
+  "exp_name": "paper_final_hparams",
+  "host": "lhy-1",
+  "gpu_physical_index": 1,
+  "started_at": "2026-08-19T23:57:50.440826+00:00",
+  "command": [
+    "/root/.local/bin/uv",
+    "run",
+    "--no-sync",
+    "scripts/train.py",
+    "retain_repro_pretrain",
+    "--exp-name=paper_final_hparams",
+    "--resume"
+  ],
+  "final_checkpoint": "/shared/.cache/retain/checkpoints/retain_repro_pretrain/paper_final_hparams/9999",
+  "jax_runtime": {
+    "overlay": "/shared/.cache/retain/jax-overlays/0.6.2",
+    "versions": {
+      "jax": "0.6.2",
+      "jaxlib": "0.6.2",
+      "jax-cuda12-plugin": "0.6.2",
+      "jax-cuda12-pjrt": "0.6.2",
+      "ml-dtypes": "0.5.1",
+      "nvidia-cublas-cu12": "12.8.3.14",
+      "nvidia-cuda-cupti-cu12": "12.8.57",
+      "nvidia-cuda-nvcc-cu12": "12.9.86",
+      "nvidia-cuda-nvrtc-cu12": "12.8.61",
+      "nvidia-cuda-runtime-cu12": "12.8.57",
+      "nvidia-cudnn-cu12": "9.8.0.87",
+      "nvidia-cufft-cu12": "11.3.3.41",
+      "nvidia-cusolver-cu12": "11.7.2.55",
+      "nvidia-cusparse-cu12": "12.5.7.53",
+      "nvidia-nccl-cu12": "2.26.2",
+      "nvidia-nvjitlink-cu12": "12.8.61",
+      "nvidia-nvshmem-cu12": "3.2.5"
+    },
+    "xla_flags": "--xla_gpu_enable_triton_gemm=false",
+    "reason": "RTX 6000D (sm_120) 编译兼容；项目主虚拟环境保持不变",
+    "gpu_preflight_report": "/root/RETAIN_code/reproduction/experiments/jax-gpu-preflight.json",
+    "memory_policy": {
+      "xla_python_client_mem_fraction": "0.95",
+      "xla_python_client_preallocate": true,
+      "tf_force_gpu_allow_growth": true,
+      "reason": "batch-64 首步 XLA 峰值 75.44 GiB 略高于 90% 显存池 75.28 GiB"
+    }
+  },
+  "status": "failed",
+  "finished_at": "2026-08-19T23:59:32.377927+00:00",
+  "return_code": 1
+}

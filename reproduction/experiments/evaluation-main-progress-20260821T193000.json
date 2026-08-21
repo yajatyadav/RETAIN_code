@@ -1,0 +1,135 @@
+{
+  "protocol_id": "RETAIN-GPU-20260819-001",
+  "captured_at": "2026-08-21T19:30:00+08:00",
+  "status": "selected_retain_taskft_mugs_a070_libero90_complete_goal_fourth_task_running",
+  "pipeline": {
+    "service": "retain-reproduction.service",
+    "active": true,
+    "pipeline_pid": 1886,
+    "current_policy": "retain_taskft_mugs_a070",
+    "policy_server_pid": 319859,
+    "evaluator_pid": 391699,
+    "physical_gpu_index": 0,
+    "completed_alpha_jobs": 270,
+    "completed_main_jobs": 221,
+    "completed_jobs_in_status": 491,
+    "failed_job": null
+  },
+  "new_complete_jobs_since_previous_snapshot": [
+    {"job_key": "aa2469c3edd187c3", "eval_type": "GENERALIST", "suite": "libero_90", "task": "put the white bowl on the plate", "successes": 6, "episodes": 10, "episode_errors": 0, "video_bytes": 935493},
+    {"job_key": "9fbcef9018174c88", "eval_type": "GENERALIST", "suite": "libero_90", "task": "put the white mug on the plate", "successes": 10, "episodes": 10, "episode_errors": 0, "video_bytes": 532415},
+    {"job_key": "2158743ff1b735fd", "eval_type": "GENERALIST", "suite": "libero_goal", "task": "open the middle drawer of the cabinet", "successes": 0, "episodes": 10, "episode_errors": 0, "video_bytes": 891170},
+    {"job_key": "464e5a5e6b7b0b77", "eval_type": "GENERALIST", "suite": "libero_goal", "task": "put the bowl on the plate", "successes": 7, "episodes": 10, "episode_errors": 0, "video_bytes": 570216},
+    {"job_key": "70fc145658447db9", "eval_type": "GENERALIST", "suite": "libero_goal", "task": "put the bowl on top of the cabinet", "successes": 7, "episodes": 10, "episode_errors": 0, "video_bytes": 534021}
+  ],
+  "new_complete_aggregate": {
+    "jobs": 5,
+    "episodes": 50,
+    "successes": 30,
+    "episode_errors": 0,
+    "video_count": 50,
+    "video_bytes": 3463315
+  },
+  "global_complete_main_aggregate": {
+    "jobs": 221,
+    "episodes": 2290,
+    "successes": 728,
+    "episode_errors": 0,
+    "video_count": 2290,
+    "video_bytes": 247512415
+  },
+  "current_policy": {
+    "policy": "retain_taskft_mugs_a070",
+    "completed_independent_main_jobs": 19,
+    "reused_selection_jobs": 5,
+    "target_groups": {
+      "ID": {"successes": 12, "episodes": 20, "success_rate": 0.6, "raw_taskft_success_rate": 0.65, "delta_vs_raw_taskft": -0.05, "pretrain_success_rate": 0.0, "delta_vs_pretrain": 0.6, "status": "complete_independent_main_evidence"},
+      "OOD_MEDIUM": {"successes": 21, "episodes": 50, "success_rate": 0.42, "raw_taskft_success_rate": 0.52, "delta_vs_raw_taskft": -0.1, "pretrain_success_rate": 0.0, "delta_vs_pretrain": 0.42, "status": "complete_reused_selection_set_not_independent_main_evidence"},
+      "OOD_HARD": {"successes": 14, "episodes": 100, "success_rate": 0.14, "raw_taskft_success_rate": 0.15, "delta_vs_raw_taskft": -0.01, "pretrain_success_rate": 0.0, "delta_vs_pretrain": 0.14, "status": "complete_independent_main_evidence"}
+    },
+    "generalist_retention": {
+      "completed_tasks": 8,
+      "planned_tasks": 20,
+      "task_successes": [10, 4, 0, 6, 10, 0, 7, 7],
+      "successes": 44,
+      "episodes": 80,
+      "success_rate": 0.55,
+      "paired_raw_taskft_task_successes": [10, 0, 0, 0, 9, 0, 2, 4],
+      "paired_raw_taskft_successes": 25,
+      "paired_raw_taskft_success_rate": 0.3125,
+      "delta_vs_raw_taskft": 0.2375,
+      "paired_pretrain_task_successes": [10, 7, 9, 8, 7, 0, 6, 9],
+      "paired_pretrain_successes": 56,
+      "paired_pretrain_success_rate": 0.7,
+      "delta_vs_pretrain": -0.15,
+      "by_suite": {
+        "libero_90": {
+          "status": "complete",
+          "task_successes": [10, 4, 0, 6, 10],
+          "successes": 30,
+          "episodes": 50,
+          "success_rate": 0.6,
+          "raw_taskft_successes": 19,
+          "raw_taskft_success_rate": 0.38,
+          "delta_vs_raw_taskft": 0.22,
+          "pretrain_successes": 41,
+          "pretrain_success_rate": 0.82,
+          "delta_vs_pretrain": -0.22,
+          "raw_taskft_forgetting_gap_recovered_fraction": 0.5
+        },
+        "libero_goal": {
+          "status": "running_fourth_of_five_tasks",
+          "completed_tasks": 3,
+          "task_successes": [0, 7, 7],
+          "successes": 14,
+          "episodes": 30,
+          "success_rate": 0.4666666666666667,
+          "raw_taskft_successes": 6,
+          "raw_taskft_success_rate": 0.2,
+          "partial_delta_vs_raw_taskft": 0.26666666666666666,
+          "pretrain_successes": 15,
+          "pretrain_success_rate": 0.5,
+          "partial_delta_vs_pretrain": -0.033333333333333326
+        }
+      },
+      "episode_errors": 0,
+      "status": "running"
+    }
+  },
+  "current_job": {
+    "job_key": "b831ad66cdf6a3dc",
+    "eval_type": "GENERALIST",
+    "suite": "libero_goal",
+    "task": "put the cream cheese in the bowl",
+    "seed": 7,
+    "planned_episodes": 10,
+    "observed_episodes_at_capture": 7,
+    "observed_successes_at_capture": 1,
+    "observed_errors_at_capture": 0,
+    "observed_video_bytes_at_capture": 607306,
+    "summary_committed_at_capture": false,
+    "eligible_for_formal_comparison": false
+  },
+  "single_gpu_audit": {
+    "only_reproduction_compute_process": {"physical_gpu_index": 0, "pid": 319859, "memory_mib": 77036},
+    "constraint_satisfied": true
+  },
+  "resources": {
+    "gpu_memory_used_mib": [77049, 1, 16127, 659, 79863, 79767, 79815, 79891],
+    "gpu_utilization_percent": [17, 0, 64, 0, 80, 68, 76, 76],
+    "host_available_bytes": 527975486464,
+    "root_free_bytes": 70516670464,
+    "shared_free_bytes": 101377654784
+  },
+  "monitoring_policy": {
+    "root_space": "monitor_and_record_only",
+    "root_space_is_a_stop_condition": false,
+    "all_known_evaluation_write_paths_on_shared": true
+  },
+  "validation": {
+    "service_active": true,
+    "single_physical_gpu_constraint": true,
+    "selection_set_reuse_labeled": true,
+    "fatal_error_matches": 0
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "protocol_id": "RETAIN-GPU-20260819-001",
+  "captured_at": "2026-08-21T16:27:57+08:00",
+  "status": "retain_taskft_stove_a080_complete_retain_taskft_stove_a090_second_ood_hard_running",
+  "pipeline": {
+    "service": "retain-reproduction.service",
+    "active": true,
+    "pipeline_pid": 1886,
+    "current_policy": "retain_taskft_stove_a090",
+    "policy_server_pid": 82166,
+    "evaluator_pid": 92874,
+    "physical_gpu_index": 0,
+    "completed_alpha_jobs": 270,
+    "completed_main_jobs": 137,
+    "completed_jobs_in_status": 407,
+    "failed_job": null
+  },
+  "latest_completed_policy": {
+    "policy": "retain_taskft_stove_a080",
+    "alpha": 0.8,
+    "status": "complete",
+    "independent_main_jobs": 31,
+    "independent_main_episodes": 320,
+    "independent_main_successes": 141,
+    "independent_main_episode_errors": 0,
+    "ID": {"successes": 15, "episodes": 20, "success_rate": 0.75},
+    "OOD_HARD": {"successes": 50, "episodes": 100, "success_rate": 0.5},
+    "generalist_retention": {
+      "task_successes": [9, 7, 5, 3, 3, 0, 5, 10, 0, 6, 0, 0, 1, 1, 5, 6, 3, 1, 6, 5],
+      "successes": 76,
+      "episodes": 200,
+      "success_rate": 0.38,
+      "delta_vs_taskft": 0.065,
+      "delta_vs_pretrain": -0.285,
+      "forgetting_gap_recovery_fraction_vs_taskft": 0.18571428571428572,
+      "suite_successes": {"libero_90": 27, "libero_goal": 21, "libero_object": 7, "libero_spatial": 21}
+    },
+    "OOD_MEDIUM_selection_set": {
+      "successes": 30,
+      "episodes": 50,
+      "success_rate": 0.6,
+      "independent_main_evidence": false
+    }
+  },
+  "current_policy": {
+    "policy": "retain_taskft_stove_a090",
+    "alpha": 0.9,
+    "role": "paper_alpha_reference",
+    "completed_independent_jobs": 2,
+    "ID": {
+      "successes": 14,
+      "episodes": 20,
+      "success_rate": 0.7,
+      "delta_vs_selected_alpha": -0.05,
+      "delta_vs_taskft": -0.05
+    },
+    "OOD_MEDIUM_selection_set": {
+      "successes_by_seed": [10, 5, 5, 3, 5],
+      "successes": 28,
+      "episodes": 50,
+      "success_rate": 0.56,
+      "independent_main_evidence": false
+    },
+    "OOD_HARD": {
+      "completed_conditions": ["set_0_seed_1"],
+      "successes_by_condition": [5],
+      "successes": 5,
+      "episodes": 10,
+      "status": "running_second_of_ten_conditions"
+    }
+  },
+  "global_complete_main_aggregate": {
+    "jobs": 137,
+    "episodes": 1430,
+    "successes": 440,
+    "episode_errors": 0,
+    "video_count": 1430,
+    "video_bytes": 164409313,
+    "interpretation": "不含 alpha sweep 中复用的 validation jobs；跨策略总计只用于完整性审计"
+  },
+  "current_job": {
+    "policy": "retain_taskft_stove_a090",
+    "independent_job_index": 3,
+    "independent_jobs": 31,
+    "job_key": "67fc87c373642ac0",
+    "eval_type": "OOD_HARD",
+    "condition": "set_1",
+    "seed": 1,
+    "planned_episodes": 10,
+    "observed_videos_at_capture": 5,
+    "observed_video_bytes_at_capture": 954545,
+    "summary_committed_at_capture": false,
+    "eligible_for_comparison_at_capture": false
+  },
+  "single_gpu_audit": {
+    "only_reproduction_compute_process": {
+      "physical_gpu_index": 0,
+      "pid": 82166,
+      "memory_mib": 77036,
+      "role": "linear_merge_policy_server"
+    },
+    "constraint_satisfied": true,
+    "external_gpu_utilization": {
+      "physical_gpu_indices": [4, 5, 6, 7],
+      "attributed_to_reproduction": false
+    }
+  },
+  "resources": {
+    "gpu_memory_used_mib": [77049, 1, 1, 453, 1, 1, 1, 1],
+    "gpu_utilization_percent": [41, 0, 0, 1, 100, 100, 100, 100],
+    "host_available_bytes": 528114361344,
+    "root_free_bytes": 86408335360,
+    "shared_free_bytes": 105737269248,
+    "root_df_use_percent": 91,
+    "shared_df_use_percent": 99
+  },
+  "monitoring_policy": {
+    "root_space": "monitor_and_record_only",
+    "root_space_is_a_stop_condition": false,
+    "all_known_evaluation_write_paths_on_shared": true
+  },
+  "validation": {
+    "service_active": true,
+    "completed_job_continuity": true,
+    "selection_set_reuse_labeled": true,
+    "fatal_error_matches": 0
+  }
+}

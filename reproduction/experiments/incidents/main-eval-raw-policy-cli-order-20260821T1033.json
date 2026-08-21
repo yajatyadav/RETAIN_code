@@ -1,0 +1,63 @@
+{
+  "protocol_id": "RETAIN-GPU-20260819-001",
+  "detected_at": "2026-08-21T10:33:14+08:00",
+  "phase": "main_evaluation_pretrain_117task_policy_server_start",
+  "impact": {
+    "alpha_sweep_affected": false,
+    "completed_alpha_jobs_preserved": 270,
+    "completed_alpha_episodes_preserved": 2700,
+    "main_evaluation_jobs_lost": 0,
+    "service_state_before_repair": "failed"
+  },
+  "failure": {
+    "return_code": 2,
+    "stderr_signature": "Unrecognized options: --port=18080",
+    "command_before": [
+      "/root/.local/bin/uv",
+      "run",
+      "--no-sync",
+      "scripts/serve_policy.py",
+      "policy:checkpoint",
+      "--policy.config=retain_repro_pretrain",
+      "--policy.dir=/shared/.cache/retain/checkpoints/retain_repro_pretrain/paper_final_hparams/9999",
+      "--port=18080"
+    ],
+    "root_cause": "Tyro parses --port as a global option, so it must precede the policy:checkpoint subcommand; the raw-checkpoint branch placed it after the subcommand. Alpha-sweep merged policies use a different server path and were unaffected."
+  },
+  "repair": {
+    "file": "reproduction/scripts/run_evaluation_pipeline.py",
+    "change": "move --port 18080 before policy:checkpoint in the raw-checkpoint server command",
+    "command_after": [
+      "/root/.local/bin/uv",
+      "run",
+      "--no-sync",
+      "scripts/serve_policy.py",
+      "--port",
+      "18080",
+      "policy:checkpoint",
+      "--policy.config=retain_repro_pretrain",
+      "--policy.dir=/shared/.cache/retain/checkpoints/retain_repro_pretrain/paper_final_hparams/9999"
+    ],
+    "script_sha256_on_server": "e9cf54a629a3fa7b5ea36da0b2f84656179ad9ef9ac2bbcf21557bc44c50cf21",
+    "validations": [
+      "local py_compile with isolated cache passed",
+      "local command-order assertion passed",
+      "remote py_compile passed",
+      "remote Ruff check passed",
+      "remote command-order assertion passed"
+    ]
+  },
+  "resume": {
+    "strategy": "restart only the resumable evaluation pipeline in the same transient service; skip 270 completed jobs and retain frozen alpha_selection.json",
+    "reason": "training and alpha sweep were already complete, while the full supervisor's 150 GB startup storage preflight was no longer relevant to the much smaller evaluation-only continuation",
+    "service_active_at": "2026-08-21T10:37:45+08:00",
+    "policy_server_listening_at": "2026-08-21T10:38:15+08:00",
+    "first_main_job_started_at": "2026-08-21T10:38:15.218669+08:00",
+    "pipeline_pid": 1292803,
+    "policy_server_pid": 1292933,
+    "evaluator_pid": 1293674,
+    "physical_gpu_index": 0,
+    "single_gpu_constraint_verified": true,
+    "status_after_repair": "main_evaluation_running"
+  }
+}

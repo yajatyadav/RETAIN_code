@@ -1,0 +1,127 @@
+{
+  "protocol_id": "RETAIN-GPU-20260819-001",
+  "paused_at": "2026-08-21T20:26:45+08:00",
+  "reason": "user_requested_temporary_pause_to_release_physical_gpu_0_for_another_user",
+  "pause": {
+    "command_scope": "systemctl stop retain-reproduction.service",
+    "service_before": "active",
+    "service_after": "inactive",
+    "transient_unit_present_after_stop": false,
+    "reproduction_processes_after_stop": 0,
+    "gpu_compute_processes_after_stop": 0,
+    "physical_gpu_0_memory_used_mib_after_stop": 0,
+    "physical_gpu_0_utilization_percent_after_stop": 0
+  },
+  "stable_shared_state": {
+    "state_path": "/shared/.cache/retain/evaluation-state/RETAIN-GPU-20260819-001/evaluation-pipeline/status.json",
+    "completed_jobs": 516,
+    "completed_alpha_jobs": 270,
+    "completed_main_jobs": 246,
+    "failed_job": null,
+    "status_bytes": 518979,
+    "status_sha256": "1b1b238c1b971441f0462a80d3e94eb808c8b57c7de5f475df6fb0ac0ef84dfd"
+  },
+  "new_complete_jobs_since_previous_formal_snapshot": [
+    {"job_key": "895c5e9faaa3089a", "policy_job_index": 7, "eval_type": "OOD_HARD-set-1", "seed": 41, "successes": 0, "episodes": 10, "episode_errors": 0, "video_bytes": 1121467},
+    {"job_key": "38a0a0c73d90bd29", "policy_job_index": 8, "eval_type": "OOD_HARD-set-0", "seed": 61, "successes": 0, "episodes": 10, "episode_errors": 0, "video_bytes": 1431239},
+    {"job_key": "11fdea4e339c1df3", "policy_job_index": 9, "eval_type": "OOD_HARD-set-1", "seed": 61, "successes": 0, "episodes": 10, "episode_errors": 0, "video_bytes": 1243768},
+    {"job_key": "31ae965d7ad0f6c6", "policy_job_index": 10, "eval_type": "OOD_HARD-set-0", "seed": 81, "successes": 3, "episodes": 10, "episode_errors": 0, "video_bytes": 1252501},
+    {"job_key": "955ba092b3885f91", "policy_job_index": 11, "eval_type": "OOD_HARD-set-1", "seed": 81, "successes": 0, "episodes": 10, "episode_errors": 0, "video_bytes": 1219807},
+    {"job_key": "d2b9d53d16c58531", "policy_job_index": 12, "eval_type": "GENERALIST", "suite": "libero_90", "task": "close the top drawer of the cabinet", "successes": 10, "episodes": 10, "episode_errors": 0, "video_bytes": 350469},
+    {"job_key": "73b6a3abecc50cd6", "policy_job_index": 13, "eval_type": "GENERALIST", "suite": "libero_90", "task": "pick up the tomato sauce and put it in the basket", "successes": 0, "episodes": 10, "episode_errors": 0, "video_bytes": 1111671}
+  ],
+  "new_complete_aggregate": {
+    "jobs": 7,
+    "episodes": 70,
+    "successes": 13,
+    "episode_errors": 0,
+    "video_count": 70,
+    "video_bytes": 7730922
+  },
+  "global_complete_main_aggregate": {
+    "jobs": 246,
+    "episodes": 2550,
+    "successes": 817,
+    "episode_errors": 0,
+    "video_count": 2550,
+    "video_bytes": 270328263
+  },
+  "current_policy": {
+    "policy": "retain_taskft_mugs_a080",
+    "alpha": 0.8,
+    "weights": [0.8, 0.19999999999999996],
+    "completed_independent_main_jobs": 13,
+    "reused_selection_jobs": 5,
+    "independent_complete_aggregate": {
+      "episodes": 140,
+      "successes": 34,
+      "episode_errors": 0,
+      "video_count": 140,
+      "video_bytes": 15741682
+    },
+    "id": {"successes": 11, "episodes": 20, "success_rate": 0.55},
+    "ood_medium_selection_reuse": {"successes": 20, "episodes": 50, "success_rate": 0.4, "independent_main_evidence": false},
+    "ood_hard": {
+      "successes_by_condition": [4, 0, 3, 0, 3, 0, 0, 0, 3, 0],
+      "successes": 13,
+      "episodes": 100,
+      "success_rate": 0.13,
+      "selected_alpha_success_rate": 0.14,
+      "delta_vs_selected_alpha": -0.01,
+      "raw_taskft_success_rate": 0.15,
+      "delta_vs_raw_taskft": -0.02,
+      "pretrain_success_rate": 0.0,
+      "delta_vs_pretrain": 0.13,
+      "episode_errors": 0,
+      "status": "complete_independent_main_evidence"
+    },
+    "generalist_retention_partial": {
+      "completed_tasks": 2,
+      "planned_tasks": 20,
+      "task_successes": [10, 0],
+      "successes": 10,
+      "episodes": 20,
+      "success_rate": 0.5,
+      "status": "partial_complete_tasks_only"
+    }
+  },
+  "interrupted_job": {
+    "job_key": "487531f293f34baa",
+    "policy_job_index": 14,
+    "eval_type": "GENERALIST",
+    "suite": "libero_90",
+    "task": "put the frying pan on the stove",
+    "planned_episodes": 10,
+    "observed_episodes_before_stop": 1,
+    "observed_successes_before_stop": 0,
+    "observed_errors_before_stop": 0,
+    "observed_video_bytes_before_stop": 147913,
+    "summary_committed": false,
+    "present_in_completed_jobs": false,
+    "resume_behavior": "rerun_idempotently_from_the_same_job_key"
+  },
+  "resume": {
+    "requires_transient_unit_recreation": true,
+    "working_directory": "/root/RETAIN_code",
+    "command": "/root/RETAIN_code/.venv/bin/python reproduction/scripts/run_evaluation_pipeline.py --poll-seconds 60",
+    "environment": {
+      "RETAIN_EVAL_STATE_ROOT": "/shared/.cache/retain/evaluation-state/RETAIN-GPU-20260819-001/evaluation-pipeline",
+      "TMPDIR": "/shared/.cache/retain/tmp/evaluation",
+      "XDG_CACHE_HOME": "/shared/.cache/retain/cache/evaluation"
+    },
+    "service_log": "/shared/.cache/retain/evaluation-state/RETAIN-GPU-20260819-001/evaluation-service.log",
+    "expected_behavior": "load_516_completed_keys_skip_them_and_rerun_uncommitted_job_487531f293f34baa",
+    "validation_after_resume": [
+      "service_is_active",
+      "completed_jobs_still_516_before_first_new_commit",
+      "failed_job_is_null",
+      "only_one_reproduction_compute_process_on_physical_gpu_0",
+      "job_487531f293f34baa_is_rerun_and_then_committed_once"
+    ]
+  },
+  "automation": {
+    "id": "retain",
+    "status": "PAUSED",
+    "rrule": "FREQ=MINUTELY;INTERVAL=20"
+  }
+}

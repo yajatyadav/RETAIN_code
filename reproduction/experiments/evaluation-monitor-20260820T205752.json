@@ -1,0 +1,89 @@
+{
+  "protocol_id": "RETAIN-GPU-20260819-001",
+  "generated_at": "2026-08-20T20:57:52+08:00",
+  "status": "alpha_sweep_running",
+  "all_training_stages_completed": true,
+  "results_root": "/shared/.cache/retain/results/RETAIN-GPU-20260819-001",
+  "status_file": "reproduction/experiments/evaluation-pipeline/status.json",
+  "single_gpu_constraint": {
+    "physical_gpu_index": 3,
+    "policy_server_cuda_visible_devices": "3",
+    "evaluator_cuda_visible_devices": "",
+    "evaluator_egl_device_id": "3",
+    "policy_server_memory_used_mib": 77130,
+    "policy_server_gpu_utilization_percent": 0
+  },
+  "alpha_sweep_protocol": {
+    "families": [
+      "taskft",
+      "coft"
+    ],
+    "tasks": [
+      "stove",
+      "mugs",
+      "basket"
+    ],
+    "alphas": [
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9
+    ],
+    "policy_count": 54,
+    "validation_scene": "OOD_MEDIUM (small translation)",
+    "jobs_per_policy": 5,
+    "episodes_per_job": 10,
+    "total_jobs": 270,
+    "total_episodes": 2700,
+    "selection_rule": "maximum success rate, then highest alpha as deterministic tie-break"
+  },
+  "current_policy": {
+    "name": "retain_taskft_stove_a010",
+    "family": "taskft",
+    "task": "stove",
+    "alpha": 0.1,
+    "linear_interpolation_weights": [
+      0.1,
+      0.9
+    ],
+    "target_checkpoint": "/shared/.cache/retain/checkpoints/retain_repro_task_ft_stove/paper_task_ft_stove/499",
+    "pretraining_checkpoint": "/shared/.cache/retain/checkpoints/retain_repro_pretrain/paper_final_hparams/9999"
+  },
+  "progress": {
+    "completed_jobs": 1,
+    "total_jobs": 270,
+    "completed_episodes": 10,
+    "next_job_seed": 21,
+    "first_completed_job": {
+      "key": "159a0a54b5f8d075",
+      "seed": 1,
+      "finished_at": "2026-08-20T20:57:52+08:00",
+      "episodes": 10,
+      "successes": 0,
+      "success_rate": 0.0,
+      "episode_length_each": 530
+    }
+  },
+  "storage": {
+    "video_count": 10,
+    "video_bytes": 1916031,
+    "mean_video_bytes": 191603.1,
+    "projected_alpha_sweep_video_bytes_at_current_mean": 517328370,
+    "shared_free_bytes": 141906567168,
+    "projection_status": "ample_for_alpha_sweep"
+  },
+  "processes": {
+    "evaluation_pipeline_pid": 320418,
+    "policy_server_pid": 320427,
+    "current_evaluator_pid": 325032
+  },
+  "error_scan": {
+    "fatal_error_count": 0,
+    "note": "policy server readiness probe produced one raw-TCP WebSocket handshake warning, followed by a valid evaluator connection"
+  }
+}

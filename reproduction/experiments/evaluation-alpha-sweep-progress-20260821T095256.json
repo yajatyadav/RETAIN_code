@@ -1,0 +1,203 @@
+{
+  "protocol_id": "RETAIN-GPU-20260819-001",
+  "generated_at": "2026-08-21T09:52:56+08:00",
+  "status": "alpha_sweep_running",
+  "supersedes": "reproduction/experiments/evaluation-alpha-sweep-progress-20260821T093515.json",
+  "interpretation_scope": "coft_basket_sixth_candidate_complete_and_a070_running",
+  "results_root": "/shared/.cache/retain/results/RETAIN-GPU-20260819-001",
+  "progress": {
+    "completed_policies": 51,
+    "total_policies": 54,
+    "completed_jobs": 256,
+    "total_jobs": 270,
+    "completed_episodes": 2560,
+    "current_policy": "retain_coft_basket_a070",
+    "current_job_seed": 21,
+    "current_job_observed_episodes": 1,
+    "current_job_observed_successes": 0
+  },
+  "cumulative_success_rates": {
+    "taskft": {
+      "stove": {
+        "0.1": 0.08,
+        "0.2": 0.08,
+        "0.3": 0.24,
+        "0.4": 0.46,
+        "0.5": 0.44,
+        "0.6": 0.42,
+        "0.7": 0.6,
+        "0.8": 0.6,
+        "0.9": 0.56
+      },
+      "mugs": {
+        "0.1": 0.0,
+        "0.2": 0.0,
+        "0.3": 0.0,
+        "0.4": 0.06,
+        "0.5": 0.14,
+        "0.6": 0.32,
+        "0.7": 0.42,
+        "0.8": 0.4,
+        "0.9": 0.36
+      },
+      "basket": {
+        "0.1": 0.0,
+        "0.2": 0.0,
+        "0.3": 0.0,
+        "0.4": 0.0,
+        "0.5": 0.02,
+        "0.6": 0.1,
+        "0.7": 0.24,
+        "0.8": 0.18,
+        "0.9": 0.24
+      }
+    },
+    "coft": {
+      "stove": {
+        "0.1": 0.06,
+        "0.2": 0.1,
+        "0.3": 0.16,
+        "0.4": 0.48,
+        "0.5": 0.52,
+        "0.6": 0.56,
+        "0.7": 0.6,
+        "0.8": 0.66,
+        "0.9": 0.58
+      },
+      "mugs": {
+        "0.1": 0.0,
+        "0.2": 0.0,
+        "0.3": 0.0,
+        "0.4": 0.14,
+        "0.5": 0.28,
+        "0.6": 0.34,
+        "0.7": 0.48,
+        "0.8": 0.52,
+        "0.9": 0.42
+      },
+      "basket": {
+        "0.1": 0.0,
+        "0.2": 0.0,
+        "0.3": 0.02,
+        "0.4": 0.1,
+        "0.5": 0.02,
+        "0.6": 0.18
+      }
+    }
+  },
+  "newly_completed_policies": [
+    {
+      "policy": "retain_coft_basket_a060",
+      "family": "coft",
+      "task": "basket",
+      "alpha": 0.6,
+      "linear_interpolation_weights": [0.6, 0.4],
+      "seeds": [1, 21, 41, 61, 81],
+      "successes_by_seed": [4, 0, 2, 2, 1],
+      "total_successes": 9,
+      "total_episodes": 50,
+      "success_rate": 0.18,
+      "error_episodes": 0,
+      "final_job_finished_at": "2026-08-21T09:48:49.839447+08:00",
+      "summary_file_count": 5,
+      "video_count": 50,
+      "video_bytes": 7581917,
+      "selected_for_main_evaluation": false,
+      "validation_scope": "exploratory_interim"
+    }
+  ],
+  "selection_results": {
+    "taskft": {
+      "stove": {
+        "selected_alpha": 0.8,
+        "selected_success_rate": 0.6,
+        "tied_best_alphas": [0.7, 0.8],
+        "status": "complete"
+      },
+      "mugs": {
+        "selected_alpha": 0.7,
+        "selected_success_rate": 0.42,
+        "tied_best_alphas": [0.7],
+        "status": "complete"
+      },
+      "basket": {
+        "selected_alpha": 0.9,
+        "selected_success_rate": 0.24,
+        "tied_best_alphas": [0.7, 0.9],
+        "status": "complete"
+      }
+    },
+    "coft": {
+      "stove": {
+        "selected_alpha": 0.8,
+        "selected_success_rate": 0.66,
+        "tied_best_alphas": [0.8],
+        "status": "complete"
+      },
+      "mugs": {
+        "selected_alpha": 0.8,
+        "selected_success_rate": 0.52,
+        "tied_best_alphas": [0.8],
+        "status": "complete"
+      },
+      "basket": {
+        "status": "pending",
+        "completed_candidate_count": 6,
+        "remaining_candidate_count": 3,
+        "paper_alpha": 0.9,
+        "tie_break_applied": false,
+        "selection_eligible": false
+      }
+    }
+  },
+  "in_progress_policy": {
+    "policy": "retain_coft_basket_a070",
+    "alpha": 0.7,
+    "linear_interpolation_weights": [0.7, 0.3],
+    "completed_seeds": [1],
+    "completed_seed_successes": [2],
+    "completed_episodes": 10,
+    "completed_successes": 2,
+    "current_seed": 21,
+    "current_seed_observed_episodes": 1,
+    "current_seed_observed_successes": 0,
+    "partial_result_eligible_for_alpha_selection": false
+  },
+  "storage": {
+    "completed_policy_video_count": 2550,
+    "completed_policy_video_bytes": 362519881,
+    "mean_video_bytes": 142164.65921568626,
+    "projected_alpha_sweep_video_bytes_at_completed_policy_mean": 383844579.8823529,
+    "shared_free_bytes": 138188726272,
+    "root_free_bytes": 11648483328,
+    "projection_status": "ample_for_alpha_sweep"
+  },
+  "single_gpu_constraint": {
+    "physical_gpu_index": 3,
+    "current_policy_server_cuda_visible_devices": "3",
+    "current_policy_server_memory_used_mib": 77115,
+    "current_evaluator_cuda_visible_devices": "",
+    "current_evaluator_egl_device_id": "3",
+    "observed_gpu_compute_process_pids": [1238425]
+  },
+  "resources": {
+    "sampled_at": "2026-08-21T09:52:56+08:00",
+    "host_available_bytes": 529991792640,
+    "gpu_memory_used_mib": [2, 878, 3, 77115, 58576, 59679, 58637, 58351],
+    "gpu_utilization_percent": [0, 1, 0, 63, 96, 93, 94, 96]
+  },
+  "processes": {
+    "evaluation_pipeline_pid": 320418,
+    "policy_server_pid": 1238425,
+    "evaluator_pid": 1242882
+  },
+  "error_scan": {
+    "scope": "coft_basket_a060_a070_non_video_results_and_policy_logs",
+    "raw_traceback_line_hits": 6,
+    "classified_benign_readiness_probe_events": 2,
+    "fatal_error_count_after_classification": 0,
+    "service_status": "active",
+    "benign_readiness_probe_handshake_warning_observed": true
+  },
+  "caution_zh": "coFT basket alpha=0.6 的 9/50 暂居前六个完整点首位，但 alpha=0.7--0.9 尚未完成，不能据此选参或断言完整曲线。alpha=0.7 当前只有 seed 1 完整为 2/10，seed 21 的 0/1 是 partial observation，均不构成完整候选。日志 Traceback 是裸 TCP readiness probe 触发的已知 WebSocket handshake 告警，不是策略服务失败。"
+}

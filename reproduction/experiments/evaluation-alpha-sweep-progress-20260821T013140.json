@@ -1,0 +1,127 @@
+{
+  "protocol_id": "RETAIN-GPU-20260819-001",
+  "generated_at": "2026-08-21T01:31:40+08:00",
+  "status": "alpha_sweep_running",
+  "supersedes": "reproduction/experiments/evaluation-alpha-sweep-progress-20260821T011310.json",
+  "interpretation_scope": "taskft_mugs_exploratory_interim_with_taskft_stove_selection_complete",
+  "results_root": "/shared/.cache/retain/results/RETAIN-GPU-20260819-001",
+  "progress": {
+    "completed_policies": 17,
+    "total_policies": 54,
+    "completed_jobs": 88,
+    "total_jobs": 270,
+    "completed_episodes": 880,
+    "current_policy": "retain_taskft_mugs_a090",
+    "current_job_seed": 61,
+    "current_job_observed_episodes": 8,
+    "current_job_observed_successes": 4
+  },
+  "cumulative_success_rates": {
+    "taskft": {
+      "stove": {
+        "0.1": 0.08,
+        "0.2": 0.08,
+        "0.3": 0.24,
+        "0.4": 0.46,
+        "0.5": 0.44,
+        "0.6": 0.42,
+        "0.7": 0.6,
+        "0.8": 0.6,
+        "0.9": 0.56
+      },
+      "mugs": {
+        "0.1": 0.0,
+        "0.2": 0.0,
+        "0.3": 0.0,
+        "0.4": 0.06,
+        "0.5": 0.14,
+        "0.6": 0.32,
+        "0.7": 0.42,
+        "0.8": 0.4
+      }
+    }
+  },
+  "newly_completed_policy": {
+    "policy": "retain_taskft_mugs_a080",
+    "family": "taskft",
+    "task": "mugs",
+    "alpha": 0.8,
+    "linear_interpolation_weights": [0.8, 0.2],
+    "seeds": [1, 21, 41, 61, 81],
+    "successes_by_seed": [2, 6, 3, 4, 5],
+    "total_successes": 20,
+    "total_episodes": 50,
+    "success_rate": 0.4,
+    "final_job_finished_at": "2026-08-21T01:19:14.754130+08:00",
+    "summary_file_count": 5,
+    "video_count": 50,
+    "video_bytes": 5755770,
+    "eligible_for_task_level_alpha_selection_now": false
+  },
+  "selection_results": {
+    "taskft": {
+      "stove": {
+        "selected_alpha": 0.8,
+        "selected_success_rate": 0.6,
+        "tied_best_alphas": [0.7, 0.8],
+        "tie_break": "highest alpha among equal success rates",
+        "paper_alpha": 0.9,
+        "paper_alpha_success_rate": 0.56,
+        "status": "complete"
+      },
+      "mugs": {
+        "status": "pending_final_alpha_candidate",
+        "completed_alphas": [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8],
+        "current_best_alpha": 0.7,
+        "current_best_success_rate": 0.42,
+        "tie_break_not_yet_applied": true
+      }
+    }
+  },
+  "in_progress_policy": {
+    "policy": "retain_taskft_mugs_a090",
+    "alpha": 0.9,
+    "linear_interpolation_weights": [0.9, 0.1],
+    "completed_seeds": [1, 21, 41],
+    "completed_seed_successes": [3, 5, 3],
+    "completed_episodes": 38,
+    "completed_successes": 15,
+    "current_seed": 61,
+    "current_seed_observed_episodes": 8,
+    "current_seed_observed_successes": 4,
+    "partial_result_eligible_for_alpha_selection": false
+  },
+  "storage": {
+    "completed_policy_video_count": 850,
+    "completed_policy_video_bytes": 120755558,
+    "mean_video_bytes": 142065.3623529412,
+    "projected_alpha_sweep_video_bytes_at_completed_policy_mean": 383576478.3529412,
+    "shared_free_bytes": 141207207936,
+    "root_free_bytes": 13639778304,
+    "projection_status": "ample_for_alpha_sweep"
+  },
+  "single_gpu_constraint": {
+    "physical_gpu_index": 3,
+    "current_policy_server_cuda_visible_devices": "3",
+    "current_policy_server_memory_used_mib": 77130,
+    "current_evaluator_cuda_visible_devices": "",
+    "current_evaluator_egl_device_id": "3"
+  },
+  "resources": {
+    "sampled_at": "2026-08-21T01:31:40+08:00",
+    "host_available_bytes": 529970173952,
+    "gpu_memory_used_mib": [2, 80225, 47130, 77130, 61570, 61465, 61763, 61205],
+    "gpu_utilization_percent": [0, 75, 63, 7, 88, 96, 89, 99]
+  },
+  "processes": {
+    "evaluation_pipeline_pid": 320418,
+    "policy_server_pid": 626861,
+    "evaluator_pid": 637973
+  },
+  "error_scan": {
+    "fatal_error_count": 0,
+    "service_status": "active",
+    "benign_readiness_probe_handshake_warning_observed": true
+  },
+  "caution_zh": "mugs 的 α=0.7 以 21/50 暂居首位，α=0.8 为 20/50；但 α=0.9 尚未完成，其 15/38 仍是 partial observation，不能触发正式选择。"
+}

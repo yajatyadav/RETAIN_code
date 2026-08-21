@@ -1,0 +1,126 @@
+{
+  "protocol_id": "RETAIN-GPU-20260819-001",
+  "captured_at": "2026-08-21T16:58:00+08:00",
+  "status": "retain_taskft_stove_a090_ood_hard_and_libero90_complete_second_goal_running",
+  "pipeline": {
+    "service": "retain-reproduction.service",
+    "active": true,
+    "pipeline_pid": 1886,
+    "current_policy": "retain_taskft_stove_a090",
+    "policy_server_pid": 82166,
+    "evaluator_pid": 144220,
+    "physical_gpu_index": 0,
+    "completed_alpha_jobs": 270,
+    "completed_main_jobs": 152,
+    "completed_jobs_in_status": 422,
+    "failed_job": null
+  },
+  "selected_alpha_policy": {
+    "policy": "retain_taskft_stove_a080",
+    "ID": {"successes": 15, "episodes": 20, "success_rate": 0.75},
+    "OOD_HARD": {"successes": 50, "episodes": 100, "success_rate": 0.5},
+    "libero_90": {"successes": 27, "episodes": 50, "success_rate": 0.54}
+  },
+  "current_policy": {
+    "policy": "retain_taskft_stove_a090",
+    "role": "paper_alpha_reference",
+    "completed_independent_jobs": 17,
+    "ID": {
+      "successes": 14,
+      "episodes": 20,
+      "success_rate": 0.7,
+      "delta_vs_selected_alpha": -0.05,
+      "delta_vs_taskft": -0.05
+    },
+    "OOD_MEDIUM_selection_set": {
+      "successes": 28,
+      "episodes": 50,
+      "success_rate": 0.56,
+      "independent_main_evidence": false
+    },
+    "OOD_HARD": {
+      "successes_by_condition": [5, 2, 9, 6, 6, 3, 5, 5, 7, 0],
+      "successes": 48,
+      "episodes": 100,
+      "success_rate": 0.48,
+      "episode_errors": 0,
+      "selected_alpha_success_rate": 0.5,
+      "delta_vs_selected_alpha": -0.02,
+      "taskft_success_rate": 0.45,
+      "delta_vs_taskft": 0.03,
+      "pretrain_success_rate": 0.02,
+      "delta_vs_pretrain": 0.46,
+      "set_0_success_rate": 0.64,
+      "set_1_success_rate": 0.32,
+      "status": "complete"
+    },
+    "generalist_retention": {
+      "completed_tasks": 6,
+      "planned_tasks": 20,
+      "task_successes": [10, 7, 0, 4, 3, 0],
+      "successes": 24,
+      "episodes": 60,
+      "by_suite": {
+        "libero_90": {
+          "task_successes": [10, 7, 0, 4, 3],
+          "successes": 24,
+          "episodes": 50,
+          "success_rate": 0.48,
+          "selected_alpha_success_rate": 0.54,
+          "delta_vs_selected_alpha": -0.06,
+          "taskft_success_rate": 0.48,
+          "delta_vs_taskft": 0.0,
+          "pretrain_success_rate": 0.82,
+          "delta_vs_pretrain": -0.34,
+          "status": "complete"
+        },
+        "libero_goal": {
+          "completed_tasks": 1,
+          "successes": 0,
+          "episodes": 10,
+          "status": "running"
+        }
+      }
+    }
+  },
+  "global_complete_main_aggregate": {
+    "jobs": 152,
+    "episodes": 1580,
+    "successes": 507,
+    "episode_errors": 0,
+    "video_count": 1580,
+    "video_bytes": 183903770
+  },
+  "current_job": {
+    "job_key": "49fa96d6f09397b4",
+    "eval_type": "GENERALIST",
+    "suite": "libero_goal",
+    "task": "put the bowl on the plate",
+    "planned_episodes": 10,
+    "observed_videos_at_capture": 5,
+    "observed_video_bytes_at_capture": 193297,
+    "summary_committed_at_capture": false
+  },
+  "single_gpu_audit": {
+    "only_reproduction_compute_process": {"physical_gpu_index": 0, "pid": 82166, "memory_mib": 77036},
+    "constraint_satisfied": true
+  },
+  "resources": {
+    "gpu_memory_used_mib": [77049, 1, 1, 643, 1, 1, 1, 1],
+    "gpu_utilization_percent": [0, 0, 0, 0, 0, 0, 0, 0],
+    "host_available_bytes": 528146241536,
+    "root_free_bytes": 84782907392,
+    "shared_free_bytes": 103754543104
+  },
+  "monitoring_policy": {
+    "root_space": "monitor_and_record_only",
+    "root_space_is_a_stop_condition": false,
+    "all_known_evaluation_write_paths_on_shared": true
+  },
+  "validation": {
+    "service_active": true,
+    "single_physical_gpu_constraint": true,
+    "selection_set_reuse_labeled": true,
+    "fatal_error_matches": 0
+  }
+}

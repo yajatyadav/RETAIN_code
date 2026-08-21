@@ -1,0 +1,103 @@
+{
+  "protocol_id": "RETAIN-GPU-20260819-001",
+  "captured_at": "2026-08-21T13:18:24+08:00",
+  "status": "main_evaluation_running",
+  "pipeline": {
+    "service": "retain-reproduction.service",
+    "active": true,
+    "pipeline_pid": 1436285,
+    "policy": "pretrain_117task",
+    "policy_server_pid": 1436419,
+    "evaluator_pid": 1451377,
+    "physical_gpu_index": 0,
+    "completed_alpha_jobs": 270,
+    "completed_main_jobs": 42,
+    "completed_jobs_in_status": 312,
+    "failed_job": null
+  },
+  "complete_main_aggregate": {
+    "jobs": 42,
+    "episodes": 450,
+    "successes": 3,
+    "aggregate_success_rate_for_integrity_audit_only": 0.006666666666666667,
+    "episode_errors": 0,
+    "video_count": 450,
+    "video_bytes": 67727929,
+    "interpretation": "跨任务与协议的合计仅用于完整性审计，不作为论文主指标"
+  },
+  "newly_committed_jobs": [
+    {
+      "job_index": 41,
+      "job_key": "80ce78040d031dff",
+      "eval_type": "OOD_HARD-set-0",
+      "task": "basket",
+      "seed": 21,
+      "episodes": 10,
+      "successes": 0,
+      "success_rate": 0.0,
+      "episode_errors": 0,
+      "video_count": 10,
+      "video_bytes": 1380882,
+      "finished_at": "2026-08-21T13:14:11.978992+08:00"
+    },
+    {
+      "job_index": 42,
+      "job_key": "ae8f55f069b13f8b",
+      "eval_type": "OOD_HARD-set-1",
+      "task": "basket",
+      "seed": 21,
+      "episodes": 10,
+      "successes": 0,
+      "success_rate": 0.0,
+      "episode_errors": 0,
+      "video_count": 10,
+      "video_bytes": 1560112,
+      "finished_at": "2026-08-21T13:17:28.736011+08:00"
+    }
+  ],
+  "current_job": {
+    "index": 43,
+    "total_jobs_for_policy": 68,
+    "job_key": "57523352762b2afb",
+    "eval_type": "OOD_HARD-set-0",
+    "task": "basket",
+    "seed": 41,
+    "planned_episodes": 10,
+    "summary_committed_at_capture": false,
+    "eligible_for_comparison_at_capture": false,
+    "service_log_marker_at": "2026-08-21T13:17:28.746245+08:00"
+  },
+  "single_gpu_audit": {
+    "only_reproduction_compute_process": {
+      "physical_gpu_index": 0,
+      "pid": 1436419,
+      "memory_mib": 77036,
+      "role": "policy_server"
+    },
+    "evaluator_uses_egl_device": 0,
+    "constraint_satisfied": true
+  },
+  "resources": {
+    "captured_near": "2026-08-21T13:17:29+08:00",
+    "gpu_memory_used_mib": [77049, 1, 1, 989, 267, 267, 79883, 269],
+    "gpu_utilization_percent": [63, 0, 0, 1, 0, 0, 0, 0],
+    "host_available_bytes": 531377475584,
+    "root_free_bytes": 3818774528,
+    "shared_free_bytes": 106238623744,
+    "root_df_use_percent": 100,
+    "shared_df_use_percent": 99
+  },
+  "monitoring_policy": {
+    "root_space": "monitor_and_record_only",
+    "root_space_is_a_stop_condition": false,
+    "resume_gate_bytes": null,
+    "all_known_evaluation_write_paths_on_shared": true
+  },
+  "validation": {
+    "service_active": true,
+    "job41_summary_committed": true,
+    "job42_summary_committed": true,
+    "job43_evaluator_started": true,
+    "fatal_error_matches_since_resume": 0
+  }
+}

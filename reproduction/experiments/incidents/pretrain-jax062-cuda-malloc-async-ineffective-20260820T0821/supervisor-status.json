@@ -1,0 +1,7 @@
+{
+  "protocol_id": "RETAIN-GPU-20260819-001",
+  "stage": "failed",
+  "updated_at": "2026-08-20T00:21:04.331661+00:00",
+  "error_type": "CalledProcessError",
+  "error": "Command '['/root/RETAIN_code/.venv/bin/python', 'reproduction/scripts/run_training_pipeline.py', '--include-coft', '--poll-seconds', '60']' returned non-zero exit status 1."
+}

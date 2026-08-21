@@ -1,0 +1,178 @@
+{
+  "protocol_id": "RETAIN-GPU-20260819-001",
+  "generated_at": "2026-08-21T04:53:15+08:00",
+  "status": "alpha_sweep_running",
+  "supersedes": "reproduction/experiments/evaluation-alpha-sweep-progress-20260821T043211.json",
+  "interpretation_scope": "coft_stove_exploratory_interim_with_all_taskft_selection_complete",
+  "results_root": "/shared/.cache/retain/results/RETAIN-GPU-20260819-001",
+  "progress": {
+    "completed_policies": 31,
+    "total_policies": 54,
+    "completed_jobs": 155,
+    "total_jobs": 270,
+    "completed_episodes": 1550,
+    "current_policy": "retain_coft_stove_a050",
+    "current_job_seed": 1,
+    "current_job_observed_episodes": 1,
+    "current_job_observed_successes": 1
+  },
+  "cumulative_success_rates": {
+    "taskft": {
+      "stove": {
+        "0.1": 0.08,
+        "0.2": 0.08,
+        "0.3": 0.24,
+        "0.4": 0.46,
+        "0.5": 0.44,
+        "0.6": 0.42,
+        "0.7": 0.6,
+        "0.8": 0.6,
+        "0.9": 0.56
+      },
+      "mugs": {
+        "0.1": 0.0,
+        "0.2": 0.0,
+        "0.3": 0.0,
+        "0.4": 0.06,
+        "0.5": 0.14,
+        "0.6": 0.32,
+        "0.7": 0.42,
+        "0.8": 0.4,
+        "0.9": 0.36
+      },
+      "basket": {
+        "0.1": 0.0,
+        "0.2": 0.0,
+        "0.3": 0.0,
+        "0.4": 0.0,
+        "0.5": 0.02,
+        "0.6": 0.1,
+        "0.7": 0.24,
+        "0.8": 0.18,
+        "0.9": 0.24
+      }
+    },
+    "coft": {
+      "stove": {
+        "0.1": 0.06,
+        "0.2": 0.1,
+        "0.3": 0.16,
+        "0.4": 0.48
+      }
+    }
+  },
+  "newly_completed_policies": [
+    {
+      "policy": "retain_coft_stove_a030",
+      "family": "coft",
+      "task": "stove",
+      "alpha": 0.3,
+      "linear_interpolation_weights": [0.3, 0.7],
+      "seeds": [1, 21, 41, 61, 81],
+      "successes_by_seed": [1, 2, 1, 3, 1],
+      "total_successes": 8,
+      "total_episodes": 50,
+      "success_rate": 0.16,
+      "final_job_finished_at": "2026-08-21T04:39:40.906129+08:00",
+      "summary_file_count": 5,
+      "video_count": 50,
+      "video_bytes": 9346102,
+      "eligible_for_task_level_alpha_selection_now": false
+    },
+    {
+      "policy": "retain_coft_stove_a040",
+      "family": "coft",
+      "task": "stove",
+      "alpha": 0.4,
+      "linear_interpolation_weights": [0.4, 0.6],
+      "seeds": [1, 21, 41, 61, 81],
+      "successes_by_seed": [6, 4, 4, 4, 6],
+      "total_successes": 24,
+      "total_episodes": 50,
+      "success_rate": 0.48,
+      "final_job_finished_at": "2026-08-21T04:51:57.573618+08:00",
+      "summary_file_count": 5,
+      "video_count": 50,
+      "video_bytes": 8126422,
+      "eligible_for_task_level_alpha_selection_now": false
+    }
+  ],
+  "selection_results": {
+    "taskft": {
+      "stove": {
+        "selected_alpha": 0.8,
+        "selected_success_rate": 0.6,
+        "tied_best_alphas": [0.7, 0.8],
+        "status": "complete"
+      },
+      "mugs": {
+        "selected_alpha": 0.7,
+        "selected_success_rate": 0.42,
+        "tied_best_alphas": [0.7],
+        "status": "complete"
+      },
+      "basket": {
+        "selected_alpha": 0.9,
+        "selected_success_rate": 0.24,
+        "tied_best_alphas": [0.7, 0.9],
+        "status": "complete"
+      }
+    },
+    "coft": {
+      "stove": {
+        "status": "pending_remaining_alpha_candidates",
+        "completed_alphas": [0.1, 0.2, 0.3, 0.4],
+        "current_best_alphas": [0.4],
+        "current_best_success_rate": 0.48,
+        "tie_break_not_yet_applied": true
+      }
+    }
+  },
+  "in_progress_policy": {
+    "policy": "retain_coft_stove_a050",
+    "alpha": 0.5,
+    "linear_interpolation_weights": [0.5, 0.5],
+    "completed_seeds": [],
+    "completed_seed_successes": [],
+    "completed_episodes": 1,
+    "completed_successes": 1,
+    "current_seed": 1,
+    "current_seed_observed_episodes": 1,
+    "current_seed_observed_successes": 1,
+    "partial_result_eligible_for_alpha_selection": false
+  },
+  "storage": {
+    "completed_policy_video_count": 1550,
+    "completed_policy_video_bytes": 231734211,
+    "mean_video_bytes": 149505.94258064515,
+    "projected_alpha_sweep_video_bytes_at_completed_policy_mean": 403666044.9677419,
+    "shared_free_bytes": 140647796736,
+    "root_free_bytes": 13448974336,
+    "projection_status": "ample_for_alpha_sweep"
+  },
+  "single_gpu_constraint": {
+    "physical_gpu_index": 3,
+    "current_policy_server_cuda_visible_devices": "3",
+    "current_policy_server_memory_used_mib": 77115,
+    "current_evaluator_cuda_visible_devices": "",
+    "current_evaluator_egl_device_id": "3",
+    "observed_gpu_compute_process_pids": [878942]
+  },
+  "resources": {
+    "sampled_at": "2026-08-21T04:53:15+08:00",
+    "host_available_bytes": 529358497792,
+    "gpu_memory_used_mib": [2, 396, 52842, 77115, 48696, 46431, 48801, 47697],
+    "gpu_utilization_percent": [0, 0, 84, 63, 83, 81, 56, 86]
+  },
+  "processes": {
+    "evaluation_pipeline_pid": 320418,
+    "policy_server_pid": 878942,
+    "evaluator_pid": 879771
+  },
+  "error_scan": {
+    "fatal_error_count": 0,
+    "service_status": "active",
+    "benign_readiness_probe_handshake_warning_observed": true
+  },
+  "caution_zh": "coFT stove 的 alpha=0.4 完整结果为 24/50，暂居四个完整点首位；alpha=0.5 的 1/1 仍是 partial observation，不参与 alpha 选择。"
+}

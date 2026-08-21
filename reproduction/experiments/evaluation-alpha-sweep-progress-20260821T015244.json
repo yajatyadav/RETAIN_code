@@ -1,0 +1,142 @@
+{
+  "protocol_id": "RETAIN-GPU-20260819-001",
+  "generated_at": "2026-08-21T01:52:44+08:00",
+  "status": "alpha_sweep_running",
+  "supersedes": "reproduction/experiments/evaluation-alpha-sweep-progress-20260821T013550.json",
+  "interpretation_scope": "taskft_basket_exploratory_interim_with_stove_and_mugs_selection_complete",
+  "results_root": "/shared/.cache/retain/results/RETAIN-GPU-20260819-001",
+  "progress": {
+    "completed_policies": 19,
+    "total_policies": 54,
+    "completed_jobs": 95,
+    "total_jobs": 270,
+    "completed_episodes": 950,
+    "current_policy": "retain_taskft_basket_a020",
+    "current_job_seed": 1,
+    "current_job_observed_episodes": 0,
+    "current_job_observed_successes": 0
+  },
+  "cumulative_success_rates": {
+    "taskft": {
+      "stove": {
+        "0.1": 0.08,
+        "0.2": 0.08,
+        "0.3": 0.24,
+        "0.4": 0.46,
+        "0.5": 0.44,
+        "0.6": 0.42,
+        "0.7": 0.6,
+        "0.8": 0.6,
+        "0.9": 0.56
+      },
+      "mugs": {
+        "0.1": 0.0,
+        "0.2": 0.0,
+        "0.3": 0.0,
+        "0.4": 0.06,
+        "0.5": 0.14,
+        "0.6": 0.32,
+        "0.7": 0.42,
+        "0.8": 0.4,
+        "0.9": 0.36
+      },
+      "basket": {
+        "0.1": 0.0
+      }
+    }
+  },
+  "newly_completed_policy": {
+    "policy": "retain_taskft_basket_a010",
+    "family": "taskft",
+    "task": "basket",
+    "alpha": 0.1,
+    "linear_interpolation_weights": [0.1, 0.9],
+    "seeds": [1, 21, 41, 61, 81],
+    "successes_by_seed": [0, 0, 0, 0, 0],
+    "total_successes": 0,
+    "total_episodes": 50,
+    "success_rate": 0.0,
+    "final_job_finished_at": "2026-08-21T01:51:55.524706+08:00",
+    "summary_file_count": 5,
+    "video_count": 50,
+    "video_bytes": 7460696,
+    "eligible_for_task_level_alpha_selection_now": false
+  },
+  "selection_results": {
+    "taskft": {
+      "stove": {
+        "selected_alpha": 0.8,
+        "selected_success_rate": 0.6,
+        "tied_best_alphas": [0.7, 0.8],
+        "tie_break": "highest alpha among equal success rates",
+        "tie_break_applied": true,
+        "paper_alpha": 0.9,
+        "paper_alpha_success_rate": 0.56,
+        "status": "complete"
+      },
+      "mugs": {
+        "selected_alpha": 0.7,
+        "selected_success_rate": 0.42,
+        "tied_best_alphas": [0.7],
+        "tie_break": "highest alpha among equal success rates",
+        "tie_break_applied": false,
+        "paper_alpha": 0.8,
+        "paper_alpha_success_rate": 0.4,
+        "status": "complete"
+      },
+      "basket": {
+        "status": "pending_remaining_eight_alpha_candidates",
+        "completed_alphas": [0.1],
+        "current_best_alpha": 0.1,
+        "current_best_success_rate": 0.0,
+        "tie_break_not_yet_applied": true
+      }
+    }
+  },
+  "in_progress_policy": {
+    "policy": "retain_taskft_basket_a020",
+    "alpha": 0.2,
+    "linear_interpolation_weights": [0.2, 0.8],
+    "completed_seeds": [],
+    "completed_seed_successes": [],
+    "completed_episodes": 0,
+    "completed_successes": 0,
+    "current_seed": 1,
+    "current_seed_observed_episodes": 0,
+    "current_seed_observed_successes": 0,
+    "partial_result_eligible_for_alpha_selection": false
+  },
+  "storage": {
+    "completed_policy_video_count": 950,
+    "completed_policy_video_bytes": 133931263,
+    "mean_video_bytes": 140980.2768421053,
+    "projected_alpha_sweep_video_bytes_at_completed_policy_mean": 380646747.4736842,
+    "shared_free_bytes": 140831326208,
+    "root_free_bytes": 13606432768,
+    "projection_status": "ample_for_alpha_sweep"
+  },
+  "single_gpu_constraint": {
+    "physical_gpu_index": 3,
+    "current_policy_server_cuda_visible_devices": "3",
+    "current_policy_server_memory_used_mib": 77099,
+    "current_evaluator_cuda_visible_devices": "",
+    "current_evaluator_egl_device_id": "3"
+  },
+  "resources": {
+    "sampled_at": "2026-08-21T01:52:44+08:00",
+    "host_available_bytes": 511973798912,
+    "gpu_memory_used_mib": [2, 4, 47502, 77099, 61666, 61561, 61497, 60911],
+    "gpu_utilization_percent": [0, 0, 86, 0, 96, 89, 97, 86]
+  },
+  "processes": {
+    "evaluation_pipeline_pid": 320418,
+    "policy_server_pid": 662875,
+    "evaluator_pid": null
+  },
+  "error_scan": {
+    "fatal_error_count": 0,
+    "service_status": "active",
+    "benign_readiness_probe_handshake_warning_observed": true
+  },
+  "caution_zh": "basket 的 α=0.1 为完整 0/50，但其余八个候选尚未完成，不能提前选择或外推主评测。"
+}

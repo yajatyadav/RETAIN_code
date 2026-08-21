@@ -1,0 +1,116 @@
+{
+  "protocol_id": "RETAIN-GPU-20260819-001",
+  "captured_at": "2026-08-21T17:38:24+08:00",
+  "status": "taskft_mugs_id_and_ood_medium_complete_second_ood_hard_condition_running",
+  "pipeline": {
+    "service": "retain-reproduction.service",
+    "active": true,
+    "pipeline_pid": 1886,
+    "current_policy": "taskft_mugs",
+    "policy_server_pid": 192302,
+    "evaluator_pid": 219888,
+    "physical_gpu_index": 0,
+    "completed_alpha_jobs": 270,
+    "completed_main_jobs": 173,
+    "completed_jobs_in_status": 443,
+    "failed_job": null
+  },
+  "current_policy": {
+    "policy": "taskft_mugs",
+    "completed_jobs": 7,
+    "ID": {
+      "successes": 13,
+      "episodes": 20,
+      "success_rate": 0.65,
+      "pretrain_success_rate": 0.0,
+      "delta_vs_pretrain": 0.65,
+      "episode_errors": 0,
+      "video_count": 20,
+      "video_bytes": 1719407,
+      "status": "complete"
+    },
+    "OOD_MEDIUM": {
+      "seeds": [1, 21, 41, 61, 81],
+      "successes_by_seed": [5, 4, 5, 7, 5],
+      "successes": 26,
+      "episodes": 50,
+      "success_rate": 0.52,
+      "pretrain_successes": 0,
+      "pretrain_success_rate": 0.0,
+      "delta_vs_pretrain": 0.52,
+      "selected_alpha_policy": "retain_taskft_mugs_a070",
+      "selected_alpha": 0.7,
+      "selected_alpha_validation_successes": 21,
+      "selected_alpha_validation_success_rate": 0.42,
+      "paper_alpha_policy": "retain_taskft_mugs_a080",
+      "paper_alpha": 0.8,
+      "paper_alpha_validation_successes": 20,
+      "paper_alpha_validation_success_rate": 0.4,
+      "selected_alpha_is_independent_evidence": false,
+      "episode_errors": 0,
+      "video_count": 50,
+      "video_bytes": 5355525,
+      "status": "complete"
+    },
+    "OOD_HARD": {
+      "completed_conditions": ["set_0_seed_1"],
+      "successes_by_condition": [4],
+      "successes": 4,
+      "episodes": 10,
+      "success_rate": 0.4,
+      "pretrain_matching_successes": 0,
+      "pretrain_matching_episodes": 10,
+      "partial_delta_vs_pretrain": 0.4,
+      "episode_errors": 0,
+      "status": "running_second_of_ten_conditions"
+    }
+  },
+  "global_complete_main_aggregate": {
+    "jobs": 173,
+    "episodes": 1800,
+    "successes": 597,
+    "episode_errors": 0,
+    "video_count": 1800,
+    "video_bytes": 200633019
+  },
+  "current_job": {
+    "job_key": "b5a5ad7c220668f6",
+    "eval_type": "OOD_HARD",
+    "condition": "set_1",
+    "task": "mugs",
+    "seed": 1,
+    "planned_episodes": 10,
+    "observed_episodes_at_capture": 1,
+    "observed_successes_at_capture": 0,
+    "observed_errors_at_capture": 0,
+    "observed_video_bytes_at_capture": 128427,
+    "summary_committed_at_capture": false,
+    "eligible_for_formal_comparison": false
+  },
+  "single_gpu_audit": {
+    "only_reproduction_compute_process": {
+      "physical_gpu_index": 0,
+      "pid": 192302,
+      "memory_mib": 77036
+    },
+    "constraint_satisfied": true
+  },
+  "resources": {
+    "gpu_memory_used_mib": [77049, 1, 1, 859, 79699, 79767, 79813, 79727],
+    "gpu_utilization_percent": [60, 0, 0, 1, 75, 75, 77, 80],
+    "host_available_bytes": 531349709824,
+    "root_free_bytes": 70838423552,
+    "shared_free_bytes": 101804285952
+  },
+  "monitoring_policy": {
+    "root_space": "monitor_and_record_only",
+    "root_space_is_a_stop_condition": false,
+    "all_known_evaluation_write_paths_on_shared": true
+  },
+  "validation": {
+    "service_active": true,
+    "single_physical_gpu_constraint": true,
+    "selection_set_reuse_labeled": true,
+    "fatal_error_matches": 0
+  }
+}

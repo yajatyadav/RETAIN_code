@@ -1,0 +1,44 @@
+{
+  "protocol_id": "RETAIN-GPU-20260819-001",
+  "detected_at": "2026-08-21T18:40:03+08:00",
+  "corrected_at": "2026-08-21T18:44:02+08:00",
+  "scope": "documentation_label_only",
+  "affected_interpretation": "taskft_mugs OOD_MEDIUM was incorrectly described as equal to the selected alpha validation result",
+  "incorrect_statement": {
+    "raw_taskft_mugs_successes": 26,
+    "raw_taskft_mugs_episodes": 50,
+    "incorrectly_labeled_selected_policy": "retain_taskft_mugs_a080",
+    "incorrectly_labeled_selected_successes": 26
+  },
+  "canonical_alpha_selection_state": {
+    "source": "/shared/.cache/retain/evaluation-state/RETAIN-GPU-20260819-001/evaluation-pipeline/status.json",
+    "selected_policy": "retain_taskft_mugs_a070",
+    "selected_alpha": 0.7,
+    "selected_successes": 21,
+    "selected_episodes": 50,
+    "selected_success_rate": 0.42,
+    "paper_alpha_policy": "retain_taskft_mugs_a080",
+    "paper_alpha": 0.8,
+    "paper_alpha_successes": 20,
+    "paper_alpha_episodes": 50,
+    "paper_alpha_success_rate": 0.4,
+    "selection_rule": "maximum OOD_MEDIUM success rate; highest alpha only breaks exact ties"
+  },
+  "raw_taskft_result": {
+    "policy": "taskft_mugs",
+    "successes_by_seed": [5, 4, 5, 7, 5],
+    "successes": 26,
+    "episodes": 50,
+    "success_rate": 0.52
+  },
+  "correction_actions": [
+    "corrected findings item 115",
+    "corrected the 17:38 CST research-log statement",
+    "corrected selection annotations in snapshots 17:38, 17:58, 18:17, and 18:36",
+    "recorded selected alpha 0.7 and paper alpha 0.8 in current state"
+  ],
+  "experimental_data_changed": false,
+  "summaries_changed": false,
+  "completed_job_state_changed": false,
+  "evaluation_pipeline_interrupted": false
+}

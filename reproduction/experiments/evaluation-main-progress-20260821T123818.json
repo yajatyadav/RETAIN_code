@@ -1,0 +1,100 @@
+{
+  "protocol_id": "RETAIN-GPU-20260819-001",
+  "captured_at": "2026-08-21T12:38:18+08:00",
+  "status": "main_evaluation_running_after_shared_state_root_migration",
+  "pipeline": {
+    "service": "retain-reproduction.service",
+    "active": true,
+    "pipeline_pid": 1357474,
+    "policy": "pretrain_117task",
+    "policy_server_pid": 1357605,
+    "evaluator_pid": 1419040,
+    "physical_gpu_index": 0,
+    "state_root": "/shared/.cache/retain/evaluation-state/RETAIN-GPU-20260819-001/evaluation-pipeline",
+    "service_log": "/shared/.cache/retain/evaluation-state/RETAIN-GPU-20260819-001/evaluation-service.log",
+    "completed_alpha_jobs": 270,
+    "completed_main_jobs": 34,
+    "completed_jobs_in_status": 304,
+    "failed_job": null
+  },
+  "complete_aggregate": {
+    "summaries": 34,
+    "episodes": 370,
+    "successes": 3,
+    "success_rate": 0.008108108108108109,
+    "episode_errors": 0,
+    "video_count": 370,
+    "video_bytes": 56410574,
+    "mean_video_bytes": 152461.0108108108
+  },
+  "complete_groups": [
+    {"eval_type": "ID", "task": "stove", "seeds": [7], "successes_by_seed": [0], "episodes_by_seed": [20], "successes": 0, "episodes": 20, "status": "complete"},
+    {"eval_type": "OOD_MEDIUM", "task": "stove", "seeds": [1, 21, 41, 61, 81], "successes_by_seed": [0, 0, 0, 1, 0], "episodes_by_seed": [10, 10, 10, 10, 10], "successes": 1, "episodes": 50, "success_rate": 0.02, "status": "complete"},
+    {"eval_type": "OOD_HARD", "task": "stove", "conditions": ["set-0_seed-1", "set-1_seed-1", "set-0_seed-21", "set-1_seed-21", "set-0_seed-41", "set-1_seed-41", "set-0_seed-61", "set-1_seed-61", "set-0_seed-81", "set-1_seed-81"], "successes_by_condition": [0, 0, 0, 1, 1, 0, 0, 0, 0, 0], "episodes": 100, "successes": 2, "success_rate": 0.02, "status": "complete"},
+    {"eval_type": "ID", "task": "mugs", "seeds": [7], "successes_by_seed": [0], "episodes_by_seed": [20], "successes": 0, "episodes": 20, "status": "complete"},
+    {"eval_type": "OOD_MEDIUM", "task": "mugs", "seeds": [1, 21, 41, 61, 81], "successes_by_seed": [0, 0, 0, 0, 0], "episodes_by_seed": [10, 10, 10, 10, 10], "successes": 0, "episodes": 50, "success_rate": 0.0, "status": "complete"},
+    {"eval_type": "OOD_HARD", "task": "mugs", "conditions": ["set-0_seed-1", "set-1_seed-1", "set-0_seed-21", "set-1_seed-21", "set-0_seed-41", "set-1_seed-41", "set-0_seed-61", "set-1_seed-61", "set-0_seed-81", "set-1_seed-81"], "successes_by_condition": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], "episodes_by_condition": [10, 10, 10, 10, 10, 10, 10, 10, 10, 10], "successes": 0, "episodes": 100, "success_rate": 0.0, "status": "complete"},
+    {"eval_type": "ID", "task": "basket", "seeds": [7], "successes_by_seed": [0], "episodes_by_seed": [20], "successes": 0, "episodes": 20, "status": "complete"},
+    {"eval_type": "OOD_MEDIUM_partial_complete_jobs", "task": "basket", "seeds": [1], "successes_by_seed": [0], "episodes_by_seed": [10], "successes": 0, "episodes": 10, "eligible_as_full_ood_medium_aggregate": false}
+  ],
+  "newly_completed_since_previous_snapshot": [
+    {"index": 29, "job_key": "cea4092920e39e81", "eval_type": "OOD_HARD-set-0", "task": "mugs", "seed": 61, "successes": 0, "episodes": 10, "episode_errors": 0, "video_bytes": 1226177, "finished_at": "2026-08-21T12:16:30.548664+08:00"},
+    {"index": 30, "job_key": "45e8a785d34018b8", "eval_type": "OOD_HARD-set-1", "task": "mugs", "seed": 61, "successes": 0, "episodes": 10, "episode_errors": 0, "video_bytes": 1547698, "finished_at": "2026-08-21T12:19:56.560634+08:00"},
+    {"index": 31, "job_key": "802f9132a1ff3504", "eval_type": "OOD_HARD-set-0", "task": "mugs", "seed": 81, "successes": 0, "episodes": 10, "episode_errors": 0, "video_bytes": 1258405, "finished_at": "2026-08-21T12:24:01.609748+08:00"},
+    {"index": 32, "job_key": "14e85cd8ce796245", "eval_type": "OOD_HARD-set-1", "task": "mugs", "seed": 81, "successes": 0, "episodes": 10, "episode_errors": 0, "video_bytes": 1500689, "finished_at": "2026-08-21T12:27:47.247801+08:00"},
+    {"index": 33, "job_key": "6e02a0c21c92de0d", "eval_type": "ID", "task": "basket", "seed": 7, "successes": 0, "episodes": 20, "episode_errors": 0, "video_bytes": 2557775, "finished_at": "2026-08-21T12:33:48.846525+08:00"},
+    {"index": 34, "job_key": "41c85a920509d113", "eval_type": "OOD_MEDIUM", "task": "basket", "seed": 1, "successes": 0, "episodes": 10, "episode_errors": 0, "video_bytes": 1252098, "finished_at": "2026-08-21T12:36:49.605767+08:00"}
+  ],
+  "current_main_job": {
+    "index": 35,
+    "jobs_for_policy": 68,
+    "job_key": "b3dcc0ff3389d240",
+    "eval_type": "OOD_MEDIUM",
+    "task": "basket",
+    "seed": 21,
+    "planned_episodes": 10,
+    "observed_episodes": 4,
+    "observed_successes": 0,
+    "observed_errors": 0,
+    "observed_video_count": 4,
+    "observed_video_bytes": 606684,
+    "partial_observation_eligible_for_comparison": false
+  },
+  "single_gpu_audit": {
+    "policy_server_cuda_visible_devices": "0",
+    "evaluator_cuda_visible_devices": "",
+    "evaluator_egl_device_id": 0,
+    "only_reproduction_compute_process": {"physical_gpu_index": 0, "pid": 1357605, "memory_mib": 77036, "role": "policy_server"},
+    "constraint_satisfied": true
+  },
+  "resources": {
+    "gpu_memory_used_mib": [77049, 1, 1, 875, 80185, 80469, 80587, 80499],
+    "gpu_utilization_percent": [55, 0, 0, 1, 100, 100, 0, 100],
+    "host_available_bytes": 530272462848,
+    "shared_free_bytes": 106240618496,
+    "root_free_bytes": 5478400000,
+    "root_df_use_percent": 100,
+    "shared_df_use_percent": 99
+  },
+  "storage_watch": {
+    "status": "shared_migration_effective_for_reproduction_writes_but_external_root_pressure_continues",
+    "root_free_bytes_at_previous_check": 6076080128,
+    "root_free_bytes_at_capture": 5478400000,
+    "root_free_delta_bytes": -597680128,
+    "shared_free_bytes_at_previous_check": 106268033024,
+    "shared_free_bytes_at_capture": 106240618496,
+    "shared_free_delta_bytes": -27414528,
+    "new_complete_rollout_bytes_since_previous_snapshot": 9342842,
+    "headroom_above_hard_stop_trigger_bytes": 1183432704,
+    "attribution": "root free-space decline is much larger than the 9.34 MB of newly completed rollout video and remains unattributed to visible reproduction output; shared decline remains small after migration",
+    "hard_stop_trigger_bytes": 4294967296,
+    "action": "continue high-frequency monitoring; if root approaches 4 GiB, stop only after a completed-job commit and preserve resumable shared state"
+  },
+  "migration_validation": {
+    "completed_jobs_preserved_at_restart": 287,
+    "completed_jobs_now": 304,
+    "post_migration_completed_jobs": 17,
+    "post_migration_episode_errors": 0,
+    "fatal_error_matches": 0
+  }
+}

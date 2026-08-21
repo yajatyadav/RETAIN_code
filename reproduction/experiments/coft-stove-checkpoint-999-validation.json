@@ -1,0 +1,44 @@
+{
+  "protocol_id": "RETAIN-GPU-20260819-001-R1",
+  "generated_at": "2026-08-20T19:32:57+08:00",
+  "config": "retain_repro_coft_stove",
+  "experiment_name": "paper_coft_stove",
+  "attempt": 1,
+  "step": 999,
+  "path": "/shared/.cache/retain/checkpoints/retain_repro_coft_stove/paper_coft_stove/999",
+  "status": "verified_committed_params_only",
+  "save_started_at": "2026-08-20T19:31:20+08:00",
+  "checkpoint_manager_blocking_duration_seconds": 37.838128089904785,
+  "committed_at": "2026-08-20T19:32:16+08:00",
+  "commit_timestamp_nsecs": 1787225536034538721,
+  "stage_finished_at": "2026-08-20T19:32:31+08:00",
+  "stage_return_code": 0,
+  "metadata_sha256": "2448bfab2231a60fedef826b8781d5e7f2ec0c115f62e2f7d6c92fe2bd6a3897",
+  "retained_file_count": 20,
+  "retained_file_payload_bytes": 12014126607,
+  "retained_items": {
+    "_CHECKPOINT_METADATA": {
+      "file_count": 1,
+      "file_payload_bytes": 417
+    },
+    "assets": {
+      "file_count": 1,
+      "file_payload_bytes": 4496
+    },
+    "params": {
+      "file_count": 18,
+      "file_payload_bytes": 12014121694
+    }
+  },
+  "temporary_directory_count_after_commit": 0,
+  "background_save_error_count": 0,
+  "optimizer_state_retained": false,
+  "optimizer_state_policy": {
+    "status": "intentionally_absent_after_successful_stage",
+    "placeholder_directory_removed_bytes": 1840,
+    "reason": "阶段终态供 coFT 基线评测使用，不用于恢复 optimizer state"
+  },
+  "valid_for_downstream_params_restore": true,
+  "valid_for_optimizer_resume": false,
+  "downstream_consumer_validation": "pending_coft_evaluation"
+}

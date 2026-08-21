@@ -1,0 +1,58 @@
+{
+  "protocol_id": "RETAIN-GPU-20260819-001",
+  "config": "retain_repro_pretrain",
+  "experiment_name": "paper_final_hparams",
+  "attempt": 6,
+  "validated_at": "2026-08-20T01:15:38Z",
+  "checkpoint": {
+    "step": 1000,
+    "path": "/shared/.cache/retain/checkpoints/retain_repro_pretrain/paper_final_hparams/1000",
+    "save_started_at": "2026-08-20T01:08:15Z",
+    "committed_at": "2026-08-20T01:12:37Z",
+    "commit_timestamp_nsecs": 1787188357405169568,
+    "metadata_sha256": "a92393cadef1bac156f83bae1cbf29b50fe0f24ac54ff005187b0fe80164a856",
+    "temporary_directory_count_after_commit": 0,
+    "items": {
+      "assets": {
+        "file_count": 1,
+        "file_payload_bytes": 4496,
+        "handler": "openpi.training.checkpoints.CallbackHandler"
+      },
+      "params": {
+        "file_count": 18,
+        "file_payload_bytes": 12014099668,
+        "handler": "orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler"
+      },
+      "train_state": {
+        "file_count": 25,
+        "file_payload_bytes": 30962142820,
+        "handler": "orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler"
+      }
+    },
+    "total_file_count_including_metadata": 45,
+    "total_file_payload_bytes": 42976247401,
+    "apparent_directory_bytes_at_validation": 42976292457
+  },
+  "validation": {
+    "orbax_atomic_finalize_log": "passed_without_background_save_errors",
+    "metadata_commit_timestamp_present": true,
+    "temporary_directory_absent": true,
+    "checkpoint_manager_mode": "read_only_cpu_with_gpu_hidden",
+    "checkpoint_manager_all_steps": [
+      1000
+    ],
+    "checkpoint_manager_latest_step": 1000,
+    "full_array_restore_performed": false,
+    "full_array_restore_plan": "对最终 checkpoint 执行，以避免在正在训练时额外占用约 43 GB 主机内存和共享盘 I/O"
+  },
+  "training_after_commit": {
+    "status": "running",
+    "latest_observed_progress": "约 step 1090",
+    "current_attempt_error_scan": "no_traceback_resource_exhausted_or_oom",
+    "selected_gpu_physical_index": 1,
+    "selected_gpu_memory_used_mib": 81318,
+    "selected_gpu_utilization_percent": 100,
+    "shared_free_bytes": 213181792256
+  },
+  "conclusion_zh": "step-1000 checkpoint 已完整原子提交并可被 Orbax 管理器发现为最新恢复点；该结论验证可发现性与提交完整性，不等同于最终完整数组 restore，也不构成 loss 收敛结论。"
+}

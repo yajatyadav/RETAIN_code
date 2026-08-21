@@ -1,0 +1,1 @@
+/root/.local/bin/uv run --no-sync scripts/train.py retain_repro_coft_stove --exp-name=paper_coft_stove

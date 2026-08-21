@@ -1,0 +1,113 @@
+{
+  "protocol_id": "RETAIN-GPU-20260819-001",
+  "captured_at": "2026-08-21T12:52:12+08:00",
+  "status": "main_evaluation_paused_by_root_space_protection",
+  "pipeline": {
+    "service": "retain-reproduction.service",
+    "active": false,
+    "systemd_result": "success",
+    "pipeline_pid": null,
+    "policy": "pretrain_117task",
+    "policy_server_pid": null,
+    "evaluator_pid": null,
+    "physical_gpu_index_before_stop": 0,
+    "state_root": "/shared/.cache/retain/evaluation-state/RETAIN-GPU-20260819-001/evaluation-pipeline",
+    "service_log": "/shared/.cache/retain/evaluation-state/RETAIN-GPU-20260819-001/evaluation-service.log",
+    "completed_alpha_jobs": 270,
+    "completed_main_jobs": 38,
+    "completed_jobs_in_status": 308,
+    "failed_job": null,
+    "status_json_status_is_stale_after_sigterm": "running"
+  },
+  "complete_aggregate": {
+    "summaries": 38,
+    "episodes": 410,
+    "successes": 3,
+    "success_rate": 0.007317073170731708,
+    "episode_errors": 0,
+    "video_count": 410,
+    "video_bytes": 62146901,
+    "mean_video_bytes": 151577.80731707317
+  },
+  "newly_completed_since_previous_snapshot": [
+    {"index": 35, "job_key": "b3dcc0ff3389d240", "eval_type": "OOD_MEDIUM", "task": "basket", "seed": 21, "successes": 0, "episodes": 10, "episode_errors": 0, "video_bytes": 1460803, "finished_at": "2026-08-21T12:39:52.777382+08:00"},
+    {"index": 36, "job_key": "a59a716e50903cdb", "eval_type": "OOD_MEDIUM", "task": "basket", "seed": 41, "successes": 0, "episodes": 10, "episode_errors": 0, "video_bytes": 1389481, "finished_at": "2026-08-21T12:42:53.576635+08:00"},
+    {"index": 37, "job_key": "6aebeeb50e70dd88", "eval_type": "OOD_MEDIUM", "task": "basket", "seed": 61, "successes": 0, "episodes": 10, "episode_errors": 0, "video_bytes": 1476260, "finished_at": "2026-08-21T12:45:56.154920+08:00"},
+    {"index": 38, "job_key": "9ca3037c91937346", "eval_type": "OOD_MEDIUM", "task": "basket", "seed": 81, "successes": 0, "episodes": 10, "episode_errors": 0, "video_bytes": 1409783, "finished_at": "2026-08-21T12:48:50.380531+08:00"}
+  ],
+  "newly_closed_group": {
+    "eval_type": "OOD_MEDIUM",
+    "task": "basket",
+    "seeds": [1, 21, 41, 61, 81],
+    "successes_by_seed": [0, 0, 0, 0, 0],
+    "episodes_by_seed": [10, 10, 10, 10, 10],
+    "successes": 0,
+    "episodes": 50,
+    "success_rate": 0.0,
+    "episode_errors": 0,
+    "status": "complete"
+  },
+  "interrupted_uncommitted_job": {
+    "index": 39,
+    "jobs_for_policy": 68,
+    "job_key": "f2dea8b6639928c0",
+    "eval_type": "OOD_HARD-set-0",
+    "task": "basket",
+    "seed": 1,
+    "planned_episodes": 10,
+    "observed_episodes": 8,
+    "observed_successes": 0,
+    "observed_errors": 0,
+    "observed_video_count": 8,
+    "observed_video_bytes": 1163194,
+    "committed_to_status": false,
+    "eligible_for_comparison": false,
+    "resume_action": "rerun_idempotently_from_shared_completed_job_state"
+  },
+  "single_gpu_audit": {
+    "policy_server_cuda_visible_devices_before_stop": "0",
+    "evaluator_cuda_visible_devices_before_stop": "",
+    "evaluator_egl_device_id_before_stop": 0,
+    "only_reproduction_compute_process_before_stop": {"physical_gpu_index": 0, "pid": 1357605, "memory_mib": 77036, "role": "policy_server"},
+    "reproduction_compute_processes_after_stop": 0,
+    "constraint_satisfied": true
+  },
+  "storage_trigger": {
+    "hard_stop_trigger_bytes": 4294967296,
+    "root_free_bytes_at_previous_snapshot": 5478400000,
+    "root_free_bytes_at_detection": 3846983680,
+    "root_free_bytes_after_stop": 3846877184,
+    "root_free_bytes_at_diagnostic": 3846844416,
+    "root_free_delta_since_previous_snapshot": -1631555584,
+    "bytes_below_trigger_at_diagnostic": 448122880,
+    "shared_free_bytes_at_previous_snapshot": 106240618496,
+    "shared_free_bytes_at_diagnostic": 106235670528,
+    "shared_free_delta_since_previous_snapshot": -4947968,
+    "new_complete_rollout_bytes_since_previous_snapshot": 5736327,
+    "resume_gate_bytes": 8589934592,
+    "resume_gate_reason": "the root partition lost 1.63 GB in about 14 minutes; 8 GiB avoids restart-stop thrashing between 20-minute heartbeats"
+  },
+  "read_only_diagnostic": {
+    "root_filesystem_used_bytes": 890538852352,
+    "visible_root_directory_bytes": 22413758464,
+    "visible_project_bytes": 17703084032,
+    "visible_vscode_server_bytes": 4366553088,
+    "journal_reported_bytes": 201326592,
+    "recent_visible_files_over_10mb_in_20_minutes": 1,
+    "largest_recent_visible_file": {"path": "/var/log/journal/7e0a08f60aab4dbcb7c518b3a1b27915/system.journal", "bytes": 25165824},
+    "deleted_open_files_detected_by_lsof": 0,
+    "old_root_evaluation_state_bytes": 3514368,
+    "attribution": "the visible reproduction tree, journal, recent files, and deleted-open files cannot explain the root filesystem occupancy or rapid decline; no user or external data was deleted"
+  },
+  "stop_validation": {
+    "stopped_at": "2026-08-21T12:52:12+08:00",
+    "systemd_active_state": "inactive",
+    "systemd_main_pid": 0,
+    "systemd_exec_main_status": 0,
+    "systemd_result": "success",
+    "completed_jobs_preserved": 308,
+    "job39_committed": false,
+    "failed_job": null,
+    "fatal_error_matches": 0
+  }
+}

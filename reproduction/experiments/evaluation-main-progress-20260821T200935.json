@@ -1,0 +1,105 @@
+{
+  "protocol_id": "RETAIN-GPU-20260819-001",
+  "captured_at": "2026-08-21T20:09:35+08:00",
+  "status": "paper_alpha_retain_taskft_mugs_a080_first_five_ood_hard_conditions_complete_sixth_running",
+  "pipeline": {
+    "service": "retain-reproduction.service",
+    "active": true,
+    "pipeline_pid": 1886,
+    "current_policy": "retain_taskft_mugs_a080",
+    "policy_server_pid": 433317,
+    "evaluator_pid": 457776,
+    "physical_gpu_index": 0,
+    "completed_alpha_jobs": 270,
+    "completed_main_jobs": 239,
+    "completed_jobs_in_status": 509,
+    "failed_job": null
+  },
+  "new_complete_jobs_since_previous_snapshot": [
+    {"job_key": "68cb8de284a051b9", "policy_job_index": 2, "eval_type": "OOD_HARD-set-0", "seed": 1, "successes": 4, "episodes": 10, "episode_errors": 0, "video_bytes": 1248472},
+    {"job_key": "16965890da7a4ba6", "policy_job_index": 3, "eval_type": "OOD_HARD-set-1", "seed": 1, "successes": 0, "episodes": 10, "episode_errors": 0, "video_bytes": 1263502},
+    {"job_key": "07cab0acea5b9978", "policy_job_index": 4, "eval_type": "OOD_HARD-set-0", "seed": 21, "successes": 3, "episodes": 10, "episode_errors": 0, "video_bytes": 1129273},
+    {"job_key": "040b146a41a44fdc", "policy_job_index": 5, "eval_type": "OOD_HARD-set-1", "seed": 21, "successes": 0, "episodes": 10, "episode_errors": 0, "video_bytes": 1179383},
+    {"job_key": "04747dd9f499670a", "policy_job_index": 6, "eval_type": "OOD_HARD-set-0", "seed": 41, "successes": 3, "episodes": 10, "episode_errors": 0, "video_bytes": 1269106}
+  ],
+  "new_complete_aggregate": {
+    "jobs": 5,
+    "episodes": 50,
+    "successes": 10,
+    "episode_errors": 0,
+    "video_count": 50,
+    "video_bytes": 6089736
+  },
+  "global_complete_main_aggregate": {
+    "jobs": 239,
+    "episodes": 2480,
+    "successes": 804,
+    "episode_errors": 0,
+    "video_count": 2480,
+    "video_bytes": 262597341
+  },
+  "current_policy": {
+    "policy": "retain_taskft_mugs_a080",
+    "alpha": 0.8,
+    "weights": [0.8, 0.19999999999999996],
+    "completed_independent_main_jobs": 6,
+    "reused_selection_jobs": 5,
+    "selection_set_ood_medium": {"successes": 20, "episodes": 50, "success_rate": 0.4, "status": "complete_reused_selection_set_not_independent_main_evidence"},
+    "id": {"successes": 11, "episodes": 20, "success_rate": 0.55, "selected_alpha_success_rate": 0.6, "delta_vs_selected_alpha": -0.05, "raw_taskft_success_rate": 0.65, "delta_vs_raw_taskft": -0.1, "pretrain_success_rate": 0.0, "delta_vs_pretrain": 0.55, "status": "complete_independent_main_evidence"},
+    "ood_hard_partial": {
+      "completed_conditions": ["set_0_seed_1", "set_1_seed_1", "set_0_seed_21", "set_1_seed_21", "set_0_seed_41"],
+      "successes_by_condition": [4, 0, 3, 0, 3],
+      "successes": 10,
+      "episodes": 50,
+      "success_rate": 0.2,
+      "selected_alpha_successes": 8,
+      "selected_alpha_success_rate": 0.16,
+      "delta_vs_selected_alpha": 0.04,
+      "raw_taskft_successes": 9,
+      "raw_taskft_success_rate": 0.18,
+      "delta_vs_raw_taskft": 0.02,
+      "pretrain_successes": 0,
+      "pretrain_success_rate": 0.0,
+      "delta_vs_pretrain": 0.2,
+      "episode_errors": 0,
+      "status": "partial_five_of_ten_complete_conditions_not_final_protocol_result"
+    }
+  },
+  "current_job": {
+    "job_key": "895c5e9faaa3089a",
+    "policy_job_index": 7,
+    "eval_type": "OOD_HARD-set-1",
+    "suite": "libero_10",
+    "task": "put the white mug on the left plate and put the yellow and white mug on the right plate",
+    "seed": 41,
+    "planned_episodes": 10,
+    "observed_episodes_at_capture": 7,
+    "observed_successes_at_capture": 0,
+    "observed_errors_at_capture": 0,
+    "observed_video_bytes_at_capture": 780896,
+    "summary_committed_at_capture": false,
+    "eligible_for_formal_comparison": false
+  },
+  "single_gpu_audit": {
+    "only_reproduction_compute_process": {"physical_gpu_index": 0, "pid": 433317, "memory_mib": 77036},
+    "constraint_satisfied": true
+  },
+  "resources": {
+    "gpu_memory_used_mib": [77049, 1, 19611, 859, 79865, 79767, 79815, 79891],
+    "gpu_utilization_percent": [37, 0, 71, 1, 69, 82, 88, 72],
+    "host_available_bytes": 527110568960,
+    "root_free_bytes": 70564769792,
+    "shared_free_bytes": 101351186432
+  },
+  "monitoring_policy": {
+    "root_space": "monitor_and_record_only",
+    "root_space_is_a_stop_condition": false,
+    "all_known_evaluation_write_paths_on_shared": true
+  },
+  "validation": {
+    "service_active": true,
+    "single_physical_gpu_constraint": true,
+    "selection_set_reuse_labeled": true,
+    "fatal_error_matches": 0
+  }
+}

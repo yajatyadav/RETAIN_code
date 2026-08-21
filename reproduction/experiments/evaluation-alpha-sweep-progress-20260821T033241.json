@@ -1,0 +1,149 @@
+{
+  "protocol_id": "RETAIN-GPU-20260819-001",
+  "generated_at": "2026-08-21T03:32:41+08:00",
+  "status": "alpha_sweep_running",
+  "supersedes": "reproduction/experiments/evaluation-alpha-sweep-progress-20260821T031216.json",
+  "interpretation_scope": "taskft_basket_exploratory_interim_with_stove_and_mugs_selection_complete",
+  "results_root": "/shared/.cache/retain/results/RETAIN-GPU-20260819-001",
+  "progress": {
+    "completed_policies": 25,
+    "total_policies": 54,
+    "completed_jobs": 127,
+    "total_jobs": 270,
+    "completed_episodes": 1270,
+    "current_policy": "retain_taskft_basket_a080",
+    "current_job_seed": 41,
+    "current_job_observed_episodes": 0,
+    "current_job_observed_successes": 0
+  },
+  "cumulative_success_rates": {
+    "taskft": {
+      "stove": {
+        "0.1": 0.08,
+        "0.2": 0.08,
+        "0.3": 0.24,
+        "0.4": 0.46,
+        "0.5": 0.44,
+        "0.6": 0.42,
+        "0.7": 0.6,
+        "0.8": 0.6,
+        "0.9": 0.56
+      },
+      "mugs": {
+        "0.1": 0.0,
+        "0.2": 0.0,
+        "0.3": 0.0,
+        "0.4": 0.06,
+        "0.5": 0.14,
+        "0.6": 0.32,
+        "0.7": 0.42,
+        "0.8": 0.4,
+        "0.9": 0.36
+      },
+      "basket": {
+        "0.1": 0.0,
+        "0.2": 0.0,
+        "0.3": 0.0,
+        "0.4": 0.0,
+        "0.5": 0.02,
+        "0.6": 0.1,
+        "0.7": 0.24
+      }
+    }
+  },
+  "newly_completed_policy": {
+    "policy": "retain_taskft_basket_a070",
+    "family": "taskft",
+    "task": "basket",
+    "alpha": 0.7,
+    "linear_interpolation_weights": [0.7, 0.3],
+    "seeds": [1, 21, 41, 61, 81],
+    "successes_by_seed": [3, 2, 2, 3, 2],
+    "total_successes": 12,
+    "total_episodes": 50,
+    "success_rate": 0.24,
+    "final_job_finished_at": "2026-08-21T03:26:01.091812+08:00",
+    "summary_file_count": 5,
+    "video_count": 50,
+    "video_bytes": 7478916,
+    "eligible_for_task_level_alpha_selection_now": false
+  },
+  "selection_results": {
+    "taskft": {
+      "stove": {
+        "selected_alpha": 0.8,
+        "selected_success_rate": 0.6,
+        "tied_best_alphas": [0.7, 0.8],
+        "tie_break": "highest alpha among equal success rates",
+        "tie_break_applied": true,
+        "paper_alpha": 0.9,
+        "paper_alpha_success_rate": 0.56,
+        "status": "complete"
+      },
+      "mugs": {
+        "selected_alpha": 0.7,
+        "selected_success_rate": 0.42,
+        "tied_best_alphas": [0.7],
+        "tie_break": "highest alpha among equal success rates",
+        "tie_break_applied": false,
+        "paper_alpha": 0.8,
+        "paper_alpha_success_rate": 0.4,
+        "status": "complete"
+      },
+      "basket": {
+        "status": "pending_remaining_two_alpha_candidates",
+        "completed_alphas": [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7],
+        "current_best_alphas": [0.7],
+        "current_best_success_rate": 0.24,
+        "tie_break_not_yet_applied": true
+      }
+    }
+  },
+  "in_progress_policy": {
+    "policy": "retain_taskft_basket_a080",
+    "alpha": 0.8,
+    "linear_interpolation_weights": [0.8, 0.2],
+    "completed_seeds": [1, 21],
+    "completed_seed_successes": [2, 2],
+    "completed_episodes": 20,
+    "completed_successes": 4,
+    "current_seed": 41,
+    "current_seed_observed_episodes": 0,
+    "current_seed_observed_successes": 0,
+    "partial_result_eligible_for_alpha_selection": false
+  },
+  "storage": {
+    "completed_policy_video_count": 1250,
+    "completed_policy_video_bytes": 179972214,
+    "mean_video_bytes": 143977.7712,
+    "projected_alpha_sweep_video_bytes_at_completed_policy_mean": 388739982.24,
+    "shared_free_bytes": 140716564480,
+    "root_free_bytes": 13521907712,
+    "projection_status": "ample_for_alpha_sweep"
+  },
+  "single_gpu_constraint": {
+    "physical_gpu_index": 3,
+    "current_policy_server_cuda_visible_devices": "3",
+    "current_policy_server_memory_used_mib": 77115,
+    "current_evaluator_cuda_visible_devices": "",
+    "current_evaluator_egl_device_id": "3",
+    "observed_gpu_compute_process_pids": [771173]
+  },
+  "resources": {
+    "sampled_at": "2026-08-21T03:32:15+08:00",
+    "host_available_bytes": 528701366272,
+    "gpu_memory_used_mib": [2, 878, 13192, 77115, 52876, 48241, 47647, 48443],
+    "gpu_utilization_percent": [0, 1, 0, 63, 81, 87, 83, 86]
+  },
+  "processes": {
+    "evaluation_pipeline_pid": 320418,
+    "policy_server_pid": 771173,
+    "evaluator_pid": 779109
+  },
+  "error_scan": {
+    "fatal_error_count": 0,
+    "service_status": "active",
+    "benign_readiness_probe_handshake_warning_observed": true
+  },
+  "caution_zh": "basket α=0.7 的完整结果为 12/50，暂时领先但 α=0.8、0.9 尚未完成；α=0.8 的 4/20 是 partial observation。"
+}

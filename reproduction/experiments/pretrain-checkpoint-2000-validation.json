@@ -1,0 +1,73 @@
+{
+  "protocol_id": "RETAIN-GPU-20260819-001",
+  "config": "retain_repro_pretrain",
+  "experiment_name": "paper_final_hparams",
+  "attempt": 6,
+  "validated_at": "2026-08-20T01:52:22Z",
+  "checkpoint": {
+    "step": 2000,
+    "path": "/shared/.cache/retain/checkpoints/retain_repro_pretrain/paper_final_hparams/2000",
+    "save_started_at": "2026-08-20T01:49:02.552Z",
+    "blocking_duration_seconds": 90.45242810249329,
+    "committed_at": "2026-08-20T01:51:33.055Z",
+    "commit_timestamp_nsecs": 1787190693054874932,
+    "metadata_sha256": "1745385b70a1292cf0fa2315d4aa1b42e968478146a5be0e53447ec0fb06f802",
+    "temporary_directory_count_after_commit": 0,
+    "items": {
+      "assets": {
+        "file_count": 1,
+        "file_payload_bytes": 4496,
+        "handler": "openpi.training.checkpoints.CallbackHandler"
+      },
+      "params": {
+        "file_count": 19,
+        "file_payload_bytes": 12014086733,
+        "handler": "orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler"
+      },
+      "train_state": {
+        "file_count": 24,
+        "file_payload_bytes": 30918480708,
+        "handler": "orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler"
+      }
+    },
+    "total_file_count_including_metadata": 45,
+    "total_file_payload_bytes": 42932572354,
+    "apparent_directory_bytes_at_validation": 42932617410
+  },
+  "rolling_retention": {
+    "configured_max_to_keep": 1,
+    "previous_checkpoint_step": 1000,
+    "previous_checkpoint_present_while_new_step_was_temporary": true,
+    "previous_checkpoint_deletion_completed_at": "2026-08-20T01:51:40.907Z",
+    "checkpoint_roots_after_cleanup": [
+      "2000"
+    ],
+    "observed_overlap_host_available_bytes": 393845176320,
+    "observed_overlap_shared_free_bytes": 169767882752,
+    "post_cleanup_shared_free_bytes": 212744130560
+  },
+  "validation": {
+    "orbax_atomic_finalize_log": "passed_without_background_save_errors",
+    "metadata_commit_timestamp_present": true,
+    "temporary_directory_absent": true,
+    "checkpoint_manager_mode": "read_only_cpu_with_gpu_hidden",
+    "checkpoint_manager_all_steps": [
+      2000
+    ],
+    "checkpoint_manager_latest_step": 2000,
+    "full_array_restore_performed": false,
+    "full_array_restore_plan": "对最终 checkpoint 执行，以避免正在训练时额外占用主机内存和共享盘 I/O"
+  },
+  "training_after_commit": {
+    "status": "running",
+    "latest_observed_progress": "约 step 2050",
+    "steady_step_seconds": 2.2,
+    "current_attempt_error_scan": "no_traceback_resource_exhausted_or_oom",
+    "current_metric_line_count": 0,
+    "selected_gpu_physical_index": 1,
+    "selected_gpu_memory_used_mib": 81318,
+    "selected_gpu_utilization_percent": 100,
+    "shared_free_bytes": 212744130560
+  },
+  "conclusion_zh": "step-2000 checkpoint 已原子提交并可被 Orbax 管理器发现；旧 step 1000 在新点提交后完成删除，验证 max_to_keep=1 的滚动恢复与磁盘回收。"
+}

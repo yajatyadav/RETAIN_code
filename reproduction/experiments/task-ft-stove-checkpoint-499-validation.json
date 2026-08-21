@@ -1,0 +1,44 @@
+{
+  "protocol_id": "RETAIN-GPU-20260819-001-R1",
+  "generated_at": "2026-08-20T17:53:33+08:00",
+  "config": "retain_repro_task_ft_stove",
+  "experiment_name": "paper_task_ft_stove",
+  "attempt": 1,
+  "step": 499,
+  "path": "/shared/.cache/retain/checkpoints/retain_repro_task_ft_stove/paper_task_ft_stove/499",
+  "status": "verified_committed_params_only",
+  "save_started_at": "2026-08-20T17:51:31+08:00",
+  "checkpoint_manager_blocking_duration_seconds": 3.816582202911377,
+  "committed_at": "2026-08-20T17:51:52+08:00",
+  "commit_timestamp_nsecs": 1787219512180575452,
+  "stage_finished_at": "2026-08-20T17:52:06+08:00",
+  "stage_return_code": 0,
+  "metadata_sha256": "64bea9f926861389263c61fba1947d8bb0757a9e5433a776ad1f4c0632ba2477",
+  "retained_file_count": 21,
+  "retained_file_payload_bytes": 12014114437,
+  "retained_items": {
+    "_CHECKPOINT_METADATA": {
+      "file_count": 1,
+      "file_payload_bytes": 417
+    },
+    "assets": {
+      "file_count": 1,
+      "file_payload_bytes": 4496
+    },
+    "params": {
+      "file_count": 19,
+      "file_payload_bytes": 12014109524
+    }
+  },
+  "temporary_directory_count_after_commit": 0,
+  "background_save_error_count": 0,
+  "optimizer_state_retained": false,
+  "optimizer_state_policy": {
+    "status": "intentionally_absent_after_successful_stage",
+    "placeholder_directory_removed_bytes": 1840,
+    "reason": "阶段终态供 RETAIN 参数合并与评测使用，不用于恢复 optimizer state"
+  },
+  "valid_for_downstream_params_restore": true,
+  "valid_for_optimizer_resume": false,
+  "downstream_consumer_validation": "pending_retain_parameter_merge"
+}

@@ -1,0 +1,153 @@
+{
+  "protocol_id": "RETAIN-GPU-20260819-001",
+  "captured_at": "2026-08-21T11:52:29+08:00",
+  "status": "main_evaluation_running_after_shared_state_root_migration",
+  "pipeline": {
+    "service": "retain-reproduction.service",
+    "active": true,
+    "pipeline_pid": 1357474,
+    "policy": "pretrain_117task",
+    "policy_server_pid": 1357605,
+    "evaluator_pid": 1375573,
+    "physical_gpu_index": 0,
+    "state_root": "/shared/.cache/retain/evaluation-state/RETAIN-GPU-20260819-001/evaluation-pipeline",
+    "service_log": "/shared/.cache/retain/evaluation-state/RETAIN-GPU-20260819-001/evaluation-service.log",
+    "completed_alpha_jobs": 270,
+    "completed_main_jobs": 22,
+    "completed_jobs_in_status": 292,
+    "failed_job": null
+  },
+  "complete_aggregate": {
+    "summaries": 22,
+    "episodes": 240,
+    "successes": 3,
+    "success_rate": 0.0125,
+    "episode_errors": 0,
+    "video_count": 240,
+    "video_bytes": 39029788,
+    "mean_video_bytes": 162624.11666666667
+  },
+  "complete_groups": [
+    {
+      "eval_type": "ID",
+      "task": "stove",
+      "seeds": [7],
+      "successes_by_seed": [0],
+      "episodes_by_seed": [20],
+      "successes": 0,
+      "episodes": 20,
+      "status": "complete"
+    },
+    {
+      "eval_type": "OOD_MEDIUM",
+      "task": "stove",
+      "seeds": [1, 21, 41, 61, 81],
+      "successes_by_seed": [0, 0, 0, 1, 0],
+      "episodes_by_seed": [10, 10, 10, 10, 10],
+      "successes": 1,
+      "episodes": 50,
+      "success_rate": 0.02,
+      "status": "complete"
+    },
+    {
+      "eval_type": "OOD_HARD",
+      "task": "stove",
+      "conditions": ["set-0_seed-1", "set-1_seed-1", "set-0_seed-21", "set-1_seed-21", "set-0_seed-41", "set-1_seed-41", "set-0_seed-61", "set-1_seed-61", "set-0_seed-81", "set-1_seed-81"],
+      "successes_by_condition": [0, 0, 0, 1, 1, 0, 0, 0, 0, 0],
+      "episodes_by_condition": [10, 10, 10, 10, 10, 10, 10, 10, 10, 10],
+      "successes": 2,
+      "episodes": 100,
+      "success_rate": 0.02,
+      "status": "complete"
+    },
+    {
+      "eval_type": "ID",
+      "task": "mugs",
+      "seeds": [7],
+      "successes_by_seed": [0],
+      "episodes_by_seed": [20],
+      "successes": 0,
+      "episodes": 20,
+      "status": "complete"
+    },
+    {
+      "eval_type": "OOD_MEDIUM",
+      "task": "mugs",
+      "seeds": [1, 21, 41, 61, 81],
+      "successes_by_seed": [0, 0, 0, 0, 0],
+      "episodes_by_seed": [10, 10, 10, 10, 10],
+      "successes": 0,
+      "episodes": 50,
+      "success_rate": 0.0,
+      "status": "complete"
+    }
+  ],
+  "newly_completed_since_previous_snapshot": [
+    {"index": 19, "job_key": "83bcf3c3910d493a", "eval_type": "OOD_MEDIUM", "task": "mugs", "seed": 21, "successes": 0, "episodes": 10, "episode_errors": 0, "video_bytes": 979379, "finished_at": "2026-08-21T11:41:52.255548+08:00"},
+    {"index": 20, "job_key": "9a40d31b6bf7c027", "eval_type": "OOD_MEDIUM", "task": "mugs", "seed": 41, "successes": 0, "episodes": 10, "episode_errors": 0, "video_bytes": 1067205, "finished_at": "2026-08-21T11:45:07.381693+08:00"},
+    {"index": 21, "job_key": "c7c760ef1a8e6a61", "eval_type": "OOD_MEDIUM", "task": "mugs", "seed": 61, "successes": 0, "episodes": 10, "episode_errors": 0, "video_bytes": 1072292, "finished_at": "2026-08-21T11:48:24.024987+08:00"},
+    {"index": 22, "job_key": "6b1ee01e69a6096c", "eval_type": "OOD_MEDIUM", "task": "mugs", "seed": 81, "successes": 0, "episodes": 10, "episode_errors": 0, "video_bytes": 1096602, "finished_at": "2026-08-21T11:51:42.796282+08:00"}
+  ],
+  "current_main_job": {
+    "index": 23,
+    "jobs_for_policy": 68,
+    "job_key": "526a93714bf9e142",
+    "eval_type": "OOD_HARD-set-0",
+    "task": "mugs",
+    "seed": 1,
+    "planned_episodes": 10,
+    "observed_episodes": 1,
+    "observed_successes": 0,
+    "observed_errors": 0,
+    "observed_video_count": 1,
+    "observed_video_bytes": 107361,
+    "partial_observation_eligible_for_comparison": false
+  },
+  "single_gpu_audit": {
+    "policy_server_cuda_visible_devices": "0",
+    "evaluator_cuda_visible_devices": "",
+    "evaluator_egl_device_id": 0,
+    "only_reproduction_compute_process": {
+      "physical_gpu_index": 0,
+      "pid": 1357605,
+      "memory_mib": 77036,
+      "role": "policy_server"
+    },
+    "constraint_satisfied": true
+  },
+  "resources": {
+    "gpu_memory_used_mib": [77049, 1, 1, 1189, 2995, 3261, 3229, 3251],
+    "gpu_utilization_percent": [9, 0, 0, 1, 0, 0, 0, 0],
+    "host_available_bytes": 530055651328,
+    "shared_free_bytes": 111259090944,
+    "root_free_bytes": 6583840768
+  },
+  "storage_watch": {
+    "status": "reproduction_state_and_logs_migrated_to_shared_external_pressure_still_monitored",
+    "root_free_bytes_at_previous_check": 6593679360,
+    "root_free_bytes_at_capture": 6583840768,
+    "shared_free_bytes_at_previous_check": 118489739264,
+    "shared_free_bytes_at_capture": 111259090944,
+    "new_complete_rollout_bytes_since_previous_snapshot": 4215478,
+    "attribution": "root stayed approximately stable after migration; shared free-space decline is much larger than the 4.22 MB of newly completed rollout video and remains unattributed to visible reproduction output",
+    "action": "keep reproduction writes on shared storage, perform no destructive cleanup, and stop at a complete-job boundary if root free space approaches 4 GiB"
+  },
+  "migration_validation": {
+    "completed_jobs_preserved_at_restart": 287,
+    "completed_jobs_now": 292,
+    "post_migration_completed_jobs": 5,
+    "post_migration_episode_errors": 0,
+    "fatal_error_matches": 0
+  },
+  "post_capture_check": {
+    "checked_at": "2026-08-21T11:55:43+08:00",
+    "completed_jobs_in_status": 293,
+    "completed_main_jobs": 23,
+    "new_job": {"index": 23, "job_key": "526a93714bf9e142", "eval_type": "OOD_HARD-set-0", "task": "mugs", "seed": 1, "successes": 0, "episodes": 10, "episode_errors": 0, "video_bytes": 1239796, "finished_at": "2026-08-21T11:55:17.398268+08:00"},
+    "next_job": {"index": 24, "job_key": "f25b67f961f88dd7", "eval_type": "OOD_HARD-set-1", "task": "mugs", "seed": 1, "observed_episodes": 1, "observed_successes": 0, "observed_errors": 0},
+    "root_free_bytes": 6582280192,
+    "shared_free_bytes": 108587454464,
+    "service_active": true,
+    "failed_job": null
+  }
+}

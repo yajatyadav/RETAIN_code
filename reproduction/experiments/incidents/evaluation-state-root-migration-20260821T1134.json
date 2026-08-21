@@ -1,0 +1,76 @@
+{
+  "incident_id": "evaluation-state-root-migration-20260821T1134",
+  "protocol_id": "RETAIN-GPU-20260819-001",
+  "recorded_at": "2026-08-21T11:38:55+08:00",
+  "severity": "preventive_storage_mitigation",
+  "trigger": {
+    "root_free_bytes_at_105230": 10157699072,
+    "root_free_bytes_at_111304": 8656228352,
+    "root_free_bytes_before_migration": 6614155264,
+    "configured_contingency_trigger_bytes": 4294967296,
+    "reason": "根分区余量持续下降，且可见的大文件、项目目录和 journal 均不能解释该降幅；为避免后续状态或日志写入受根盘压力影响，提前执行已登记的共享盘迁移预案。",
+    "attribution": "unexplained_external_or_hidden_rootfs_pressure_not_attributed_to_visible_reproduction_outputs"
+  },
+  "safe_boundary": {
+    "service_stopped_after_completed_job_key": "e4f84af24c67b087",
+    "completed_job_description": "pretrain_117task mugs ID, 20 episodes",
+    "completed_jobs_preserved": 287,
+    "completed_alpha_jobs": 270,
+    "completed_pretrain_main_jobs": 17,
+    "completed_job_finished_at": "2026-08-21T11:33:53.237058+08:00",
+    "possible_loss_scope": "仅停止瞬间刚启动但尚未写入 completed_jobs 的下一作业 partial episodes；该作业按既有幂等语义自动重跑。"
+  },
+  "implementation": {
+    "code_file": "reproduction/scripts/run_evaluation_pipeline.py",
+    "change": "新增 RETAIN_EVAL_STATE_ROOT 环境变量；未设置时仍使用仓库内原默认目录，兼容既有调用。",
+    "server_code_sha256": "c6d38095e8c5576a22ecc2d59d3a210f9b7f4430c0a136b968a9ad6ce9027d08",
+    "old_state_root": "/root/RETAIN_code/reproduction/experiments/evaluation-pipeline",
+    "new_state_root": "/shared/.cache/retain/evaluation-state/RETAIN-GPU-20260819-001/evaluation-pipeline",
+    "new_service_log": "/shared/.cache/retain/evaluation-state/RETAIN-GPU-20260819-001/evaluation-service.log",
+    "new_tmpdir": "/shared/.cache/retain/tmp/evaluation",
+    "new_xdg_cache_home": "/shared/.cache/retain/cache/evaluation",
+    "old_state_directory_retained": true,
+    "destructive_cleanup_performed": false
+  },
+  "preservation_validation": {
+    "old_status_sha256_after_stop": "adf8a695ac47e0cd4ed496b721aa072565090b6d9078cf2e9205af9d22cb2b10",
+    "completed_jobs_equal_after_restart": true,
+    "completed_jobs_canonical_sha256": "779bc18107fb0e831a74d9cab6ff5e8091f101bd8a81bdc4ea918974f8180c8e",
+    "alpha_sweep_equal_after_restart": true,
+    "alpha_sweep_canonical_sha256": "f5c102dc0403ea05acb74ab77d6b82bc8f9ea96ef35e9a87b731c00ee690e4bb",
+    "protocol_id_equal": true,
+    "created_at_equal": true,
+    "local_py_compile": "passed",
+    "local_environment_path_assertion": "passed",
+    "server_py_compile": "passed",
+    "server_environment_path_assertion": "passed",
+    "initial_copy_byte_compare_before_restart": "passed"
+  },
+  "restart_validation": {
+    "service_started_at": "2026-08-21T11:34:51+08:00",
+    "systemd_unit": "retain-reproduction.service",
+    "service_state_at_capture": "active_running",
+    "evaluation_pipeline_pid": 1357474,
+    "policy_server_pid": 1357605,
+    "evaluator_pid": 1358315,
+    "physical_gpu_index": 0,
+    "policy_cuda_visible_devices": "0",
+    "evaluator_cuda_visible_devices": "",
+    "evaluator_egl_device_id": 0,
+    "gpu_compute_processes_for_reproduction": 1,
+    "completed_jobs_after_restart": 287,
+    "resumed_job_key": "e968607dc05fe62c",
+    "resumed_job_description": "pretrain_117task mugs OOD_MEDIUM seed 1",
+    "resumed_job_finished_at": "2026-08-21T11:38:37.684371+08:00",
+    "resumed_job_result": "0/10 successes, 0 episode errors",
+    "completed_jobs_after_first_post_migration_commit": 288,
+    "fatal_error_detected": false
+  },
+  "storage_after_restart": {
+    "captured_at": "2026-08-21T11:35:38+08:00",
+    "root_free_bytes": 6610976768,
+    "shared_free_bytes": 123312742400,
+    "interpretation": "复现的 evaluation state、service stdout/stderr、临时目录与 cache 已定向到共享盘；根盘异常下降的外部原因仍未确定，继续只读监控且不删除用户或外部数据。"
+  },
+  "outcome": "mitigated_and_resumed"
+}

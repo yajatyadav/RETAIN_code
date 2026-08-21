@@ -1,0 +1,39 @@
+{
+  "protocol_id": "RETAIN-GPU-20260819-001",
+  "observed_at": "2026-08-21T15:37:56+08:00",
+  "stage": "main_evaluation_retain_taskft_stove_a080",
+  "incident": "server_connectivity_timeout",
+  "attempts": 3,
+  "error": "ssh: connect to host 100.125.76.83 port 22: Operation timed out",
+  "experiment_failure_inferred": false,
+  "remote_mutations_performed": false,
+  "last_verified_at": "2026-08-21T15:26:36+08:00",
+  "last_verified_state": {
+    "service_active": true,
+    "completed_jobs_in_status": 378,
+    "completed_alpha_jobs": 270,
+    "completed_main_jobs": 108,
+    "failed_job": null,
+    "current_policy": "retain_taskft_stove_a080",
+    "current_remaining_job_index": 5,
+    "physical_gpu_index": 0,
+    "fatal_error_matches": 0
+  },
+  "continuity_reasoning": "systemd service and all known evaluation state, log, tmp, cache, and rollout paths are independent of SSH and located on /shared",
+  "next_check": "retry SSH, then compare completed-job keys, latest summaries, service state, process GPU placement, and fatal-error scan",
+  "resolved_at": "2026-08-21T15:39:06+08:00",
+  "resolution": {
+    "root_cause": "clean host shutdown and reboot, not an evaluation-code failure",
+    "shutdown_started_at": "2026-08-21T15:34:26+08:00",
+    "previous_boot_journal_end_at": "2026-08-21T15:34:30+08:00",
+    "new_boot_at": "2026-08-21T15:38:53+08:00",
+    "journal_evidence": "systemd cleanly deactivated retain-reproduction.service, stopped targets, unmounted /shared, and reached System Shutdown",
+    "completed_jobs_after_boot": 382,
+    "failed_job_after_boot": null,
+    "followup_incident": "reproduction/experiments/incidents/host-clean-reboot-resume-20260821T154251.json"
+  },
+  "monitoring_policy": {
+    "root_space_is_a_stop_condition": false,
+    "root_space": "monitor_and_record_only"
+  }
+}

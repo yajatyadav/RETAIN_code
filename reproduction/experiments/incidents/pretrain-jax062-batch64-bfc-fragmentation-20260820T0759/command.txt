@@ -1,0 +1,1 @@
+/root/.local/bin/uv run --no-sync scripts/train.py retain_repro_pretrain --exp-name=paper_final_hparams --resume

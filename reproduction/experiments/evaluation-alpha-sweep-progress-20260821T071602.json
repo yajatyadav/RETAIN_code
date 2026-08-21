@@ -1,0 +1,129 @@
+{
+  "protocol_id": "RETAIN-GPU-20260819-001",
+  "generated_at": "2026-08-21T07:16:02.855218+08:00",
+  "status": "alpha_sweep_running",
+  "supersedes": "reproduction/experiments/evaluation-alpha-sweep-progress-20260821T071226.json",
+  "interpretation_scope": "coft_mugs_exploratory_interim_after_five_completed_candidates",
+  "results_root": "/shared/.cache/retain/results/RETAIN-GPU-20260819-001",
+  "progress": {
+    "completed_policies": 41,
+    "total_policies": 54,
+    "completed_jobs": 205,
+    "total_jobs": 270,
+    "completed_episodes": 2050,
+    "current_policy": "retain_coft_mugs_a060",
+    "current_job_seed": 1,
+    "current_job_observed_episodes": 0,
+    "current_job_observed_successes": 0
+  },
+  "cumulative_success_rates": {
+    "taskft": {
+      "stove": {"0.1": 0.08, "0.2": 0.08, "0.3": 0.24, "0.4": 0.46, "0.5": 0.44, "0.6": 0.42, "0.7": 0.6, "0.8": 0.6, "0.9": 0.56},
+      "mugs": {"0.1": 0.0, "0.2": 0.0, "0.3": 0.0, "0.4": 0.06, "0.5": 0.14, "0.6": 0.32, "0.7": 0.42, "0.8": 0.4, "0.9": 0.36},
+      "basket": {"0.1": 0.0, "0.2": 0.0, "0.3": 0.0, "0.4": 0.0, "0.5": 0.02, "0.6": 0.1, "0.7": 0.24, "0.8": 0.18, "0.9": 0.24}
+    },
+    "coft": {
+      "stove": {"0.1": 0.06, "0.2": 0.1, "0.3": 0.16, "0.4": 0.48, "0.5": 0.52, "0.6": 0.56, "0.7": 0.6, "0.8": 0.66, "0.9": 0.58},
+      "mugs": {"0.1": 0.0, "0.2": 0.0, "0.3": 0.0, "0.4": 0.14, "0.5": 0.28}
+    }
+  },
+  "newly_completed_policies": [
+    {
+      "policy": "retain_coft_mugs_a050",
+      "family": "coft",
+      "task": "mugs",
+      "alpha": 0.5,
+      "linear_interpolation_weights": [0.5, 0.5],
+      "seeds": [1, 21, 41, 61, 81],
+      "successes_by_seed": [3, 2, 2, 5, 2],
+      "total_successes": 14,
+      "total_episodes": 50,
+      "success_rate": 0.28,
+      "error_episodes": 0,
+      "final_job_finished_at": "2026-08-21T07:14:57.745391+08:00",
+      "summary_file_count": 5,
+      "video_count": 50,
+      "video_bytes": 5803654,
+      "selected_for_main_evaluation": false
+    }
+  ],
+  "selection_results": {
+    "taskft": {
+      "stove": {"selected_alpha": 0.8, "selected_success_rate": 0.6, "tied_best_alphas": [0.7, 0.8], "status": "complete"},
+      "mugs": {"selected_alpha": 0.7, "selected_success_rate": 0.42, "tied_best_alphas": [0.7], "status": "complete"},
+      "basket": {"selected_alpha": 0.9, "selected_success_rate": 0.24, "tied_best_alphas": [0.7, 0.9], "status": "complete"}
+    },
+    "coft": {
+      "stove": {
+        "selected_alpha": 0.8,
+        "selected_successes": 33,
+        "selected_episodes": 50,
+        "selected_success_rate": 0.66,
+        "tied_best_alphas": [0.8],
+        "tie_break_applied": false,
+        "paper_alpha": 0.7,
+        "paper_alpha_successes": 30,
+        "paper_alpha_episodes": 50,
+        "paper_alpha_success_rate": 0.6,
+        "status": "complete"
+      },
+      "mugs": {
+        "status": "pending",
+        "completed_candidate_count": 5,
+        "remaining_candidate_count": 4,
+        "current_best_alphas": [0.5],
+        "current_best_success_rate": 0.28,
+        "tie_break_applied": false,
+        "selection_eligible": false
+      }
+    }
+  },
+  "in_progress_policy": {
+    "policy": "retain_coft_mugs_a060",
+    "alpha": 0.6,
+    "linear_interpolation_weights": [0.6, 0.4],
+    "completed_seeds": [],
+    "completed_seed_successes": [],
+    "completed_episodes": 0,
+    "completed_successes": 0,
+    "current_seed": 1,
+    "current_seed_observed_episodes": 0,
+    "current_seed_observed_successes": 0,
+    "partial_result_eligible_for_alpha_selection": false
+  },
+  "storage": {
+    "completed_policy_video_count": 2050,
+    "completed_policy_video_bytes": 293941941,
+    "mean_video_bytes": 143386.31268292683,
+    "projected_alpha_sweep_video_bytes_at_completed_policy_mean": 387143044.24390244,
+    "shared_free_bytes": 140511547392,
+    "root_free_bytes": 12600328192,
+    "projection_status": "ample_for_alpha_sweep"
+  },
+  "single_gpu_constraint": {
+    "physical_gpu_index": 3,
+    "current_policy_server_cuda_visible_devices": "3",
+    "current_policy_server_memory_used_mib": 77115,
+    "current_evaluator_cuda_visible_devices": "",
+    "current_evaluator_egl_device_id": "3",
+    "observed_gpu_compute_process_pids": [1059041]
+  },
+  "resources": {
+    "sampled_at": "2026-08-21T07:16:02.855218+08:00",
+    "host_available_bytes": 530254800896,
+    "gpu_memory_used_mib": [2, 1118, 3, 77115, 59548, 59443, 59467, 59127],
+    "gpu_utilization_percent": [0, 1, 0, 3, 96, 88, 88, 96]
+  },
+  "processes": {
+    "evaluation_pipeline_pid": 320418,
+    "policy_server_pid": 1059041,
+    "evaluator_pid": 1059836
+  },
+  "error_scan": {
+    "scope": "coft_mugs_a050_a060_non_video_result_files_and_supervisor_log_since_a050_started",
+    "fatal_error_count": 0,
+    "service_status": "active",
+    "benign_readiness_probe_handshake_warning_observed": true
+  },
+  "caution_zh": "coFT mugs alpha=0.5 已完整得到 14/50，是当前五点中的最高值，但 alpha=0.6--0.9 尚未完成。alpha=0.6 仅刚启动首个 seed，不参与候选比较。"
+}

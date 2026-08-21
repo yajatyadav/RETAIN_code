@@ -1,0 +1,41 @@
+{
+  "checked_at": "2026-08-20T00:19:25.880965+00:00",
+  "gpu_physical_index": 1,
+  "overlay": "/shared/.cache/retain/jax-overlays/0.6.2",
+  "xla_flags": "--xla_gpu_enable_triton_gemm=false",
+  "cuda_library_dirs": [
+    "/shared/.cache/retain/jax-overlays/0.6.2/nvidia/cublas/lib",
+    "/shared/.cache/retain/jax-overlays/0.6.2/nvidia/cuda_cupti/lib",
+    "/shared/.cache/retain/jax-overlays/0.6.2/nvidia/cuda_nvrtc/lib",
+    "/shared/.cache/retain/jax-overlays/0.6.2/nvidia/cuda_runtime/lib",
+    "/shared/.cache/retain/jax-overlays/0.6.2/nvidia/cudnn/lib",
+    "/shared/.cache/retain/jax-overlays/0.6.2/nvidia/cufft/lib",
+    "/shared/.cache/retain/jax-overlays/0.6.2/nvidia/cusolver/lib",
+    "/shared/.cache/retain/jax-overlays/0.6.2/nvidia/cusparse/lib",
+    "/shared/.cache/retain/jax-overlays/0.6.2/nvidia/nccl/lib",
+    "/shared/.cache/retain/jax-overlays/0.6.2/nvidia/nvjitlink/lib",
+    "/shared/.cache/retain/jax-overlays/0.6.2/nvidia/nvshmem/lib"
+  ],
+  "return_code": 0,
+  "stdout": "{\"status\": \"verified\", \"jax\": \"0.6.2\", \"jaxlib\": \"0.6.2\", \"jax_cuda12_plugin\": \"0.6.2\", \"platform\": \"gpu\", \"device\": \"cuda:0\", \"device_kind\": \"NVIDIA RTX 6000D\", \"visible_device_count\": 1, \"bf16_to_f16_shape\": [64, 64], \"bf16_matmul_shape\": [64, 64]}\n",
+  "stderr": "",
+  "status": "verified",
+  "runtime": {
+    "status": "verified",
+    "jax": "0.6.2",
+    "jaxlib": "0.6.2",
+    "jax_cuda12_plugin": "0.6.2",
+    "platform": "gpu",
+    "device": "cuda:0",
+    "device_kind": "NVIDIA RTX 6000D",
+    "visible_device_count": 1,
+    "bf16_to_f16_shape": [
+      64,
+      64
+    ],
+    "bf16_matmul_shape": [
+      64,
+      64
+    ]
+  }
+}

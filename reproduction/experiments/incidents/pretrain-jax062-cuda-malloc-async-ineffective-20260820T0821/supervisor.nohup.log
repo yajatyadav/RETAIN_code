@@ -1,0 +1,1594 @@
+2026-08-19T22:56:26.432075+00:00 stage=started {'shared_free_bytes': 256833593344}
+2026-08-19T22:56:26.467617+00:00 stage=waiting_dataset_transfer {'complete_files': 353, 'expected_files': 353, 'complete_bytes': 24235684869, 'expected_bytes': 24235684869, 'aria2_sidecars': 12, 'transfer_active': False}
+2026-08-19T22:56:26.468407+00:00 stage=verifying_dataset_sha256 {}
+2026-08-19T22:56:26.468782+00:00 执行: /root/RETAIN_code/.venv/bin/python reproduction/scripts/verify_dataset.py --root /shared/.cache/retain/libero/datasets --output /root/RETAIN_code/reproduction/data/dataset_manifest_server.json
+已校验 25/360 个文件
+已校验 50/360 个文件
+已校验 75/360 个文件
+已校验 100/360 个文件
+已校验 125/360 个文件
+已校验 150/360 个文件
+已校验 175/360 个文件
+已校验 200/360 个文件
+已校验 225/360 个文件
+已校验 250/360 个文件
+已校验 275/360 个文件
+已校验 300/360 个文件
+已校验 325/360 个文件
+已校验 350/360 个文件
+已校验 360/360 个文件
+数据校验通过：7 个数据集，360 个文件，24235698326 bytes
+2026-08-19T22:56:58.603781+00:00 stage=dataset_verified {'file_count': 353, 'total_bytes': 24235684869, 'manifest': '/root/RETAIN_code/reproduction/data/dataset_manifest_server.json', 'ignored_generated_statistics': ['libero_10_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket/1.0.0/dataset_statistics_62aa238f5f7a628fca0ce8fedc1636a4311427a2d137f5112edc2f8e1f335ace.json', 'libero_10_put_the_white_mug_on_the_left_plate_and_put_the_yellow_and_white_mug_on_the_right_plate/1.0.0/dataset_statistics_1f58c265e60cf48f7ef3b5dff913be3f94b90b7cba0b8826e2671ce60a13d60b.json', 'libero_10_turn_on_the_stove_and_put_the_moka_pot_on_it/1.0.0/dataset_statistics_fb28b1cff603a73588957db9d81177e0e224ae4b69afc320c33a5415beb6b437.json', 'libero_90_flipped/1.0.0/dataset_statistics_c1140fa7742b7ba3790f7e2c9fd3764eed00ce303bc4c3909034f6bfb433512d.json', 'libero_goal_reduced/1.0.0/dataset_statistics_b400d3eac28b886b3e010c808230eea431b48c221868392d1da2cc299a04b7f3.json', 'libero_object_reduced/1.0.0/dataset_statistics_abed590ccc1d8f52abfbd3eba3d6635d7c4da1d165042663ef544f5781680bfc.json', 'libero_spatial_reduced/1.0.0/dataset_statistics_458f47f663fddb014789c3df3ac3781d272946caf89cb44cd1957acd80d1c219.json']}
+2026-08-19T22:56:58.616290+00:00 stage=verifying_base_gcs_md5 {}
+2026-08-19T22:56:58.616922+00:00 执行: /root/RETAIN_code/.venv/bin/python reproduction/scripts/download_gcs_prefix.py --bucket openpi-assets --prefix checkpoints/pi0_base/params --output /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params --jobs 8 --backend aria2
+
+08/19 22:56:59 [[1;32mNOTICE[0m] Downloading 24 item(s)
+[DL:0B][#87a4e2 0B/0B][#1b4255 0B/0B][#45c6d9 0B/0B][#9542e2 0B/0B][#3efc33 0B/0B](+3)
+
+08/19 22:57:01 [[1;32mNOTICE[0m] GID#87a4e214d14a4f2c - Download has already completed: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/_CHECKPOINT_METADATA
+
+08/19 22:57:01 [[1;32mNOTICE[0m] Download complete: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/_CHECKPOINT_METADATA
+
+08/19 22:57:01 [[1;32mNOTICE[0m] GID#d1d0ab981af8c73c - Download has already completed: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/2f72ae7e4e549700e9d7da10816ed9a4
+
+08/19 22:57:01 [[1;32mNOTICE[0m] Download complete: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/2f72ae7e4e549700e9d7da10816ed9a4
+
+08/19 22:57:01 [[1;32mNOTICE[0m] GID#1b425532a7267bda - Download has already completed: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/_METADATA
+
+08/19 22:57:01 [[1;32mNOTICE[0m] Download complete: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/_METADATA
+
+08/19 22:57:01 [[1;32mNOTICE[0m] GID#759aaa04571b5b3c - Download has already completed: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/148068583a1e9abda7c46b410e91850f
+
+08/19 22:57:01 [[1;32mNOTICE[0m] Download complete: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/148068583a1e9abda7c46b410e91850f
+[DL:0B][#45c6d9 0B/0B][#9542e2 0B/0B][#3efc33 0B/0B][#ef1591 0B/0B][#9167bc 0B/0B](+3)
+
+08/19 22:57:01 [[1;32mNOTICE[0m] GID#ef15912308e95751 - Download has already completed: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/085d261a6434a2182b9cf8204a14f929
+
+08/19 22:57:01 [[1;32mNOTICE[0m] Download complete: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/085d261a6434a2182b9cf8204a14f929
+
+08/19 22:57:01 [[1;32mNOTICE[0m] GID#3efc3333d40cefdd - Download has already completed: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/manifest.ocdbt
+
+08/19 22:57:01 [[1;32mNOTICE[0m] Download complete: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/manifest.ocdbt
+
+08/19 22:57:01 [[1;32mNOTICE[0m] GID#45c6d94047edbbca - Download has already completed: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/_sharding
+
+08/19 22:57:01 [[1;32mNOTICE[0m] Download complete: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/_sharding
+
+08/19 22:57:01 [[1;32mNOTICE[0m] GID#9542e273f319ff34 - Download has already completed: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/d/85a4b908b188b86024ebb92e85065acd
+
+08/19 22:57:01 [[1;32mNOTICE[0m] Download complete: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/d/85a4b908b188b86024ebb92e85065acd
+
+08/19 22:57:02 [[1;32mNOTICE[0m] GID#561da36cba21d011 - Download has already completed: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/45c6cbcc04a07d5f963bcf46cba903c4
+
+08/19 22:57:02 [[1;32mNOTICE[0m] Download complete: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/45c6cbcc04a07d5f963bcf46cba903c4
+
+08/19 22:57:02 [[1;32mNOTICE[0m] GID#683295bfe0889c6c - Download has already completed: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/450c3d3cb6793dc644c1faf981296eb3
+
+08/19 22:57:02 [[1;32mNOTICE[0m] Download complete: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/450c3d3cb6793dc644c1faf981296eb3
+
+08/19 22:57:02 [[1;32mNOTICE[0m] GID#c4b5443932de780e - Download has already completed: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/4e5aa230b6c768224fb6b77d78d6a1be
+
+08/19 22:57:02 [[1;32mNOTICE[0m] Download complete: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/4e5aa230b6c768224fb6b77d78d6a1be
+
+08/19 22:57:02 [[1;32mNOTICE[0m] GID#9167bca5c61b1c42 - Download has already completed: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/309555f68bee51df688c4564b4d66fa5
+
+08/19 22:57:02 [[1;32mNOTICE[0m] Download complete: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/309555f68bee51df688c4564b4d66fa5
+[DL:0B][#8039e0 0B/0B][#98f102 0B/0B][#c18889 0B/0B][#8ed3ca 0B/0B][#512d56 0B/0B](+3)
+
+08/19 22:57:03 [[1;32mNOTICE[0m] GID#8039e0879af8c219 - Download has already completed: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/5e775a3f399b6add8c3c8330df655e1b
+
+08/19 22:57:03 [[1;32mNOTICE[0m] Download complete: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/5e775a3f399b6add8c3c8330df655e1b
+
+08/19 22:57:03 [[1;32mNOTICE[0m] GID#8ed3ca762ed1c3a6 - Download has already completed: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/808abec8853273a1e0076b0e42d19910
+
+08/19 22:57:03 [[1;32mNOTICE[0m] Download complete: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/808abec8853273a1e0076b0e42d19910
+
+08/19 22:57:03 [[1;32mNOTICE[0m] GID#98f102dd7020c65a - Download has already completed: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/5f605020f3dadefc18287f67f369e264
+
+08/19 22:57:03 [[1;32mNOTICE[0m] Download complete: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/5f605020f3dadefc18287f67f369e264
+
+08/19 22:57:03 [[1;32mNOTICE[0m] GID#c18889c452213796 - Download has already completed: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/6629f15468f4d0cc39fb27518b7034a8
+
+08/19 22:57:03 [[1;32mNOTICE[0m] Download complete: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/6629f15468f4d0cc39fb27518b7034a8
+[DL:0B][#512d56 0B/0B][#87b869 0B/0B][#d2528c 0B/0B][#7b09c3 0B/0B][#b85dcd 0B/0B](+3)
+
+08/19 22:57:03 [[1;32mNOTICE[0m] GID#d2528ca6bae86fad - Download has already completed: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/99debaeabd76bd2cc1600905278c454b
+
+08/19 22:57:03 [[1;32mNOTICE[0m] Download complete: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/99debaeabd76bd2cc1600905278c454b
+
+08/19 22:57:03 [[1;32mNOTICE[0m] GID#512d56573bf2c495 - Download has already completed: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/8dd6f7ae99ab482b841a1eefa796bb41
+
+08/19 22:57:03 [[1;32mNOTICE[0m] Download complete: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/8dd6f7ae99ab482b841a1eefa796bb41
+
+08/19 22:57:03 [[1;32mNOTICE[0m] GID#87b869de70137159 - Download has already completed: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/93fcf358bb740a5f61526a13e9a2c769
+
+08/19 22:57:03 [[1;32mNOTICE[0m] Download complete: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/93fcf358bb740a5f61526a13e9a2c769
+
+08/19 22:57:03 [[1;32mNOTICE[0m] GID#7b09c31825c0f012 - Download has already completed: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/c5e0b7744afd7fde8b33a80d7f0329bc
+
+08/19 22:57:03 [[1;32mNOTICE[0m] Download complete: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/c5e0b7744afd7fde8b33a80d7f0329bc
+
+08/19 22:57:04 [[1;32mNOTICE[0m] GID#b85dcde25d338037 - Download has already completed: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/d5e67a46c20fea80fd9ccf63a434178c
+
+08/19 22:57:04 [[1;32mNOTICE[0m] Download complete: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/d5e67a46c20fea80fd9ccf63a434178c
+[DL:0B][#225f02 0B/0B][#bc606c 0B/0B][#b3f49e 0B/0B]
+
+08/19 22:57:04 [[1;32mNOTICE[0m] GID#b3f49ea887af13f0 - Download has already completed: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/manifest.ocdbt
+
+08/19 22:57:04 [[1;32mNOTICE[0m] Download complete: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/manifest.ocdbt
+
+08/19 22:57:04 [[1;32mNOTICE[0m] GID#bc606c6daaa99aba - Download has already completed: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/fec2923fef877d6b2a636a44d72670b8
+
+08/19 22:57:04 [[1;32mNOTICE[0m] Download complete: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/fec2923fef877d6b2a636a44d72670b8
+
+08/19 22:57:04 [[1;32mNOTICE[0m] GID#225f025da3c68589 - Download has already completed: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/fc0caaf15ec5a8930e6d0a269722cbe6
+
+08/19 22:57:04 [[1;32mNOTICE[0m] Download complete: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/fc0caaf15ec5a8930e6d0a269722cbe6
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+87a4e2|OK  |       0B/s|/shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/_CHECKPOINT_METADATA
+d1d0ab|OK  |       0B/s|/shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/2f72ae7e4e549700e9d7da10816ed9a4
+1b4255|OK  |       0B/s|/shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/_METADATA
+759aaa|OK  |       0B/s|/shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/148068583a1e9abda7c46b410e91850f
+ef1591|OK  |       0B/s|/shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/085d261a6434a2182b9cf8204a14f929
+3efc33|OK  |       0B/s|/shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/manifest.ocdbt
+45c6d9|OK  |       0B/s|/shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/_sharding
+9542e2|OK  |       0B/s|/shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/d/85a4b908b188b86024ebb92e85065acd
+561da3|OK  |       0B/s|/shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/45c6cbcc04a07d5f963bcf46cba903c4
+683295|OK  |       0B/s|/shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/450c3d3cb6793dc644c1faf981296eb3
+c4b544|OK  |       0B/s|/shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/4e5aa230b6c768224fb6b77d78d6a1be
+9167bc|OK  |       0B/s|/shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/309555f68bee51df688c4564b4d66fa5
+8039e0|OK  |       0B/s|/shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/5e775a3f399b6add8c3c8330df655e1b
+8ed3ca|OK  |       0B/s|/shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/808abec8853273a1e0076b0e42d19910
+98f102|OK  |       0B/s|/shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/5f605020f3dadefc18287f67f369e264
+c18889|OK  |       0B/s|/shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/6629f15468f4d0cc39fb27518b7034a8
+d2528c|OK  |       0B/s|/shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/99debaeabd76bd2cc1600905278c454b
+512d56|OK  |       0B/s|/shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/8dd6f7ae99ab482b841a1eefa796bb41
+87b869|OK  |       0B/s|/shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/93fcf358bb740a5f61526a13e9a2c769
+7b09c3|OK  |       0B/s|/shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/c5e0b7744afd7fde8b33a80d7f0329bc
+b85dcd|OK  |       0B/s|/shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/d5e67a46c20fea80fd9ccf63a434178c
+b3f49e|OK  |       0B/s|/shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/manifest.ocdbt
+bc606c|OK  |       0B/s|/shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/fec2923fef877d6b2a636a44d72670b8
+225f02|OK  |       0B/s|/shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/fc0caaf15ec5a8930e6d0a269722cbe6
+
+Status Legend:
+(OK):download completed.
+已校验 1/24: _CHECKPOINT_METADATA
+已校验 2/24: _METADATA
+已校验 3/24: _sharding
+已校验 4/24: d/85a4b908b188b86024ebb92e85065acd
+已校验 5/24: manifest.ocdbt
+已校验 6/24: ocdbt.process_0/d/085d261a6434a2182b9cf8204a14f929
+已校验 7/24: ocdbt.process_0/d/148068583a1e9abda7c46b410e91850f
+已校验 8/24: ocdbt.process_0/d/2f72ae7e4e549700e9d7da10816ed9a4
+已校验 9/24: ocdbt.process_0/d/309555f68bee51df688c4564b4d66fa5
+已校验 10/24: ocdbt.process_0/d/450c3d3cb6793dc644c1faf981296eb3
+已校验 11/24: ocdbt.process_0/d/45c6cbcc04a07d5f963bcf46cba903c4
+已校验 12/24: ocdbt.process_0/d/4e5aa230b6c768224fb6b77d78d6a1be
+已校验 13/24: ocdbt.process_0/d/5e775a3f399b6add8c3c8330df655e1b
+已校验 14/24: ocdbt.process_0/d/5f605020f3dadefc18287f67f369e264
+已校验 15/24: ocdbt.process_0/d/6629f15468f4d0cc39fb27518b7034a8
+已校验 16/24: ocdbt.process_0/d/808abec8853273a1e0076b0e42d19910
+已校验 17/24: ocdbt.process_0/d/8dd6f7ae99ab482b841a1eefa796bb41
+已校验 18/24: ocdbt.process_0/d/93fcf358bb740a5f61526a13e9a2c769
+已校验 19/24: ocdbt.process_0/d/99debaeabd76bd2cc1600905278c454b
+已校验 20/24: ocdbt.process_0/d/c5e0b7744afd7fde8b33a80d7f0329bc
+已校验 21/24: ocdbt.process_0/d/d5e67a46c20fea80fd9ccf63a434178c
+已校验 22/24: ocdbt.process_0/d/fc0caaf15ec5a8930e6d0a269722cbe6
+已校验 23/24: ocdbt.process_0/d/fec2923fef877d6b2a636a44d72670b8
+已校验 24/24: ocdbt.process_0/manifest.ocdbt
+下载校验通过：24 个对象，12014416199 bytes，目录 /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params
+2026-08-19T22:57:29.096348+00:00 执行: /root/RETAIN_code/.venv/bin/python reproduction/scripts/verify_base_checkpoint.py --params /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params --output /root/RETAIN_code/reproduction/data/pi0_base_restore.json
+{
+  "generated_at": "2026-08-19T22:57:50.501381+00:00",
+  "params_path": "/shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params",
+  "restore_type": "numpy.ndarray",
+  "leaf_count": 50,
+  "parameter_count": 3238048528,
+  "in_memory_bytes": 12952194112,
+  "dtype_element_counts": {
+    "float32": 3238048528
+  },
+  "structure_sha256": "b061101d775178ee7709d97c4e8a1d5b68a63073febcd545fe6e6d1f05609dda",
+  "status": "verified"
+}
+2026-08-19T22:57:52.364421+00:00 stage=base_verified {'report': '/root/RETAIN_code/reproduction/data/pi0_base_restore.json'}
+2026-08-19T22:57:52.365166+00:00 stage=smoke_testing_all_training_inputs {}
+2026-08-19T22:57:52.365589+00:00 执行: /root/RETAIN_code/.venv/bin/python reproduction/scripts/smoke_test_training_inputs.py --output /root/RETAIN_code/reproduction/experiments/input-smoke-all.json
+2026-08-19 22:57:58.817483: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1787180278.964931  256652 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1787180279.005936  256652 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2026-08-19 22:58:02.604624: E external/local_xla/xla/stream_executor/cuda/cuda_driver.cc:152] failed call to cuInit: INTERNAL: CUDA error: Failed call to cuInit: CUDA_ERROR_NO_DEVICE: no CUDA-capable device is detected
+WARNING:root:future_action_window_size > 0 but no absolute_action_mask was provided. Assuming all actions are relative for the purpose of making neutral actions.
+WARNING:absl:No resize_size was provided for image_wrist. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_primary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_secondary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:root:future_action_window_size > 0 but no absolute_action_mask was provided. Assuming all actions are relative for the purpose of making neutral actions.
+WARNING:absl:No resize_size was provided for image_wrist. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_primary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_secondary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:root:future_action_window_size > 0 but no absolute_action_mask was provided. Assuming all actions are relative for the purpose of making neutral actions.
+WARNING:absl:No resize_size was provided for image_wrist. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_primary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_secondary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:root:future_action_window_size > 0 but no absolute_action_mask was provided. Assuming all actions are relative for the purpose of making neutral actions.
+WARNING:absl:No resize_size was provided for image_wrist. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_primary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_secondary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+THIS DATASET HAS NUM_TRAJECTORIES 349  AND NUM_TRANSITIONS 39799
+THIS DATASET HAS NUM_TRAJECTORIES 365  AND NUM_TRANSITIONS 53739
+THIS DATASET HAS NUM_TRAJECTORIES 343  AND NUM_TRANSITIONS 42391
+THIS DATASET HAS NUM_TRAJECTORIES 3917  AND NUM_TRANSITIONS 567494
+
+######################################################################################
+# Loading the following 4 datasets (incl. sampling weight):                         #
+# libero_goal_reduced: =====================================================0.070376 #
+# libero_object_reduced: ===================================================0.090581 #
+# libero_spatial_reduced: ==================================================0.071630 #
+# libero_90_flipped: =======================================================0.767413 #
+######################################################################################
+
+norm_stats are  {'state': NormStats(mean=array([-0.07459474,  0.01886539,  0.89401907,  3.00154734, -0.11657909,
+       -0.09116436,  0.02634243, -0.02669393,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]), std=array([0.11267885, 0.14551789, 0.30485129, 0.38380396, 0.88596892,
+       0.30852371, 0.0146244 , 0.01449694, 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        ]), q01=array([-4.04978513e-01, -2.75643894e-01,  1.03451522e-01,  1.45384380e+00,
+       -2.69716187e+00, -1.19477866e+00,  1.64143040e-03, -4.00380769e-02,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00]), q99=array([ 1.25709046e-01,  3.27069047e-01,  1.25547892e+00,  3.66470913e+00,
+        2.30573786e+00,  5.80337930e-01,  4.02928781e-02, -1.70643236e-03,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00])), 'actions': NormStats(mean=array([ 0.13082495,  0.03510264, -0.99502772, -2.99781322,  0.11946776,
+        0.08388595, -0.0420391 ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]), std=array([0.34118709, 0.37048841, 0.53519309, 0.3816036 , 0.88830632,
+       0.3197473 , 0.99911594, 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        ]), q01=array([-0.62691881, -0.85612705, -1.98400122, -3.60055661, -2.32860803,
+       -0.6173897 , -1.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]), q99=array([ 1.01273111,  0.8795515 ,  0.40937937, -1.45586381,  2.69826558,
+        1.15884968,  0.9996    ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]))}
+ 🧟‍♂️🧟‍♂️🧟‍♂️🧟‍♂️ Dataloader Exhuasted/First Epoch: creating a new iterator over the dataloader. 🧟‍♂️🧟‍♂️🧟‍♂️🧟‍♂️
+训练输入 smoke test 通过: retain_repro_pretrain
+WARNING:root:future_action_window_size > 0 but no absolute_action_mask was provided. Assuming all actions are relative for the purpose of making neutral actions.
+WARNING:absl:No resize_size was provided for image_wrist. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_primary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_secondary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+THIS DATASET HAS NUM_TRAJECTORIES 41  AND NUM_TRANSITIONS 10866
+
+######################################################################################
+# Loading the following 1 datasets (incl. sampling weight):                         #
+# libero_10_turn_on_the_stove_and_put_the_moka_pot_on_it: ==================1.000000 #
+######################################################################################
+
+norm_stats are  {'state': NormStats(mean=array([-0.07459474,  0.01886539,  0.89401907,  3.00154734, -0.11657909,
+       -0.09116436,  0.02634243, -0.02669393,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]), std=array([0.11267885, 0.14551789, 0.30485129, 0.38380396, 0.88596892,
+       0.30852371, 0.0146244 , 0.01449694, 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        ]), q01=array([-4.04978513e-01, -2.75643894e-01,  1.03451522e-01,  1.45384380e+00,
+       -2.69716187e+00, -1.19477866e+00,  1.64143040e-03, -4.00380769e-02,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00]), q99=array([ 1.25709046e-01,  3.27069047e-01,  1.25547892e+00,  3.66470913e+00,
+        2.30573786e+00,  5.80337930e-01,  4.02928781e-02, -1.70643236e-03,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00])), 'actions': NormStats(mean=array([ 0.13082495,  0.03510264, -0.99502772, -2.99781322,  0.11946776,
+        0.08388595, -0.0420391 ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]), std=array([0.34118709, 0.37048841, 0.53519309, 0.3816036 , 0.88830632,
+       0.3197473 , 0.99911594, 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        ]), q01=array([-0.62691881, -0.85612705, -1.98400122, -3.60055661, -2.32860803,
+       -0.6173897 , -1.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]), q99=array([ 1.01273111,  0.8795515 ,  0.40937937, -1.45586381,  2.69826558,
+        1.15884968,  0.9996    ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]))}
+ 🧟‍♂️🧟‍♂️🧟‍♂️🧟‍♂️ Dataloader Exhuasted/First Epoch: creating a new iterator over the dataloader. 🧟‍♂️🧟‍♂️🧟‍♂️🧟‍♂️
+训练输入 smoke test 通过: retain_repro_task_ft_stove
+WARNING:root:future_action_window_size > 0 but no absolute_action_mask was provided. Assuming all actions are relative for the purpose of making neutral actions.
+WARNING:absl:No resize_size was provided for image_wrist. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_primary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_secondary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+THIS DATASET HAS NUM_TRAJECTORIES 38  AND NUM_TRANSITIONS 9807
+
+######################################################################################
+# Loading the following 1 datasets (incl. sampling weight):                         #
+# libero_10_put_the_white_mug_on_the_left_plate_and_put_the_yellow_and_white_mug_on_the_right_plate: =========1.000000 #
+######################################################################################
+
+norm_stats are  {'state': NormStats(mean=array([-0.07459474,  0.01886539,  0.89401907,  3.00154734, -0.11657909,
+       -0.09116436,  0.02634243, -0.02669393,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]), std=array([0.11267885, 0.14551789, 0.30485129, 0.38380396, 0.88596892,
+       0.30852371, 0.0146244 , 0.01449694, 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        ]), q01=array([-4.04978513e-01, -2.75643894e-01,  1.03451522e-01,  1.45384380e+00,
+       -2.69716187e+00, -1.19477866e+00,  1.64143040e-03, -4.00380769e-02,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00]), q99=array([ 1.25709046e-01,  3.27069047e-01,  1.25547892e+00,  3.66470913e+00,
+        2.30573786e+00,  5.80337930e-01,  4.02928781e-02, -1.70643236e-03,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00])), 'actions': NormStats(mean=array([ 0.13082495,  0.03510264, -0.99502772, -2.99781322,  0.11946776,
+        0.08388595, -0.0420391 ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]), std=array([0.34118709, 0.37048841, 0.53519309, 0.3816036 , 0.88830632,
+       0.3197473 , 0.99911594, 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        ]), q01=array([-0.62691881, -0.85612705, -1.98400122, -3.60055661, -2.32860803,
+       -0.6173897 , -1.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]), q99=array([ 1.01273111,  0.8795515 ,  0.40937937, -1.45586381,  2.69826558,
+        1.15884968,  0.9996    ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]))}
+ 🧟‍♂️🧟‍♂️🧟‍♂️🧟‍♂️ Dataloader Exhuasted/First Epoch: creating a new iterator over the dataloader. 🧟‍♂️🧟‍♂️🧟‍♂️🧟‍♂️
+训练输入 smoke test 通过: retain_repro_task_ft_mugs
+WARNING:root:future_action_window_size > 0 but no absolute_action_mask was provided. Assuming all actions are relative for the purpose of making neutral actions.
+WARNING:absl:No resize_size was provided for image_wrist. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_primary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_secondary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+THIS DATASET HAS NUM_TRAJECTORIES 43  AND NUM_TRANSITIONS 11494
+
+######################################################################################
+# Loading the following 1 datasets (incl. sampling weight):                         #
+# libero_10_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket: 1.000000 #
+######################################################################################
+
+norm_stats are  {'state': NormStats(mean=array([-0.07459474,  0.01886539,  0.89401907,  3.00154734, -0.11657909,
+       -0.09116436,  0.02634243, -0.02669393,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]), std=array([0.11267885, 0.14551789, 0.30485129, 0.38380396, 0.88596892,
+       0.30852371, 0.0146244 , 0.01449694, 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        ]), q01=array([-4.04978513e-01, -2.75643894e-01,  1.03451522e-01,  1.45384380e+00,
+       -2.69716187e+00, -1.19477866e+00,  1.64143040e-03, -4.00380769e-02,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00]), q99=array([ 1.25709046e-01,  3.27069047e-01,  1.25547892e+00,  3.66470913e+00,
+        2.30573786e+00,  5.80337930e-01,  4.02928781e-02, -1.70643236e-03,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00])), 'actions': NormStats(mean=array([ 0.13082495,  0.03510264, -0.99502772, -2.99781322,  0.11946776,
+        0.08388595, -0.0420391 ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]), std=array([0.34118709, 0.37048841, 0.53519309, 0.3816036 , 0.88830632,
+       0.3197473 , 0.99911594, 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        ]), q01=array([-0.62691881, -0.85612705, -1.98400122, -3.60055661, -2.32860803,
+       -0.6173897 , -1.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]), q99=array([ 1.01273111,  0.8795515 ,  0.40937937, -1.45586381,  2.69826558,
+        1.15884968,  0.9996    ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]))}
+ 🧟‍♂️🧟‍♂️🧟‍♂️🧟‍♂️ Dataloader Exhuasted/First Epoch: creating a new iterator over the dataloader. 🧟‍♂️🧟‍♂️🧟‍♂️🧟‍♂️
+训练输入 smoke test 通过: retain_repro_task_ft_basket
+WARNING:root:future_action_window_size > 0 but no absolute_action_mask was provided. Assuming all actions are relative for the purpose of making neutral actions.
+WARNING:absl:No resize_size was provided for image_wrist. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_primary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_secondary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:root:future_action_window_size > 0 but no absolute_action_mask was provided. Assuming all actions are relative for the purpose of making neutral actions.
+WARNING:absl:No resize_size was provided for image_wrist. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_primary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_secondary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:root:future_action_window_size > 0 but no absolute_action_mask was provided. Assuming all actions are relative for the purpose of making neutral actions.
+WARNING:absl:No resize_size was provided for image_wrist. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_primary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_secondary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:root:future_action_window_size > 0 but no absolute_action_mask was provided. Assuming all actions are relative for the purpose of making neutral actions.
+WARNING:absl:No resize_size was provided for image_wrist. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_primary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_secondary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:root:future_action_window_size > 0 but no absolute_action_mask was provided. Assuming all actions are relative for the purpose of making neutral actions.
+WARNING:absl:No resize_size was provided for image_wrist. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_primary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_secondary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+THIS DATASET HAS NUM_TRAJECTORIES 41  AND NUM_TRANSITIONS 10866
+THIS DATASET HAS NUM_TRAJECTORIES 349  AND NUM_TRANSITIONS 39799
+THIS DATASET HAS NUM_TRAJECTORIES 365  AND NUM_TRANSITIONS 53739
+THIS DATASET HAS NUM_TRAJECTORIES 343  AND NUM_TRANSITIONS 42391
+THIS DATASET HAS NUM_TRAJECTORIES 3917  AND NUM_TRANSITIONS 567494
+
+######################################################################################
+# Loading the following 5 datasets (incl. sampling weight):                         #
+# libero_10_turn_on_the_stove_and_put_the_moka_pot_on_it: ==================0.500000 #
+# libero_goal_reduced: =====================================================0.035188 #
+# libero_object_reduced: ===================================================0.045291 #
+# libero_spatial_reduced: ==================================================0.035815 #
+# libero_90_flipped: =======================================================0.383706 #
+######################################################################################
+
+norm_stats are  {'state': NormStats(mean=array([-0.07459474,  0.01886539,  0.89401907,  3.00154734, -0.11657909,
+       -0.09116436,  0.02634243, -0.02669393,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]), std=array([0.11267885, 0.14551789, 0.30485129, 0.38380396, 0.88596892,
+       0.30852371, 0.0146244 , 0.01449694, 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        ]), q01=array([-4.04978513e-01, -2.75643894e-01,  1.03451522e-01,  1.45384380e+00,
+       -2.69716187e+00, -1.19477866e+00,  1.64143040e-03, -4.00380769e-02,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00]), q99=array([ 1.25709046e-01,  3.27069047e-01,  1.25547892e+00,  3.66470913e+00,
+        2.30573786e+00,  5.80337930e-01,  4.02928781e-02, -1.70643236e-03,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00])), 'actions': NormStats(mean=array([ 0.13082495,  0.03510264, -0.99502772, -2.99781322,  0.11946776,
+        0.08388595, -0.0420391 ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]), std=array([0.34118709, 0.37048841, 0.53519309, 0.3816036 , 0.88830632,
+       0.3197473 , 0.99911594, 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        ]), q01=array([-0.62691881, -0.85612705, -1.98400122, -3.60055661, -2.32860803,
+       -0.6173897 , -1.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]), q99=array([ 1.01273111,  0.8795515 ,  0.40937937, -1.45586381,  2.69826558,
+        1.15884968,  0.9996    ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]))}
+ 🧟‍♂️🧟‍♂️🧟‍♂️🧟‍♂️ Dataloader Exhuasted/First Epoch: creating a new iterator over the dataloader. 🧟‍♂️🧟‍♂️🧟‍♂️🧟‍♂️
+训练输入 smoke test 通过: retain_repro_coft_stove
+WARNING:root:future_action_window_size > 0 but no absolute_action_mask was provided. Assuming all actions are relative for the purpose of making neutral actions.
+WARNING:absl:No resize_size was provided for image_wrist. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_primary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_secondary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:root:future_action_window_size > 0 but no absolute_action_mask was provided. Assuming all actions are relative for the purpose of making neutral actions.
+WARNING:absl:No resize_size was provided for image_wrist. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_primary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_secondary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:root:future_action_window_size > 0 but no absolute_action_mask was provided. Assuming all actions are relative for the purpose of making neutral actions.
+WARNING:absl:No resize_size was provided for image_wrist. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_primary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_secondary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:root:future_action_window_size > 0 but no absolute_action_mask was provided. Assuming all actions are relative for the purpose of making neutral actions.
+WARNING:absl:No resize_size was provided for image_wrist. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_primary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_secondary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:root:future_action_window_size > 0 but no absolute_action_mask was provided. Assuming all actions are relative for the purpose of making neutral actions.
+WARNING:absl:No resize_size was provided for image_wrist. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_primary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_secondary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+THIS DATASET HAS NUM_TRAJECTORIES 38  AND NUM_TRANSITIONS 9807
+THIS DATASET HAS NUM_TRAJECTORIES 349  AND NUM_TRANSITIONS 39799
+THIS DATASET HAS NUM_TRAJECTORIES 365  AND NUM_TRANSITIONS 53739
+THIS DATASET HAS NUM_TRAJECTORIES 343  AND NUM_TRANSITIONS 42391
+THIS DATASET HAS NUM_TRAJECTORIES 3917  AND NUM_TRANSITIONS 567494
+
+######################################################################################
+# Loading the following 5 datasets (incl. sampling weight):                         #
+# libero_10_put_the_white_mug_on_the_left_plate_and_put_the_yellow_and_white_mug_on_the_right_plate: =========0.500000 #
+# libero_goal_reduced: =====================================================0.035188 #
+# libero_object_reduced: ===================================================0.045291 #
+# libero_spatial_reduced: ==================================================0.035815 #
+# libero_90_flipped: =======================================================0.383706 #
+######################################################################################
+
+norm_stats are  {'state': NormStats(mean=array([-0.07459474,  0.01886539,  0.89401907,  3.00154734, -0.11657909,
+       -0.09116436,  0.02634243, -0.02669393,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]), std=array([0.11267885, 0.14551789, 0.30485129, 0.38380396, 0.88596892,
+       0.30852371, 0.0146244 , 0.01449694, 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        ]), q01=array([-4.04978513e-01, -2.75643894e-01,  1.03451522e-01,  1.45384380e+00,
+       -2.69716187e+00, -1.19477866e+00,  1.64143040e-03, -4.00380769e-02,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00]), q99=array([ 1.25709046e-01,  3.27069047e-01,  1.25547892e+00,  3.66470913e+00,
+        2.30573786e+00,  5.80337930e-01,  4.02928781e-02, -1.70643236e-03,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00])), 'actions': NormStats(mean=array([ 0.13082495,  0.03510264, -0.99502772, -2.99781322,  0.11946776,
+        0.08388595, -0.0420391 ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]), std=array([0.34118709, 0.37048841, 0.53519309, 0.3816036 , 0.88830632,
+       0.3197473 , 0.99911594, 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        ]), q01=array([-0.62691881, -0.85612705, -1.98400122, -3.60055661, -2.32860803,
+       -0.6173897 , -1.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]), q99=array([ 1.01273111,  0.8795515 ,  0.40937937, -1.45586381,  2.69826558,
+        1.15884968,  0.9996    ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]))}
+ 🧟‍♂️🧟‍♂️🧟‍♂️🧟‍♂️ Dataloader Exhuasted/First Epoch: creating a new iterator over the dataloader. 🧟‍♂️🧟‍♂️🧟‍♂️🧟‍♂️
+训练输入 smoke test 通过: retain_repro_coft_mugs
+WARNING:root:future_action_window_size > 0 but no absolute_action_mask was provided. Assuming all actions are relative for the purpose of making neutral actions.
+WARNING:absl:No resize_size was provided for image_wrist. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_primary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_secondary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:root:future_action_window_size > 0 but no absolute_action_mask was provided. Assuming all actions are relative for the purpose of making neutral actions.
+WARNING:absl:No resize_size was provided for image_wrist. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_primary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_secondary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:root:future_action_window_size > 0 but no absolute_action_mask was provided. Assuming all actions are relative for the purpose of making neutral actions.
+WARNING:absl:No resize_size was provided for image_wrist. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_primary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_secondary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:root:future_action_window_size > 0 but no absolute_action_mask was provided. Assuming all actions are relative for the purpose of making neutral actions.
+WARNING:absl:No resize_size was provided for image_wrist. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_primary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_secondary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:root:future_action_window_size > 0 but no absolute_action_mask was provided. Assuming all actions are relative for the purpose of making neutral actions.
+WARNING:absl:No resize_size was provided for image_wrist. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_primary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_secondary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+THIS DATASET HAS NUM_TRAJECTORIES 43  AND NUM_TRANSITIONS 11494
+THIS DATASET HAS NUM_TRAJECTORIES 349  AND NUM_TRANSITIONS 39799
+THIS DATASET HAS NUM_TRAJECTORIES 365  AND NUM_TRANSITIONS 53739
+THIS DATASET HAS NUM_TRAJECTORIES 343  AND NUM_TRANSITIONS 42391
+THIS DATASET HAS NUM_TRAJECTORIES 3917  AND NUM_TRANSITIONS 567494
+
+######################################################################################
+# Loading the following 5 datasets (incl. sampling weight):                         #
+# libero_10_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket: 0.500000 #
+# libero_goal_reduced: =====================================================0.035188 #
+# libero_object_reduced: ===================================================0.045291 #
+# libero_spatial_reduced: ==================================================0.035815 #
+# libero_90_flipped: =======================================================0.383706 #
+######################################################################################
+
+norm_stats are  {'state': NormStats(mean=array([-0.07459474,  0.01886539,  0.89401907,  3.00154734, -0.11657909,
+       -0.09116436,  0.02634243, -0.02669393,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]), std=array([0.11267885, 0.14551789, 0.30485129, 0.38380396, 0.88596892,
+       0.30852371, 0.0146244 , 0.01449694, 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        ]), q01=array([-4.04978513e-01, -2.75643894e-01,  1.03451522e-01,  1.45384380e+00,
+       -2.69716187e+00, -1.19477866e+00,  1.64143040e-03, -4.00380769e-02,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00]), q99=array([ 1.25709046e-01,  3.27069047e-01,  1.25547892e+00,  3.66470913e+00,
+        2.30573786e+00,  5.80337930e-01,  4.02928781e-02, -1.70643236e-03,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00])), 'actions': NormStats(mean=array([ 0.13082495,  0.03510264, -0.99502772, -2.99781322,  0.11946776,
+        0.08388595, -0.0420391 ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]), std=array([0.34118709, 0.37048841, 0.53519309, 0.3816036 , 0.88830632,
+       0.3197473 , 0.99911594, 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        ]), q01=array([-0.62691881, -0.85612705, -1.98400122, -3.60055661, -2.32860803,
+       -0.6173897 , -1.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]), q99=array([ 1.01273111,  0.8795515 ,  0.40937937, -1.45586381,  2.69826558,
+        1.15884968,  0.9996    ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]))}
+ 🧟‍♂️🧟‍♂️🧟‍♂️🧟‍♂️ Dataloader Exhuasted/First Epoch: creating a new iterator over the dataloader. 🧟‍♂️🧟‍♂️🧟‍♂️🧟‍♂️
+训练输入 smoke test 通过: retain_repro_coft_basket
+全部输入 smoke tests 通过，记录: /root/RETAIN_code/reproduction/experiments/input-smoke-all.json
+2026-08-19T22:59:32.251673+00:00 stage=all_inputs_verified {'report': '/root/RETAIN_code/reproduction/experiments/input-smoke-all.json'}
+2026-08-19T22:59:32.252456+00:00 stage=training_pipeline {}
+2026-08-19T22:59:32.252809+00:00 执行: /root/RETAIN_code/.venv/bin/python reproduction/scripts/run_training_pipeline.py --include-coft --poll-seconds 60
+2026-08-19T22:59:32.536761+00:00 暂无空闲 GPU；GPU0=81200MiB/98%, GPU1=80057MiB/95%, GPU2=39406MiB/79%, GPU3=80133MiB/100%, GPU4=49625MiB/80%, GPU5=48897MiB/80%, GPU6=48109MiB/86%, GPU7=47501MiB/78%
+2026-08-19T23:00:32.791960+00:00 暂无空闲 GPU；GPU0=81200MiB/100%, GPU1=80057MiB/100%, GPU2=39406MiB/60%, GPU3=80133MiB/100%, GPU4=49435MiB/85%, GPU5=48129MiB/82%, GPU6=48013MiB/89%, GPU7=47311MiB/80%
+2026-08-19T23:01:33.038178+00:00 暂无空闲 GPU；GPU0=81200MiB/100%, GPU1=80057MiB/100%, GPU2=39406MiB/85%, GPU3=80133MiB/100%, GPU4=49627MiB/85%, GPU5=53459MiB/90%, GPU6=48109MiB/87%, GPU7=47119MiB/87%
+2026-08-19T23:02:33.281303+00:00 暂无空闲 GPU；GPU0=81200MiB/99%, GPU1=80057MiB/95%, GPU2=39406MiB/84%, GPU3=80133MiB/93%, GPU4=49625MiB/56%, GPU5=48127MiB/88%, GPU6=48493MiB/85%, GPU7=47311MiB/86%
+2026-08-19T23:03:33.516651+00:00 暂无空闲 GPU；GPU0=81200MiB/100%, GPU1=80057MiB/100%, GPU2=39406MiB/50%, GPU3=80133MiB/100%, GPU4=49435MiB/84%, GPU5=48491MiB/90%, GPU6=48303MiB/84%, GPU7=47311MiB/80%
+2026-08-19T23:04:33.761238+00:00 暂无空闲 GPU；GPU0=81200MiB/100%, GPU1=80057MiB/100%, GPU2=39406MiB/61%, GPU3=80133MiB/94%, GPU4=49433MiB/79%, GPU5=48491MiB/56%, GPU6=53251MiB/82%, GPU7=46925MiB/61%
+2026-08-19T23:05:34.004156+00:00 暂无空闲 GPU；GPU0=81200MiB/58%, GPU1=80057MiB/27%, GPU2=39406MiB/56%, GPU3=80133MiB/63%, GPU4=49243MiB/82%, GPU5=53825MiB/80%, GPU6=48109MiB/78%, GPU7=47119MiB/54%
+2026-08-19T23:06:34.255419+00:00 暂无空闲 GPU；GPU0=81200MiB/75%, GPU1=80057MiB/64%, GPU2=39406MiB/84%, GPU3=80133MiB/40%, GPU4=49241MiB/84%, GPU5=48489MiB/75%, GPU6=47917MiB/81%, GPU7=47311MiB/81%
+2026-08-19T23:07:34.500894+00:00 暂无空闲 GPU；GPU0=81200MiB/75%, GPU1=80057MiB/75%, GPU2=39406MiB/61%, GPU3=80133MiB/85%, GPU4=49627MiB/64%, GPU5=48489MiB/82%, GPU6=47917MiB/89%, GPU7=47311MiB/79%
+2026-08-19T23:08:34.731370+00:00 暂无空闲 GPU；GPU0=81200MiB/80%, GPU1=80057MiB/52%, GPU2=39406MiB/0%, GPU3=80133MiB/39%, GPU4=49243MiB/77%, GPU5=48873MiB/87%, GPU6=47919MiB/78%, GPU7=52837MiB/54%
+2026-08-19T23:09:34.946324+00:00 暂无空闲 GPU；GPU0=81200MiB/75%, GPU1=80057MiB/42%, GPU2=39406MiB/0%, GPU3=80133MiB/50%, GPU4=49051MiB/85%, GPU5=48873MiB/71%, GPU6=53421MiB/57%, GPU7=52261MiB/85%
+2026-08-19T23:10:35.183656+00:00 暂无空闲 GPU；GPU0=81200MiB/59%, GPU1=80057MiB/19%, GPU2=39406MiB/0%, GPU3=80133MiB/87%, GPU4=49623MiB/78%, GPU5=48873MiB/52%, GPU6=47915MiB/79%, GPU7=47121MiB/87%
+2026-08-19T23:11:35.427981+00:00 暂无空闲 GPU；GPU0=81200MiB/45%, GPU1=80057MiB/32%, GPU2=39406MiB/0%, GPU3=80133MiB/66%, GPU4=49049MiB/80%, GPU5=48489MiB/58%, GPU6=48877MiB/55%, GPU7=46925MiB/64%
+2026-08-19T23:12:35.675495+00:00 暂无空闲 GPU；GPU0=81200MiB/98%, GPU1=80057MiB/94%, GPU2=39406MiB/0%, GPU3=80133MiB/98%, GPU4=49051MiB/57%, GPU5=48489MiB/86%, GPU6=48685MiB/87%, GPU7=46925MiB/84%
+2026-08-19T23:13:35.906317+00:00 暂无空闲 GPU；GPU0=81200MiB/100%, GPU1=80057MiB/100%, GPU2=48074MiB/28%, GPU3=80133MiB/100%, GPU4=49049MiB/81%, GPU5=53633MiB/85%, GPU6=48109MiB/75%, GPU7=46925MiB/56%
+2026-08-19T23:14:36.160864+00:00 暂无空闲 GPU；GPU0=81200MiB/100%, GPU1=80057MiB/100%, GPU2=43510MiB/52%, GPU3=80133MiB/100%, GPU4=49433MiB/77%, GPU5=48487MiB/85%, GPU6=48109MiB/60%, GPU7=52067MiB/59%
+2026-08-19T23:15:36.402327+00:00 暂无空闲 GPU；GPU0=81200MiB/98%, GPU1=80057MiB/100%, GPU2=43510MiB/89%, GPU3=80133MiB/100%, GPU4=49235MiB/2%, GPU5=48679MiB/85%, GPU6=48875MiB/82%, GPU7=47501MiB/77%
+2026-08-19T23:16:36.641750+00:00 暂无空闲 GPU；GPU0=81200MiB/97%, GPU1=80057MiB/98%, GPU2=43510MiB/73%, GPU3=80133MiB/100%, GPU4=62889MiB/97%, GPU5=61367MiB/85%, GPU6=61373MiB/92%, GPU7=61093MiB/100%
+2026-08-19T23:17:36.889875+00:00 暂无空闲 GPU；GPU0=81200MiB/96%, GPU1=80057MiB/95%, GPU2=43510MiB/56%, GPU3=80133MiB/98%, GPU4=62983MiB/95%, GPU5=61463MiB/98%, GPU6=61469MiB/100%, GPU7=61147MiB/88%
+2026-08-19T23:18:37.132585+00:00 暂无空闲 GPU；GPU0=81200MiB/98%, GPU1=80057MiB/95%, GPU2=43510MiB/80%, GPU3=80133MiB/94%, GPU4=62983MiB/100%, GPU5=61463MiB/97%, GPU6=61373MiB/100%, GPU7=61147MiB/88%
+2026-08-19T23:19:37.371148+00:00 暂无空闲 GPU；GPU0=81200MiB/74%, GPU1=80057MiB/46%, GPU2=43512MiB/81%, GPU3=80133MiB/80%, GPU4=62887MiB/89%, GPU5=61367MiB/91%, GPU6=61469MiB/87%, GPU7=61051MiB/97%
+2026-08-19T23:20:37.610158+00:00 暂无空闲 GPU；GPU0=81200MiB/52%, GPU1=80057MiB/44%, GPU2=43512MiB/62%, GPU3=80133MiB/85%, GPU4=62887MiB/98%, GPU5=61441MiB/89%, GPU6=61565MiB/86%, GPU7=61029MiB/100%
+2026-08-19T23:21:37.848973+00:00 暂无空闲 GPU；GPU0=81200MiB/82%, GPU1=80057MiB/56%, GPU2=43512MiB/55%, GPU3=80133MiB/63%, GPU4=62983MiB/91%, GPU5=61463MiB/96%, GPU6=61277MiB/97%, GPU7=61051MiB/87%
+2026-08-19T23:22:38.090682+00:00 暂无空闲 GPU；GPU0=81200MiB/83%, GPU1=80057MiB/72%, GPU2=43512MiB/61%, GPU3=80133MiB/85%, GPU4=62887MiB/96%, GPU5=61271MiB/90%, GPU6=61565MiB/89%, GPU7=61147MiB/99%
+2026-08-19T23:23:38.335081+00:00 暂无空闲 GPU；GPU0=81200MiB/42%, GPU1=80057MiB/72%, GPU2=43512MiB/52%, GPU3=80133MiB/28%, GPU4=62983MiB/97%, GPU5=61367MiB/86%, GPU6=61373MiB/93%, GPU7=61147MiB/100%
+2026-08-19T23:24:38.576716+00:00 暂无空闲 GPU；GPU0=81200MiB/65%, GPU1=80057MiB/67%, GPU2=43512MiB/71%, GPU3=80133MiB/70%, GPU4=62889MiB/100%, GPU5=61463MiB/96%, GPU6=61373MiB/98%, GPU7=60955MiB/100%
+2026-08-19T23:25:38.814361+00:00 暂无空闲 GPU；GPU0=81200MiB/3%, GPU1=80057MiB/37%, GPU2=43512MiB/61%, GPU3=80133MiB/58%, GPU4=62983MiB/100%, GPU5=61367MiB/97%, GPU6=61469MiB/100%, GPU7=60955MiB/90%
+2026-08-19T23:26:39.056166+00:00 暂无空闲 GPU；GPU0=81200MiB/95%, GPU1=80057MiB/99%, GPU2=43512MiB/53%, GPU3=80133MiB/96%, GPU4=62961MiB/97%, GPU5=61367MiB/86%, GPU6=61469MiB/96%, GPU7=61147MiB/100%
+2026-08-19T23:27:39.311562+00:00 暂无空闲 GPU；GPU0=81200MiB/99%, GPU1=80057MiB/98%, GPU2=43512MiB/0%, GPU3=80133MiB/96%, GPU4=62983MiB/99%, GPU5=61271MiB/91%, GPU6=61373MiB/95%, GPU7=61147MiB/100%
+2026-08-19T23:28:39.560950+00:00 暂无空闲 GPU；GPU0=81200MiB/100%, GPU1=80057MiB/100%, GPU2=43512MiB/0%, GPU3=80133MiB/100%, GPU4=62887MiB/89%, GPU5=61367MiB/87%, GPU6=61373MiB/90%, GPU7=60859MiB/90%
+2026-08-19T23:29:39.796324+00:00 暂无空闲 GPU；GPU0=81200MiB/97%, GPU1=80057MiB/98%, GPU2=43512MiB/0%, GPU3=80133MiB/97%, GPU4=62791MiB/92%, GPU5=61557MiB/100%, GPU6=61255MiB/100%, GPU7=61051MiB/89%
+2026-08-19T23:30:40.035649+00:00 暂无空闲 GPU；GPU0=81200MiB/100%, GPU1=80057MiB/100%, GPU2=43512MiB/0%, GPU3=80133MiB/100%, GPU4=62791MiB/88%, GPU5=61271MiB/87%, GPU6=61277MiB/89%, GPU7=60859MiB/97%
+2026-08-19T23:31:40.273721+00:00 暂无空闲 GPU；GPU0=81200MiB/96%, GPU1=80057MiB/96%, GPU2=43512MiB/0%, GPU3=80133MiB/100%, GPU4=62887MiB/100%, GPU5=61367MiB/93%, GPU6=61181MiB/97%, GPU7=61051MiB/92%
+2026-08-19T23:32:40.509719+00:00 暂无空闲 GPU；GPU0=81200MiB/32%, GPU1=80057MiB/82%, GPU2=47922MiB/0%, GPU3=80133MiB/78%, GPU4=60961MiB/94%, GPU5=59535MiB/100%, GPU6=59445MiB/100%, GPU7=59125MiB/85%
+2026-08-19T23:33:40.765808+00:00 暂无空闲 GPU；GPU0=81200MiB/49%, GPU1=80057MiB/34%, GPU2=47440MiB/61%, GPU3=80133MiB/64%, GPU4=62017MiB/100%, GPU5=60691MiB/89%, GPU6=60695MiB/100%, GPU7=59123MiB/88%
+2026-08-19T23:34:41.004801+00:00 暂无空闲 GPU；GPU0=81200MiB/67%, GPU1=80057MiB/36%, GPU2=47442MiB/85%, GPU3=80133MiB/82%, GPU4=62791MiB/100%, GPU5=61271MiB/83%, GPU6=59639MiB/91%, GPU7=60763MiB/100%
+2026-08-19T23:35:41.249699+00:00 暂无空闲 GPU；GPU0=81200MiB/36%, GPU1=80057MiB/84%, GPU2=47442MiB/70%, GPU3=80133MiB/22%, GPU4=61151MiB/87%, GPU5=59921MiB/89%, GPU6=59545MiB/100%, GPU7=59121MiB/87%
+2026-08-19T23:36:41.482415+00:00 暂无空闲 GPU；GPU0=81200MiB/99%, GPU1=80057MiB/95%, GPU2=47442MiB/85%, GPU3=80133MiB/99%, GPU4=61057MiB/91%, GPU5=59539MiB/99%, GPU6=59545MiB/100%, GPU7=57971MiB/88%
+2026-08-19T23:37:41.722680+00:00 暂无空闲 GPU；GPU0=81200MiB/98%, GPU1=80057MiB/95%, GPU2=47442MiB/74%, GPU3=80133MiB/95%, GPU4=59709MiB/87%, GPU5=59145MiB/90%, GPU6=58771MiB/96%, GPU7=59123MiB/100%
+2026-08-19T23:38:41.981177+00:00 暂无空闲 GPU；GPU0=81200MiB/100%, GPU1=80057MiB/100%, GPU2=47442MiB/88%, GPU3=80133MiB/100%, GPU4=59703MiB/86%, GPU5=59335MiB/89%, GPU6=58957MiB/87%, GPU7=57579MiB/94%
+2026-08-19T23:39:42.216371+00:00 暂无空闲 GPU；GPU0=81200MiB/100%, GPU1=80057MiB/100%, GPU2=47442MiB/76%, GPU3=80133MiB/100%, GPU4=59889MiB/100%, GPU5=59327MiB/100%, GPU6=58757MiB/100%, GPU7=57959MiB/100%
+2026-08-19T23:40:42.467467+00:00 暂无空闲 GPU；GPU0=81200MiB/100%, GPU1=80057MiB/96%, GPU2=47442MiB/89%, GPU3=80133MiB/100%, GPU4=59697MiB/58%, GPU5=59519MiB/100%, GPU6=58565MiB/87%, GPU7=57573MiB/65%
+2026-08-19T23:41:42.723158+00:00 暂无空闲 GPU；GPU0=81200MiB/100%, GPU1=80057MiB/100%, GPU2=47442MiB/61%, GPU3=80133MiB/100%, GPU4=49819MiB/87%, GPU5=59327MiB/83%, GPU6=53615MiB/86%, GPU7=47119MiB/77%
+2026-08-19T23:42:42.964389+00:00 暂无空闲 GPU；GPU0=81200MiB/100%, GPU1=80057MiB/94%, GPU2=47442MiB/67%, GPU3=80133MiB/95%, GPU4=54939MiB/54%, GPU5=48493MiB/86%, GPU6=47919MiB/82%, GPU7=47119MiB/54%
+2026-08-19T23:43:43.203354+00:00 暂无空闲 GPU；GPU0=81200MiB/100%, GPU1=80057MiB/100%, GPU2=47442MiB/62%, GPU3=80133MiB/97%, GPU4=49435MiB/70%, GPU5=53825MiB/73%, GPU6=48111MiB/55%, GPU7=47885MiB/74%
+2026-08-19T23:44:43.450694+00:00 暂无空闲 GPU；GPU0=81200MiB/98%, GPU1=80057MiB/100%, GPU2=47442MiB/56%, GPU3=80133MiB/91%, GPU4=49051MiB/78%, GPU5=48491MiB/62%, GPU6=48303MiB/58%, GPU7=47311MiB/77%
+2026-08-19T23:45:43.700908+00:00 暂无空闲 GPU；GPU0=81200MiB/99%, GPU1=80057MiB/91%, GPU2=47442MiB/84%, GPU3=80133MiB/96%, GPU4=49243MiB/84%, GPU5=48489MiB/85%, GPU6=53061MiB/83%, GPU7=47311MiB/64%
+2026-08-19T23:46:43.943426+00:00 暂无空闲 GPU；GPU0=81200MiB/80%, GPU1=80057MiB/59%, GPU2=47442MiB/73%, GPU3=80133MiB/64%, GPU4=49627MiB/79%, GPU5=48489MiB/81%, GPU6=47919MiB/79%, GPU7=47119MiB/80%
+2026-08-19T23:47:44.184783+00:00 暂无空闲 GPU；GPU0=81200MiB/72%, GPU1=80057MiB/27%, GPU2=47442MiB/78%, GPU3=80133MiB/37%, GPU4=49437MiB/79%, GPU5=48683MiB/87%, GPU6=48109MiB/80%, GPU7=47311MiB/84%
+2026-08-19T23:48:44.433764+00:00 暂无空闲 GPU；GPU0=81200MiB/73%, GPU1=80057MiB/80%, GPU2=47442MiB/82%, GPU3=80133MiB/81%, GPU4=55321MiB/70%, GPU5=48683MiB/79%, GPU6=48109MiB/85%, GPU7=47311MiB/53%
+2026-08-19T23:49:44.662487+00:00 暂无空闲 GPU；GPU0=81200MiB/100%, GPU1=80057MiB/0%, GPU2=47442MiB/80%, GPU3=80133MiB/0%, GPU4=59709MiB/81%, GPU5=59251MiB/77%, GPU6=58963MiB/93%, GPU7=57969MiB/94%
+2026-08-19T23:50:44.906227+00:00 暂无空闲 GPU；GPU0=81200MiB/98%, GPU1=80057MiB/97%, GPU2=47442MiB/83%, GPU3=80133MiB/98%, GPU4=48857MiB/86%, GPU5=53637MiB/78%, GPU6=53251MiB/85%, GPU7=47695MiB/72%
+2026-08-19T23:51:45.145258+00:00 暂无空闲 GPU；GPU0=81200MiB/100%, GPU1=80057MiB/96%, GPU2=47442MiB/59%, GPU3=80133MiB/98%, GPU4=49433MiB/81%, GPU5=48785MiB/56%, GPU6=48111MiB/84%, GPU7=47695MiB/73%
+2026-08-19T23:52:45.394463+00:00 暂无空闲 GPU；GPU0=81200MiB/100%, GPU1=80057MiB/96%, GPU2=47442MiB/87%, GPU3=80133MiB/94%, GPU4=49049MiB/53%, GPU5=48399MiB/89%, GPU6=53519MiB/59%, GPU7=46927MiB/84%
+2026-08-19T23:53:45.634407+00:00 暂无空闲 GPU；GPU0=81200MiB/100%, GPU1=80057MiB/100%, GPU2=47442MiB/81%, GPU3=80133MiB/100%, GPU4=48857MiB/66%, GPU5=53903MiB/87%, GPU6=47727MiB/80%, GPU7=52453MiB/55%
+2026-08-19T23:54:45.880733+00:00 暂无空闲 GPU；GPU0=81200MiB/100%, GPU1=80057MiB/100%, GPU2=47442MiB/54%, GPU3=80133MiB/96%, GPU4=54001MiB/77%, GPU5=48401MiB/83%, GPU6=53423MiB/89%, GPU7=47119MiB/86%
+2026-08-19T23:55:46.118787+00:00 暂无空闲 GPU；GPU0=81200MiB/98%, GPU1=80057MiB/98%, GPU2=47442MiB/72%, GPU3=80133MiB/97%, GPU4=48857MiB/84%, GPU5=48977MiB/61%, GPU6=47919MiB/59%, GPU7=52455MiB/74%
+2026-08-19T23:56:46.376440+00:00 暂无空闲 GPU；GPU0=81200MiB/98%, GPU1=80057MiB/96%, GPU2=47442MiB/69%, GPU3=80133MiB/98%, GPU4=48859MiB/58%, GPU5=48785MiB/79%, GPU6=47917MiB/70%, GPU7=52453MiB/82%
+2026-08-19T23:57:46.632352+00:00 选择空闲 GPU 1: {'index': 1, 'memory_used_mib': 10, 'memory_total_mib': 85651, 'utilization_percent': 0}
+2026-08-19T23:57:50.440048+00:00 JAX GPU runtime 预检通过: {'status': 'verified', 'jax': '0.6.2', 'jaxlib': '0.6.2', 'jax_cuda12_plugin': '0.6.2', 'platform': 'gpu', 'device': 'cuda:0', 'device_kind': 'NVIDIA RTX 6000D', 'visible_device_count': 1, 'bf16_to_f16_shape': [64, 64], 'bf16_matmul_shape': [64, 64]}
+2026-08-19T23:57:50.441525+00:00 启动 retain_repro_pretrain，日志: /root/RETAIN_code/reproduction/experiments/retain_repro_pretrain__paper_final_hparams/stdout.log
+Traceback (most recent call last):
+  File "/root/RETAIN_code/reproduction/scripts/run_training_pipeline.py", line 448, in <module>
+    main()
+  File "/root/RETAIN_code/reproduction/scripts/run_training_pipeline.py", line 443, in main
+    run_stage(gpu, config, exp_name, final_step)
+  File "/root/RETAIN_code/reproduction/scripts/run_training_pipeline.py", line 412, in run_stage
+    raise RuntimeError(f"{config} 失败，退出码 {return_code}")
+RuntimeError: retain_repro_pretrain 失败，退出码 1
+2026-08-19T23:59:32.392428+00:00 stage=failed {'error_type': 'CalledProcessError', 'error': "Command '['/root/RETAIN_code/.venv/bin/python', 'reproduction/scripts/run_training_pipeline.py', '--include-coft', '--poll-seconds', '60']' returned non-zero exit status 1."}
+Traceback (most recent call last):
+  File "/root/RETAIN_code/reproduction/scripts/run_reproduction_supervisor.py", line 349, in <module>
+    main()
+  File "/root/RETAIN_code/reproduction/scripts/run_reproduction_supervisor.py", line 324, in main
+    run(
+  File "/root/RETAIN_code/reproduction/scripts/run_reproduction_supervisor.py", line 63, in run
+    subprocess.run(command, cwd=PROJECT_ROOT, env=env, check=True)
+  File "/root/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/root/RETAIN_code/.venv/bin/python', 'reproduction/scripts/run_training_pipeline.py', '--include-coft', '--poll-seconds', '60']' returned non-zero exit status 1.
+2026-08-20T00:16:20.837841+00:00 stage=started {'shared_free_bytes': 256161751040}
+2026-08-20T00:16:20.872354+00:00 stage=waiting_dataset_transfer {'complete_files': 353, 'expected_files': 353, 'complete_bytes': 24235684869, 'expected_bytes': 24235684869, 'aria2_sidecars': 12, 'transfer_active': False}
+2026-08-20T00:16:20.873187+00:00 stage=verifying_dataset_sha256 {}
+2026-08-20T00:16:20.873597+00:00 执行: /root/RETAIN_code/.venv/bin/python reproduction/scripts/verify_dataset.py --root /shared/.cache/retain/libero/datasets --output /root/RETAIN_code/reproduction/data/dataset_manifest_server.json
+已校验 25/360 个文件
+已校验 50/360 个文件
+已校验 75/360 个文件
+已校验 100/360 个文件
+已校验 125/360 个文件
+已校验 150/360 个文件
+已校验 175/360 个文件
+已校验 200/360 个文件
+已校验 225/360 个文件
+已校验 250/360 个文件
+已校验 275/360 个文件
+已校验 300/360 个文件
+已校验 325/360 个文件
+已校验 350/360 个文件
+已校验 360/360 个文件
+数据校验通过：7 个数据集，360 个文件，24235698326 bytes
+2026-08-20T00:16:52.633189+00:00 stage=dataset_verified {'file_count': 353, 'total_bytes': 24235684869, 'manifest': '/root/RETAIN_code/reproduction/data/dataset_manifest_server.json', 'ignored_generated_statistics': ['libero_10_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket/1.0.0/dataset_statistics_62aa238f5f7a628fca0ce8fedc1636a4311427a2d137f5112edc2f8e1f335ace.json', 'libero_10_put_the_white_mug_on_the_left_plate_and_put_the_yellow_and_white_mug_on_the_right_plate/1.0.0/dataset_statistics_1f58c265e60cf48f7ef3b5dff913be3f94b90b7cba0b8826e2671ce60a13d60b.json', 'libero_10_turn_on_the_stove_and_put_the_moka_pot_on_it/1.0.0/dataset_statistics_fb28b1cff603a73588957db9d81177e0e224ae4b69afc320c33a5415beb6b437.json', 'libero_90_flipped/1.0.0/dataset_statistics_c1140fa7742b7ba3790f7e2c9fd3764eed00ce303bc4c3909034f6bfb433512d.json', 'libero_goal_reduced/1.0.0/dataset_statistics_b400d3eac28b886b3e010c808230eea431b48c221868392d1da2cc299a04b7f3.json', 'libero_object_reduced/1.0.0/dataset_statistics_abed590ccc1d8f52abfbd3eba3d6635d7c4da1d165042663ef544f5781680bfc.json', 'libero_spatial_reduced/1.0.0/dataset_statistics_458f47f663fddb014789c3df3ac3781d272946caf89cb44cd1957acd80d1c219.json']}
+2026-08-20T00:16:52.650141+00:00 stage=verifying_base_gcs_md5 {}
+2026-08-20T00:16:52.650842+00:00 执行: /root/RETAIN_code/.venv/bin/python reproduction/scripts/download_gcs_prefix.py --bucket openpi-assets --prefix checkpoints/pi0_base/params --output /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params --jobs 8 --backend aria2
+
+08/20 00:16:53 [[1;32mNOTICE[0m] Downloading 24 item(s)
+[DL:0B][#54cc98 0B/0B][#c79360 0B/0B][#df9a78 0B/0B][#9f860d 0B/0B][#648157 0B/0B](+3)
+
+08/20 00:16:55 [[1;32mNOTICE[0m] GID#c79360b9d2f54125 - Download has already completed: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/_METADATA
+
+08/20 00:16:55 [[1;32mNOTICE[0m] Download complete: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/_METADATA
+
+08/20 00:16:55 [[1;32mNOTICE[0m] GID#9f860d8e6825a382 - Download has already completed: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/d/85a4b908b188b86024ebb92e85065acd
+
+08/20 00:16:55 [[1;32mNOTICE[0m] Download complete: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/d/85a4b908b188b86024ebb92e85065acd
+
+08/20 00:16:55 [[1;32mNOTICE[0m] GID#df9a7825a09e306d - Download has already completed: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/_sharding
+
+08/20 00:16:55 [[1;32mNOTICE[0m] Download complete: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/_sharding
+
+08/20 00:16:55 [[1;32mNOTICE[0m] GID#54cc98e9d3c4bdcb - Download has already completed: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/_CHECKPOINT_METADATA
+
+08/20 00:16:55 [[1;32mNOTICE[0m] Download complete: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/_CHECKPOINT_METADATA
+[DL:0B][#648157 0B/0B][#58bcd7 0B/0B][#656a0a 0B/0B][#1820cd 0B/0B][#4e000c 0B/0B](+3)
+
+08/20 00:16:55 [[1;32mNOTICE[0m] GID#1820cd1093e758d6 - Download has already completed: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/2f72ae7e4e549700e9d7da10816ed9a4
+
+08/20 00:16:55 [[1;32mNOTICE[0m] Download complete: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/2f72ae7e4e549700e9d7da10816ed9a4
+
+08/20 00:16:55 [[1;32mNOTICE[0m] GID#58bcd7832a9bdafc - Download has already completed: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/085d261a6434a2182b9cf8204a14f929
+
+08/20 00:16:55 [[1;32mNOTICE[0m] Download complete: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/085d261a6434a2182b9cf8204a14f929
+
+08/20 00:16:55 [[1;32mNOTICE[0m] GID#6481578992b267e8 - Download has already completed: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/manifest.ocdbt
+
+08/20 00:16:55 [[1;32mNOTICE[0m] Download complete: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/manifest.ocdbt
+
+08/20 00:16:55 [[1;32mNOTICE[0m] GID#656a0a22fd1042ab - Download has already completed: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/148068583a1e9abda7c46b410e91850f
+
+08/20 00:16:55 [[1;32mNOTICE[0m] Download complete: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/148068583a1e9abda7c46b410e91850f
+
+08/20 00:16:56 [[1;32mNOTICE[0m] GID#062e32e69d63bd0b - Download has already completed: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/450c3d3cb6793dc644c1faf981296eb3
+
+08/20 00:16:56 [[1;32mNOTICE[0m] Download complete: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/450c3d3cb6793dc644c1faf981296eb3
+
+08/20 00:16:56 [[1;32mNOTICE[0m] GID#2fd9bf6d5d54c0f2 - Download has already completed: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/45c6cbcc04a07d5f963bcf46cba903c4
+
+08/20 00:16:56 [[1;32mNOTICE[0m] Download complete: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/45c6cbcc04a07d5f963bcf46cba903c4
+
+08/20 00:16:56 [[1;32mNOTICE[0m] GID#511c3611b20ddfdf - Download has already completed: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/4e5aa230b6c768224fb6b77d78d6a1be
+
+08/20 00:16:56 [[1;32mNOTICE[0m] Download complete: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/4e5aa230b6c768224fb6b77d78d6a1be
+
+08/20 00:16:56 [[1;32mNOTICE[0m] GID#4e000c63e89f0a60 - Download has already completed: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/309555f68bee51df688c4564b4d66fa5
+
+08/20 00:16:56 [[1;32mNOTICE[0m] Download complete: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/309555f68bee51df688c4564b4d66fa5
+[DL:0B][#b96450 0B/0B][#7f5db3 0B/0B][#64ba69 0B/0B][#fdf002 0B/0B][#98a490 0B/0B](+3)
+
+08/20 00:16:57 [[1;32mNOTICE[0m] GID#b96450af9b4b5a99 - Download has already completed: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/5e775a3f399b6add8c3c8330df655e1b
+
+08/20 00:16:57 [[1;32mNOTICE[0m] Download complete: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/5e775a3f399b6add8c3c8330df655e1b
+
+08/20 00:16:57 [[1;32mNOTICE[0m] GID#64ba695d765ef394 - Download has already completed: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/6629f15468f4d0cc39fb27518b7034a8
+
+08/20 00:16:57 [[1;32mNOTICE[0m] Download complete: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/6629f15468f4d0cc39fb27518b7034a8
+
+08/20 00:16:57 [[1;32mNOTICE[0m] GID#fdf002a84cdd38bc - Download has already completed: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/808abec8853273a1e0076b0e42d19910
+
+08/20 00:16:57 [[1;32mNOTICE[0m] Download complete: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/808abec8853273a1e0076b0e42d19910
+
+08/20 00:16:57 [[1;32mNOTICE[0m] GID#7f5db38ca3ca277f - Download has already completed: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/5f605020f3dadefc18287f67f369e264
+
+08/20 00:16:57 [[1;32mNOTICE[0m] Download complete: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/5f605020f3dadefc18287f67f369e264
+[DL:0B][#98a490 0B/0B][#76327a 0B/0B][#d5e6d4 0B/0B][#17ade7 0B/0B][#817b41 0B/0B](+3)
+
+08/20 00:16:57 [[1;32mNOTICE[0m] GID#76327a76b4533a85 - Download has already completed: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/93fcf358bb740a5f61526a13e9a2c769
+
+08/20 00:16:57 [[1;32mNOTICE[0m] Download complete: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/93fcf358bb740a5f61526a13e9a2c769
+
+08/20 00:16:57 [[1;32mNOTICE[0m] GID#d5e6d4c0b30788d3 - Download has already completed: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/99debaeabd76bd2cc1600905278c454b
+
+08/20 00:16:57 [[1;32mNOTICE[0m] Download complete: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/99debaeabd76bd2cc1600905278c454b
+
+08/20 00:16:57 [[1;32mNOTICE[0m] GID#17ade735a87373b6 - Download has already completed: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/c5e0b7744afd7fde8b33a80d7f0329bc
+
+08/20 00:16:57 [[1;32mNOTICE[0m] Download complete: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/c5e0b7744afd7fde8b33a80d7f0329bc
+
+08/20 00:16:57 [[1;32mNOTICE[0m] GID#98a49029cab887d0 - Download has already completed: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/8dd6f7ae99ab482b841a1eefa796bb41
+
+08/20 00:16:57 [[1;32mNOTICE[0m] Download complete: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/8dd6f7ae99ab482b841a1eefa796bb41
+
+08/20 00:16:58 [[1;32mNOTICE[0m] GID#83ee7dff45273da7 - Download has already completed: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/fec2923fef877d6b2a636a44d72670b8
+
+08/20 00:16:58 [[1;32mNOTICE[0m] Download complete: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/fec2923fef877d6b2a636a44d72670b8
+
+08/20 00:16:58 [[1;32mNOTICE[0m] GID#14a2f8a0405d8c7d - Download has already completed: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/fc0caaf15ec5a8930e6d0a269722cbe6
+
+08/20 00:16:58 [[1;32mNOTICE[0m] Download complete: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/fc0caaf15ec5a8930e6d0a269722cbe6
+[DL:0B][#817b41 0B/0B][#08e5b4 0B/0B]
+
+08/20 00:16:58 [[1;32mNOTICE[0m] GID#817b41c179807080 - Download has already completed: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/d5e67a46c20fea80fd9ccf63a434178c
+
+08/20 00:16:58 [[1;32mNOTICE[0m] Download complete: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/d5e67a46c20fea80fd9ccf63a434178c
+
+08/20 00:16:58 [[1;32mNOTICE[0m] GID#08e5b4865c67b583 - Download has already completed: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/manifest.ocdbt
+
+08/20 00:16:58 [[1;32mNOTICE[0m] Download complete: /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/manifest.ocdbt
+
+Download Results:
+gid   |stat|avg speed  |path/URI
+======+====+===========+=======================================================
+c79360|OK  |       0B/s|/shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/_METADATA
+9f860d|OK  |       0B/s|/shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/d/85a4b908b188b86024ebb92e85065acd
+df9a78|OK  |       0B/s|/shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/_sharding
+54cc98|OK  |       0B/s|/shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/_CHECKPOINT_METADATA
+1820cd|OK  |       0B/s|/shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/2f72ae7e4e549700e9d7da10816ed9a4
+58bcd7|OK  |       0B/s|/shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/085d261a6434a2182b9cf8204a14f929
+648157|OK  |       0B/s|/shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/manifest.ocdbt
+656a0a|OK  |       0B/s|/shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/148068583a1e9abda7c46b410e91850f
+062e32|OK  |       0B/s|/shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/450c3d3cb6793dc644c1faf981296eb3
+2fd9bf|OK  |       0B/s|/shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/45c6cbcc04a07d5f963bcf46cba903c4
+511c36|OK  |       0B/s|/shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/4e5aa230b6c768224fb6b77d78d6a1be
+4e000c|OK  |       0B/s|/shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/309555f68bee51df688c4564b4d66fa5
+b96450|OK  |       0B/s|/shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/5e775a3f399b6add8c3c8330df655e1b
+64ba69|OK  |       0B/s|/shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/6629f15468f4d0cc39fb27518b7034a8
+fdf002|OK  |       0B/s|/shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/808abec8853273a1e0076b0e42d19910
+7f5db3|OK  |       0B/s|/shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/5f605020f3dadefc18287f67f369e264
+76327a|OK  |       0B/s|/shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/93fcf358bb740a5f61526a13e9a2c769
+d5e6d4|OK  |       0B/s|/shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/99debaeabd76bd2cc1600905278c454b
+17ade7|OK  |       0B/s|/shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/c5e0b7744afd7fde8b33a80d7f0329bc
+98a490|OK  |       0B/s|/shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/8dd6f7ae99ab482b841a1eefa796bb41
+83ee7d|OK  |       0B/s|/shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/fec2923fef877d6b2a636a44d72670b8
+14a2f8|OK  |       0B/s|/shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/fc0caaf15ec5a8930e6d0a269722cbe6
+817b41|OK  |       0B/s|/shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/d/d5e67a46c20fea80fd9ccf63a434178c
+08e5b4|OK  |       0B/s|/shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params/ocdbt.process_0/manifest.ocdbt
+
+Status Legend:
+(OK):download completed.
+已校验 1/24: _CHECKPOINT_METADATA
+已校验 2/24: _METADATA
+已校验 3/24: _sharding
+已校验 4/24: d/85a4b908b188b86024ebb92e85065acd
+已校验 5/24: manifest.ocdbt
+已校验 6/24: ocdbt.process_0/d/085d261a6434a2182b9cf8204a14f929
+已校验 7/24: ocdbt.process_0/d/148068583a1e9abda7c46b410e91850f
+已校验 8/24: ocdbt.process_0/d/2f72ae7e4e549700e9d7da10816ed9a4
+已校验 9/24: ocdbt.process_0/d/309555f68bee51df688c4564b4d66fa5
+已校验 10/24: ocdbt.process_0/d/450c3d3cb6793dc644c1faf981296eb3
+已校验 11/24: ocdbt.process_0/d/45c6cbcc04a07d5f963bcf46cba903c4
+已校验 12/24: ocdbt.process_0/d/4e5aa230b6c768224fb6b77d78d6a1be
+已校验 13/24: ocdbt.process_0/d/5e775a3f399b6add8c3c8330df655e1b
+已校验 14/24: ocdbt.process_0/d/5f605020f3dadefc18287f67f369e264
+已校验 15/24: ocdbt.process_0/d/6629f15468f4d0cc39fb27518b7034a8
+已校验 16/24: ocdbt.process_0/d/808abec8853273a1e0076b0e42d19910
+已校验 17/24: ocdbt.process_0/d/8dd6f7ae99ab482b841a1eefa796bb41
+已校验 18/24: ocdbt.process_0/d/93fcf358bb740a5f61526a13e9a2c769
+已校验 19/24: ocdbt.process_0/d/99debaeabd76bd2cc1600905278c454b
+已校验 20/24: ocdbt.process_0/d/c5e0b7744afd7fde8b33a80d7f0329bc
+已校验 21/24: ocdbt.process_0/d/d5e67a46c20fea80fd9ccf63a434178c
+已校验 22/24: ocdbt.process_0/d/fc0caaf15ec5a8930e6d0a269722cbe6
+已校验 23/24: ocdbt.process_0/d/fec2923fef877d6b2a636a44d72670b8
+已校验 24/24: ocdbt.process_0/manifest.ocdbt
+下载校验通过：24 个对象，12014416199 bytes，目录 /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params
+2026-08-20T00:17:21.086601+00:00 执行: /root/RETAIN_code/.venv/bin/python reproduction/scripts/verify_base_checkpoint.py --params /shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params --output /root/RETAIN_code/reproduction/data/pi0_base_restore.json
+{
+  "generated_at": "2026-08-20T00:17:43.404637+00:00",
+  "params_path": "/shared/.cache/retain/openpi/openpi-assets/checkpoints/pi0_base/params",
+  "restore_type": "numpy.ndarray",
+  "leaf_count": 50,
+  "parameter_count": 3238048528,
+  "in_memory_bytes": 12952194112,
+  "dtype_element_counts": {
+    "float32": 3238048528
+  },
+  "structure_sha256": "b061101d775178ee7709d97c4e8a1d5b68a63073febcd545fe6e6d1f05609dda",
+  "status": "verified"
+}
+2026-08-20T00:17:45.056835+00:00 stage=base_verified {'report': '/root/RETAIN_code/reproduction/data/pi0_base_restore.json'}
+2026-08-20T00:17:45.057792+00:00 stage=smoke_testing_all_training_inputs {}
+2026-08-20T00:17:45.058256+00:00 执行: /root/RETAIN_code/.venv/bin/python reproduction/scripts/smoke_test_training_inputs.py --output /root/RETAIN_code/reproduction/experiments/input-smoke-all.json
+2026-08-20 00:17:51.317951: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1787185071.463921  264400 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1787185071.501690  264400 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2026-08-20 00:17:55.085082: E external/local_xla/xla/stream_executor/cuda/cuda_driver.cc:152] failed call to cuInit: INTERNAL: CUDA error: Failed call to cuInit: CUDA_ERROR_NO_DEVICE: no CUDA-capable device is detected
+WARNING:root:future_action_window_size > 0 but no absolute_action_mask was provided. Assuming all actions are relative for the purpose of making neutral actions.
+WARNING:absl:No resize_size was provided for image_wrist. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_secondary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_primary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:root:future_action_window_size > 0 but no absolute_action_mask was provided. Assuming all actions are relative for the purpose of making neutral actions.
+WARNING:absl:No resize_size was provided for image_wrist. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_secondary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_primary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:root:future_action_window_size > 0 but no absolute_action_mask was provided. Assuming all actions are relative for the purpose of making neutral actions.
+WARNING:absl:No resize_size was provided for image_wrist. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_secondary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_primary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:root:future_action_window_size > 0 but no absolute_action_mask was provided. Assuming all actions are relative for the purpose of making neutral actions.
+WARNING:absl:No resize_size was provided for image_wrist. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_secondary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_primary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+THIS DATASET HAS NUM_TRAJECTORIES 349  AND NUM_TRANSITIONS 39799
+THIS DATASET HAS NUM_TRAJECTORIES 365  AND NUM_TRANSITIONS 53739
+THIS DATASET HAS NUM_TRAJECTORIES 343  AND NUM_TRANSITIONS 42391
+THIS DATASET HAS NUM_TRAJECTORIES 3917  AND NUM_TRANSITIONS 567494
+
+######################################################################################
+# Loading the following 4 datasets (incl. sampling weight):                         #
+# libero_goal_reduced: =====================================================0.070376 #
+# libero_object_reduced: ===================================================0.090581 #
+# libero_spatial_reduced: ==================================================0.071630 #
+# libero_90_flipped: =======================================================0.767413 #
+######################################################################################
+
+norm_stats are  {'state': NormStats(mean=array([-0.07459474,  0.01886539,  0.89401907,  3.00154734, -0.11657909,
+       -0.09116436,  0.02634243, -0.02669393,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]), std=array([0.11267885, 0.14551789, 0.30485129, 0.38380396, 0.88596892,
+       0.30852371, 0.0146244 , 0.01449694, 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        ]), q01=array([-4.04978513e-01, -2.75643894e-01,  1.03451522e-01,  1.45384380e+00,
+       -2.69716187e+00, -1.19477866e+00,  1.64143040e-03, -4.00380769e-02,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00]), q99=array([ 1.25709046e-01,  3.27069047e-01,  1.25547892e+00,  3.66470913e+00,
+        2.30573786e+00,  5.80337930e-01,  4.02928781e-02, -1.70643236e-03,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00])), 'actions': NormStats(mean=array([ 0.13082495,  0.03510264, -0.99502772, -2.99781322,  0.11946776,
+        0.08388595, -0.0420391 ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]), std=array([0.34118709, 0.37048841, 0.53519309, 0.3816036 , 0.88830632,
+       0.3197473 , 0.99911594, 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        ]), q01=array([-0.62691881, -0.85612705, -1.98400122, -3.60055661, -2.32860803,
+       -0.6173897 , -1.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]), q99=array([ 1.01273111,  0.8795515 ,  0.40937937, -1.45586381,  2.69826558,
+        1.15884968,  0.9996    ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]))}
+ 🧟‍♂️🧟‍♂️🧟‍♂️🧟‍♂️ Dataloader Exhuasted/First Epoch: creating a new iterator over the dataloader. 🧟‍♂️🧟‍♂️🧟‍♂️🧟‍♂️
+训练输入 smoke test 通过: retain_repro_pretrain
+WARNING:root:future_action_window_size > 0 but no absolute_action_mask was provided. Assuming all actions are relative for the purpose of making neutral actions.
+WARNING:absl:No resize_size was provided for image_wrist. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_secondary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_primary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+THIS DATASET HAS NUM_TRAJECTORIES 41  AND NUM_TRANSITIONS 10866
+
+######################################################################################
+# Loading the following 1 datasets (incl. sampling weight):                         #
+# libero_10_turn_on_the_stove_and_put_the_moka_pot_on_it: ==================1.000000 #
+######################################################################################
+
+norm_stats are  {'state': NormStats(mean=array([-0.07459474,  0.01886539,  0.89401907,  3.00154734, -0.11657909,
+       -0.09116436,  0.02634243, -0.02669393,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]), std=array([0.11267885, 0.14551789, 0.30485129, 0.38380396, 0.88596892,
+       0.30852371, 0.0146244 , 0.01449694, 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        ]), q01=array([-4.04978513e-01, -2.75643894e-01,  1.03451522e-01,  1.45384380e+00,
+       -2.69716187e+00, -1.19477866e+00,  1.64143040e-03, -4.00380769e-02,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00]), q99=array([ 1.25709046e-01,  3.27069047e-01,  1.25547892e+00,  3.66470913e+00,
+        2.30573786e+00,  5.80337930e-01,  4.02928781e-02, -1.70643236e-03,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00])), 'actions': NormStats(mean=array([ 0.13082495,  0.03510264, -0.99502772, -2.99781322,  0.11946776,
+        0.08388595, -0.0420391 ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]), std=array([0.34118709, 0.37048841, 0.53519309, 0.3816036 , 0.88830632,
+       0.3197473 , 0.99911594, 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        ]), q01=array([-0.62691881, -0.85612705, -1.98400122, -3.60055661, -2.32860803,
+       -0.6173897 , -1.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]), q99=array([ 1.01273111,  0.8795515 ,  0.40937937, -1.45586381,  2.69826558,
+        1.15884968,  0.9996    ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]))}
+ 🧟‍♂️🧟‍♂️🧟‍♂️🧟‍♂️ Dataloader Exhuasted/First Epoch: creating a new iterator over the dataloader. 🧟‍♂️🧟‍♂️🧟‍♂️🧟‍♂️
+训练输入 smoke test 通过: retain_repro_task_ft_stove
+WARNING:root:future_action_window_size > 0 but no absolute_action_mask was provided. Assuming all actions are relative for the purpose of making neutral actions.
+WARNING:absl:No resize_size was provided for image_wrist. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_secondary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_primary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+THIS DATASET HAS NUM_TRAJECTORIES 38  AND NUM_TRANSITIONS 9807
+
+######################################################################################
+# Loading the following 1 datasets (incl. sampling weight):                         #
+# libero_10_put_the_white_mug_on_the_left_plate_and_put_the_yellow_and_white_mug_on_the_right_plate: =========1.000000 #
+######################################################################################
+
+norm_stats are  {'state': NormStats(mean=array([-0.07459474,  0.01886539,  0.89401907,  3.00154734, -0.11657909,
+       -0.09116436,  0.02634243, -0.02669393,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]), std=array([0.11267885, 0.14551789, 0.30485129, 0.38380396, 0.88596892,
+       0.30852371, 0.0146244 , 0.01449694, 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        ]), q01=array([-4.04978513e-01, -2.75643894e-01,  1.03451522e-01,  1.45384380e+00,
+       -2.69716187e+00, -1.19477866e+00,  1.64143040e-03, -4.00380769e-02,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00]), q99=array([ 1.25709046e-01,  3.27069047e-01,  1.25547892e+00,  3.66470913e+00,
+        2.30573786e+00,  5.80337930e-01,  4.02928781e-02, -1.70643236e-03,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00])), 'actions': NormStats(mean=array([ 0.13082495,  0.03510264, -0.99502772, -2.99781322,  0.11946776,
+        0.08388595, -0.0420391 ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]), std=array([0.34118709, 0.37048841, 0.53519309, 0.3816036 , 0.88830632,
+       0.3197473 , 0.99911594, 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        ]), q01=array([-0.62691881, -0.85612705, -1.98400122, -3.60055661, -2.32860803,
+       -0.6173897 , -1.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]), q99=array([ 1.01273111,  0.8795515 ,  0.40937937, -1.45586381,  2.69826558,
+        1.15884968,  0.9996    ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]))}
+ 🧟‍♂️🧟‍♂️🧟‍♂️🧟‍♂️ Dataloader Exhuasted/First Epoch: creating a new iterator over the dataloader. 🧟‍♂️🧟‍♂️🧟‍♂️🧟‍♂️
+训练输入 smoke test 通过: retain_repro_task_ft_mugs
+WARNING:root:future_action_window_size > 0 but no absolute_action_mask was provided. Assuming all actions are relative for the purpose of making neutral actions.
+WARNING:absl:No resize_size was provided for image_wrist. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_secondary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_primary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+THIS DATASET HAS NUM_TRAJECTORIES 43  AND NUM_TRANSITIONS 11494
+
+######################################################################################
+# Loading the following 1 datasets (incl. sampling weight):                         #
+# libero_10_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket: 1.000000 #
+######################################################################################
+
+norm_stats are  {'state': NormStats(mean=array([-0.07459474,  0.01886539,  0.89401907,  3.00154734, -0.11657909,
+       -0.09116436,  0.02634243, -0.02669393,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]), std=array([0.11267885, 0.14551789, 0.30485129, 0.38380396, 0.88596892,
+       0.30852371, 0.0146244 , 0.01449694, 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        ]), q01=array([-4.04978513e-01, -2.75643894e-01,  1.03451522e-01,  1.45384380e+00,
+       -2.69716187e+00, -1.19477866e+00,  1.64143040e-03, -4.00380769e-02,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00]), q99=array([ 1.25709046e-01,  3.27069047e-01,  1.25547892e+00,  3.66470913e+00,
+        2.30573786e+00,  5.80337930e-01,  4.02928781e-02, -1.70643236e-03,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00])), 'actions': NormStats(mean=array([ 0.13082495,  0.03510264, -0.99502772, -2.99781322,  0.11946776,
+        0.08388595, -0.0420391 ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]), std=array([0.34118709, 0.37048841, 0.53519309, 0.3816036 , 0.88830632,
+       0.3197473 , 0.99911594, 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        ]), q01=array([-0.62691881, -0.85612705, -1.98400122, -3.60055661, -2.32860803,
+       -0.6173897 , -1.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]), q99=array([ 1.01273111,  0.8795515 ,  0.40937937, -1.45586381,  2.69826558,
+        1.15884968,  0.9996    ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]))}
+ 🧟‍♂️🧟‍♂️🧟‍♂️🧟‍♂️ Dataloader Exhuasted/First Epoch: creating a new iterator over the dataloader. 🧟‍♂️🧟‍♂️🧟‍♂️🧟‍♂️
+训练输入 smoke test 通过: retain_repro_task_ft_basket
+WARNING:root:future_action_window_size > 0 but no absolute_action_mask was provided. Assuming all actions are relative for the purpose of making neutral actions.
+WARNING:absl:No resize_size was provided for image_wrist. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_secondary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_primary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:root:future_action_window_size > 0 but no absolute_action_mask was provided. Assuming all actions are relative for the purpose of making neutral actions.
+WARNING:absl:No resize_size was provided for image_wrist. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_secondary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_primary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:root:future_action_window_size > 0 but no absolute_action_mask was provided. Assuming all actions are relative for the purpose of making neutral actions.
+WARNING:absl:No resize_size was provided for image_wrist. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_secondary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_primary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:root:future_action_window_size > 0 but no absolute_action_mask was provided. Assuming all actions are relative for the purpose of making neutral actions.
+WARNING:absl:No resize_size was provided for image_wrist. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_secondary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_primary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:root:future_action_window_size > 0 but no absolute_action_mask was provided. Assuming all actions are relative for the purpose of making neutral actions.
+WARNING:absl:No resize_size was provided for image_wrist. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_secondary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_primary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+THIS DATASET HAS NUM_TRAJECTORIES 41  AND NUM_TRANSITIONS 10866
+THIS DATASET HAS NUM_TRAJECTORIES 349  AND NUM_TRANSITIONS 39799
+THIS DATASET HAS NUM_TRAJECTORIES 365  AND NUM_TRANSITIONS 53739
+THIS DATASET HAS NUM_TRAJECTORIES 343  AND NUM_TRANSITIONS 42391
+THIS DATASET HAS NUM_TRAJECTORIES 3917  AND NUM_TRANSITIONS 567494
+
+######################################################################################
+# Loading the following 5 datasets (incl. sampling weight):                         #
+# libero_10_turn_on_the_stove_and_put_the_moka_pot_on_it: ==================0.500000 #
+# libero_goal_reduced: =====================================================0.035188 #
+# libero_object_reduced: ===================================================0.045291 #
+# libero_spatial_reduced: ==================================================0.035815 #
+# libero_90_flipped: =======================================================0.383706 #
+######################################################################################
+
+norm_stats are  {'state': NormStats(mean=array([-0.07459474,  0.01886539,  0.89401907,  3.00154734, -0.11657909,
+       -0.09116436,  0.02634243, -0.02669393,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]), std=array([0.11267885, 0.14551789, 0.30485129, 0.38380396, 0.88596892,
+       0.30852371, 0.0146244 , 0.01449694, 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        ]), q01=array([-4.04978513e-01, -2.75643894e-01,  1.03451522e-01,  1.45384380e+00,
+       -2.69716187e+00, -1.19477866e+00,  1.64143040e-03, -4.00380769e-02,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00]), q99=array([ 1.25709046e-01,  3.27069047e-01,  1.25547892e+00,  3.66470913e+00,
+        2.30573786e+00,  5.80337930e-01,  4.02928781e-02, -1.70643236e-03,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00])), 'actions': NormStats(mean=array([ 0.13082495,  0.03510264, -0.99502772, -2.99781322,  0.11946776,
+        0.08388595, -0.0420391 ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]), std=array([0.34118709, 0.37048841, 0.53519309, 0.3816036 , 0.88830632,
+       0.3197473 , 0.99911594, 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        ]), q01=array([-0.62691881, -0.85612705, -1.98400122, -3.60055661, -2.32860803,
+       -0.6173897 , -1.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]), q99=array([ 1.01273111,  0.8795515 ,  0.40937937, -1.45586381,  2.69826558,
+        1.15884968,  0.9996    ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]))}
+ 🧟‍♂️🧟‍♂️🧟‍♂️🧟‍♂️ Dataloader Exhuasted/First Epoch: creating a new iterator over the dataloader. 🧟‍♂️🧟‍♂️🧟‍♂️🧟‍♂️
+训练输入 smoke test 通过: retain_repro_coft_stove
+WARNING:root:future_action_window_size > 0 but no absolute_action_mask was provided. Assuming all actions are relative for the purpose of making neutral actions.
+WARNING:absl:No resize_size was provided for image_wrist. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_secondary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_primary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:root:future_action_window_size > 0 but no absolute_action_mask was provided. Assuming all actions are relative for the purpose of making neutral actions.
+WARNING:absl:No resize_size was provided for image_wrist. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_secondary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_primary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:root:future_action_window_size > 0 but no absolute_action_mask was provided. Assuming all actions are relative for the purpose of making neutral actions.
+WARNING:absl:No resize_size was provided for image_wrist. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_secondary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_primary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:root:future_action_window_size > 0 but no absolute_action_mask was provided. Assuming all actions are relative for the purpose of making neutral actions.
+WARNING:absl:No resize_size was provided for image_wrist. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_secondary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_primary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:root:future_action_window_size > 0 but no absolute_action_mask was provided. Assuming all actions are relative for the purpose of making neutral actions.
+WARNING:absl:No resize_size was provided for image_wrist. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_secondary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_primary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+THIS DATASET HAS NUM_TRAJECTORIES 38  AND NUM_TRANSITIONS 9807
+THIS DATASET HAS NUM_TRAJECTORIES 349  AND NUM_TRANSITIONS 39799
+THIS DATASET HAS NUM_TRAJECTORIES 365  AND NUM_TRANSITIONS 53739
+THIS DATASET HAS NUM_TRAJECTORIES 343  AND NUM_TRANSITIONS 42391
+THIS DATASET HAS NUM_TRAJECTORIES 3917  AND NUM_TRANSITIONS 567494
+
+######################################################################################
+# Loading the following 5 datasets (incl. sampling weight):                         #
+# libero_10_put_the_white_mug_on_the_left_plate_and_put_the_yellow_and_white_mug_on_the_right_plate: =========0.500000 #
+# libero_goal_reduced: =====================================================0.035188 #
+# libero_object_reduced: ===================================================0.045291 #
+# libero_spatial_reduced: ==================================================0.035815 #
+# libero_90_flipped: =======================================================0.383706 #
+######################################################################################
+
+norm_stats are  {'state': NormStats(mean=array([-0.07459474,  0.01886539,  0.89401907,  3.00154734, -0.11657909,
+       -0.09116436,  0.02634243, -0.02669393,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]), std=array([0.11267885, 0.14551789, 0.30485129, 0.38380396, 0.88596892,
+       0.30852371, 0.0146244 , 0.01449694, 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        ]), q01=array([-4.04978513e-01, -2.75643894e-01,  1.03451522e-01,  1.45384380e+00,
+       -2.69716187e+00, -1.19477866e+00,  1.64143040e-03, -4.00380769e-02,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00]), q99=array([ 1.25709046e-01,  3.27069047e-01,  1.25547892e+00,  3.66470913e+00,
+        2.30573786e+00,  5.80337930e-01,  4.02928781e-02, -1.70643236e-03,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00])), 'actions': NormStats(mean=array([ 0.13082495,  0.03510264, -0.99502772, -2.99781322,  0.11946776,
+        0.08388595, -0.0420391 ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]), std=array([0.34118709, 0.37048841, 0.53519309, 0.3816036 , 0.88830632,
+       0.3197473 , 0.99911594, 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        ]), q01=array([-0.62691881, -0.85612705, -1.98400122, -3.60055661, -2.32860803,
+       -0.6173897 , -1.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]), q99=array([ 1.01273111,  0.8795515 ,  0.40937937, -1.45586381,  2.69826558,
+        1.15884968,  0.9996    ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]))}
+ 🧟‍♂️🧟‍♂️🧟‍♂️🧟‍♂️ Dataloader Exhuasted/First Epoch: creating a new iterator over the dataloader. 🧟‍♂️🧟‍♂️🧟‍♂️🧟‍♂️
+训练输入 smoke test 通过: retain_repro_coft_mugs
+WARNING:root:future_action_window_size > 0 but no absolute_action_mask was provided. Assuming all actions are relative for the purpose of making neutral actions.
+WARNING:absl:No resize_size was provided for image_wrist. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_secondary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_primary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:root:future_action_window_size > 0 but no absolute_action_mask was provided. Assuming all actions are relative for the purpose of making neutral actions.
+WARNING:absl:No resize_size was provided for image_wrist. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_secondary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_primary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:root:future_action_window_size > 0 but no absolute_action_mask was provided. Assuming all actions are relative for the purpose of making neutral actions.
+WARNING:absl:No resize_size was provided for image_wrist. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_secondary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_primary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:root:future_action_window_size > 0 but no absolute_action_mask was provided. Assuming all actions are relative for the purpose of making neutral actions.
+WARNING:absl:No resize_size was provided for image_wrist. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_secondary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_primary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:root:future_action_window_size > 0 but no absolute_action_mask was provided. Assuming all actions are relative for the purpose of making neutral actions.
+WARNING:absl:No resize_size was provided for image_wrist. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_secondary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+WARNING:absl:No resize_size was provided for image_primary. This will result in 1x1 padding images, which may cause errors if you mix padding and non-padding images.
+THIS DATASET HAS NUM_TRAJECTORIES 43  AND NUM_TRANSITIONS 11494
+THIS DATASET HAS NUM_TRAJECTORIES 349  AND NUM_TRANSITIONS 39799
+THIS DATASET HAS NUM_TRAJECTORIES 365  AND NUM_TRANSITIONS 53739
+THIS DATASET HAS NUM_TRAJECTORIES 343  AND NUM_TRANSITIONS 42391
+THIS DATASET HAS NUM_TRAJECTORIES 3917  AND NUM_TRANSITIONS 567494
+
+######################################################################################
+# Loading the following 5 datasets (incl. sampling weight):                         #
+# libero_10_put_both_the_alphabet_soup_and_the_cream_cheese_box_in_the_basket: 0.500000 #
+# libero_goal_reduced: =====================================================0.035188 #
+# libero_object_reduced: ===================================================0.045291 #
+# libero_spatial_reduced: ==================================================0.035815 #
+# libero_90_flipped: =======================================================0.383706 #
+######################################################################################
+
+norm_stats are  {'state': NormStats(mean=array([-0.07459474,  0.01886539,  0.89401907,  3.00154734, -0.11657909,
+       -0.09116436,  0.02634243, -0.02669393,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]), std=array([0.11267885, 0.14551789, 0.30485129, 0.38380396, 0.88596892,
+       0.30852371, 0.0146244 , 0.01449694, 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        ]), q01=array([-4.04978513e-01, -2.75643894e-01,  1.03451522e-01,  1.45384380e+00,
+       -2.69716187e+00, -1.19477866e+00,  1.64143040e-03, -4.00380769e-02,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00]), q99=array([ 1.25709046e-01,  3.27069047e-01,  1.25547892e+00,  3.66470913e+00,
+        2.30573786e+00,  5.80337930e-01,  4.02928781e-02, -1.70643236e-03,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+        0.00000000e+00,  0.00000000e+00,  0.00000000e+00,  0.00000000e+00])), 'actions': NormStats(mean=array([ 0.13082495,  0.03510264, -0.99502772, -2.99781322,  0.11946776,
+        0.08388595, -0.0420391 ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]), std=array([0.34118709, 0.37048841, 0.53519309, 0.3816036 , 0.88830632,
+       0.3197473 , 0.99911594, 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        , 0.        , 0.        , 0.        ,
+       0.        , 0.        ]), q01=array([-0.62691881, -0.85612705, -1.98400122, -3.60055661, -2.32860803,
+       -0.6173897 , -1.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]), q99=array([ 1.01273111,  0.8795515 ,  0.40937937, -1.45586381,  2.69826558,
+        1.15884968,  0.9996    ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ]))}
+ 🧟‍♂️🧟‍♂️🧟‍♂️🧟‍♂️ Dataloader Exhuasted/First Epoch: creating a new iterator over the dataloader. 🧟‍♂️🧟‍♂️🧟‍♂️🧟‍♂️
+训练输入 smoke test 通过: retain_repro_coft_basket
+全部输入 smoke tests 通过，记录: /root/RETAIN_code/reproduction/experiments/input-smoke-all.json
+2026-08-20T00:19:21.778536+00:00 stage=all_inputs_verified {'report': '/root/RETAIN_code/reproduction/experiments/input-smoke-all.json'}
+2026-08-20T00:19:21.779300+00:00 stage=training_pipeline {}
+2026-08-20T00:19:21.779646+00:00 执行: /root/RETAIN_code/.venv/bin/python reproduction/scripts/run_training_pipeline.py --include-coft --poll-seconds 60
+2026-08-20T00:19:22.063928+00:00 选择空闲 GPU 1: {'index': 1, 'memory_used_mib': 10, 'memory_total_mib': 85651, 'utilization_percent': 0}
+2026-08-20T00:19:25.881990+00:00 JAX GPU runtime 预检通过: {'status': 'verified', 'jax': '0.6.2', 'jaxlib': '0.6.2', 'jax_cuda12_plugin': '0.6.2', 'platform': 'gpu', 'device': 'cuda:0', 'device_kind': 'NVIDIA RTX 6000D', 'visible_device_count': 1, 'bf16_to_f16_shape': [64, 64], 'bf16_matmul_shape': [64, 64]}
+2026-08-20T00:19:25.883642+00:00 启动 retain_repro_pretrain，日志: /root/RETAIN_code/reproduction/experiments/retain_repro_pretrain__paper_final_hparams/stdout.log
+Traceback (most recent call last):
+  File "/root/RETAIN_code/reproduction/scripts/run_training_pipeline.py", line 456, in <module>
+    main()
+  File "/root/RETAIN_code/reproduction/scripts/run_training_pipeline.py", line 451, in main
+    run_stage(gpu, config, exp_name, final_step)
+  File "/root/RETAIN_code/reproduction/scripts/run_training_pipeline.py", line 420, in run_stage
+    raise RuntimeError(f"{config} 失败，退出码 {return_code}")
+RuntimeError: retain_repro_pretrain 失败，退出码 1
+2026-08-20T00:21:04.331661+00:00 stage=failed {'error_type': 'CalledProcessError', 'error': "Command '['/root/RETAIN_code/.venv/bin/python', 'reproduction/scripts/run_training_pipeline.py', '--include-coft', '--poll-seconds', '60']' returned non-zero exit status 1."}
+Traceback (most recent call last):
+  File "/root/RETAIN_code/reproduction/scripts/run_reproduction_supervisor.py", line 349, in <module>
+    main()
+  File "/root/RETAIN_code/reproduction/scripts/run_reproduction_supervisor.py", line 324, in main
+    run(
+  File "/root/RETAIN_code/reproduction/scripts/run_reproduction_supervisor.py", line 63, in run
+    subprocess.run(command, cwd=PROJECT_ROOT, env=env, check=True)
+  File "/root/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/root/RETAIN_code/.venv/bin/python', 'reproduction/scripts/run_training_pipeline.py', '--include-coft', '--poll-seconds', '60']' returned non-zero exit status 1.

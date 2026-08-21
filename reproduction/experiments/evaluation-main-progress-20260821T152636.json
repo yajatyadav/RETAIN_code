@@ -1,0 +1,116 @@
+{
+  "protocol_id": "RETAIN-GPU-20260819-001",
+  "captured_at": "2026-08-21T15:26:36+08:00",
+  "status": "retain_taskft_stove_a080_ood_hard_running",
+  "pipeline": {
+    "service": "retain-reproduction.service",
+    "active": true,
+    "pipeline_pid": 1436285,
+    "current_policy": "retain_taskft_stove_a080",
+    "policy_server_pid": 1664634,
+    "evaluator_pid": 1682099,
+    "physical_gpu_index": 0,
+    "completed_alpha_jobs": 270,
+    "completed_main_jobs": 108,
+    "completed_jobs_in_status": 378,
+    "failed_job": null
+  },
+  "taskft_stove_final": {
+    "jobs": 36,
+    "episodes": 370,
+    "successes": 144,
+    "episode_errors": 0,
+    "target_task": {
+      "ID": {"successes": 15, "episodes": 20, "success_rate": 0.75, "pretrain_success_rate": 0.0, "delta": 0.75},
+      "OOD_MEDIUM": {"successes": 21, "episodes": 50, "success_rate": 0.42, "pretrain_success_rate": 0.02, "delta": 0.4},
+      "OOD_HARD": {"successes": 45, "episodes": 100, "success_rate": 0.45, "pretrain_success_rate": 0.02, "delta": 0.43}
+    },
+    "generalist_retention": {
+      "successes": 63,
+      "episodes": 200,
+      "success_rate": 0.315,
+      "paired_pretrain_successes": 133,
+      "paired_pretrain_success_rate": 0.665,
+      "delta": -0.35,
+      "by_suite": {
+        "libero_90": {"successes": 24, "episodes": 50, "success_rate": 0.48, "pretrain_success_rate": 0.82, "delta": -0.34},
+        "libero_goal": {"successes": 21, "episodes": 50, "success_rate": 0.42, "pretrain_success_rate": 0.62, "delta": -0.2},
+        "libero_object": {"successes": 4, "episodes": 50, "success_rate": 0.08, "pretrain_success_rate": 0.66, "delta": -0.58},
+        "libero_spatial": {"successes": 14, "episodes": 50, "success_rate": 0.28, "pretrain_success_rate": 0.56, "delta": -0.28}
+      }
+    }
+  },
+  "retain_taskft_stove_a080": {
+    "alpha": 0.8,
+    "weights": [0.8, 0.2],
+    "total_protocol_jobs": 36,
+    "selection_jobs_reused": 5,
+    "remaining_jobs_at_start": 31,
+    "completed_independent_jobs": 4,
+    "ID": {"successes": 15, "episodes": 20, "success_rate": 0.75, "status": "complete_independent_main"},
+    "OOD_MEDIUM": {
+      "successes_by_seed": [7, 5, 7, 5, 6],
+      "successes": 30,
+      "episodes": 50,
+      "success_rate": 0.6,
+      "status": "complete_reused_alpha_selection_set",
+      "independent_main_evidence": false
+    },
+    "OOD_HARD": {
+      "completed_conditions": ["set_0_seed_1", "set_1_seed_1", "set_0_seed_21"],
+      "successes_by_condition": [5, 4, 5],
+      "successes": 14,
+      "episodes": 30,
+      "success_rate": 0.4666666666666667,
+      "status": "partial_complete_condition_aggregate_3_of_10"
+    }
+  },
+  "global_complete_main_aggregate": {
+    "jobs": 108,
+    "episodes": 1130,
+    "successes": 309,
+    "episode_errors": 0,
+    "video_count": 1130,
+    "video_bytes": 135663363,
+    "interpretation": "不含已计入 alpha sweep 的五个复用 validation jobs；跨策略总计只用于完整性审计"
+  },
+  "current_job": {
+    "policy": "retain_taskft_stove_a080",
+    "remaining_job_index": 5,
+    "remaining_jobs": 31,
+    "job_key": "5b96b47b57f95326",
+    "eval_type": "OOD_HARD-set-1",
+    "task": "stove",
+    "seed": 21,
+    "planned_episodes": 10,
+    "observed_videos_at_capture": 7,
+    "observed_video_bytes_at_capture": 1382076,
+    "summary_committed_at_capture": false,
+    "eligible_for_comparison_at_capture": false
+  },
+  "single_gpu_audit": {
+    "only_reproduction_compute_process": {"physical_gpu_index": 0, "pid": 1664634, "memory_mib": 77036, "role": "linear_merge_policy_server"},
+    "constraint_satisfied": true
+  },
+  "resources": {
+    "gpu_memory_used_mib": [77049, 1, 1, 10, 1, 1, 1, 1],
+    "gpu_utilization_percent": [0, 0, 0, 0, 100, 100, 100, 0],
+    "host_available_bytes": 529944724480,
+    "root_free_bytes": 2832859136,
+    "shared_free_bytes": 105783635968,
+    "root_df_use_percent": 100,
+    "shared_df_use_percent": 99
+  },
+  "monitoring_policy": {
+    "root_space": "monitor_and_record_only",
+    "root_space_is_a_stop_condition": false,
+    "resume_gate_bytes": null,
+    "all_known_evaluation_write_paths_on_shared": true
+  },
+  "validation": {
+    "service_active": true,
+    "completed_job_count_matches_status": true,
+    "selection_set_reuse_labeled": true,
+    "fatal_error_matches_since_resume": 0
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "protocol_id": "RETAIN-GPU-20260819-001",
+  "captured_at": "2026-08-21T12:13:22+08:00",
+  "status": "main_evaluation_running_after_shared_state_root_migration",
+  "pipeline": {
+    "service": "retain-reproduction.service",
+    "active": true,
+    "pipeline_pid": 1357474,
+    "policy": "pretrain_117task",
+    "policy_server_pid": 1357605,
+    "evaluator_pid": 1395920,
+    "physical_gpu_index": 0,
+    "state_root": "/shared/.cache/retain/evaluation-state/RETAIN-GPU-20260819-001/evaluation-pipeline",
+    "service_log": "/shared/.cache/retain/evaluation-state/RETAIN-GPU-20260819-001/evaluation-service.log",
+    "completed_alpha_jobs": 270,
+    "completed_main_jobs": 28,
+    "completed_jobs_in_status": 298,
+    "failed_job": null
+  },
+  "complete_aggregate": {
+    "summaries": 28,
+    "episodes": 300,
+    "successes": 3,
+    "success_rate": 0.01,
+    "episode_errors": 0,
+    "video_count": 300,
+    "video_bytes": 47067732,
+    "mean_video_bytes": 156892.44
+  },
+  "complete_groups": [
+    {"eval_type": "ID", "task": "stove", "seeds": [7], "successes_by_seed": [0], "episodes_by_seed": [20], "successes": 0, "episodes": 20, "status": "complete"},
+    {"eval_type": "OOD_MEDIUM", "task": "stove", "seeds": [1, 21, 41, 61, 81], "successes_by_seed": [0, 0, 0, 1, 0], "episodes_by_seed": [10, 10, 10, 10, 10], "successes": 1, "episodes": 50, "success_rate": 0.02, "status": "complete"},
+    {"eval_type": "OOD_HARD", "task": "stove", "conditions": ["set-0_seed-1", "set-1_seed-1", "set-0_seed-21", "set-1_seed-21", "set-0_seed-41", "set-1_seed-41", "set-0_seed-61", "set-1_seed-61", "set-0_seed-81", "set-1_seed-81"], "successes_by_condition": [0, 0, 0, 1, 1, 0, 0, 0, 0, 0], "episodes": 100, "successes": 2, "success_rate": 0.02, "status": "complete"},
+    {"eval_type": "ID", "task": "mugs", "seeds": [7], "successes_by_seed": [0], "episodes_by_seed": [20], "successes": 0, "episodes": 20, "status": "complete"},
+    {"eval_type": "OOD_MEDIUM", "task": "mugs", "seeds": [1, 21, 41, 61, 81], "successes_by_seed": [0, 0, 0, 0, 0], "episodes_by_seed": [10, 10, 10, 10, 10], "successes": 0, "episodes": 50, "success_rate": 0.0, "status": "complete"},
+    {"eval_type": "OOD_HARD_partial_complete_jobs", "task": "mugs", "conditions": ["set-0_seed-1", "set-1_seed-1", "set-0_seed-21", "set-1_seed-21", "set-0_seed-41", "set-1_seed-41"], "successes_by_condition": [0, 0, 0, 0, 0, 0], "episodes_by_condition": [10, 10, 10, 10, 10, 10], "successes": 0, "episodes": 60, "eligible_as_full_ood_hard_aggregate": false}
+  ],
+  "newly_completed_since_previous_snapshot": [
+    {"index": 23, "job_key": "526a93714bf9e142", "eval_type": "OOD_HARD-set-0", "task": "mugs", "seed": 1, "successes": 0, "episodes": 10, "episode_errors": 0, "video_bytes": 1239796, "finished_at": "2026-08-21T11:55:17.398268+08:00"},
+    {"index": 24, "job_key": "f25b67f961f88dd7", "eval_type": "OOD_HARD-set-1", "task": "mugs", "seed": 1, "successes": 0, "episodes": 10, "episode_errors": 0, "video_bytes": 1446554, "finished_at": "2026-08-21T11:58:34.733177+08:00"},
+    {"index": 25, "job_key": "db53c8439729ad8a", "eval_type": "OOD_HARD-set-0", "task": "mugs", "seed": 21, "successes": 0, "episodes": 10, "episode_errors": 0, "video_bytes": 1226891, "finished_at": "2026-08-21T12:02:07.144001+08:00"},
+    {"index": 26, "job_key": "7da1c345d8c831b4", "eval_type": "OOD_HARD-set-1", "task": "mugs", "seed": 21, "successes": 0, "episodes": 10, "episode_errors": 0, "video_bytes": 1462763, "finished_at": "2026-08-21T12:05:28.915716+08:00"},
+    {"index": 27, "job_key": "d665eff769156ead", "eval_type": "OOD_HARD-set-0", "task": "mugs", "seed": 41, "successes": 0, "episodes": 10, "episode_errors": 0, "video_bytes": 1105590, "finished_at": "2026-08-21T12:09:15.523058+08:00"},
+    {"index": 28, "job_key": "f45e95feee1cec33", "eval_type": "OOD_HARD-set-1", "task": "mugs", "seed": 41, "successes": 0, "episodes": 10, "episode_errors": 0, "video_bytes": 1556350, "finished_at": "2026-08-21T12:12:52.397693+08:00"}
+  ],
+  "current_main_job": {
+    "index": 29,
+    "jobs_for_policy": 68,
+    "job_key": "cea4092920e39e81",
+    "eval_type": "OOD_HARD-set-0",
+    "task": "mugs",
+    "seed": 61,
+    "planned_episodes": 10,
+    "observed_episodes": 1,
+    "observed_successes": 0,
+    "observed_errors": 0,
+    "observed_video_count": 1,
+    "observed_video_bytes": 154241,
+    "partial_observation_eligible_for_comparison": false
+  },
+  "single_gpu_audit": {
+    "policy_server_cuda_visible_devices": "0",
+    "evaluator_cuda_visible_devices": "",
+    "evaluator_egl_device_id": 0,
+    "only_reproduction_compute_process": {"physical_gpu_index": 0, "pid": 1357605, "memory_mib": 77036, "role": "policy_server"},
+    "constraint_satisfied": true
+  },
+  "resources": {
+    "gpu_memory_used_mib": [77049, 1, 1, 1189, 80113, 80543, 80513, 80573],
+    "gpu_utilization_percent": [6, 0, 0, 0, 97, 98, 99, 97],
+    "host_available_bytes": 530042695680,
+    "shared_free_bytes": 106268033024,
+    "root_free_bytes": 6076080128,
+    "root_df_use_percent": 100,
+    "shared_df_use_percent": 99
+  },
+  "storage_watch": {
+    "status": "shared_migration_effective_for_reproduction_writes_but_external_root_pressure_resumed",
+    "root_free_bytes_at_previous_check": 6582280192,
+    "root_free_bytes_at_capture": 6076080128,
+    "root_free_delta_bytes": -506200064,
+    "shared_free_bytes_at_previous_check": 108587454464,
+    "shared_free_bytes_at_capture": 106268033024,
+    "shared_free_delta_bytes": -2319421440,
+    "new_complete_rollout_bytes_since_previous_snapshot": 8037944,
+    "visible_root_files_over_50mb_modified_in_last_20_minutes": 0,
+    "deleted_open_root_files_detected_by_lsof": 0,
+    "attribution": "root and shared free-space decline is much larger than the 8.04 MB of newly completed rollout video and remains unattributed to visible reproduction output",
+    "hard_stop_trigger_bytes": 4294967296,
+    "action": "continue high-frequency monitoring; if root approaches 4 GiB, stop only after a completed-job commit and preserve resumable shared state"
+  },
+  "migration_validation": {
+    "completed_jobs_preserved_at_restart": 287,
+    "completed_jobs_now": 298,
+    "post_migration_completed_jobs": 11,
+    "post_migration_episode_errors": 0,
+    "fatal_error_matches": 0
+  }
+}

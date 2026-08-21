@@ -1,0 +1,126 @@
+{
+  "protocol_id": "RETAIN-GPU-20260819-001",
+  "generated_at": "2026-08-21T01:13:10+08:00",
+  "status": "alpha_sweep_running",
+  "supersedes": "reproduction/experiments/evaluation-alpha-sweep-progress-20260821T005200.json",
+  "interpretation_scope": "taskft_mugs_exploratory_interim_with_taskft_stove_selection_complete",
+  "results_root": "/shared/.cache/retain/results/RETAIN-GPU-20260819-001",
+  "progress": {
+    "completed_policies": 16,
+    "total_policies": 54,
+    "completed_jobs": 82,
+    "total_jobs": 270,
+    "completed_episodes": 820,
+    "current_policy": "retain_taskft_mugs_a080",
+    "current_job_seed": 41,
+    "current_job_observed_episodes": 9,
+    "current_job_observed_successes": 3
+  },
+  "cumulative_success_rates": {
+    "taskft": {
+      "stove": {
+        "0.1": 0.08,
+        "0.2": 0.08,
+        "0.3": 0.24,
+        "0.4": 0.46,
+        "0.5": 0.44,
+        "0.6": 0.42,
+        "0.7": 0.6,
+        "0.8": 0.6,
+        "0.9": 0.56
+      },
+      "mugs": {
+        "0.1": 0.0,
+        "0.2": 0.0,
+        "0.3": 0.0,
+        "0.4": 0.06,
+        "0.5": 0.14,
+        "0.6": 0.32,
+        "0.7": 0.42
+      }
+    }
+  },
+  "newly_completed_policy": {
+    "policy": "retain_taskft_mugs_a070",
+    "family": "taskft",
+    "task": "mugs",
+    "alpha": 0.7,
+    "linear_interpolation_weights": [0.7, 0.3],
+    "seeds": [1, 21, 41, 61, 81],
+    "successes_by_seed": [3, 4, 5, 4, 5],
+    "total_successes": 21,
+    "total_episodes": 50,
+    "success_rate": 0.42,
+    "final_job_finished_at": "2026-08-21T01:02:53.082417+08:00",
+    "summary_file_count": 5,
+    "video_count": 50,
+    "video_bytes": 6093746,
+    "eligible_for_task_level_alpha_selection_now": false
+  },
+  "selection_results": {
+    "taskft": {
+      "stove": {
+        "selected_alpha": 0.8,
+        "selected_success_rate": 0.6,
+        "tied_best_alphas": [0.7, 0.8],
+        "tie_break": "highest alpha among equal success rates",
+        "paper_alpha": 0.9,
+        "paper_alpha_success_rate": 0.56,
+        "status": "complete"
+      },
+      "mugs": {
+        "status": "pending_remaining_two_alpha_candidates",
+        "completed_alphas": [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7],
+        "current_best_alpha": 0.7,
+        "current_best_success_rate": 0.42,
+        "tie_break_not_yet_applied": true
+      }
+    }
+  },
+  "in_progress_policy": {
+    "policy": "retain_taskft_mugs_a080",
+    "alpha": 0.8,
+    "linear_interpolation_weights": [0.8, 0.2],
+    "completed_seeds": [1, 21],
+    "completed_seed_successes": [2, 6],
+    "completed_episodes": 29,
+    "completed_successes": 11,
+    "current_seed": 41,
+    "current_seed_observed_episodes": 9,
+    "current_seed_observed_successes": 3,
+    "partial_result_eligible_for_alpha_selection": false
+  },
+  "storage": {
+    "completed_policy_video_count": 800,
+    "completed_policy_video_bytes": 114999788,
+    "mean_video_bytes": 143749.735,
+    "projected_alpha_sweep_video_bytes_at_completed_policy_mean": 388124284.5,
+    "shared_free_bytes": 141230014464,
+    "root_free_bytes": 13674278912,
+    "projection_status": "ample_for_alpha_sweep"
+  },
+  "single_gpu_constraint": {
+    "physical_gpu_index": 3,
+    "current_policy_server_cuda_visible_devices": "3",
+    "current_policy_server_memory_used_mib": 77130,
+    "current_evaluator_cuda_visible_devices": "",
+    "current_evaluator_egl_device_id": "3"
+  },
+  "resources": {
+    "sampled_at": "2026-08-21T01:12:37+08:00",
+    "host_available_bytes": 530989798400,
+    "gpu_memory_used_mib": [2, 80225, 47128, 77130, 52684, 53039, 46747, 45843],
+    "gpu_utilization_percent": [0, 100, 52, 0, 82, 77, 85, 88]
+  },
+  "processes": {
+    "evaluation_pipeline_pid": 320418,
+    "policy_server_pid": 608899,
+    "evaluator_pid": 616651
+  },
+  "error_scan": {
+    "fatal_error_count": 0,
+    "service_status": "active",
+    "benign_readiness_probe_handshake_warning_observed": true
+  },
+  "caution_zh": "mugs 的 α=0.7 以 21/50 暂居首位；但 α=0.8、0.9 尚未完成，α=0.8 的 11/29 仍是 partial observation，不能触发正式选择。"
+}

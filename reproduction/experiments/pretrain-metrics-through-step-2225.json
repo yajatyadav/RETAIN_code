@@ -1,0 +1,118 @@
+{
+  "protocol_id": "RETAIN-GPU-20260819-001",
+  "config": "retain_repro_pretrain",
+  "experiment_name": "paper_final_hparams",
+  "attempt": 6,
+  "analyzed_at": "2026-08-20T02:02:14Z",
+  "source": {
+    "path": "reproduction/experiments/retain_repro_pretrain__paper_final_hparams/metrics.jsonl",
+    "line_count": 90,
+    "bytes": 9737,
+    "sha256": "728ac68fb231cff26aa8f96f0bd8561bebfaf76dcef4e81b57bc4e94eacf8bef"
+  },
+  "coverage": {
+    "first_step": 0,
+    "last_step": 2225,
+    "record_count": 90,
+    "expected_interval_steps": 25,
+    "interval_consistent": true,
+    "training_fraction_through_last_record": 0.2225
+  },
+  "finite_value_audit": {
+    "fields": [
+      "loss",
+      "grad_norm",
+      "param_norm",
+      "vision_param_norm"
+    ],
+    "all_finite": true
+  },
+  "overall": {
+    "loss": {
+      "first": 0.1572,
+      "last": 0.0381,
+      "min": 0.037,
+      "max": 0.1572,
+      "mean": 0.04980888888888889,
+      "first_to_last_drop_fraction": 0.7576335877862596
+    },
+    "grad_norm": {
+      "first": 3.4955,
+      "last": 0.4041,
+      "min": 0.3971,
+      "max": 3.9338,
+      "mean": 0.6745588888888888
+    },
+    "param_norm": {
+      "first": 1377.8652,
+      "last": 1378.5364,
+      "min": 1377.865,
+      "max": 1378.5364,
+      "mean": 1378.1027455555554
+    },
+    "vision_param_norm": {
+      "first": 1258.1694,
+      "last": 1258.254601,
+      "min": 1258.1694,
+      "max": 1258.254601,
+      "mean": 1258.1999489
+    }
+  },
+  "window_means": {
+    "first_10_records": {
+      "loss": 0.09298,
+      "grad_norm": 1.77271,
+      "param_norm": 1377.8653900000002,
+      "vision_param_norm": 1258.16965
+    },
+    "last_10_records": {
+      "loss": 0.04065,
+      "grad_norm": 0.47439,
+      "param_norm": 1378.4853699999999,
+      "vision_param_norm": 1258.2481301
+    }
+  },
+  "step_bins": [
+    {
+      "steps": [0, 475],
+      "count": 20,
+      "loss_mean": 0.07106,
+      "grad_norm_mean": 1.197835,
+      "param_norm_mean": 1377.868335,
+      "vision_param_norm_mean": 1258.169795
+    },
+    {
+      "steps": [500, 975],
+      "count": 20,
+      "loss_mean": 0.04671,
+      "grad_norm_mean": 0.590935,
+      "param_norm_mean": 1377.924555,
+      "vision_param_norm_mean": 1258.17678
+    },
+    {
+      "steps": [1000, 1475],
+      "count": 20,
+      "loss_mean": 0.04514,
+      "grad_norm_mean": 0.536205,
+      "param_norm_mean": 1378.1051750000001,
+      "vision_param_norm_mean": 1258.20065
+    },
+    {
+      "steps": [1500, 1975],
+      "count": 20,
+      "loss_mean": 0.040905000000000004,
+      "grad_norm_mean": 0.47334499999999996,
+      "param_norm_mean": 1378.321605,
+      "vision_param_norm_mean": 1258.22848
+    },
+    {
+      "steps": [2000, 2225],
+      "count": 10,
+      "loss_mean": 0.04065,
+      "grad_norm_mean": 0.47439,
+      "param_norm_mean": 1378.4853699999999,
+      "vision_param_norm_mean": 1258.2481301
+    }
+  ],
+  "interpretation_zh": "前 2225 step 的数值全部有限，loss 早期明显下降后在约 0.04 附近波动，gradient norm 同步降低，参数范数仅缓慢变化；这支持训练稳定，但覆盖不足以判断 10000-step 最终收敛。"
+}

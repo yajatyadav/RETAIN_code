@@ -1,0 +1,83 @@
+{
+  "protocol_id": "RETAIN-GPU-20260819-001",
+  "captured_at": "2026-08-21T10:47:23+08:00",
+  "status": "main_evaluation_running",
+  "pipeline": {
+    "service": "retain-reproduction.service",
+    "active": true,
+    "pipeline_pid": 1292803,
+    "policy": "pretrain_117task",
+    "policy_server_pid": 1292933,
+    "physical_gpu_index": 0,
+    "completed_alpha_jobs": 270,
+    "completed_main_jobs": 2,
+    "completed_jobs_in_status": 272,
+    "failed_job": null
+  },
+  "completed_main_jobs": [
+    {
+      "index": 1,
+      "jobs_for_policy": 68,
+      "job_key": "9c6ca0ebb54e4e80",
+      "eval_type": "ID",
+      "task": "stove",
+      "seed": 7,
+      "episodes": 20,
+      "successes": 0,
+      "success_rate": 0.0,
+      "episode_errors": 0,
+      "video_count": 20,
+      "video_bytes": 3665683,
+      "finished_at": "2026-08-21T10:43:55.244377+08:00"
+    },
+    {
+      "index": 2,
+      "jobs_for_policy": 68,
+      "job_key": "9bb4dc20317b144b",
+      "eval_type": "OOD_MEDIUM",
+      "task": "stove",
+      "seed": 1,
+      "episodes": 10,
+      "successes": 0,
+      "success_rate": 0.0,
+      "episode_errors": 0,
+      "video_count": 10,
+      "video_bytes": 1865527,
+      "finished_at": "2026-08-21T10:46:44.230777+08:00"
+    }
+  ],
+  "interpretation_scope": "two_complete_jobs_from_one_task_are_not_an_overall_policy_or_method_result",
+  "current_main_job": {
+    "index": 3,
+    "jobs_for_policy": 68,
+    "job_key": "9b5a97c6f42e9d66",
+    "eval_type": "OOD_MEDIUM",
+    "task": "stove",
+    "seed": 21,
+    "planned_episodes": 10,
+    "observed_episodes": 2,
+    "observed_successes": 0,
+    "observed_errors": 0,
+    "evaluator_pid": 1303597,
+    "partial_observation_eligible_for_comparison": false
+  },
+  "single_gpu_audit": {
+    "policy_server_cuda_visible_devices": "0",
+    "evaluator_cuda_visible_devices": "",
+    "evaluator_egl_device_id": 0,
+    "only_compute_process": {
+      "physical_gpu_index": 0,
+      "pid": 1292933,
+      "memory_mib": 77036,
+      "role": "policy_server"
+    },
+    "constraint_satisfied": true
+  },
+  "resources_at_2026-08-21T10:47:29+08:00": {
+    "gpu_memory_used_mib": [77050, 4, 3, 459, 47734, 48281, 48179, 47315],
+    "gpu_utilization_percent": [53, 0, 0, 1, 65, 80, 58, 87],
+    "host_available_bytes": 532147543040,
+    "shared_free_bytes": 132512751616,
+    "root_free_bytes": 10159353856
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "protocol_id": "RETAIN-GPU-20260819-001-R1",
+  "config": "retain_repro_coft_stove",
+  "experiment_name": "paper_coft_stove",
+  "attempt": 1,
+  "analyzed_at": "2026-08-20T11:32:42.239385+00:00",
+  "source": {
+    "path": "reproduction/experiments/retain_repro_coft_stove__paper_coft_stove/metrics.jsonl",
+    "line_count": 40,
+    "bytes": 4299,
+    "sha256": "8df334011ecb44f7b8be6ebb2179efc33c12c30513ed90cf436cb8b25ec848bf"
+  },
+  "coverage": {
+    "first_step": 0,
+    "last_step": 975,
+    "record_count": 40,
+    "expected_interval_steps": 25,
+    "interval_consistent": true,
+    "training_fraction_through_last_record": 0.975
+  },
+  "finite_value_audit": {
+    "fields": [
+      "loss",
+      "grad_norm",
+      "param_norm",
+      "vision_param_norm"
+    ],
+    "all_finite": true
+  },
+  "overall": {
+    "loss": {
+      "first": 0.0382,
+      "last": 0.0293,
+      "min": 0.0256,
+      "max": 0.0382,
+      "mean": 0.0281775,
+      "first_to_last_drop_fraction": 0.23298429319371725
+    },
+    "grad_norm": {
+      "first": 0.4675,
+      "last": 0.3559,
+      "min": 0.2014,
+      "max": 0.4675,
+      "mean": 0.2887225
+    },
+    "param_norm": {
+      "first": 1381.3778,
+      "last": 1381.5062,
+      "min": 1381.3778,
+      "max": 1381.5062,
+      "mean": 1381.4103475
+    },
+    "vision_param_norm": {
+      "first": 1258.6182,
+      "last": 1258.6365,
+      "min": 1258.6178,
+      "max": 1258.6365,
+      "mean": 1258.6231400000001
+    }
+  },
+  "window_means": {
+    "first_10_records": {
+      "loss": 0.029559999999999996,
+      "grad_norm": 0.26993999999999996,
+      "param_norm": 1381.3782999999999,
+      "vision_param_norm": 1258.61815
+    },
+    "last_10_records": {
+      "loss": 0.028210000000000002,
+      "grad_norm": 0.32535,
+      "param_norm": 1381.46802,
+      "vision_param_norm": 1258.6317199999999
+    }
+  },
+  "step_bins": [
+    {
+      "steps": [
+        0,
+        475
+      ],
+      "count": 20,
+      "loss_mean": 0.02841,
+      "grad_norm_mean": 0.26570499999999997,
+      "param_norm_mean": 1381.38153,
+      "vision_param_norm_mean": 1258.618765
+    },
+    {
+      "steps": [
+        500,
+        975
+      ],
+      "count": 20,
+      "loss_mean": 0.027944999999999998,
+      "grad_norm_mean": 0.31174,
+      "param_norm_mean": 1381.439165,
+      "vision_param_norm_mean": 1258.627515
+    }
+  ],
+  "interpretation_zh": "stove coFT 单卡 batch-16 完成；40 条指标覆盖 step 0--975 且全部有限，最终参数供 coFT 基线与 RETAIN 合并评测使用。"
+}

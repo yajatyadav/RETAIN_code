@@ -1,0 +1,100 @@
+{
+  "protocol_id": "RETAIN-GPU-20260819-001-R1",
+  "config": "retain_repro_coft_basket",
+  "experiment_name": "paper_coft_basket",
+  "attempt": 1,
+  "analyzed_at": "2026-08-20T12:55:02.447868+00:00",
+  "source": {
+    "path": "reproduction/experiments/retain_repro_coft_basket__paper_coft_basket/metrics.jsonl",
+    "line_count": 40,
+    "bytes": 4295,
+    "sha256": "639b31bd58ee7c72021cca75663f70e43b16198a8d0b48fd4e63ef828b9e9e04"
+  },
+  "coverage": {
+    "first_step": 0,
+    "last_step": 975,
+    "record_count": 40,
+    "expected_interval_steps": 25,
+    "interval_consistent": true,
+    "training_fraction_through_last_record": 0.975
+  },
+  "finite_value_audit": {
+    "fields": [
+      "loss",
+      "grad_norm",
+      "param_norm",
+      "vision_param_norm"
+    ],
+    "all_finite": true
+  },
+  "overall": {
+    "loss": {
+      "first": 0.0332,
+      "last": 0.0321,
+      "min": 0.0286,
+      "max": 0.0387,
+      "mean": 0.0313325,
+      "first_to_last_drop_fraction": 0.03313253012048204
+    },
+    "grad_norm": {
+      "first": 0.3244,
+      "last": 0.3466,
+      "min": 0.2178,
+      "max": 0.3551,
+      "mean": 0.2773425
+    },
+    "param_norm": {
+      "first": 1381.3778,
+      "last": 1381.5028,
+      "min": 1381.3774,
+      "max": 1381.5028,
+      "mean": 1381.411005
+    },
+    "vision_param_norm": {
+      "first": 1258.6182,
+      "last": 1258.6361,
+      "min": 1258.6178,
+      "max": 1258.6361,
+      "mean": 1258.6230475
+    }
+  },
+  "window_means": {
+    "first_10_records": {
+      "loss": 0.03315,
+      "grad_norm": 0.25072,
+      "param_norm": 1381.37857,
+      "vision_param_norm": 1258.61834
+    },
+    "last_10_records": {
+      "loss": 0.031369999999999995,
+      "grad_norm": 0.31806999999999996,
+      "param_norm": 1381.46736,
+      "vision_param_norm": 1258.63089
+    }
+  },
+  "step_bins": [
+    {
+      "steps": [
+        0,
+        475
+      ],
+      "count": 20,
+      "loss_mean": 0.03171,
+      "grad_norm_mean": 0.253305,
+      "param_norm_mean": 1381.382395,
+      "vision_param_norm_mean": 1258.61896
+    },
+    {
+      "steps": [
+        500,
+        975
+      ],
+      "count": 20,
+      "loss_mean": 0.030955,
+      "grad_norm_mean": 0.30138,
+      "param_norm_mean": 1381.439615,
+      "vision_param_norm_mean": 1258.627135
+    }
+  ],
+  "interpretation_zh": "basket coFT 单卡 batch-16 完成；40 条指标覆盖 step 0--975 且全部有限，最终参数供 coFT 基线评测使用。"
+}

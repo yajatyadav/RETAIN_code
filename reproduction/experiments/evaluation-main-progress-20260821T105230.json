@@ -1,0 +1,115 @@
+{
+  "protocol_id": "RETAIN-GPU-20260819-001",
+  "captured_at": "2026-08-21T10:52:30+08:00",
+  "status": "main_evaluation_running",
+  "pipeline": {
+    "service": "retain-reproduction.service",
+    "active": true,
+    "pipeline_pid": 1292803,
+    "policy": "pretrain_117task",
+    "policy_server_pid": 1292933,
+    "physical_gpu_index": 0,
+    "completed_alpha_jobs": 270,
+    "completed_main_jobs": 4,
+    "completed_jobs_in_status": 274,
+    "failed_job": null
+  },
+  "completed_main_jobs": [
+    {
+      "index": 1,
+      "job_key": "9c6ca0ebb54e4e80",
+      "eval_type": "ID",
+      "task": "stove",
+      "seed": 7,
+      "episodes": 20,
+      "successes": 0,
+      "episode_errors": 0,
+      "video_count": 20,
+      "video_bytes": 3665683,
+      "finished_at": "2026-08-21T10:43:55.234944+08:00"
+    },
+    {
+      "index": 2,
+      "job_key": "9bb4dc20317b144b",
+      "eval_type": "OOD_MEDIUM",
+      "task": "stove",
+      "seed": 1,
+      "episodes": 10,
+      "successes": 0,
+      "episode_errors": 0,
+      "video_count": 10,
+      "video_bytes": 1865527,
+      "finished_at": "2026-08-21T10:46:44.221280+08:00"
+    },
+    {
+      "index": 3,
+      "job_key": "9b5a97c6f42e9d66",
+      "eval_type": "OOD_MEDIUM",
+      "task": "stove",
+      "seed": 21,
+      "episodes": 10,
+      "successes": 0,
+      "episode_errors": 0,
+      "video_count": 10,
+      "video_bytes": 1905233,
+      "finished_at": "2026-08-21T10:49:31.781999+08:00"
+    },
+    {
+      "index": 4,
+      "job_key": "b6f5eb52a603b07d",
+      "eval_type": "OOD_MEDIUM",
+      "task": "stove",
+      "seed": 41,
+      "episodes": 10,
+      "successes": 0,
+      "episode_errors": 0,
+      "video_count": 10,
+      "video_bytes": 1849186,
+      "finished_at": "2026-08-21T10:52:18.583148+08:00"
+    }
+  ],
+  "completed_main_episode_total": 50,
+  "completed_main_success_total": 0,
+  "completed_main_episode_errors": 0,
+  "completed_main_video_count": 50,
+  "completed_main_video_bytes": 9285629,
+  "interpretation_scope": "four_complete_jobs_from_one_task_are_not_an_overall_policy_or_method_result",
+  "current_main_job": {
+    "index": 5,
+    "jobs_for_policy": 68,
+    "job_key": "f867d4fd85ec2d85",
+    "eval_type": "OOD_MEDIUM",
+    "task": "stove",
+    "seed": 61,
+    "planned_episodes": 10,
+    "observed_episodes": 1,
+    "observed_successes": 0,
+    "observed_errors": 0,
+    "evaluator_pid": 1310451,
+    "partial_observation_eligible_for_comparison": false
+  },
+  "single_gpu_audit": {
+    "policy_server_cuda_visible_devices": "0",
+    "evaluator_cuda_visible_devices": "",
+    "evaluator_egl_device_id": 0,
+    "only_compute_process": {
+      "physical_gpu_index": 0,
+      "pid": 1292933,
+      "memory_mib": 77036,
+      "role": "policy_server"
+    },
+    "other_idle_gpu_count": 7,
+    "constraint_satisfied": true
+  },
+  "resources": {
+    "gpu_memory_used_mib": [77050, 1, 1, 393, 1, 1, 1, 1],
+    "gpu_utilization_percent": [60, 0, 0, 0, 0, 0, 0, 0],
+    "host_available_bytes": 532163594240,
+    "shared_free_bytes": 132509077504,
+    "root_free_bytes": 10157699072
+  },
+  "error_scan": {
+    "window_start": "2026-08-21T10:46:00+08:00",
+    "fatal_matches": 0
+  }
+}

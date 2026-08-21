@@ -1,0 +1,58 @@
+{
+  "protocol_id": "RETAIN-GPU-20260819-001-R1",
+  "generated_at": "2026-08-20T17:33:54+08:00",
+  "config": "retain_repro_pretrain",
+  "experiment_name": "paper_final_hparams",
+  "attempt": 7,
+  "step": 9999,
+  "path": "/shared/.cache/retain/checkpoints/retain_repro_pretrain/paper_final_hparams/9999",
+  "status": "verified_committed_params_only_and_consumed_by_downstream_task_ft",
+  "save_started_at": "2026-08-20T17:29:48+08:00",
+  "checkpoint_manager_blocking_duration_seconds": 64.5740180015564,
+  "committed_at": "2026-08-20T17:31:12+08:00",
+  "commit_timestamp_nsecs": 1787218272370695972,
+  "previous_step_8000_deleted_at": "2026-08-20T17:31:16+08:00",
+  "metadata_sha256": "369f8f53253b6b6f5c4686bd5e01f053a17e01762c9c8848d41ad198308dd79f",
+  "retained_file_count": 21,
+  "retained_file_payload_bytes": 12014118262,
+  "retained_items": {
+    "_CHECKPOINT_METADATA": {
+      "file_count": 1,
+      "file_payload_bytes": 417
+    },
+    "assets": {
+      "file_count": 1,
+      "file_payload_bytes": 4496
+    },
+    "params": {
+      "file_count": 19,
+      "file_payload_bytes": 12014113349
+    }
+  },
+  "temporary_directory_count_after_commit": 0,
+  "background_save_error_count": 0,
+  "optimizer_state_retained": false,
+  "optimizer_state_policy": {
+    "status": "intentionally_absent_after_successful_stage",
+    "placeholder_directory_removed_bytes": 1839,
+    "reason": "最终产物只供参数合并、下游初始化和评测；不用于再次恢复 optimizer state"
+  },
+  "downstream_restore_validation": {
+    "consumer_config": "retain_repro_task_ft_stove",
+    "params_path": "/shared/.cache/retain/checkpoints/retain_repro_pretrain/paper_final_hparams/9999/params",
+    "restore_payload_bytes_log_value": "12.1 GiB",
+    "restore_duration_seconds_log_value": 14,
+    "finished_restoring_log_observed": true,
+    "finished_loading_weights_log_observed": true,
+    "first_optimizer_metric": {
+      "step": 0,
+      "loss": 0.0383,
+      "grad_norm": 0.6916,
+      "param_norm": 1381.3778,
+      "vision_param_norm": 1258.6182,
+      "all_finite": true
+    }
+  },
+  "valid_for_downstream_params_restore": true,
+  "valid_for_optimizer_resume": false
+}

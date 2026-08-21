@@ -25,7 +25,10 @@ LIBERO_PYTHON = LIBERO_DIR / ".venv" / "bin" / "python"
 UV = Path("/root/.local/bin/uv")
 CHECKPOINT_ROOT = Path("/shared/.cache/retain/checkpoints")
 RESULTS_ROOT = Path("/shared/.cache/retain/results/RETAIN-GPU-20260819-001")
-EXPERIMENT_ROOT = PROJECT_ROOT / "reproduction" / "experiments" / "evaluation-pipeline"
+DEFAULT_EXPERIMENT_ROOT = PROJECT_ROOT / "reproduction" / "experiments" / "evaluation-pipeline"
+EXPERIMENT_ROOT = Path(
+    os.environ.get("RETAIN_EVAL_STATE_ROOT", str(DEFAULT_EXPERIMENT_ROOT))
+).expanduser()
 JAX_OVERLAY = Path(
     os.environ.get(
         "RETAIN_JAX_OVERLAY",
@@ -242,10 +245,11 @@ def server_command(spec: PolicySpec, port: int) -> list[str]:
             "run",
             "--no-sync",
             "scripts/serve_policy.py",
+            "--port",
+            str(port),
             "policy:checkpoint",
             f"--policy.config={spec.config}",
             f"--policy.dir={spec.checkpoint_dirs[0]}",
-            f"--port={port}",
         ]
     if spec.alpha is None:
         raise ValueError(f"合并策略缺少 alpha: {spec.name}")

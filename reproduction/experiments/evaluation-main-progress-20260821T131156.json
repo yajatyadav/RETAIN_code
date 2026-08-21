@@ -1,0 +1,117 @@
+{
+  "protocol_id": "RETAIN-GPU-20260819-001",
+  "captured_at": "2026-08-21T13:11:56+08:00",
+  "status": "main_evaluation_running_after_user_directed_resume",
+  "pipeline": {
+    "service": "retain-reproduction.service",
+    "active": true,
+    "active_since": "2026-08-21T13:03:28+08:00",
+    "pipeline_pid": 1436285,
+    "policy": "pretrain_117task",
+    "policy_server_pid": 1436419,
+    "evaluator_pid": 1444477,
+    "physical_gpu_index": 0,
+    "completed_alpha_jobs": 270,
+    "completed_main_jobs": 40,
+    "completed_jobs_in_status": 310,
+    "failed_job": null
+  },
+  "complete_main_aggregate": {
+    "jobs": 40,
+    "episodes": 430,
+    "successes": 3,
+    "aggregate_success_rate_for_integrity_audit_only": 0.0069767441860465115,
+    "episode_errors": 0,
+    "video_count": 430,
+    "video_bytes": 64786935,
+    "interpretation": "跨任务和评测协议的合计只用于状态与文件完整性审计，不作为论文主指标"
+  },
+  "jobs_completed_after_resume": [
+    {
+      "job_index": 39,
+      "job_key": "f2dea8b6639928c0",
+      "eval_type": "OOD_HARD-set-0",
+      "task": "basket",
+      "seed": 1,
+      "episodes": 10,
+      "successes": 0,
+      "success_rate": 0.0,
+      "episode_errors": 0,
+      "video_count": 10,
+      "video_bytes": 1126829,
+      "finished_at": "2026-08-21T13:07:29.110156+08:00",
+      "resume_semantics": "先前未提交的 partial 已幂等重跑并由新 summary 正式提交"
+    },
+    {
+      "job_index": 40,
+      "job_key": "a93dd970938a73c6",
+      "eval_type": "OOD_HARD-set-1",
+      "task": "basket",
+      "seed": 1,
+      "episodes": 10,
+      "successes": 0,
+      "success_rate": 0.0,
+      "episode_errors": 0,
+      "video_count": 10,
+      "video_bytes": 1513205,
+      "finished_at": "2026-08-21T13:10:56.786411+08:00"
+    }
+  ],
+  "current_job": {
+    "index": 41,
+    "total_jobs_for_policy": 68,
+    "job_key": "80ce78040d031dff",
+    "eval_type": "OOD_HARD-set-0",
+    "task": "basket",
+    "seed": 21,
+    "planned_episodes": 10,
+    "summary_committed_at_capture": false,
+    "eligible_for_comparison_at_capture": false,
+    "service_log_marker_at": "2026-08-21T13:10:56.794521+08:00"
+  },
+  "shared_write_paths": {
+    "results_root": "/shared/.cache/retain/results/RETAIN-GPU-20260819-001",
+    "state_root": "/shared/.cache/retain/evaluation-state/RETAIN-GPU-20260819-001/evaluation-pipeline",
+    "service_log": "/shared/.cache/retain/evaluation-state/RETAIN-GPU-20260819-001/evaluation-service.log",
+    "tmpdir": "/shared/.cache/retain/tmp/evaluation",
+    "xdg_cache_home": "/shared/.cache/retain/cache/evaluation",
+    "all_explicit_evaluation_write_paths_on_shared": true
+  },
+  "single_gpu_audit": {
+    "policy_server_cuda_visible_devices": "0",
+    "evaluator_cuda_visible_devices": "",
+    "evaluator_egl_device_id": 0,
+    "only_reproduction_compute_process": {
+      "physical_gpu_index": 0,
+      "pid": 1436419,
+      "memory_mib": 77036,
+      "role": "policy_server"
+    },
+    "constraint_satisfied": true
+  },
+  "resources": {
+    "gpu_memory_used_mib": [77049, 1, 1, 753, 267, 267, 79883, 269],
+    "gpu_utilization_percent": [0, 0, 0, 1, 0, 0, 0, 0],
+    "host_available_bytes": 531279372288,
+    "root_free_bytes": 3826728960,
+    "shared_free_bytes": 106242707456,
+    "root_df_use_percent": 100,
+    "shared_df_use_percent": 99
+  },
+  "monitoring_policy": {
+    "root_space": "monitor_and_record_only",
+    "root_space_is_a_stop_condition": false,
+    "resume_gate_bytes": null,
+    "reason": "用户明确要求继续，且所有已知 evaluation 写路径均在 shared",
+    "actual_evaluation_failure": "在单 GPU 约束内诊断并恢复",
+    "shared_space_and_write_errors": "继续监控"
+  },
+  "validation": {
+    "service_active": true,
+    "completed_jobs_advanced_from_resume_baseline": 2,
+    "job39_summary_committed": true,
+    "job40_summary_committed": true,
+    "job41_evaluator_started": true,
+    "fatal_error_matches": 0
+  }
+}

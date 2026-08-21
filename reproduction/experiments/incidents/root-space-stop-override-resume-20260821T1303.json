@@ -1,0 +1,42 @@
+{
+  "incident_id": "root-space-stop-override-resume-20260821T1303",
+  "protocol_id": "RETAIN-GPU-20260819-001",
+  "resolved_at": "2026-08-21T13:03:28+08:00",
+  "supersedes_operational_policy_in": "reproduction/experiments/incidents/root-space-hard-stop-20260821T1252.json",
+  "correction": {
+    "previous_decision": "stop evaluation when root free space crossed 4 GiB",
+    "why_it_was_overly_conservative": "results, state, service log, TMPDIR, and XDG cache are explicitly on /shared, and the root decline was not attributable to reproduction writes",
+    "user_direction": "continue evaluation and do not stop because root space is low",
+    "new_policy": "root space is monitor-only and must not trigger an agent-initiated evaluation stop"
+  },
+  "restart": {
+    "original_transient_unit_missing_after_stop": true,
+    "unit_recreated": "retain-reproduction.service",
+    "active_since": "2026-08-21T13:03:28+08:00",
+    "working_directory": "/root/RETAIN_code",
+    "command": "/root/RETAIN_code/.venv/bin/python reproduction/scripts/run_evaluation_pipeline.py --poll-seconds 60",
+    "pipeline_pid": 1436285,
+    "policy_server_pid": 1436419,
+    "evaluator_pid": 1437138,
+    "physical_gpu_index": 0
+  },
+  "environment": {
+    "RETAIN_EVAL_STATE_ROOT": "/shared/.cache/retain/evaluation-state/RETAIN-GPU-20260819-001/evaluation-pipeline",
+    "TMPDIR": "/shared/.cache/retain/tmp/evaluation",
+    "XDG_CACHE_HOME": "/shared/.cache/retain/cache/evaluation",
+    "service_stdout_stderr": "/shared/.cache/retain/evaluation-state/RETAIN-GPU-20260819-001/evaluation-service.log"
+  },
+  "preservation": {
+    "completed_jobs_before_restart": 308,
+    "completed_jobs_after_restart": 308,
+    "failed_job": null,
+    "job39_committed_before_restart": false,
+    "resume_behavior": "skip all 308 completed jobs and rerun job39"
+  },
+  "validation": {
+    "service_active": true,
+    "state_status": "running",
+    "single_gpu_constraint_satisfied": true,
+    "fatal_error_matches": 0
+  }
+}

@@ -1,0 +1,184 @@
+{
+  "protocol_id": "RETAIN-GPU-20260819-001",
+  "captured_at": "2026-08-21T16:21:08+08:00",
+  "status": "retain_taskft_stove_a080_complete_retain_taskft_stove_a090_id_running",
+  "pipeline": {
+    "service": "retain-reproduction.service",
+    "active": true,
+    "pipeline_pid": 1886,
+    "current_policy": "retain_taskft_stove_a090",
+    "policy_server_pid": 82166,
+    "evaluator_pid": 82971,
+    "physical_gpu_index": 0,
+    "completed_alpha_jobs": 270,
+    "completed_main_jobs": 135,
+    "completed_jobs_in_status": 405,
+    "failed_job": null
+  },
+  "retain_taskft_stove_a080": {
+    "alpha": 0.8,
+    "weights": [0.8, 0.2],
+    "status": "complete",
+    "completed_independent_jobs": 31,
+    "independent_main_aggregate": {
+      "episodes": 320,
+      "successes": 141,
+      "episode_errors": 0,
+      "video_count": 320,
+      "video_bytes": 32009615
+    },
+    "ID": {
+      "successes": 15,
+      "episodes": 20,
+      "success_rate": 0.75
+    },
+    "OOD_MEDIUM": {
+      "successes": 30,
+      "episodes": 50,
+      "success_rate": 0.6,
+      "status": "complete_reused_alpha_selection_set",
+      "independent_main_evidence": false
+    },
+    "OOD_HARD": {
+      "successes_by_condition": [5, 4, 5, 2, 7, 4, 7, 4, 7, 5],
+      "successes": 50,
+      "episodes": 100,
+      "success_rate": 0.5,
+      "episode_errors": 0,
+      "taskft_successes": 45,
+      "taskft_success_rate": 0.45,
+      "delta_vs_taskft": 0.05,
+      "pretrain_successes": 2,
+      "pretrain_success_rate": 0.02,
+      "delta_vs_pretrain": 0.48,
+      "status": "complete"
+    },
+    "generalist_retention": {
+      "completed_tasks": 20,
+      "planned_tasks": 20,
+      "task_successes": [9, 7, 5, 3, 3, 0, 5, 10, 0, 6, 0, 0, 1, 1, 5, 6, 3, 1, 6, 5],
+      "successes": 76,
+      "episodes": 200,
+      "success_rate": 0.38,
+      "taskft_successes": 63,
+      "taskft_success_rate": 0.315,
+      "delta_vs_taskft": 0.065,
+      "pretrain_successes": 133,
+      "pretrain_success_rate": 0.665,
+      "delta_vs_pretrain": -0.285,
+      "forgetting_gap_recovery_fraction_vs_taskft": 0.18571428571428572,
+      "by_suite": {
+        "libero_90": {
+          "task_successes": [9, 7, 5, 3, 3],
+          "successes": 27,
+          "episodes": 50,
+          "success_rate": 0.54,
+          "taskft_success_rate": 0.48,
+          "delta_vs_taskft": 0.06,
+          "pretrain_success_rate": 0.82,
+          "delta_vs_pretrain": -0.28,
+          "forgetting_gap_recovery_fraction_vs_taskft": 0.17647058823529413
+        },
+        "libero_goal": {
+          "task_successes": [0, 5, 10, 0, 6],
+          "successes": 21,
+          "episodes": 50,
+          "success_rate": 0.42,
+          "taskft_success_rate": 0.42,
+          "delta_vs_taskft": 0.0,
+          "pretrain_success_rate": 0.62,
+          "delta_vs_pretrain": -0.2,
+          "forgetting_gap_recovery_fraction_vs_taskft": 0.0
+        },
+        "libero_object": {
+          "task_successes": [0, 0, 1, 1, 5],
+          "successes": 7,
+          "episodes": 50,
+          "success_rate": 0.14,
+          "taskft_success_rate": 0.08,
+          "delta_vs_taskft": 0.06,
+          "pretrain_success_rate": 0.66,
+          "delta_vs_pretrain": -0.52,
+          "forgetting_gap_recovery_fraction_vs_taskft": 0.10344827586206896
+        },
+        "libero_spatial": {
+          "task_successes": [6, 3, 1, 6, 5],
+          "successes": 21,
+          "episodes": 50,
+          "success_rate": 0.42,
+          "taskft_success_rate": 0.28,
+          "delta_vs_taskft": 0.14,
+          "pretrain_success_rate": 0.56,
+          "delta_vs_pretrain": -0.14,
+          "forgetting_gap_recovery_fraction_vs_taskft": 0.5
+        }
+      },
+      "status": "complete"
+    }
+  },
+  "global_complete_main_aggregate": {
+    "jobs": 135,
+    "episodes": 1400,
+    "successes": 421,
+    "episode_errors": 0,
+    "video_count": 1400,
+    "video_bytes": 160471233,
+    "interpretation": "不含已计入 alpha sweep 的复用 validation jobs；跨策略总计只用于完整性审计"
+  },
+  "current_job": {
+    "policy": "retain_taskft_stove_a090",
+    "policy_role": "paper_alpha_reference",
+    "independent_job_index": 1,
+    "independent_jobs": 31,
+    "job_key": "8d83c799ae022abd",
+    "eval_type": "ID",
+    "task": "stove",
+    "planned_episodes": 20,
+    "observed_videos_at_capture": 0,
+    "observed_video_bytes_at_capture": 0,
+    "summary_committed_at_capture": false,
+    "eligible_for_comparison_at_capture": false,
+    "reused_ood_medium_validation": {
+      "successes_by_seed": [10, 5, 5, 3, 5],
+      "successes": 28,
+      "episodes": 50,
+      "success_rate": 0.56,
+      "independent_main_evidence": false
+    }
+  },
+  "single_gpu_audit": {
+    "only_reproduction_compute_process": {
+      "physical_gpu_index": 0,
+      "pid": 82166,
+      "memory_mib": 77032,
+      "role": "linear_merge_policy_server"
+    },
+    "constraint_satisfied": true,
+    "external_gpu_utilization": {
+      "physical_gpu_indices": [4, 5, 6, 7],
+      "attributed_to_reproduction": false
+    }
+  },
+  "resources": {
+    "gpu_memory_used_mib": [77033, 1, 1, 1, 1, 1, 1, 1],
+    "gpu_utilization_percent": [0, 0, 0, 0, 100, 100, 100, 100],
+    "host_available_bytes": 521082287104,
+    "root_free_bytes": 86836469760,
+    "shared_free_bytes": 105743151104,
+    "root_df_use_percent": 91,
+    "shared_df_use_percent": 99
+  },
+  "monitoring_policy": {
+    "root_space": "monitor_and_record_only",
+    "root_space_is_a_stop_condition": false,
+    "resume_gate_bytes": null,
+    "all_known_evaluation_write_paths_on_shared": true
+  },
+  "validation": {
+    "service_active": true,
+    "completed_job_continuity": true,
+    "retain_taskft_stove_a080_complete": true,
+    "selection_set_reuse_labeled": true,
+    "fatal_error_matches": 0
+  }
+}

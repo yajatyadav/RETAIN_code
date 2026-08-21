@@ -1,0 +1,135 @@
+{
+  "protocol_id": "RETAIN-GPU-20260819-001",
+  "captured_at": "2026-08-21T14:19:39+08:00",
+  "status": "pretrain_policy_complete_taskft_stove_evaluation_running",
+  "pipeline": {
+    "service": "retain-reproduction.service",
+    "active": true,
+    "pipeline_pid": 1436285,
+    "current_policy": "taskft_stove",
+    "policy_server_pid": 1539074,
+    "evaluator_pid": 1563006,
+    "physical_gpu_index": 0,
+    "completed_alpha_jobs": 270,
+    "completed_main_jobs": 74,
+    "completed_jobs_in_status": 344,
+    "failed_job": null
+  },
+  "pretrain_117task_final": {
+    "status": "complete",
+    "jobs": 68,
+    "episodes": 710,
+    "successes": 136,
+    "episode_errors": 0,
+    "video_count": 710,
+    "video_bytes": 87920498,
+    "target_task_groups": {
+      "stove": {
+        "ID": {"successes": 0, "episodes": 20, "success_rate": 0.0},
+        "OOD_MEDIUM": {"successes": 1, "episodes": 50, "success_rate": 0.02},
+        "OOD_HARD": {"successes": 2, "episodes": 100, "success_rate": 0.02}
+      },
+      "mugs": {
+        "ID": {"successes": 0, "episodes": 20, "success_rate": 0.0},
+        "OOD_MEDIUM": {"successes": 0, "episodes": 50, "success_rate": 0.0},
+        "OOD_HARD": {"successes": 0, "episodes": 100, "success_rate": 0.0}
+      },
+      "basket": {
+        "ID": {"successes": 0, "episodes": 20, "success_rate": 0.0},
+        "OOD_MEDIUM": {"successes": 0, "episodes": 50, "success_rate": 0.0},
+        "OOD_HARD": {"successes": 0, "episodes": 100, "success_rate": 0.0}
+      }
+    },
+    "generalist_retention": {
+      "tasks": 20,
+      "episodes": 200,
+      "successes": 133,
+      "success_rate": 0.665,
+      "task_successes": [10, 7, 9, 8, 7, 0, 6, 9, 6, 10, 3, 6, 10, 7, 7, 4, 7, 4, 8, 5],
+      "by_suite": {
+        "libero_90": {"tasks": 5, "episodes": 50, "successes": 41, "success_rate": 0.82},
+        "libero_goal": {"tasks": 5, "episodes": 50, "successes": 31, "success_rate": 0.62},
+        "libero_object": {"tasks": 5, "episodes": 50, "successes": 33, "success_rate": 0.66},
+        "libero_spatial": {"tasks": 5, "episodes": 50, "successes": 28, "success_rate": 0.56}
+      }
+    }
+  },
+  "taskft_stove_partial": {
+    "completed_jobs": 6,
+    "planned_jobs": 36,
+    "episodes": 70,
+    "successes": 36,
+    "episode_errors": 0,
+    "video_count": 70,
+    "video_bytes": 10247510,
+    "ID": {"successes": 15, "episodes": 20, "success_rate": 0.75, "status": "complete"},
+    "OOD_MEDIUM": {
+      "seeds": [1, 21, 41, 61, 81],
+      "successes_by_seed": [3, 4, 3, 6, 5],
+      "successes": 21,
+      "episodes": 50,
+      "success_rate": 0.42,
+      "status": "complete"
+    },
+    "comparison_to_pretrain_stove": {
+      "ID_success_rate_delta": 0.75,
+      "OOD_MEDIUM_success_rate_delta": 0.4,
+      "interpretation": "Task-FT 的早期完整组明显高于 raw pretraining，但 OOD_HARD 与 generalist 尚未完成"
+    }
+  },
+  "global_complete_main_aggregate": {
+    "jobs": 74,
+    "episodes": 780,
+    "successes": 172,
+    "episode_errors": 0,
+    "video_count": 780,
+    "video_bytes": 98168008,
+    "interpretation": "跨策略与协议的总计只用于完整性审计"
+  },
+  "current_job": {
+    "policy": "taskft_stove",
+    "policy_job_index": 7,
+    "policy_jobs": 36,
+    "job_key": "beb29b185c6e0c91",
+    "eval_type": "OOD_HARD-set-0",
+    "task": "stove",
+    "seed": 1,
+    "planned_episodes": 10,
+    "observed_videos_at_capture": 5,
+    "observed_video_bytes_at_capture": 901716,
+    "summary_committed_at_capture": false,
+    "eligible_for_comparison_at_capture": false,
+    "service_log_marker_at": "2026-08-21T14:18:15.120658+08:00"
+  },
+  "single_gpu_audit": {
+    "only_reproduction_compute_process": {
+      "physical_gpu_index": 0,
+      "pid": 1539074,
+      "memory_mib": 77036,
+      "role": "policy_server"
+    },
+    "constraint_satisfied": true
+  },
+  "resources": {
+    "captured_near": "2026-08-21T14:19:34+08:00",
+    "gpu_memory_used_mib": [77049, 1, 1, 453, 1, 1, 1, 1],
+    "gpu_utilization_percent": [63, 0, 0, 1, 0, 0, 0, 0],
+    "host_available_bytes": 531726139392,
+    "root_free_bytes": 3759292416,
+    "shared_free_bytes": 106197417984,
+    "root_df_use_percent": 100,
+    "shared_df_use_percent": 99
+  },
+  "monitoring_policy": {
+    "root_space": "monitor_and_record_only",
+    "root_space_is_a_stop_condition": false,
+    "resume_gate_bytes": null,
+    "all_known_evaluation_write_paths_on_shared": true
+  },
+  "validation": {
+    "service_active": true,
+    "pretrain_policy_complete": true,
+    "next_policy_started": true,
+    "fatal_error_matches_since_resume": 0
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "protocol_id": "RETAIN-GPU-20260819-001",
+  "captured_at": "2026-08-21T13:57:36+08:00",
+  "status": "pretrain_generalist_evaluation_running",
+  "pipeline": {
+    "service": "retain-reproduction.service",
+    "active": true,
+    "pipeline_pid": 1436285,
+    "policy": "pretrain_117task",
+    "policy_server_pid": 1436419,
+    "evaluator_pid": 1522142,
+    "physical_gpu_index": 0,
+    "completed_alpha_jobs": 270,
+    "completed_main_jobs": 63,
+    "completed_jobs_in_status": 333,
+    "failed_job": null
+  },
+  "complete_main_aggregate": {
+    "jobs": 63,
+    "episodes": 660,
+    "successes": 108,
+    "episode_errors": 0,
+    "video_count": 660,
+    "video_bytes": 85396094,
+    "interpretation": "跨目标任务 ID/OOD 与 generalist 的总计只用于完整性审计"
+  },
+  "generalist_partial": {
+    "completed_tasks": 15,
+    "planned_tasks": 20,
+    "episodes": 150,
+    "successes": 105,
+    "success_rate": 0.7,
+    "by_suite": {
+      "libero_90": {"completed_tasks": 5, "episodes": 50, "successes": 41, "success_rate": 0.82},
+      "libero_goal": {"completed_tasks": 5, "episodes": 50, "successes": 31, "success_rate": 0.62},
+      "libero_object": {"completed_tasks": 5, "episodes": 50, "successes": 33, "success_rate": 0.66},
+      "libero_spatial": {"completed_tasks": 0, "episodes": 0, "successes": 0, "success_rate": null}
+    },
+    "task_successes": [10, 7, 9, 8, 7, 0, 6, 9, 6, 10, 3, 6, 10, 7, 7],
+    "minimum_task_successes": 0,
+    "maximum_task_successes": 10,
+    "interpretation": "覆盖 15/20 个任务，显示显著任务间异质性；完整 20-task retention 仍待闭合"
+  },
+  "current_job": {
+    "index": 64,
+    "total_jobs_for_policy": 68,
+    "job_key": "0bf0fc52923d702d",
+    "eval_type": "GENERALIST",
+    "task_suite": "libero_spatial",
+    "task": "pick up the black bowl between the plate and the ramekin and place it on the plate",
+    "planned_episodes": 10,
+    "observed_videos_at_capture": 3,
+    "observed_video_bytes_at_capture": 125579,
+    "summary_committed_at_capture": false,
+    "eligible_for_comparison_at_capture": false,
+    "service_log_marker_at": "2026-08-21T13:56:35.721705+08:00"
+  },
+  "single_gpu_audit": {
+    "only_reproduction_compute_process": {
+      "physical_gpu_index": 0,
+      "pid": 1436419,
+      "memory_mib": 77036,
+      "role": "policy_server"
+    },
+    "constraint_satisfied": true
+  },
+  "resources": {
+    "captured_near": "2026-08-21T13:57:04+08:00",
+    "gpu_memory_used_mib": [77049, 5384, 5642, 5666, 5567, 1, 1, 1],
+    "gpu_utilization_percent": [0, 0, 0, 0, 0, 0, 0, 0],
+    "host_available_bytes": 532109122560,
+    "root_free_bytes": 3789455360,
+    "shared_free_bytes": 106219036672,
+    "root_df_use_percent": 100,
+    "shared_df_use_percent": 99
+  },
+  "monitoring_policy": {
+    "root_space": "monitor_and_record_only",
+    "root_space_is_a_stop_condition": false,
+    "resume_gate_bytes": null,
+    "all_known_evaluation_write_paths_on_shared": true
+  },
+  "validation": {
+    "service_active": true,
+    "generalist_task_results_preserved_individually": true,
+    "fatal_error_matches_since_resume": 0
+  }
+}

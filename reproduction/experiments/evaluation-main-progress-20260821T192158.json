@@ -1,0 +1,162 @@
+{
+  "protocol_id": "RETAIN-GPU-20260819-001",
+  "captured_at": "2026-08-21T19:21:58+08:00",
+  "status": "selected_retain_taskft_mugs_a070_target_complete_generalist_running",
+  "pipeline": {
+    "service": "retain-reproduction.service",
+    "active": true,
+    "pipeline_pid": 1886,
+    "current_policy": "retain_taskft_mugs_a070",
+    "policy_server_pid": 319859,
+    "evaluator_pid": 374661,
+    "physical_gpu_index": 0,
+    "completed_alpha_jobs": 270,
+    "completed_main_jobs": 216,
+    "completed_jobs_in_status": 486,
+    "failed_job": null
+  },
+  "alpha_selection": {
+    "selected_policy": "retain_taskft_mugs_a070",
+    "selected_alpha": 0.7,
+    "selected_weights": [0.7, 0.3],
+    "selection_successes": 21,
+    "selection_episodes": 50,
+    "selection_success_rate": 0.42,
+    "paper_alpha_policy": "retain_taskft_mugs_a080",
+    "paper_alpha": 0.8,
+    "paper_alpha_successes": 20,
+    "paper_alpha_episodes": 50,
+    "paper_alpha_success_rate": 0.4,
+    "selection_jobs_reused_for_main_pipeline": 5,
+    "selection_jobs_are_independent_main_evidence": false,
+    "correction_incident": "reproduction/experiments/incidents/mugs-alpha-selection-label-correction-20260821T1844.json"
+  },
+  "completed_target_groups": {
+    "ID": {
+      "successes": 12,
+      "episodes": 20,
+      "success_rate": 0.6,
+      "raw_taskft_success_rate": 0.65,
+      "delta_vs_raw_taskft": -0.05,
+      "pretrain_success_rate": 0.0,
+      "delta_vs_pretrain": 0.6,
+      "episode_errors": 0,
+      "status": "complete_independent_main_evidence"
+    },
+    "OOD_MEDIUM": {
+      "successes_by_seed": [3, 4, 5, 4, 5],
+      "successes": 21,
+      "episodes": 50,
+      "success_rate": 0.42,
+      "raw_taskft_success_rate": 0.52,
+      "delta_vs_raw_taskft": -0.1,
+      "pretrain_success_rate": 0.0,
+      "delta_vs_pretrain": 0.42,
+      "status": "complete_reused_selection_set_not_independent_main_evidence"
+    },
+    "OOD_HARD": {
+      "conditions": ["set_0_seed_1", "set_1_seed_1", "set_0_seed_21", "set_1_seed_21", "set_0_seed_41", "set_1_seed_41", "set_0_seed_61", "set_1_seed_61", "set_0_seed_81", "set_1_seed_81"],
+      "successes_by_condition": [1, 0, 3, 0, 4, 0, 2, 0, 4, 0],
+      "successes": 14,
+      "episodes": 100,
+      "success_rate": 0.14,
+      "raw_taskft_success_rate": 0.15,
+      "delta_vs_raw_taskft": -0.01,
+      "pretrain_success_rate": 0.0,
+      "delta_vs_pretrain": 0.14,
+      "set_0_successes": 14,
+      "set_0_episodes": 50,
+      "set_0_success_rate": 0.28,
+      "set_1_successes": 0,
+      "set_1_episodes": 50,
+      "set_1_success_rate": 0.0,
+      "episode_errors": 0,
+      "status": "complete_independent_main_evidence"
+    }
+  },
+  "new_complete_jobs_since_previous_snapshot": [
+    {"job_key": "f2939e45cd15edb2", "eval_type": "ID", "seed": 7, "successes": 12, "episodes": 20, "episode_errors": 0, "video_bytes": 2062940},
+    {"job_key": "8a1717bd45ea043c", "eval_type": "OOD_HARD", "condition": "set_0", "seed": 1, "successes": 1, "episodes": 10, "episode_errors": 0, "video_bytes": 1308968},
+    {"job_key": "0dae10470ff531e3", "eval_type": "OOD_HARD", "condition": "set_1", "seed": 1, "successes": 0, "episodes": 10, "episode_errors": 0, "video_bytes": 1221478},
+    {"job_key": "94443b11fd2e1603", "eval_type": "OOD_HARD", "condition": "set_0", "seed": 21, "successes": 3, "episodes": 10, "episode_errors": 0, "video_bytes": 1274435},
+    {"job_key": "1fda87a5a2cf04e1", "eval_type": "OOD_HARD", "condition": "set_1", "seed": 21, "successes": 0, "episodes": 10, "episode_errors": 0, "video_bytes": 1174911},
+    {"job_key": "f015cc609881a95a", "eval_type": "OOD_HARD", "condition": "set_0", "seed": 41, "successes": 4, "episodes": 10, "episode_errors": 0, "video_bytes": 1172725},
+    {"job_key": "4c5fe3c86cefd0ea", "eval_type": "OOD_HARD", "condition": "set_1", "seed": 41, "successes": 0, "episodes": 10, "episode_errors": 0, "video_bytes": 1175795},
+    {"job_key": "c5bd128d838998a8", "eval_type": "OOD_HARD", "condition": "set_0", "seed": 61, "successes": 2, "episodes": 10, "episode_errors": 0, "video_bytes": 1267557},
+    {"job_key": "00f577acba0e7d14", "eval_type": "OOD_HARD", "condition": "set_1", "seed": 61, "successes": 0, "episodes": 10, "episode_errors": 0, "video_bytes": 1164688},
+    {"job_key": "d534aa7cb24068a6", "eval_type": "OOD_HARD", "condition": "set_0", "seed": 81, "successes": 4, "episodes": 10, "episode_errors": 0, "video_bytes": 1310682},
+    {"job_key": "aab31643c2498e83", "eval_type": "OOD_HARD", "condition": "set_1", "seed": 81, "successes": 0, "episodes": 10, "episode_errors": 0, "video_bytes": 1187268},
+    {"job_key": "2ee1b9f394068d11", "eval_type": "GENERALIST", "suite": "libero_90", "task": "close the top drawer of the cabinet", "successes": 10, "episodes": 10, "episode_errors": 0, "video_bytes": 343636},
+    {"job_key": "8fb9512963d43e42", "eval_type": "GENERALIST", "suite": "libero_90", "task": "pick up the tomato sauce and put it in the basket", "successes": 4, "episodes": 10, "episode_errors": 0, "video_bytes": 988342},
+    {"job_key": "67e5fccf5dca6efe", "eval_type": "GENERALIST", "suite": "libero_90", "task": "put the frying pan on the stove", "successes": 0, "episodes": 10, "episode_errors": 0, "video_bytes": 1508110}
+  ],
+  "new_complete_aggregate": {
+    "jobs": 14,
+    "episodes": 150,
+    "successes": 40,
+    "episode_errors": 0,
+    "video_count": 150,
+    "video_bytes": 17161535
+  },
+  "global_complete_main_aggregate": {
+    "jobs": 216,
+    "episodes": 2240,
+    "successes": 698,
+    "episode_errors": 0,
+    "video_count": 2240,
+    "video_bytes": 244049100
+  },
+  "current_policy": {
+    "policy": "retain_taskft_mugs_a070",
+    "completed_independent_main_jobs": 14,
+    "reused_selection_jobs": 5,
+    "generalist_completed_tasks": 3,
+    "generalist_task_successes": [10, 4, 0],
+    "generalist_successes": 14,
+    "generalist_episodes": 30,
+    "generalist_success_rate": 0.4666666666666667,
+    "paired_raw_taskft_successes": 10,
+    "paired_raw_taskft_success_rate": 0.3333333333333333,
+    "delta_vs_raw_taskft": 0.13333333333333336,
+    "paired_pretrain_successes": 26,
+    "paired_pretrain_success_rate": 0.8666666666666667,
+    "delta_vs_pretrain": -0.4,
+    "status": "generalist_running_fourth_of_twenty_tasks"
+  },
+  "current_job": {
+    "job_key": "aa2469c3edd187c3",
+    "eval_type": "GENERALIST",
+    "suite": "libero_90",
+    "task": "put the white bowl on the plate",
+    "seed": 7,
+    "planned_episodes": 10,
+    "observed_episodes_at_capture": 3,
+    "observed_successes_at_capture": 3,
+    "observed_errors_at_capture": 0,
+    "observed_video_bytes_at_capture": 254906,
+    "summary_committed_at_capture": false,
+    "eligible_for_formal_comparison": false
+  },
+  "single_gpu_audit": {
+    "only_reproduction_compute_process": {"physical_gpu_index": 0, "pid": 319859, "memory_mib": 77036},
+    "constraint_satisfied": true
+  },
+  "resources": {
+    "gpu_memory_used_mib": [77049, 1, 17447, 613, 79863, 79767, 79815, 79891],
+    "gpu_utilization_percent": [25, 0, 76, 1, 100, 100, 100, 100],
+    "host_available_bytes": 528014776320,
+    "root_free_bytes": 70525620224,
+    "shared_free_bytes": 101384105984
+  },
+  "monitoring_policy": {
+    "root_space": "monitor_and_record_only",
+    "root_space_is_a_stop_condition": false,
+    "all_known_evaluation_write_paths_on_shared": true
+  },
+  "validation": {
+    "service_active": true,
+    "single_physical_gpu_constraint": true,
+    "selection_set_reuse_labeled": true,
+    "fatal_error_matches": 0
+  }
+}

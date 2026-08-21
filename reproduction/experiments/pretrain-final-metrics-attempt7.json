@@ -1,0 +1,298 @@
+{
+  "protocol_id": "RETAIN-GPU-20260819-001-R1",
+  "config": "retain_repro_pretrain",
+  "experiment_name": "paper_final_hparams",
+  "attempt": 7,
+  "analyzed_at": "2026-08-20T09:32:28.008911+00:00",
+  "source": {
+    "path": "reproduction/experiments/retain_repro_pretrain__paper_final_hparams/metrics.jsonl",
+    "line_count": 400,
+    "bytes": 43369,
+    "sha256": "bdff06c0cbfabcbf130fa4a3726ac85bb2e7a4883153c6304f8eae65f9622004"
+  },
+  "coverage": {
+    "first_step": 0,
+    "last_step": 9975,
+    "record_count": 400,
+    "expected_interval_steps": 25,
+    "interval_consistent": true,
+    "training_fraction_through_last_record": 0.9975
+  },
+  "finite_value_audit": {
+    "fields": [
+      "loss",
+      "grad_norm",
+      "param_norm",
+      "vision_param_norm"
+    ],
+    "all_finite": true
+  },
+  "overall": {
+    "loss": {
+      "first": 0.1572,
+      "last": 0.0276,
+      "min": 0.0264,
+      "max": 0.1572,
+      "mean": 0.0361705,
+      "first_to_last_drop_fraction": 0.8244274809160305
+    },
+    "grad_norm": {
+      "first": 3.4955,
+      "last": 0.312,
+      "min": 0.2649,
+      "max": 3.9338,
+      "mean": 0.42821800000000004
+    },
+    "param_norm": {
+      "first": 1377.8652,
+      "last": 1381.4045,
+      "min": 1377.865,
+      "max": 1381.4045,
+      "mean": 1379.633158
+    },
+    "vision_param_norm": {
+      "first": 1258.1694,
+      "last": 1258.6207,
+      "min": 1258.1694,
+      "max": 1258.6207,
+      "mean": 1258.3948140225
+    }
+  },
+  "window_means": {
+    "first_10_records": {
+      "loss": 0.09298,
+      "grad_norm": 1.77271,
+      "param_norm": 1377.8653900000002,
+      "vision_param_norm": 1258.16965
+    },
+    "last_10_records": {
+      "loss": 0.027949999999999996,
+      "grad_norm": 0.31078,
+      "param_norm": 1381.3732400000001,
+      "vision_param_norm": 1258.61695
+    }
+  },
+  "step_bins": [
+    {
+      "steps": [
+        0,
+        475
+      ],
+      "count": 20,
+      "loss_mean": 0.07106,
+      "grad_norm_mean": 1.197835,
+      "param_norm_mean": 1377.868335,
+      "vision_param_norm_mean": 1258.169795
+    },
+    {
+      "steps": [
+        500,
+        975
+      ],
+      "count": 20,
+      "loss_mean": 0.04671,
+      "grad_norm_mean": 0.590935,
+      "param_norm_mean": 1377.924555,
+      "vision_param_norm_mean": 1258.17678
+    },
+    {
+      "steps": [
+        1000,
+        1475
+      ],
+      "count": 20,
+      "loss_mean": 0.04514,
+      "grad_norm_mean": 0.536205,
+      "param_norm_mean": 1378.1051750000001,
+      "vision_param_norm_mean": 1258.20065
+    },
+    {
+      "steps": [
+        1500,
+        1975
+      ],
+      "count": 20,
+      "loss_mean": 0.040905000000000004,
+      "grad_norm_mean": 0.47334499999999996,
+      "param_norm_mean": 1378.321605,
+      "vision_param_norm_mean": 1258.22848
+    },
+    {
+      "steps": [
+        2000,
+        2475
+      ],
+      "count": 20,
+      "loss_mean": 0.038900000000000004,
+      "grad_norm_mean": 0.44451999999999997,
+      "param_norm_mean": 1378.541025,
+      "vision_param_norm_mean": 1258.25508505
+    },
+    {
+      "steps": [
+        2500,
+        2975
+      ],
+      "count": 20,
+      "loss_mean": 0.037335,
+      "grad_norm_mean": 0.43366499999999997,
+      "param_norm_mean": 1378.758145,
+      "vision_param_norm_mean": 1258.2818750000001
+    },
+    {
+      "steps": [
+        3000,
+        3475
+      ],
+      "count": 20,
+      "loss_mean": 0.035554999999999996,
+      "grad_norm_mean": 0.39944999999999997,
+      "param_norm_mean": 1378.971215,
+      "vision_param_norm_mean": 1258.309
+    },
+    {
+      "steps": [
+        3500,
+        3975
+      ],
+      "count": 20,
+      "loss_mean": 0.03472,
+      "grad_norm_mean": 0.40073499999999995,
+      "param_norm_mean": 1379.182155,
+      "vision_param_norm_mean": 1258.3372100000001
+    },
+    {
+      "steps": [
+        4000,
+        4475
+      ],
+      "count": 20,
+      "loss_mean": 0.034185,
+      "grad_norm_mean": 0.38060499999999997,
+      "param_norm_mean": 1379.3901799999999,
+      "vision_param_norm_mean": 1258.36390515
+    },
+    {
+      "steps": [
+        4500,
+        4975
+      ],
+      "count": 20,
+      "loss_mean": 0.03316,
+      "grad_norm_mean": 0.358625,
+      "param_norm_mean": 1379.5924300000001,
+      "vision_param_norm_mean": 1258.38967
+    },
+    {
+      "steps": [
+        5000,
+        5475
+      ],
+      "count": 20,
+      "loss_mean": 0.03308,
+      "grad_norm_mean": 0.36518,
+      "param_norm_mean": 1379.791395,
+      "vision_param_norm_mean": 1258.41516
+    },
+    {
+      "steps": [
+        5500,
+        5975
+      ],
+      "count": 20,
+      "loss_mean": 0.03261,
+      "grad_norm_mean": 0.36023499999999997,
+      "param_norm_mean": 1379.98872,
+      "vision_param_norm_mean": 1258.43997
+    },
+    {
+      "steps": [
+        6000,
+        6475
+      ],
+      "count": 20,
+      "loss_mean": 0.03157,
+      "grad_norm_mean": 0.35131999999999997,
+      "param_norm_mean": 1380.177975,
+      "vision_param_norm_mean": 1258.46366
+    },
+    {
+      "steps": [
+        6500,
+        6975
+      ],
+      "count": 20,
+      "loss_mean": 0.031035,
+      "grad_norm_mean": 0.34153,
+      "param_norm_mean": 1380.3619,
+      "vision_param_norm_mean": 1258.48718525
+    },
+    {
+      "steps": [
+        7000,
+        7475
+      ],
+      "count": 20,
+      "loss_mean": 0.03114,
+      "grad_norm_mean": 0.34291,
+      "param_norm_mean": 1380.54044,
+      "vision_param_norm_mean": 1258.5110650000001
+    },
+    {
+      "steps": [
+        7500,
+        7975
+      ],
+      "count": 20,
+      "loss_mean": 0.030585,
+      "grad_norm_mean": 0.33719,
+      "param_norm_mean": 1380.7125,
+      "vision_param_norm_mean": 1258.533265
+    },
+    {
+      "steps": [
+        8000,
+        8475
+      ],
+      "count": 20,
+      "loss_mean": 0.029495,
+      "grad_norm_mean": 0.31714000000000003,
+      "param_norm_mean": 1380.875845,
+      "vision_param_norm_mean": 1258.5535949999999
+    },
+    {
+      "steps": [
+        8500,
+        8975
+      ],
+      "count": 20,
+      "loss_mean": 0.029225,
+      "grad_norm_mean": 0.31523500000000004,
+      "param_norm_mean": 1381.034955,
+      "vision_param_norm_mean": 1258.57361
+    },
+    {
+      "steps": [
+        9000,
+        9475
+      ],
+      "count": 20,
+      "loss_mean": 0.028615,
+      "grad_norm_mean": 0.30813999999999997,
+      "param_norm_mean": 1381.1881349999999,
+      "vision_param_norm_mean": 1258.593875
+    },
+    {
+      "steps": [
+        9500,
+        9975
+      ],
+      "count": 20,
+      "loss_mean": 0.028385,
+      "grad_norm_mean": 0.30956,
+      "param_norm_mean": 1381.336475,
+      "vision_param_norm_mean": 1258.612445
+    }
+  ],
+  "interpretation_zh": "单卡 batch-16 恢复实验完成；400 条指标覆盖 step 0--9975 且均为有限值，后段 loss 保持稳定，无数值发散。attempt 6 的 step 0--7975 与 attempt 7 从完整 step-8000 train state 恢复后的 step 8000--9975 组成最终去重轨迹。"
+}

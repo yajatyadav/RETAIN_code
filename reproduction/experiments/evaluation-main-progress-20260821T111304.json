@@ -1,0 +1,113 @@
+{
+  "protocol_id": "RETAIN-GPU-20260819-001",
+  "captured_at": "2026-08-21T11:13:04+08:00",
+  "status": "main_evaluation_running",
+  "pipeline": {
+    "service": "retain-reproduction.service",
+    "active": true,
+    "pipeline_pid": 1292803,
+    "policy": "pretrain_117task",
+    "policy_server_pid": 1292933,
+    "physical_gpu_index": 0,
+    "completed_alpha_jobs": 270,
+    "completed_main_jobs": 11,
+    "completed_jobs_in_status": 281,
+    "failed_job": null
+  },
+  "complete_aggregate": {
+    "episodes": 120,
+    "successes": 3,
+    "success_rate": 0.025,
+    "episode_errors": 0,
+    "video_count": 120,
+    "video_bytes": 22291771,
+    "mean_video_bytes": 185764.75833333333
+  },
+  "complete_groups": [
+    {
+      "eval_type": "ID",
+      "task": "stove",
+      "seeds": [7],
+      "successes_by_seed": [0],
+      "episodes_by_seed": [20],
+      "successes": 0,
+      "episodes": 20
+    },
+    {
+      "eval_type": "OOD_MEDIUM",
+      "task": "stove",
+      "seeds": [1, 21, 41, 61, 81],
+      "successes_by_seed": [0, 0, 0, 1, 0],
+      "episodes_by_seed": [10, 10, 10, 10, 10],
+      "successes": 1,
+      "episodes": 50
+    },
+    {
+      "eval_type": "OOD_HARD_partial_complete_jobs",
+      "task": "stove",
+      "conditions": ["set-0_seed-1", "set-1_seed-1", "set-0_seed-21", "set-1_seed-21", "set-0_seed-41"],
+      "successes_by_condition": [0, 0, 0, 1, 1],
+      "episodes_by_condition": [10, 10, 10, 10, 10],
+      "successes": 2,
+      "episodes": 50,
+      "eligible_as_full_ood_hard_aggregate": false
+    }
+  ],
+  "newly_completed_since_previous_snapshot": [
+    {"index": 5, "job_key": "f867d4fd85ec2d85", "eval_type": "OOD_MEDIUM", "seed": 61, "successes": 1, "episodes": 10, "video_bytes": 1852327, "finished_at": "2026-08-21T10:54:59.790479+08:00"},
+    {"index": 6, "job_key": "1e016121d2cf76be", "eval_type": "OOD_MEDIUM", "seed": 81, "successes": 0, "episodes": 10, "video_bytes": 1840941, "finished_at": "2026-08-21T10:57:46.027560+08:00"},
+    {"index": 7, "job_key": "65d7efaa12bb09ae", "eval_type": "OOD_HARD-set-0", "seed": 1, "successes": 0, "episodes": 10, "video_bytes": 1791885, "finished_at": "2026-08-21T11:00:40.293307+08:00"},
+    {"index": 8, "job_key": "90938d54045cbef7", "eval_type": "OOD_HARD-set-1", "seed": 1, "successes": 0, "episodes": 10, "video_bytes": 1905121, "finished_at": "2026-08-21T11:03:33.880476+08:00"},
+    {"index": 9, "job_key": "010f49190a828386", "eval_type": "OOD_HARD-set-0", "seed": 21, "successes": 0, "episodes": 10, "video_bytes": 2000620, "finished_at": "2026-08-21T11:06:32.018206+08:00"},
+    {"index": 10, "job_key": "3747f4e8e2a7871e", "eval_type": "OOD_HARD-set-1", "seed": 21, "successes": 1, "episodes": 10, "video_bytes": 1888401, "finished_at": "2026-08-21T11:09:33.099677+08:00"},
+    {"index": 11, "job_key": "8cf1206263dcbedb", "eval_type": "OOD_HARD-set-0", "seed": 41, "successes": 1, "episodes": 10, "video_bytes": 1726847, "finished_at": "2026-08-21T11:12:27.364618+08:00"}
+  ],
+  "current_main_job": {
+    "index": 12,
+    "jobs_for_policy": 68,
+    "job_key": "a2226abb1fe52437",
+    "eval_type": "OOD_HARD-set-1",
+    "task": "stove",
+    "seed": 41,
+    "planned_episodes": 10,
+    "observed_episodes": 1,
+    "observed_successes": 0,
+    "observed_errors": 0,
+    "observed_video_bytes": 159083,
+    "evaluator_pid": 1334057,
+    "partial_observation_eligible_for_comparison": false
+  },
+  "single_gpu_audit": {
+    "policy_server_cuda_visible_devices": "0",
+    "evaluator_cuda_visible_devices": "",
+    "evaluator_egl_device_id": 0,
+    "only_reproduction_compute_process": {
+      "physical_gpu_index": 0,
+      "pid": 1292933,
+      "memory_mib": 77036,
+      "role": "policy_server"
+    },
+    "constraint_satisfied": true
+  },
+  "resources": {
+    "gpu_memory_used_mib": [77050, 1, 1, 553, 80013, 80237, 80285, 80335],
+    "gpu_utilization_percent": [19, 0, 0, 2, 65, 61, 61, 48],
+    "host_available_bytes": 532013467648,
+    "shared_free_bytes": 132496007168,
+    "root_free_bytes": 8656228352
+  },
+  "root_disk_watch": {
+    "status": "elevated_watch",
+    "previous_free_bytes_at_2026-08-21T10:52:30+08:00": 10157699072,
+    "visible_rootfs_du_bytes": 24710934528,
+    "visible_project_du_bytes": 17702952960,
+    "journal_reported_bytes": 201326592,
+    "visible_files_over_100mb_modified_in_last_40_minutes": 0,
+    "attribution": "free-space drop is not explained by visible recent reproduction files",
+    "action": "continue every-heartbeat monitoring; preserve shared rollout output and prepare evaluation-state migration if root free space approaches 4 GB"
+  },
+  "error_scan": {
+    "window_start": "2026-08-21T10:52:00+08:00",
+    "fatal_matches": 0
+  }
+}

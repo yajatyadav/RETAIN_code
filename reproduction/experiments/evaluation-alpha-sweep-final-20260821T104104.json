@@ -1,0 +1,116 @@
+{
+  "protocol_id": "RETAIN-GPU-20260819-001",
+  "captured_at": "2026-08-21T10:41:04+08:00",
+  "status": "alpha_sweep_completed_main_evaluation_running",
+  "alpha_sweep": {
+    "completed_policies": 54,
+    "total_policies": 54,
+    "completed_jobs": 270,
+    "total_jobs": 270,
+    "completed_episodes": 2700,
+    "total_episodes": 2700,
+    "episode_errors": 0,
+    "video_count": 2700,
+    "video_bytes": 384697908,
+    "mean_video_bytes": 142480.70666666667,
+    "last_job_finished_at": "2026-08-21T10:32:59.137906+08:00"
+  },
+  "selection_artifact": {
+    "path": "/shared/.cache/retain/results/RETAIN-GPU-20260819-001/alpha_selection.json",
+    "bytes": 9277,
+    "sha256": "df432313120276b766f4a03165e640ff46d45b648cca5490ae59fdaffd633b80",
+    "selection_scene": "OOD_MEDIUM_small_translation",
+    "tie_break": "highest_alpha_among_equal_success_rates"
+  },
+  "curves": {
+    "taskft": {
+      "stove": {
+        "successes": [4, 4, 12, 23, 22, 21, 30, 30, 28],
+        "episodes_per_alpha": 50,
+        "selected_alpha": 0.8,
+        "paper_alpha": 0.9
+      },
+      "mugs": {
+        "successes": [0, 0, 0, 3, 7, 16, 21, 20, 18],
+        "episodes_per_alpha": 50,
+        "selected_alpha": 0.7,
+        "paper_alpha": 0.8
+      },
+      "basket": {
+        "successes": [0, 0, 0, 0, 1, 5, 12, 9, 12],
+        "episodes_per_alpha": 50,
+        "selected_alpha": 0.9,
+        "paper_alpha": 0.9
+      }
+    },
+    "coft": {
+      "stove": {
+        "successes": [3, 5, 8, 24, 26, 28, 30, 33, 29],
+        "episodes_per_alpha": 50,
+        "selected_alpha": 0.8,
+        "paper_alpha": 0.7
+      },
+      "mugs": {
+        "successes": [0, 0, 0, 7, 14, 17, 24, 26, 21],
+        "episodes_per_alpha": 50,
+        "selected_alpha": 0.8,
+        "paper_alpha": 0.9
+      },
+      "basket": {
+        "successes": [0, 0, 1, 5, 1, 9, 11, 20, 9],
+        "episodes_per_alpha": 50,
+        "selected_alpha": 0.8,
+        "paper_alpha": 0.9
+      }
+    }
+  },
+  "last_policy_results": {
+    "retain_coft_basket_a080": {
+      "weights": [0.8, 0.2],
+      "seeds": [1, 21, 41, 61, 81],
+      "successes_by_seed": [2, 5, 7, 2, 4],
+      "episodes": 50,
+      "successes": 20,
+      "success_rate": 0.4,
+      "video_count": 50,
+      "video_bytes": 7095835,
+      "episode_errors": 0
+    },
+    "retain_coft_basket_a090": {
+      "weights": [0.9, 0.1],
+      "seeds": [1, 21, 41, 61, 81],
+      "successes_by_seed": [5, 0, 1, 2, 1],
+      "episodes": 50,
+      "successes": 9,
+      "success_rate": 0.18,
+      "video_count": 50,
+      "video_bytes": 7605216,
+      "episode_errors": 0
+    }
+  },
+  "main_evaluation_at_capture": {
+    "policy": "pretrain_117task",
+    "job_index": 1,
+    "jobs_for_policy": 68,
+    "job_key": "9c6ca0ebb54e4e80",
+    "job_scope": "ID stove",
+    "observed_episodes": 9,
+    "planned_episodes": 20,
+    "observed_successes": 0,
+    "observed_errors": 0,
+    "partial_observation_eligible_for_comparison": false,
+    "physical_gpu_index": 0,
+    "pipeline_pid": 1292803,
+    "policy_server_pid": 1292933,
+    "evaluator_pid": 1293674
+  },
+  "resources_at_nearby_capture": {
+    "captured_at": "2026-08-21T10:39:38+08:00",
+    "gpu_memory_used_mib": [77050, 4, 3, 459, 58966, 58747, 59507, 61053],
+    "gpu_utilization_percent": [46, 0, 0, 1, 97, 97, 92, 88],
+    "host_available_bytes": 532081545216,
+    "shared_free_bytes": 132509401088,
+    "root_free_bytes": 10171502592,
+    "single_gpu_audit": "only policy server PID 1292933 is a compute process on physical GPU 0"
+  }
+}

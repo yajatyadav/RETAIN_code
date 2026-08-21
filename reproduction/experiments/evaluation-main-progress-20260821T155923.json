@@ -1,0 +1,136 @@
+{
+  "protocol_id": "RETAIN-GPU-20260819-001",
+  "captured_at": "2026-08-21T15:59:23+08:00",
+  "status": "retain_taskft_stove_a080_libero90_complete_goal_running",
+  "pipeline": {
+    "service": "retain-reproduction.service",
+    "active": true,
+    "pipeline_pid": 1886,
+    "current_policy": "retain_taskft_stove_a080",
+    "policy_server_pid": 2148,
+    "evaluator_pid": 31122,
+    "physical_gpu_index": 0,
+    "completed_alpha_jobs": 270,
+    "completed_main_jobs": 120,
+    "completed_jobs_in_status": 390,
+    "failed_job": null
+  },
+  "retain_taskft_stove_a080": {
+    "alpha": 0.8,
+    "weights": [0.8, 0.2],
+    "completed_independent_jobs": 16,
+    "ID": {"successes": 15, "episodes": 20, "success_rate": 0.75},
+    "OOD_MEDIUM": {
+      "successes": 30,
+      "episodes": 50,
+      "success_rate": 0.6,
+      "status": "complete_reused_alpha_selection_set",
+      "independent_main_evidence": false
+    },
+    "OOD_HARD": {
+      "successes_by_condition": [5, 4, 5, 2, 7, 4, 7, 4, 7, 5],
+      "successes": 50,
+      "episodes": 100,
+      "success_rate": 0.5,
+      "episode_errors": 0,
+      "taskft_successes": 45,
+      "taskft_success_rate": 0.45,
+      "delta_vs_taskft": 0.05,
+      "pretrain_successes": 2,
+      "pretrain_success_rate": 0.02,
+      "delta_vs_pretrain": 0.48,
+      "status": "complete"
+    },
+    "generalist_retention": {
+      "completed_tasks": 5,
+      "planned_tasks": 20,
+      "task_successes": [9, 7, 5, 3, 3],
+      "successes": 27,
+      "episodes": 50,
+      "success_rate": 0.54,
+      "taskft_successes": 24,
+      "taskft_success_rate": 0.48,
+      "delta_vs_taskft": 0.06,
+      "pretrain_successes": 41,
+      "pretrain_success_rate": 0.82,
+      "delta_vs_pretrain": -0.28,
+      "forgetting_gap_recovery_fraction_vs_taskft": 0.17647058823529413,
+      "by_suite": {
+        "libero_90": {
+          "status": "complete",
+          "task_successes": [9, 7, 5, 3, 3],
+          "successes": 27,
+          "episodes": 50,
+          "success_rate": 0.54,
+          "taskft_successes": 24,
+          "taskft_success_rate": 0.48,
+          "delta_vs_taskft": 0.06,
+          "pretrain_successes": 41,
+          "pretrain_success_rate": 0.82,
+          "delta_vs_pretrain": -0.28
+        }
+      },
+      "status": "running_first_libero_goal_task"
+    }
+  },
+  "global_complete_main_aggregate": {
+    "jobs": 120,
+    "episodes": 1250,
+    "successes": 372,
+    "episode_errors": 0,
+    "video_count": 1250,
+    "video_bytes": 151011184,
+    "interpretation": "不含已计入 alpha sweep 的五个复用 validation jobs；跨策略总计只用于完整性审计"
+  },
+  "current_job": {
+    "policy": "retain_taskft_stove_a080",
+    "original_remaining_job_index": 17,
+    "original_remaining_jobs": 31,
+    "post_reboot_job_index": 9,
+    "post_reboot_jobs": 23,
+    "job_key": "2c43f964b2e6dcdd",
+    "eval_type": "GENERALIST",
+    "suite": "libero_goal",
+    "task": "open the middle drawer of the cabinet",
+    "planned_episodes": 10,
+    "observed_videos_at_capture": 2,
+    "observed_video_bytes_at_capture": 167376,
+    "summary_committed_at_capture": false,
+    "eligible_for_comparison_at_capture": false
+  },
+  "single_gpu_audit": {
+    "only_reproduction_compute_process": {
+      "physical_gpu_index": 0,
+      "pid": 2148,
+      "memory_mib": 77036,
+      "role": "linear_merge_policy_server"
+    },
+    "constraint_satisfied": true,
+    "external_gpu_load": {
+      "physical_gpu_indices": [4, 5, 6, 7],
+      "attributed_to_reproduction": false
+    }
+  },
+  "resources": {
+    "gpu_memory_used_mib": [77049, 1, 1, 659, 79735, 79639, 79685, 79597],
+    "gpu_utilization_percent": [12, 0, 0, 1, 100, 0, 100, 100],
+    "host_available_bytes": 529504918528,
+    "root_free_bytes": 84457963520,
+    "shared_free_bytes": 105762168832,
+    "root_df_use_percent": 91,
+    "shared_df_use_percent": 99
+  },
+  "monitoring_policy": {
+    "root_space": "monitor_and_record_only",
+    "root_space_is_a_stop_condition": false,
+    "resume_gate_bytes": null,
+    "all_known_evaluation_write_paths_on_shared": true
+  },
+  "validation": {
+    "service_active": true,
+    "post_reboot_completed_job_continuity": true,
+    "libero90_group_complete": true,
+    "selection_set_reuse_labeled": true,
+    "fatal_error_matches": 0
+  }
+}

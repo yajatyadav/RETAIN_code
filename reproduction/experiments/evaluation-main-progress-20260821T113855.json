@@ -1,0 +1,144 @@
+{
+  "protocol_id": "RETAIN-GPU-20260819-001",
+  "captured_at": "2026-08-21T11:38:55+08:00",
+  "status": "main_evaluation_running_after_shared_state_root_migration",
+  "pipeline": {
+    "service": "retain-reproduction.service",
+    "active": true,
+    "pipeline_pid": 1357474,
+    "policy": "pretrain_117task",
+    "policy_server_pid": 1357605,
+    "physical_gpu_index": 0,
+    "state_root": "/shared/.cache/retain/evaluation-state/RETAIN-GPU-20260819-001/evaluation-pipeline",
+    "service_log": "/shared/.cache/retain/evaluation-state/RETAIN-GPU-20260819-001/evaluation-service.log",
+    "completed_alpha_jobs": 270,
+    "completed_main_jobs": 18,
+    "completed_jobs_in_status": 288,
+    "failed_job": null
+  },
+  "complete_aggregate": {
+    "episodes": 200,
+    "successes": 3,
+    "success_rate": 0.015,
+    "episode_errors": 0,
+    "video_count": 200,
+    "video_bytes": 34814310,
+    "mean_video_bytes": 174071.55
+  },
+  "complete_groups": [
+    {
+      "eval_type": "ID",
+      "task": "stove",
+      "seeds": [7],
+      "successes_by_seed": [0],
+      "episodes_by_seed": [20],
+      "successes": 0,
+      "episodes": 20,
+      "status": "complete"
+    },
+    {
+      "eval_type": "OOD_MEDIUM",
+      "task": "stove",
+      "seeds": [1, 21, 41, 61, 81],
+      "successes_by_seed": [0, 0, 0, 1, 0],
+      "episodes_by_seed": [10, 10, 10, 10, 10],
+      "successes": 1,
+      "episodes": 50,
+      "status": "complete"
+    },
+    {
+      "eval_type": "OOD_HARD",
+      "task": "stove",
+      "conditions": ["set-0_seed-1", "set-1_seed-1", "set-0_seed-21", "set-1_seed-21", "set-0_seed-41", "set-1_seed-41", "set-0_seed-61", "set-1_seed-61", "set-0_seed-81", "set-1_seed-81"],
+      "successes_by_condition": [0, 0, 0, 1, 1, 0, 0, 0, 0, 0],
+      "episodes_by_condition": [10, 10, 10, 10, 10, 10, 10, 10, 10, 10],
+      "successes": 2,
+      "episodes": 100,
+      "success_rate": 0.02,
+      "status": "complete"
+    },
+    {
+      "eval_type": "ID",
+      "task": "mugs",
+      "seeds": [7],
+      "successes_by_seed": [0],
+      "episodes_by_seed": [20],
+      "successes": 0,
+      "episodes": 20,
+      "status": "complete"
+    },
+    {
+      "eval_type": "OOD_MEDIUM_partial_complete_jobs",
+      "task": "mugs",
+      "seeds": [1],
+      "successes_by_seed": [0],
+      "episodes_by_seed": [10],
+      "successes": 0,
+      "episodes": 10,
+      "eligible_as_full_ood_medium_aggregate": false
+    }
+  ],
+  "newly_completed_since_previous_snapshot": [
+    {"index": 12, "job_key": "a2226abb1fe52437", "eval_type": "OOD_HARD-set-1", "task": "stove", "seed": 41, "successes": 0, "episodes": 10, "video_bytes": 1803950, "finished_at": "2026-08-21T11:15:26.327665+08:00"},
+    {"index": 13, "job_key": "9269dac898755895", "eval_type": "OOD_HARD-set-0", "task": "stove", "seed": 61, "successes": 0, "episodes": 10, "video_bytes": 1951530, "finished_at": "2026-08-21T11:18:31.095228+08:00"},
+    {"index": 14, "job_key": "66a1c1975c44fd5e", "eval_type": "OOD_HARD-set-1", "task": "stove", "seed": 61, "successes": 0, "episodes": 10, "video_bytes": 1930393, "finished_at": "2026-08-21T11:21:34.935982+08:00"},
+    {"index": 15, "job_key": "c1ae88cae409225f", "eval_type": "OOD_HARD-set-0", "task": "stove", "seed": 81, "successes": 0, "episodes": 10, "video_bytes": 1685727, "finished_at": "2026-08-21T11:24:34.192244+08:00"},
+    {"index": 16, "job_key": "e252a0f54a898a25", "eval_type": "OOD_HARD-set-1", "task": "stove", "seed": 81, "successes": 0, "episodes": 10, "video_bytes": 1880192, "finished_at": "2026-08-21T11:27:30.872413+08:00"},
+    {"index": 17, "job_key": "e4f84af24c67b087", "eval_type": "ID", "task": "mugs", "seed": 7, "successes": 0, "episodes": 20, "video_bytes": 2157223, "finished_at": "2026-08-21T11:33:53.237058+08:00"},
+    {"index": 18, "job_key": "e968607dc05fe62c", "eval_type": "OOD_MEDIUM", "task": "mugs", "seed": 1, "successes": 0, "episodes": 10, "video_bytes": 1113524, "finished_at": "2026-08-21T11:38:37.684371+08:00"}
+  ],
+  "current_main_job": {
+    "index": 19,
+    "jobs_for_policy": 68,
+    "job_key": "83bcf3c3910d493a",
+    "eval_type": "OOD_MEDIUM",
+    "task": "mugs",
+    "seed": 21,
+    "planned_episodes": 10,
+    "observed_episodes": 0,
+    "observed_successes": 0,
+    "observed_errors": 0,
+    "evaluator_pid": 1362026,
+    "partial_observation_eligible_for_comparison": false
+  },
+  "single_gpu_audit": {
+    "policy_server_cuda_visible_devices": "0",
+    "evaluator_cuda_visible_devices": "",
+    "evaluator_egl_device_id": 0,
+    "only_reproduction_compute_process": {
+      "physical_gpu_index": 0,
+      "pid": 1357605,
+      "memory_mib": 77036,
+      "role": "policy_server"
+    },
+    "constraint_satisfied": true
+  },
+  "resources": {
+    "gpu_memory_used_mib": [77049, 1, 1, 1115, 1787, 1787, 1787, 1787],
+    "gpu_utilization_percent": [0, 0, 0, 1, 0, 0, 0, 0],
+    "host_available_bytes": 530433349632,
+    "shared_free_bytes": 121135685632,
+    "root_free_bytes": 6608764928
+  },
+  "storage_watch": {
+    "status": "reproduction_state_and_logs_migrated_to_shared_external_pressure_still_monitored",
+    "root_free_bytes_before_migration": 6614155264,
+    "root_free_bytes_after_restart": 6608764928,
+    "shared_free_bytes_after_restart": 121135685632,
+    "attribution": "root and shared free-space decline is much larger than the newly produced rollout/state bytes and remains unexplained by visible reproduction outputs",
+    "action": "keep all reproduction writes on shared storage, perform no destructive cleanup, and stop at a complete-job boundary if root free space approaches 4 GiB",
+    "incident": "experiments/incidents/evaluation-state-root-migration-20260821T1134.json"
+  },
+  "migration_validation": {
+    "completed_jobs_preserved_at_restart": 287,
+    "completed_jobs_canonical_sha256": "779bc18107fb0e831a74d9cab6ff5e8091f101bd8a81bdc4ea918974f8180c8e",
+    "alpha_sweep_canonical_sha256": "f5c102dc0403ea05acb74ab77d6b82bc8f9ea96ef35e9a87b731c00ee690e4bb",
+    "first_post_migration_job_completed": true,
+    "first_post_migration_job_key": "e968607dc05fe62c",
+    "first_post_migration_job_episode_errors": 0
+  },
+  "error_scan": {
+    "window_start": "2026-08-21T11:34:51+08:00",
+    "fatal_matches": 0
+  }
+}

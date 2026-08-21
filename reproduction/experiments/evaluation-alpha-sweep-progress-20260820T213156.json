@@ -1,0 +1,92 @@
+{
+  "protocol_id": "RETAIN-GPU-20260819-001",
+  "generated_at": "2026-08-20T21:31:56+08:00",
+  "status": "alpha_sweep_running",
+  "interpretation_scope": "exploratory_interim",
+  "results_root": "/shared/.cache/retain/results/RETAIN-GPU-20260819-001",
+  "progress": {
+    "completed_policies": 2,
+    "total_policies": 54,
+    "completed_jobs": 12,
+    "total_jobs": 270,
+    "completed_episodes": 120,
+    "current_policy": "retain_taskft_stove_a030",
+    "current_job_seed": 41,
+    "current_job_observed_episodes": 1,
+    "current_job_observed_successes": 0
+  },
+  "completed_policy_results": [
+    {
+      "policy": "retain_taskft_stove_a010",
+      "family": "taskft",
+      "task": "stove",
+      "alpha": 0.1,
+      "linear_interpolation_weights": [0.1, 0.9],
+      "seeds": [1, 21, 41, 61, 81],
+      "successes_by_seed": [0, 0, 1, 1, 2],
+      "total_successes": 4,
+      "total_episodes": 50,
+      "success_rate": 0.08,
+      "video_count": 50,
+      "video_bytes": 9155104
+    },
+    {
+      "policy": "retain_taskft_stove_a020",
+      "family": "taskft",
+      "task": "stove",
+      "alpha": 0.2,
+      "linear_interpolation_weights": [0.2, 0.8],
+      "seeds": [1, 21, 41, 61, 81],
+      "successes_by_seed": [1, 0, 1, 0, 2],
+      "total_successes": 4,
+      "total_episodes": 50,
+      "success_rate": 0.08,
+      "first_job_started_at": "2026-08-20T21:10:32+08:00",
+      "final_job_finished_at": "2026-08-20T21:25:24+08:00",
+      "summary_file_count": 5,
+      "video_count": 50,
+      "video_bytes": 9425895
+    }
+  ],
+  "in_progress_policy": {
+    "policy": "retain_taskft_stove_a030",
+    "alpha": 0.3,
+    "linear_interpolation_weights": [0.3, 0.7],
+    "completed_seeds": [1, 21],
+    "completed_seed_successes": [5, 4],
+    "completed_episodes": 20,
+    "completed_successes": 9,
+    "partial_success_rate": 0.45,
+    "partial_result_eligible_for_alpha_selection": false
+  },
+  "storage": {
+    "completed_policy_video_count": 100,
+    "completed_policy_video_bytes": 18580999,
+    "mean_video_bytes": 185809.99,
+    "projected_alpha_sweep_video_bytes_at_completed_policy_mean": 501686973,
+    "shared_free_bytes": 141837553664,
+    "projection_status": "ample_for_alpha_sweep"
+  },
+  "single_gpu_constraint": {
+    "physical_gpu_index": 3,
+    "current_policy_server_cuda_visible_devices": "3",
+    "current_policy_server_memory_used_mib": 77130,
+    "current_evaluator_cuda_visible_devices": "",
+    "current_evaluator_egl_device_id": "3"
+  },
+  "resources": {
+    "host_available_bytes": 529010808832,
+    "gpu_memory_used_mib": [35936, 79503, 9808, 77130, 48498, 48903, 48493, 48465],
+    "gpu_utilization_percent": [100, 100, 0, 52, 82, 57, 79, 85]
+  },
+  "processes": {
+    "evaluation_pipeline_pid": 320418,
+    "policy_server_pid": 356739,
+    "evaluator_pid": 364499
+  },
+  "error_scan": {
+    "fatal_error_count": 0,
+    "service_status": "active"
+  },
+  "caution_zh": "α=0.1 与 α=0.2 均为 8%；α=0.3 当前 9/20 仍未完成，不能用于最终选择或正式趋势判断。"
+}
